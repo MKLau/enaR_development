@@ -1,3 +1,35 @@
+%%%To do list
+%Make sure all examples are executable
+%Focus the function of the package, what can it do for users
+%Clarify that models are based on real data
+%Clarify ``built on existing packages'' L93
+%Describe the package content, including functions and methods
+%Clarify data import methods
+%Explain import/export boundary L112-115
+%Look at L133 and clarify where needed
+%Clarify that this is for a naive investigator L151
+%Clarify the content of the model Part3.2
+%Clarify batch analysis, including how the user can execute
+%Clarify how to interact with other packages L213-220
+%Add git info to L243
+%Add info on how users can contribute (1. git info, 2. software best practices, 3. contact info)
+%Remove the language ``professional grade''
+%Reduce ENA history to one paragraph
+%Look into the testthat package
+%Address how the package funcitons have been vetted/tested
+%Address versioning issue (should we re-release as 1.0)?
+%Note for the reader that CRAN = STABLE and github = development
+%Address recent developments on L129
+%Check references for L156
+%Provide check information, such as comparison with ecopath
+%Supplementary files???
+
+%%%Major questions for us
+%%Should we note the versioning by removing the statement that this isa first release, should we reset to 1.0?
+%%Do we really need to provide information that the package produces comparable results to other packages?
+%%What other fixes need to be made now (enaBatch?, enaBuild?, enaPlot?)?
+
+
 Matt,
 
 This rejection will take some digestion.  I am disappointed with the
