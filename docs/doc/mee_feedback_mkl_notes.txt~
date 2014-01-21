@@ -27,7 +27,7 @@
 %%%Major questions for us
 %%Should we note the versioning by removing the statement that this isa first release, should we reset to 1.0?
 %%Do we really need to provide information that the package produces comparable results to other packages?
-%%What other fixes need to be made now?
+%%What other fixes need to be made now (enaBatch?, enaBuild?, enaPlot?)?
 
 
 Matt,
