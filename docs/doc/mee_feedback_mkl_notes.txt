@@ -1,6 +1,7 @@
 %%%To do list
 %Make sure all examples are executable
 %Focus the function of the package, what can it do for users
+%Broaden the implications of the package, extend to other ecological networks
 %Clarify that models are based on real data
 %Clarify ``built on existing packages'' L93
 %Describe the package content, including functions and methods
@@ -13,7 +14,7 @@
 %Clarify how to interact with other packages L213-220
 %Add git info to L243
 %Add info on how users can contribute (1. git info, 2. software best practices, 3. contact info)
-%Remove the language ``professional grade''
+%DONE [mkl 5feb2014] - Remove the language ``professional grade''
 %Reduce ENA history to one paragraph
 %Look into the testthat package
 %Address how the package funcitons have been vetted/tested

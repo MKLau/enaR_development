@@ -49,13 +49,32 @@ urlcolor=red]{hyperref}
 % ------------------------
 \begin{document}
 
-%% \textbf{Title Page}
+%%%%%%%%%%%%%%%%%
+%%%Title Page
+%%%%%%%%%
 
-%% \begin{description}
-%%   \item[\textbf{Title}]: \enaR: An \R\ package for Ecological Network Analysis
-%%   \item[\textbf{Running Title}]: R ecological network analysis package 
-%%   \item[\textbf{Word Count}] 
-%% \end{description}
+\begin{description}
+  \item[\textbf{Title}:] \enaR: An \R\ package for Ecological Network Analysis
+  \item[\textbf{Running Title}:] R ecological network analysis package 
+  \item[\textbf{Word Count}:] 3025
+  \item[\textbf{Authors}:] Stuart R. Borrett, Matthew K. Lau
+  \item[\textbf{Addresses}:] \
+    \begin{itemize}
+    \item SRB: Department of Biology and Marine Biology, University of
+      North Carolina Wilmington, Wilmington, NC, 28403
+    \item MKL: Department of Biological Sciences and the
+      Merriam-Powell Center for Environmental Research, Northern
+      Arizona University, 617 S. Beaver St., Flagstaff, AZ, 86011
+    \end{itemize}
+  \item[\textbf{Contact Details}:] \
+    \begin{itemize}
+    \item Email: borretts@uncw.edu
+    \item Phone: 910.962.2411
+    \item Fax: 910.962.4066
+    \end{itemize}
+\end{description}
+
+\pagebreak
 
 \maketitle
 
@@ -73,7 +92,7 @@ urlcolor=red]{hyperref}
   ENA, they vary in their comprehensiveness, availability, usability,
   transparency, and extensibility.
 \item Here, we introduced \enaR\, a professional grade set of
-  \R\ tools that enables ecologist to perform a broad set of ENA
+  \R\ tools that enables ecologists to perform a broad set of ENA
   algorithms to analyze ecosystem models.  
 \item In addition to the basic functionality of the package, we
   highlight several values added features including the ability to
@@ -100,7 +119,7 @@ evolutionary biology papers published in 2012 and indexed by Web of
 Science could be classified as Network Ecology.  Likewise,
 \citet{ings2009} showed that a notable fraction of 2008 publications
 in 11 select journals were related to food webs ($\approx$2.4\%),
-mututalitsic networks ($\approx$0.9\%), and host-parasitoid networks
+mutualistic networks ($\approx$0.9\%), and host-parasitoid networks
 ($\approx$0.055\%).  Network ecology is growing in part because
 ecology is fundamentally a relational science and network models are
 excellent tools for relational analyses.  In addition, this rise of
@@ -133,7 +152,7 @@ of Maryland \citep{ulanowicz86, ulanowicz97, ulanowicz09_window}.  The
 Ulanowicz school of ENA is primarily focused on trophic ecology, and
 its starting point is a phenomenological map of the energy--matter
 exchanges among ecosystem components.  A key contribution of this work
-is the use of information theory and the development of the ascendecy
+is the use of information theory and the development of the ascendency
 concept that \citet{ulanowicz86, ulanowicz97} used to characterize
 ecosystem growth and development.  The second school is based on the
 work of Dr.\ Bernard C. Patten at the University of Georgia
@@ -221,7 +240,8 @@ on top of two existing \R\ packages:  \texttt{network}
 \citep{butts08_network} and \texttt{sna} \citep{butts08_social}.  In
 summary, the aim of the \enaR\ package is to make ENA tools more
 available and easier to use, adapt, and extend.  In this paper, we
-introduce version 2.5 of this package.
+briefly introduce \enaR version 2.5. For a more detailed introduction,
+please see the package vignette: i.e., \texttt{vignette}(`enaR').
 
 \section{Overview of \enaR}
 ENA is applied to network models of energy or matter flow and storage
@@ -328,7 +348,7 @@ Carolina oyster reef \citep{dame81}.  After loading the \enaR\
 package, the first step is to enter the model data.  In this example,
 we use the \texttt{read.scor} function to read the SCOR formatted data
 from a text file.  We can then apply one of four automated balancing
-algorithms introduced by \citet[AVG, Input-Output, Ouput-Input,
+algorithms introduced by \citet[AVG, Input-Output, Output-Input,
 AVG2,][]{allesina03} to ensure that the model is at steady-state ---
 one of the assumptions of the flow analysis.  In this example we used
 the default AVG2 algorithm, which tends to cause the least distortion
@@ -493,7 +513,7 @@ example, we are currently working with colleagues to enable users of
 Ecopath with Ecosim \citep{christensen04} to apply the \enaR\ tools in
 a seamless way.  We are also developing functions to connect between
 \enaR\ and the \R\ limSolve package \citep{soetaert09} for creating
-models using Linear Inverse Modelling and to enable uncertainty
+models using Linear Inverse Modeling and to enable uncertainty
 analysis \citep{kones09}.
 
 A major reason behind our decision to use an open source software tool
@@ -502,14 +522,14 @@ package's functionality. It is our hope that \enaR\ can serve as an
 organizing point for ENA computational methods and in doing so can
 facilitate the merger and growth of both theory and
 applications. Toward this same end, we are developing a Git repository
-(Open Source Freedon Conservancy) and a GitHub
+(Open-Source Freedom Conservancy) and a GitHub
 (\url{https://github.com/}) project page. Together, the open-source
 tools for version control and project management provided by Git and
 GitHub will increase the potential for collaborative software
 development. We look forward to working with the community of
 ecological software developers to move this software forward.
 
-\section{Acknowledgements}
+\section{Acknowledgments}
 We would like to acknowledge and thank David Hines for contributing to
 the initial code.  We also thank several individuals who used the
 earlier versions of the software and provided helpful feedback for
@@ -1039,7 +1059,7 @@ $names
 \begin{figure*}[t]
 \includegraphics[scale=1]{../figures/ns_dist.pdf}
 \caption{Distributions of selected ENA network statistics from to the
-  100 empircially-based ecosystem models included in \enaR\ 2.0.  The
+  100 empirically-based ecosystem models included in \enaR\ 2.0.  The
   results are summarized using a histogram showing the distribution of
   the values of each network statistic between the observed minimum
   and maximum values.  The median, mean, and coefficient of variation
