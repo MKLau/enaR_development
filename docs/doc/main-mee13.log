@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  13 FEB 2014 10:26
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  13 FEB 2014 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -556,37 +556,37 @@ Overfull \hbox (217.27908pt too wide) in paragraph at lines 80--80
 
 [2] [3]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 194.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 186.
  [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17]
 [18] [19
 
 ] [20]
-<../figures/enaR_plot_example.pdf, id=493, 433.62pt x 397.485pt>
+<../figures/enaR_plot_example.pdf, id=501, 433.62pt x 397.485pt>
 File: ../figures/enaR_plot_example.pdf Graphic file (type pdf)
 
 <use ../figures/enaR_plot_example.pdf>
 Package pdftex.def Info: ../figures/enaR_plot_example.pdf used on input line 10
-60.
+64.
 (pdftex.def)             Requested size: 433.61894pt x 397.48402pt.
 
-<../figures/ns_dist.pdf, id=502, 397.485pt x 433.62pt>
+<../figures/ns_dist.pdf, id=510, 397.485pt x 433.62pt>
 File: ../figures/ns_dist.pdf Graphic file (type pdf)
 
 <use ../figures/ns_dist.pdf>
-Package pdftex.def Info: ../figures/ns_dist.pdf used on input line 1073.
+Package pdftex.def Info: ../figures/ns_dist.pdf used on input line 1077.
 (pdftex.def)             Requested size: 397.48402pt x 433.61894pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1090.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1094.
  [21
 
  <../figures/enaR_plot_example.pdf>] [22 <../figures/ns_dist.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1090.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1094.
  (./main-mee13.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1090.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1090.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1094.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1094.
 
 Package rerunfilecheck Info: File `main-mee13.out' has not changed.
-(rerunfilecheck)             Checksum: 46377875B888DAC278ED5BDADCF6CFF7;822.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1090.
+(rerunfilecheck)             Checksum: 0AFFE96CF979A56CDACCE2D5782524C9;822.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1094.
  ) 
 Here is how much of TeX's memory you used:
  7658 strings out of 493633
@@ -595,7 +595,7 @@ Here is how much of TeX's memory you used:
  10730 multiletter control sequences out of 15000+200000
  15315 words of font info for 59 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 29i,9n,32p,1038b,577s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,9n,32p,1038b,567s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -613,10 +613,10 @@ ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main-mee13.pdf (22 pages, 297587 bytes).
+Output written on main-mee13.pdf (22 pages, 297835 bytes).
 PDF statistics:
- 606 PDF objects out of 1000 (max. 8388607)
- 549 compressed objects within 6 object streams
+ 614 PDF objects out of 1000 (max. 8388607)
+ 557 compressed objects within 6 object streams
  122 named destinations out of 1000 (max. 500000)
  123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
