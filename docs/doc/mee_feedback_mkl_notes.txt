@@ -3,9 +3,7 @@
 %Focus the function of the package, what can it do for users
 %Broaden the implications of the package, extend to other ecological networks
 %Describe the package content, including functions and methods
-%Clarify that models are based on real data
 %Clarify data import methods
-%Clarify batch analysis, including how the user can execute
 %Make sure all examples are executable
 
 %Address how the package funcitons have been vetted/tested

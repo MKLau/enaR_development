@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  13 FEB 2014 15:40
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  13 FEB 2014 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -591,11 +591,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1094.
 Here is how much of TeX's memory you used:
  7658 strings out of 493633
  110698 string characters out of 3143378
- 209248 words of memory out of 3000000
+ 209244 words of memory out of 3000000
  10730 multiletter control sequences out of 15000+200000
  15315 words of font info for 59 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 29i,9n,32p,1038b,567s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,9n,32p,1033b,567s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -613,7 +613,7 @@ ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main-mee13.pdf (22 pages, 297835 bytes).
+Output written on main-mee13.pdf (22 pages, 297897 bytes).
 PDF statistics:
  614 PDF objects out of 1000 (max. 8388607)
  557 compressed objects within 6 object streams
