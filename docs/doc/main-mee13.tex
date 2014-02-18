@@ -84,22 +84,21 @@ urlcolor=red]{hyperref}
 \tableline
 \section*{Abstract}
 \begin{itemize}
-\item Technological developments are making the collection of complex,
-  relational datasets more common, a network approach is becoming an
-  essential analytical method. Ecological Network Analysis (ENA) is an
-  approach rooted in ecosystem ecology with over 30 years of
-  development that investigates the structure, function, and evolution
-  of ecological systems.
-\item Here, we introduce \enaR , an \R\ package that enables
-  ecologists to perform a broad set of ENA algorithms to analyze the
-  structure and dynamics of ecosystem network models that quantify
-  flows of energy or matter between discrete ecological compartments
-  (e.g., food webs).
+\item Network analysis is useful for approaching complex, relational
+  datasets in many biological fields, including ecology and molecular
+  and evolutionary biology.
+\item Ecological Network Analysis (ENA) is an analytical tool set
+  rooted in ecosystem ecology with over 30 years of development that
+  investigates the structure, function, and evolution of ecological
+  systems. Here, we introduce \enaR , an \R\ package that enables
+  ecologists to perform a broad set of ENA algorithms that analyze the
+  structure and dynamics of matter or energy movement between discrete
+  ecological compartments (e.g., food webs).
 \item In addition to describing the primary functionality of the
   package, we also highlight several value added features, including a
   library of 100 empirical ecosystem models, the ability to analyze
-  multiple models simultaneously, and connections to other analytical
-  tools in \R .
+  and compare multiple models simultaneously, and connections to
+  useful ecological network analysis tools in \R .
 \end{itemize}
 
 KEYWORDS: network analysis, ecosystem, social network analysis,
@@ -184,11 +183,13 @@ illustration of its functionality. For a more detailed user
 introduction, please refer to the package vignette: \url{http://cran.r-project.org/web/packages/enaR/vignettes/enaR.pdf}.
 
 \section{Overview of \enaR}
-ENA is applied to network models of energy or matter flow and storage
-in an ecosystem.  After describing the data required as input to ENA,
-we highlight the primary ENA algorithms currently included in \enaR\ .
-We then walk through an application of the \enaR\ Flow analysis to an example
-model.
+ENA was devleoped to analyze network models of energy or matter flow
+and storage in an ecosystem.  More generally, the analyses could be
+used to analyze any system in which some physically conserved unit
+moves among compartments. After describing the data required as
+input to ENA, we highlight the primary ENA algorithms currently
+included in \enaR\ .  We then walk through an application of the
+\enaR\ Flow analysis to an example ecosystem model.
 
 \subsection{Data Requirements and Input}
 % ENA Data requirements and Input -- no math
@@ -532,11 +533,15 @@ Looking to the future of ENA, we hope to facilitate the rapid
 developemnt of accessible network analysis tools for the ecological
 community. A major reason for our use of open source software is that
 we want to foster user driven development and extension of the
-package's functionality. It is our hope that \enaR\ can serve as an
-organizing point for ENA methods with the hope that a by doing so not
-only produce relevant software, but also promote the feedback bewteen
-theory and application of network analytics. Toward this end, we have
-developed the GitHub development repository
+package's functionality. Although the network approach promotes
+innovation and collaboration across fields, network ecology has
+developed along multiple, largely separate lines
+\citep{scharler09comparing,allesina2012}.  It is our hope that
+\enaR\ can serve as an organizing point for ENA and other ecological
+network methods with the hope that doing so will not only produce
+relevant software, but also promote feedback bewteen theory and
+applications. Toward this end, we have developed the GitHub
+development repository
 (\url{https://github.com/MKLau/enaR_development}) and project page
 (\url{http://theseelab.github.io/enaR/}), where researchers can find
 more information on how to contribute software. Together, the
@@ -573,6 +578,10 @@ Allesina, S. \& Bondavalli, C. (2003) Steady state of ecosystem flow networks:
 Allesina, S. \& Bondavalli, C. (2004) Wand: An ecological network analysis
   user-friendly tool.
 \newblock \emph{Environ Model Softw}, \textbf{19}, 337--340.
+
+\bibitem[{Allesina (2012)}]{allesina2012}
+Allesina, S. (2012) Ecology: The more the merrier.
+\newblock \emph{Nature}, \textbf{487}, 175--176.
 
 \bibitem[{Baird \emph{et~al.}(2008)Baird, Asmus \& Asmus}]{baird08_sylt}
 Baird, D., Asmus, H. \& Asmus, R. (2008) Nutrient dynamics in the
@@ -713,8 +722,7 @@ Dame, R.F. \& Patten, B.C. (1981) Analysis of energy flows in an intertidal
 Dixon, P. (2003) {VEGAN}, a package of {R} functions for community ecology.
 \newblock \emph{Journal of Vegetation Science}, \textbf{14}, 927--930.
 
-\bibitem[{Dormann \emph{et~al.}(2008)Dormann, Gruber \&
-  Fr{\"u}nd}]{dormann2008}
+\bibitem[{Dormann \emph{et~al.}(2008)Dormann, Gruber \& Fr{\"u}nd}]{dormann2008}
 Dormann, C.F., Gruber, B. \& Fr{\"u}nd, J. (2008) Introducing the bipartite
   package: analysing ecological networks.
 \newblock \emph{\R\ News}, \textbf{8}, 8--11.

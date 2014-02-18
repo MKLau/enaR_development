@@ -84,24 +84,22 @@ urlcolor=red]{hyperref}
 \tableline
 \section*{Abstract}
 \begin{itemize}
-\item Network ecologists apply network models and analyses to
-  investigate the structure, function, and evolution of ecological
-  systems.  Ecological Network Analysis (ENA) is an approach rooted in
-  ecosystem ecology with over 30 years of development.  While some
-  software tools exist to assist ecologists with the application of
-  ENA, they vary in their comprehensiveness, availability, usability,
-  transparency, and extensibility.
-\item Here, we introduce \enaR , a set of \R\ tools that enables
-  ecologists to perform a broad set of ENA algorithms to analyze
-  ecosystem models.
-\item In addition to the basic functionality of the package, we
-  highlight several value added features including the ability to
-  visualize the networks, the inclusion of a library of 100
-  empirically-based ecosystem models, the ability to conduct analyses
-  for many models simultaneously, and connects to other network and
-  ecological analysis tools in \R .
-\item We expect this package to enable more ecologists to apply
-  ecological analyses and contribute to ENA software development.
+\item Technological developments are making the collection of complex,
+  relational datasets more common, a network approach is becoming an
+  essential analytical method. Ecological Network Analysis (ENA) is an
+  approach rooted in ecosystem ecology with over 30 years of
+  development that investigates the structure, function, and evolution
+  of ecological systems.
+\item Here, we introduce \enaR , an \R\ package that enables
+  ecologists to perform a broad set of ENA algorithms to analyze the
+  structure and dynamics of ecosystem network models that quantify
+  flows of energy or matter between discrete ecological compartments
+  (e.g., food webs).
+\item In addition to describing the primary functionality of the
+  package, we also highlight several value added features, including a
+  library of 100 empirical ecosystem models, the ability to analyze
+  multiple models simultaneously, and connections to other analytical
+  tools in \R .
 \end{itemize}
 
 KEYWORDS: network analysis, ecosystem, social network analysis,
@@ -122,7 +120,7 @@ in 11 select journals were related to food webs ($\approx$2.4\%),
 mutualistic networks ($\approx$0.9\%), and host-parasitoid networks
 ($\approx$0.055\%).  Network ecology is growing in part because
 ecology is fundamentally a relational science and network models are
-excellent tools for relational analyses.  In addition, this rise of
+excellent tools for relational analyses.  In addition, the rise of
 network ecology contributes to, mirrors, and builds on the more
 general development of network sciences \citep{wasserman94,
 %  barabasi02, 
@@ -131,8 +129,8 @@ barabasi12, borgatti2003network, freeman2004development,
 
 % what is ENA
 Ecological Network Analysis (ENA) is a branch of network ecology that
-is rooted in ecosystem ecology \citep{borrett12_netecol}.  It works
-like a ``macroscope'' to investigate (1) whole system organization,
+is rooted in ecosystem ecology \citep{borrett12_netecol}.  It functions
+as a ``macroscope'' to investigate (1) whole system organization,
 (2) the direct and indirect effects among system components, and (3)
 the processes that create and sustain ecological systems.  More
 specifically, ENA is a family of algorithms that are an ecological
@@ -141,7 +139,6 @@ developed by Leontief (\citeyear{leontief66}).  These algorithms are
 applied to network models of energy and matter exchange among
 ecosystem components with the iconic example of this being the
 food-web \citep{patten76, ulanowicz86, fath99_review, hannon73}.
-
 
 % examples of recent use
 The development of ENA has contributed to a new theoretical
@@ -157,73 +154,45 @@ the tools to quantify the coupling between biogeochemical processes
 (e.g., nitrification + anammox).  
 %Subsequent work showed the potential
 %impact of sea water intrusion on the N cycle \citep{hines14}. % this
-                                % hines text is clunky.  
-Furthermore, several scientists have used ENA to investigate urban
-sustainability \citep{bodini02, zhang10_ecomod, chen12,
-  bodini2012cities}.  Collectively, this work consistently shows the
-power of the interaction network to transform relationships among
-system components in non-obvious ways that require whole-systems
-analysis to elucidate \citep{ulanowicz90, patten91,
-  fath07_netconstruction}.
-
+                                % hines text is clunky.  Furthermore,
+several scientists have used ENA to investigate urban sustainability
+\citep{bodini02, zhang10_ecomod, chen12, bodini2012cities}.
+Collectively, this work consistently shows the power of a network
+approach to reveal patterns that are only evident at the scale of
+entire systems \citep{ulanowicz90, patten91, fath07_netconstruction}.
 
 % Objectives
-We have created \enaR to provide open-source access to ENA tools.  We
+We have created \enaR\ to provide open-source access to ENA tools.  We
 had three specific design objectives for this software.  The first
-objective was to collect the major ENA analyses in a single software
-package.  The second objective was to increase both the availability
-and extensibility of the software.  Users can freely download a stable
-version of the package from the CRAN website
-(\url{http://cran.r-project.org/web/packages/enaR/}). Better access to
-the code is provided through GitHub, where users can obtain the source
-code, make modifications, and add new functionality as techniques
-develop (\url{https://github.com/TheSeeLab/enaR}).  We chose
-to implement the software in \R\ because of its increasing popularity
-as an analytical tool in the biological sciences
-\citep[e.g.,][]{dixon2003vegan, metcalf2012, revell2012phytools}. The
-third design objective was to let users connect to other analytical
-tools.  To enable this, \enaR\ was built specifically to connect to
-two existing \R\ network analysis packages:  \texttt{network}
-\citep{butts08_network} and \texttt{sna} \citep{butts08_social}.  In
-summary, the aim of the \enaR\ package is to make ENA tools more
-available and easier to use, adapt, and extend.  In this paper, we
-present \enaR with a brief illustration of its functionality. For a
-more detailed user introduction, please see the package vignette:
-i.e., \texttt{vignette}(`enaR').
+objective was to collect the major ENA functions into a single
+software package, which we describe below.  The second was to increase
+both the availability and extensibility of the software. We chose to
+implement the software in \R\ because of its increasing popularity as
+an analytical tool in the biological sciences
+\citep[e.g.,][]{dixon2003vegan, metcalf2012, revell2012phytools}.
+Users can freely download a stable version of the package from the
+CRAN website (\url{http://cran.r-project.org/web/packages/enaR/}), and
+development is being conducted via GitHub
+(\url{https://github.com/TheSeeLab/enaR}).  The third design objective
+was to let users connect to other analytical tools.  To enable this,
+\enaR\ was built specifically to connect to two existing \R\ network
+analysis packages:  \texttt{network} \citep{butts08_network} and
+\texttt{sna} \citep{butts08_social}.  In summary, the aim of the
+\enaR\ package is to make ENA tools more available and easier to use,
+adapt, and extend.  In this paper, we present \enaR  with a brief
+illustration of its functionality. For a more detailed user
+introduction, please refer to the package vignette: \url{http://cran.r-project.org/web/packages/enaR/vignettes/enaR.pdf}.
 
 \section{Overview of \enaR}
-ENA is applied to network models of energy or matter flow and storage
-in an ecosystem.  After describing the data required as input to ENA,
-we highlight the primary ENA algorithms currently included in \enaR\ .
-We then walk through an application of the \enaR\ Flow analysis to an example
-model.
+ENA was devleoped to analyze network models of energy or matter flow
+and storage in an ecosystem.  More generally, the analyses could be
+used to analyze any system in which some physically conserved unit
+moves among compartments. After describing the data required as
+input to ENA, we highlight the primary ENA algorithms currently
+included in \enaR\ .  We then walk through an application of the
+\enaR\ Flow analysis to an example ecosystem model.
 
 \subsection{Data Requirements and Input}
-%% % Two School's: Ulanowicz & Patten
-While many influences combined to create what we now call ENA
-\citep[e.g.,][]{patten59, margalef63, hannon73, pimm82,
-  golley1993history}, since the 1970s two primary schools of thought
-have developed \citep{scharler09comparing}.  The first is based on the
-work of Dr.\ Robert E. Ulanowicz, which was centered at the University
-of Maryland \citep{ulanowicz86, ulanowicz97, ulanowicz09_window}.  The
-Ulanowicz school of ENA is primarily focused on trophic ecology, and
-its starting point is a phenomenological map of the energy--matter
-exchanges among ecosystem components.  A key contribution of this work
-is the use of information theory and the development of the ascendency
-concept that \citet{ulanowicz86, ulanowicz97} used to characterize
-ecosystem growth and development.  The second school is based on the
-work of Dr.\ Bernard C. Patten at the University of Georgia
-\citep{patten76, matis81, patten82, fath99_review}.  Its initial
-perspective was steeped in dynamic equations, simulations, and systems
-analysis.  A key contribution of this work is the environ concept that
-formalizes the concept of environment for study inside the network
-models \citep{patten78}.  The Patten School of work has often been
-referred to as ``Network Environ Analysis''.  The Ulanowicz and Patten
-School's of ENA represent two distinct but interwoven developments.
-Together, they join information theory, environmental concepts, and
-network science to study ecosystems.
-
-
 % ENA Data requirements and Input -- no math
 For ENA, the system is modeled as a set of compartments or network nodes that
 represent species, species-complexes (i.e., trophic guilds or
@@ -235,27 +204,49 @@ observed fluxes, termed directed edges or links.  %The estimates of the
 These models also have energy--matter inputs into the system
 %$\mathbf{z}_{1 \times n}=[z_i]$
  and output losses from the system.
-%$\mathbf{y}_{1 \times n}=[y_i]$.  
-While the Patten School treats all outputs the same, the Ulanowicz
-School partitions outputs into respiration %$\mathbf{r}_{1\times
+%$\mathbf{y}_{1 \times n}=[y_i]$. 
+The full set of data required to perform ENA includes: (1) internal
+flows, (2) boundary inputs, (3) boundary exports, (4) boundary
+respiration, (5) boundary outputs, which may be the sum of exports and
+respiration, (6) biomass or storage values, and (7) designation of
+living status of each node.
+
+As ENA is an agglomeration of tools developed by multiple perspectives
+\citep[e.g.,][]{patten59, margalef63, hannon73, pimm82,
+  golley1993history}, the data requirements vary from function to
+function. The main differences arise from two distinct schools of
+thought that have driven the development of ENA since the 1970s
+\citep{scharler09comparing}.  The first school is based on the work of
+Dr.\ Robert E. Ulanowicz and colleagues at the University of Maryland
+\citep{ulanowicz86, ulanowicz97, ulanowicz09_window}.  Primarily
+focused on trophic ecology, this approach uses information theory and
+the ascendency concept that characterizes ecosystem growth and
+development \citet{ulanowicz86, ulanowicz97}.  The second school is
+based on the work of Dr.\ Bernard C. Patten at the University of
+Georgia \citep{patten76, matis81, patten82, fath99_review}.  Steeped
+in dynamic equations, simulations, and systems analysis, this work
+developed the environ concept that formalizes the concept of
+environment \citep{patten78} and has often been referred to as
+``Network Environ Analysis.'' 
+
+The primary difference in data requirements among ENA functions is
+that the Patten School treats all outputs the same, while the
+Ulanowicz School partitions outputs into respiration
+%$\mathbf{r}_{1\times
 %  n}=[r_i]$ 
 and export 
 %$\mathbf{e}_{1\times n}=[e_i]$ 
-to account for differences in energetic quality. Note that the more
+to account for differences in energetic quality between these two
+types of ecosystem output. Note that the more
 generic outputs can be the sum of the respiration and export values.
 %$y_i = r_i + e_i$ for all $i$.  
-Some analyses also need the amount of energy--matter stored in each
-node (e.g., biomass)%, $\mathbf{X}_{1\times n}=[x_i]$
-.  The final required information is a categorization of each node as
+The final required information is a categorization of each node as
 living or not, which is essential for algorithms from the Ulanowicz
 School.  We specified this node attribute by creating a logical vector
 %$\mathbf{Living}_{1 \times n}$ 
-that indicates whether the %$i^{th}$
-node is living (TRUE) or not (FALSE).  In summary, the full set of
-data required to perform ENA includes (1) internal flows, (2) boundary
-inputs, (3) boundary exports, (4) boundary respiration, (5) boundary
-outputs, which may be the sum of exports and respiration, (6) biomass
-or storage values, and (7) designation of living status of each node.
+that indicates whether the %$i^{th}$ 
+node is living (TRUE) or not (FALSE). Some analyses also need the amount of energy--matter stored
+in each node (e.g., biomass).%, $\mathbf{X}_{1\times n}=[x_i]$.
 
 % % ENA Data requirements and Input
 % For ENA, the system is modeled as a set of $n$ compartments or nodes
@@ -300,44 +291,48 @@ function to read in these common data formats.
 
 \subsection{Included Algorithms}
 % enaR Algorithms
-While the long-term goal is for the \enaR\ package to be
-comprehensive, this initial release is more limited, but provides a
-foundation for future expansion. The package currently includes many
-of the most commonly used algorithms (Table~\ref{tab:alg}), along with
-a number of work flow tools (e.g., the read.x functions).
-\enaR\ captures all of the Patten School algorithms previously
-implemented in NEA.m, along with some recent developments.  Ulanowicz
-School algorithms are more limited, including the ascendency
+Although not comprehensive, the package currently includes many of the
+most commonly used algorithms (Table~\ref{tab:alg}), along with a
+number of work flow tools (e.g., the ``read'' functions mentioned
+above).  \enaR\ captures all of the Patten School algorithms
+previously implemented in NEA.m, along with some recent developments.
+Ulanowicz School algorithms are more limited, including the ascendency
 calculations \citep{ulanowicz97} and mixed trophic impacts analyses
-\citep{ulanowicz90}.  We hope to grow the package in time and through
-collaboration with users.
+\citep{ulanowicz90}.  It is our hope that user participation will
+develop the the package further through the inclusion of more
+algorithms.
 
 \subsection{Example Application}
 % Apply enaR to a single model.
 Given a network model, applying ENA algorithms with \enaR\ is straight
-forward.  Table~\ref{tab:flow} illustrates applying the ENA Flow
-analysis to the six compartment model of energy flow in a South
-Carolina oyster reef \citep{dame81}.  After loading the \enaR\
-package, the first step is to enter the model data.  In this example,
-we use the \texttt{read.scor} function to read the SCOR formatted data
-from a text file.  We can then apply one of four automated balancing
-algorithms introduced by \citet[AVG, Input-Output, Output-Input,
-AVG2,][]{allesina03} to ensure that the model is at steady-state ---
-one of the assumptions of the flow analysis.  In this example we used
-the default AVG2 algorithm, which tends to cause the least distortion
-of flows while balancing the network \citep{allesina03}.  We then
-applied the \texttt{enaFlow} function to the model to perform the
-desired ENA flow analysis.  This analysis returns 4 matrices
-($\mathbf{G}$, $\mathbf{GP}$, $\mathbf{N}$, $\mathbf{NP}$) and two
-vectors (throughflow, $T$, and a vector of 20 whole-network statistics,
-$ns$).  Guidance for how to interpret these results can be found in
-previously published literature \citep{fath06, schramski11}.
+forward. Although the functions vary in their specifications and the
+results that are returned to the user, all \enaR\ functions follow a
+similar argument structure.  All analytical functions begin with the
+prefix 'ena' followed by the specific analysis name (see
+Table~\ref{tab:alg}). For simplicity's sake, we demonstrate how to use
+the package with an example that conducts Flow analysis on a published
+ecosystem model. Table~\ref{tab:flow} shows an example script for
+applying the ENA Flow analysis to the six compartment model of energy
+flow in the South Carolina oyster reef ecosystem
+\citep{dame81}. Briefly, the analysis invovles: (1) loading the model
+data, (2) checking and balancing the model if necessary, and (3)
+inputing the balanced model into the analysis function.
 
-\section{Value Added Features}
-Beyond the basic functionality of the \enaR\ package, there are
-several features that add substantive value for users.  We highlight
-four of these features here: visualization, model library, batch
-analysis, and connections to other network analysis tools.
+After loading the \enaR\ package, the first step is to enter the model
+data.  In this example, we use the \texttt{read.scor} function to import
+the SCOR formatted data from a text file.  We can then apply one of
+four automated balancing algorithms introduced by \citet[AVG,
+  Input-Output, Output-Input, AVG2,][]{allesina03} to ensure that the
+model is at steady-state --- one of the assumptions of the flow
+analysis.  In this example we used the default AVG2 algorithm, which
+tends to cause the least distortion of flows while balancing the
+network \citep{allesina03}.  We then apply the \texttt{enaFlow}
+function to the model to perform the desired ENA flow analysis.  This
+analysis returns 4 matrices ($\mathbf{G}$, $\mathbf{GP}$,
+$\mathbf{N}$, $\mathbf{NP}$) and two vectors (throughflow, $T$, and a
+vector of 20 whole-network statistics, $ns$).  Guidance for how to
+interpret these results can be found in previously published
+literature \citep{fath06, schramski11}.
 
 \subsection{Visualization}
 % Visualization
@@ -350,6 +345,13 @@ model.  The \texttt{network} package includes three network layout
 algorithms: circle, Fruchterman-Reingold, and Kamada-Kawai.  The
 Fruchterman-Reingold algorithm used here is the default.
 % mention lack of cross boundary input/output?
+
+\section{Value Added Features}
+Beyond the basic functionality of the \enaR\ package, there are
+several features that add substantive value for users.  We highlight
+three of these features here: the ecosystem model library, multiole
+model or ``batch'' analysis, and connections to other network analysis
+tools.
 
 \subsection{Model Library}
 % Model Library
@@ -383,12 +385,10 @@ class.  The package vignette has a full listing of the models included
 along with references to their original publications \citep{enar}.
 
 \subsection{Batch Analysis}
-Given a list of models like the model library, it is possible to
-efficiently batch apply one or more analyses to the models.  This
-facilitates the kind of comparative network analysis often of
-interest to ecologists \citep{monaco97,christian05_cnea}. For
-example, \citet{christensen95} applied ENA to identify and compare the
-maturity of 41 ecosystem models,
+Major advancements in ecosystem ecology have been made through an
+approach that examines network metric for multiple ecosystem
+models. For example, \citet{christensen95} applied ENA to identify and
+compare the maturity of 41 ecosystem models,
 %\citet{hines14} used a comparative approach to
 %investigate the impact of sea level rise on process coupling in the
 %estuarine nitrogen cycle. 
@@ -396,14 +396,20 @@ maturity of 41 ecosystem models,
 Sylt-R{\o}m{\o} Bight ecosystem, and \citet{vanoevelen2011canyon}
 compared the food webs and their organic matter processing in three
 sections of the Nazar{\'e} submarine canyon.  The \enaR\ tool
-simplifies the work flow for these types of comparison.
+simplifies the work flow for these types of comparison. Given a list
+of models like the model library, it is possible to quickly analyze
+multiple models using R's \texttt{lapply} function (see
+\texttt{help}(``lapply'')).  This facilitates the kind of comparative
+network analysis often of interest to ecologists
+\citep{monaco97,christian05_cnea}.
 % I could use examples from ECOMOD special issue.
 
-This batch analysis can be used in several additional ways.  One
+Batch analysis can be used in several additional ways.  One
 application is for meta-analyses, such as tests of the generality of
 hypothesized ecosystem properties like network non-locality
-\citep{salas11_did}, %and network homogenization \citep{borrett10_hmg},
-or to investigate how physical features might influence ENA results
+\citep{salas11_did}, %and network homogenization
+\citep{borrett10_hmg}, or to investigate how physical features might
+influence ENA results
 \citep{niquil2012physical}. Fig.~\ref{fig:example}b illustrates the
 rank-ordered network homogenization statistic for the 56 trophic-based
 ecosystem models in the library. Notice that the homogenization
@@ -420,8 +426,8 @@ application of batch analysis is to investigate the previously unknown
 empirical ranges of ENA whole-network statistics, which may be useful
 for interpreting results from specific applications.
 Fig.~\ref{fig:ns} shows the observed distribution of values for
-selected network statistics from the 100 models in the library. The
-\enaR\ package enables and simplifies these types of analysis.
+selected network statistics from the 100 models in the library easily
+analyzed using \texttt{lapply} and the associated \enaR\ functions.
 
 \subsection{New Connections}
 % Connections to other tools (SNA, igraph)
@@ -528,19 +534,23 @@ Looking to the future of ENA, we hope to facilitate the rapid
 developemnt of accessible network analysis tools for the ecological
 community. A major reason for our use of open source software is that
 we want to foster user driven development and extension of the
-package's functionality. It is our hope that \enaR\ can serve as an
-organizing point for ENA methods with the hope that a by doing so not
-only produce relevant software, but also promote the feedback bewteen
-theory and application of network analytics. Toward this end, we have
-developed the GitHub development repository
+package's functionality. Although the network approach promotes
+innovation and collaboration across fields, network ecology has
+developed along multiple, largely separate lines
+\citep{scharler09comparing,allesina2012}.  It is our hope that
+\enaR\ can serve as an organizing point for ENA and other ecological
+network methods with the hope that doing so will not only produce
+relevant software, but also promote feedback bewteen theory and
+applications. Toward this end, we have developed the GitHub
+development repository
 (\url{https://github.com/MKLau/enaR_development}) and project page
 (\url{http://theseelab.github.io/enaR/}), where researchers can find
 more information on how to contribute software. Together, the
 open-source tools for vasersion control and project management
 provided by Git and GitHub will increase the potential for
 collaborative software development. We look forward to working with
-the dynamic community of network analysts to promote the use of
-network tools in ecology.
+the dynamic community of peoople interested in network analyses to
+promote the use and development of network tools in ecology.
 
 \section{Acknowledgments}
 We would like to acknowledge and thank David Hines for contributing to
@@ -569,6 +579,10 @@ Allesina, S. \& Bondavalli, C. (2003) Steady state of ecosystem flow networks:
 Allesina, S. \& Bondavalli, C. (2004) Wand: An ecological network analysis
   user-friendly tool.
 \newblock \emph{Environ Model Softw}, \textbf{19}, 337--340.
+
+\bibitem[{Allesina (2012)}]{allesina2012}
+Allesina, S. (2012) Ecology: The more the merrier.
+\newblock \emph{Nature}, \textbf{487}, 175--176.
 
 \bibitem[{Baird \emph{et~al.}(2008)Baird, Asmus \& Asmus}]{baird08_sylt}
 Baird, D., Asmus, H. \& Asmus, R. (2008) Nutrient dynamics in the
@@ -709,8 +723,7 @@ Dame, R.F. \& Patten, B.C. (1981) Analysis of energy flows in an intertidal
 Dixon, P. (2003) {VEGAN}, a package of {R} functions for community ecology.
 \newblock \emph{Journal of Vegetation Science}, \textbf{14}, 927--930.
 
-\bibitem[{Dormann \emph{et~al.}(2008)Dormann, Gruber \&
-  Fr{\"u}nd}]{dormann2008}
+\bibitem[{Dormann \emph{et~al.}(2008)Dormann, Gruber \& Fr{\"u}nd}]{dormann2008}
 Dormann, C.F., Gruber, B. \& Fr{\"u}nd, J. (2008) Introducing the bipartite
   package: analysing ecological networks.
 \newblock \emph{\R\ News}, \textbf{8}, 8--11.
@@ -1072,7 +1085,7 @@ $names
 \begin{figure*}[t]
 \includegraphics[scale=1]{../figures/ns_dist.pdf}
 \caption{Distributions of selected ENA network statistics from to the
-  100 empirically-based ecosystem models included in \enaR\ 2.0.  The
+  100 empirically-based ecosystem models included in \enaR.  The
   results are summarized using a histogram showing the distribution of
   the values of each network statistic between the observed minimum
   and maximum values.  The median, mean, and coefficient of variation
