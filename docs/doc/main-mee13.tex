@@ -1050,7 +1050,8 @@ Environ & \texttt{enaEnviron} & Patten \\
 \tableline
 \begin{verbatim}
 > library(enaR)                 # load package
-> m <- read.scor("oyster.dat")  # read model data from SCOR formatted file
+> data(troModels)               # load the model library
+> m <- troModels$"Oyster Reef"  # isolate the Oyster Reef model
 > m <- balance(m)               # balance model using AVG2 algorithm 
 [1] BALANCED
 > u <- unpack(m)                # unpack model data to illustrate components
