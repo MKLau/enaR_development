@@ -91,7 +91,7 @@ urlcolor=red]{hyperref}
   Ecological Network Analysis (ENA), an analytical tool set rooted in
   ecosystem ecology with over 30 years of development, which examines
   the structure and dynamics of matter and energy movement between
-  discrete ecological compartments, such as food webs.
+  discrete ecological compartments (e.g., a food web).
 \item In addition to describing the primary functionality of the
   package, we also highlight several value added features, including a
   library of 100 empirical ecosystem models, the ability to analyze
@@ -99,10 +99,9 @@ urlcolor=red]{hyperref}
   useful ecological network analysis tools in \R .
 \end{itemize}
 
-KEYWORDS: network analysis, ecosystem, social network analysis,
-software, network environ analysis, ascendency, input--output
-analysis, food web, Ecopath, WAND
-\tableline
+KEYWORDS: network analysis, ecosystem, open-source software, network
+environ analysis, ascendency, input--output analysis, food web, urban
+metabolism, Ecopath, WAND \tableline
 
 \section{Introduction}
 % Network Ecology & its significance
@@ -126,10 +125,11 @@ barabasi12, borgatti2003network, freeman2004development,
 
 % what is ENA
 Ecological Network Analysis (ENA) is a branch of network ecology that
-is rooted in ecosystem ecology \citep{borrett12_netecol}.  It functions
-as a ``macroscope'' to investigate (1) whole system organization,
-(2) the direct and indirect effects among system components, and (3)
-the processes that create and sustain ecological systems.  More
+examines the flows of matter and energy in an ecosystem. Rooted in
+ecosystem ecology \citep{borrett12_netecol}, it functions as a
+``macroscope'' to investigate (1) whole system organization, (2) the
+direct and indirect effects among system components, and (3) the
+processes that create and sustain ecological systems.  More
 specifically, ENA is a family of algorithms that are an ecological
 application and extension of the economic Input-Output Analysis
 developed by Leontief (\citeyear{leontief66}).  These algorithms are
@@ -140,35 +140,33 @@ food-web \citep{patten76, ulanowicz86, fath99_review, hannon73}.
 % new theoretical understanding of ecosystems \citep{ulanowicz86,
 % higashi91, belgrano05, jorgensen07_newecology} and the techniques
 % have been applied in a multiple ways.  
-For example, \citet{patten82} used a storage analysis
-to identify two nearly separate hydrologic subsystems in the
-Okefenokee Swamp, USA.  \citet{bondavalli99} showed that in the
-Florida Everglades the American alligator is an indirect mutualist
-with several of its prey, including frogs.  \citet{hines12} used
-ENA to study the Cape Fear River estuary sediment nitrogen cycle, and applied
-the tools to quantify the coupling between biogeochemical processes
-(e.g., nitrification + anammox).  
-%Subsequent work showed the potential
-%impact of sea water intrusion on the N cycle \citep{hines14}. % this
-                                % hines text is clunky.  Furthermore,
-several scientists have used ENA to investigate urban sustainability
-\citep{bodini02, zhang10_ecomod, chen12, bodini2012cities}.
-Collectively, this work consistently shows the power of a network
-approach to reveal patterns that are only evident at the scale of
-entire systems \citep{ulanowicz90, patten91, fath07_netconstruction}.
+Here are some examples of how ecologists have applied
+ENA. \citet{patten82} used a storage analysis to identify two nearly
+separate hydrologic subsystems in the Okefenokee Swamp, USA.
+\citet{bondavalli99} showed that in the Florida Everglades the
+American alligator is an indirect mutualist with several of its prey,
+including frogs.  \citet{hines12} used ENA to study the Cape Fear
+River estuary sediment nitrogen cycle, and applied the tools to
+quantify the coupling between biogeochemical processes (e.g.,
+nitrification + anammox). Recently, scientists have begun to use ENA
+to analyze models in urban metabolism models \citep{bodini02,
+  zhang10_ecomod, chen12, bodini2012cities}.  Collectively, this work
+consistently shows the power of a network approach to reveal patterns
+that are only evident at the scale of entire systems
+\citep{ulanowicz90, patten91, fath07_netconstruction}.
 
 % Objectives
-We have created \enaR\ to provide open-source access to ENA tools.  We
-had three specific design objectives for this software.  The first
-objective was to collect the major ENA functions into a single
-software package, which we describe below.  The second was to increase
-both the availability and extensibility of the software. We chose to
-implement the software in \R\ because of its increasing popularity as
-an analytical tool in the biological sciences
-\citep[e.g.,][]{dixon2003vegan, metcalf2012, revell2012phytools}.
-Users can freely download a stable version of the package from the
-CRAN website (\url{http://cran.r-project.org/web/packages/enaR/}), and
-development is being conducted via GitHub
+We have created \enaR\ to provide open-source access to ENA tools with
+three specific software design objectives.  The first objective was to collect
+the major ENA functions into a single software package, which we
+describe below.  The second was to increase both the availability and
+extensibility of the software. We chose to implement the software in
+\R\ because of its increasing popularity as an analytical tool in the
+biological sciences \citep[e.g.,][]{dixon2003vegan, metcalf2012,
+  revell2012phytools}.  Users can freely download a stable version of
+the package from the CRAN website
+(\url{http://cran.r-project.org/web/packages/enaR/}), and development
+is being conducted via GitHub
 (\url{https://github.com/TheSeeLab/enaR}).  The third design objective
 was to let users connect to other analytical tools.  To enable this,
 \enaR\ was built specifically to connect to two existing \R\ network
@@ -288,16 +286,40 @@ function to read in these common data formats.
 
 \subsection{Included Algorithms}
 % enaR Algorithms
-Although not comprehensive, the package currently includes many of the
-most commonly used algorithms (Table~\ref{tab:alg}), along with a
-number of work flow tools (e.g., the ``read'' functions mentioned
-above).  \enaR\ captures all of the Patten School algorithms
-previously implemented in NEA.m, along with some recent developments.
-Ulanowicz School algorithms are more limited, including the ascendency
-calculations \citep{ulanowicz97} and mixed trophic impacts analyses
-\citep{ulanowicz90}.  It is our hope that user participation will
-develop the the package further through the inclusion of more
-algorithms.
+The package is built hierarchically with primary functions that employ
+``lower level'' support functions that implement the algorithms
+relevant to a major category of analysis. The package currently
+includes many of the most commonly used algorithms
+(Table~\ref{tab:alg}), along with a number of work flow tools (e.g.,
+the ``read'' functions mentioned above).  \enaR\ captures all of the
+Patten School algorithms previously implemented in NEA.m along with
+some recent developments. Ulanowicz School algorithms are more
+limited, including the ascendency calculations \citep{ulanowicz97} and
+mixed trophic impacts analyses \citep{ulanowicz90}.  It is our hope
+that user participation will develop the the package further through
+the inclusion of more algorithms. Although described more
+comprehensively in the package's vignette, here is a brief description
+of the primary functions:
+
+\begin{description}
+\item \texttt{enaStructure}: analyzes how nodes are connected together. 
+\item \texttt{enaFlow}: quantifies the amount of matter or energy
+  moving among nodes.
+\item \texttt{enaAscendency}: analyzes the developmental status of a
+  network by comparing the observed network to a theoretical network
+  structure based on information theory.
+\item \texttt{enaStorage}: quantifies the amount of matter or energy that
+  is held within nodes. 
+\item \texttt{enaUtility}: estimates the importance of nodes in the
+  network in terms of the relative quantities of matter or energy that
+  passes through each node.
+\item \texttt{enaMTI}: assesses the effect changing a
+  given node will have on the rest of the network.
+\item \texttt{enaControl}: quantifies the degree to which nodes influence
+  the dynamics across the network.
+\item \texttt{enaEnviron}: analyzes the quantities of mattern and energy
+  that are traveling to and from each node across all pathways in the network
+\end{description}
 
 \subsection{Example Application}
 % Apply enaR to a single model.
@@ -1002,7 +1024,7 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
 %% TABLE: Primary Algorithms/Functions
 \begin{table*}[h]
 \center
-\caption{Primary Ecological Network Analysis algorithms in \enaR.}\label{tab:alg}
+\caption{Primary Ecological Network Analysis (ENA) algorithms in \enaR.}\label{tab:alg}
 \tableline
 %\begin{scriptsize}
 \begin{tabular}{l l l l l }
