@@ -26,8 +26,7 @@ outputs <- c(25.1650, 5.76, 3.5794, 0.4303, 0.3594, 6.1759)
 Living <- c(TRUE,TRUE,TRUE,TRUE,TRUE,FALSE)
 
 # pack the model data into the R network data object
-m <- pack(flow=F,input=inputs, respiration=outputs, living=Living)
-m%v%'output' <- outputs  #  This is a hack due to our current bug
+m <- pack(flow=F,input=inputs, respiration=outputs,output=outputs, living=Living)
 ssCheck(m)
 
 ### THIS IS NO LONGER NEEDED
