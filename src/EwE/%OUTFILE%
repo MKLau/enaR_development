@@ -1,0 +1,624 @@
+$A
+$A$A
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0          0         0               0
+Microbiota                      0          0         1               1
+Meiofauna                       0          0         0               1
+Deposit Feeders                 0          0         0               0
+Predators                       0          0         0               0
+Deposited Detritus              0          1         1               1
+                   Predators Deposited Detritus
+Filter Feeders             1                  1
+Microbiota                 0                  0
+Meiofauna                  0                  1
+Deposit Feeders            1                  1
+Predators                  0                  1
+Deposited Detritus         0                  0
+
+$A$ns
+     n  L         C LD      ppr    lam1A mlam1A      rho         R        d
+[1,] 6 12 0.3333333  2 2.147899 2.147899      1 2.147899 0.4655712 0.147899
+     no.scc no.scc.big      pscc
+[1,]      2          1 0.8333333
+
+
+$F
+$F$T
+    Filter Feeders         Microbiota          Meiofauna    Deposit Feeders 
+           41.4700             8.1721             8.4805             2.5100 
+         Predators Deposited Detritus 
+            0.6856            22.2651 
+
+$F$G
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0  0.0000000 0.0000000      0.00000000
+Microbiota                      0  0.0000000 0.1475753      0.14757529
+Meiofauna                       0  0.0000000 0.0000000      0.07793173
+Deposit Feeders                 0  0.0000000 0.0000000      0.00000000
+Predators                       0  0.0000000 0.0000000      0.00000000
+Deposited Detritus              0  0.3670363 0.3267221      0.02888377
+                    Predators Deposited Detritus
+Filter Feeders     0.01238245          0.3807813
+Microbiota         0.00000000          0.0000000
+Meiofauna          0.00000000          0.5000059
+Deposit Feeders    0.06856574          0.7600000
+Predators          0.00000000          0.4757876
+Deposited Detritus 0.00000000          0.0000000
+
+$F$GP
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0          0 0.0000000       0.0000000
+Microbiota                      0          0 0.1422086       0.4804781
+Meiofauna                       0          0 0.0000000       0.2633068
+Deposit Feeders                 0          0 0.0000000       0.0000000
+Predators                       0          0 0.0000000       0.0000000
+Deposited Detritus              0          1 0.8577914       0.2562151
+                   Predators Deposited Detritus
+Filter Feeders      0.748979         0.70922655
+Microbiota          0.000000         0.00000000
+Meiofauna           0.000000         0.19044603
+Deposit Feeders     0.251021         0.08567669
+Predators           0.000000         0.01465073
+Deposited Detritus  0.000000         0.00000000
+
+$F$N
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  1  0.1970605 0.2044972      0.06052568
+Microbiota                      0  1.1018630 0.2532824      0.19036255
+Meiofauna                       0  0.2862988 1.2971032      0.16586629
+Deposit Feeders                 0  0.4039454 0.4191895      1.12406883
+Predators                       0  0.2424763 0.2516269      0.07447480
+Deposited Detritus              0  0.5096313 0.5288639      0.15652949
+                    Predators Deposited Detritus
+Filter Feeders     0.01653243          0.5368966
+Microbiota         0.01305235          0.2775284
+Meiofauna          0.01137274          0.7800287
+Deposit Feeders    0.07707261          1.1005597
+Predators          1.00510642          0.6606330
+Deposited Detritus 0.01073256          1.3885039
+
+$F$NP
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  1  1.0000000 1.0000000       1.0000000
+Microbiota                      0  1.1018630 0.2440716       0.6197856
+Meiofauna                       0  0.2971032 1.2971032       0.5604100
+Deposit Feeders                 0  0.1240688 0.1240688       1.1240688
+Predators                       0  0.0203426 0.0203426       0.0203426
+Deposited Detritus              0  1.3885039 1.3885039       1.3885039
+                   Predators Deposited Detritus
+Filter Feeders     1.0000000          1.0000000
+Microbiota         0.1555792          0.1018630
+Meiofauna          0.1406747          0.2971032
+Deposit Feeders    0.2821649          0.1240688
+Predators          1.0051064          0.0203426
+Deposited Detritus 0.3485436          1.3885039
+
+$F$ns
+     Boundary     TST     TSTp      APL       FCI       BFI       DFI       IFI
+[1,]    41.47 83.5833 125.0533 2.015512 0.1101686 0.4961517 0.1950689 0.3087794
+         ID.F   ID.F.I   ID.F.O    HMG.I    HMG.O AMP.I AMP.O mode0.F  mode1.F
+[1,] 1.582925 1.716607 1.534181 2.051826 1.891638     3     1   41.47 32.90504
+      mode2.F  mode3.F mode4.F
+[1,] 9.208256 32.90504   41.47
+
+
+$S
+$S$X
+[1] 2000.0000    2.4121   24.1210   16.2740   69.2370 1000.0000
+
+$S$C
+                   Filter Feeders Microbiota  Meiofauna Deposit Feeders
+Filter Feeders          -0.020735  0.0000000  0.0000000      0.00000000
+Microbiota               0.000000 -3.3879607  0.4999793      0.49997927
+Meiofauna                0.000000  0.0000000 -0.3515816      0.02739936
+Deposit Feeders          0.000000  0.0000000  0.0000000     -0.15423375
+Predators                0.000000  0.0000000  0.0000000      0.00000000
+Deposited Detritus       0.000000  0.0081721  0.0072745      0.00064310
+                     Predators Deposited Detritus
+Filter Feeders      0.00025675        0.007895500
+Microbiota          0.00000000        0.000000000
+Meiofauna           0.00000000        0.175792878
+Deposit Feeders     0.01057515        0.117217648
+Predators          -0.00990222        0.004711354
+Deposited Detritus  0.00000000       -0.022265100
+
+$S$P
+                   Filter Feeders  Microbiota   Meiofauna Deposit Feeders
+Filter Feeders          0.9948162 0.000000000 0.000000000     0.000000000
+Microbiota              0.0000000 0.153009825 0.124994818     0.124994818
+Meiofauna               0.0000000 0.000000000 0.912104598     0.006849840
+Deposit Feeders         0.0000000 0.000000000 0.000000000     0.961441563
+Predators               0.0000000 0.000000000 0.000000000     0.000000000
+Deposited Detritus      0.0000000 0.002043025 0.001818625     0.000160775
+                      Predators Deposited Detritus
+Filter Feeders     0.0000641875        0.001973875
+Microbiota         0.0000000000        0.000000000
+Meiofauna          0.0000000000        0.043948219
+Deposit Feeders    0.0026437876        0.029304412
+Predators          0.9975244450        0.001177838
+Deposited Detritus 0.0000000000        0.994433725
+
+$S$S
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders       4.822763e+01 0.05816494 0.5816494       0.3924283
+Microbiota           8.504308e-14 0.32522898 0.7204085       1.2342470
+Meiofauna            2.353673e-13 0.08450477 3.6893375       1.0754215
+Deposit Feeders      3.175238e-13 0.11922965 1.1922965       7.2880861
+Predators           -4.423129e-13 0.07156998 0.7156998       0.4828697
+Deposited Detritus   4.178879e-13 0.15042422 1.5042422       1.0148848
+                    Predators Deposited Detritus
+Filter Feeders       1.669568           24.11382
+Microbiota           1.318123           12.46473
+Meiofauna            1.148505           35.03369
+Deposit Feeders      7.783367           49.42981
+Predators          101.503141           29.67123
+Deposited Detritus   1.083854           62.36235
+
+$S$Q
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders       1.929105e+02  0.2326598  2.326598        1.569713
+Microbiota           3.241851e-14  1.3009159  2.881634        4.936988
+Meiofauna            2.842171e-14  0.3380191 14.757350        4.301686
+Deposit Feeders      1.616485e-13  0.4769186  4.769186       29.152345
+Predators           -1.278977e-13  0.2862799  2.862799        1.931479
+Deposited Detritus   5.506706e-14  0.6016969  6.016969        4.059539
+                    Predators Deposited Detritus
+Filter Feeders       6.678273           96.45527
+Microbiota           5.272494           49.85890
+Meiofauna            4.594018          140.13477
+Deposit Feeders     31.133467          197.71925
+Predators          406.012562          118.68493
+Deposited Detritus   4.335416          249.44939
+
+$S$CP
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders          -0.020735   0.000000  0.00000000      0.00000000
+Microbiota               0.000000  -3.387961  0.04999793      0.07410594
+Meiofauna                0.000000   0.000000 -0.35158161      0.04061079
+Deposit Feeders          0.000000   0.000000  0.00000000     -0.15423375
+Predators                0.000000   0.000000  0.00000000      0.00000000
+Deposited Detritus       0.000000   3.387961  0.30158368      0.03951702
+                      Predators Deposited Detritus
+Filter Feeders      0.007416555          0.0157910
+Microbiota          0.000000000          0.0000000
+Meiofauna           0.000000000          0.0042403
+Deposit Feeders     0.002485665          0.0019076
+Predators          -0.009902220          0.0003262
+Deposited Detritus  0.000000000         -0.0222651
+
+$S$PP
+                   Filter Feeders Microbiota  Meiofauna Deposit Feeders
+Filter Feeders          0.9948162  0.0000000 0.00000000     0.000000000
+Microbiota              0.0000000  0.1530098 0.01249948     0.018526484
+Meiofauna               0.0000000  0.0000000 0.91210460     0.010152698
+Deposit Feeders         0.0000000  0.0000000 0.00000000     0.961441563
+Predators               0.0000000  0.0000000 0.00000000     0.000000000
+Deposited Detritus      0.0000000  0.8469902 0.07539592     0.009879255
+                      Predators Deposited Detritus
+Filter Feeders     0.0018541387        0.003947750
+Microbiota         0.0000000000        0.000000000
+Meiofauna          0.0000000000        0.001060075
+Deposit Feeders    0.0006214163        0.000476900
+Predators          0.9975244450        0.000081550
+Deposited Detritus 0.0000000000        0.994433725
+
+$S$SP
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders       4.822763e+01 48.2276344 48.22763443      48.2276344
+Microbiota           1.249001e-16  0.3252290  0.07204085       0.1829376
+Meiofauna            1.110223e-16  0.8450477  3.68933752       1.5939685
+Deposit Feeders     -8.770762e-15  0.8044208  0.80442079       7.2880861
+Predators           -5.329071e-15  2.0543472  2.05434718       2.0543472
+Deposited Detritus   3.552714e-15 62.3623470 62.36234701      62.3623470
+                      Predators Deposited Detritus
+Filter Feeders      48.22763443        48.22763443
+Microbiota           0.04592119         0.03006617
+Meiofauna            0.40011956         0.84504768
+Deposit Feeders      1.82946269         0.80442079
+Predators          101.50314053         2.05434718
+Deposited Detritus  15.65425893        62.36234701
+
+$S$QP
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders       1.929105e+02 192.910538 192.9105377     192.9105377
+Microbiota          -1.137979e-15   1.300916   0.2881634       0.7317506
+Meiofauna            3.552714e-15   3.380191  14.7573501       6.3758738
+Deposit Feeders      4.884981e-15   3.217683   3.2176832      29.1523445
+Predators           -7.105427e-15   8.217389   8.2173887       8.2173887
+Deposited Detritus  -9.947598e-14 249.449388 249.4493880     249.4493880
+                     Predators Deposited Detritus
+Filter Feeders     192.9105377        192.9105377
+Microbiota           0.1836848          0.1202647
+Meiofauna            1.6004783          3.3801907
+Deposit Feeders      7.3178508          3.2176832
+Predators          406.0125621          8.2173887
+Deposited Detritus  62.6170357        249.4493880
+
+$S$dt
+[1] 0.25
+
+$S$ns
+          TSS       CIS         BSI         DSI       ISI     ID.S  ID.S.I
+[1,] 3112.044 0.9940252 0.003331412 0.003320932 0.9933477 299.1171 454.227
+       ID.S.O  HMG.S.O HMG.S.I NAS NASP mode0.S  mode1.S mode2.S  mode3.S
+[1,] 294.1527 1.115985 1.38251  20   21 10.3675 8.226261 3093.45 8.226261
+     mode4.S
+[1,] 10.3675
+
+
+$U
+$U$D
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders         0.00000000  0.0000000  0.00000000      0.00000000
+Microbiota             0.00000000  0.0000000  0.14220860      0.48047809
+Meiofauna              0.00000000 -0.1475753  0.00000000      0.26330677
+Deposit Feeders        0.00000000 -0.1475753 -0.07793173      0.00000000
+Predators             -0.01238245  0.0000000  0.00000000     -0.06856574
+Deposited Detritus    -0.38078129  1.0000000  0.35778551     -0.50378486
+                    Predators Deposited Detritus
+Filter Feeders      0.7489790         0.70922655
+Microbiota          0.0000000        -0.36703630
+Meiofauna           0.0000000        -0.13627606
+Deposit Feeders     0.2510210         0.05679292
+Predators           0.0000000         0.01465073
+Deposited Detritus -0.4757876         0.00000000
+
+$U$U
+                   Filter Feeders   Microbiota    Meiofauna Deposit Feeders
+Filter Feeders         0.83317099  0.393578638  0.207728965     0.001041927
+Microbiota             0.07063103  0.741440108  0.002057924     0.436939350
+Meiofauna              0.01282909 -0.200029060  0.945742467     0.166312361
+Deposit Feeders       -0.02702309 -0.060914440 -0.056322747     0.910892496
+Predators             -0.01172861  0.007320206  0.005495716    -0.061495934
+Deposited Detritus    -0.22284068  0.547210138  0.287091324     0.066411911
+                    Predators Deposited Detritus
+Filter Feeders      0.4223705       0.4243880619
+Microbiota          0.2547777      -0.1937747434
+Meiofauna           0.0684456      -0.0359172503
+Deposit Feeders     0.1773926       0.0651989351
+Predators           0.9762279      -0.0009440418
+Deposited Detritus -0.4354091       0.5993784792
+
+$U$Y
+                   Filter Feeders  Microbiota   Meiofauna Deposit Feeders
+Filter Feeders         34.5516009  3.21636398  1.76164548     0.002615238
+Microbiota              2.9290686  6.05912271  0.01745223     1.096717767
+Meiofauna               0.5320225 -1.63465748  8.02036899     0.417444025
+Deposit Feeders        -1.1206475 -0.49779890 -0.47764506     2.286340165
+Predators              -0.4863857  0.05982146  0.04660642    -0.154354794
+Deposited Detritus     -9.2412030  4.47185597  2.43467798     0.166693897
+                    Predators Deposited Detritus
+Filter Feeders      0.2895772         9.44904264
+Microbiota          0.1746756        -4.31441404
+Meiofauna           0.0469263        -0.79970117
+Deposit Feeders     0.1216204         1.45166081
+Predators           0.6693019        -0.02101919
+Deposited Detritus -0.2985165        13.34522178
+
+$U$ns
+         lam1D synergism.F mutualism.F
+[1,] 0.8991676    4.915298    2.272727
+
+
+$C
+$C$CN
+                   Filter Feeders   Microbiota    Meiofauna Deposit Feeders
+Filter Feeders       2.220446e-16 8.029437e-01 7.955068e-01    9.394754e-01
+Microbiota           8.666667e-01 2.412032e-06 0.000000e+00    6.928556e-01
+Meiofauna            9.204545e-01 3.640936e-02 9.960987e-06    7.040351e-01
+Deposit Feeders      1.064286e+00 0.000000e+00 0.000000e+00    3.333766e-06
+Predators            1.016529e+00 0.000000e+00 0.000000e+00    0.000000e+00
+Deposited Detritus   0.000000e+00 6.329760e-01 6.191245e-01    8.872709e-01
+                      Predators Deposited Detritus
+Filter Feeders     9.834675e-01       4.631029e-01
+Microbiota         9.161043e-01       0.000000e+00
+Meiofauna          9.191580e-01       0.000000e+00
+Deposit Feeders    7.268535e-01       0.000000e+00
+Predators          1.534510e-07       0.000000e+00
+Deposited Detritus 9.692083e-01       1.098098e-05
+
+$C$CQ
+                   Filter Feeders   Microbiota    Meiofauna Deposit Feeders
+Filter Feeders        1.000000000 2.528060e-14 4.839890e-16    6.079801e-15
+Microbiota           -0.001700102 1.088802e+00 2.423047e-02    1.792439e-02
+Meiofauna            -0.017001015 2.167900e+00 1.242305e+00    1.792439e-01
+Deposit Feeders      -0.011470276 3.587721e+00 7.782008e-02    1.120933e+00
+Predators            -0.735300235 3.831534e+00 8.310854e-02    9.460874e-01
+Deposited Detritus   -0.704822148 3.681535e+01 1.004538e+01    7.431030e+00
+                       Predators Deposited Detritus
+Filter Feeders     -3.638030e-16      -3.093186e-14
+Microbiota          6.596333e-04      -1.128711e+00
+Meiofauna           6.596333e-03      -3.566984e+00
+Deposit Feeders     4.450426e-03      -4.771317e+00
+Predators           1.004753e+00      -5.095564e+00
+Deposited Detritus  2.734685e-01      -5.336041e+01
+
+
+$mti
+$mti$G
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0          0 0.0000000       0.0000000
+Microbiota                      0          0 0.1422086       0.4804781
+Meiofauna                       0          0 0.0000000       0.2633068
+Deposit Feeders                 0          0 0.0000000       0.0000000
+Predators                       0          0 0.0000000       0.0000000
+Deposited Detritus              0          1 0.8577914       0.2562151
+                   Predators Deposited Detritus
+Filter Feeders      0.748979         0.70922655
+Microbiota          0.000000         0.00000000
+Meiofauna           0.000000         0.19044603
+Deposit Feeders     0.251021         0.08567669
+Predators           0.000000         0.01465073
+Deposited Detritus  0.000000         0.00000000
+
+$mti$FP
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0  0.0000000 0.0000000      0.00000000
+Microbiota                      0  0.0000000 0.4999793      0.49997927
+Meiofauna                       0  0.0000000 0.0000000      0.13484728
+Deposit Feeders                 0  0.0000000 0.0000000      0.00000000
+Predators                       0  0.0000000 0.0000000      0.00000000
+Deposited Detritus              0  0.5079246 0.4521356      0.03997091
+                    Predators Deposited Detritus
+Filter Feeders     0.03149341                  0
+Microbiota         0.00000000                  0
+Meiofauna          0.00000000                  0
+Deposit Feeders    0.08275232                  0
+Predators          0.00000000                  0
+Deposited Detritus 0.00000000                  0
+
+$mti$Q
+                   Filter Feeders Microbiota  Meiofauna Deposit Feeders
+Filter Feeders         0.00000000  0.0000000  0.0000000      0.00000000
+Microbiota             0.00000000  0.0000000  0.1422086      0.48047809
+Meiofauna              0.00000000 -0.4999793  0.0000000      0.26330677
+Deposit Feeders        0.00000000 -0.4999793 -0.1348473      0.00000000
+Predators             -0.03149341  0.0000000  0.0000000     -0.08275232
+Deposited Detritus     0.00000000  1.0000000  0.8577914      0.25621514
+                   Predators Deposited Detritus
+Filter Feeders      0.748979         0.70922655
+Microbiota          0.000000        -0.50792457
+Meiofauna           0.000000        -0.26168956
+Deposit Feeders     0.251021         0.04570577
+Predators           0.000000         0.01465073
+Deposited Detritus  0.000000         0.00000000
+
+$mti$M
+                   Filter Feeders  Microbiota    Meiofauna Deposit Feeders
+Filter Feeders      -0.0250635283  0.16956382  0.431493557      0.26144106
+Microbiota          -0.0015848556 -0.30675078 -0.182458391      0.20520368
+Meiofauna           -0.0001241781 -0.47413204 -0.070959618      0.01607831
+Deposit Feeders     -0.0069255188 -0.26769125 -0.007062628     -0.10329881
+Predators           -0.0301817448  0.02000515 -0.004028911     -0.07586335
+Deposited Detritus  -0.0034657973  0.21795628  0.612654910      0.44874394
+                      Predators Deposited Detritus
+Filter Feeders      0.795834137        0.516016759
+Microbiota          0.050323410       -0.295378609
+Meiofauna           0.003942987       -0.001592286
+Deposit Feeders     0.219903765        0.177109591
+Predators          -0.041648786       -0.019939324
+Deposited Detritus  0.110048344       -0.251366300
+
+
+$E
+$E$input
+$E$input$`Filter Feeders`
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                 -1          0         0               0
+Microbiota                      0          0         0               0
+Meiofauna                       0          0         0               0
+Deposit Feeders                 0          0         0               0
+Predators                       0          0         0               0
+Deposited Detritus              0          0         0               0
+z                               1          0         0               0
+                   Predators Deposited Detritus y
+Filter Feeders             0                  0 1
+Microbiota                 0                  0 0
+Meiofauna                  0                  0 0
+Deposit Feeders            0                  0 0
+Predators                  0                  0 0
+Deposited Detritus         0                  0 0
+z                          0                  0 0
+
+$E$input$Microbiota
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders                 -1   0.000000  0.00000000      0.00000000
+Microbiota                      0  -1.101863  0.04225063      0.05961236
+Meiofauna                       0   0.000000 -0.29710322      0.03266816
+Deposit Feeders                 0   0.000000  0.00000000     -0.12406883
+Predators                       0   0.000000  0.00000000      0.00000000
+Deposited Detritus              0   1.101863  0.25485259      0.03178831
+z                               1   0.000000  0.00000000      0.00000000
+                      Predators Deposited Detritus            y
+Filter Feeders      0.015236178          0.9847638 0.000000e+00
+Microbiota          0.000000000          0.0000000 1.000000e+00
+Meiofauna           0.000000000          0.2644351 0.000000e+00
+Deposit Feeders     0.005106419          0.1189624 0.000000e+00
+Predators          -0.020342598          0.0203426 0.000000e+00
+Deposited Detritus  0.000000000         -1.3885039 1.009165e-10
+z                   0.000000000          0.0000000 0.000000e+00
+
+$E$input$Meiofauna
+                   Filter Feeders Microbiota  Meiofauna Deposit Feeders
+Filter Feeders                 -1  0.0000000  0.0000000      0.00000000
+Microbiota                      0 -0.2440716  0.1844592      0.05961236
+Meiofauna                       0  0.0000000 -1.2971032      0.03266816
+Deposit Feeders                 0  0.0000000  0.0000000     -0.12406883
+Predators                       0  0.0000000  0.0000000      0.00000000
+Deposited Detritus              0  0.2440716  1.1126440      0.03178831
+z                               1  0.0000000  0.0000000      0.00000000
+                      Predators Deposited Detritus y
+Filter Feeders      0.015236178          0.9847638 0
+Microbiota          0.000000000          0.0000000 0
+Meiofauna           0.000000000          0.2644351 1
+Deposit Feeders     0.005106419          0.1189624 0
+Predators          -0.020342598          0.0203426 0
+Deposited Detritus  0.000000000         -1.3885039 0
+z                   0.000000000          0.0000000 0
+
+$E$input$`Deposit Feeders`
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders                 -1  0.0000000  0.00000000       0.0000000
+Microbiota                      0 -0.6197856  0.07969512       0.5400904
+Meiofauna                       0  0.0000000 -0.56041000       0.2959749
+Deposit Feeders                 0  0.0000000  0.00000000      -1.1240688
+Predators                       0  0.0000000  0.00000000       0.0000000
+Deposited Detritus              0  0.6197856  0.48071488       0.2880035
+z                               1  0.0000000  0.00000000       0.0000000
+                      Predators Deposited Detritus            y
+Filter Feeders      0.015236178          0.9847638 0.000000e+00
+Microbiota          0.000000000          0.0000000 0.000000e+00
+Meiofauna           0.000000000          0.2644351 0.000000e+00
+Deposit Feeders     0.005106419          0.1189624 1.000000e+00
+Predators          -0.020342598          0.0203426 0.000000e+00
+Deposited Detritus  0.000000000         -1.3885039 1.004458e-10
+z                   0.000000000          0.0000000 0.000000e+00
+
+$E$input$Predators
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders                 -1  0.0000000  0.00000000      0.00000000
+Microbiota                      0 -0.1555792  0.02000515      0.13557404
+Meiofauna                       0  0.0000000 -0.14067468      0.07429593
+Deposit Feeders                 0  0.0000000  0.00000000     -0.28216489
+Predators                       0  0.0000000  0.00000000      0.00000000
+Deposited Detritus              0  0.1555792  0.12066953      0.07229492
+z                               1  0.0000000  0.00000000      0.00000000
+                    Predators Deposited Detritus y
+Filter Feeders      0.7528036        0.247196403 0
+Microbiota          0.0000000        0.000000000 0
+Meiofauna           0.0000000        0.066378754 0
+Deposit Feeders     0.2523028        0.029862064 0
+Predators          -1.0051064        0.005106419 1
+Deposited Detritus  0.0000000       -0.348543640 0
+z                   0.0000000        0.000000000 0
+
+$E$input$`Deposited Detritus`
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders                 -1   0.000000  0.00000000      0.00000000
+Microbiota                      0  -0.101863  0.04225063      0.05961236
+Meiofauna                       0   0.000000 -0.29710322      0.03266816
+Deposit Feeders                 0   0.000000  0.00000000     -0.12406883
+Predators                       0   0.000000  0.00000000      0.00000000
+Deposited Detritus              0   0.101863  0.25485259      0.03178831
+z                               1   0.000000  0.00000000      0.00000000
+                      Predators Deposited Detritus y
+Filter Feeders      0.015236178          0.9847638 0
+Microbiota          0.000000000          0.0000000 0
+Meiofauna           0.000000000          0.2644351 0
+Deposit Feeders     0.005106419          0.1189624 0
+Predators          -0.020342598          0.0203426 0
+Deposited Detritus  0.000000000         -1.3885039 1
+z                   0.000000000          0.0000000 0
+
+
+$E$output
+$E$output$`Filter Feeders`
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders                 -1  0.0000000  0.00000000      0.00000000
+Microbiota                      0 -0.1970605  0.02908126      0.02908126
+Meiofauna                       0  0.0000000 -0.20449723      0.01593682
+Deposit Feeders                 0  0.0000000  0.00000000     -0.06052568
+Predators                       0  0.0000000  0.00000000      0.00000000
+Deposited Detritus              0  0.1970605  0.17541596      0.01550760
+z                               1  0.0000000  0.00000000      0.00000000
+                      Predators Deposited Detritus           y
+Filter Feeders      0.012382445        0.380781288 0.606836267
+Microbiota          0.000000000        0.000000000 0.138897999
+Meiofauna           0.000000000        0.102249819 0.086310586
+Deposit Feeders     0.004149988        0.045999518 0.010376176
+Predators          -0.016532433        0.007865927 0.008666506
+Deposited Detritus  0.000000000       -0.536896552 0.148912467
+z                   0.000000000        0.000000000 0.000000000
+
+$E$output$Microbiota
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders                  0   0.000000  0.00000000     0.000000000
+Microbiota                      0  -1.101863  0.16260775     0.162607746
+Meiofauna                       0   0.000000 -0.25328240     0.019738734
+Deposit Feeders                 0   0.000000  0.00000000    -0.190362546
+Predators                       0   0.000000  0.00000000     0.000000000
+Deposited Detritus              0   0.101863  0.09067465     0.008016065
+z                               0   1.000000  0.00000000     0.000000000
+                     Predators Deposited Detritus           y
+Filter Feeders      0.00000000        0.000000000 0.000000000
+Microbiota          0.00000000        0.000000000 0.776647495
+Meiofauna           0.00000000        0.126642691 0.106900970
+Deposit Feeders     0.01305235        0.144675535 0.032634663
+Predators          -0.01305235        0.006210146 0.006842202
+Deposited Detritus  0.00000000       -0.277528372 0.076974669
+z                   0.00000000        0.000000000 0.000000000
+
+$E$output$Meiofauna
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders                  0  0.0000000  0.00000000      0.00000000
+Microbiota                      0 -0.2862988  0.04225063      0.04225063
+Meiofauna                       0  0.0000000 -1.29710322      0.10108549
+Deposit Feeders                 0  0.0000000  0.00000000     -0.16586629
+Predators                       0  0.0000000  0.00000000      0.00000000
+Deposited Detritus              0  0.2862988  0.25485259      0.02253017
+z                               0  0.0000000  1.00000000      0.00000000
+                     Predators Deposited Detritus           y
+Filter Feeders      0.00000000        0.000000000 0.000000000
+Microbiota          0.00000000        0.000000000 0.201797569
+Meiofauna           0.00000000        0.648559260 0.547458472
+Deposit Feeders     0.01137274        0.126058382 0.028435166
+Predators          -0.01137274        0.005411011 0.005961733
+Deposited Detritus  0.00000000       -0.780028653 0.216347061
+z                   0.00000000        0.000000000 0.000000000
+
+$E$output$`Deposit Feeders`
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders                  0  0.0000000  0.00000000      0.00000000
+Microbiota                      0 -0.4039454  0.05961236      0.05961236
+Meiofauna                       0  0.0000000 -0.41918954      0.03266816
+Deposit Feeders                 0  0.0000000  0.00000000     -1.12406883
+Predators                       0  0.0000000  0.00000000      0.00000000
+Deposited Detritus              0  0.4039454  0.35957718      0.03178831
+z                               0  0.0000000  0.00000000      1.00000000
+                     Predators Deposited Detritus          y
+Filter Feeders      0.00000000         0.00000000 0.00000000
+Microbiota          0.00000000         0.00000000 0.28472067
+Meiofauna           0.00000000         0.20959724 0.17692413
+Deposit Feeders     0.07707261         0.85429231 0.19270391
+Predators          -0.07707261         0.03667019 0.04040241
+Deposited Detritus  0.00000000        -1.10055975 0.30524887
+z                   0.00000000         0.00000000 0.00000000
+
+$E$output$Predators
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders                  0  0.0000000  0.00000000      0.00000000
+Microbiota                      0 -0.2424763  0.03578351      0.03578351
+Meiofauna                       0  0.0000000 -0.25162689      0.01960972
+Deposit Feeders                 0  0.0000000  0.00000000     -0.07447480
+Predators                       0  0.0000000  0.00000000      0.00000000
+Deposited Detritus              0  0.2424763  0.21584339      0.01908157
+z                               0  0.0000000  0.00000000      0.00000000
+                      Predators Deposited Detritus          y
+Filter Feeders      0.000000000         0.00000000 0.00000000
+Microbiota          0.000000000         0.00000000 0.17090927
+Meiofauna           0.000000000         0.12581493 0.10620225
+Deposit Feeders     0.005106419         0.05660084 0.01276753
+Predators          -1.005106419         0.47821720 0.52688922
+Deposited Detritus  0.000000000        -0.66063298 0.18323173
+z                   1.000000000         0.00000000 0.00000000
+
+$E$output$`Deposited Detritus`
+                   Filter Feeders Microbiota   Meiofauna Deposit Feeders
+Filter Feeders                  0  0.0000000  0.00000000      0.00000000
+Microbiota                      0 -0.5096313  0.07520899      0.07520899
+Meiofauna                       0  0.0000000 -0.52886388      0.04121528
+Deposit Feeders                 0  0.0000000  0.00000000     -0.15652949
+Predators                       0  0.0000000  0.00000000      0.00000000
+Deposited Detritus              0  0.5096313  0.45365489      0.04010523
+z                               0  0.0000000  0.00000000      0.00000000
+                     Predators Deposited Detritus           y
+Filter Feeders      0.00000000        0.000000000 0.000000000
+Microbiota          0.00000000        0.000000000 0.359213355
+Meiofauna           0.00000000        0.264435060 0.223213549
+Deposit Feeders     0.01073256        0.118962413 0.026834518
+Predators          -0.01073256        0.005106419 0.005626141
+Deposited Detritus  0.00000000       -1.388503892 0.385112438
+z                   0.00000000        1.000000000 0.000000000
+
+
+
