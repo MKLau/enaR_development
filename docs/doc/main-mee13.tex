@@ -115,11 +115,11 @@ For example, \citet{ings2009} discovered that a notable fraction of
 host-parasitoid networks ($\approx$0.06\%). Likewise,
 \citet{borrett14_rise} found that the percent of ecology and
 evolutionary biology papers indexed by Web of Science that could be
-classified as Network Ecology increased from 0.4\% in 1990 to more
+classified as Network Ecology increased from 1.3\% in 1991 to more
 than 5\% in 2012.  This rise of Network Ecology contributes to,
 mirrors, and builds on the more general growth of network sciences
 \citep{wasserman94, barabasi12, borgatti2003network,
-  freeman2004development, newman03review}. 
+  freeman2004development, newman03review}.
 
 %% However, it seems likely
 %% that the field is growing in part because the network approach is
@@ -191,7 +191,7 @@ Further, users can freely download a stable version of the package
 from the CRAN website
 (\url{http://cran.r-project.org/web/packages/enaR/}), and the code for
 every function in \R\ is available from within \R\ (e.g.,
-\texttt{edit($x$)}).  In addition, \enaR\ development is being managed
+\texttt{edit($function\_name$)}).  In addition, \enaR\ development is being managed
 via GitHub (\url{https://github.com/TheSeeLab/enaR}) to encourage
 collaborative development.  The third design objective was to enable
 \enaR\ users access to other network analysis tools from other
@@ -200,6 +200,7 @@ with two existing \R\ network analysis packages:  \texttt{network}
 \citep{butts08_network} and \texttt{sna} \citep{butts08_social}.  In
 summary, the aim of the \enaR\ package is to make ENA tools more
 available and easier to use, adapt, and extend.
+% does this sufficiently address the editors concerns about "novelty".
 
 % Paper Objectives
 In this paper, we present an overview of \enaR\ and highlight some of
@@ -282,7 +283,7 @@ visualization is included in the online supplementary information.
 % enaR Algorithms
 \enaR\ includes many of the most commonly used ENA algorithms
 (Table~\ref{tab:alg}), along with a number of work flow and specialty
-analyses (Tables~\ref{tab:algIO} and \ref{tab:algaux}).  Note that the XX
+analyses (Tables~\ref{tab:algIO} and \ref{tab:algaux}).  Note that the nine
 primary ENA functions begin with the prefix `ena' followed by the
 specific analysis name (see Table~\ref{tab:alg}).  There are a total
 of 34 functions in the \enaR\ package.
@@ -303,11 +304,12 @@ that formalizes the concept of environment \citep{patten78}, and has
 often been referred to as ``Network Environ Analysis.''  \enaR\
 currently captures all of the Patten School algorithms previously
 implemented in NEA.m \citep{fath06}, along with some recent
-developments.  Ulanowicz School algorithms are more limited, including
+developments.  Presently, the Ulanowicz School algorithms are more limited, including
 the ascendency calculations \citep{ulanowicz97} and mixed trophic
-impacts analyses \citep{ulanowicz90}.  We expect the package
+impacts analyses \citep{ulanowicz90}; however, we expect the package
 capabilities to continue to grow, especially with the assistance of
-new users.
+new users.  This combination of the Patten and Ulanowicz schools of
+analyses is rare in extant software.
 
 \subsection{Example Application}
 % Apply enaR to a single model.
@@ -321,10 +323,10 @@ into the analysis function.  The final step is interpreting the
 analytical output. This is a typical workflow for ENA.
 
 After loading the \enaR\ package, the next step is to enter the model
-data.  
+data.
 %In this example, we use the \texttt{read.scor} function to
 %import the SCOR formatted data from a text file, which is assumed to
-%be in the current \R\ working directory (online supplement).  
+%be in the current \R\ working directory (online supplement).
 Here, we have extracted the model information from the paper and
 created a vector of node names, the flow matrix (F), inputs (z),
 outputs (y), and the logical vector indicating whether or not the
@@ -357,7 +359,7 @@ these whole network indicators show the importance of indirect
 interactions in the system.  A next analytical step might be to apply
 the Utility or Mixed Trophic Impacts analyses to determine the net
 relationships among the ecosystem components when we consider the
-direct and indirect interactions.  
+direct and indirect interactions.
 % Patten (1991) showed that ....
 More detailed guidance for how to interpret ENA results can be found
 in previously published literature \citep{fath06, schramski11,
@@ -423,7 +425,7 @@ Batch analysis can be used in several additional ways.  One
 application is for meta-analyses, such as tests of the generality of
 hypothesized ecosystem properties like network non-locality
 \citep{salas11_did}, %and network homogenization
-                     %\citep{borrett10_hmg}, 
+                     %\citep{borrett10_hmg},
 or to investigate how physical features might influence ENA results
 \citep{niquil2012physical}. Fig.~\ref{fig:example}b illustrates the
 rank-ordered network homogenization statistic for the 56 trophic-based
@@ -526,7 +528,7 @@ which may make \enaR\ more suited to advanced practitioners.
 % The library joins analyses from both the
 % currently separate schools of ENA into a single software package.  The
 % library is built in \R\ so that the functions are transparent and
-% adaptable by the community of users.  
+% adaptable by the community of users.
 
 In the near future, we anticipate two initial lines of continued
 development for the \enaR\ package. The first is to increase the
@@ -554,7 +556,7 @@ analysis is a branch of the broader domain of Network Ecology, which
 is rapidly growing in part because the tools and techniques let
 ecologists address a wide range of relational questions that lie at
 the core of ecology.  We look forward to seeing the new ecology
-discovered through the use of \enaR . 
+discovered through the use of \enaR .
 
 
 
@@ -569,14 +571,14 @@ discovered through the use of \enaR .
 % our hope that \enaR\ can serve as an organizing point for ENA and
 % other ecological network methods with the hope that doing so will not
 % only produce relevant software, but also promote feedback between
-% theory and applications. 
+% theory and applications.
 
 % % % This is redundant
 % % Toward this end, we have created a GitHub
 % % development repository
 % % (\url{https://github.com/MKLau/enaR_development}) and project page
 % % (\url{http://theseelab.github.io/enaR/}), where researchers can find
-% % more information on how to contribute software. 
+% % more information on how to contribute software.
 
 % Together, the open-source tools for version control and project
 % management provided by Git and GitHub will increase the potential for
@@ -1135,27 +1137,47 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
   reef model.} \label{tab:flow}
 \tableline
 \begin{verbatim}
-> library(enaR)                 # load package
-> m <- read.scor("oyster.dat")  # read model data from SCOR formatted file
-> m <- balance(m)               # balance model using AVG2 algorithm
-[1] BALANCED
-> u <- unpack(m)                # unpack model data to illustrate components
-> attributes(u)
-$names
-[1] "F"      "z"      "r"      "e"      "y"      "X"      "Living"
-
+library(enaR)   # load enaR package
+> # -- ENTER MODEL DATA -- from Dame and Patten (1981)
+> # node names
+> names <- c("Filter Feeders","Microbiota","Meiofauna",
++                       "Deposit Feeders","Predators","Deposited Detritus")
+> # Internal Flows of model, as matrix (oriented row to column)
+> F <- matrix(c(0, 0, 0, 0, 0, 0, 0, 0, 0,
++                0, 0, 8.1721, 0, 1.2060, 0, 0, 0, 7.2745,
++                0, 1.2060, 0.6609, 0, 0, 0.6431, 0.5135, 0, 0,
++                0.1721, 0, 0, 15.7910, 0, 4.2403, 1.9076, 0.3262, 0),
++             ncol=6)
+> rownames(F) <- names  # add node names to rows
+> colnames(F) <- names  # add node names to cols
+> # boundary flows
+> inputs <- c(41.47,0, 0, 0, 0, 0)
+> outputs <- c(25.1650, 5.76, 3.5794, 0.4303, 0.3594, 6.1759)
+> # Living
+> Living <- c(TRUE,TRUE,TRUE,TRUE,TRUE,FALSE)
+> # pack the model data into the R network data object
+> m <- pack(flow=F,input=inputs, respiration=outputs, outputs=outputs, living=Living);
+>
+> ssCheck(m)                # check to see if the model is at steady-state
+[1] TRUE
+> # perform flow analysis
 > F <- enaFlow(m)               # perform ENA flow analysis
 > attributes(F)                  # show analysis objects created
 $names
 [1] "T"  "G"  "GP" "N"  "NP" "ns"
 
 > F$ns                          # show flow analysis network statistics
-     Boundary     TST     TSTp      APL       FCI       BFI       DFI       IFI
-[1,]    41.47 83.5833 125.0533 2.015512 0.1101686 0.4961517 0.1950689 0.3087794
+     Boundary     TST TSTp      APL       FCI       BFI       DFI       IFI
+[1,]    41.47 83.5833   NA 2.015512 0.1101686 0.4961517 0.1950689 0.3087794
          ID.F   ID.F.I   ID.F.O    HMG.I    HMG.O AMP.I AMP.O mode0.F  mode1.F
 [1,] 1.582925 1.716607 1.534181 2.051826 1.891638     3     1   41.47 32.90504
       mode2.F  mode3.F mode4.F
 [1,] 9.208256 32.90504   41.47
+> F$T
+    Filter Feeders         Microbiota          Meiofauna    Deposit Feeders
+           41.4700             8.1721             8.4805             2.5100
+         Predators Deposited Detritus
+            0.6856            22.2651
 \end{verbatim}
 
 \tableline
