@@ -56,7 +56,7 @@ urlcolor=red]{hyperref}
 \begin{description}
   \item[\textbf{Title}:] \enaR: An \R\ package for Ecosystem Network Analysis
   \item[\textbf{Running Title}:] R ecosystem network analysis package
-  \item[\textbf{Word Count}:] 3146
+  \item[\textbf{Word Count}:] 3128
   \item[\textbf{Authors}:] Stuart R. Borrett, Matthew K. Lau
   \item[\textbf{Addresses}:] \
     \begin{itemize}
@@ -194,7 +194,7 @@ every function in \R\ is available from within \R\ (e.g.,
 \texttt{edit($function\_name$)}).  In addition, \enaR\ development is being managed
 via GitHub (\url{https://github.com/TheSeeLab/enaR}) to encourage
 collaborative development.  The third design objective was to enable
-\enaR\ users access to other network analysis tools from other
+\enaR\ users access to network analysis tools from other
 disciplines.  To enable this, \enaR\ was designed to work directly
 with two existing \R\ network analysis packages:  \texttt{network}
 \citep{butts08_network} and \texttt{sna} \citep{butts08_social}.  In
@@ -222,7 +222,7 @@ generally be applied to any Input-Output system that follows a
 thermodynamically conserved unit among the compartments.  Thus, it is a
 family of related algorithms to analyze the ecosystem from several
 perspectives including its structure, flow, storage, and utility.
-Together, these analyses functions as a ``macroscope'' to investigate
+Together, these analyses function as a ``macroscope'' to investigate
 (1) whole system organization, (2) the direct and indirect effects
 among system components, and (3) the processes that create and sustain
 ecological systems.
@@ -233,7 +233,7 @@ ecological systems.
 In this section we provide an overview of these algorithms and tools
 include in the \enaR\ software.  After describing the required model
 information, we highlight the primary ENA algorithms included in
-\enaR\ .  We then walk through an example application of the \enaR\ Flow
+\enaR .  We then walk through an example application of the \enaR\ Flow
 analysis.
 
 \subsection{Data Requirements and Input}
@@ -336,8 +336,8 @@ The next step is to apply the \texttt{ssCheck} function ensure that
 the model is at steady-state, which is one of the assumptions of the
 flow analysis \citep{finn76, fath06}.  If the model had not been at
 steady-state, we could have then applied one of four automated
-balancing algorithms \citet[AVG, Input-Output, Output-Input,
-AVG2,][]{allesina03} to force the model into a steady-state.  We then
+balancing algorithms \citep[AVG, Input-Output, Output-Input,
+AVG2;][]{allesina03} to force the model into a steady-state.  We then
 apply the \texttt{enaFlow} function to the model to perform the
 desired ENA flow analysis.  As shown with the \texttt{attributes}
 function, this analysis returns 4 matrices ($\mathbf{G}$,
@@ -359,7 +359,7 @@ these whole network indicators show the importance of indirect
 interactions in the system.  A next analytical step might be to apply
 the Utility or Mixed Trophic Impacts analyses to determine the net
 relationships among the ecosystem components when we consider the
-direct and indirect interactions.
+direct and indirect interactions, but this is beyond our analysis here.
 % Patten (1991) showed that ....
 More detailed guidance for how to interpret ENA results can be found
 in previously published literature \citep{fath06, schramski11,
@@ -372,7 +372,7 @@ There are several features of the \enaR\ package beyond the core
 analyses that add substantive value for users.  In this section, we
 highlight several value added features, including a library of 100
 ecosystem network models, methods for conducting batch analysis (i.e.,
-simultaneous analysis of multiple models) and connections to other
+simultaneous analysis of multiple models), and connections to other
 analytical software.
 
 \subsection{Model Library}
@@ -383,11 +383,12 @@ library of 100 previously published ecosystem network models with the
 unit (e.g., C, N, P) through a particular ecosystem.  The models in
 this set are empirically-based in that the authors attempted to model
 a specific system and parameterized the model to some degree with
-empirical estimates.  The library includes models used previously to
+empirical estimates.  While the library includes models used previously to
 test several systems ecology hypotheses \citep{borrett10_idd,
-  borrett10_hmg, salas11_did, borrett13}.  This set has a 47\%
+  borrett10_hmg, salas11_did, borrett13}, and the set has a 47\%
 overlap with the set of models previously collected by Dr.\ Ulanowicz
-(\url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}).
+(\url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}), the full
+set has not previously been collected and distributed together.
 
 We have tentatively split these models into two classes.  The most
 abundant class is the trophic network models. % (Table~\ref{tab:TRO}).
@@ -437,13 +438,16 @@ extends previous results of \citet{borrett10_hmg} to include several
 new models.  A second kind of application is the exploration of new
 ENA inter-relationships.  With the collection of algorithms and the
 library of models, we can now investigate possible relationships among
-ENA indicators from different schools (Fig.~\ref{fig:example}c).  A
-third application of batch analysis is to investigate the previously
-unknown empirical ranges of ENA whole-network statistics, which may be
-useful for interpreting results from specific applications.
-Fig.~\ref{fig:ns} shows the observed distribution of values for
-selected network statistics from the 100 models in the library easily
-analyzed using \texttt{lapply} and the associated \enaR\ functions.
+ENA indicators from different schools (Fig.~\ref{fig:example}c). The
+\R\ script to generate Fig.~\ref{fig:example} is available as an
+online enhancment.  A third application of batch analysis is to
+investigate the previously unknown empirical ranges of ENA
+whole-network statistics, which may be useful for interpreting results
+from specific applications.  Fig.~\ref{fig:ns} shows the observed
+distribution of values for selected network statistics from the 100
+models in the library easily analyzed using \texttt{lapply} and the
+associated \enaR\ functions.
+
 
 \subsection{New Connections}
 % Connections to other tools (SNA, igraph)
@@ -474,8 +478,7 @@ linear inverse modeling \citep{soetaert09}, which can also be used for
 uncertainty analyses of ENA \citep{kones09}. There are a wealth of
 additional \R\ package that network ecologists may find useful
 including \texttt{bipartite} \citep{dormann2008}, \texttt{vegan}
-\citep{dixon2003vegan}, \texttt{bioconductor}
-\citep{gentleman2004bioconductor}, \texttt{Cheddar}
+\citep{dixon2003vegan}, \texttt{Cheddar}
 \citep{hudson2013}, and packages in the \texttt{statnet} family
 \citep{handcock2008statnet}.
 
@@ -511,15 +514,16 @@ including \texttt{bipartite} \citep{dormann2008}, \texttt{vegan}
 % created, but do not appear to have a large user base
 % \citep{latham2006,kones09}.
 
-The \enaR\ package is designed to address limitations of existing ENA
-software and facilitate wide development and use. It does this by (1)
-providing greater accessibility to the code (e.g., free and open
-source software available on multiple OS), (2) collecting a broad set
-of available ENA algorithms and workflow management functions, and (3)
-creating the potential for collaborative development (via GitHub and
-CRAN).  Further, the software is extensible for individual needs and
-it lets users integrate ENA into a broader workflow in \R\ in a way
-that is not possible in web based tools like EcoNet
+The \enaR\ package encodes exiting ENA algorithms, and is designed to
+address limitations of current ENA software and facilitate wide
+development and use. It does this by (1) providing greater
+accessibility to the code (e.g., free and open source software
+available on multiple OS), (2) collecting a broad set of available ENA
+algorithms and workflow management functions, and (3) creating the
+potential for collaborative development (via GitHub and CRAN).
+Further, the software is extensible for individual needs and it lets
+users integrate ENA into a broader workflow in \R\ in a way that is
+not possible in web based tools like EcoNet
 \citep{kazanci07,schramski11}.  Finally, it lets users have access to
 other network and statistical analysis tools (e.g., social network
 analysis) that are already part of \R.  These benefits come at the
@@ -786,14 +790,14 @@ Freeman, L.C. (2004) \emph{The development of social network analysis: A study
   in the sociology of science}.
 \newblock Empirical Press Vancouver.
 
-\bibitem[{Gentleman \emph{et~al.}(2004)Gentleman, Carey, Bates, Bolstad,
-  Dettling, Dudoit, Ellis, Gautier, Ge, Gentry
-  \emph{et~al.}}]{gentleman2004bioconductor}
-Gentleman, R.C., Carey, V.J., Bates, D.M., Bolstad, B., Dettling, M., Dudoit,
-  S., Ellis, B., Gautier, L., Ge, Y., Gentry, J. \emph{et~al.} (2004)
-  Bioconductor: open software development for computational biology and
-  bioinformatics.
-\newblock \emph{Genome biology}, \textbf{5}, R80.
+%\bibitem[{Gentleman \emph{et~al.}(2004)Gentleman, Carey, Bates, Bolstad,
+%  Dettling, Dudoit, Ellis, Gautier, Ge, Gentry
+%  \emph{et~al.}}]{gentleman2004bioconductor}
+%Gentleman, R.C., Carey, V.J., Bates, D.M., Bolstad, B., Dettling, M., Dudoit,
+%  S., Ellis, B., Gautier, L., Ge, Y., Gentry, J. \emph{et~al.} (2004)
+%  Bioconductor: open software development for computational biology and
+%  bioinformatics.
+%\newblock \emph{Genome biology}, \textbf{5}, R80.
 
 \bibitem[{Handcock \emph{et~al.}(2008)Handcock, Hunter, Butts, Goodreau \&
   Morris}]{handcock2008statnet}
@@ -883,7 +887,7 @@ Monaco, M.E. \& Ulanowicz, R.E. (1997) Comparative ecosystem trophic structure
   Bender-deMoll}]{moody05dynamic}
 Moody, J., McFarland, D. \& Bender-deMoll, S. (2005) Dynamic network
   visualization.
-\newblock \emph{American Journal of Sociology}, \textbf{110}, 1206--1241.
+\newblock \emph{Am J Soc}, \textbf{110}, 1206--1241.
 
 \bibitem[{Newman(2003)}]{newman03review}
 Newman, M. (2003) The structure and function of complex networks.
@@ -976,7 +980,7 @@ Ulanowicz, R.E., Holt, R.D. \& Barfield, M. (2014) Limits on ecosystem trophic
 \bibitem[{Ulanowicz \& Kay(1991)}]{ulanowicz91}
 Ulanowicz, R.E. \& Kay, J. (1991) A package for the analysis of ecosystem flow
   networks.
-\newblock \emph{Environmental Software}, \textbf{6}, 131--142.
+\newblock \emph{Environ Softw}, \textbf{6}, 131--142.
 
 \bibitem[{Ulanowicz \& Kemp(1979)}]{ulanowicz1979trophic}
 Ulanowicz, R.E. \& Kemp, W.M. (1979) Toward canonical trophic aggregations.
@@ -1079,12 +1083,12 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
   whole-network statistics including the average mutual information,
   Ascendency, Capacity, and Overhead.  & \citet{ulanowicz97}\\
   \texttt{enaStorage} & ENA Storage analysis
-  considers how the model fluxes generate the node stroage (e.g., biomass) in
+  considers how the model fluxes generate the node storage (e.g., biomass) in
   the system.  This function returns the input and output oriented
   direct and integral storage matrices. &  \citet{matis81}\\
   \texttt{enaUtility} & ENA Utility analysis investigates the direct
   relationships among the network nodes as well as the integral
-  relationships when all of the indirect interactions are
+  relationships when all of the indirect interactions are also
   considered. & \citet{patten91} \\
   \texttt{enaMTI} & Mixed Trophic Impacts assesses the net
   relationships among species in a food web. &  \citet{ulanowicz90} \\
