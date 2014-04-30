@@ -1,64 +1,106 @@
-Outline
+We have done our best to address all comments made by the associate
+editor and reviewers. 
+
+There are multiple comments to focus and clarify the introduction. In
+order to make the introduction both more inteligible and relevant to
+an ecological audience, we have added more text to make the ecological
+interpretation of the presented analyses clearer. We have also removed
+the text discussing the network analysis "schools" from the intro and
+now present it later in the manuscript. In addition, we focused the
+text and reduced the overall length introduction be removing any
+unecessary details. 
+
+It was also suggested that we improve the clarity of how the package
+is to be used and extended by the community. With the goal of
+improving the pedagogy of the manuscript, we have added more
+ecological interpretation to the example analysis text and annotation
+in the example, i.e., Table 4, which we have updated so that it is now
+completely reproducible. The ecological interpretation of the example
+Flow Analysis is now presented in a paragraph added to the Example
+Application sub-section. The previously difficult to access,
+supplementary data file, oyster.dat, is no longer referred to for the
+example. Text clarifying the data requirements and inputs, model
+library contents, batch processing, visualizations, and links to other
+packages has also been added to those respective sub-sections or
+figure legends. Missing references in the description of the example
+results have also been added.
+
+We have also extended the description of the package as a whole and
+the specific functions with Tables 1, 2 and 3. In addition, Github
+repository information has been added to the text, which provide
+further information on how users can contribute to the package and
+view code directly with all annotation visible in the code for each
+function. The text stating that the package is "built on" existing
+packages has been improved to explain that the package uses a data
+type that is used with previously developed packages used for network
+analyses. We have also added text describing the input data types and
+methods, partly through Tables 1 through 3. Confusing text referring
+to the package as professional grade has now been removed. Version
+numbering issues have been removed by deleting specific reference to
+the version of the package. 
+
+
+Outline with reviewer comments
 
 %%%Associate editor comments
-- Make more relevant to non-network people
--- Done so by adding more ecology and background
-- Schools in intro is confusing
--- Removed schools from intro and introduce later
-- Not enough clarity of use of the package
--- Added more info on how the package is to be used
-- Try to be more pedagogic
--- Added more ecology and scientific implications to intro
--- Clarified text describing the use of the package in 
--- Added tables 1 to 3
-- Add a reproducible example
--- Improved the clarity of the example Table 4
--- Added model construction to the example
--- removed the use of oyster.dat
-- Fail to describe how enaR could help me analyze data
--- After reading the mvAbund and diversityR papers...
--- Added ecosystem network analysis paragraph to intro
--- Improved the clarity of the data requirements section
--- Added more text on flow analysis implications/interpretation
-- Built on existing packages?
--- Changed to text to explain that the data type used coheres to that
-used in other packages
-- Describe functions
--- Add tables 1-3
--- Added number of functions
--- Added text on data types and formats
--- Added text on data import methods
-- Not clear how this information should be considered in a simple
-graph (import/export)
--- Added Fig 1 and associated text
-- Example not clear
--- Added clearer walk through via annotation in script of Table 4
--- Added more ecological interpretation of flow analysis in main body
-- Visualization, novelty complared to exisiting pacakge?
--- ???
-- Does the library contain models or observed data?
--- Added text in section ??? to clarify that the models are built on
-empirical data
-- Batch analysis not clear
--- Clarified the use of the lapply function approach for batch
-analysis
-- How to interact with other packages?
--- ???
-- Git repo?
--- Added git info
-- Professional grade?
--- Removed professional grade text
+% - Make more relevant to non-network people
+% -- Done so by adding more ecology and background
+% - Schools in intro is confusing
+% -- Removed schools from intro and introduce later
+% - Not enough clarity of use of the package
+% -- Added more info on how the package is to be used
+% - Try to be more pedagogic
+% -- Added more ecology and scientific implications to intro
+% -- Clarified text describing the use of the package in 
+% -- Added tables 1 to 3
+% - Add a reproducible example
+% -- Improved the clarity of the example Table 4
+% -- Added model construction to the example
+% -- removed the use of oyster.dat
+% - Fail to describe how enaR could help me analyze data
+% -- After reading the mvAbund and diversityR papers...
+% -- Added ecosystem network analysis paragraph to intro
+% -- Improved the clarity of the data requirements section
+% -- Added more text on flow analysis implications/interpretation
+% - Built on existing packages?
+% -- Changed to text to explain that the data type used coheres to that
+% used in other packages
+% - Describe functions
+% -- Add tables 1-3
+% -- Added number of functions
+% -- Added text on data types and formats
+% -- Added text on data import methods
+% - Not clear how this information should be considered in a simple
+% graph (import/export)
+% -- Added Fig 1 and associated text
+% - Example not clear
+% -- Added clearer walk through via annotation in script of Table 4
+% -- Added more ecological interpretation of flow analysis in main body
+% - Visualization, novelty compared to exisiting pacakge?
+% -- ???
+% - Does the library contain models or observed data?
+% -- Added text in section ??? to clarify that the models are built on
+% empirical data
+% - Batch analysis not clear
+% -- Clarified the use of the lapply function approach for batch
+% analysis
+% - How to interact with other packages?
+% -- ???
+% - Git repo?
+% -- Added git info
+% - Professional grade?
+% -- Removed professional grade text
 
 %%%Reviewer #1
-- Reduce intro length and clarify
--- Added more ecology
--- Removed schools
--- Focused
-- Availability
--- Added info for git repo
-- Pro-grade? Testing?
--- Removed text
--- Checked out the testthat package found it useful
+% - Reduce intro length and clarify
+% -- Added more ecology
+% -- Removed schools
+% -- Focused
+% - Availability
+% -- Added info for git repo
+% - Pro-grade? Testing?
+% -- Removed text
+% -- Checked out the testthat package found it useful
  
 %%%Reviewer #2
 - extensibility? guidence through the code
@@ -76,281 +118,3 @@ analysis
 - Supplementary files 
 -- oyster.rda?
 
-From:
-"coordinator@methodsinecologyandevolution.org<mailto:coordinator@methodsinecologyandevolution.org>"
-<coordinator@methodsinecologyandevolution.org<mailto:coordinator@methodsinecologyandevolution.org>>
-Date: January 15, 2014, 3:56:31 PM EST
-To: "Borrett, Stuart" <borretts@uncw.edu<mailto:borretts@uncw.edu>>,
-"stuart.borrett@gmail.com<mailto:stuart.borrett@gmail.com>"
-<stuart.borrett@gmail.com<mailto:stuart.borrett@gmail.com>>
-Subject: Methods in Ecology and Evolution - Decision on Manuscript ID
-MEE-13-11-654
-
-15-Jan-2014
-
-Dear Dr. Borrett:
-
-Manuscript ID MEE-13-11-654 entitled "enaR: An R package for
-Ecological Network Analysis" which you submitted to Methods in Ecology
-and Evolution, has now been evaluated.  The comments from the
-reviewers are included at the bottom of this letter, together with a
-recommendation from the Associate Editor who oversaw the refereeing
-process and also read your manuscript in detail.
-
-In view of the comments received, I must decline your manuscript for
-publication in the Methods in Ecology and Evolution at this time.
-However, we would be willing to consider a new manuscript which takes
-into consideration these comments.
-
-Please note that resubmitting your manuscript does not guarantee
-eventual acceptance, and that your resubmission may be subject to
-re-review before a decision is rendered. Please also ensure that your
-revised manuscript still conforms to our word limit of 6000-7000 for
-standard papers, or 3000 for applications.
-
-Once you have revised your manuscript, go to
-http://mc.manuscriptcentral.com/mee-besjournals and login to your
-Author Center.  Click on "Manuscripts with Decisions," and then click
-on "Create a Resubmission" located next to the manuscript number.
-Then, follow the steps for resubmitting your manuscript.
-
-Because we are trying to facilitate timely publication of manuscripts
-submitted to the Methods in Ecology and Evolution, your revised
-manuscript should be uploaded within 12 weeks.  If it is not possible
-for you to submit your revision within a reasonable amount of time, we
-will consider your paper as a new submission.
-
-I look forward to a resubmission.
-
-Sincerely,
-Prof. Robert Freckleton
-Executive Editor, Methods in Ecology and Evolution
-coordinator@methodsinecologyandevolution.org<mailto:coordinator@methodsinecologyandevolution.org>
-
-
-Associate Editor Comments to Author:
-
-Associate Editor
-Comments to the Author:
-Dear Authors,
-
-both reviewers appreciate your work on your R package. Reviewer #2 has
-several minor comments and some concerns about the extensibility of
-enaR. Reviewer #1 has some other major comments concerning the code
-availability and the introduction. All these comments are relevant and
-should be considered.
-
-I am not a specialist of network analysis and this is perhaps my
-reading of your paper is much more negative. I found that some parts
-of the paper are not clear and I think that the paper fails to
-describe the originality of the package and describe/illustrate the
-content of the package.
-
-The introduction focus on two schools but remains very vague and
-general (i.e., only description with few scientific
-considerations). There are not enough details for non specialists and
-several technical terms without explanations (l29 - 51). You describe
-two schools but what are the implications, consequences on your
-package? On the development of tools/methods/software ? I found some
-response l 81-82 but this is not enough.  For me, its seems that you
-describe some historical considerations but we did not see what are
-the scientific implications of this dichotomy. These two schools lead
-to the development of complimentary or concurrent tools ? Moreover, as
-described by reviewer #1, you did not mention an important part of
-networks tools. Hence, the introduction should be completely rewritten
-to highlight the position of your package in the network analysis
-ecosystem. Try to be more pedagogic for MEE readers that are not
-specialist of your field and describe the two schools based on
-scientific implications.
-
-I think that a software paper should better describe the content of
-the software, reproducible examples should be provided. You should use
-examples to demonstrate how the tools provided in the package could be
-used to analyze real data. In your paper, there is only one example
-with R code (not reproducible since we do not have the 'oyster.dat'
-file). You fail to describe how enaR could help me to analyze
-ecological data. A complete rewriting of the paper is thus required. Read some
-published MEE software papers to understand what is the spirit of this
-type of contribution.
-
-%Honestly, I thought we did use examples that were reproducible
-%Add clarity on what the package can tell us
-%Perhaps we should make it clearer that the models in the package are real
-
-Some other comments:
-- l93: enaR was built on top of two existing R packages: network
-(Butts 2008a) and sna (Butts 2008b) --> what does it mean ?
-
-%Change the language to make it clearer. 
-
-- describe the content of the package: how many functions / methods ?
-
-%Ok. 
-
-- l119: data format: for import ?? please add information on that
-point (how should we load our data with enaR).
-
-%I thought we did this, but perhaps we need to make it clearer
-
-- l 112-115: not clear how this information should be considered in a
-simple graph (e.g. import/export boundary) ?
-
-%Explain this figure better
-
-- Example (l. 133): could I repeat the analysis. What is the aim of
-the example ? No illustration, no discussion of the outputs ! --> this
-is not interesting for readers
-
-%???
-
-- Part 3.1 Visualization (l. 151): novelty compared to existing
-package ?? not clear
-
-%Make it clear that we are using existing software
-%Note that many users might not have experience with plotting networks?
-
-- Part 3.2 Does this library contains models or observed data ?? This
-is not clear for me. Why it is interesting for users ?
-
-%I suppose we need to make this more general. 
-
-- Part 3.3: batch analysis : not clear for me ! how it is implemented
-? Do the user should apply loops ? what is the originality/novelty for
-users ?
-
-%I thought that this is clear from the code, but perhaps it is too low level.
-%Maybe I need to add a batch processing function?
-
-- l. 213-220: how to interact with other packages. Are they some
-functions to convert objects among classes/packages  ?? How other
-packages could be useful (e.g. vegan, Diversiytree, etc)
-
-%This is a good suggestion and would broaden the user base if we coulddo it
-
-- l. 243: give the url of your Git repos
-
-%Ok-dokey, I'll add this.
-
--in several parts, you mention 'professional grade'. What does it
-means ?
-
-%Let's address this by removing this language.
-
-Reviewer(s)' Comments to Author:
-
-Reviewer: 1
-
-Comments to the Corresponding Author
-I have reviewed the paper MEE-13-11-654 by Borrett and Lau. I
-previously used enaR for analyses, and was extremely happy to see the
-authors formalise their work with a paper.
-
-I have three major comments that I think require attention.
-
-1. The introduction is too long. As much as I appreciate reading about
-the history of ideas in science, I think that  software note is NOT
-the place to do so. I read software notes for presentation of what a
-software does, and why it does it better, or more efficiently, or with
-less effort than previous solution. As a side note, there is an entire
-branch of network analyses (studies of metrics like connectance,
-modularity, intervality, ...) that is entirely left out, so I felt the
-introduction conveyed a wrong picture of the field.
-
-%Reduce the history to one paragraph
-%Add more on what the package can do for the user
-
-2. The availability of the software is not good. Although it is
-possible to download the code from CRAN, this is not conducive to
-improvements from the community. Reading the code required that I
-download the tar file, untar it, and whatever modifications I could
-have suggested would have been sent by email to the authors. There is
-mention of a GitHub repo at the end of the paper. I think this is
-indeed the way to go, and the URL of the repo, including guidelines
-for contribution, should be mentionned clearly in the text.
-
-%Add link to github
-%Add text on how users can contibute?
-
-3. I failed to see what the authors mean by
-"professional-grade". There are, for example, no tests that the
-functions perform as advertised. The `testthat` package allows do to
-automated unit-testing in R, and should be used. Writing a package
-that regroups ALL methods in one field should be held to an extremely
-high standard of quality, which involves extensive testing.
-
-%Remove the language, professional grade
-%Check out the testthat package
-%Provide examples from MEE where packages do not do testing of the software
-
-Rimouski, Dec 16. 2013
-Timothée Poisot
-
-Reviewer: 2
-
-Comments to the Corresponding Author
-
-My recommendation is that the manuscript be accepted, with minor
-revisions. The subject matter is well suited to the journal and the
-manuscript helps to further the journal’s stated aims.  In terms of
-form, the manuscript is adequately organised and is well written. The
-introduction frames the importance of both the subject matter and the
-specific software itself; the objectives are stated clearly and the
-subsequent parts of the manuscript help clarify ways in which the
-authors believe these objectives are met. The software that is
-presented allows for the use of open-source software in ecological
-analyses. Apart from the benefits stated by the authors, this helps
-level playing fields in ecological research by eliminating the
-financial barrier that licenses can present to some laboratories
-around the world for the analysis of data.  In conclusion, the
-software is a noteworthy addition to the field and the manuscript
-presents it well.
-
-The most substantial criticism I have refers to the second stated
-design objectives of the software, i.e., “to increase both the
-availability and extensibility of the software”.  While creating a
-package for R certainly increases availability, the extensibility of
-the software is questionable in the absence documentation for
-programmers regarding how the code works. Precedence for this sort of
-step towards extensibility can be found in R packages like foodweb
-(see Documentation folder). I was not able to find any such
-documentation in the enaR package folders.  It is my understanding
-however that the authors intend to further this extensibility
-objective with the creation of a GitHub, as stated at the end of the
-manuscript.  I wonder whether it is feasible to give this at least a
-preliminary start before the manuscript is published. While I would
-agree that the mere availability of the code is a step towards
-extensibility, I believe the extensibility claim would have a lot more
-strength if programmers had some level of guidance through the code.
-
-%Add details on how users can contribute
-%Direct users to the enaR repository
-%Direct users to descriptions of best practices for contributing
-
-My suggestions for minor revisions are below:
-
-Line 125 qualifies the package as an initial release, however the
-version available on the CRAN website is 2.5. I suggest the sentence
-be changed to “the current available version” or something to that
-effect.
-
-%Agreed. Our versioning does not follow typical software best practices. 
-%Let's change the language to the Current Stable Version and Development
-%CRAN = stable
-%GitHub = development
-
-Line 129 I suggest the authors specify which recent developments.
-
-%Ok.
-
-Line 156 References?
-
-%Check on this.
-
-Some indication is needed that the enaR package produces the same
-results as do the currently available major programs.
-
-%Perhaps we should check against ecopath? netwrk?
-
-I did not find reference to the supplementary files in the manuscript.
-
-%Look into this.

@@ -40,7 +40,7 @@ numbering issues have been removed by deleting specific reference to
 the version of the package. 
 
 
-Outline with reviewer comments
+%%% Outline with reviewer comments %%%
 
 %%%Associate editor comments
 % - Make more relevant to non-network people
