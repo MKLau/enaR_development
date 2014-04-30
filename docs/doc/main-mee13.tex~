@@ -137,21 +137,20 @@ has been used to address a range of key ecosystem questions
 %of key questions.
 For example, in the food web of Big Cypress National Preserve
 (Florida, USA) \citet{bondavalli99} found evidence of an indirect
-mutualism between the American alligator and some of its prey items,
-including several invertebrates, frogs, and small
-mammals. Applications of ENA have also lead to new insights into the classic
-trophic questions of ``What limits food-chain length?''
+mutualism between the American alligator and some of its prey
+items. Applications of ENA have also lead to new insights into the
+classic trophic questions of ``What limits food-chain length?''
 \citep{ulanowicz2014} and ``Are food webs modular?''  \citep{krause04,
   allesina05_scc, borrett07_jtb}.  \citet{hines12} used ENA to
 quantify the relative importance of coupling between biogeochemical
-processes (e.g., nitrification + anammox) in the Cape Fear River
-estuary sedimentary nitrogen cycle.  Further, scientists have used
-ENA to investigate differences in urban sustainability
-\citep{bodini02, zhang10_ecomod, chen12, bodini2012cities}.
-Collectively, this work consistently shows the power of a
-transactional network to generate unexpected ecological relationships
-that then influence the system function and evolution
-\citep{ulanowicz97, patten91, jorgensen07_newecology}.
+processes (e.g., nitrification) in the Cape Fear River estuary
+sedimentary nitrogen cycle.  Further, scientists have used ENA to
+investigate differences in urban sustainability \citep{bodini02,
+  zhang10_ecomod, chen12, bodini2012cities}.  Collectively, this work
+consistently shows the power of a transactional network to generate
+unexpected ecological relationships that then influence the system
+function and evolution \citep{ulanowicz97, patten91,
+  jorgensen07_newecology}.
 
 % what is ENA
 % Ecosystem Network Analysis (ENA) is a branch of Network Ecology
@@ -548,19 +547,17 @@ package's capabilities.  While it currently contains most of the many
 commonly used ENA algorithms used by ecologists, it is far from
 complete. For example, \citeapos{ulanowicz83} decomposition of cycles
 is not yet included nor is his construction for the Lindeman trophic
-spine \citep{ulanowicz1979trophic}. The package could also include
-network model construction tools, such as least-inference methods for
-building models from empirical data \citep{ulanowicz2008least} and
-\citeapos{fath04_cyber} algorithm for constructing plausible
-ecosystems models.
+spine \citep{ulanowicz1979trophic}, and network model construction
+tools, such as least-inference methods for building models from
+empirical data \citep{ulanowicz2008least} and \citeapos{fath04_cyber}
+algorithm for constructing plausible ecosystems models.
 
-In conclusion, \enaR\ is an \R\ package to facilitate the use and the
-collaborative development of Ecosystem Network Analysis.  This
-analysis is a branch of the broader domain of Network Ecology, which
-is rapidly growing in part because the tools and techniques let
-ecologists address a wide range of relational questions that lie at
-the core of ecology.  We look forward to seeing the new ecology
-discovered through the use of \enaR .
+In conclusion, \enaR\ is an \R\ package intended to facilitate the use
+and the collaborative development of Ecosystem Network Analysis, a
+branch of field of Network Ecology, which is rapidly growing in part
+because the tools and techniques let ecologists address a wide range
+of relational questions at the core of ecology.  We look forward to
+seeing new ecological discoveries made through the use of \enaR.
 
 
 
