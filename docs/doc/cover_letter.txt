@@ -1,57 +1,8 @@
-%%%To do list
-
-%Focus the function of the package, what can it do for users
-%Broaden the implications of the package, extend to other ecological networks
-%Describe the package content, including functions and methods
-%Clarify data import methods
-%Make sure all examples are executable
-
-%Address how the package funcitons have been vetted/tested
-%Provide check information, such as comparison with ecopath
-%Look into the testthat package
-
-%Explain import/export boundary L112-115
-%Look at L133 and clarify where needed
-%Clarify that this is for a naive investigator L151
-%Clarify the content of the model Part3.2
-%Clarify how to interact with other packages L213-220
-%Address recent developments on L129
-%Check references for L156
-%Supplementary files???
-
-%DONE [mkl 11feb2014 - removed this language] Clarify ``built on existing packages'' L93
-%DONE [mkl 11feb2014] Add git info to L243
-%DONE [mkl 11feb2014 - removed version numbers] Address versioning issue (should we re-release as 1.0)?
-%DONE [mkl 11feb2014] Note for the reader that CRAN = STABLE and github = development
-%DONE [mkl 11feb2014] Reduce ENA history to one paragraph
-%DONE [mkl 11Feb2014] Add info on how users can contribute (1. git info, 2. software best practices, 3. contact info)
-%DONE [mkl 5feb2014] - Remove the language ``professional grade''
-
-%%%Major questions for us
-%%What other fixes need to be made now (enaBatch?, enaBuild?, enaPlot?)?
-%%Do we really need to provide information that the package produces comparable results to other packages?
-%%Can we make ENA appealing to a wider audience (e.g. urban ecologists, or systems analysts)?
+Outline
+- 
 
 
-Matt,
 
-This rejection will take some digestion.  I am disappointed with the
-initial rejection, but it looks like we might be able to salvage this
-with revision and resubmission.  Actually, I think the reviewers
-comments were good.  It was the associate editor that seemed the most
-confused.  The hardest part is to address all the concerns in the
-limited space.  Thoughts?
-
-I have to go teach.  Lets plan to talk about this in the next week or
-so to determine next steps.
-
-Stuart
-
----
-Stuart Borrett
-http://people.uncw.edu/borretts
-
-Begin forwarded message:
 
 From:
 "coordinator@methodsinecologyandevolution.org<mailto:coordinator@methodsinecologyandevolution.org>"
