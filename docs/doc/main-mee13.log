@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  30 APR 2014 17:40
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  30 APR 2014 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -587,7 +587,7 @@ puts=outputs, living=Living);[]
  []
 
 [19] [20] [21]
-<../figures/enaR_plot_example.pdf, id=537, 433.62pt x 397.485pt>
+<../figures/enaR_plot_example.pdf, id=535, 433.62pt x 397.485pt>
 File: ../figures/enaR_plot_example.pdf Graphic file (type pdf)
 
 <use ../figures/enaR_plot_example.pdf>
@@ -595,7 +595,7 @@ Package pdftex.def Info: ../figures/enaR_plot_example.pdf used on input line 11
 94.
 (pdftex.def)             Requested size: 433.61894pt x 397.48402pt.
 
-<../figures/ns_dist.pdf, id=546, 397.485pt x 433.62pt>
+<../figures/ns_dist.pdf, id=544, 397.485pt x 433.62pt>
 File: ../figures/ns_dist.pdf Graphic file (type pdf)
 
 <use ../figures/ns_dist.pdf>
@@ -615,10 +615,10 @@ Package rerunfilecheck Info: File `main-mee13.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1224.
  ) 
 Here is how much of TeX's memory you used:
- 7649 strings out of 493633
- 110354 string characters out of 3143378
+ 7647 strings out of 493633
+ 110312 string characters out of 3143378
  216219 words of memory out of 3000000
- 10722 multiletter control sequences out of 15000+200000
+ 10720 multiletter control sequences out of 15000+200000
  15651 words of font info for 61 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  29i,11n,32p,1030b,547s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -639,10 +639,10 @@ ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main-mee13.pdf (23 pages, 303144 bytes).
+Output written on main-mee13.pdf (23 pages, 303133 bytes).
 PDF statistics:
- 649 PDF objects out of 1000 (max. 8388607)
- 591 compressed objects within 6 object streams
+ 647 PDF objects out of 1000 (max. 8388607)
+ 589 compressed objects within 6 object streams
  120 named destinations out of 1000 (max. 500000)
  123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
