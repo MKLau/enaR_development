@@ -65,6 +65,16 @@ analysis
 -- github info
 -- added contributor info to github
 -- internal annotation visible on github
+- Version
+-- Removed specific reference to version
+- Specifiy recent developments
+-- Removed text for word economy
+- References?
+-- Added references to end of paragraph
+- Some indication of reproduction of previous results
+-- ???
+- Supplementary files 
+-- oyster.rda?
 
 From:
 "coordinator@methodsinecologyandevolution.org<mailto:coordinator@methodsinecologyandevolution.org>"

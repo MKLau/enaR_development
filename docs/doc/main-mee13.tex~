@@ -858,7 +858,7 @@ Krause, A. (2004) \emph{The role of compartments in food-web structure and
 \bibitem[{Lau \emph{et~al.}(2013)Lau, Borrett \& Hines}]{enar}
 Lau, M.K., Borrett, S.R. \& Hines, D.E. (2013) \emph{enaR: Tools for ecological
   network analysis in R}.
-\newblock R package version 2.5.
+\newblock R package version 2.6.
 
 \bibitem[{Lima(2011)}]{lima2011visual}
 Lima, M. (2011) \emph{Visual complexity: mapping patterns of information}.
