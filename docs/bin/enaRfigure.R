@@ -1,5 +1,5 @@
 # enaR Example Code
-# Generates enaR example plot Figure for MEE paper
+# Generates enaR example plots for MEE paper (Figure 1)
 # Borrett & Lau
 # July 2013
 # -----------------------------------------------
@@ -11,23 +11,18 @@ data(troModels)  # load trophic model library
 data(oyster)     # load oyster model separately for convenince
 
 # start figure
-fn <- "../figures/enaR_plot_example.pdf"
-#postscript(fn,width=6,height=5.5,
-#           onefile=TRUE,
-#           horizontal=FALSE,
-#           paper="special",
-#           family="Times",pointsize=12)
-pdf(fn,width=6,height=5.5,family="Times",pointsize=12)
+fn <- "../figures/enaR_plot_example.pdf"  # file name
+pdf(fn,width=6,height=5.5,family="Times",pointsize=12) # open PDF file
 
+opar <- par(las=1,mfrow=c(2,2),mar=c(4,5,1,1),oma=c(1,1,1,1)) # set plotting parameters
 
-opar <- par(las=1,mfrow=c(2,2),mar=c(4,5,1,1),oma=c(1,1,1,1))
 # ----------------------------------
 # panel a -- network visualization
 # ----------------------------------
 my.col=c("red4","grey", "black")
-F=oyster%n%'flow'                   # extract flow information for later use.
+F=oyster%n%'flow'              # extract flow information for later use.
 f=which(F!=0, arr.ind=T)       # get indices of positive flows
-opar <- par(xpd=TRUE)  #,mai=c(1.02, 0.62, 0.82, 0.42))
+opar <- par(xpd=TRUE)          # set plotting parameter xpd
 set.seed(2)                    # each time the plot is called, the
                                # layout orientation changes.  setting
                                # the seed ensures a consistent
@@ -38,11 +33,11 @@ plot(oyster,
      vertex.cex=log(oyster%v%'storage'), # scale nodes with storage
      label= oyster%v%'vertex.names',     # add node labels
      boxed.labels=FALSE,
-     label.cex=0.8,
-     vertex.sides=45,   # to make rounded
-     edge.lwd=log10(abs(F[f]))+2,     # scale arrows to flow magnitude
-     edge.col=my.col[3],
-     vertex.col=my.col[1],
+     label.cex=0.8,            # scale node labels
+     vertex.sides=45,          # to make nodes round
+     edge.lwd=log10(abs(F[f]))+2, # scale arrows to flow magnitude
+     edge.col=my.col[3],       # set edge color
+     vertex.col=my.col[1],     # set vertex color
      label.col="black",
      vertex.border = my.col[3],
      vertex.lty = 1,
@@ -56,7 +51,7 @@ opar <- par(xpd=FALSE)
 # ------------------------
 #
 # balance models
-m.list <- lapply(troModels,force.balance)
+m.list <- lapply(troModels,force.balance) # use AVG2 algorithm
 #
 # batch apply flow analysis to 56 models and extract HMG network statistic
 hmg <- unlist(lapply(m.list,function(x) enaFlow(x)$ns[13]))
@@ -66,8 +61,6 @@ hmg <- sort(hmg,decreasing=TRUE) # sort hmg values
 barplot(hmg,
         ylim=c(0,2),
         col="darkgreen",border=NA,
-        #xlab="Trophic Models (Rank Ordered)",
-#        ylab="Network Homogenization",
         ylab="",
         names.arg="")
 mtext("Trophic Ecosystem Models (ranked)",side=1,line=1,cex=1)
@@ -112,9 +105,9 @@ gplot.target(m,b,#circ.lab=FALSE,
              circ.lab=FALSE,
              label.cex=0.75)
 mtext("(d)",side=3,line=0,adj=-0.5)
-                                        #xlim=c(-1,4))
+
 # ---
-dev.off()  # close eps file
+dev.off()  # close file
 cmd <- paste("open ",fn)
-system(cmd) # open eps file (on mac)
+system(cmd) # open imapge file (on mac)
 

@@ -21,9 +21,9 @@ pdf(fn,width=6,height=5.5,family="Times",pointsize=12)
 
 
 opar <- par(las=1,mfrow=c(2,2),mar=c(4,5,1,1),oma=c(1,1,1,1))
-#
+# ----------------------------------
 # panel a -- network visualization
-#
+# ----------------------------------
 my.col=c("red4","grey", "black")
 F=oyster%n%'flow'                   # extract flow information for later use.
 f=which(F!=0, arr.ind=T)       # get indices of positive flows
@@ -33,7 +33,7 @@ set.seed(2)                    # each time the plot is called, the
                                # the seed ensures a consistent
                                # orientation each time the plot
                                # function is called.
-#
+# 
 plot(oyster,
      vertex.cex=log(oyster%v%'storage'), # scale nodes with storage
      label= oyster%v%'vertex.names',     # add node labels
@@ -70,7 +70,7 @@ barplot(hmg,
 #        ylab="Network Homogenization",
         ylab="",
         names.arg="")
-mtext("Trophic Models (rank ordered)",side=1,line=1,cex=1)
+mtext("Trophic Ecosystem Models (ranked)",side=1,line=1,cex=1)
 mtext("Network Homogenization",side=2,line=2.5,cex=1,las=3)
 abline(h=1,col="orange",lwd=2)
 mtext("(b)",side=3,line=0,adj=-0.5)
