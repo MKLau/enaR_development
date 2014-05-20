@@ -116,6 +116,12 @@ Environ & \texttt{enaEnviron} & Patten \\
 
 
 \SweaveOpts{width=6,height=4}
+
+<<echo=false,eval=false>>=
+citation('enaR')
+
+@ 
+
 <<z,echo=false>>=
 # set plotting parameters
 opar <- par(las=1,mar=c(0,0,0,0),xpd=TRUE,bg="white")   

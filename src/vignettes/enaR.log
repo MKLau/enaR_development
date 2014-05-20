@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  21 MAR 2014 16:58
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  20 MAY 2014 15:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -395,11 +395,7 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
-))) (./enaR.aux
-
-LaTeX Warning: Label `fig:aec' multiply defined.
-
-)
+))) (./enaR.aux)
 \openout1 = `enaR.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -418,7 +414,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 23.
- (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 23.
@@ -559,67 +556,64 @@ line 41.
 Package natbib Warning: Citation `handcock2008statnet' on page 1 undefined on i
 nput line 42.
 
-[1
 
-{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-Package natbib Warning: Citation `leontief1936' on page 2 undefined on input li
+Package natbib Warning: Citation `leontief1936' on page 1 undefined on input li
 ne 58.
 
 
-Package natbib Warning: Citation `leontief66' on page 2 undefined on input line
+Package natbib Warning: Citation `leontief66' on page 1 undefined on input line
  58.
 
 
-Package natbib Warning: Citation `hannon73' on page 2 undefined on input line 5
+Package natbib Warning: Citation `hannon73' on page 1 undefined on input line 5
 9.
 
 
-Package natbib Warning: Citation `ulanowicz86' on page 2 undefined on input lin
+Package natbib Warning: Citation `ulanowicz86' on page 1 undefined on input lin
 e 62.
 
 
-Package natbib Warning: Citation `ulanowicz97' on page 2 undefined on input lin
+Package natbib Warning: Citation `ulanowicz97' on page 1 undefined on input lin
 e 62.
 
 
-Package natbib Warning: Citation `ulanowicz04' on page 2 undefined on input lin
+Package natbib Warning: Citation `ulanowicz04' on page 1 undefined on input lin
 e 62.
 
 
-Package natbib Warning: Citation `patten76' on page 2 undefined on input line 6
+Package natbib Warning: Citation `patten76' on page 1 undefined on input line 6
 5.
 
 
-Package natbib Warning: Citation `patten78' on page 2 undefined on input line 6
+Package natbib Warning: Citation `patten78' on page 1 undefined on input line 6
 5.
 
 
-Package natbib Warning: Citation `fath99_review' on page 2 undefined on input l
+Package natbib Warning: Citation `fath99_review' on page 1 undefined on input l
 ine 65.
 
 
-Package natbib Warning: Citation `brandes05' on page 2 undefined on input line 
+Package natbib Warning: Citation `brandes05' on page 1 undefined on input line 
 74.
 
 
-Package natbib Warning: Citation `scharler09comparing' on page 2 undefined on i
+Package natbib Warning: Citation `scharler09comparing' on page 1 undefined on i
 nput line 77.
 
 
-Package natbib Warning: Citation `borrett12_netecol' on page 2 undefined on inp
+Package natbib Warning: Citation `borrett12_netecol' on page 1 undefined on inp
 ut line 78.
 
 
-Package natbib Warning: Citation `allesina04_wand' on page 2 undefined on input
+Package natbib Warning: Citation `allesina04_wand' on page 1 undefined on input
  line 86.
 
 
-Package natbib Warning: Citation `christensen04' on page 2 undefined on input l
+Package natbib Warning: Citation `christensen04' on page 1 undefined on input l
 ine 88.
 
 
-Package natbib Warning: Citation `fath06' on page 2 undefined on input line 88.
+Package natbib Warning: Citation `fath06' on page 1 undefined on input line 88.
 
 
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 89.
@@ -629,815 +623,33 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
 (Font)              for symbol `textcopyright' on input line 89.
 
+
+LaTeX Warning: Reference `tab:alg' on page 1 undefined on input line 94.
+
+
+LaTeX Warning: Reference `fig:fig' on page 1 undefined on input line 95.
+
+[1
+
+{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for T1+aett on input line 105.
+
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-<enaR-002.pdf, id=147, 433.62pt x 289.08pt>
-File: enaR-002.pdf Graphic file (type pdf)
- <use enaR-002.pdf>
-Package pdftex.def Info: enaR-002.pdf used on input line 124.
-(pdftex.def)             Requested size: 375.80544pt x 250.5492pt.
- [2]
-
-Package natbib Warning: Citation `butts08_network' on page 3 undefined on input
- line 225.
-
-[3]
-LaTeX Font Info:    Try loading font information for TS1+aett on input line 252
-.
-LaTeX Font Info:    No file TS1aett.fd. on input line 252.
-
-
-LaTeX Font Warning: Font shape `TS1/aett/m/sl' undefined
-(Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textquotesingle' on input line 252.
-
-[4 <./enaR-002.pdf>] [5] [6]
-
-Package natbib Warning: Citation `allesina03' on page 7 undefined on input line
- 429.
-
-
-Package natbib Warning: Citation `ulanowicz91' on page 7 undefined on input lin
-e 442.
-
-
-Package natbib Warning: Citation `dame81' on page 7 undefined on input line 453
-.
-
-[7] [8]
-
-Package natbib Warning: Citation `allesina04_wand' on page 9 undefined on input
- line 508.
-
-
-Package natbib Warning: Citation `scharler2012ecosystem' on page 9 undefined on
- input line 524.
-
-
-Package natbib Warning: Citation `fath06' on page 9 undefined on input line 537
-.
-
-
-Package natbib Warning: Citation `fath06' on page 9 undefined on input line 558
-.
-
-[9] [10] <enaR-019.pdf, id=217, 216.81pt x 216.81pt>
-File: enaR-019.pdf Graphic file (type pdf)
- <use enaR-019.pdf>
-Package pdftex.def Info: enaR-019.pdf used on input line 652.
-(pdftex.def)             Requested size: 258.36668pt x 258.39746pt.
-
-<enaR-020.pdf, id=218, 216.81pt x 216.81pt>
-File: enaR-020.pdf Graphic file (type pdf)
- <use enaR-020.pdf>
-Package pdftex.def Info: enaR-020.pdf used on input line 653.
-(pdftex.def)             Requested size: 258.36668pt x 258.39746pt.
-
-Overfull \hbox (62.62465pt too wide) in paragraph at lines 651--656
- [] 
- []
-
-
-Package natbib Warning: Citation `dame81' on page 11 undefined on input line 66
-6.
-
-
-Package natbib Warning: Citation `fath06' on page 11 undefined on input line 67
-7.
-
-
-Package natbib Warning: Citation `borrett03' on page 11 undefined on input line
- 696.
-
-
-Package natbib Warning: Citation `borrett07_jtb' on page 11 undefined on input 
-line 698.
-
-
-Package natbib Warning: Citation `caswell01' on page 11 undefined on input line
- 702.
-
-
-Package natbib Warning: Citation `farkas2001spectra' on page 11 undefined on in
-put line 703.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11 <./enaR-019.pdf> <./enaR-020.pdf>]
-
-Package natbib Warning: Citation `fath99_review' on page 12 undefined on input 
-line 742.
-
-
-Package natbib Warning: Citation `fath06' on page 12 undefined on input line 74
-2.
-
-
-Package natbib Warning: Citation `schramski11' on page 12 undefined on input li
-ne 742.
-
-
-Package natbib Warning: Citation `borrett11_ree' on page 12 undefined on input 
-line 745.
-
-
-Package natbib Warning: Citation `borrett11_equ' on page 12 undefined on input 
-line 745.
-
-
-Package natbib Warning: Citation `finn76' on page 12 undefined on input line 76
-5.
-
-
-Package natbib Warning: Citation `finn80' on page 12 undefined on input line 76
-6.
-
-
-Package natbib Warning: Citation `borrett06_neuse' on page 12 undefined on inpu
-t line 769.
-
-
-Package natbib Warning: Citation `borrett11_ree' on page 12 undefined on input 
-line 770.
-
-
-Package natbib Warning: Citation `borrett11_equ' on page 12 undefined on input 
-line 770.
-
-
-Package natbib Warning: Citation `fath06' on page 12 undefined on input line 77
-1.
-
-
-Package natbib Warning: Citation `fath06' on page 12 undefined on input line 77
-2.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[12] [13] [14]
-
-Package natbib Warning: Citation `ulanowicz86' on page 15 undefined on input li
-ne 903.
-
-
-Package natbib Warning: Citation `ulanowicz97' on page 15 undefined on input li
-ne 903.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 15 undefined on input li
-ne 923.
-
-
-Package natbib Warning: Citation `ulanowicz97' on page 15 undefined on input li
-ne 923.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 15 undefined on input li
-ne 923.
-
-
-Package natbib Warning: Citation `ulanowicz97' on page 15 undefined on input li
-ne 923.
-
-
-Package natbib Warning: Citation `fath99_review' on page 15 undefined on input 
-line 942.
-
-
-Package natbib Warning: Citation `schramski11' on page 15 undefined on input li
-ne 942.
-
-[15]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 969.
-
-
-Package natbib Warning: Citation `fath06' on page 16 undefined on input line 99
-4.
-
-
-Package natbib Warning: Citation `fath06' on page 16 undefined on input line 99
-5.
-
-
-Package natbib Warning: Citation `patten91' on page 16 undefined on input line 
-1014.
-
-
-Package natbib Warning: Citation `fath99_review' on page 16 undefined on input 
-line 1014.
-
-
-Package natbib Warning: Citation `ulanowicz90' on page 16 undefined on input li
-ne 1015.
-
-[16]
-
-Package natbib Warning: Citation `patten78' on page 17 undefined on input line 
-1071.
-
-
-Package natbib Warning: Citation `fath99_review' on page 17 undefined on input 
-line 1071.
-
-
-Package natbib Warning: Citation `borrett11_ree' on page 17 undefined on input 
-line 1076.
-
-
-LaTeX Font Warning: Font shape `TS1/aett/m/n' undefined
-(Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textasciigrave' on input line 1091.
-
-[17] [18]
-
-Package natbib Warning: Citation `schramski06' on page 19 undefined on input li
-ne 1180.
-
-
-Package natbib Warning: Citation `schramski07' on page 19 undefined on input li
-ne 1180.
-
-
-Package natbib Warning: Citation `ulanowicz90' on page 19 undefined on input li
-ne 1198.
-
-
-Package natbib Warning: Citation `ulanowicz90' on page 19 undefined on input li
-ne 1199.
-
-[19]
-
-Package natbib Warning: Citation `ulanowicz90' on page 20 undefined on input li
-ne 1261.
-
-[20] [21]
-
-Package natbib Warning: Citation `fann12_ec' on page 22 undefined on input line
- 1371.
-
-[22] <enaR-038.pdf, id=297, 433.62pt x 289.08pt>
-File: enaR-038.pdf Graphic file (type pdf)
- <use enaR-038.pdf>
-Package pdftex.def Info: enaR-038.pdf used on input line 1440.
-(pdftex.def)             Requested size: 258.36668pt x 172.25395pt.
- [23 <./enaR-038.pdf>]
-
-Package natbib Warning: Citation `christian96' on page 24 undefined on input li
-ne 1514.
-
-
-Package natbib Warning: Citation `baird08_sylt' on page 24 undefined on input l
-ine 1514.
-
-
-Package natbib Warning: Citation `borrett10_idd' on page 24 undefined on input 
-line 1515.
-
-
-Package natbib Warning: Citation `borrett10_hmg' on page 24 undefined on input 
-line 1525.
-
-
-Package natbib Warning: Citation `salas11_did' on page 24 undefined on input li
-ne 1526.
-
-
-Package natbib Warning: Citation `borrett13' on page 24 undefined on input line
- 1526.
-
-[24] [25] [26]
-
-Package natbib Warning: Citation `haven66' on page 27 undefined on input line 1
-673.
-
-
-Package natbib Warning: Citation `richey78' on page 27 undefined on input line 
-1674.
-
-
-Package natbib Warning: Citation `richey78' on page 27 undefined on input line 
-1675.
-
-
-Package natbib Warning: Citation `richey78' on page 27 undefined on input line 
-1676.
-
-
-Package natbib Warning: Citation `richey78' on page 27 undefined on input line 
-1677.
-
-
-Package natbib Warning: Citation `tilly68' on page 27 undefined on input line 1
-678.
-
-
-Package natbib Warning: Citation `odum57' on page 27 undefined on input line 16
-79.
-
-
-Package natbib Warning: Citation `brylinsky72' on page 27 undefined on input li
-ne 1680.
-
-
-Package natbib Warning: Citation `dame81' on page 27 undefined on input line 16
-81.
-
-
-Package natbib Warning: Citation `rybarczyk03' on page 27 undefined on input li
-ne 1682.
-
-
-Package natbib Warning: Citation `sandberg00' on page 27 undefined on input lin
-e 1683.
-
-
-Package natbib Warning: Citation `sandberg00' on page 27 undefined on input lin
-e 1684.
-
-
-Package natbib Warning: Citation `baird81' on page 27 undefined on input line 1
-685.
-
-
-Package natbib Warning: Citation `ray08' on page 27 undefined on input line 168
-6.
-
-
-Package natbib Warning: Citation `ray08' on page 27 undefined on input line 168
-7.
-
-
-Package natbib Warning: Citation `baird91' on page 27 undefined on input line 1
-688.
-
-
-Package natbib Warning: Citation `baird91' on page 27 undefined on input line 1
-689.
-
-
-Package natbib Warning: Citation `baird91' on page 27 undefined on input line 1
-690.
-
-
-Package natbib Warning: Citation `baird91' on page 27 undefined on input line 1
-691.
-
-
-Package natbib Warning: Citation `baird91' on page 27 undefined on input line 1
-692.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 27 undefined on input li
-ne 1693.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 27 undefined on input li
-ne 1694.
-
-
-Package natbib Warning: Citation `almunia99' on page 27 undefined on input line
- 1695.
-
-
-Package natbib Warning: Citation `heymans00' on page 27 undefined on input line
- 1696.
-
-
-Package natbib Warning: Citation `scharler05' on page 27 undefined on input lin
-e 1697.
-
-
-Package natbib Warning: Citation `scharler05' on page 27 undefined on input lin
-e 1698.
-
-
-Package natbib Warning: Citation `scharler05' on page 27 undefined on input lin
-e 1699.
-
-
-Package natbib Warning: Citation `whipple93' on page 27 undefined on input line
- 1700.
-
-
-Package natbib Warning: Citation `baird04' on page 27 undefined on input line 1
-701.
-
-
-Package natbib Warning: Citation `baird04' on page 27 undefined on input line 1
-702.
-
-
-Package natbib Warning: Citation `baird04' on page 27 undefined on input line 1
-703.
-
-
-Package natbib Warning: Citation `baird04' on page 27 undefined on input line 1
-704.
-
-
-Package natbib Warning: Citation `link08' on page 27 undefined on input line 17
-05.
-
-
-Package natbib Warning: Citation `link08' on page 27 undefined on input line 17
-06.
-
-
-Package natbib Warning: Citation `link08' on page 27 undefined on input line 17
-07.
-
-
-Package natbib Warning: Citation `monaco97' on page 27 undefined on input line 
-1708.
-
-
-Package natbib Warning: Citation `link08' on page 27 undefined on input line 17
-09.
-
-
-Package natbib Warning: Citation `baird89' on page 27 undefined on input line 1
-710.
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-34.def
-File: uni-34.def 2004/10/17 UCS: Unicode data U+2200..U+22FF
-)
-
-Package natbib Warning: Citation `patricio2006mass' on page 27 undefined on inp
-ut line 1711.
-
-
-Package natbib Warning: Citation `baird98' on page 27 undefined on input line 1
-712.
-
-
-Package natbib Warning: Citation `baird98' on page 27 undefined on input line 1
-713.
-
-
-Package natbib Warning: Citation `baird98' on page 27 undefined on input line 1
-714.
-
-
-Package natbib Warning: Citation `baird98' on page 27 undefined on input line 1
-715.
-
-
-Package natbib Warning: Citation `baird98' on page 27 undefined on input line 1
-716.
-
-
-Package natbib Warning: Citation `baird98' on page 27 undefined on input line 1
-717.
-
-
-Package natbib Warning: Citation `baird04_sylt' on page 27 undefined on input l
-ine 1718.
-
-
-Package natbib Warning: Citation `ulanowicz00_graminoids' on page 27 undefined 
-on input line 1719.
-
-
-Package natbib Warning: Citation `ulanowicz00_graminoids' on page 27 undefined 
-on input line 1720.
-
-
-Package natbib Warning: Citation `ulanowicz97_cypress' on page 27 undefined on 
-input line 1721.
-
-
-Package natbib Warning: Citation `ulanowicz97_cypress' on page 27 undefined on 
-input line 1722.
-
-
-Package natbib Warning: Citation `miehls09_oneida' on page 27 undefined on inpu
-t line 1723.
-
-
-Package natbib Warning: Citation `miehls09_oneida' on page 27 undefined on inpu
-t line 1724.
-
-
-Package natbib Warning: Citation `miehls09_quinte' on page 27 undefined on inpu
-t line 1725.
-
-
-Package natbib Warning: Citation `miehls09_quinte' on page 27 undefined on inpu
-t line 1726.
-
-
-Package natbib Warning: Citation `ulanowicz99_mangrove' on page 27 undefined on
- input line 1727.
-
-
-Package natbib Warning: Citation `ulanowicz99_mangrove' on page 27 undefined on
- input line 1728.
-
-
-Package natbib Warning: Citation `ulanowicz98_fb' on page 27 undefined on input
- line 1729.
-
-
-Package natbib Warning: Citation `ulanowicz98_fb' on page 27 undefined on input
- line 1730.
-
-
-Package natbib Warning: Citation `finn80' on page 27 undefined on input line 17
-41.
-
-
-Package natbib Warning: Citation `waide74' on page 27 undefined on input line 1
-757.
-
-
-Package natbib Warning: Citation `jordan72' on page 27 undefined on input line 
-1758.
-
-
-Package natbib Warning: Citation `jordan72' on page 27 undefined on input line 
-1759.
-
-
-Package natbib Warning: Citation `jordan72' on page 27 undefined on input line 
-1760.
-
-
-Package natbib Warning: Citation `jordan72' on page 27 undefined on input line 
-1761.
-
-
-Package natbib Warning: Citation `jordan72' on page 27 undefined on input line 
-1762.
-
-
-Package natbib Warning: Citation `jordan72' on page 27 undefined on input line 
-1763.
-
-
-Package natbib Warning: Citation `jordan72' on page 27 undefined on input line 
-1764.
-
-
-Package natbib Warning: Citation `jordan72' on page 27 undefined on input line 
-1765.
-
-
-Package natbib Warning: Citation `jordan72' on page 27 undefined on input line 
-1766.
-
-
-Package natbib Warning: Citation `jordan72' on page 27 undefined on input line 
-1767.
-
-
-Package natbib Warning: Citation `jordan72' on page 27 undefined on input line 
-1768.
-
-
-Package natbib Warning: Citation `edmisten70' on page 27 undefined on input lin
-e 1769.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1770.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1771.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1772.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1773.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1774.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1775.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1776.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1777.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1778.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1779.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1780.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1781.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1782.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1783.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1784.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1785.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1786.
-
-
-Package natbib Warning: Citation `hines12' on page 27 undefined on input line 1
-787.
-
-
-Package natbib Warning: Citation `borrett07_lanier' on page 27 undefined on inp
-ut line 1789.
-
-
-Package natbib Warning: Citation `hinrichsen98_baltic' on page 27 undefined on 
-input line 1790.
-
-
-Package natbib Warning: Citation `baird95' on page 27 undefined on input line 1
-791.
-
-
-Package natbib Warning: Citation `ulanowicz99' on page 27 undefined on input li
-ne 1792.
-
-
-Package natbib Warning: Citation `ulanowicz99' on page 27 undefined on input li
-ne 1793.
-
-
-Package natbib Warning: Citation `ulanowicz99' on page 27 undefined on input li
-ne 1794.
-
-
-Package natbib Warning: Citation `ulanowicz99' on page 27 undefined on input li
-ne 1795.
-
-
-Package natbib Warning: Citation `ulanowicz99' on page 27 undefined on input li
-ne 1796.
-
-
-Package natbib Warning: Citation `baird08_sylt' on page 27 undefined on input l
-ine 1797.
-
-
-Package natbib Warning: Citation `baird08_sylt' on page 27 undefined on input l
-ine 1798.
-
-
-Package natbib Warning: Citation `finn80' on page 27 undefined on input line 18
-09.
-
-
-Package natbib Warning: Citation `baird91' on page 27 undefined on input line 1
-821.
-
-
-Package natbib Warning: Citation `baird95' on page 27 undefined on input line 1
-821.
-
-
-Package natbib Warning: Citation `christian03' on page 27 undefined on input li
-ne 1821.
-
-
-Package natbib Warning: Citation `whipple07' on page 27 undefined on input line
- 1821.
-
-
-Package natbib Warning: Citation `christensen95' on page 27 undefined on input 
-line 1823.
-
-
-Package natbib Warning: Citation `borrett10_hmg' on page 27 undefined on input 
-line 1823.
-
-
-Package natbib Warning: Citation `salas11_did' on page 27 undefined on input li
-ne 1823.
-
-[27] [28] [29] [30] [31] [32] [33]
-
-Package natbib Warning: Citation `baird98' on page 34 undefined on input line 2
-211.
-
-<enaR-047.pdf, id=356, 505.89pt x 343.2825pt>
-File: enaR-047.pdf Graphic file (type pdf)
- <use enaR-047.pdf>
-Package pdftex.def Info: enaR-047.pdf used on input line 2239.
-(pdftex.def)             Requested size: 258.36668pt x 175.32317pt.
- [34] [35 <./enaR-047.pdf>] <enaR-050.pdf, id=371, 505.89pt x 343.2825pt>
-File: enaR-050.pdf Graphic file (type pdf)
- <use enaR-050.pdf>
-Package pdftex.def Info: enaR-050.pdf used on input line 2349.
-(pdftex.def)             Requested size: 258.36668pt x 175.32317pt.
-
-[36] <enaR-053.pdf, id=377, 505.89pt x 343.2825pt>
-File: enaR-053.pdf Graphic file (type pdf)
- <use enaR-053.pdf>
-Package pdftex.def Info: enaR-053.pdf used on input line 2403.
-(pdftex.def)             Requested size: 258.36668pt x 175.32317pt.
- [37 <./enaR-050.pdf>] [38 <./enaR-053.pdf>]
-
-Package natbib Warning: Citation `fath06' on page 39 undefined on input line 25
-04.
-
-No file enaR.bbl.
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2516.
-[39] [40] [41]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2516.
- (./enaR.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2516.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2516.
-
-Package rerunfilecheck Info: File `enaR.out' has not changed.
-(rerunfilecheck)             Checksum: 3F6B1FF7BDD244819DBC6513A2045D42;1667.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2516.
- ) 
+))
+! Emergency stop.
+<*> \nonstopmode\input enaR.tex
+                               
+*** (job aborted, no legal \end found)
+
+ 
 Here is how much of TeX's memory you used:
- 9024 strings out of 493633
- 128212 string characters out of 3143378
- 269164 words of memory out of 3000000
- 12008 multiletter control sequences out of 15000+200000
- 64275 words of font info for 132 fonts, out of 3000000 for 9000
+ 8151 strings out of 493633
+ 118498 string characters out of 3143378
+ 211378 words of memory out of 3000000
+ 11282 multiletter control sequences out of 15000+200000
+ 30866 words of font info for 72 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 35i,15n,32p,351b,750s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></u
-sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr
-/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></us
-r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
-/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></
-usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
-exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
-live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texliv
-e/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
-011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2011
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2011/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb></usr/local/texlive/2011/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2011/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2011/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2011/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2011/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2011/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2011/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2011/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/texmf-dist/font
-s/type1/public/cm-super/sfrm1095.pfb>
-Output written on enaR.pdf (41 pages, 479994 bytes).
-PDF statistics:
- 537 PDF objects out of 1000 (max. 8388607)
- 446 compressed objects within 5 object streams
- 89 named destinations out of 1000 (max. 500000)
- 244 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 35i,7n,32p,351b,319s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
