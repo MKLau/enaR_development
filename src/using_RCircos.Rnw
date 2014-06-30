@@ -455,6 +455,7 @@ RCircos.Histogram.Plot(RCircos.Histogram.Data,
 track.num <- 9;
 side <- "in";
 RCircos.Tile.Plot(RCircos.Tile.Data, track.num, side);
+dev.off()
 @ 
 
 
@@ -477,27 +478,41 @@ library(RCircos)
   par(mai=c(0.5, 0.5, 0.5, 0.5));
 plot.new();
 plot.window(c(-1,1), c(-1, 1));
-
-  data(RCircos.Link.Data);
+data(RCircos.Link.Data);
 track.num <- 11;
 RCircos.Link.Plot(RCircos.Link.Data, track.num, TRUE);
-
 data(RCircos.Ribbon.Data);
 RCircos.Ribbon.Plot(ribbon.data=RCircos.Ribbon.Data,
-                    track.num=11, by.chromosome=FALSE, twist=FALSE);
-
-
+                    track.num=11, by.chromosome=TRUE, twist=FALSE);
+dev.off()
 @ 
 
 \section{enaR: Oyster Example}
 
 <<>>=
+library(RCircos)
+chr.exclude <- NULL;
+data(UCSC.HG19.Human.CytoBandIdeogram);
+cyto.info <- UCSC.HG19.Human.CytoBandIdeogram;
+tracks.inside <- 10;
+tracks.outside <- 0;
+RCircos.Set.Core.Components(cyto.info, chr.exclude,
+                                   tracks.inside, tracks.outside);
+out.file <- "oysterCircos.pdf";
+pdf(file=out.file, height=5, width=5, compress=TRUE);
+RCircos.Set.Plot.Area();
+  par(mai=c(0.5, 0.5, 0.5, 0.5));
+plot.new();
+plot.window(c(-1,1), c(-1, 1));
+##
 library(enaR)
 data(oyster)
 mod <- oyster%n%'flow'
-RCircos.Ribbon.Plot(ribbon.data=Circos.Ribbon.Data,
-                    track.num=11, by.chromosome=FALSE, twist=FALSE);
-
+data(RCircos.Ribbon.Data)
+RCircos.Chromosome.Ideogram.Plot()
+RCircos.Ribbon.Plot(ribbon.data=RCircos.Ribbon.Data,
+                    track.num=11, by.chromosome=FALSE, twist=FALSE)
+dev.off()
 
 @ 
 
