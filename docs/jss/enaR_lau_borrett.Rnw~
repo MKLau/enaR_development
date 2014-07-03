@@ -1,0 +1,100 @@
+\documentclass[article]{jss}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% declarations for jss.cls %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% almost as usual
+\author{Matthew K. Lau\\ Harvard Forest\\Harvard University \And 
+        Stuart R. Borrett\\Department of Biology and Marine Biology\\
+        University of North Carolina Wilmington}
+\title{enaR: Ecosystem Network Analysis with R}
+
+%% for pretty printing and a nice hypersummary also set:
+\Plainauthor{Matthew K. Lau, Stuart R. Borrett} %% comma-separated
+\Plaintitle{enaR: Ecosystem Network Analyses with R} %% without formatting
+\Shorttitle{\pkg{enaR}: Ecosystem Network Analyses with R} %% a short title (if necessary)
+
+%% an abstract and keywords
+\Abstract{
+  Ecosystem Network Analysis (ENA) provides a framework for
+  investigating the structure, function and dynamics of ecological
+  systems, primarily ecosystem models with physcially conserved
+  units. Here, we present the \textit{enaR} package, which provides a
+  broad representation of many of the core tools developed by the ENA
+  community, detailing how to use the primary functions of the package
+  for the analysis of single models or simultaneous, synthetic
+  analysis of multiple ecosystem models.
+}
+\Keywords{ecology, ENA, ecosystems, species interactions, networks, \proglang{R}}
+\Plainkeywords{ecology, ENA, ecosystems, species interactions, networks, R} %% without formatting
+%% at least one keyword must be supplied
+
+%% publication information
+%% NOTE: Typically, this can be left commented and will be filled out by the technical editor
+%% \Volume{50}
+%% \Issue{9}
+%% \Month{June}
+%% \Year{2012}
+%% \Submitdate{2012-06-04}
+%% \Acceptdate{2012-06-04}
+
+%% The address of (at least) one author should be given
+%% in the following format:
+\Address{
+  Achim Zeileis\\
+  Department of Statistics and Mathematics\\
+  Faculty of Economics and Statistics\\
+  Universit\"at Innsbruck\\
+  6020 Innsbruck, Austria\\
+  E-mail: \email{Achim.Zeileis@uibk.ac.at}\\
+  URL: \url{http://eeecon.uibk.ac.at/~zeileis/}
+}
+%% It is also possible to add a telephone and fax number
+%% before the e-mail in the following format:
+%% Telephone: +43/512/507-7103
+%% Fax: +43/512/507-2851
+
+%% for those who use Sweave please include the following line (with % symbols):
+%% need no \usepackage{Sweave.sty}
+
+\usepackage[super, sort]{natbib}
+  \bibpunct{(}{)}{;}{a}{,}{,} % required for natbib  
+\usepackage{ucs} %needed for R output: signif stars etc, quotes
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{sidecap}
+
+%% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%% include your article here, just as usual
+%% Note that you should use the \pkg{}, \proglang{} and \code{} commands.
+
+\section[Ecosystem Network Analysis]{Ecosystem Network Analysis}
+%% Note: If there is markup in \(sub)section, then it has to be escape as above.
+
+This package is a collection of functions to implement Ecological
+Network Analysis (ENA), which is a family of algorithms for
+investigating the structure and function of ecosystems modeled as
+networks of thermodynamically conserved energy--matter exchanges.  The
+package brings together multiple ENA algorithms from several
+approaches into one common software framework that is readily available and
+extensible.  The package builds on the \textit{network} data structure
+for \R\ developed by \citet{butts08_network}. In addition to being
+able to perform several types of ENA with a single package, users can
+also make use of network analysis tools built into the
+\textit{network} package, the \textit{sna} (social network analysis)
+package \citep{butts08_social}, and other components of what is now
+called \textit{statnet} \citep{handcock2008statnet}.
+
+This vignette illustrates how to use the \textit{enaR} package to
+perform ENA.  It is not meant to be a detailed guide to ENA, but we
+provide some references to the primary literature for those wishing to
+learn more about the techniques.
+
+
+
+\end{document}

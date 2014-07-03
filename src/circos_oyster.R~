@@ -1,0 +1,30 @@
+###Using the R Circos package
+###MKLau
+###17 Jun 2014
+
+# Load RCircos libaray
+# __________________________________________________
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+library(RCircos);
+# Load human chromosome ideogram and sample data
+# __________________________________________________
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+data(UCSC.HG19.Human.CytoBandIdeogram);
+data(RCircos.Link.Data);
+# Set RCircso core components
+# __________________________________________________
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+cyto.info <- UCSC.HG19.Human.CytoBandIdeogram
+chr.exclude <- c("chrX", "chrY")
+num.inside <- 5
+num.outside <- 0
+RCircos.Set.Core.Components(cyto.info,chr.exclude, num.inside, num.outside)
+
+# Initialize graphic device, plot chromosome ideogram
+# and link lines
+# __________________________________________________
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+RCircos.Set.Plot.Area()
+RCircos.Chromosome.Ideogram.Plot()
+track.num <- 4
+RCircos.Link.Plot(RCircos.Link.Data,track.num, TRUE)
