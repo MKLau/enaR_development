@@ -188,7 +188,7 @@ increasing popularity as an analytical tool in the biological sciences
 \citep[e.g.,][]{dixon2003vegan, metcalf2012, revell2012phytools}.
 Further, users can freely download a stable version of the package
 from the CRAN website
-(\url{http://cran.r-project.org/web/packages/enaR/}), and the code for
+(\url{http://cran.r-project.org/web/packages/enaR}), and the code for
 every function in \R\ is available from within \R\ (e.g.,
 \texttt{edit($function\_name$)}).  In addition, \enaR\ development is being managed
 via GitHub (\url{https://github.com/TheSeeLab/enaR}) to encourage
@@ -282,7 +282,7 @@ visualization is included in the online supplementary information.
 % enaR Algorithms
 \enaR\ includes many of the most commonly used ENA algorithms
 (Table~\ref{tab:alg}), along with a number of work flow tools and specialty
-analyses (Tables~\ref{tab:algIO} and \ref{tab:algaux}).  Note that the nine
+analyses (Tables~\ref{tab:algIO} and \ref{tab:algaux}).  The nine
 primary ENA functions begin with the prefix `ena' followed by the
 specific analysis name (see Table~\ref{tab:alg}).  There are a total
 of 34 functions in the \enaR\ package.
@@ -429,7 +429,7 @@ hypothesized ecosystem properties like network non-locality
 or to investigate how physical features might influence ENA results
 \citep{niquil2012physical}. Fig.~\ref{fig:example}b illustrates the
 rank-ordered network homogenization statistic for the 56 trophic-based
-ecosystem models in the library. Notice that the homogenization
+ecosystem models in the library. The homogenization
 statistic is greater than one in all of these models indicating that
 the network of indirect interactions tend to more uniformly distribute
 the resources than is obvious from the direct interactions, which
@@ -439,7 +439,7 @@ ENA inter-relationships.  With the collection of algorithms and the
 library of models, we can now investigate possible relationships among
 ENA indicators from different schools (Fig.~\ref{fig:example}c). The
 \R\ script to generate Fig.~\ref{fig:example} is available as an
-online enhancment.  A third application of batch analysis is to
+online enhancement.  A third application of batch analysis is to
 investigate the previously unknown empirical ranges of ENA
 whole-network statistics, which may be useful for interpreting results
 from specific applications.  Fig.~\ref{fig:ns} shows the observed
@@ -551,7 +551,7 @@ spine \citep{ulanowicz1979trophic}. Network model construction
 tools, such as least-inference methods for building models from
 empirical data \citep{ulanowicz2008least} and \citeapos{fath04_cyber}
 algorithm for constructing plausible ecosystems models are also
-possible enhancments.
+possible enhancements.
 
 In conclusion, \enaR\ is an \R\ package intended to facilitate the use
 and the collaborative development of Ecosystem Network Analysis, a
@@ -1072,11 +1072,11 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
 %  \multicolumn{3}{l}{\textbf{Primary Analyses}} \\ [0.5 ex]
   \texttt{enaStructure} & ENA Structural analysis returns the adjacency
   matrix and multiple common descriptive statistics (e.g., number
-  of nodes, connectance, pathway proliferation rate) & \citet{borrett07_jtb} \\ [2 ex]
+  of nodes, connectance, pathway proliferation rate). & \citet{borrett07_jtb} \\ [2 ex]
   \texttt{enaFlow} & Calculates node throughflow and input and output oriented direct and integral flow
   intensity matrices.  It also returns multiple whole network descriptive
   statistics including Total System Throughflow, Finn Cycling Index,
-  and Average Path Length &  \citet{finn76}\\
+  and Average Path Length. &  \citet{finn76}\\
 \texttt{enaAscendency} & Performs ascendency analysis on the model flows and returns
   whole-network statistics including the average mutual information,
   Ascendency, Capacity, and Overhead.  & \citet{ulanowicz97}\\
@@ -1110,22 +1110,22 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
   \textbf{Function} & \textbf{Description} &
   \textbf{Example Reference}\\ [1 ex] \hline \\ [-0.5 ex]
   \multicolumn{3}{l}{\textbf{Specialty Analyses} }\\
-  enaAll & Runs all of the primary ENA algorithms \\
+  enaAll & Runs all of the primary ENA algorithms. & None \\
   get.ns & Returns the whole-network statistics from enaStructure,
-  enaFlow, enaAscendency, enaStorage, and enaUtility\\
+  enaFlow, enaAscendency, enaStorage, and enaUtility. & None \\
   eigenCentrality & Calculates the average eigenvalue centrality for
-  any input matrix\\
+  any input matrix. & None \\
   environCentrality & Returns the input, output, and average environ
-  centralities for a matrix & \citet{fann12_ec}  \\
-  TET & Returns the total environ throughflows & \citet{whipple07}\\
-  TES & Returns the total enivron storages & \citet{matis81}\\ [1 ex]
+  centralities for a matrix. & \citet{fann12_ec}  \\
+  TET & Returns the total environ throughflows. & \citet{whipple07}\\
+  TES & Returns the total enivron storages. & \citet{matis81}\\ [1 ex]
   %findPathLength & \\[1 ex]
   \multicolumn{3}{l}{\textbf{Auxiliary Functions}} \\
   get.orient & Determine the orientation of the results
-  (row-to-column  vs.\ School)  \\
+  (row-to-column  vs.\ School). & None \\
   set.orient & Set the orientation of the results
-  (row-to-column vs.\ School) \\
-  mExp & This function les users calculate matrix exponents.\\
+  (row-to-column vs.\ School). & None \\
+  mExp & This function lets users calculate matrix exponents. & None \\
 \end{tabular}
 %\end{scriptsize}
 \tableline
@@ -1200,7 +1200,7 @@ $names
   showing the relationship between the ascendency-to-capacity ratio
   and the indirect flow index for the 56 trophic ecosystem models
   included in the package, and (d) target plot of the betweenness centrality from
-  social network analysis calculated for the xx nodes of the
+  social network analysis calculated for the 36 nodes of the
   Chesapeake Bay ecosystem model \citep{baird89}. } \label{fig:example}
 \end{figure*}
 

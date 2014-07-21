@@ -1,3 +1,41 @@
+- I question the need for the section “Example Application” in the
+  manuscript. This seems better suited to a helpfile than to a
+  manuscript.
+- I wonder whether there is a way of expressing the idea in line 153
+  without appearing to advertise for the program. I believe the
+  manuscript should be a description of a program, not a sales pitch
+  for it. My suggestion is to look out for this across the entire
+  manuscript. I appreciate that the authors have tried to be clearer
+  about the novelty of the program and its usefulness, and that this
+  may be the manner in which they have chosen to do so.
+- Table 4 is not actually a table and additionally text in it, though
+  useful to package users, is not sufficiently important to warrant
+  inclusion in the manuscript. I suggest eliminating it from the
+  manuscript and making it accessible via the package helpfiles, if it
+  isn’t already.
+- Caption 1d. Is it actually meant to read “xx node” or is this an oversight?
+- Table 3, are there really no example references for the other
+  functions (e.g. for calculation of eigenvalue centrality of a
+  matrix)? For cases in which there are no relevant references, I
+  suggest for the purposes of standardising with other tables that the
+  authors place the word “none” in the respective row.
+
+
+- The use of the phrase “note that” seems inappropriately colloquial
+  for a manuscript. See lines 101 and 118. I suggest a re-write. See
+  also “notice” in line 191.
+
+- Line 118, typo: space required between “enaR” and “to”.
+- Line 119, typo: correct “softare”.
+- Line 197, typo: correct “enhancment”
+- Line 222, typo: correct “exiting”
+- Line 240, grammatical inconsistency: “cycles is”
+- Line 244, typo: correct “enhancement”
+- Table 3, typo in last row, second column.
+
+
+
+
 Dear Dr. Borrett:
 
 Manuscript ID MEE-14-05-242 entitled "enaR: An R package for Ecosystem
