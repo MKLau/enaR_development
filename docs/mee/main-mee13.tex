@@ -65,6 +65,8 @@ urlcolor=red]{hyperref}
     \item MKL: Department of Biological Sciences and the
       Merriam-Powell Center for Environmental Research, Northern
       Arizona University, 617 S. Beaver St., Flagstaff, AZ, 86011
+      \\ Current Address: Harvard Forest, Harvard University, 324
+      N. Main St., Petersham, MA 01366
     \end{itemize}
   \item[\textbf{Contact Details}:] \
     \begin{itemize}
@@ -209,7 +211,7 @@ refer interested readers to a selection of reviews as an entry point
 to ENA \citep{fath99_review, ulanowicz97, fath06, schramski11,
   jorgensen07_newecology}.  For a more comprehensive description on
 how to use the \enaR\ package, please refer to the package vignette:
-\url{http://cran.r-project.org/web/packages/enaR/vignettes/enaR.pdf}.
+\url{http://cran.r-project.org/web/packages/enaR/vignettes/enaR-vignette.pdf}.
 % part of what we need to do is communicate to the editor the shear
 % size of the package and its capability.
 
@@ -285,7 +287,11 @@ visualization is included in the online supplementary information.
 analyses (Tables~\ref{tab:algIO} and \ref{tab:algaux}).  The nine
 primary ENA functions begin with the prefix `ena' followed by the
 specific analysis name (see Table~\ref{tab:alg}).  There are a total
-of 34 functions in the \enaR\ package.
+of 34 functions in the \enaR\ package. Comparison of the
+\enaR\ package to previous implementations of ENA algorithms (i.e.,
+WAND, NETWRK and Ecopath) shows high agreement in function output and
+sigificant expansion of the available ENA algorithms (Supplementary
+Materials).
 
 \citet{scharler09comparing} identify two schools of ENA.  The first
 school is based on the work of Robert Ulanowicz and colleagues at the
@@ -1040,20 +1046,20 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
   \textbf{Function} & \textbf{Description} &
   \textbf{Example Reference}\\ [1 ex] \hline \\ [-0.5 ex]
   pack & This function lets the user combine model elements into
-  a network data object & none\\
+  a network data object. & None\\
   unpack & Extracts the invidual model elements (e.g., flows, inputs,
-  outputs) from the network data object & none\\
+  outputs) from the network data object. & None\\
   read.scor & Creates a network data object from a SCOR formatted data
-  file & \citet{ulanowicz91} \\
+  file. & \citet{ulanowicz91} \\
   read.wand & Creates a network data object from a WAND formatted data
-  file & \citet{allesina04_wand}\\
-  ssCheck & Checks to see if the model is at steady-state \\
+  file. & \citet{allesina04_wand}\\
+  ssCheck & Checks to see if the model is at steady-state. & None \\
   balance & Applies one of four balancing algorithms to a model not at
-  steady-state & \citet{allesina03}\\
+  steady-state. & \citet{allesina03}\\
   force.balance & Runs balancing algorithm as many times as necessary
-  to balance the model \\
+  to balance the model. & None \\
   write.nea & Writes the model data to the file format used as input
-  for NEA.m & \citet{fath06}\\ [1 ex]
+  for NEA.m. & \citet{fath06}\\ [1 ex]
 \end{tabular}
 %\end{scriptsize}
 \tableline
