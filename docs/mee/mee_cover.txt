@@ -50,7 +50,7 @@ algorithms are consistent with the other software.
   issues
 
 This was very helpful and kind of the reviewer. We have gone through
-all of the suggestions and fixed them as suggested.
+and fixed all of the suggestions.
 
 *Reviewer 2*
 - I question the need for the section “Example Application” in the
@@ -72,7 +72,7 @@ streamlined and re-labeled the associated table as a figure as requested.
 
 We appreciated this suggestion, as our intent is to illustrate the
 utility of the package for users and draw their attention to the
-possible benefits. As suggested, we revised the text to reduce the
+possible benefits. We have revised the text to reduce the
 "advertisement" language.
 
 - Table 4 is not actually a table and additionally text in it, though
@@ -87,7 +87,7 @@ did re-label the Table as a Figure.
 
 - Caption 1d. Is it actually meant to read “xx node” or is this an oversight?
 
-This was a good catch. We have fixed it to now read "56 node."
+This was a good catch. We have fixed it to now read "56 node".
 
 - Table 3, are there really no example references for the other
   functions (e.g. for calculation of eigenvalue centrality of a
