@@ -1,0 +1,94 @@
+
+Thank you very much for the rapid and organized review of the
+manuscript. We found all of the comments to be constructive and
+helpful, making for a significantly improved manuscript. As we detail
+below, we have addressed all suggested edits per the reviewer's
+instructions.
+
+*Reviewer 1*
+
+Comments to the Corresponding Author
+- I think that "Network Ecology" should be "network ecology"
+
+We agree with the reviewer here and have changed to the lower case, as
+it network ecology is now an established, general field of study and
+not a specific study, i.e., a proper noun, and thus doesn't warrant
+capitalization. 
+
+- Please provide the comparison with other software as supplementary
+  material
+
+Great suggestion. We have added a table comparing the
+output of functions from enaR to the output from several other ENA
+analytical packages, including NETWRK, Ecopath and WAND.
+
+- I have made some minor queries on the code, submitted as GitHub
+  issues
+
+This was very helpful and kind of the reviewer. We have gone through
+all of the suggestions and fixed them as suggested.
+
+*Reviewer 2*
+- I question the need for the section “Example Application” in the
+  manuscript. This seems better suited to a helpfile than to a
+  manuscript.
+
+This is a good suggestion; however it conflicted with the
+recommendation of the associate editor. As a compromise we have
+updated the text to make it more streamlined and changed the
+associated table to a clearer figure.
+
+- I wonder whether there is a way of expressing the idea in line 153
+  without appearing to advertise for the program. I believe the
+  manuscript should be a description of a program, not a sales pitch
+  for it. My suggestion is to look out for this across the entire
+  manuscript. I appreciate that the authors have tried to be clearer
+  about the novelty of the program and its usefulness, and that this
+  may be the manner in which they have chosen to do so.
+
+We appreciated this suggestion, as our intent is to illustrate the
+utility of the package for users and draw their attention to the
+possible benefits. We have adjusted areas to reduce the
+"advertisement" language, especially any buzz-words.
+
+- Table 4 is not actually a table and additionally text in it, though
+  useful to package users, is not sufficiently important to warrant
+  inclusion in the manuscript. I suggest eliminating it from the
+  manuscript and making it accessible via the package helpfiles, if it
+  isn’t already.
+
+We agree that Table 4 overlaps with content provided in the help
+files. As a part of the general streamlining of example presentation,
+as previously mentioned, we have made it into a figure.
+
+- Caption 1d. Is it actually meant to read “xx node” or is this an oversight?
+
+This was a very good catch. We have fixed it to now read "56 node."
+
+- Table 3, are there really no example references for the other
+  functions (e.g. for calculation of eigenvalue centrality of a
+  matrix)? For cases in which there are no relevant references, I
+  suggest for the purposes of standardising with other tables that the
+  authors place the word “none” in the respective row.
+
+This was a very good question from the reviewer. Most of these
+functions don't have references as they are functions specific to the
+package. 
+
+%%%% Stuart - enaCentrality references?
+
+- The use of the phrase “note that” seems inappropriately colloquial
+  for a manuscript. See lines 101 and 118. I suggest a re-write. See
+  also “notice” in line 191.
+
+We have reduced colloquial language throughout the manuscript.
+
+- Line 118, typo: space required between “enaR” and “to”.
+- Line 119, typo: correct “softare”.
+- Line 197, typo: correct “enhancment”
+- Line 222, typo: correct “exiting”
+- Line 240, grammatical inconsistency: “cycles is”
+- Line 244, typo: correct “enhancement”
+- Table 3, typo in last row, second column.
+
+We have corrected all typos pointed out by the reviewers and editors. 

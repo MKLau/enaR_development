@@ -40,10 +40,13 @@ urlcolor=red]{hyperref}
 \title{\enaR: An \R\ package for Ecosystem Network Analysis}
 \author{Stuart R. Borrett$^{a,*}$ and Matthew K. Lau$^b$
   \\ {\footnotesize $^a$ Department of Biology and Marine Biology,} \\
-    {\footnotesize University of North Carolina Wilmington, Wilmington, NC, 28403}
+    {\footnotesize University of North Carolina Wilmington, Wilmington, NC 28403}
   \\ {\footnotesize $^b$ Department of Biological Sciences and the
     Merriam-Powell Center for Environmental Research,} \\
-{\footnotesize Northern Arizona University, 617 S.\ Beaver St., Flagstaff, AZ, 86011}
+{\footnotesize Northern Arizona University, 617 S.\ Beaver St.,
+  Flagstaff, AZ 86011}\\
+{\footnotesize Current Address: Harvard Forest, Harvard University, 324
+      N. Main St., Petersham, MA 01366}
   \\ {\footnotesize $^*$ Corresponding author, borretts@uncw.edu} }
 
 % ------------------------
@@ -61,10 +64,10 @@ urlcolor=red]{hyperref}
   \item[\textbf{Addresses}:] \
     \begin{itemize}
     \item SRB: Department of Biology and Marine Biology, University of
-      North Carolina Wilmington, Wilmington, NC, 28403
+      North Carolina Wilmington, Wilmington, NC 28403
     \item MKL: Department of Biological Sciences and the
       Merriam-Powell Center for Environmental Research, Northern
-      Arizona University, 617 S. Beaver St., Flagstaff, AZ, 86011
+      Arizona University, 617 S. Beaver St., Flagstaff, AZ 86011
       \\ Current Address: Harvard Forest, Harvard University, 324
       N. Main St., Petersham, MA 01366
     \end{itemize}
@@ -95,7 +98,7 @@ urlcolor=red]{hyperref}
   the structure and dynamics of matter and energy movement between
   discrete ecological compartments (e.g., a food web).
 \item In addition to describing the primary functionality of the
-  package, we also highlight several value added features, including a
+  package, we also highlight several value added features including a
   library of 100 empirical ecosystem models, the ability to analyze
   and compare multiple models simultaneously, and connections to
   useful ecological network analysis tools in \R .
@@ -103,11 +106,11 @@ urlcolor=red]{hyperref}
 
 KEYWORDS: network analysis, ecosystem, open-source software, network
 environ analysis, ascendency, input--output analysis, food web, urban
-metabolism, Ecopath, WAND \tableline
+metabolism, Ecopath, NETWRK, WAND \tableline
 
 \section{Introduction}
 % Network Ecology & its significance
-Network Ecology -- the study of ecological systems using network
+Network ecology -- the study of ecological systems using network
 models and analyses to characterize their structure, function, and
 evolution -- is a large and rapidly growing area of ecology
 \citep{proulx05}. %, borrett12_netecol}.
@@ -117,8 +120,8 @@ For example, \citet{ings2009} discovered that a notable fraction of
 host-parasitoid networks ($\approx$0.06\%). Likewise,
 \citet{borrett14_rise} found that the percent of ecology and
 evolutionary biology papers indexed by Web of Science that could be
-classified as Network Ecology increased from 1.3\% in 1991 to more
-than 5\% in 2012.  This rise of Network Ecology contributes to,
+classified as network ecology increased from 1.3\% in 1991 to more
+than 5\% in 2012.  This rise of network ecology contributes to,
 mirrors, and builds on the more general growth of network sciences
 \citep{wasserman94, barabasi12, borgatti2003network,
   freeman2004development, newman03review}.
@@ -130,7 +133,7 @@ mirrors, and builds on the more general growth of network sciences
 %questions.
 
 % ENA & Questions ---
-Ecosystem Network Analysis (ENA) is a branch of Network Ecology that
+Ecosystem Network Analysis (ENA) is a branch of network ecology that
 has been used to address a range of key ecosystem questions
 \citep{borrett12_netecol, fath99_review, ulanowicz86}.
 %As many ecosystem questions center on how species are connected across
@@ -175,27 +178,27 @@ function and evolution \citep{ulanowicz97, patten91,
 % nitrogen cycle.
 
 % Software Objectives
-\enaR\ is an open-source software to facilitate ENA.  Extant ENA
-software \citep{ulanowicz91, kazanci07, allesina04_wand,
-  christensen04, fath06} each have critical limitations, which led us
-to three primary design objectives for \enaR .
-The first objective was to collect the major ENA functions into a
+\enaR\ is an open-source software to facilitate ENA.  The currently
+available ENA software packages \citep{ulanowicz91, kazanci07,
+  allesina04_wand, christensen04, fath06} each have critical
+limitations, which led us to three primary design objectives for \enaR
+.  The first objective was to collect the major ENA functions into a
 single software package.  While multiple investigators have
 contributed to algorithmic development \citep[e.g.,][]{finn76,
   ulanowicz86, ulanowicz91, fath99_review, allesina03}, the broad set
 of tools is not available in a single existing software.  The second
 objective was to increase the availability and extensibility of the
-software. We chose to use \R\ in part because of its
-increasing popularity as an analytical tool in the biological sciences
+software. We chose to use \R\ in part because of its increasing
+popularity as an analytical tool in the biological sciences
 \citep[e.g.,][]{dixon2003vegan, metcalf2012, revell2012phytools}.
 Further, users can freely download a stable version of the package
 from the CRAN website
 (\url{http://cran.r-project.org/web/packages/enaR}), and the code for
 every function in \R\ is available from within \R\ (e.g.,
-\texttt{edit($function\_name$)}).  In addition, \enaR\ development is being managed
-via GitHub (\url{https://github.com/TheSeeLab/enaR}) to encourage
-collaborative development.  The third design objective was to enable
-\enaR\ users access to network analysis tools from other
+\texttt{edit($function\_name$)}).  In addition, \enaR\ development is
+being managed via GitHub (\url{https://github.com/TheSeeLab/enaR}) to
+encourage collaborative development.  The third design objective was
+to enable \enaR\ users access to network analysis tools from other
 disciplines.  To enable this, \enaR\ was designed to work directly
 with two existing \R\ network analysis packages:  \texttt{network}
 \citep{butts08_network} and \texttt{sna} \citep{butts08_social}.  In
@@ -231,8 +234,8 @@ ecological systems.
 %describes the the main analyses in the package. \enaR\ also includes a
 %number of functions to assist with data import, manipulation, and
 %export, as well as some specialty analyses (Table~\ref{tab:alg2}).
-In this section we provide an overview of these algorithms and tools
-include in the \enaR\ software.  After describing the required model
+In this section we provide an overview of the algorithms and tools
+included in the \enaR\ software.  After describing the required model
 information, we highlight the primary ENA algorithms included in
 \enaR .  We then walk through an example application of the \enaR\ Flow
 analysis.
@@ -278,7 +281,8 @@ Fig.~\ref{fig:example}a shows an example visualization of
 package includes three network layout algorithms: circle,
 Fruchterman-Reingold, and Kamada-Kawai.  The Fruchterman-Reingold
 algorithm used here is the default.  The \R\ script to generate this
-visualization is included in the online supplementary information.
+visualization is included in the online supplementary information
+(Item S1).
 
 \subsection{Algorithm Overview}
 % enaR Algorithms
@@ -289,16 +293,15 @@ primary ENA functions begin with the prefix `ena' followed by the
 specific analysis name (see Table~\ref{tab:alg}).  There are a total
 of 34 functions in the \enaR\ package. Comparison of the
 \enaR\ package to previous implementations of ENA algorithms (i.e.,
-WAND, NETWRK and Ecopath) shows high agreement in function output and
-sigificant expansion of the available ENA algorithms (Supplementary
-Materials).
+NETWRK, NEA.m, EcoNet) shows high agreement in function output and
+significant expansion of the available ENA algorithms (Table S1 online).
 
 \citet{scharler09comparing} identify two schools of ENA.  The first
 school is based on the work of Robert Ulanowicz and colleagues at the
 University of Maryland \citep{ulanowicz86, ulanowicz97,
   ulanowicz09_window}.  Primarily focused on trophic ecology, this
-approach uses information theory and the ascendency concept that
-characterizes ecosystem growth and development \citet{ulanowicz86,
+approach uses information theory and the ascendency concept to
+characterize ecosystem growth and development \citep{ulanowicz86,
   ulanowicz97}.  This work is often referred to as ``Ecological
 Network Analysis'' as it predates many other types of network ecology.
 The second school is based on the work of Bernard Patten at the
@@ -306,24 +309,24 @@ University of Georgia \citep{patten76, matis81, patten82,
   fath99_review}.  Steeped in dynamic equations, simulations, and
 systems analysis, this approach developed around the environ concept
 that formalizes the concept of environment \citep{patten78}, and has
-often been referred to as ``Network Environ Analysis.''
-\enaR\ currently captures all of the Patten School algorithms
-previously implemented in NEA.m \citep{fath06}.  Presently, the
-Ulanowicz School algorithms are more limited, including the ascendency
-calculations \citep{ulanowicz97} and mixed trophic impacts analyses
+often been referred to as ``Network Environ Analysis.''  \enaR\
+currently captures all of the Patten School algorithms previously
+implemented in NEA.m \citep{fath06}.  Presently, the Ulanowicz School
+algorithms are more limited, including the ascendency calculations
+\citep{ulanowicz97} and mixed trophic impacts analyses
 \citep{ulanowicz90}; however, we expect the package capabilities to
 continue to grow, especially with the assistance of new users.  This
 combination of the Patten and Ulanowicz schools of analyses is rare in
-extant software.
+existing software.
 
 \subsection{Example Application}
 % Apply enaR to a single model.
-Given a network model, applying ENA algorithms with \enaR\ is straight
-forward. We demonstrate how to use the package with an example Flow
-analysis on \citeapos{dame81} model of energy flow in an Oyster Reef
-ecosystem. Table~\ref{tab:flow} shows the example script.  The
+Given a network model, applying ENA algorithms with \enaR\ is
+straightforward. We demonstrate how to use the package with an example
+Flow analysis on \citeapos{dame81} model of energy flow in an Oyster
+Reef ecosystem. Figure~\ref{tab:flow} shows the example script.  The
 analysis involves: (1) loading the model data, (2) checking and
-balancing the model if necessary, and (3) inputing the balanced model
+balancing the model if necessary, and (3) inputting the balanced model
 into the analysis function.  The final step is interpreting the
 analytical output. This is a typical workflow for ENA.
 
@@ -332,10 +335,10 @@ data.
 %In this example, we use the \texttt{read.scor} function to
 %import the SCOR formatted data from a text file, which is assumed to
 %be in the current \R\ working directory (online supplement).
-Here, we have extracted the model information from the paper and
-created a vector of node names, the flow matrix (F), inputs (z),
+Here, we extract the model information from the paper and
+create a vector of node names, the flow matrix (F), inputs (z),
 outputs (y), and the logical vector indicating whether or not the
-nodes are living (Table~\ref{tab:flow}).  We then use the
+nodes are living (Fig.~\ref{tab:flow}).  We then use the
 \texttt{pack} function to create the required network data object.
 The next step is to apply the \texttt{ssCheck} function ensure that
 the model is at steady-state, which is one of the assumptions of the
@@ -374,8 +377,8 @@ in previously published literature \citep{fath06, schramski11,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Value Added Features}
 There are several features of the \enaR\ package beyond the core
-analyses that add substantive value for users.  In this section, we
-highlight several value added features, including a library of 100
+analyses that add substantive value for users.  In this section we
+highlight several of these features including a library of 100
 ecosystem network models, methods for conducting batch analysis (i.e.,
 simultaneous analysis of multiple models), and connections to other
 analytical software.
@@ -395,7 +398,7 @@ overlap with the set of models previously collected by Dr.\ Ulanowicz
 (\url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}), the full
 set has not previously been collected and distributed together.
 
-We have tentatively split these models into two classes.  The most
+We tentatively split these models into two classes.  The most
 abundant class is the trophic network models. % (Table~\ref{tab:TRO}).
 These models tend to have a food web at their core, but also include
 non-trophic fluxes generated by processes like death and excretion.
@@ -418,7 +421,7 @@ Advances in ecosystem ecology have been made by comparing network
 metrics across multiple ecosystem models. For example,
 \citet{christensen95} applied ENA to identify and compare the maturity
 of 41 ecosystem models, and \citet{vanoevelen2011canyon} compared the
-the organic matter processing of food webs in three sections of the
+organic matter processing of food webs in three sections of the
 Nazar{\'e} submarine canyon.  The \enaR\ tool simplifies the work flow
 for these types of comparison. Given a list of models like the model
 library, it is possible to quickly analyze multiple models using R's
@@ -435,18 +438,18 @@ hypothesized ecosystem properties like network non-locality
 or to investigate how physical features might influence ENA results
 \citep{niquil2012physical}. Fig.~\ref{fig:example}b illustrates the
 rank-ordered network homogenization statistic for the 56 trophic-based
-ecosystem models in the library. The homogenization
-statistic is greater than one in all of these models indicating that
-the network of indirect interactions tend to more uniformly distribute
-the resources than is obvious from the direct interactions, which
-extends previous results of \citet{borrett10_hmg} to include several
-new models.  A second kind of application is the exploration of new
-ENA inter-relationships.  With the collection of algorithms and the
+ecosystem models in the library. The homogenization statistic is
+greater than one in all of these models indicating that the network of
+indirect interactions tend to more uniformly distribute the resources
+than is obvious from the direct interactions, which extends previous
+results of \citet{borrett10_hmg} to include several new models.  A
+second kind of application is the exploration of new ENA
+inter-relationships.  With the collection of algorithms and the
 library of models, we can now investigate possible relationships among
 ENA indicators from different schools (Fig.~\ref{fig:example}c). The
 \R\ script to generate Fig.~\ref{fig:example} is available as an
-online enhancement.  A third application of batch analysis is to
-investigate the previously unknown empirical ranges of ENA
+online enhancement (Item S1).  A third application of batch analysis
+is to investigate the previously unknown empirical ranges of ENA
 whole-network statistics, which may be useful for interpreting results
 from specific applications.  Fig.~\ref{fig:ns} shows the observed
 distribution of values for selected network statistics from the 100
@@ -456,7 +459,7 @@ associated \enaR\ functions.
 
 \subsection{New Connections}
 % Connections to other tools (SNA, igraph)
-A third added benefit of the \enaR\ package design is that it enables
+A third advantage of the \enaR\ package design is that it enables
 network ecologists easier access to other network tools and analyses
 that might be useful.  The \enaR\ package uses the \R\ network data
 structure defined in the \texttt{network} package
@@ -520,15 +523,15 @@ including \texttt{bipartite} \citep{dormann2008}, \texttt{vegan}
 % \citep{latham2006,kones09}.
 
 The \enaR\ package encodes exiting ENA algorithms, and is designed to
-address limitations of current ENA software and facilitate wide
-development and use. It does this by (1) providing greater
+address limitations of current ENA software and facilitate wider
+use and development. It does this by (1) providing greater
 accessibility to the code (e.g., free and open source software
 available on multiple OS), (2) collecting a broad set of available ENA
 algorithms and workflow management functions, and (3) creating the
 potential for collaborative development (via GitHub and CRAN).
 Further, the software is extensible for individual needs and it lets
 users integrate ENA into a broader workflow in \R\ in a way that is
-not possible in web based tools like EcoNet
+more challenging when using web based tools like EcoNet
 \citep{kazanci07,schramski11}.  Finally, it lets users have access to
 other network and statistical analysis tools (e.g., social network
 analysis) that are already part of \R.  These benefits come at the
@@ -561,7 +564,7 @@ possible enhancements.
 
 In conclusion, \enaR\ is an \R\ package intended to facilitate the use
 and the collaborative development of Ecosystem Network Analysis, a
-branch of field of Network Ecology.  This domain is rapidly growing in part
+branch of network ecology.  This domain is rapidly growing in part
 because the tools and techniques let ecologists address a wide range
 of relational questions at the core of ecology.  We look forward to
 seeing new ecological discoveries made through the use of \enaR.
@@ -597,12 +600,13 @@ seeing new ecological discoveries made through the use of \enaR.
 
 \section{Acknowledgments}
 We would like to acknowledge and thank David Hines for contributing to
-the initial code.  We also thank several individuals who used the
-earlier versions of the software and provided helpful feedback for
-further development including Ursula Scharler, Shaoqing Chen, Emily
-Oxe, and John Mejaski.  In addition, we thank the many ecosystem model
-authors who created, shared, and published their work.  This work was
-funded in part by the US National Science Foundation (DEB1020944,
+the initial code, and Pawandeep Sing for collecting the output for
+Table S1.  We also thank several individuals who used the earlier
+versions of the software and provided helpful feedback for further
+development including Ursula Scharler, Shaoqing Chen, Emily Oxe, and
+John Mejaski.  In addition, we thank the many ecosystem model authors
+who created, shared, and published their work.  This work was funded
+in part by the US National Science Foundation (DEB1020944,
 DEB0425908), an NSF Integrative Graduate Education and Research
 Traineeship (MKL; DGE0549505) and a UNCW Cahill award (SRB).
 
@@ -623,16 +627,16 @@ Allesina, S., Bodini, A. \& Bondavalli, C. (2005) Ecological subsystems via
 
 \bibitem[{Allesina \& Bondavalli(2003)}]{allesina03}
 Allesina, S. \& Bondavalli, C. (2003) Steady state of ecosystem flow networks:
-  A comparison between balancing procedures.
+  a comparison between balancing procedures.
 \newblock \emph{Ecol Model}, \textbf{165}, 221--229.
 
 \bibitem[{Allesina \& Bondavalli(2004)}]{allesina04_wand}
-Allesina, S. \& Bondavalli, C. (2004) Wand: An ecological network analysis
+Allesina, S. \& Bondavalli, C. (2004) Wand: an ecological network analysis
   user-friendly tool.
 \newblock \emph{Environ Model Softw}, \textbf{19}, 337--340.
 
-\bibitem[{Baird \& Ulanowicz(199)}]{baird89}
-Baird, D. \& Ulanowicz, R.E. (199) The seasonal dynamics of the {Chesapeake
+\bibitem[{Baird \& Ulanowicz(1989)}]{baird89}
+Baird, D. \& Ulanowicz, R.E. (1989) The seasonal dynamics of the {Chesapeake
   Bay} ecosystem.
 \newblock \emph{Ecol Monogr}, \textbf{59}, 329--364.
 
@@ -647,18 +651,18 @@ Bodini, A. \& Bondavalli, C. (2002) Towards a sustainable use of water
 
 \bibitem[{Bodini \emph{et~al.}(2012)Bodini, Bondavalli \&
   Allesina}]{bodini2012cities}
-Bodini, A., Bondavalli, C. \& Allesina, S. (2012) Cities as ecosystems: Growth,
+Bodini, A., Bondavalli, C. \& Allesina, S. (2012) Cities as ecosystems: growth,
   development and implications for sustainability.
 \newblock \emph{Ecol Model}, \textbf{245}, 185--198.
 
 \bibitem[{Bondavalli \& Ulanowicz(1999)}]{bondavalli99}
 Bondavalli, C. \& Ulanowicz, R.E. (1999) Unexpected effects of predators upon
-  their prey: {T}he case of the {A}merican alligator.
+  their prey: the case of the {A}merican alligator.
 \newblock \emph{Ecosystems}, \textbf{2}, 49--63.
 
 \bibitem[{Borgatti \& Foster(2003)}]{borgatti2003network}
 Borgatti, S.P. \& Foster, P.C. (2003) The network paradigm in organizational
-  research: A review and typology.
+  research: a review and typology.
 \newblock \emph{J Manage}, \textbf{29}, 991--1013.
 
 \bibitem[{Borrett(2013)}]{borrett13}
@@ -701,7 +705,7 @@ Brandes, U., Kenis, P. \& Wagner, D. (2003) Communicating centrality in policy
   \textbf{9}, 241--253.
 
 \bibitem[{Butts(2008{\natexlab{a}})}]{butts08_network}
-Butts, C. (2008{\natexlab{a}}) network: A package for managing relational data
+Butts, C. (2008{\natexlab{a}}) network: a package for managing relational data
   in {R}.
 \newblock \emph{J Stat Softw}, \textbf{24}.
 
@@ -711,7 +715,7 @@ Butts, C. (2008{\natexlab{b}}) Social network analysis with sna.
 
 \bibitem[{Chen \& Chen(2012)}]{chen12}
 Chen, S. \& Chen, B. (2012) Network environ perspective for urban metabolism
-  and carbon emissions: A case study of {Vienna, A}ustria.
+  and carbon emissions: a case study of {Vienna, A}ustria.
 \newblock \emph{Environ Sci Tech}, \textbf{46}, 4498--4506.
 
 \bibitem[{Christensen(1995)}]{christensen95}
@@ -719,7 +723,7 @@ Christensen, V. (1995) Ecosystem maturity---towards quantification.
 \newblock \emph{Ecol Model}, \textbf{77}, 3--32.
 
 \bibitem[{Christensen \& Walters(2004)}]{christensen04}
-Christensen, V. \& Walters, C.J. (2004) Ecopath with {E}cosim: {M}ethods,
+Christensen, V. \& Walters, C.J. (2004) Ecopath with {E}cosim: methods,
   capabilities and limitations.
 \newblock \emph{Ecol Model}, \textbf{172}, 109--139.
 
@@ -806,7 +810,7 @@ Freeman, L.C. (2004) \emph{The development of social network analysis: A study
 \bibitem[{Handcock \emph{et~al.}(2008)Handcock, Hunter, Butts, Goodreau \&
   Morris}]{handcock2008statnet}
 Handcock, M., Hunter, D., Butts, C., Goodreau, S. \& Morris, M. (2008) statnet:
-  Software tools for the representation, visualization, analysis and simulation
+  software tools for the representation, visualization, analysis and simulation
   of network data.
 \newblock \emph{J Stat Softw}, \textbf{24}, 1548.
 
@@ -834,7 +838,7 @@ Hudson, L.N., Emerson, R., Jenkins, G.B., Layer, K., Ledger, M.E., Pichler,
 Ings, T.C., Montoya, J.M., Bascompte, J., Bl{\"u}thgen, N., Brown, L., Dormann,
   C.F., Edwards, F., Figueroa, D., Jacob, U., Jones, J.I., Lauridsen, R.B.,
   Ledger, M.E., Lewis, H.M., Olesen, J.M., van Veen, F.J.F. \& Warren, P. H.
-  nad~Woodward, G. (2009) Review: Ecological networks--beyond food webs.
+  and~Woodward, G. (2009) Review: ecological networks--beyond food webs.
 \newblock \emph{J Anim Ecol}, \textbf{78}, 253--269.
 
 \bibitem[{J{\o}rgensen \emph{et~al.}(2007)J{\o}rgensen, Fath, Bastianoni,
@@ -846,7 +850,7 @@ J{\o}rgensen, S.E., Fath, B.D., Bastianoni, S., Marques, J.C., M\"{u}ller, F.,
 \newblock Elsevier, Amsterdam.
 
 \bibitem[{Kazanci(2007)}]{kazanci07}
-Kazanci, C. (2007) Eco{N}et: A new software for ecological modeling, simulation
+Kazanci, C. (2007) Eco{N}et: a new software for ecological modeling, simulation
   and network analysis.
 \newblock \emph{Ecol Model}, \textbf{208}, 3--8.
 
@@ -863,7 +867,7 @@ Krause, A. (2004) \emph{The role of compartments in food-web structure and
 \newblock Ph.d., Michigan State University.
 
 \bibitem[{Lau \emph{et~al.}(2013)Lau, Borrett \& Hines}]{enar}
-Lau, M.K., Borrett, S.R. \& Hines, D.E. (2013) \emph{enaR: Tools for ecological
+Lau, M.K., Borrett, S.R. \& Hines, D.E. (2013) \emph{enaR: tools for ecological
   network analysis in R}.
 \newblock R package version 2.6.
 
@@ -902,7 +906,7 @@ Newman, M. (2003) The structure and function of complex networks.
 Niquil, N., Chaumillon, E., Johnson, G., Bertin, X., Grami, B., David, V.,
   Bacher, C., Asmus, H., Baird, D. \& Asmus, R. (2012) The effect of physical
   drivers on ecosystem indices derived from ecological network analysis:
-  Comparison across estuarine ecosystems.
+  comparison across estuarine ecosystems.
 \newblock \emph{Estuar Coast Shelf Sci}, \textbf{108}, 132--143.
 
 \bibitem[{Patten(1978)}]{patten78}
@@ -910,11 +914,11 @@ Patten, B.C. (1978) Systems approach to the concept of environment.
 \newblock \emph{Ohio J Sci}, \textbf{78}, 206--222.
 
 \bibitem[{Patten(1982)}]{patten82}
-Patten, B.C. (1982) Environs: Relativistic elementary particles for ecology.
+Patten, B.C. (1982) Environs: relativistic elementary particles for ecology.
 \newblock \emph{Am Nat}, \textbf{119}, 179--219.
 
 \bibitem[{Patten(1991)}]{patten91}
-Patten, B.C. (1991) Network ecology: Indirect determination of the
+Patten, B.C. (1991) Network ecology: indirect determination of the
   life--environment relationship in ecosystems.
 \newblock M.~Higashi \& T.~Burns, eds., \emph{Theoretical Studies of
   Ecosystems: The Network Perspective}, pp. 288--351. Cambridge University
@@ -1003,7 +1007,7 @@ Ulanowicz, R.E. \& Scharler, U.M. (2008) Least-inference methods for
   de~Stigter, Cunha, Pusceddu \& Danovaro}]{vanoevelen2011canyon}
 van Oevelen, D., Soetaert, K., Garc{\'\i}a, R., de~Stigter, H.C., Cunha, M.R.,
   Pusceddu, A. \& Danovaro, R. (2011) Canyon conditions impact carbon flows in
-  food webs of three sections of the nazar{\'e} canyon.
+  food webs of three sections of the Nazar{\'e} canyon.
 \newblock \emph{Deep-Sea Res Pt II}, \textbf{58}, 2461--2476.
 
 \bibitem[{Wasserman \& Faust(1994)}]{wasserman94}
@@ -1021,7 +1025,7 @@ Whipple, S.J., Borrett, S.R., Patten, B.C., Gattie, D.K., Schramski, J.R. \&
 
 \bibitem[{Zhang \emph{et~al.}(2010)Zhang, Yang, Fath \& Li}]{zhang10_ecomod}
 Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
-  analysis of an urban energy metabolic system: Model development, and a case
+  analysis of an urban energy metabolic system: model development, and a case
   study of four {C}hinese cities.
 \newblock \emph{Ecol Model}, \textbf{221}, 1865--1879.
 
@@ -1045,9 +1049,9 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
 \begin{tabular}{l p{9 cm} l }
   \textbf{Function} & \textbf{Description} &
   \textbf{Example Reference}\\ [1 ex] \hline \\ [-0.5 ex]
-  pack & This function lets the user combine model elements into
+  pack & This function lets users combine model elements into
   a network data object. & None\\
-  unpack & Extracts the invidual model elements (e.g., flows, inputs,
+  unpack & Extracts the individual model elements (e.g., flows, inputs,
   outputs) from the network data object. & None\\
   read.scor & Creates a network data object from a SCOR formatted data
   file. & \citet{ulanowicz91} \\
@@ -1124,7 +1128,7 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
   environCentrality & Returns the input, output, and average environ
   centralities for a matrix. & \citet{fann12_ec}  \\
   TET & Returns the total environ throughflows. & \citet{whipple07}\\
-  TES & Returns the total enivron storages. & \citet{matis81}\\ [1 ex]
+  TES & Returns the total environ storages. & \citet{matis81}\\ [1 ex]
   %findPathLength & \\[1 ex]
   \multicolumn{3}{l}{\textbf{Auxiliary Functions}} \\
   get.orient & Determine the orientation of the results
@@ -1137,12 +1141,30 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
 \tableline
 \end{table*}
 
+
+
+\clearpage
 \newpage
-%%%%%%% THIS NEEDS TO BE REVISED %%%%%%%%%%%%
-\begin{table*}
+
+% ========================================================================================
+\section{Figures}
+
+\begin{figure*}[h]
+\includegraphics[scale=1]{../figures/enaR_plot_example.pdf}
+\caption{Example of analysis and visualizations created with \enaR\:
+  (a) network digraph of the internal flows of an oyster reef
+  ecosystem model \citep{dame81}, (b) network homogenization statistic
+  for 56 trophic ecosystem models (rank-ordered), (c) scatter plot
+  showing the relationship between the ascendency-to-capacity ratio
+  and the indirect flow index for the 56 trophic ecosystem models
+  included in the package, and (d) target plot of the betweenness centrality from
+  social network analysis calculated for the 36 nodes of the
+  Chesapeake Bay ecosystem model \citep{baird89}. } \label{fig:example}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h]
 \center
-\caption{Example code for applying \enaR\ Flow analysis to \citeapos{dame81} oyster
-  reef model.} \label{tab:flow}
 \tableline
 \begin{verbatim}
 library(enaR)   # load enaR package
@@ -1164,7 +1186,7 @@ library(enaR)   # load enaR package
 > # Living
 > Living <- c(TRUE,TRUE,TRUE,TRUE,TRUE,FALSE)
 > # pack the model data into the R network data object
-> m <- pack(flow=F,input=inputs, respiration=outputs, outputs=outputs, living=Living);
+> m <- pack(flow=F,input=inputs, respiration=outputs, outputs=outputs, living=Living)
 >
 > ssCheck(m)                # check to see if the model is at steady-state
 [1] TRUE
@@ -1189,31 +1211,17 @@ $names
 \end{verbatim}
 
 \tableline
-\end{table*}
+\caption{Example code for applying \enaR\ Flow analysis to \citeapos{dame81} oyster
+  reef model.} \label{tab:flow}
 
-\clearpage
-\newpage
-
-% ========================================================================================
-\section{Figures}
-
-\begin{figure*}[h]
-\includegraphics[scale=1]{../figures/enaR_plot_example.pdf}
-\caption{Example of analysis and visualizations created with \enaR\:
-  (a) network digraph of the internal flows of an oyster reef
-  ecosystem model \citep{dame81}, (b) network homogenization statistic
-  for 56 trophic ecosystem models (rank-ordered), (c) scatter plot
-  showing the relationship between the ascendency-to-capacity ratio
-  and the indirect flow index for the 56 trophic ecosystem models
-  included in the package, and (d) target plot of the betweenness centrality from
-  social network analysis calculated for the 36 nodes of the
-  Chesapeake Bay ecosystem model \citep{baird89}. } \label{fig:example}
 \end{figure*}
+
+
 
 \begin{figure*}[t]
 \includegraphics[scale=1]{../figures/ns_dist.pdf}
 \caption{Distributions of selected ENA network statistics from the
-  100 empirically-based ecosystem models included in \enaR.  The
+u  100 empirically-based ecosystem models included in \enaR.  The
   results are summarized using a histogram showing the distribution of
   the values of each network statistic between the observed minimum
   and maximum values.  The median, mean, and coefficient of variation

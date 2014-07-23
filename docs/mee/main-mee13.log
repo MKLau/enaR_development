@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  23 JUL 2014 07:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  23 JUL 2014 13:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -583,7 +583,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [18
 
 ] [19] [20]
-<../figures/enaR_plot_example.pdf, id=537, 433.62pt x 397.485pt>
+<../figures/enaR_plot_example.pdf, id=535, 433.62pt x 397.485pt>
 File: ../figures/enaR_plot_example.pdf Graphic file (type pdf)
 
 <use ../figures/enaR_plot_example.pdf>
@@ -601,7 +601,7 @@ puts=outputs, living=Living)[]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../figures/ns_dist.pdf, id=561, 397.485pt x 433.62pt>
+<../figures/ns_dist.pdf, id=559, 397.485pt x 433.62pt>
 File: ../figures/ns_dist.pdf Graphic file (type pdf)
 
 <use ../figures/ns_dist.pdf>
@@ -644,10 +644,10 @@ ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main-mee13.pdf (23 pages, 303799 bytes).
+Output written on main-mee13.pdf (23 pages, 303718 bytes).
 PDF statistics:
- 657 PDF objects out of 1000 (max. 8388607)
- 599 compressed objects within 6 object streams
+ 655 PDF objects out of 1000 (max. 8388607)
+ 597 compressed objects within 6 object streams
  120 named destinations out of 1000 (max. 500000)
  123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
