@@ -106,7 +106,7 @@ urlcolor=red]{hyperref}
 
 KEYWORDS: network analysis, ecosystem, open-source software, network
 environ analysis, ascendency, input--output analysis, food web, urban
-metabolism, Ecopath, WAND \tableline
+metabolism, Ecopath, NETWRK, WAND \tableline
 
 \section{Introduction}
 % Network Ecology & its significance
@@ -178,27 +178,27 @@ function and evolution \citep{ulanowicz97, patten91,
 % nitrogen cycle.
 
 % Software Objectives
-\enaR\ is an open-source software to facilitate ENA.  Extant ENA
-software \citep{ulanowicz91, kazanci07, allesina04_wand,
-  christensen04, fath06} each have critical limitations, which led us
-to three primary design objectives for \enaR .
-The first objective was to collect the major ENA functions into a
+\enaR\ is an open-source software to facilitate ENA.  The currently
+available ENA software packages \citep{ulanowicz91, kazanci07,
+  allesina04_wand, christensen04, fath06} each have critical
+limitations, which led us to three primary design objectives for \enaR
+.  The first objective was to collect the major ENA functions into a
 single software package.  While multiple investigators have
 contributed to algorithmic development \citep[e.g.,][]{finn76,
   ulanowicz86, ulanowicz91, fath99_review, allesina03}, the broad set
 of tools is not available in a single existing software.  The second
 objective was to increase the availability and extensibility of the
-software. We chose to use \R\ in part because of its
-increasing popularity as an analytical tool in the biological sciences
+software. We chose to use \R\ in part because of its increasing
+popularity as an analytical tool in the biological sciences
 \citep[e.g.,][]{dixon2003vegan, metcalf2012, revell2012phytools}.
 Further, users can freely download a stable version of the package
 from the CRAN website
 (\url{http://cran.r-project.org/web/packages/enaR}), and the code for
 every function in \R\ is available from within \R\ (e.g.,
-\texttt{edit($function\_name$)}).  In addition, \enaR\ development is being managed
-via GitHub (\url{https://github.com/TheSeeLab/enaR}) to encourage
-collaborative development.  The third design objective was to enable
-\enaR\ users access to network analysis tools from other
+\texttt{edit($function\_name$)}).  In addition, \enaR\ development is
+being managed via GitHub (\url{https://github.com/TheSeeLab/enaR}) to
+encourage collaborative development.  The third design objective was
+to enable \enaR\ users access to network analysis tools from other
 disciplines.  To enable this, \enaR\ was designed to work directly
 with two existing \R\ network analysis packages:  \texttt{network}
 \citep{butts08_network} and \texttt{sna} \citep{butts08_social}.  In
@@ -600,15 +600,15 @@ seeing new ecological discoveries made through the use of \enaR.
 
 \section{Acknowledgments}
 We would like to acknowledge and thank David Hines for contributing to
-the initial code, and Pawandeep Sing for helping create Table S1.  We
-also thank several individuals who used the earlier versions of the
-software and provided helpful feedback for further development
-including Ursula Scharler, Shaoqing Chen, Emily Oxe, and John Mejaski.
-In addition, we thank the many ecosystem model authors who created,
-shared, and published their work.  This work was funded in part by the
-US National Science Foundation (DEB1020944, DEB0425908), an NSF
-Integrative Graduate Education and Research Traineeship (MKL;
-DGE0549505) and a UNCW Cahill award (SRB).
+the initial code, and Pawandeep Sing for collecting the output for
+Table S1.  We also thank several individuals who used the earlier
+versions of the software and provided helpful feedback for further
+development including Ursula Scharler, Shaoqing Chen, Emily Oxe, and
+John Mejaski.  In addition, we thank the many ecosystem model authors
+who created, shared, and published their work.  This work was funded
+in part by the US National Science Foundation (DEB1020944,
+DEB0425908), an NSF Integrative Graduate Education and Research
+Traineeship (MKL; DGE0549505) and a UNCW Cahill award (SRB).
 
 \end{spacing}
 % word count before bibliography (3066)

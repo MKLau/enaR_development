@@ -1,0 +1,555 @@
+
+*Editor*
+
+Both reviewers appreciate the work done on your paper and have no
+major comments. The quality of the paper has been greatly improved and
+it clearly presents the advantage of enaR compared to existing
+packages. 
+
+However, this new version contains many typos (e.g., l. 6,
+"as et"; l. 38 "Extant", etc) that should be corrected. Please
+consider comments of both reviewers and read carefully your paper to
+correct typos.
+
+
+*Reviewer 1*
+
+Comments to the Corresponding Author
+- I think that "Network Ecology" should be "network ecology"
+
+Stuart?
+
+- Please provide the comparison with other software as supplementary
+  material
+
+Great suggestion. We have added a table comparing the
+output of functions from enaR to the output from several other ENA
+analytical packages, including NETWRK, Ecopath and WAND.
+
+- I have made some minor queries on the code, submitted as GitHub
+  issues
+
+This was very helpful and kind of the reviewer. We have gone through
+all of the suggestions and fixed them as suggested.
+
+*Reviewer 2*
+- I question the need for the section “Example Application” in the
+  manuscript. This seems better suited to a helpfile than to a
+  manuscript.
+
+
+
+- I wonder whether there is a way of expressing the idea in line 153
+  without appearing to advertise for the program. I believe the
+  manuscript should be a description of a program, not a sales pitch
+  for it. My suggestion is to look out for this across the entire
+  manuscript. I appreciate that the authors have tried to be clearer
+  about the novelty of the program and its usefulness, and that this
+  may be the manner in which they have chosen to do so.
+- Table 4 is not actually a table and additionally text in it, though
+  useful to package users, is not sufficiently important to warrant
+  inclusion in the manuscript. I suggest eliminating it from the
+  manuscript and making it accessible via the package helpfiles, if it
+  isn’t already.
+- Caption 1d. Is it actually meant to read “xx node” or is this an oversight?
+- Table 3, are there really no example references for the other
+  functions (e.g. for calculation of eigenvalue centrality of a
+  matrix)? For cases in which there are no relevant references, I
+  suggest for the purposes of standardising with other tables that the
+  authors place the word “none” in the respective row.
+
+
+- The use of the phrase “note that” seems inappropriately colloquial
+  for a manuscript. See lines 101 and 118. I suggest a re-write. See
+  also “notice” in line 191.
+
+- Line 118, typo: space required between “enaR” and “to”.
+- Line 119, typo: correct “softare”.
+- Line 197, typo: correct “enhancment”
+- Line 222, typo: correct “exiting”
+- Line 240, grammatical inconsistency: “cycles is”
+- Line 244, typo: correct “enhancement”
+- Table 3, typo in last row, second column.
+
+
+
+
+Dear Dr. Borrett:
+
+Manuscript ID MEE-14-05-242 entitled "enaR: An R package for Ecosystem
+Network Analysis" which you submitted to Methods in Ecology and
+Evolution, has been reviewed.  The comments of the reviewers are
+included at the bottom of this letter, together with an evaluation by
+one of the journal's Associate Editors who oversaw the refereeing
+process and has also read your MS in detail.
+
+The reviewers and Associate Editor are positive about your work,
+however there are a few issues that need attention. Therefore, I
+invite you to respond to the reviewer(s)' comments and revise your
+manuscript.
+
+To revise your manuscript, log into
+http://mc.manuscriptcentral.com/mee-besjournals and enter your Author
+Center, where you will find your manuscript title listed under
+"Manuscripts with Decisions."  Under "Actions," click on "Create a
+Revision."  Your manuscript number has been appended to denote a
+revision.  Please DO NOT upload your revised manuscripts as a new
+submission.
+
+Once the revised manuscript is prepared, you can upload it and submit
+it through your Author Center.
+
+When submitting your revised manuscript, you will be able to respond
+to the comments made by the reviewer(s) in the space provided.  You
+can use this space to document any changes you make to the original
+manuscript.  In order to expedite the processing of the revised
+manuscript, please be as specific as possible in your response to the
+reviewer(s).
+
+IMPORTANT:  Your original files are available to you when you upload
+your revised manuscript.  Please delete any redundant files before
+completing the submission.
+
+Because we are trying to facilitate timely publication of manuscripts
+submitted to Methods in Ecology and Evolution, your revised manuscript
+should be uploaded within 3 weeks.  If it is not possible for you to
+submit your revision in a reasonable amount of time, we may have to
+consider your paper as a new submission.  If you feel that you will be
+unable to submit your revision within the time allowed please contact
+me to discuss the possibility of extending the revision time.
+
+Once again, thank you for submitting your manuscript to Methods in
+Ecology and Evolution and I look forward to receiving your revision.
+
+Sincerely,
+Prof. Robert Freckleton
+Executive Editor, Methods in Ecology and Evolution
+coordinator@methodsinecologyandevolution.org
+
+Associate Editor Comments to Author:
+
+Associate Editor
+Comments to the Author:
+Dear Authors,
+
+Both reviewers appreciate the work done on your paper and have no
+major comments. The quality of the paper has been greatly improved and
+it clearly presents the advantage of enaR compared to existing
+packages. However, this new version contains many typos (e.g., l. 6,
+"as et"; l. 38 "Extant", etc) that should be corrected. Please
+consider comments of both reviewers and read carefully your paper to
+correct typos.
+
+
+Reviewer(s)' Comments to Author:
+
+Reviewer: 1
+
+Comments to the Corresponding Author
+- I think that "Network Ecology" should be "network ecology"
+
+- Please provide the comparison with other software as supplementary
+  material
+
+- I have made some minor queries on the code, submitted as GitHub
+  issues
+
+Reviewer: 2
+
+Comments to the Corresponding Author
+A warning regarding the wording of the review below.  Part of my
+original text was erased due to computer problems. This second version
+comes with less attention to delicate wording, and more attention
+transmission of ideas in the time available.
+
+I am concerned about the number of typos in the manuscript and what
+this may mean regarding the time/effort dedicated to producing this
+new version of the manuscript.
+
+Suggested revisions
+
+•    Line 118, typo: space required between “enaR” and “to”.
+•    Line 119, typo: correct “softare”.
+•    The use of the phrase “note that” seems inappropriately
+•    colloquial for a manuscript. See lines 101 and 118. I suggest a
+•    re-write. See also “notice” in line 191. 
+•    I question the need for the section “Example Application” in the
+•    manuscript.  This seems better suited to a helpfile than to a
+•    manuscript.
+•    I wonder whether there is a way of expressing the idea in line
+•    153 without appearing to advertise for the program. I believe the
+•    manuscript should be a description of a program, not a sales
+•    pitch for it. My suggestion is to look out for this across the
+•    entire manuscript. I appreciate that the authors have tried to be
+•    clearer about the novelty of the program and its usefulness, and
+•    that this may be the manner in which they have chosen to do so.
+•    Line 197, typo: correct “enhancment”
+•    Line 222, typo: correct “exiting”
+•    Line 240, grammatical inconsistency: “cycles is”
+•    Line 244, typo: correct “enhancement”
+•    Table 4 is not actually a table and additionally text in it,
+•    though useful to package users, is not sufficiently important to
+•    warrant inclusion in the manuscript. I suggest eliminating it
+•    from the manuscript and making it accessible via the package
+•    helpfiles, if it isn’t already.
+•    Caption 1d. Is it actually meant to read “xx node” or is this an
+•    oversight?
+•    Table 3, typo in last row, second column.  
+•    Table 3, are there really no example references for the other
+•    functions (e.g. for calculation of eigenvalue centrality of a
+•    matrix)? For cases in which there are no relevant references, I
+•    suggest for the purposes of standardising with other tables that
+•    the authors place the word “none” in the respective row.
+
+The software is valuable. The authors have given more credibility to
+the extensibility claim with the GitHub.
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%Previous submission in April 2014%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%To do list
+
+%Focus the function of the package, what can it do for users
+%Broaden the implications of the package, extend to other ecological networks
+%Describe the package content, including functions and methods
+%Clarify data import methods
+%Make sure all examples are executable
+
+%Address how the package funcitons have been vetted/tested
+%Provide check information, such as comparison with ecopath
+%Look into the testthat package
+
+%Explain import/export boundary L112-115
+%Look at L133 and clarify where needed
+%Clarify that this is for a naive investigator L151
+%Clarify the content of the model Part3.2
+%Clarify how to interact with other packages L213-220
+%Address recent developments on L129
+%Check references for L156
+%Supplementary files???
+
+%DONE [mkl 11feb2014 - removed this language] Clarify ``built on existing packages'' L93
+%DONE [mkl 11feb2014] Add git info to L243
+%DONE [mkl 11feb2014 - removed version numbers] Address versioning issue (should we re-release as 1.0)?
+%DONE [mkl 11feb2014] Note for the reader that CRAN = STABLE and github = development
+%DONE [mkl 11feb2014] Reduce ENA history to one paragraph
+%DONE [mkl 11Feb2014] Add info on how users can contribute (1. git info, 2. software best practices, 3. contact info)
+%DONE [mkl 5feb2014] - Remove the language ``professional grade''
+
+%%%Major questions for us
+%%What other fixes need to be made now (enaBatch?, enaBuild?, enaPlot?)?
+%%Do we really need to provide information that the package produces comparable results to other packages?
+%%Can we make ENA appealing to a wider audience (e.g. urban ecologists, or systems analysts)?
+
+
+Matt,
+
+This rejection will take some digestion.  I am disappointed with the
+initial rejection, but it looks like we might be able to salvage this
+with revision and resubmission.  Actually, I think the reviewers
+comments were good.  It was the associate editor that seemed the most
+confused.  The hardest part is to address all the concerns in the
+limited space.  Thoughts?
+
+I have to go teach.  Lets plan to talk about this in the next week or
+so to determine next steps.
+
+Stuart
+
+---
+Stuart Borrett
+http://people.uncw.edu/borretts
+
+Begin forwarded message:
+
+From:
+"coordinator@methodsinecologyandevolution.org<mailto:coordinator@methodsinecologyandevolution.org>"
+<coordinator@methodsinecologyandevolution.org<mailto:coordinator@methodsinecologyandevolution.org>>
+Date: January 15, 2014, 3:56:31 PM EST
+To: "Borrett, Stuart" <borretts@uncw.edu<mailto:borretts@uncw.edu>>,
+"stuart.borrett@gmail.com<mailto:stuart.borrett@gmail.com>"
+<stuart.borrett@gmail.com<mailto:stuart.borrett@gmail.com>>
+Subject: Methods in Ecology and Evolution - Decision on Manuscript ID
+MEE-13-11-654
+
+15-Jan-2014
+
+Dear Dr. Borrett:
+
+Manuscript ID MEE-13-11-654 entitled "enaR: An R package for
+Ecological Network Analysis" which you submitted to Methods in Ecology
+and Evolution, has now been evaluated.  The comments from the
+reviewers are included at the bottom of this letter, together with a
+recommendation from the Associate Editor who oversaw the refereeing
+process and also read your manuscript in detail.
+
+In view of the comments received, I must decline your manuscript for
+publication in the Methods in Ecology and Evolution at this time.
+However, we would be willing to consider a new manuscript which takes
+into consideration these comments.
+
+Please note that resubmitting your manuscript does not guarantee
+eventual acceptance, and that your resubmission may be subject to
+re-review before a decision is rendered. Please also ensure that your
+revised manuscript still conforms to our word limit of 6000-7000 for
+standard papers, or 3000 for applications.
+
+Once you have revised your manuscript, go to
+http://mc.manuscriptcentral.com/mee-besjournals and login to your
+Author Center.  Click on "Manuscripts with Decisions," and then click
+on "Create a Resubmission" located next to the manuscript number.
+Then, follow the steps for resubmitting your manuscript.
+
+Because we are trying to facilitate timely publication of manuscripts
+submitted to the Methods in Ecology and Evolution, your revised
+manuscript should be uploaded within 12 weeks.  If it is not possible
+for you to submit your revision within a reasonable amount of time, we
+will consider your paper as a new submission.
+
+I look forward to a resubmission.
+
+Sincerely,
+Prof. Robert Freckleton
+Executive Editor, Methods in Ecology and Evolution
+coordinator@methodsinecologyandevolution.org<mailto:coordinator@methodsinecologyandevolution.org>
+
+
+Associate Editor Comments to Author:
+
+Associate Editor
+Comments to the Author:
+Dear Authors,
+
+both reviewers appreciate your work on your R package. Reviewer #2 has
+several minor comments and some concerns about the extensibility of
+enaR. Reviewer #1 has some other major comments concerning the code
+availability and the introduction. All these comments are relevant and
+should be considered.
+
+I am not a specialist of network analysis and this is perhaps my
+reading of your paper is much more negative. I found that some parts
+of the paper are not clear and I think that the paper fails to
+describe the originality of the package and describe/illustrate the
+content of the package.
+
+The introduction focus on two schools but remains very vague and
+general (i.e., only description with few scientific
+considerations). There are not enough details for non specialists and
+several technical terms without explanations (l29 - 51). You describe
+two schools but what are the implications, consequences on your
+package? On the development of tools/methods/software ? I found some
+response l 81-82 but this is not enough.  For me, its seems that you
+describe some historical considerations but we did not see what are
+the scientific implications of this dichotomy. These two schools lead
+to the development of complimentary or concurrent tools ? Moreover, as
+described by reviewer #1, you did not mention an important part of
+networks tools. Hence, the introduction should be completely rewritten
+to highlight the position of your package in the network analysis
+ecosystem. Try to be more pedagogic for MEE readers that are not
+specialist of your field and describe the two schools based on
+scientific implications.
+
+I think that a software paper should better describe the content of
+the software, reproducible examples should be provided. You should use
+examples to demonstrate how the tools provided in the package could be
+used to analyze real data. In your paper, there is only one example
+with R code (not reproducible since we do not have the 'oyster.dat'
+file). You fail to describe how enaR could help me to analyze
+ecological data. A complete rewriting of the paper is thus required. Read some
+published MEE software papers to understand what is the spirit of this
+type of contribution.
+
+%Honestly, I thought we did use examples that were reproducible
+%Add clarity on what the package can tell us
+%Perhaps we should make it clearer that the models in the package are real
+
+Some other comments:
+- l93: enaR was built on top of two existing R packages: network
+(Butts 2008a) and sna (Butts 2008b) --> what does it mean ?
+
+%Change the language to make it clearer. 
+
+- describe the content of the package: how many functions / methods ?
+
+%Ok. 
+
+- l119: data format: for import ?? please add information on that
+point (how should we load our data with enaR).
+
+%I thought we did this, but perhaps we need to make it clearer
+
+- l 112-115: not clear how this information should be considered in a
+simple graph (e.g. import/export boundary) ?
+
+%Explain this figure better
+
+- Example (l. 133): could I repeat the analysis. What is the aim of
+the example ? No illustration, no discussion of the outputs ! --> this
+is not interesting for readers
+
+%???
+
+- Part 3.1 Visualization (l. 151): novelty compared to existing
+package ?? not clear
+
+%Make it clear that we are using existing software
+%Note that many users might not have experience with plotting networks?
+
+- Part 3.2 Does this library contains models or observed data ?? This
+is not clear for me. Why it is interesting for users ?
+
+%I suppose we need to make this more general. 
+
+- Part 3.3: batch analysis : not clear for me ! how it is implemented
+? Do the user should apply loops ? what is the originality/novelty for
+users ?
+
+%I thought that this is clear from the code, but perhaps it is too low level.
+%Maybe I need to add a batch processing function?
+
+- l. 213-220: how to interact with other packages. Are they some
+functions to convert objects among classes/packages  ?? How other
+packages could be useful (e.g. vegan, Diversiytree, etc)
+
+%This is a good suggestion and would broaden the user base if we coulddo it
+
+- l. 243: give the url of your Git repos
+
+%Ok-dokey, I'll add this.
+
+-in several parts, you mention 'professional grade'. What does it
+means ?
+
+%Let's address this by removing this language.
+
+Reviewer(s)' Comments to Author:
+
+Reviewer: 1
+
+Comments to the Corresponding Author
+I have reviewed the paper MEE-13-11-654 by Borrett and Lau. I
+previously used enaR for analyses, and was extremely happy to see the
+authors formalise their work with a paper.
+
+I have three major comments that I think require attention.
+
+1. The introduction is too long. As much as I appreciate reading about
+the history of ideas in science, I think that  software note is NOT
+the place to do so. I read software notes for presentation of what a
+software does, and why it does it better, or more efficiently, or with
+less effort than previous solution. As a side note, there is an entire
+branch of network analyses (studies of metrics like connectance,
+modularity, intervality, ...) that is entirely left out, so I felt the
+introduction conveyed a wrong picture of the field.
+
+%Reduce the history to one paragraph
+%Add more on what the package can do for the user
+
+2. The availability of the software is not good. Although it is
+possible to download the code from CRAN, this is not conducive to
+improvements from the community. Reading the code required that I
+download the tar file, untar it, and whatever modifications I could
+have suggested would have been sent by email to the authors. There is
+mention of a GitHub repo at the end of the paper. I think this is
+indeed the way to go, and the URL of the repo, including guidelines
+for contribution, should be mentionned clearly in the text.
+
+%Add link to github
+%Add text on how users can contibute?
+
+3. I failed to see what the authors mean by
+"professional-grade". There are, for example, no tests that the
+functions perform as advertised. The `testthat` package allows do to
+automated unit-testing in R, and should be used. Writing a package
+that regroups ALL methods in one field should be held to an extremely
+high standard of quality, which involves extensive testing.
+
+%Remove the language, professional grade
+%Check out the testthat package
+%Provide examples from MEE where packages do not do testing of the software
+
+Rimouski, Dec 16. 2013
+Timothée Poisot
+
+Reviewer: 2
+
+Comments to the Corresponding Author
+
+My recommendation is that the manuscript be accepted, with minor
+revisions. The subject matter is well suited to the journal and the
+manuscript helps to further the journal’s stated aims.  In terms of
+form, the manuscript is adequately organised and is well written. The
+introduction frames the importance of both the subject matter and the
+specific software itself; the objectives are stated clearly and the
+subsequent parts of the manuscript help clarify ways in which the
+authors believe these objectives are met. The software that is
+presented allows for the use of open-source software in ecological
+analyses. Apart from the benefits stated by the authors, this helps
+level playing fields in ecological research by eliminating the
+financial barrier that licenses can present to some laboratories
+around the world for the analysis of data.  In conclusion, the
+software is a noteworthy addition to the field and the manuscript
+presents it well.
+
+The most substantial criticism I have refers to the second stated
+design objectives of the software, i.e., “to increase both the
+availability and extensibility of the software”.  While creating a
+package for R certainly increases availability, the extensibility of
+the software is questionable in the absence documentation for
+programmers regarding how the code works. Precedence for this sort of
+step towards extensibility can be found in R packages like foodweb
+(see Documentation folder). I was not able to find any such
+documentation in the enaR package folders.  It is my understanding
+however that the authors intend to further this extensibility
+objective with the creation of a GitHub, as stated at the end of the
+manuscript.  I wonder whether it is feasible to give this at least a
+preliminary start before the manuscript is published. While I would
+agree that the mere availability of the code is a step towards
+extensibility, I believe the extensibility claim would have a lot more
+strength if programmers had some level of guidance through the code.
+
+%Add details on how users can contribute
+%Direct users to the enaR repository
+%Direct users to descriptions of best practices for contributing
+
+My suggestions for minor revisions are below:
+
+Line 125 qualifies the package as an initial release, however the
+version available on the CRAN website is 2.5. I suggest the sentence
+be changed to “the current available version” or something to that
+effect.
+
+%Agreed. Our versioning does not follow typical software best practices. 
+%Let's change the language to the Current Stable Version and Development
+%CRAN = stable
+%GitHub = development
+
+Line 129 I suggest the authors specify which recent developments.
+
+%Ok.
+
+Line 156 References?
+
+%Check on this.
+
+Some indication is needed that the enaR package produces the same
+results as do the currently available major programs.
+
+%Perhaps we should check against ecopath? netwrk?
+
+I did not find reference to the supplementary files in the manuscript.
+
+%Look into this.
