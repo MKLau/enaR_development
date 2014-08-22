@@ -1,0 +1,25 @@
+###enaR function output checking algorithm
+###Compares the output of for the Cone Springs Model
+###MKLau 23Jul2014
+
+detach(package:enaR)
+library(devtools)
+install_github(username='TheSeeLab',repo='SEELab/enaR',ref='beta')
+library(enaR)
+data(enaModels)
+for (i in 1:length(enaModels)){enaModels[[i]] <- balance(enaModels[[i]])}
+ns.beta <- lapply(enaModels,get.ns)
+q()
+library(devtools)
+install_github(username='TheSeeLab',repo='SEELab/enaR',ref='edgeflow')
+library(enaR)
+data(enaModels)
+for (i in 1:length(enaModels)){enaModels[[i]] <- balance(enaModels[[i]])}
+ns.edgeflow <- lapply(enaModels,get.ns)
+
+ns.check <- read.csv('./ns.csv')[,1:6]
+ns.check[is.na(ns.check)] <- 0
+data(enaModels)
+ns. <- enaAll(enaModels$"Cone Springs")
+
+ns.$ascendency,
