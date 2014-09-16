@@ -2,24 +2,32 @@
 ###Compares the output of for the Cone Springs Model
 ###MKLau 23Jul2014
 
-detach(package:enaR)
 library(devtools)
 install_github(username='TheSeeLab',repo='SEELab/enaR',ref='beta')
 library(enaR)
 data(enaModels)
-for (i in 1:length(enaModels)){enaModels[[i]] <- balance(enaModels[[i]])}
+enaModels <- lapply(enaModels,force.balance)
 ns.beta <- lapply(enaModels,get.ns)
-q()
+dput(do.call(rbind,ns.beta),file='~/projects/packages/enaR_development/data/nsbeta.rda')
+q('no')
 library(devtools)
 install_github(username='TheSeeLab',repo='SEELab/enaR',ref='edgeflow')
 library(enaR)
-data(enaModels)
-for (i in 1:length(enaModels)){enaModels[[i]] <- balance(enaModels[[i]])}
+enaModels <- list()
+for (i in 1:length(dir('~/Desktop/models/'))){
+  enaModels[[i]] <- read.nea(paste('~/Desktop/models/mod',i,sep=''))
+}
 ns.edgeflow <- lapply(enaModels,get.ns)
+dput(do.call(rbind,ns.edgeflow),file='~/projects/packages/enaR_development/data/nsedgeflow.rda')
 
-ns.check <- read.csv('./ns.csv')[,1:6]
-ns.check[is.na(ns.check)] <- 0
-data(enaModels)
-ns. <- enaAll(enaModels$"Cone Springs")
-
-ns.$ascendency,
+###Checks
+rm(list=ls())
+beta <- dget(file='~/projects/packages/enaR_development/data/nsbeta.rda')
+edge <- dget(file='~/projects/packages/enaR_development/data/nsedgeflow.rda')
+dim(beta);dim(edge)
+beta.infna <- apply(beta,2,function(x) any(x==Inf|is.na(x)))==FALSE
+edge.infna <- apply(edge,2,function(x) any(x==Inf|is.na(x)))==FALSE
+all(edge.infna==beta.infna)
+chk <- round(beta[,beta.infna==edge.infna]-edge[,beta.infna==edge.infna],4)
+hist(chk[abs(chk)>0.001&is.na(chk)!=TRUE])
+table(round(chk[abs(chk)>0.001&is.na(chk)!=TRUE],0))
