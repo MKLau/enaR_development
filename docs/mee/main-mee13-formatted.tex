@@ -2,12 +2,12 @@
 % Target: Methods in Ecology and Evolution
 % February 2014
 % ---------------------------------------------------
-\documentclass[11pt]{article}
+\documentclass[11pt,twocolumn]{article}
 \usepackage[super, sort]{natbib}
   \bibpunct{(}{)}{;}{a}{,}{,} % required for natbib
 \bibliographystyle{mee}
 
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.75in]{geometry}
 
 \usepackage{amsmath,amssymb,amsthm,amsfonts}
 \usepackage[]{graphicx}
@@ -23,7 +23,6 @@
 \DeclareMathOperator{\diag}{diag}
 \def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
 \newcommand{\R}{R}
-
 %\newcommand{\S}{S}
 \newcommand{\enaR}{\texttt{enaR}}
 \newcommand{\vnorm}[1]{\left|\left|#1\right|\right|}
@@ -53,39 +52,42 @@ urlcolor=red]{hyperref}
 % ------------------------
 \begin{document}
 
-%%%%%%%%%%%%%%%%%
-%%%Title Page
-%%%%%%%%%
+% %%%%%%%%%%%%%%%%%
+% %%%Title Page
+% %%%%%%%%%
 
-\begin{description}
-  \item[\textbf{Title}:] \enaR: An \R\ package for Ecosystem Network Analysis
-  \item[\textbf{Running Title}:] R ecosystem network analysis package
-  \item[\textbf{Word Count}:] 3162
-  \item[\textbf{Authors}:] Stuart R. Borrett, Matthew K. Lau
-  \item[\textbf{Addresses}:] \
-    \begin{itemize}
-    \item SRB: Department of Biology and Marine Biology, University of
-      North Carolina Wilmington, Wilmington, NC 28403
-    \item MKL: Department of Biological Sciences and the
-      Merriam-Powell Center for Environmental Research, Northern
-      Arizona University, 617 S. Beaver St., Flagstaff, AZ 86011
-      \\ Current Address: Harvard Forest, Harvard University, 324
-      N. Main St., Petersham, MA 01366
-    \end{itemize}
-  \item[\textbf{Contact Details}:] \
-    \begin{itemize}
-    \item Email: borretts@uncw.edu
-    \item Phone: 910.962.2411
-    \item Fax: 910.962.4066
-    \end{itemize}
-\end{description}
+% \begin{description}
+%   \item[\textbf{Title}:] \enaR: An \R\ package for Ecosystem Network Analysis
+%   \item[\textbf{Running Title}:] R ecosystem network analysis package
+%   \item[\textbf{Word Count}:] 3162
+%   \item[\textbf{Authors}:] Stuart R. Borrett, Matthew K. Lau
+%   \item[\textbf{Addresses}:] \
+%     \begin{itemize}
+%     \item SRB: Department of Biology and Marine Biology, University of
+%       North Carolina Wilmington, Wilmington, NC 28403
+%     \item MKL: Department of Biological Sciences and the
+%       Merriam-Powell Center for Environmental Research, Northern
+%       Arizona University, 617 S. Beaver St., Flagstaff, AZ 86011
+%       \\ Current Address: Harvard Forest, Harvard University, 324
+%       N. Main St., Petersham, MA 01366
+%     \end{itemize}
+%   \item[\textbf{Contact Details}:] \
+%     \begin{itemize}
+%     \item Email: borretts@uncw.edu
+%     \item Phone: 910.962.2411
+%     \item Fax: 910.962.4066
+%     \end{itemize}
+% \end{description}
 
-\pagebreak
+% \pagebreak
 
+
+
+\begin{spacing}{1}
+%\linenumbers
+
+\twocolumn[ \begin{@twocolumnfalse}
 \maketitle
-
-\begin{spacing}{2}
-\linenumbers
 
 \tableline
 \section*{Abstract}
@@ -108,6 +110,8 @@ urlcolor=red]{hyperref}
 KEYWORDS: network analysis, ecosystem, open-source software, network
 environ analysis, ascendency, input--output analysis, food web, urban
 metabolism, Ecopath, NETWRK, WAND \tableline
+
+\end{@twocolumnfalse}]
 
 \section{Introduction}
 % Network Ecology & its significance
@@ -224,22 +228,17 @@ ENA is an agglomeration of algorithms developed to analyze network
 models of energy or matter movement in ecosystems
 \citep[e.g.,][]{hannon73, fath99_review, ulanowicz86}, but it can
 generally be applied to any Input-Output system that follows a
-thermodynamically conserved unit among the compartments.  Thus, it is a
-family of related algorithms to analyze the ecosystem from several
+thermodynamically conserved unit among the compartments.  Thus, it is
+a family of related algorithms to analyze the ecosystem from several
 perspectives including its structure, flow, storage, and utility.
 Together, these analyses function as a ``macroscope'' to investigate
 (1) whole system organization, (2) the direct and indirect effects
 among system components, and (3) the processes that create and sustain
-ecological systems.
-% Table~\ref{tab:alg}
-%describes the the main analyses in the package. \enaR\ also includes a
-%number of functions to assist with data import, manipulation, and
-%export, as well as some specialty analyses (Table~\ref{tab:alg2}).
-In this section we provide an overview of the algorithms and tools
-included in the \enaR\ software.  After describing the required model
-information, we highlight the primary ENA algorithms included in
-\enaR .  We then walk through an example application of the \enaR\ Flow
-analysis.
+ecological systems.  In this section we provide an overview of the
+algorithms and tools included in the \enaR\ software.  After
+describing the required model information, we highlight the primary
+ENA algorithms included in \enaR .  We then walk through an example
+application of the \enaR\ Flow analysis.
 
 \subsection{Data Requirements and Input}
 % ENA Data requirements and Input -- no math
@@ -284,6 +283,25 @@ Fruchterman-Reingold, and Kamada-Kawai.  The Fruchterman-Reingold
 algorithm used here is the default.  The \R\ script to generate this
 visualization is included in the online supplementary information
 (Item S1).
+
+% FIG
+%%%%%%%%%%%
+
+\begin{figure*}[t]
+\centering
+\includegraphics[scale=0.85]{../figures/enaR_plot_example.pdf}
+\caption{Example of analysis and visualizations created with \enaR\:
+  (a) network digraph of the internal flows of an oyster reef
+  ecosystem model \citep{dame81}, (b) network homogenization statistic
+  for 56 trophic ecosystem models (rank-ordered), (c) scatter plot
+  showing the relationship between the ascendency-to-capacity ratio
+  and the indirect flow index for the 56 trophic ecosystem models
+  included in the package, and (d) target plot of the betweenness centrality from
+  social network analysis calculated for the 36 nodes of the
+  Chesapeake Bay ecosystem model \citep{baird89}. } \label{fig:example}
+\end{figure*}
+
+%%%%%%%%
 
 \subsection{Algorithm Overview}
 % enaR Algorithms
@@ -374,6 +392,61 @@ More detailed guidance for how to interpret ENA results can be found
 in previously published literature \citep{fath06, schramski11,
   jorgensen07_newecology}.
 
+%%%%%%%
+% FIG
+\begin{figure*}[t]
+\center
+\tableline
+\begin{footnotesize}
+\begin{verbatim}
+library(enaR)   # load enaR package
+> # -- ENTER MODEL DATA -- from Dame and Patten (1981)
+> # node names
+> names <- c("Filter Feeders","Microbiota","Meiofauna",
++                       "Deposit Feeders","Predators","Deposited Detritus")
+> # Internal Flows of model, as matrix (oriented row to column)
+> F <- matrix(c(0, 0, 0, 0, 0, 0, 0, 0, 0,
++                0, 0, 8.1721, 0, 1.2060, 0, 0, 0, 7.2745,
++                0, 1.2060, 0.6609, 0, 0, 0.6431, 0.5135, 0, 0,
++                0.1721, 0, 0, 15.7910, 0, 4.2403, 1.9076, 0.3262, 0),
++             ncol=6)
+> rownames(F) <- names  # add node names to rows
+> colnames(F) <- names  # add node names to cols
+> # boundary flows
+> inputs <- c(41.47,0, 0, 0, 0, 0)
+> outputs <- c(25.1650, 5.76, 3.5794, 0.4303, 0.3594, 6.1759)
+> # Living
+> Living <- c(TRUE,TRUE,TRUE,TRUE,TRUE,FALSE)
+> # pack the model data into the R network data object
+> m <- pack(flow=F,input=inputs, respiration=outputs, outputs=outputs, living=Living)
+>
+> ssCheck(m)                # check to see if the model is at steady-state
+[1] TRUE
+> # perform flow analysis
+> F <- enaFlow(m)               # perform ENA flow analysis
+> attributes(F)                  # show analysis objects created
+$names
+[1] "T"  "G"  "GP" "N"  "NP" "ns"
+
+> F$ns                          # show flow analysis network statistics
+     Boundary     TST TSTp      APL       FCI       BFI       DFI       IFI
+[1,]    41.47 83.5833   NA 2.015512 0.1101686 0.4961517 0.1950689 0.3087794
+         ID.F   ID.F.I   ID.F.O    HMG.I    HMG.O AMP.I AMP.O mode0.F  mode1.F
+[1,] 1.582925 1.716607 1.534181 2.051826 1.891638     3     1   41.47 32.90504
+      mode2.F  mode3.F mode4.F
+[1,] 9.208256 32.90504   41.47
+> F$T
+    Filter Feeders         Microbiota          Meiofauna    Deposit Feeders
+           41.4700             8.1721             8.4805             2.5100
+         Predators Deposited Detritus
+            0.6856            22.2651
+\end{verbatim}
+\end{footnotesize}
+\tableline
+\caption{Example code for applying \enaR\ Flow analysis to \citeapos{dame81} oyster
+  reef model.} \label{tab:flow}
+
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Value Added Features}
@@ -456,6 +529,30 @@ from specific applications.  Fig.~\ref{fig:ns} shows the observed
 distribution of values for selected network statistics from the 100
 models in the library easily analyzed using \texttt{lapply} and the
 associated \enaR\ functions.
+
+%%%%%%%%
+% FIG
+%%%%%%%%
+
+\begin{figure*}[t]
+\includegraphics[scale=0.9]{../figures/ns_dist.pdf}
+\caption{Distributions of selected ENA network statistics from the
+u  100 empirically-based ecosystem models included in \enaR.  The
+  results are summarized using a histogram showing the distribution of
+  the values of each network statistic between the observed minimum
+  and maximum values.  The median, mean, and coefficient of variation
+  (ratio of standard deviation and mean) values are also reported.
+  The network statistics are the number of nodes ($n$), the
+  connectance ($C = L/n^2$), link density ($LD = L/n$), pathway
+  proliferation rate (lam1A), Finn cycling index (FCI), average path
+  length (APL), indirect flow intensity (IFI), output oriented network
+  homogenization ratio (HMG.O), output-oriented network amplification
+  ratio (AMP.O), average mutual information (AMI), the
+  ascendency-to-capacity ratio (ASC.CAP), flow-based network synergism
+  (synergism.F) and mutualism (mutualism.F).} \label{fig:ns}
+\end{figure*}
+
+
 
 
 \subsection{New Connections}
@@ -1042,12 +1139,12 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
 % ========================================================================================
 \section{Tables}
 %
-\begin{table*}[h]
+\begin{table*}[t]
 \center
 \caption{Selected data input, management, and export functions in \enaR.}\label{tab:algIO}
 \tableline
 %\begin{scriptsize}
-\begin{tabular}{l p{9 cm} l }
+\begin{tabular}{l p{8 cm} l }
   \textbf{Function} & \textbf{Description} &
   \textbf{Example Reference}\\ [1 ex] \hline \\ [-0.5 ex]
   pack & This function lets users combine model elements into
@@ -1077,7 +1174,7 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
 \caption{Ecosystem Network Analysis functions in \enaR.}\label{tab:alg}
 \tableline
 %\begin{scriptsize}
-\begin{tabular}{l p{9 cm} l l }
+\begin{tabular}{l p{8 cm} l l }
   \textbf{Function} & \textbf{Description} &
   \textbf{Example Reference}\\ [1 ex] \hline \\ [-0.5 ex]
 %  \multicolumn{3}{l}{\textbf{Primary Analyses}} \\ [0.5 ex]
@@ -1117,7 +1214,7 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
 \caption{Selected \enaR auxiliary functions and analyses.}\label{tab:algaux}
 \tableline
 %\begin{scriptsize}
-\begin{tabular}{l p{9 cm} l }
+\begin{tabular}{l p{8 cm} l }
   \textbf{Function} & \textbf{Description} &
   \textbf{Example Reference}\\ [1 ex] \hline \\ [-0.5 ex]
   \multicolumn{3}{l}{\textbf{Specialty Analyses} }\\
@@ -1144,97 +1241,16 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
 
 
 
-\clearpage
-\newpage
+% \clearpage
+% \newpage
 
-% ========================================================================================
-\section{Figures}
-
-\begin{figure*}[h]
-\includegraphics[scale=1]{../figures/enaR_plot_example.pdf}
-\caption{Example of analysis and visualizations created with \enaR\:
-  (a) network digraph of the internal flows of an oyster reef
-  ecosystem model \citep{dame81}, (b) network homogenization statistic
-  for 56 trophic ecosystem models (rank-ordered), (c) scatter plot
-  showing the relationship between the ascendency-to-capacity ratio
-  and the indirect flow index for the 56 trophic ecosystem models
-  included in the package, and (d) target plot of the betweenness centrality from
-  social network analysis calculated for the 36 nodes of the
-  Chesapeake Bay ecosystem model \citep{baird89}. } \label{fig:example}
-\end{figure*}
-
-\newpage
-\begin{figure*}[h]
-\center
-\tableline
-\begin{verbatim}
-library(enaR)   # load enaR package
-> # -- ENTER MODEL DATA -- from Dame and Patten (1981)
-> # node names
-> names <- c("Filter Feeders","Microbiota","Meiofauna",
-+                       "Deposit Feeders","Predators","Deposited Detritus")
-> # Internal Flows of model, as matrix (oriented row to column)
-> F <- matrix(c(0, 0, 0, 0, 0, 0, 0, 0, 0,
-+                0, 0, 8.1721, 0, 1.2060, 0, 0, 0, 7.2745,
-+                0, 1.2060, 0.6609, 0, 0, 0.6431, 0.5135, 0, 0,
-+                0.1721, 0, 0, 15.7910, 0, 4.2403, 1.9076, 0.3262, 0),
-+             ncol=6)
-> rownames(F) <- names  # add node names to rows
-> colnames(F) <- names  # add node names to cols
-> # boundary flows
-> inputs <- c(41.47,0, 0, 0, 0, 0)
-> outputs <- c(25.1650, 5.76, 3.5794, 0.4303, 0.3594, 6.1759)
-> # Living
-> Living <- c(TRUE,TRUE,TRUE,TRUE,TRUE,FALSE)
-> # pack the model data into the R network data object
-> m <- pack(flow=F,input=inputs, respiration=outputs, outputs=outputs, living=Living)
->
-> ssCheck(m)                # check to see if the model is at steady-state
-[1] TRUE
-> # perform flow analysis
-> F <- enaFlow(m)               # perform ENA flow analysis
-> attributes(F)                  # show analysis objects created
-$names
-[1] "T"  "G"  "GP" "N"  "NP" "ns"
-
-> F$ns                          # show flow analysis network statistics
-     Boundary     TST TSTp      APL       FCI       BFI       DFI       IFI
-[1,]    41.47 83.5833   NA 2.015512 0.1101686 0.4961517 0.1950689 0.3087794
-         ID.F   ID.F.I   ID.F.O    HMG.I    HMG.O AMP.I AMP.O mode0.F  mode1.F
-[1,] 1.582925 1.716607 1.534181 2.051826 1.891638     3     1   41.47 32.90504
-      mode2.F  mode3.F mode4.F
-[1,] 9.208256 32.90504   41.47
-> F$T
-    Filter Feeders         Microbiota          Meiofauna    Deposit Feeders
-           41.4700             8.1721             8.4805             2.5100
-         Predators Deposited Detritus
-            0.6856            22.2651
-\end{verbatim}
-
-\tableline
-\caption{Example code for applying \enaR\ Flow analysis to \citeapos{dame81} oyster
-  reef model.} \label{tab:flow}
-
-\end{figure*}
+% % ========================================================================================
+% \section{Figures}
 
 
 
-\begin{figure*}[t]
-\includegraphics[scale=1]{../figures/ns_dist.pdf}
-\caption{Distributions of selected ENA network statistics from the
-u  100 empirically-based ecosystem models included in \enaR.  The
-  results are summarized using a histogram showing the distribution of
-  the values of each network statistic between the observed minimum
-  and maximum values.  The median, mean, and coefficient of variation
-  (ratio of standard deviation and mean) values are also reported.
-  The network statistics are the number of nodes ($n$), the
-  connectance ($C = L/n^2$), link density ($LD = L/n$), pathway
-  proliferation rate (lam1A), Finn cycling index (FCI), average path
-  length (APL), indirect flow intensity (IFI), output oriented network
-  homogenization ratio (HMG.O), output-oriented network amplification
-  ratio (AMP.O), average mutual information (AMI), the
-  ascendency-to-capacity ratio (ASC.CAP), flow-based network synergism
-  (synergism.F) and mutualism (mutualism.F).} \label{fig:ns}
-\end{figure*}
+% \newpage
+
+
 
 \end{document}
