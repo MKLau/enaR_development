@@ -7,13 +7,6 @@
   \bibpunct{(}{)}{;}{a}{,}{,} % required for natbib
 \bibliographystyle{mee}
 
-%%%Watermark
-%%\usepackage[firstpage]{draftwatermark}
-\usepackage{draftwatermark}
-\SetWatermarkText{IN-PRESS}
-\SetWatermarkLightness{0.75}
-\SetWatermarkScale{5}
-
 \usepackage[margin=1in]{geometry}
 
 \usepackage{amsmath,amssymb,amsthm,amsfonts}
@@ -30,7 +23,6 @@
 \DeclareMathOperator{\diag}{diag}
 \def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
 \newcommand{\R}{R}
-
 %\newcommand{\S}{S}
 \newcommand{\enaR}{\texttt{enaR}}
 \newcommand{\vnorm}[1]{\left|\left|#1\right|\right|}
