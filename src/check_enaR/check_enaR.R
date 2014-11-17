@@ -2,4 +2,76 @@
 ###Compares the output of for the Cone Springs Model
 ###Init: MKLau 23Jul2014
 
+rm(list=ls())
+library(devtools)
 
+##Are the new models the same as the old models?
+install_github(username='MKLau',repo='enaR',ref='beta')
+library(enaR)
+data(enaModels)
+beta.mod <- enaModels
+detach(package:enaR)
+install_github(username='MKLau',repo='enaR',ref='edgeflow')
+library(enaR)
+data(enaModels)
+edge.mod <- enaModels
+                                        #check
+chk <- list()
+for (i in 1:length(edge.mod)){
+  upm.b <- unpack(beta.mod[[i]])
+  upm.b$F <- beta.mod[[i]]%n%'flow'
+  upm.e <- unpack(edge.mod[[i]])
+  out <- list()
+  for (j in 1:length(upm.b)){
+    out[[j]] <- all(round(upm.b[[j]],10)==round(upm.e[[j]],10))
+  }
+  chk[[i]] <- all(unlist(out))
+}
+all(unlist(chk))
+
+##Does output from enaFuncs match (beta - edgeflow ~ 0)?
+ssck <- unlist(lapply(edge.mod,ssCheck))
+test <- edge.mod[[(1:length(ssck))[ssck!=TRUE][1]]]
+test1 <- balance(test)
+test2 <- balance(test)
+test1%e%'flow'-test2%e%'flow'
+test%e%'flow'-test1%e%'flow'
+##
+ssck. <- unlist(lapply(beta.mod,ssCheck))
+test. <- beta.mod[[(1:length(ssck))[ssck!=TRUE][1]]]
+test1. <- force.balance(test.)
+ssCheck(test1.)
+test2. <- force.balance(test.)
+ssCheck(test2.)
+test1.%e%'flow'-test2.%e%'flow'
+test.%e%'flow'-test1.%e%'flow'
+
+###Compare to old stats
+## install_github(username='MKLau',repo='enaR',ref='beta')
+## library(enaR)
+## data(enaModels)
+## beta.mod <- lapply(enaModels[seq(1,length(enaModels),length=10)],balance)
+## beta.ns <- lapply(beta.mod,enaAll)
+## dput(beta.ns,file='../../data/betans.rda')
+## q(save='no')
+## library(devtools)
+## install_github(username='MKLau',repo='enaR',ref='edgeflow')
+## library(enaR)
+## data(enaModels)
+## edge.mod <- lapply(enaModels[seq(1,length(enaModels),length=10)],balance)
+## edge.ns <- lapply(edge.mod,enaAll)
+## dput(edge.ns,file='../../data/edgens.rda')
+
+library(enaR)
+options(keep.source=FALSE)
+beta.ns <- dget(file='../../data/betans.rda')
+edge.ns <- dget(file='../../data/edgens.rda')
+
+###check all
+bns <- unlist(beta.ns)
+ens <- unlist(edge.ns)
+all(names(bns[is.na(bns)])==names(ens[is.na(ens)]))
+bVe <- bns - ens
+all(is.na(bVe[bVe!=0]))
+
+###check functions for edge attributes

@@ -7,6 +7,13 @@
   \bibpunct{(}{)}{;}{a}{,}{,} % required for natbib
 \bibliographystyle{mee}
 
+%%%Watermark
+%%\usepackage[firstpage]{draftwatermark}
+\usepackage{draftwatermark}
+\SetWatermarkText{IN-PRESS}
+\SetWatermarkLightness{0.75}
+\SetWatermarkScale{5}
+
 \usepackage[margin=1in]{geometry}
 
 \usepackage{amsmath,amssymb,amsthm,amsfonts}
@@ -59,7 +66,7 @@ urlcolor=red]{hyperref}
 \begin{description}
   \item[\textbf{Title}:] \enaR: An \R\ package for Ecosystem Network Analysis
   \item[\textbf{Running Title}:] R ecosystem network analysis package
-  \item[\textbf{Word Count}:] 3110
+  \item[\textbf{Word Count}:] 3162
   \item[\textbf{Authors}:] Stuart R. Borrett, Matthew K. Lau
   \item[\textbf{Addresses}:] \
     \begin{itemize}
@@ -89,19 +96,19 @@ urlcolor=red]{hyperref}
 \tableline
 \section*{Abstract}
 \begin{itemize}
-\item Network analysis is a useful approach for complex, relational
-  datasets in many biological fields, including ecology and molecular
+\item Network analysis is a useful approach for investigating complex
+  and relational datasets in many fields including ecology, molecular,
   and evolutionary biology.
-\item Here, we introduce \enaR , an \R\ package for conducting
-  Ecosystem Network Analysis (ENA), an analytical tool set rooted in
-  ecosystem ecology with over 30 years of development, which examines
-  the structure and dynamics of matter and energy movement between
+\item Here, we introduce \enaR , an \R\ package for Ecosystem Network
+  Analysis (ENA).  ENA is an analytical tool set rooted in ecosystem
+  ecology with over 30 years of development that examines the
+  structure and dynamics of matter and energy movement between
   discrete ecological compartments (e.g., a food web).
 \item In addition to describing the primary functionality of the
-  package, we also highlight several value added features including a
-  library of 100 empirical ecosystem models, the ability to analyze
-  and compare multiple models simultaneously, and connections to
-  useful ecological network analysis tools in \R .
+  package, we highlight several features including a library of 100
+  empirical ecosystem models, the ability to analyze and compare
+  multiple models simultaneously, and connections to other ecological
+  network analysis tools in \R .
 \end{itemize}
 
 KEYWORDS: network analysis, ecosystem, open-source software, network
@@ -600,7 +607,7 @@ seeing new ecological discoveries made through the use of \enaR.
 
 \section{Acknowledgments}
 We would like to acknowledge and thank David Hines for contributing to
-the initial code, and Pawandeep Sing for collecting the output for
+the initial code, and Pawandeep Singh for collecting the output for
 Table S1.  We also thank several individuals who used the earlier
 versions of the software and provided helpful feedback for further
 development including Ursula Scharler, Shaoqing Chen, Emily Oxe, and
@@ -1124,7 +1131,7 @@ Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
   get.ns & Returns the whole-network statistics from enaStructure,
   enaFlow, enaAscendency, enaStorage, and enaUtility. & None \\
   eigenCentrality & Calculates the average eigenvalue centrality for
-  any input matrix. & None \\
+  any input matrix. & \citet{fann12_ec} \\
   environCentrality & Returns the input, output, and average environ
   centralities for a matrix. & \citet{fann12_ec}  \\
   TET & Returns the total environ throughflows. & \citet{whipple07}\\
