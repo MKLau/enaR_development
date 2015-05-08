@@ -101,13 +101,22 @@
 
 \begin{document}
 
-%% include your article here, just as usual
-%% Note that you should use the \pkg{}, \proglang{} and \code{} commands.
+% reworked intro - srb - 5/7/2015
 
-%%%Ecological Networks introductory paragraph
+\section[Introduction]{Introduction}
+% p1:  intro paragraph (5/7/2015)
+Network models have been used to xx, yy, zz (insert examples of use/discipline).  While
+the network models and analyses have deep roots (cite old papers),
+their use has been expanding rapidly in a variety of disciplines
+\cite{social science, borrett14_rise, ings09, others??}.  This due in
+part to the flexibility of the core representation, its utility in
+answering relational questions, and its applicability to ``Big Data''
+problems.  <<SOME SUMMARY SENTENCE - Methods/Stats>>
+%The methodology for network representation and subsequent
+%analysis has a
 
-\section[Ecosystem Network Analysis]{Ecosystem Network Analysis}
-%% Note: If there is markup in \(sub)section, then it has to be escape as above.
+% p2: Ecosystem Network Analysis
+% what, why, bit of history -- two schools
 
 Ecosystem Network Analysis (ENA) is a family of algorithms for
 investigating the structure and function of ecological systems
@@ -117,9 +126,9 @@ between species, groups of species, or non-living componets (e.g.,
 dead organic matter) of the ecosystem, and the weighted, directed
 edges are the quantified transfers of energy or matter.
 
-% need a paragraph that introduces the 2 worlds of ena
+NEEDS REVISION >> need to the 2 schools bit here.
 
-% objectives
+% p3: Extant Software & The Current Problem
 Disparate software packages have been created to support
 ENA. Initially algorithms were developed and distributed as the DOS
 based NETWRK4 \cite{ulanowicz91}, which is still available from
@@ -135,12 +144,15 @@ fragmented distribution of these algorithms has inhibited the
 development of theory and the further implementation of important
 algorithms.
 
+EcoNet??  Latham??
+
+% p4: Objectives (Software & Paper).
 The \textit{enaR} package brings together ENA algorithms into one
 common software framework that is readily available and extensible.
 The package is written in the \R\ language, which is free and
 open-source.  Due largely to this, \R\ is now one of the most widely
 used analytical programming lanuages in the biological
-sciences. \textit{enaR} builds on previously developed tools for
+sciences. \textit{enaR} builds on existing \R\ packages for
 network analysis. For example, it uses the \textit{network} data
 structure developed by \citet{butts08_network} and the network
 analysis tools built into the \textit{network}, \textit{sna} (social
@@ -1804,6 +1816,6 @@ their data with other \R\ packages for graph and network analysis like
 package useful for your ENA needs.
 
 
-
+\bibliography{jss_abb, jss}
 
 \end{document}
