@@ -1,13 +1,23 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  14 MAY 2015 10:46
+=======
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 MAY 2015 17:35
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **\nonstopmode\input enaR-vignette.tex
 (./enaR-vignette.tex (./jss.cls
 Document Class: jss 2013/04/06 2.2 jss class by Achim Zeileis
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/size11.clo
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/size11.clo
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -22,6 +32,7 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -36,10 +47,27 @@ Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
@@ -47,6 +75,15 @@ File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
@@ -54,6 +91,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
 
@@ -69,15 +107,39 @@ Package: ae 2001/02/12 1.3 Almost European Computer Modern
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1enc.def
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/ae.sty
+Package: ae 2001/02/12 1.3 Almost European Computer Modern
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )
 LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
 (/usr/local/texlive/2014/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aer.fd
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
@@ -89,6 +151,7 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \FV@StepNumber=\count90
 \FV@OutFile=\write3
 )
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
@@ -101,6 +164,20 @@ Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/textcomp.sty
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/textcomp.sty
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -115,7 +192,11 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1enc.def
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1enc.def
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 266.
@@ -181,7 +262,11 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 ))
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/natbib/natbib.sty
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/natbib/natbib.sty
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip43
 \bibsep=\skip44
@@ -190,6 +275,7 @@ LaTeX Info: Redefining \cite on input line 694.
 )
 \footerskip=\skip45
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
@@ -198,6 +284,16 @@ Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -238,6 +334,7 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
@@ -245,18 +342,35 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen105
 \Hy@linkcounter=\count92
 \Hy@pagecounter=\count93
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/pd1enc.def
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/pd1enc.def
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count94
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -268,9 +382,15 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count95
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen106
@@ -293,12 +413,20 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hpdftex.def
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hpdftex.def
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count100
 \c@bookmark@seq@number=\count101
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -338,10 +466,17 @@ Adding the global options:
 to your \documentclass declaration may fix this.
 Try typing  <return>  to proceed.
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/ucs/ucs.sty
 Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/ucs/data/uni-global.def
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ucs/data/uni-global.def
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
 \uc@secondtry=\count102
@@ -349,6 +484,7 @@ File: uni-global.def 2013/05/13 UCS: Unicode global data
 \uc@combtoksb=\toks16
 \uc@temptokena=\toks17
 )
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks18
@@ -368,6 +504,27 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/sidecap/sidecap.sty
+Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ifthen.sty
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \SC@BOXWD=\dimen109
@@ -399,14 +556,22 @@ LaTeX Font Info:    ... okay on input line 102.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 102.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 102.
 
+<<<<<<< HEAD
  (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
+=======
+ (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1cmr.fd
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 102.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
 LaTeX Font Info:    ... okay on input line 102.
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count104
 \scratchdimen=\dimen113
@@ -419,10 +584,17 @@ LaTeX Font Info:    ... okay on input line 102.
 \MPnumerator=\count108
 \makeMPintoPDFobject=\count109
 \everyMPtoPDFconversion=\toks21
+<<<<<<< HEAD
 ) (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+=======
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
 Package grfext Info: Graphics extension search list:
@@ -430,17 +602,28 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box29
 Package hyperref Info: Link coloring ON on input line 102.
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count110
@@ -461,7 +644,11 @@ Package pdftex.def Info: jsslogo.jpg used on input line 102.
 (pdftex.def)             Requested size: 89.80768pt x 65.43607pt.
 LaTeX Font Info:    Try loading font information for T1+pzc on input line 102.
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pzc.fd
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1pzc.fd
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: t1pzc.fd 2001/06/04 font definitions for T1/pzc.
 )
 LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <28> not available
@@ -475,6 +662,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    Try loading font information for T1+aess on input line 102.
 
 
+<<<<<<< HEAD
 (/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aess.fd
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
@@ -485,6 +673,18 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/ms/everysel.sty
+=======
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aess.fd
+File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ms/everysel.sty
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 
 ABD: EverySelectfont initializing macros
@@ -507,6 +707,7 @@ LaTeX Info: Redefining \selectfont on input line 126.
 )
 
 Package natbib Warning: Citation `social science' on page 1 undefined on input 
+<<<<<<< HEAD
 line 112.
 
 
@@ -515,10 +716,21 @@ line 112.
 
 
 Package natbib Warning: Citation `ings09' on page 1 undefined on input line 112
+=======
+line 111.
+
+
+Package natbib Warning: Citation `borrett14_rise' on page 1 undefined on input 
+line 111.
+
+
+Package natbib Warning: Citation `ings09' on page 1 undefined on input line 111
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 .
 
 
 Package natbib Warning: Citation `others??' on page 1 undefined on input line 1
+<<<<<<< HEAD
 12.
 
 
@@ -540,10 +752,34 @@ e 135.
 LaTeX Font Info:    Try loading font information for T1+aett on input line 136.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aett.fd
+=======
+11.
+
+
+Package natbib Warning: Citation `borrett12_netecol' on page 1 undefined on inp
+ut line 123.
+
+
+Package natbib Warning: Citation `ulanowicz86' on page 1 undefined on input lin
+e 123.
+
+
+Package natbib Warning: Citation `fath99_review' on page 1 undefined on input l
+ine 123.
+
+
+Package natbib Warning: Citation `ulanowicz91' on page 1 undefined on input lin
+e 134.
+
+LaTeX Font Info:    Try loading font information for T1+aett on input line 135.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aett.fd
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 
 Package natbib Warning: Citation `allesina04_wand' on page 1 undefined on input
+<<<<<<< HEAD
  line 138.
 
 
@@ -568,6 +804,32 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 go.jpg>]
 ! Undefined control sequence.
 l.153 The package is written in the \R
+=======
+ line 137.
+
+
+Package natbib Warning: Citation `christensen04' on page 1 undefined on input l
+ine 138.
+
+
+Package natbib Warning: Citation `fath06' on page 1 undefined on input line 139
+.
+
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 141.
+
+LaTeX Font Info:    No file TS1aer.fd. on input line 141.
+
+LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textcopyright' on input line 141.
+
+[1
+
+{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./jsslo
+go.jpg>]
+! Undefined control sequence.
+l.152 The package is written in the \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                       \ language, which is free and
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -576,7 +838,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
+<<<<<<< HEAD
 l.154 open-source.  Due largely to this, \R
+=======
+l.153 open-source.  Due largely to this, \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                            \ is now one of the most widely
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -585,7 +851,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
+<<<<<<< HEAD
 l.156 ...nces. \textit{enaR} builds on existing \R
+=======
+l.155 ...nces. \textit{enaR} builds on existing \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                                   \ packages for
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -595,6 +865,7 @@ and I'll forget about whatever was undefined.
 
 
 Package natbib Warning: Citation `butts08_network' on page 2 undefined on input
+<<<<<<< HEAD
  line 158.
 
 
@@ -607,6 +878,34 @@ nput line 161.
 
 ! Undefined control sequence.
 l.190 in \R
+=======
+ line 157.
+
+
+Package natbib Warning: Citation `butts08_social' on page 2 undefined on input 
+line 159.
+
+
+Package natbib Warning: Citation `handcock2008statnet' on page 2 undefined on i
+nput line 160.
+
+
+! LaTeX Error: File `enaR-vignette-003' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.207 \includegraphics[]{enaR-vignette-003}
+                                           
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.230 in \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
            \ that contains the model data for subsequent analysis.  To
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -615,7 +914,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 LaTeX Font Info:    Font shape `T1/aer/b/sl' in size <10.95> not available
+<<<<<<< HEAD
 (Font)              Font shape `T1/aer/bx/sl' tried instead on input line 236.
+=======
+(Font)              Font shape `T1/aer/bx/sl' tried instead on input line 273.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 2 []
@@ -624,6 +927,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [2]
 
 Package natbib Warning: Citation `leontief1936' on page 3 undefined on input li
+<<<<<<< HEAD
 ne 237.
 
 
@@ -669,6 +973,53 @@ nput line 256.
 
 Package natbib Warning: Citation `butts08_network' on page 3 undefined on input
  line 293.
+=======
+ne 277.
+
+
+Package natbib Warning: Citation `leontief66' on page 3 undefined on input line
+ 277.
+
+
+Package natbib Warning: Citation `hannon73' on page 3 undefined on input line 2
+78.
+
+
+Package natbib Warning: Citation `ulanowicz86' on page 3 undefined on input lin
+e 281.
+
+
+Package natbib Warning: Citation `ulanowicz97' on page 3 undefined on input lin
+e 281.
+
+
+Package natbib Warning: Citation `ulanowicz04' on page 3 undefined on input lin
+e 281.
+
+
+Package natbib Warning: Citation `patten76' on page 3 undefined on input line 2
+84.
+
+
+Package natbib Warning: Citation `patten78' on page 3 undefined on input line 2
+84.
+
+
+Package natbib Warning: Citation `fath99_review' on page 3 undefined on input l
+ine 284.
+
+
+Package natbib Warning: Citation `brandes05' on page 3 undefined on input line 
+293.
+
+
+Package natbib Warning: Citation `scharler09comparing' on page 3 undefined on i
+nput line 296.
+
+
+Package natbib Warning: Citation `butts08_network' on page 3 undefined on input
+ line 333.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
@@ -676,14 +1027,24 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
  []
 
 [3]
+<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for TS1+aett on input line 320
 .
 LaTeX Font Info:    No file TS1aett.fd. on input line 320.
+=======
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 360
+.
+LaTeX Font Info:    No file TS1aett.fd. on input line 360.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 
 LaTeX Font Warning: Font shape `TS1/aett/m/sl' undefined
 (Font)              using `TS1/cmr/m/n' instead
+<<<<<<< HEAD
 (Font)              for symbol `textquotesingle' on input line 320.
+=======
+(Font)              for symbol `textquotesingle' on input line 360.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
@@ -693,6 +1054,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [4]
 
 Package natbib Warning: Citation `allesina03' on page 5 undefined on input line
+<<<<<<< HEAD
  406.
 
 
@@ -701,14 +1063,31 @@ e 419.
 
 
 Package natbib Warning: Citation `dame81' on page 5 undefined on input line 430
+=======
+ 446.
+
+
+Package natbib Warning: Citation `ulanowicz91' on page 5 undefined on input lin
+e 459.
+
+
+Package natbib Warning: Citation `dame81' on page 5 undefined on input line 470
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 .
 
 
 Package natbib Warning: Citation `allesina04_wand' on page 5 undefined on input
+<<<<<<< HEAD
  line 450.
 
 ! Undefined control sequence.
 l.454 ...ttt{read.wand} function will create an \R
+=======
+ line 490.
+
+! Undefined control sequence.
+l.494 ...ttt{read.wand} function will create an \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                                   \
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -724,6 +1103,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [5]
 
 Package natbib Warning: Citation `scharler2012ecosystem' on page 6 undefined on
+<<<<<<< HEAD
  input line 466.
 
 
@@ -732,6 +1112,16 @@ Package natbib Warning: Citation `fath06' on page 6 undefined on input line 479
 
 
 Package natbib Warning: Citation `fath06' on page 6 undefined on input line 500
+=======
+ input line 506.
+
+
+Package natbib Warning: Citation `fath06' on page 6 undefined on input line 519
+.
+
+
+Package natbib Warning: Citation `fath06' on page 6 undefined on input line 540
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 .
 
 
@@ -741,7 +1131,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
+<<<<<<< HEAD
 l.502 \begin{align}
+=======
+l.542 \begin{align}
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -754,7 +1148,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
+<<<<<<< HEAD
 l.503 \mathbf
+=======
+l.543 \mathbf
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
              {S} = \left[ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -762,7 +1160,11 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing $ inserted.
 <inserted text> 
                 $
+<<<<<<< HEAD
 l.503 \mathbf{S} = \left
+=======
+l.543 \mathbf{S} = \left
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                         [ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -774,7 +1176,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
+<<<<<<< HEAD
 l.506 \end{align}
+=======
+l.546 \end{align}
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -783,7 +1189,11 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
+<<<<<<< HEAD
 l.506 \end{align}
+=======
+l.546 \end{align}
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -798,7 +1208,11 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 [6]
 ! Undefined control sequence.
+<<<<<<< HEAD
 l.555 ...the excellent graphics capabilities of \R
+=======
+l.595 ...the excellent graphics capabilities of \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                                   \ to make fancier
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -819,7 +1233,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
+<<<<<<< HEAD
 l.600 \includegraphics[]{enaR-vignette-020}
+=======
+l.640 \includegraphics[]{enaR-vignette-020}
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                            
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -833,6 +1251,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
+<<<<<<< HEAD
 l.601 \includegraphics[]{enaR-vignette-021}
                                            
 I could not locate the file with any of these extensions:
@@ -848,12 +1267,16 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.617 \includegraphics[]{enaR-vignette-003}
+=======
+l.641 \includegraphics[]{enaR-vignette-021}
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                            
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+<<<<<<< HEAD
 
 ! LaTeX Error: File `enaR-vignette-003' not found.
 
@@ -870,6 +1293,10 @@ If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
 l.631 \tableline
+=======
+! Undefined control sequence.
+l.661 \tableline
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -878,7 +1305,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
+<<<<<<< HEAD
 l.645 \tableline
+=======
+l.675 \tableline
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -887,6 +1318,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
+<<<<<<< HEAD
 Package natbib Warning: Citation `dame81' on page 8 undefined on input line 651
 .
 
@@ -923,19 +1355,65 @@ ut line 688.
 
 
 Overfull \hbox (25.0103pt too wide) in paragraph at lines 671--697
+=======
+Package natbib Warning: Citation `dame81' on page 8 undefined on input line 681
+.
+
+
+Package natbib Warning: Citation `fath06' on page 8 undefined on input line 692
+.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 701.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 701.
+
+Package natbib Warning: Citation `borrett03' on page 8 undefined on input line 
+711.
+
+
+Package natbib Warning: Citation `borrett07_jtb' on page 8 undefined on input l
+ine 713.
+
+
+Package natbib Warning: Citation `caswell01' on page 8 undefined on input line 
+717.
+
+
+Package natbib Warning: Citation `farkas2001spectra' on page 8 undefined on inp
+ut line 718.
+
+
+Overfull \hbox (25.0103pt too wide) in paragraph at lines 701--727
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
  [] 
  []
 
 
+<<<<<<< HEAD
 Package natbib Warning: Citation `fath99_review' on page 9 undefined on input l
 ine 715.
 
 
 Package natbib Warning: Citation `fath06' on page 9 undefined on input line 715
+=======
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 8 []
+ []
+
+[8]
+
+Package natbib Warning: Citation `fath99_review' on page 9 undefined on input l
+ine 745.
+
+
+Package natbib Warning: Citation `fath06' on page 9 undefined on input line 745
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 .
 
 
 Package natbib Warning: Citation `schramski11' on page 9 undefined on input lin
+<<<<<<< HEAD
 e 715.
 
 
@@ -952,10 +1430,29 @@ Package natbib Warning: Citation `finn76' on page 9 undefined on input line 738
 
 
 Package natbib Warning: Citation `finn80' on page 9 undefined on input line 739
+=======
+e 745.
+
+
+Package natbib Warning: Citation `borrett11_ree' on page 9 undefined on input l
+ine 748.
+
+
+Package natbib Warning: Citation `borrett11_equ' on page 9 undefined on input l
+ine 748.
+
+
+Package natbib Warning: Citation `finn76' on page 9 undefined on input line 768
+.
+
+
+Package natbib Warning: Citation `finn80' on page 9 undefined on input line 769
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 .
 
 
 Package natbib Warning: Citation `borrett06_neuse' on page 9 undefined on input
+<<<<<<< HEAD
  line 742.
 
 
@@ -972,6 +1469,24 @@ Package natbib Warning: Citation `fath06' on page 9 undefined on input line 744
 
 
 Package natbib Warning: Citation `fath06' on page 9 undefined on input line 745
+=======
+ line 772.
+
+
+Package natbib Warning: Citation `borrett11_ree' on page 9 undefined on input l
+ine 773.
+
+
+Package natbib Warning: Citation `borrett11_equ' on page 9 undefined on input l
+ine 773.
+
+
+Package natbib Warning: Citation `fath06' on page 9 undefined on input line 774
+.
+
+
+Package natbib Warning: Citation `fath06' on page 9 undefined on input line 775
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 .
 
 
@@ -985,11 +1500,19 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [9]
 
 Package natbib Warning: Citation `ulanowicz86' on page 10 undefined on input li
+<<<<<<< HEAD
 ne 803.
 
 
 Package natbib Warning: Citation `ulanowicz97' on page 10 undefined on input li
 ne 803.
+=======
+ne 833.
+
+
+Package natbib Warning: Citation `ulanowicz97' on page 10 undefined on input li
+ne 833.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -999,6 +1522,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [10]
 
 Package natbib Warning: Citation `ulanowicz86' on page 11 undefined on input li
+<<<<<<< HEAD
 ne 819.
 
 
@@ -1031,10 +1555,45 @@ Package natbib Warning: Citation `fath06' on page 11 undefined on input line 87
 
 
 Package natbib Warning: Citation `fath06' on page 11 undefined on input line 87
+=======
+ne 849.
+
+
+Package natbib Warning: Citation `ulanowicz97' on page 11 undefined on input li
+ne 849.
+
+
+Package natbib Warning: Citation `ulanowicz86' on page 11 undefined on input li
+ne 849.
+
+
+Package natbib Warning: Citation `ulanowicz97' on page 11 undefined on input li
+ne 849.
+
+
+Package natbib Warning: Citation `fath99_review' on page 11 undefined on input 
+line 868.
+
+
+Package natbib Warning: Citation `schramski11' on page 11 undefined on input li
+ne 868.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 881.
+
+
+Package natbib Warning: Citation `fath06' on page 11 undefined on input line 90
+6.
+
+
+Package natbib Warning: Citation `fath06' on page 11 undefined on input line 90
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 7.
 
 
 Package natbib Warning: Citation `patten91' on page 11 undefined on input line 
+<<<<<<< HEAD
 896.
 
 
@@ -1044,6 +1603,17 @@ line 896.
 
 Package natbib Warning: Citation `ulanowicz90' on page 11 undefined on input li
 ne 897.
+=======
+926.
+
+
+Package natbib Warning: Citation `fath99_review' on page 11 undefined on input 
+line 926.
+
+
+Package natbib Warning: Citation `ulanowicz90' on page 11 undefined on input li
+ne 927.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -1058,6 +1628,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [12]
 
 Package natbib Warning: Citation `patten78' on page 13 undefined on input line 
+<<<<<<< HEAD
 949.
 
 
@@ -1117,6 +1688,67 @@ ne 1084.
 
 Package natbib Warning: Citation `ulanowicz83' on page 14 undefined on input li
 ne 1084.
+=======
+979.
+
+
+Package natbib Warning: Citation `fath99_review' on page 13 undefined on input 
+line 979.
+
+
+Package natbib Warning: Citation `borrett11_ree' on page 13 undefined on input 
+line 984.
+
+
+Package natbib Warning: Citation `schramski06' on page 13 undefined on input li
+ne 1024.
+
+
+Package natbib Warning: Citation `schramski07' on page 13 undefined on input li
+ne 1024.
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 13
+ []
+
+[13]
+
+Package natbib Warning: Citation `dame81' on page 14 undefined on input line 10
+40.
+
+
+Package natbib Warning: Citation `patten81' on page 14 undefined on input line 
+1040.
+
+
+Package natbib Warning: Citation `schramski06' on page 14 undefined on input li
+ne 1040.
+
+
+Package natbib Warning: Citation `schramski07' on page 14 undefined on input li
+ne 1040.
+
+
+Package natbib Warning: Citation `ulanowicz90' on page 14 undefined on input li
+ne 1061.
+
+
+Package natbib Warning: Citation `ulanowicz90' on page 14 undefined on input li
+ne 1062.
+
+
+Package natbib Warning: Citation `ulanowicz90' on page 14 undefined on input li
+ne 1093.
+
+
+Package natbib Warning: Citation `ulanowicz91' on page 14 undefined on input li
+ne 1114.
+
+
+Package natbib Warning: Citation `ulanowicz83' on page 14 undefined on input li
+ne 1114.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -1126,6 +1758,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [14]
 
 Package natbib Warning: Citation `ulanowicz83' on page 15 undefined on input li
+<<<<<<< HEAD
 ne 1113.
 
 
@@ -1165,6 +1798,47 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 
 Package natbib Warning: Citation `fann12_ec' on page 16 undefined on input line
  1228.
+=======
+ne 1143.
+
+
+Package natbib Warning: Citation `ulanowicz83' on page 15 undefined on input li
+ne 1143.
+
+
+Package natbib Warning: Citation `lindeman42' on page 15 undefined on input lin
+e 1171.
+
+
+Package natbib Warning: Citation `ulanowicz1979trophic' on page 15 undefined on
+ input line 1172.
+
+
+Package natbib Warning: Citation `ulanowicz91' on page 15 undefined on input li
+ne 1173.
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 15
+ []
+
+[15]
+
+Package natbib Warning: Citation `ulanowicz91' on page 16 undefined on input li
+ne 1183.
+
+
+Package natbib Warning: Citation `ulanowicz1979trophic' on page 16 undefined on
+ input line 1201.
+
+
+Package natbib Warning: Citation `ulanowicz1979trophic' on page 16 undefined on
+ input line 1201.
+
+
+Package natbib Warning: Citation `fann12_ec' on page 16 undefined on input line
+ 1258.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -1179,7 +1853,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
+<<<<<<< HEAD
 l.1269 \includegraphics[]{enaR-vignette-039}
+=======
+l.1299 \includegraphics[]{enaR-vignette-039}
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                             
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -1194,6 +1872,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [17]
 
 Package natbib Warning: Citation `christian96' on page 18 undefined on input li
+<<<<<<< HEAD
 ne 1318.
 
 
@@ -1215,6 +1894,29 @@ ne 1330.
 
 Package natbib Warning: Citation `borrett13' on page 18 undefined on input line
  1330.
+=======
+ne 1353.
+
+
+Package natbib Warning: Citation `baird08_sylt' on page 18 undefined on input l
+ine 1353.
+
+
+Package natbib Warning: Citation `borrett10_idd' on page 18 undefined on input 
+line 1354.
+
+
+Package natbib Warning: Citation `borrett10_hmg' on page 18 undefined on input 
+line 1364.
+
+
+Package natbib Warning: Citation `salas11_did' on page 18 undefined on input li
+ne 1365.
+
+
+Package natbib Warning: Citation `borrett13' on page 18 undefined on input line
+ 1365.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -1224,6 +1926,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [18]
 
 Package natbib Warning: Citation `haven66' on page 19 undefined on input line 1
+<<<<<<< HEAD
 368.
 
 
@@ -1375,10 +2078,164 @@ Package natbib Warning: Citation `baird89' on page 19 undefined on input line 1
 405.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/ucs/data/uni-34.def
+=======
+403.
+
+
+Package natbib Warning: Citation `richey78' on page 19 undefined on input line 
+1404.
+
+
+Package natbib Warning: Citation `richey78' on page 19 undefined on input line 
+1405.
+
+
+Package natbib Warning: Citation `richey78' on page 19 undefined on input line 
+1406.
+
+
+Package natbib Warning: Citation `richey78' on page 19 undefined on input line 
+1407.
+
+
+Package natbib Warning: Citation `tilly68' on page 19 undefined on input line 1
+408.
+
+
+Package natbib Warning: Citation `odum57' on page 19 undefined on input line 14
+09.
+
+
+Package natbib Warning: Citation `brylinsky72' on page 19 undefined on input li
+ne 1410.
+
+
+Package natbib Warning: Citation `dame81' on page 19 undefined on input line 14
+11.
+
+
+Package natbib Warning: Citation `rybarczyk03' on page 19 undefined on input li
+ne 1412.
+
+
+Package natbib Warning: Citation `sandberg00' on page 19 undefined on input lin
+e 1413.
+
+
+Package natbib Warning: Citation `sandberg00' on page 19 undefined on input lin
+e 1414.
+
+
+Package natbib Warning: Citation `baird81' on page 19 undefined on input line 1
+415.
+
+
+Package natbib Warning: Citation `ray08' on page 19 undefined on input line 141
+6.
+
+
+Package natbib Warning: Citation `ray08' on page 19 undefined on input line 141
+7.
+
+
+Package natbib Warning: Citation `baird91' on page 19 undefined on input line 1
+418.
+
+
+Package natbib Warning: Citation `baird91' on page 19 undefined on input line 1
+419.
+
+
+Package natbib Warning: Citation `baird91' on page 19 undefined on input line 1
+420.
+
+
+Package natbib Warning: Citation `baird91' on page 19 undefined on input line 1
+421.
+
+
+Package natbib Warning: Citation `baird91' on page 19 undefined on input line 1
+422.
+
+
+Package natbib Warning: Citation `ulanowicz86' on page 19 undefined on input li
+ne 1423.
+
+
+Package natbib Warning: Citation `ulanowicz86' on page 19 undefined on input li
+ne 1424.
+
+
+Package natbib Warning: Citation `almunia99' on page 19 undefined on input line
+ 1425.
+
+
+Package natbib Warning: Citation `heymans00' on page 19 undefined on input line
+ 1426.
+
+
+Package natbib Warning: Citation `scharler05' on page 19 undefined on input lin
+e 1427.
+
+
+Package natbib Warning: Citation `scharler05' on page 19 undefined on input lin
+e 1428.
+
+
+Package natbib Warning: Citation `scharler05' on page 19 undefined on input lin
+e 1429.
+
+
+Package natbib Warning: Citation `whipple93' on page 19 undefined on input line
+ 1430.
+
+
+Package natbib Warning: Citation `baird04' on page 19 undefined on input line 1
+431.
+
+
+Package natbib Warning: Citation `baird04' on page 19 undefined on input line 1
+432.
+
+
+Package natbib Warning: Citation `baird04' on page 19 undefined on input line 1
+433.
+
+
+Package natbib Warning: Citation `baird04' on page 19 undefined on input line 1
+434.
+
+
+Package natbib Warning: Citation `link08' on page 19 undefined on input line 14
+35.
+
+
+Package natbib Warning: Citation `link08' on page 19 undefined on input line 14
+36.
+
+
+Package natbib Warning: Citation `link08' on page 19 undefined on input line 14
+37.
+
+
+Package natbib Warning: Citation `monaco97' on page 19 undefined on input line 
+1438.
+
+
+Package natbib Warning: Citation `link08' on page 19 undefined on input line 14
+39.
+
+
+Package natbib Warning: Citation `baird89' on page 19 undefined on input line 1
+440.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ucs/data/uni-34.def
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 File: uni-34.def 2013/05/13 UCS: Unicode data U+2200..U+22FF
 )
 
 Package natbib Warning: Citation `patricio2006mass' on page 19 undefined on inp
+<<<<<<< HEAD
 ut line 1406.
 
 
@@ -1663,6 +2520,292 @@ ne 1518.
 
 ! Undefined control sequence.
 l.1520 One advantage of the \textit{enaR} \R
+=======
+ut line 1441.
+
+
+Package natbib Warning: Citation `baird98' on page 19 undefined on input line 1
+442.
+
+
+Package natbib Warning: Citation `baird98' on page 19 undefined on input line 1
+443.
+
+
+Package natbib Warning: Citation `baird98' on page 19 undefined on input line 1
+444.
+
+
+Package natbib Warning: Citation `baird98' on page 19 undefined on input line 1
+445.
+
+
+Package natbib Warning: Citation `baird98' on page 19 undefined on input line 1
+446.
+
+
+Package natbib Warning: Citation `baird98' on page 19 undefined on input line 1
+447.
+
+
+Package natbib Warning: Citation `baird04_sylt' on page 19 undefined on input l
+ine 1448.
+
+
+Package natbib Warning: Citation `ulanowicz00_graminoids' on page 19 undefined 
+on input line 1449.
+
+
+Package natbib Warning: Citation `ulanowicz00_graminoids' on page 19 undefined 
+on input line 1450.
+
+
+Package natbib Warning: Citation `ulanowicz97_cypress' on page 19 undefined on 
+input line 1451.
+
+
+Package natbib Warning: Citation `ulanowicz97_cypress' on page 19 undefined on 
+input line 1452.
+
+
+Package natbib Warning: Citation `miehls09_oneida' on page 19 undefined on inpu
+t line 1453.
+
+
+Package natbib Warning: Citation `miehls09_oneida' on page 19 undefined on inpu
+t line 1454.
+
+
+Package natbib Warning: Citation `miehls09_quinte' on page 19 undefined on inpu
+t line 1455.
+
+
+Package natbib Warning: Citation `miehls09_quinte' on page 19 undefined on inpu
+t line 1456.
+
+
+Package natbib Warning: Citation `ulanowicz99_mangrove' on page 19 undefined on
+ input line 1457.
+
+
+Package natbib Warning: Citation `ulanowicz99_mangrove' on page 19 undefined on
+ input line 1458.
+
+
+Package natbib Warning: Citation `ulanowicz98_fb' on page 19 undefined on input
+ line 1459.
+
+
+Package natbib Warning: Citation `ulanowicz98_fb' on page 19 undefined on input
+ line 1460.
+
+
+Package natbib Warning: Citation `finn80' on page 19 undefined on input line 14
+71.
+
+
+Package natbib Warning: Citation `waide74' on page 19 undefined on input line 1
+487.
+
+
+Package natbib Warning: Citation `jordan72' on page 19 undefined on input line 
+1488.
+
+
+Package natbib Warning: Citation `jordan72' on page 19 undefined on input line 
+1489.
+
+
+Package natbib Warning: Citation `jordan72' on page 19 undefined on input line 
+1490.
+
+
+Package natbib Warning: Citation `jordan72' on page 19 undefined on input line 
+1491.
+
+
+Package natbib Warning: Citation `jordan72' on page 19 undefined on input line 
+1492.
+
+
+Package natbib Warning: Citation `jordan72' on page 19 undefined on input line 
+1493.
+
+
+Package natbib Warning: Citation `jordan72' on page 19 undefined on input line 
+1494.
+
+
+Package natbib Warning: Citation `jordan72' on page 19 undefined on input line 
+1495.
+
+
+Package natbib Warning: Citation `jordan72' on page 19 undefined on input line 
+1496.
+
+
+Package natbib Warning: Citation `jordan72' on page 19 undefined on input line 
+1497.
+
+
+Package natbib Warning: Citation `jordan72' on page 19 undefined on input line 
+1498.
+
+
+Package natbib Warning: Citation `edmisten70' on page 19 undefined on input lin
+e 1499.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1500.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1501.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1502.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1503.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1504.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1505.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1506.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1507.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1508.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1509.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1510.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1511.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1512.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1513.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1514.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1515.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1516.
+
+
+Package natbib Warning: Citation `hines12' on page 19 undefined on input line 1
+517.
+
+
+Package natbib Warning: Citation `hines2015' on page 19 undefined on input line
+ 1518.
+
+
+Package natbib Warning: Citation `borrett07_lanier' on page 19 undefined on inp
+ut line 1519.
+
+
+Package natbib Warning: Citation `hinrichsen98_baltic' on page 19 undefined on 
+input line 1520.
+
+
+Package natbib Warning: Citation `baird95' on page 19 undefined on input line 1
+521.
+
+
+Package natbib Warning: Citation `ulanowicz99' on page 19 undefined on input li
+ne 1522.
+
+
+Package natbib Warning: Citation `ulanowicz99' on page 19 undefined on input li
+ne 1523.
+
+
+Package natbib Warning: Citation `ulanowicz99' on page 19 undefined on input li
+ne 1524.
+
+
+Package natbib Warning: Citation `ulanowicz99' on page 19 undefined on input li
+ne 1525.
+
+
+Package natbib Warning: Citation `ulanowicz99' on page 19 undefined on input li
+ne 1526.
+
+
+Package natbib Warning: Citation `baird08_sylt' on page 19 undefined on input l
+ine 1527.
+
+
+Package natbib Warning: Citation `baird08_sylt' on page 19 undefined on input l
+ine 1528.
+
+
+Package natbib Warning: Citation `finn80' on page 19 undefined on input line 15
+39.
+
+
+Package natbib Warning: Citation `baird91' on page 19 undefined on input line 1
+551.
+
+
+Package natbib Warning: Citation `baird95' on page 19 undefined on input line 1
+551.
+
+
+Package natbib Warning: Citation `christian03' on page 19 undefined on input li
+ne 1551.
+
+
+Package natbib Warning: Citation `whipple07' on page 19 undefined on input line
+ 1551.
+
+
+Package natbib Warning: Citation `christensen95' on page 19 undefined on input 
+line 1553.
+
+
+Package natbib Warning: Citation `borrett10_hmg' on page 19 undefined on input 
+line 1553.
+
+
+Package natbib Warning: Citation `salas11_did' on page 19 undefined on input li
+ne 1553.
+
+! Undefined control sequence.
+l.1555 One advantage of the \textit{enaR} \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                             \ package is that it simplifies ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1678,7 +2821,11 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [19]
 
 Package natbib Warning: Citation `baird98' on page 20 undefined on input line 1
+<<<<<<< HEAD
 602.
+=======
+637.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 
 ! LaTeX Error: File `enaR-vignette-048' not found.
@@ -1687,7 +2834,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
+<<<<<<< HEAD
 l.1633 \includegraphics[]{enaR-vignette-048}
+=======
+l.1668 \includegraphics[]{enaR-vignette-048}
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                             
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -1695,7 +2846,11 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
+<<<<<<< HEAD
 l.1641 ...building the \textit{enaR} package in \R
+=======
+l.1676 ...building the \textit{enaR} package in \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                                   \ is that
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1704,7 +2859,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
+<<<<<<< HEAD
 l.1643 ...atistical tools that already exist in \R
+=======
+l.1678 ...atistical tools that already exist in \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                                   .  We highlight two
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1725,7 +2884,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
+<<<<<<< HEAD
 l.1694 \includegraphics[]{enaR-vignette-051}
+=======
+l.1729 \includegraphics[]{enaR-vignette-051}
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                             
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -1745,7 +2908,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
+<<<<<<< HEAD
 l.1739 \includegraphics[]{enaR-vignette-054}
+=======
+l.1774 \includegraphics[]{enaR-vignette-054}
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                             
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -1753,7 +2920,11 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
+<<<<<<< HEAD
 l.1764 There are other \R
+=======
+l.1799 There are other \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                          \ packages that have graph and network analysis tools,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1762,7 +2933,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
+<<<<<<< HEAD
 l.1771 Network Analysis in \R
+=======
+l.1806 Network Analysis in \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                              .  The vision for this package is that it will
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1771,11 +2946,19 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
+<<<<<<< HEAD
 Package natbib Warning: Citation `fath06' on page 22 undefined on input line 17
 74.
 
 ! Undefined control sequence.
 l.1779 their data with other \R
+=======
+Package natbib Warning: Citation `fath06' on page 22 undefined on input line 18
+09.
+
+! Undefined control sequence.
+l.1814 their data with other \R
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
                                \ packages for graph and network analysis like
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1783,25 +2966,41 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+<<<<<<< HEAD
 (./enaR-vignette.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 12.
 
 )
+=======
+No file enaR-vignette.bbl.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 Package natbib Warning: There were undefined citations.
 
 
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 1786--1786
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 1821--1821
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
  []
 
 LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <13> not available
+<<<<<<< HEAD
 (Font)              Font shape `T1/pzc/mb/it' tried instead on input line 1786.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1786.
 
 Underfull \vbox (badness 1137) has occurred while \output is active []
+=======
+(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 1821.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1821.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -1824,10 +3023,17 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [25]
+<<<<<<< HEAD
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1786.
  (./enaR-vignette.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1786.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1786.
+=======
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1821.
+ (./enaR-vignette.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1821.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1821.
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 
 Package rerunfilecheck Info: File `enaR-vignette.out' has not changed.
 (rerunfilecheck)             Checksum: 7DD62D2811FC85DC8451F26DACB3BDB9;2894.
@@ -1838,6 +3044,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
+<<<<<<< HEAD
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1786.
  ) 
 Here is how much of TeX's memory you used:
@@ -1880,6 +3087,50 @@ c/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
 /cm-super/sfrm1095.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/zapf
 chan/uzcmi8a.pfb>
 Output written on enaR-vignette.pdf (25 pages, 422821 bytes).
+=======
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1821.
+ ) 
+Here is how much of TeX's memory you used:
+ 8176 strings out of 493315
+ 119165 string characters out of 6137904
+ 244276 words of memory out of 5000000
+ 11326 multiletter control sequences out of 15000+600000
+ 61488 words of font info for 108 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 36i,12n,34p,360b,749s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
+live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2013/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2013/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsltt10.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2013/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
+/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/zapf
+chan/uzcmi8a.pfb>
+Output written on enaR-vignette.pdf (25 pages, 423000 bytes).
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 PDF statistics:
  442 PDF objects out of 1000 (max. 8388607)
  381 compressed objects within 4 object streams

@@ -109,10 +109,17 @@ Network models have been used to xx, yy, zz (insert examples of
 use/discipline).  While the network models and analyses have deep
 roots (cite old papers), their use has been expanding rapidly in a
 variety of disciplines \cite{social science, borrett14_rise, ings09,
+<<<<<<< HEAD
   others??}.  This due in part to the flexibility of the core
 representation, its utility in answering relational questions, and its
 applicability to ``Big Data'' problems.  <<SUMMARY SENTENCE - Methods/Stats>>
 
+=======
+  others??}.  This is due in part to the flexibility of the core
+representation, its utility in answering relational questions, and its
+applicability to ``Big Data'' problems.  <<SOME SUMMARY SENTENCE -
+Methods/Stats>>
+>>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 %The methodology for network representation and subsequent
 %analysis has a
 
@@ -127,7 +134,9 @@ between species, groups of species, or non-living componets (e.g.,
 dead organic matter) of the ecosystem, and the weighted, directed
 edges are the quantified transfers of energy or matter.
 
-NEEDS REVISION >> need to the 2 schools bit here.
+NEEDS REVISION >> need to add the 2 schools bit here.  We need this
+briefly in the intro to set up the problem and to provide context for
+the structure of the software.
 
 % p3: Extant Software & The Current Problem
 Disparate software packages have been created to support
@@ -145,7 +154,7 @@ fragmented distribution of these algorithms has inhibited the
 development of theory and the further implementation of important
 algorithms.
 
-EcoNet??  Latham??
+>> Needs modification to include EcoNet and Latham's software??
 
 % p4: Objectives (Software & Paper).
 The \textit{enaR} package brings together ENA algorithms into one
