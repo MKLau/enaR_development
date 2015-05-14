@@ -187,21 +187,21 @@ citation('enaR')
 @
 
 
-% % use
-% The analysis has been used in a variety of ways, including to show
-% the relative importance of indirect effects in ecosystems
-% \citep{patten83, higashi89, salas11_did} and their capacity to
-% effectively transform the relations among organisms
-% \citep{ulanowicz90, patten91, fath98, bondavalli99}.  From these
-% applications a new theoretical understanding of ecosystems has
-% emerged \citep{higashi91, belgrano05, jorgensen07_newecology}.
-% Recently, scientists have been applying these methods to understand
-% trophic dynamics in the Sylt-R{\o}m{\o} Bight
-% \citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in
-% estuaries \cite{christian03, hines12}, and urban sustainability
-% \citep{zhang10, chen12}.
+The analysis has been used in a variety of ways, including to show the
+relative importance of indirect effects in ecosystems \citep{patten83,
+higashi89, salas11_did} and their capacity to effectively transform
+the relations among organisms \citep{ulanowicz90, patten91, fath98,
+bondavalli99}.  From these applications a new theoretical
+understanding of ecosystems has emerged \citep{higashi91, belgrano05,
+jorgensen07_newecology}.  Recently, scientists have been applying
+these methods to understand trophic dynamics in the Sylt-R{\o}m{\o}
+Bight \citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in
+estuaries \cite{christian03, hines12}, and urban sustainability
+\citep{zhang10, chen12}.
+
 
 \section{Data Input: General}
+
 In this section we describe the data necessary for the Ecological
 Network Analysis and show how to build the central network data object
 in \R\ that contains the model data for subsequent analysis.  To
