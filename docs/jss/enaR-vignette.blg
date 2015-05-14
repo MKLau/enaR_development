@@ -1,0 +1,142 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: enaR-vignette.aux
+The style file: jss.bst
+White space in argument---line 20 of file enaR-vignette.aux
+ : \citation{social
+ :                  science,borrett14_rise,ings09,others??}
+I'm skipping whatever remains of this command
+White space in argument---line 227 of file enaR-vignette.aux
+ : \bibdata{jss_abb,
+ :                   jss}
+I'm skipping whatever remains of this command
+Database file #1: jss_abb.bib
+Warning--I didn't find a database entry for "borrett12_netecol"
+Warning--I didn't find a database entry for "ulanowicz86"
+Warning--I didn't find a database entry for "fath99_review"
+Warning--I didn't find a database entry for "ulanowicz91"
+Warning--I didn't find a database entry for "allesina04_wand"
+Warning--I didn't find a database entry for "christensen04"
+Warning--I didn't find a database entry for "fath06"
+Warning--I didn't find a database entry for "butts08_network"
+Warning--I didn't find a database entry for "butts08_social"
+Warning--I didn't find a database entry for "handcock2008statnet"
+Warning--I didn't find a database entry for "leontief1936"
+Warning--I didn't find a database entry for "leontief66"
+Warning--I didn't find a database entry for "hannon73"
+Warning--I didn't find a database entry for "ulanowicz97"
+Warning--I didn't find a database entry for "ulanowicz04"
+Warning--I didn't find a database entry for "patten76"
+Warning--I didn't find a database entry for "patten78"
+Warning--I didn't find a database entry for "brandes05"
+Warning--I didn't find a database entry for "scharler09comparing"
+Warning--I didn't find a database entry for "allesina03"
+Warning--I didn't find a database entry for "dame81"
+Warning--I didn't find a database entry for "scharler2012ecosystem"
+Warning--I didn't find a database entry for "borrett03"
+Warning--I didn't find a database entry for "borrett07_jtb"
+Warning--I didn't find a database entry for "caswell01"
+Warning--I didn't find a database entry for "farkas2001spectra"
+Warning--I didn't find a database entry for "schramski11"
+Warning--I didn't find a database entry for "borrett11_ree"
+Warning--I didn't find a database entry for "borrett11_equ"
+Warning--I didn't find a database entry for "finn76"
+Warning--I didn't find a database entry for "finn80"
+Warning--I didn't find a database entry for "borrett06_neuse"
+Warning--I didn't find a database entry for "patten91"
+Warning--I didn't find a database entry for "ulanowicz90"
+Warning--I didn't find a database entry for "schramski06"
+Warning--I didn't find a database entry for "schramski07"
+Warning--I didn't find a database entry for "patten81"
+Warning--I didn't find a database entry for "ulanowicz83"
+Warning--I didn't find a database entry for "lindeman42"
+Warning--I didn't find a database entry for "ulanowicz1979trophic"
+Warning--I didn't find a database entry for "fann12_ec"
+Warning--I didn't find a database entry for "christian96"
+Warning--I didn't find a database entry for "baird08_sylt"
+Warning--I didn't find a database entry for "borrett10_idd"
+Warning--I didn't find a database entry for "borrett10_hmg"
+Warning--I didn't find a database entry for "salas11_did"
+Warning--I didn't find a database entry for "borrett13"
+Warning--I didn't find a database entry for "haven66"
+Warning--I didn't find a database entry for "richey78"
+Warning--I didn't find a database entry for "tilly68"
+Warning--I didn't find a database entry for "odum57"
+Warning--I didn't find a database entry for "brylinsky72"
+Warning--I didn't find a database entry for "rybarczyk03"
+Warning--I didn't find a database entry for "sandberg00"
+Warning--I didn't find a database entry for "baird81"
+Warning--I didn't find a database entry for "ray08"
+Warning--I didn't find a database entry for "baird91"
+Warning--I didn't find a database entry for "almunia99"
+Warning--I didn't find a database entry for "heymans00"
+Warning--I didn't find a database entry for "scharler05"
+Warning--I didn't find a database entry for "whipple93"
+Warning--I didn't find a database entry for "baird04"
+Warning--I didn't find a database entry for "link08"
+Warning--I didn't find a database entry for "monaco97"
+Warning--I didn't find a database entry for "baird89"
+Warning--I didn't find a database entry for "patricio2006mass"
+Warning--I didn't find a database entry for "baird98"
+Warning--I didn't find a database entry for "baird04_sylt"
+Warning--I didn't find a database entry for "ulanowicz00_graminoids"
+Warning--I didn't find a database entry for "ulanowicz97_cypress"
+Warning--I didn't find a database entry for "miehls09_oneida"
+Warning--I didn't find a database entry for "miehls09_quinte"
+Warning--I didn't find a database entry for "ulanowicz99_mangrove"
+Warning--I didn't find a database entry for "ulanowicz98_fb"
+Warning--I didn't find a database entry for "waide74"
+Warning--I didn't find a database entry for "jordan72"
+Warning--I didn't find a database entry for "edmisten70"
+Warning--I didn't find a database entry for "christian03"
+Warning--I didn't find a database entry for "hines12"
+Warning--I didn't find a database entry for "hines2015"
+Warning--I didn't find a database entry for "borrett07_lanier"
+Warning--I didn't find a database entry for "hinrichsen98_baltic"
+Warning--I didn't find a database entry for "baird95"
+Warning--I didn't find a database entry for "ulanowicz99"
+Warning--I didn't find a database entry for "whipple07"
+Warning--I didn't find a database entry for "christensen95"
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 0 entries,
+            3140 wiz_defined-function locations,
+            859 strings with 7662 characters,
+and the built_in function-call counts, 37 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 8
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 11
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 10
+(There were 2 error messages)

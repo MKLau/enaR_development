@@ -27,10 +27,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% almost as usual
-\author{Matthew K. Lau\\ Harvard Forest\\Harvard University \And
+\author{Matthew K. Lau\\Harvard Forest\\Harvard University\\ \And
         Stuart R. Borrett\\Department of Biology and Marine Biology\\
         University of North Carolina Wilmington\\and\\Duke Network
-        Analysis Center, Social Science Research Institute \\ Duke University}
+        Analysis Center\\Social Science Research Institute\\Duke University}
 \title{enaR: Ecosystem Network Analysis with R}
 
 %% for pretty printing and a nice hypersummary also set:
@@ -105,13 +105,14 @@
 
 \section[Introduction]{Introduction}
 % p1:  intro paragraph (5/7/2015)
-Network models have been used to xx, yy, zz (insert examples of use/discipline).  While
-the network models and analyses have deep roots (cite old papers),
-their use has been expanding rapidly in a variety of disciplines
-\cite{social science, borrett14_rise, ings09, others??}.  This due in
-part to the flexibility of the core representation, its utility in
-answering relational questions, and its applicability to ``Big Data''
-problems.  <<SOME SUMMARY SENTENCE - Methods/Stats>>
+Network models have been used to xx, yy, zz (insert examples of
+use/discipline).  While the network models and analyses have deep
+roots (cite old papers), their use has been expanding rapidly in a
+variety of disciplines \cite{social science, borrett14_rise, ings09,
+  others??}.  This due in part to the flexibility of the core
+representation, its utility in answering relational questions, and its
+applicability to ``Big Data'' problems.  <<SUMMARY SENTENCE - Methods/Stats>>
+
 %The methodology for network representation and subsequent
 %analysis has a
 
@@ -164,7 +165,6 @@ detailed description of how to conduct these analyses using
 \textit{enaR}.
 
 
-
 \SweaveOpts{width=6,height=4}
 
 <<echo=false,results=hide>>=
@@ -175,49 +175,8 @@ library(enaR)
 
 <<echo=false,eval=false>>=
 citation('enaR')
-
 @
 
-%% <<z,echo=false>>=
-%% # set plotting parameters
-%% opar <- par(las=1,mar=c(0,0,0,0),xpd=TRUE,bg="white")
-
-%% ## Taken from https://stat.ethz.ch/pipermail/r-devel/2011-September/062126.html
-%% if (all(ls()!='f.list')){
-%%   require(codetools)
-%% library(enaR)
-%% called.by <- function(tarFunc, tarPack){
-%%   flist <-   sapply(lsf.str(tarPack, all=TRUE), c)
-%%   names(flist) <- NULL
-%%   gotit <- sapply(flist, function(x) tarFunc %in% findGlobals(get(x, tarPack),FALSE)$functions)
-%%   flist[gotit]
-%% }
-
-%% f.list <- as.character(sapply(lsf.str('package:enaR',all=TRUE),c))
-%% f.array <- array(0,dim=rep(length(f.list),2))
-%% rownames(f.array) <- colnames(f.array) <- f.list
-%% for (i in 1:length(f.list)){
-%%   f.array[match(called.by(f.list[i],'package:enaR'),rownames(f.array)),i] <- 1
-%% }
-%% f.net <- network(t(f.array))
-%% }
-
-%% plot(f.net,displaylabels=TRUE,label.cex=0.85,arrowhead.cex=0.65,
-%%      edge.lwd=0.75,vertex.col='lightblue',vertex.border='white',edge.col='darkgrey')
-%% @
-
-
-
-\begin{figure}
-  \center
-%% <<fig=true,echo=false>>=
-%% <<z>>
-%% @
-\includegraphics[]{enaR-vignette-003}
-\caption{A plot of the \textit{enaR} function relationships. Edges
-  point \textit{from} a function that provides information \textit{to}
-  the function that receives that information.} \label{fig:fig}
-\end{figure}
 
 % % use
 % The analysis has been used in a variety of ways, including to show
@@ -642,8 +601,18 @@ rm(opar)             # remove changes to the plotting parameters
 \section{Analyzing Ecosystem Models}
 
 The primary ENA algorithms included in this package are summarized in
-Table~\ref{tab:alg} and a plot of the network of functions for the
-package can be found in Figure~\ref{fig:fig}.
+Table~\ref{tab:alg} and Figure~\ref{fig:depnet} illustrates the
+interdependecy of the functions in the package.
+
+\includegraphics[]{enaR-vignette-003}
+
+\begin{figure}
+  \center
+  \includegraphics[]{enaR-vignette-003}
+  \caption{A plot of the \textit{enaR} function relationships. Edges
+    point \textit{from} a function that provides information \textit{to}
+    the function that receives that information.} \label{fig:depnet}
+\end{figure}
 
 \begin{table*}
 \center
@@ -851,7 +820,7 @@ overview of this method.  Output of this function is summarized in
 Table~\ref{tab:storage}, and this is an example of its implementation.
 
 <<eval=false>>=
-  S <- enaStorage(m)
+S <- enaStorage(m)
 attributes(S)
 S$ns
 @
@@ -1291,11 +1260,6 @@ set.orient('rc')
 @
 
 
-%% We close the description of the package's core functionality with a
-%% plot of how the functions relate to each other and are supported by
-%% helper functions (Fig.~\ref{fig:fig}).
-
-
 \section{Model Library}
 
 The \textit{enaR} package includes a library of 100 empirically based
@@ -1498,7 +1462,7 @@ summary(x)
 \section{Multi-Model Analyses (Batch Processing)}
 
 While many investigators analyze single models, much of ENA is used to
-compare ecosystem models \citep[e.g.,][]{baird91, baird95, christian03,
+compare ecosystem models \cite[e.g.,][]{baird91, baird95, christian03,
   whipple07}.  Investigators have also analyzed large set of models to
 determine the generality of hypothesized ecosystem properties
 \citep[e.g.,][]{christensen95, borrett10_hmg, salas11_did}.  For both
