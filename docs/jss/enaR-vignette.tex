@@ -105,23 +105,20 @@
 
 \section[Introduction]{Introduction}
 % p1:  intro paragraph (5/7/2015)
-<<<<<<< HEAD
 Network models have been used to xx, yy, zz (insert examples of
 use/discipline).  While the network models and analyses have deep
 roots (cite old papers), their use has been expanding rapidly in a
 variety of disciplines \cite{social science, borrett14_rise, ings09,
+<<<<<<< HEAD
   others??}.  This due in part to the flexibility of the core
 representation, its utility in answering relational questions, and its
 applicability to ``Big Data'' problems.  <<SUMMARY SENTENCE - Methods/Stats>>
 
 =======
-Network models have been used to xx, yy, zz (insert examples of use/discipline).  While
-the network models and analyses have deep roots (cite old papers),
-their use has been expanding rapidly in a variety of disciplines
-\cite{social science, borrett14_rise, ings09, others??}.  This due in
-part to the flexibility of the core representation, its utility in
-answering relational questions, and its applicability to ``Big Data''
-problems.  <<SOME SUMMARY SENTENCE - Methods/Stats>>
+  others??}.  This is due in part to the flexibility of the core
+representation, its utility in answering relational questions, and its
+applicability to ``Big Data'' problems.  <<SOME SUMMARY SENTENCE -
+Methods/Stats>>
 >>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
 %The methodology for network representation and subsequent
 %analysis has a
@@ -137,7 +134,9 @@ between species, groups of species, or non-living componets (e.g.,
 dead organic matter) of the ecosystem, and the weighted, directed
 edges are the quantified transfers of energy or matter.
 
-NEEDS REVISION >> need to the 2 schools bit here.
+NEEDS REVISION >> need to add the 2 schools bit here.  We need this
+briefly in the intro to set up the problem and to provide context for
+the structure of the software.
 
 % p3: Extant Software & The Current Problem
 Disparate software packages have been created to support
@@ -155,7 +154,7 @@ fragmented distribution of these algorithms has inhibited the
 development of theory and the further implementation of important
 algorithms.
 
-EcoNet??  Latham??
+>> Needs modification to include EcoNet and Latham's software??
 
 % p4: Objectives (Software & Paper).
 The \textit{enaR} package brings together ENA algorithms into one
@@ -180,21 +179,21 @@ detailed description of how to conduct these analyses using
 
 
 
-% % use
-% The analysis has been used in a variety of ways, including to show
-% the relative importance of indirect effects in ecosystems
-% \citep{patten83, higashi89, salas11_did} and their capacity to
-% effectively transform the relations among organisms
-% \citep{ulanowicz90, patten91, fath98, bondavalli99}.  From these
-% applications a new theoretical understanding of ecosystems has
-% emerged \citep{higashi91, belgrano05, jorgensen07_newecology}.
-% Recently, scientists have been applying these methods to understand
-% trophic dynamics in the Sylt-R{\o}m{\o} Bight
-% \citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in
-% estuaries \cite{christian03, hines12}, and urban sustainability
-% \citep{zhang10, chen12}.
+The analysis has been used in a variety of ways, including to show the
+relative importance of indirect effects in ecosystems \citep{patten83,
+higashi89, salas11_did} and their capacity to effectively transform
+the relations among organisms \citep{ulanowicz90, patten91, fath98,
+bondavalli99}.  From these applications a new theoretical
+understanding of ecosystems has emerged \citep{higashi91, belgrano05,
+jorgensen07_newecology}.  Recently, scientists have been applying
+these methods to understand trophic dynamics in the Sylt-R{\o}m{\o}
+Bight \citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in
+estuaries \cite{christian03, hines12}, and urban sustainability
+\citep{zhang10, chen12}.
+
 
 \section{Data Input: General}
+
 In this section we describe the data necessary for the Ecological
 Network Analysis and show how to build the central network data object
 in \R\ that contains the model data for subsequent analysis.  To
@@ -203,6 +202,7 @@ the library as follows:
 
 %%%%% Getting Set Up %%%%%%%%%%%
 \setkeys{Gin}{width=0.55\linewidth}
+
 
 
 % Show loading the library and listing the functions in the package
@@ -325,7 +325,7 @@ hypothetical data.
 \begin{Sinput}
 > # generate the flow matrix
 > flow.mat <- array(abs(rnorm(100,4,2))*sample(c(0,1),100,replace=TRUE),
-+                   dim=c(4,4))
++                    dim=c(4,4))
 > # name the nodes
 > rownames(flow.mat) <- colnames(flow.mat) <- paste('node',(1:nrow(flow.mat)),sep='')
 > # generate the inputs
@@ -334,12 +334,36 @@ hypothetical data.
 > exports <- inputs
 > # pack
 > fake.model <- pack(flow=flow.mat,
-+                    input=inputs,
-+                    export=exports,
-+                    living=TRUE)
++                     input=inputs,
++                     export=exports,
++                     living=TRUE)
+\end{Sinput}
+\begin{Soutput}
+[1] "respiration" "storage"    
+\end{Soutput}
+\begin{Sinput}
 > # model
 > fake.model
 \end{Sinput}
+\begin{Soutput}
+ Network attributes:
+  vertices = 4 
+  directed = TRUE 
+  hyper = FALSE 
+  loops = TRUE 
+  multiple = FALSE 
+  bipartite = FALSE 
+  balanced = FALSE 
+  total edges= 8 
+    missing edges= 0 
+    non-missing edges= 8 
+
+ Vertex attribute names: 
+    export input living output respiration storage vertex.names 
+
+ Edge attribute names: 
+    flow 
+\end{Soutput}
 \end{Schunk}
 
 Unfortunately, the attributes() function does not clearly identify the
@@ -348,6 +372,15 @@ network data objects we are using.
 \begin{Schunk}
 \begin{Sinput}
 > attributes(fake.model)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "mel" "gal" "val" "iel" "oel"
+
+$class
+[1] "network"
+\end{Soutput}
+\begin{Sinput}
 > 
 \end{Sinput}
 \end{Schunk}
@@ -359,9 +392,22 @@ example, we can pull out node of vertex attributes as follows:
 \begin{Schunk}
 \begin{Sinput}
 > fake.model%v%'output'
+\end{Sinput}
+\begin{Soutput}
+[1] NA NA NA NA
+\end{Soutput}
+\begin{Sinput}
 > fake.model%v%'input'
+\end{Sinput}
+\begin{Soutput}
+[1] 1.0942223 1.9028744 0.5390105 1.5105592
+\end{Soutput}
+\begin{Sinput}
 > fake.model%v%'living'
 \end{Sinput}
+\begin{Soutput}
+[1] TRUE TRUE TRUE TRUE
+\end{Soutput}
 \end{Schunk}
 
 The network flows are stored as edge weights in the network object,
@@ -373,6 +419,13 @@ object as
 \begin{Sinput}
 > as.matrix(fake.model,attrname="flow")
 \end{Sinput}
+\begin{Soutput}
+         node1    node2    node3    node4
+node1  0.00000 5.122089 2.772212 0.000000
+node2  0.00000 0.000000 3.789967 0.000000
+node3 11.38181 0.000000 1.671576 1.437608
+node4  0.00000 2.383753 6.763708 0.000000
+\end{Soutput}
 \end{Schunk}
 
 There are times that it is useful to extract all of the ecosystem
@@ -384,6 +437,32 @@ output is as follows:
 \begin{Sinput}
 > unpack(fake.model)
 \end{Sinput}
+\begin{Soutput}
+$F
+         node1    node2    node3    node4
+node1  0.00000 5.122089 2.772212 0.000000
+node2  0.00000 0.000000 3.789967 0.000000
+node3 11.38181 0.000000 1.671576 1.437608
+node4  0.00000 2.383753 6.763708 0.000000
+
+$z
+[1] 1.0942223 1.9028744 0.5390105 1.5105592
+
+$r
+[1] 0 0 0 0
+
+$e
+[1] 1.0942223 1.9028744 0.5390105 1.5105592
+
+$y
+[1] NA NA NA NA
+
+$X
+[1] NA NA NA NA
+
+$Living
+[1] TRUE TRUE TRUE TRUE
+\end{Soutput}
 \end{Schunk}
 
 Note that we did not specify the storage values. In these instances
@@ -405,8 +484,18 @@ To determine if the model is balanced and then balance it if necessary:
 \begin{Sinput}
 > ## --- Check to see if the model is balanced ---#
 > ssCheck(fake.model)
+\end{Sinput}
+\begin{Soutput}
+[1] FALSE
+\end{Soutput}
+\begin{Sinput}
 > ## --- To BALANCE a model if needed --- #
 > fake.model <- balance(fake.model,method="AVG2")
+\end{Sinput}
+\begin{Soutput}
+[1] AVG2
+\end{Soutput}
+\begin{Sinput}
 > ## --- To FORCE BALANCE a model if needed --- #
 > fake.model <- force.balance(fake.model)
 \end{Sinput}
@@ -444,6 +533,41 @@ individual model elements are
 \begin{Sinput}
 > unpack(m)
 \end{Sinput}
+\begin{Soutput}
+$F
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0     0.0000    0.0000          0.0000
+Microbiota                      0     0.0000    1.2060          1.2060
+Meiofauna                       0     0.0000    0.0000          0.6609
+Deposit Feeders                 0     0.0000    0.0000          0.0000
+Predators                       0     0.0000    0.0000          0.0000
+Deposited Detritus              0     8.1721    7.2745          0.6431
+                   Predators Deposited Detritus
+Filter Feeders        0.5135            15.7910
+Microbiota            0.0000             0.0000
+Meiofauna             0.0000             4.2403
+Deposit Feeders       0.1721             1.9076
+Predators             0.0000             0.3262
+Deposited Detritus    0.0000             0.0000
+
+$z
+[1] 41.47  0.00  0.00  0.00  0.00  0.00
+
+$r
+[1] 25.1650  5.7600  3.5794  0.4303  0.3594  6.1759
+
+$e
+[1] 0 0 0 0 0 0
+
+$y
+[1] 25.1650  5.7600  3.5794  0.4303  0.3594  6.1759
+
+$X
+[1] 2000.0000    2.4121   24.1210   16.2740   69.2370 1000.0000
+
+$Living
+[1]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
+\end{Soutput}
 \end{Schunk}
 
 This same data is stored as a network data object that is distributed
@@ -467,7 +591,7 @@ be found at \url{http://people.uncw.edu/borretts/data/MDmar02_WAND.xls}.
 
 \begin{Schunk}
 \begin{Sinput}
->   m <- read.wand('./MDmar02_WAND.xls')
+> m <- read.wand('data/MDmar02_WAND.xls')
 \end{Sinput}
 \end{Schunk}
 
@@ -496,7 +620,7 @@ format can be read into the \textit{enaR} package as:
 
 \begin{Schunk}
 \begin{Sinput}
->   m <- read.enam('./MDMAR02.xlsx')
+>   m <- read.enam('data/MDMAR02.xlsx')
 \end{Sinput}
 \end{Schunk}
 
@@ -534,8 +658,25 @@ Here is an example of using these functions:
 > data(oyster)
 > # write oyster reef model to a csv file
 > write.nea(oyster, file.name="oyster.csv")
+\end{Sinput}
+\begin{Soutput}
+        [,1]  [,2]   [,3]   [,4]   [,5]   [,6]  [,7]      [,8]
+[1,]  0.0000 0.000 0.0000 0.0000 0.0000 0.0000 41.47 2000.0000
+[2,]  0.0000 0.000 0.0000 0.0000 0.0000 8.1721  0.00    2.4121
+[3,]  0.0000 1.206 0.0000 0.0000 0.0000 7.2745  0.00   24.1210
+[4,]  0.0000 1.206 0.6609 0.0000 0.0000 0.6431  0.00   16.2740
+[5,]  0.5135 0.000 0.0000 0.1721 0.0000 0.0000  0.00   69.2370
+[6,] 15.7910 0.000 4.2403 1.9076 0.3262 0.0000  0.00 1000.0000
+[7,] 25.1650 5.760 3.5794 0.4303 0.3594 6.1759  0.00    0.0000
+\end{Soutput}
+\begin{Sinput}
 > # read in oyster reef model data from NEA.m formatted CSV file
 > m <- read.nea("oyster.csv")
+\end{Sinput}
+\begin{Soutput}
+[1] "export" "living"
+\end{Soutput}
+\begin{Sinput}
 > 
 > # Again, this model object does NOT contain all
 > # of the information in the "oyster" data object.
@@ -570,9 +711,9 @@ plot of the same data (Fig.~\ref{fig:oyster}(right)).
 \begin{Sinput}
 > # set colors to use
 > my.col=c("red","yellow",
-+   rgb(204,204,153,maxColorValue=255),
-+   "grey22")
-> F=m%n%'flow'                   # extract flow information for later use.
++    rgb(204,204,153,maxColorValue=255),
++    "grey22")
+> F=as.matrix(m,attrname="flow")                   # extract flow information for later use.
 > f=which(F!=0, arr.ind=T)       # get indices of positive flows
 > opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
 > set.seed(2)                    # each time the plot is called, the
@@ -581,18 +722,18 @@ plot of the same data (Fig.~\ref{fig:oyster}(right)).
 >                                # orientation each time the plot
 >                                # function is called.
 > plot(m,
-+      vertex.cex=log(m%v%'storage'), # scale nodes with storage
-+      label= m%v%'vertex.names',     # add node labels
-+      boxed.labels=FALSE,
-+      label.cex=0.65,
-+      vertex.sides=45,   # to make rounded
-+      edge.lwd=log10(abs(F[f])),     # scale arrows to flow magnitude
-+      edge.col=my.col[3],
-+      vertex.col=my.col[1],
-+      label.col="white",
-+      vertex.border = my.col[3],
-+      vertex.lty = 1,
-+      xlim=c(-4,1),ylim=c(-2,-2))
++       vertex.cex=log(m%v%'storage'), # scale nodes with storage
++       label= m%v%'vertex.names',     # add node labels
++       boxed.labels=FALSE,
++       label.cex=0.65,
++       vertex.sides=45,   # to make rounded
++       edge.lwd=log10(abs(F[f])),     # scale arrows to flow magnitude
++       edge.col=my.col[3],
++       vertex.col=my.col[1],
++       label.col="white",
++       vertex.border = my.col[3],
++       vertex.lty = 1,
++       xlim=c(-4,1),ylim=c(-2,-2))
 > rm(opar)             # remove changes to the plotting parameters
 \end{Sinput}
 \end{Schunk}
@@ -710,8 +851,20 @@ of the enaStructure function is summarized in Table~\ref{tab:structure}
 \begin{Sinput}
 > St <- enaStructure(m)
 > attributes(St)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "A"  "ns"
+\end{Soutput}
+\begin{Sinput}
 > St$ns
 \end{Sinput}
+\begin{Soutput}
+     n  L         C LD      ppr    lam1A mlam1A      rho         R
+[1,] 6 12 0.3333333  2 2.147899 2.147899      1 2.147899 0.4655712
+            d no.scc no.scc.big      pscc
+[1,] 0.147899      2          1 0.8333333
+\end{Soutput}
 \end{Schunk}
 
 The structural network statistics show that the oyster reef model has
@@ -778,11 +931,43 @@ $\mathbf{N'}$.
 \begin{Sinput}
 > F <- enaFlow(m)
 > attributes(F)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "T"  "G"  "GP" "N"  "NP" "ns"
+\end{Soutput}
+\begin{Sinput}
 > F$ns
+\end{Sinput}
+\begin{Soutput}
+     Boundary     TST     TSTp      APL       FCI       BFI       DFI
+[1,]    41.47 83.5833 125.0533 2.015512 0.1101686 0.4961517 0.1950689
+           IFI     ID.F   ID.F.I   ID.F.O    HMG.I    HMG.O AMP.I AMP.O
+[1,] 0.3087794 1.582925 1.716607 1.534181 2.051826 1.891638     3     1
+     mode0.F  mode1.F  mode2.F  mode3.F mode4.F
+[1,]   41.47 32.90504 9.208256 32.90504   41.47
+\end{Soutput}
+\begin{Sinput}
 > G <- F$G # output-oriented direct flow matrix
 > rm(G)
 > F$NP     # input-oriented integral flow matrix
 \end{Sinput}
+\begin{Soutput}
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  1  1.0000000 1.0000000       1.0000000
+Microbiota                      0  1.1018630 0.2440716       0.6197856
+Meiofauna                       0  0.2971032 1.2971032       0.5604100
+Deposit Feeders                 0  0.1240688 0.1240688       1.1240688
+Predators                       0  0.0203426 0.0203426       0.0203426
+Deposited Detritus              0  1.3885039 1.3885039       1.3885039
+                   Predators Deposited Detritus
+Filter Feeders     1.0000000          1.0000000
+Microbiota         0.1555792          0.1018630
+Meiofauna          0.1406747          0.2971032
+Deposit Feeders    0.2821649          0.1240688
+Predators          1.0051064          0.0203426
+Deposited Detritus 0.3485436          1.3885039
+\end{Soutput}
 \end{Schunk}
 
 Note: you can use the attach function to have access to the objects
@@ -793,6 +978,24 @@ best to detach an object once it's not in use.
 \begin{Sinput}
 > attach(F)
 > G
+\end{Sinput}
+\begin{Soutput}
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0  0.0000000 0.0000000      0.00000000
+Microbiota                      0  0.0000000 0.1475753      0.14757529
+Meiofauna                       0  0.0000000 0.0000000      0.07793173
+Deposit Feeders                 0  0.0000000 0.0000000      0.00000000
+Predators                       0  0.0000000 0.0000000      0.00000000
+Deposited Detritus              0  0.3670363 0.3267221      0.02888377
+                    Predators Deposited Detritus
+Filter Feeders     0.01238245          0.3807813
+Microbiota         0.00000000          0.0000000
+Meiofauna          0.00000000          0.5000059
+Deposit Feeders    0.06856574          0.7600000
+Predators          0.00000000          0.4757876
+Deposited Detritus 0.00000000          0.0000000
+\end{Soutput}
+\begin{Sinput}
 > detach(F)
 \end{Sinput}
 \end{Schunk}
@@ -805,6 +1008,22 @@ in R.  Thus, the \textit{enaR} package includes a function
 \begin{Sinput}
 > mExp(F$G,2)
 \end{Sinput}
+\begin{Soutput}
+                   Filter Feeders Microbiota  Meiofauna Deposit Feeders
+Filter Feeders                  0  0.1397606 0.12440966      0.01099840
+Microbiota                      0  0.0000000 0.00000000      0.01150080
+Meiofauna                       0  0.1835203 0.16336297      0.01444205
+Deposit Feeders                 0  0.2789476 0.24830879      0.02195166
+Predators                       0  0.1746313 0.15545033      0.01374254
+Deposited Detritus              0  0.0000000 0.05416549      0.07962750
+                     Predators Deposited Detritus
+Filter Feeders     0.000000000        0.005891414
+Microbiota         0.010118608        0.185945731
+Meiofauna          0.005343446        0.059228112
+Deposit Feeders    0.000000000        0.032622730
+Predators          0.000000000        0.000000000
+Deposited Detritus 0.001980437        0.185314635
+\end{Soutput}
 \end{Schunk}
 
 \subsection{Ascendency}
@@ -820,6 +1039,12 @@ as follows:
 \begin{Sinput}
 >   enaAscendency(oyster)
 \end{Sinput}
+\begin{Soutput}
+          AMI      ASC       OH      CAP   ASC.CAP    OH.CAP robustness
+[1,] 1.330211 166.3473 211.0979 377.4452 0.4407191 0.5592809  0.3611021
+         ELD       TD
+[1,] 1.79506 2.514395
+\end{Soutput}
 \end{Schunk}
 
 % ASCENDENCY ----------------------
@@ -853,8 +1078,22 @@ Table~\ref{tab:storage}, and this is an example of its implementation.
 \begin{Sinput}
 > S <- enaStorage(m)
 > attributes(S)
+\end{Sinput}
+\begin{Soutput}
+$names
+ [1] "X"  "C"  "P"  "S"  "Q"  "CP" "PP" "SP" "QP" "dt" "ns"
+\end{Soutput}
+\begin{Sinput}
 > S$ns
 \end{Sinput}
+\begin{Soutput}
+          TSS       CIS         BSI         DSI       ISI     ID.S
+[1,] 3112.044 0.9940252 0.003331412 0.003320932 0.9933477 299.1171
+      ID.S.I   ID.S.O  HMG.S.O  HMG.S.I NAS NASP mode0.S  mode1.S
+[1,] 454.227 294.1527 1.115985 1.464503  20   21 10.3675 8.226261
+     mode2.S  mode3.S mode4.S
+[1,] 3093.45 8.226261 10.3675
+\end{Soutput}
 \end{Schunk}
 
 % STORAGE
@@ -917,6 +1156,10 @@ versions. These analyses are executed as:
 > US <- enaUtility(m,eigen.check=TRUE,type="storage")
 > attributes(UF)
 \end{Sinput}
+\begin{Soutput}
+$names
+[1] "D"  "U"  "Y"  "ns"
+\end{Soutput}
 \end{Schunk}
 
 Please note the function argument ``eigen.check=TRUE''.  For this
@@ -967,8 +1210,41 @@ multiplying each by the relevant observed input or output \citep{borrett11_ree}.
 \begin{Sinput}
 > E <- enaEnviron(m)
 > attributes(E)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "input"  "output"
+\end{Soutput}
+\begin{Sinput}
 > E$output[1]
 \end{Sinput}
+\begin{Soutput}
+$`Filter Feeders`
+                   Filter Feeders Microbiota   Meiofauna
+Filter Feeders                 -1  0.0000000  0.00000000
+Microbiota                      0 -0.1970605  0.02908126
+Meiofauna                       0  0.0000000 -0.20449723
+Deposit Feeders                 0  0.0000000  0.00000000
+Predators                       0  0.0000000  0.00000000
+Deposited Detritus              0  0.1970605  0.17541596
+z                               1  0.0000000  0.00000000
+                   Deposit Feeders    Predators Deposited Detritus
+Filter Feeders          0.00000000  0.012382445        0.380781288
+Microbiota              0.02908126  0.000000000        0.000000000
+Meiofauna               0.01593682  0.000000000        0.102249819
+Deposit Feeders        -0.06052568  0.004149988        0.045999518
+Predators               0.00000000 -0.016532433        0.007865927
+Deposited Detritus      0.01550760  0.000000000       -0.536896552
+z                       0.00000000  0.000000000        0.000000000
+                             y
+Filter Feeders     0.606836267
+Microbiota         0.138897999
+Meiofauna          0.086310586
+Deposit Feeders    0.010376176
+Predators          0.008666506
+Deposited Detritus 0.148912467
+z                  0.000000000
+\end{Soutput}
 \end{Schunk}
 
 The \texttt{TET} function returns vectors of the unit and realized
@@ -981,6 +1257,19 @@ throughflow (TST).
 > tet <- TET(m)
 > show(tet)
 \end{Sinput}
+\begin{Soutput}
+$realized.input
+[1] 25.165000 22.647638 14.582798  2.028052  1.053786 18.107007
+
+$realized.output
+[1] 83.5833  0.0000  0.0000  0.0000  0.0000  0.0000
+
+$unit.input
+[1] 1.000000 3.931882 4.074090 4.713111 2.932069 2.931882
+
+$unit.output
+[1] 2.015512 1.836089 2.540670 3.124836 2.234317 2.594261
+\end{Soutput}
 \end{Schunk}
 
 The \texttt{TES} functions returns the both the realized and unit
@@ -992,6 +1281,28 @@ realized TES is a partition of the total system storage (TSS).
 > tes <- TES(m)
 > show(tes)
 \end{Sinput}
+\begin{Soutput}
+$realized.input
+    Filter Feeders         Microbiota          Meiofauna 
+        2000.00000            2.41209           24.12171 
+   Deposit Feeders          Predators Deposited Detritus 
+          16.27440           69.23803         1000.03118 
+
+$realized.output
+[1] 3112.044    0.000    0.000    0.000    0.000    0.000
+
+$unit.input
+    Filter Feeders         Microbiota          Meiofauna 
+       289.3658066          0.6561948          7.3735209 
+   Deposit Feeders          Predators Deposited Detritus 
+        11.5308112        109.7205293        265.1036470 
+
+$unit.output
+    Filter Feeders         Microbiota          Meiofauna 
+          75.04326           16.06273           41.03146 
+   Deposit Feeders          Predators Deposited Detritus 
+          65.81279          132.44451           66.11575 
+\end{Soutput}
 \end{Schunk}
 
 \subsection{Control Analysis}
@@ -1011,6 +1322,10 @@ network.  Table~\ref{tab:control} summarizes the function output.
 > C <- enaControl(m)
 > attributes(C)
 \end{Sinput}
+\begin{Soutput}
+$names
+[1] "CN" "CQ" "CR" "CD" "sc"
+\end{Soutput}
 \end{Schunk}
 %%% The Outputs listed contain the Schramski Control results. ~Pawan
 % enaControl - Control Analysis ~Pawan
@@ -1048,9 +1363,18 @@ function output.
 >                                         #conduct mixed trophic impacts
 > mti <- enaMTI(oyster)
 > attributes(mti)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "G"  "FP" "Q"  "M" 
+\end{Soutput}
+\begin{Sinput}
 >                                         #shows the total impact matrix
 > mti$M
 \end{Sinput}
+\begin{Soutput}
+[1] NA
+\end{Soutput}
 \end{Schunk}
 
 In this case, the power series of the direct trophic impacts matrix
@@ -1063,8 +1387,30 @@ despite the mathematical problem.
 \begin{Sinput}
 >   mti <- enaMTI(oyster,eigen.check=FALSE)
 > attributes(mti)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "G"  "FP" "Q"  "M" 
+\end{Soutput}
+\begin{Sinput}
 > mti$M  # shows the total impact matrix
 \end{Sinput}
+\begin{Soutput}
+                   Filter Feeders  Microbiota    Meiofauna
+Filter Feeders      -0.0250635283  0.16956382  0.431493557
+Microbiota          -0.0015848556 -0.30675078 -0.182458391
+Meiofauna           -0.0001241781 -0.47413204 -0.070959618
+Deposit Feeders     -0.0069255188 -0.26769125 -0.007062628
+Predators           -0.0301817448  0.02000515 -0.004028911
+Deposited Detritus  -0.0034657973  0.21795628  0.612654910
+                   Deposit Feeders    Predators Deposited Detritus
+Filter Feeders          0.26144106  0.795834137        0.516016759
+Microbiota              0.20520368  0.050323410       -0.295378609
+Meiofauna               0.01607831  0.003942987       -0.001592286
+Deposit Feeders        -0.10329881  0.219903765        0.177109591
+Predators              -0.07586335 -0.041648786       -0.019939324
+Deposited Detritus      0.44874394  0.110048344       -0.251366300
+\end{Soutput}
 \end{Schunk}
 
 % enaMTI - Mixed Trophic Impacts
@@ -1109,10 +1455,28 @@ network.  Table~\ref{tab:cycle} summarizes the function output.
 \begin{Sinput}
 >   cyc <- enaCycle(m)
 > attributes(cyc)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "Table.cycle"      "Table.nexus"      "CycleDist"       
+[4] "NormDist"         "ResidualFlows"    "AggregatedCycles"
+[7] "ns"              
+\end{Soutput}
+\begin{Sinput}
 >                                         # Display information of individual cycles
 > names(cyc$Table.cycle)
+\end{Sinput}
+\begin{Soutput}
+[1] "CYCLE" "NEXUS" "NODES"
+\end{Soutput}
+\begin{Sinput}
 >                                         # Display information of the disjoint nexuses
 > names(cyc$Table.nexus)
+\end{Sinput}
+\begin{Soutput}
+[1] "NEXUS"      "CYCLES"     "W.arc.From" "W.arc.To"   "W.arc.Flow"
+\end{Soutput}
+\begin{Sinput}
 > 
 \end{Sinput}
 \end{Schunk}
@@ -1170,9 +1534,32 @@ for the feeding cycles which are similar to the enaCycle outputs.
 \begin{Sinput}
 > trop <- enaTroAgg(m)
 > attributes(trop)
+\end{Sinput}
+\begin{Soutput}
+$names
+ [1] "Feeding_Cycles" "A"              "ETL"            "CE"            
+ [5] "CR"             "GC"             "RDP"            "LS"            
+ [9] "TE"             "ns"            
+\end{Soutput}
+\begin{Sinput}
 >                                         # Cycle analysis output for Feeding Cycles
 > trop$Feeding_Cycles
 \end{Sinput}
+\begin{Soutput}
+$ResidualFlows
+                Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders               0          0     0.000          0.0000
+Microbiota                   0          0     1.206          1.2060
+Meiofauna                    0          0     0.000          0.6609
+Deposit Feeders              0          0     0.000          0.0000
+Predators                    0          0     0.000          0.0000
+                Predators
+Filter Feeders     0.5135
+Microbiota         0.0000
+Meiofauna          0.0000
+Deposit Feeders    0.1721
+Predators          0.0000
+\end{Soutput}
 \end{Schunk}
 
  %enaTroAgg - Trohpic Aggregations
@@ -1222,6 +1609,74 @@ Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
 > ns <- get.ns(m)
 > str(ns)    # examine the structure of ns
 \end{Sinput}
+\begin{Soutput}
+'data.frame':	1 obs. of  65 variables:
+ $ n          : num 6
+ $ L          : num 12
+ $ C          : num 0.333
+ $ LD         : num 2
+ $ ppr        : num 2.15
+ $ lam1A      : num 2.15
+ $ mlam1A     : num 1
+ $ rho        : num 2.15
+ $ R          : num 0.466
+ $ d          : num 0.148
+ $ no.scc     : num 2
+ $ no.scc.big : num 1
+ $ pscc       : num 0.833
+ $ Boundary   : num 41.5
+ $ TST        : num 83.6
+ $ TSTp       : num 125
+ $ APL        : num 2.02
+ $ FCI        : num 0.11
+ $ BFI        : num 0.496
+ $ DFI        : num 0.195
+ $ IFI        : num 0.309
+ $ ID.F       : num 1.58
+ $ ID.F.I     : num 1.72
+ $ ID.F.O     : num 1.53
+ $ HMG.I      : num 2.05
+ $ HMG.O      : num 1.89
+ $ AMP.I      : num 3
+ $ AMP.O      : num 1
+ $ mode0.F    : num 41.5
+ $ mode1.F    : num 32.9
+ $ mode2.F    : num 9.21
+ $ mode3.F    : num 32.9
+ $ mode4.F    : num 41.5
+ $ AMI        : num 1.33
+ $ ASC        : num 166
+ $ OH         : num 211
+ $ CAP        : num 377
+ $ ASC.CAP    : num 0.441
+ $ OH.CAP     : num 0.559
+ $ robustness : num 0.361
+ $ ELD        : num 1.8
+ $ TD         : num 2.51
+ $ TSS        : num 3112
+ $ CIS        : num 0.994
+ $ BSI        : num 0.00333
+ $ DSI        : num 0.00332
+ $ ISI        : num 0.993
+ $ ID.S       : num 299
+ $ ID.S.I     : num 454
+ $ ID.S.O     : num 294
+ $ HMG.S.O    : num 1.12
+ $ HMG.S.I    : num 1.46
+ $ NAS        : num 20
+ $ NASP       : num 21
+ $ mode0.S    : num 10.4
+ $ mode1.S    : num 8.23
+ $ mode2.S    : num 3093
+ $ mode3.S    : num 8.23
+ $ mode4.S    : num 10.4
+ $ lam1D      : num 0.899
+ $ synergism.F: num 4.92
+ $ mutualism.F: num 2.27
+ $ lam1DS     : num 0.302
+ $ synergism.S: num 13.1
+ $ mutualism.S: num 2.6
+\end{Soutput}
 \end{Schunk}
 
 It is also possible to instantly return all of the main ENA output
@@ -1232,6 +1687,10 @@ with \texttt{enaAll}:
 > oyster.ena <- enaAll(oyster)
 > names(oyster.ena)
 \end{Sinput}
+\begin{Soutput}
+[1] "ascendency" "control"    "environ"    "flow"       "mti"       
+[6] "storage"    "structure"  "utility"   
+\end{Soutput}
 \end{Schunk}
 
 Centrality analysis is a large topic in network science.
@@ -1244,8 +1703,39 @@ centralities can be calculated in \textit{enaR} as follows:
 > F <- enaFlow(oyster)
 > ec <- environCentrality(F$N)
 > show(ec)
+\end{Sinput}
+\begin{Soutput}
+$ECin
+    Filter Feeders         Microbiota          Meiofauna 
+         0.1404961          0.1279889          0.1771034 
+   Deposit Feeders          Predators Deposited Detritus 
+         0.2178241          0.1557484          0.1808391 
+
+$ECout
+    Filter Feeders         Microbiota          Meiofauna 
+        0.06970737         0.19108709         0.20595483 
+   Deposit Feeders          Predators Deposited Detritus 
+        0.12350944         0.07903903         0.33070223 
+
+$AEC
+    Filter Feeders         Microbiota          Meiofauna 
+         0.1051017          0.1595380          0.1915291 
+   Deposit Feeders          Predators Deposited Detritus 
+         0.1706668          0.1173937          0.2557707 
+\end{Soutput}
+\begin{Sinput}
 > eigenCentrality(F$G)
 \end{Sinput}
+\begin{Soutput}
+$EVCin
+[1] 0.1207568 0.1093625 0.1876329 0.2518905 0.1470501 0.1833072
+
+$EVCout
+[1] 0.00000000 0.23325048 0.26566843 0.11130122 0.01286707 0.37691280
+
+$AEVC
+[1] 0.06037842 0.17130647 0.22665067 0.18159586 0.07995858 0.28011000
+\end{Soutput}
 \end{Schunk}
 
 These centrality values have been normalized to sum to one.
@@ -1261,12 +1751,12 @@ Centralities.
 > # find centrality order
 > o <- order(ec$AEC,decreasing=TRUE)
 > bp <- barplot(ec$AEC[o],     # create barplot
-+               names.arg=NA,
-+               ylab="Average Environ Centrality",
-+               col="black",border=NA)
++                names.arg=NA,
++                ylab="Average Environ Centrality",
++                col="black",border=NA)
 > text(bp,-0.008,                # add labels
-+      labels=names(ec$AEC)[o],
-+      srt=35,adj=1,cex=1)
++       labels=names(ec$AEC)[o],
++       srt=35,adj=1,cex=1)
 > rm(opar)  # remove the plotting parameters
 \end{Sinput}
 \end{Schunk}
@@ -1300,17 +1790,37 @@ re-orient the output from \texttt{enaFlow}:
 \begin{Sinput}
 > ###Check the current orientation
 > get.orient()
+\end{Sinput}
+\begin{Soutput}
+[1] "rc"
+\end{Soutput}
+\begin{Sinput}
 > ###enaFlow output in row-column
 > flow.rc <- enaFlow(oyster)$G
 > ###Set the global orientation to school
 > set.orient('school')
 > ###Check that it worked
 > get.orient()
+\end{Sinput}
+\begin{Soutput}
+[1] "school"
+\end{Soutput}
+\begin{Sinput}
 > ###enaFlow output in column-row
 > flow.cr <- enaFlow(oyster)$G
 > ###Check. Outputs should be transposed from each other.
 > all(flow.rc == flow.cr)
+\end{Sinput}
+\begin{Soutput}
+[1] FALSE
+\end{Soutput}
+\begin{Sinput}
 > all(flow.rc == t(flow.cr))
+\end{Sinput}
+\begin{Soutput}
+[1] TRUE
+\end{Soutput}
+\begin{Sinput}
 > ###Now change back to the default orientation ('rc')
 > set.orient('rc')
 > 
@@ -1354,13 +1864,107 @@ the working memory as a named list of network objects:
 > data(troModels)
 > ### Check the first few model names
 > head(names(bgcModels))
+\end{Sinput}
+\begin{Soutput}
+[1] "Hubbard Brook (Ca)(Waide)"     "Hardwood Forest, NH (Ca)"     
+[3] "Duglas Fir Forest, WA (Ca)"    "Duglas Fir Forest, WA (K)"    
+[5] "Puerto Rican Rain Forest (Ca)" "Puerto Rican Rain Forest (K)" 
+\end{Soutput}
+\begin{Sinput}
 > head(names(troModels))
+\end{Sinput}
+\begin{Soutput}
+[1] "Marine Coprophagy (oyster)" "Lake Findley "             
+[3] "Mirror Lake"                "Lake Wingra"               
+[5] "Marion Lake"                "Cone Springs"              
+\end{Soutput}
+\begin{Sinput}
 > ### Isolate a single model
 > x <- troModels[[1]]
 > x <- troModels$"Marine Coprophagy (oyster)"
 > ### Check out the model
 > summary(x)
 \end{Sinput}
+\begin{Soutput}
+Network attributes:
+  vertices = 4
+  directed = TRUE
+  hyper = FALSE
+  loops = TRUE
+  multiple = FALSE
+  bipartite = FALSE
+  balanced = TRUE
+ total edges = 4 
+   missing edges = 0 
+   non-missing edges = 4 
+ density = 0.25 
+
+Vertex attributes:
+
+ export:
+   logical valued attribute
+   attribute summary:
+   Mode    NA's 
+logical       4 
+
+ input:
+   numeric valued attribute
+   attribute summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00    0.00   62.05   94.90  157.00  255.50 
+
+ living:
+   logical valued attribute
+   attribute summary:
+   Mode   FALSE    TRUE    NA's 
+logical       2       2       0 
+
+ output:
+   numeric valued attribute
+   attribute summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   6.60   21.67   64.45   94.90  137.70  244.10 
+
+ respiration:
+   numeric valued attribute
+   attribute summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   6.60   21.67   64.45   94.90  137.70  244.10 
+
+ storage:
+   numeric valued attribute
+   attribute summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      1       1       1       1       1       1 
+  vertex.names:
+   character valued attribute
+   4 valid vertex names
+
+Edge attributes:
+
+ flow:
+   numeric valued attribute
+   attribute summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  15.30   20.25   37.40   42.42   59.58   79.60 
+
+Network adjacency matrix:
+                         SHRIMP BENTHIC ORGANISMS
+SHRIMP                        0                 0
+BENTHIC ORGANISMS             0                 0
+SHRIMP FECES & BACTERIA       0                 1
+BENTHIC FECES & BACTERIA      0                 1
+                         SHRIMP FECES & BACTERIA
+SHRIMP                                         1
+BENTHIC ORGANISMS                              0
+SHRIMP FECES & BACTERIA                        0
+BENTHIC FECES & BACTERIA                       0
+                         BENTHIC FECES & BACTERIA
+SHRIMP                                          0
+BENTHIC ORGANISMS                               1
+SHRIMP FECES & BACTERIA                         0
+BENTHIC FECES & BACTERIA                        0
+\end{Soutput}
 \end{Schunk}
 
 %% ------- MODEL TABLES ------------ %%
@@ -1552,8 +2156,36 @@ analysis across the list of models stored in model.list.
 \begin{Sinput}
 > # balance models as necessary
 > m.list <- lapply(troModels[1:10],balance)
+\end{Sinput}
+\begin{Soutput}
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+\end{Soutput}
+\begin{Sinput}
 > # check that models are balanced
 > unlist(lapply(m.list,ssCheck))
+\end{Sinput}
+\begin{Soutput}
+Marine Coprophagy (oyster)              Lake Findley  
+                      TRUE                       TRUE 
+               Mirror Lake                Lake Wingra 
+                      TRUE                       TRUE 
+               Marion Lake               Cone Springs 
+                      TRUE                       TRUE 
+            Silver Springs            English Channel 
+                      TRUE                       TRUE 
+              Oyster Reef               Baie de Somme 
+                      TRUE                       TRUE 
+\end{Soutput}
+\begin{Sinput}
 > # if balancing fails, you can use force.balance
 > # to repeatedly apply the balancing procedure
 > # although this is not the case with our model set
@@ -1561,11 +2193,101 @@ analysis across the list of models stored in model.list.
 > m.list <- lapply(m.list,force.balance)
 > ##Check that all the models are balanced
 > all(unlist(lapply(m.list,ssCheck)))
+\end{Sinput}
+\begin{Soutput}
+[1] TRUE
+\end{Soutput}
+\begin{Sinput}
 > # Example Flow Analysis
 > F.list <- lapply(m.list, enaFlow)
 > # the full results of the flow analysis is now stored in the elements
 > # of the F.list.  To get the results for just the first model...
 > F.list[[1]]
+\end{Sinput}
+\begin{Soutput}
+$T
+                  SHRIMP        BENTHIC ORGANISMS 
+                   124.1                    323.7 
+ SHRIMP FECES & BACTERIA BENTHIC FECES & BACTERIA 
+                    21.9                     79.6 
+
+$G
+                         SHRIMP BENTHIC ORGANISMS
+SHRIMP                        0         0.0000000
+BENTHIC ORGANISMS             0         0.0000000
+SHRIMP FECES & BACTERIA       0         0.6986301
+BENTHIC FECES & BACTERIA      0         0.6645729
+                         SHRIMP FECES & BACTERIA
+SHRIMP                                 0.1764706
+BENTHIC ORGANISMS                      0.0000000
+SHRIMP FECES & BACTERIA                0.0000000
+BENTHIC FECES & BACTERIA               0.0000000
+                         BENTHIC FECES & BACTERIA
+SHRIMP                                  0.0000000
+BENTHIC ORGANISMS                       0.2459067
+SHRIMP FECES & BACTERIA                 0.0000000
+BENTHIC FECES & BACTERIA                0.0000000
+
+$GP
+                         SHRIMP BENTHIC ORGANISMS
+SHRIMP                        0        0.00000000
+BENTHIC ORGANISMS             0        0.00000000
+SHRIMP FECES & BACTERIA       0        0.04726599
+BENTHIC FECES & BACTERIA      0        0.16342292
+                         SHRIMP FECES & BACTERIA
+SHRIMP                                         1
+BENTHIC ORGANISMS                              0
+SHRIMP FECES & BACTERIA                        0
+BENTHIC FECES & BACTERIA                       0
+                         BENTHIC FECES & BACTERIA
+SHRIMP                                          0
+BENTHIC ORGANISMS                               1
+SHRIMP FECES & BACTERIA                         0
+BENTHIC FECES & BACTERIA                        0
+
+$N
+                         SHRIMP BENTHIC ORGANISMS
+SHRIMP                        1         0.1473716
+BENTHIC ORGANISMS             0         1.1953471
+SHRIMP FECES & BACTERIA       0         0.8351055
+BENTHIC FECES & BACTERIA      0         0.7943953
+                         SHRIMP FECES & BACTERIA
+SHRIMP                                 0.1764706
+BENTHIC ORGANISMS                      0.0000000
+SHRIMP FECES & BACTERIA                1.0000000
+BENTHIC FECES & BACTERIA               0.0000000
+                         BENTHIC FECES & BACTERIA
+SHRIMP                                 0.03623966
+BENTHIC ORGANISMS                      0.29394387
+SHRIMP FECES & BACTERIA                0.20535805
+BENTHIC FECES & BACTERIA               1.19534712
+
+$NP
+                         SHRIMP BENTHIC ORGANISMS
+SHRIMP                        1        0.05649926
+BENTHIC ORGANISMS             0        1.19534712
+SHRIMP FECES & BACTERIA       0        0.05649926
+BENTHIC FECES & BACTERIA      0        0.19534712
+                         SHRIMP FECES & BACTERIA
+SHRIMP                                         1
+BENTHIC ORGANISMS                              0
+SHRIMP FECES & BACTERIA                        1
+BENTHIC FECES & BACTERIA                       0
+                         BENTHIC FECES & BACTERIA
+SHRIMP                                 0.05649926
+BENTHIC ORGANISMS                      1.19534712
+SHRIMP FECES & BACTERIA                0.05649926
+BENTHIC FECES & BACTERIA               1.19534712
+
+$ns
+     Boundary   TST  TSTp     APL       FCI       BFI       DFI
+[1,]    379.6 549.3 928.9 1.44705 0.1199863 0.6910614 0.1542493
+           IFI     ID.F    ID.F.I    ID.F.O    HMG.I    HMG.O AMP.I
+[1,] 0.1546893 1.002852 0.3603839 0.6126851 2.014161 1.891504     1
+     AMP.O mode0.F  mode1.F  mode2.F  mode3.F mode4.F
+[1,]     0   379.6 103.7915 65.90846 103.7915   379.6
+\end{Soutput}
+\begin{Sinput}
 > 
 \end{Sinput}
 \end{Schunk}
@@ -1581,6 +2303,14 @@ just the ratio of Indirect-to-Direct flow for each model.
 > #Look at the first few ID's
 > head(IDs)
 \end{Sinput}
+\begin{Soutput}
+Marine Coprophagy (oyster)              Lake Findley  
+                 0.1546893                  0.3669420 
+               Mirror Lake                Lake Wingra 
+                 0.4334588                  0.4452123 
+               Marion Lake               Cone Springs 
+                 0.4391692                  0.3105362 
+\end{Soutput}
 \end{Schunk}
 
 We can also collect the set of output-oriented integral flow matrices.
@@ -1602,9 +2332,43 @@ function to reshape the network statistics into a single data frame.
 > ns <- do.call(rbind,ns.list)  # ns as a data.frame
 > # Let's take a quick look at some of the output
 > colnames(ns)    # return network statistic names.
+\end{Sinput}
+\begin{Soutput}
+ [1] "n"           "L"           "C"           "LD"         
+ [5] "ppr"         "lam1A"       "mlam1A"      "rho"        
+ [9] "R"           "d"           "no.scc"      "no.scc.big" 
+[13] "pscc"        "Boundary"    "TST"         "TSTp"       
+[17] "APL"         "FCI"         "BFI"         "DFI"        
+[21] "IFI"         "ID.F"        "ID.F.I"      "ID.F.O"     
+[25] "HMG.I"       "HMG.O"       "AMP.I"       "AMP.O"      
+[29] "mode0.F"     "mode1.F"     "mode2.F"     "mode3.F"    
+[33] "mode4.F"     "AMI"         "ASC"         "OH"         
+[37] "CAP"         "ASC.CAP"     "OH.CAP"      "robustness" 
+[41] "ELD"         "TD"          "TSS"         "CIS"        
+[45] "BSI"         "DSI"         "ISI"         "ID.S"       
+[49] "ID.S.I"      "ID.S.O"      "HMG.S.O"     "HMG.S.I"    
+[53] "NAS"         "NASP"        "mode0.S"     "mode1.S"    
+[57] "mode2.S"     "mode3.S"     "mode4.S"     "lam1D"      
+[61] "synergism.F" "mutualism.F" "lam1DS"      "synergism.S"
+[65] "mutualism.S"
+\end{Soutput}
+\begin{Sinput}
 > dim(ns)         # show dimensions of ns matrix
+\end{Sinput}
+\begin{Soutput}
+[1] 74 65
+\end{Soutput}
+\begin{Sinput}
 > ns[1:5,1:5]     # show selected results
 \end{Sinput}
+\begin{Soutput}
+                           n  L     C  LD      ppr
+Marine Coprophagy (oyster) 4  4 0.250 1.0 1.000000
+Lake Findley               4  6 0.375 1.5 1.004975
+Mirror Lake                5  9 0.360 1.8 1.324718
+Lake Wingra                5 10 0.400 2.0 2.000000
+Marion Lake                5  9 0.360 1.8 1.324718
+\end{Soutput}
 \end{Schunk}
 
 Given this data frame of network statistics, we can construct
@@ -1618,17 +2382,17 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 > x=dim(ns)[1] # number of models
 > m.select <- 40:45
 > bp=barplot(ns$ID.F[m.select],ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
-+         col="darkgreen",border=NA,ylim=c(0,2))
++          col="darkgreen",border=NA,ylim=c(0,2))
 > text(bp,-0.05,                # add labels
-+      labels=rownames(ns)[m.select],
-+        srt=45,adj=1,cex=0.85)
++       labels=rownames(ns)[m.select],
++         srt=45,adj=1,cex=0.85)
 > opar <- par(xpd=FALSE)
 > abline(h=1,col="orange",lwd=2)
 > #
 > plot(ns$FCI,ns$ID.F,pch=20,col="blue",cex=2,
-+      ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
-+      xlab="Finn Cycling Index (FCI)",
-+      xlim=c(0,0.8),ylim=c(0,8))
++       ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
++       xlab="Finn Cycling Index (FCI)",
++       xlim=c(0,0.8),ylim=c(0,8))
 > #
 > rm(opar)  # remove the plotting parameters
 \end{Sinput}
@@ -1668,8 +2432,16 @@ of centrality for their models.
 \begin{Schunk}
 \begin{Sinput}
 > betweenness(oyster)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.0 0.0 0.5 3.5 0.0 9.0
+\end{Soutput}
+\begin{Sinput}
 > closeness(oyster)
 \end{Sinput}
+\begin{Soutput}
+[1] 0.625 0.000 0.000 0.000 0.000 0.000
+\end{Soutput}
 \end{Schunk}
 
 The \textit{sna} package introduced new graphical capabilities as
@@ -1684,13 +2456,35 @@ well. For example, it will create a target diagram of centralities.
 > b <- betweenness(m)         # calculate betweenness centrality
 > nms <- m%v%'vertex.names'   # get vertex names
 > show(nms)
+\end{Sinput}
+\begin{Soutput}
+ [1] "Phytoplankton"                 "Bacteria in Suspended POC"    
+ [3] "Bacteria in Sediment POC"      "Benthic Diatoms"              
+ [5] "Free Bacteria"                 "Heterotrophic Microflagelates"
+ [7] "Ciliates"                      "Zooplankton"                  
+ [9] "Ctenophores"                   "Sea Nettle"                   
+[11] "Other Suspension Feeders"      "Mya arenaria"                 
+[13] "Oysters"                       "Other Polychaetes"            
+[15] "Nereis"                        "Macoma spp."                  
+[17] "Meiofauna"                     "Crustacean Deposit Feeder"    
+[19] "Blue Crab"                     "Fish Larvae"                  
+[21] "Alewife & Blue Herring"        "Bay Anchovy"                  
+[23] "Menhaden"                      "Shad"                         
+[25] "Croaker"                       "Hogchoker"                    
+[27] "Spot"                          "White Perch"                  
+[29] "Catfish"                       "Bluefish"                     
+[31] "Weakfish"                      "Summer Flounder"              
+[33] "Striped Bass"                  "Dissolved Organic Carbon"     
+[35] "Suspended Particulate Carbon"  "Sediment Partculate Carbon"   
+\end{Soutput}
+\begin{Sinput}
 > nms[b<=(0.1*max(b))] <- NA  # exclude less central nodes
 > set.seed(3)
 > opar <- par(xpd=TRUE,mfrow=c(1,1))
 > # create target plot
 > gplot.target(m,b,#circ.lab=FALSE,
-+              edge.col="grey",
-+              label=nms) # show only labels of most central nodes
++               edge.col="grey",
++               label=nms) # show only labels of most central nodes
 >              #xlim=c(-1,4))
 > rm(opar)
 \end{Sinput}
@@ -1713,9 +2507,22 @@ indices.
 \begin{Schunk}
 \begin{Sinput}
 > centralization(oyster, degree)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.45
+\end{Soutput}
+\begin{Sinput}
 > centralization(oyster,closeness)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.75
+\end{Soutput}
+\begin{Sinput}
 > centralization(oyster,betweenness)
 \end{Sinput}
+\begin{Soutput}
+[1] 0.41
+\end{Soutput}
 \end{Schunk}
 
 %%\afterpage{\clearpage}
@@ -1754,17 +2561,83 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 \begin{Sinput}
 > # betweenness centrality (calculated by iGraph and sna)
 > betweenness(g)
+\end{Sinput}
+\begin{Soutput}
+    Filter Feeders         Microbiota          Meiofauna 
+               0.0                0.0                0.5 
+   Deposit Feeders          Predators Deposited Detritus 
+               3.5                0.0                9.0 
+\end{Soutput}
+\begin{Sinput}
 > # shortest path between any two nodes
 > shortest.paths(g)
+\end{Sinput}
+\begin{Soutput}
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0          2         2               2
+Microbiota                      2          0         1               1
+Meiofauna                       2          1         0               1
+Deposit Feeders                 2          1         1               0
+Predators                       1          2         2               1
+Deposited Detritus              1          1         1               1
+                   Predators Deposited Detritus
+Filter Feeders             1                  1
+Microbiota                 2                  1
+Meiofauna                  2                  1
+Deposit Feeders            1                  1
+Predators                  0                  1
+Deposited Detritus         1                  0
+\end{Soutput}
+\begin{Sinput}
 > # average path length in the network (graph theory sense)
 > average.path.length(g,directed=TRUE)
+\end{Sinput}
+\begin{Soutput}
+[1] 1.52
+\end{Soutput}
+\begin{Sinput}
 > diameter(g)  # diameter of the graph
+\end{Sinput}
+\begin{Soutput}
+[1] 2
+\end{Soutput}
+\begin{Sinput}
 > vertex.connectivity(g)  # connectivity of a graph (group cohesion)
+\end{Sinput}
+\begin{Soutput}
+[1] 0
+\end{Soutput}
+\begin{Sinput}
 > subcomponent(g,1,'in')  # subcomponent reachable from 1 along inputs
+\end{Sinput}
+\begin{Soutput}
+[1] 1
+\end{Soutput}
+\begin{Sinput}
 > subcomponent(g,2,'in')  # subcomponent reachable from 2 along inputs
+\end{Sinput}
+\begin{Soutput}
+[1] 2 6 1 3 4 5
+\end{Soutput}
+\begin{Sinput}
 > subcomponent(g,1,'out') # subcomponent reachable from 1 along outputs
+\end{Sinput}
+\begin{Soutput}
+[1] 1 5 6 2 3 4
+\end{Soutput}
+\begin{Sinput}
 > subcomponent(g,2,'out') # subcomponent reachable from 2 along output
+\end{Sinput}
+\begin{Soutput}
+[1] 2 3 4 6 5
+\end{Soutput}
+\begin{Sinput}
 > edge.connectivity(g)
+\end{Sinput}
+\begin{Soutput}
+[1] 0
+\end{Soutput}
+\begin{Sinput}
 > detach(package:igraph)  # detach igraph package
 \end{Sinput}
 \end{Schunk}
