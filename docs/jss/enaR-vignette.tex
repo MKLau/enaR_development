@@ -96,6 +96,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{sidecap}
 
+\newcommand{\R}{\textbf{R}}
+
 %% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -109,17 +111,15 @@ Network models have been used to xx, yy, zz (insert examples of
 use/discipline).  While the network models and analyses have deep
 roots (cite old papers), their use has been expanding rapidly in a
 variety of disciplines \cite{social science, borrett14_rise, ings09,
-<<<<<<< HEAD
   others??}.  This due in part to the flexibility of the core
 representation, its utility in answering relational questions, and its
 applicability to ``Big Data'' problems.  <<SUMMARY SENTENCE - Methods/Stats>>
 
-=======
   others??}.  This is due in part to the flexibility of the core
 representation, its utility in answering relational questions, and its
 applicability to ``Big Data'' problems.  <<SOME SUMMARY SENTENCE -
 Methods/Stats>>
->>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
+
 %The methodology for network representation and subsequent
 %analysis has a
 
@@ -400,7 +400,7 @@ example, we can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 1.0942223 1.9028744 0.5390105 1.5105592
+[1] 0.8343118 0.6627736 3.6645319 2.3732521
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -421,10 +421,10 @@ object as
 \end{Sinput}
 \begin{Soutput}
          node1    node2    node3    node4
-node1  0.00000 5.122089 2.772212 0.000000
-node2  0.00000 0.000000 3.789967 0.000000
-node3 11.38181 0.000000 1.671576 1.437608
-node4  0.00000 2.383753 6.763708 0.000000
+node1 2.654103 5.558082 0.000000 0.000000
+node2 4.519536 6.878857 5.464219 4.866092
+node3 0.000000 2.430791 0.000000 0.000000
+node4 0.000000 0.000000 5.931812 0.000000
 \end{Soutput}
 \end{Schunk}
 
@@ -440,19 +440,19 @@ output is as follows:
 \begin{Soutput}
 $F
          node1    node2    node3    node4
-node1  0.00000 5.122089 2.772212 0.000000
-node2  0.00000 0.000000 3.789967 0.000000
-node3 11.38181 0.000000 1.671576 1.437608
-node4  0.00000 2.383753 6.763708 0.000000
+node1 2.654103 5.558082 0.000000 0.000000
+node2 4.519536 6.878857 5.464219 4.866092
+node3 0.000000 2.430791 0.000000 0.000000
+node4 0.000000 0.000000 5.931812 0.000000
 
 $z
-[1] 1.0942223 1.9028744 0.5390105 1.5105592
+[1] 0.8343118 0.6627736 3.6645319 2.3732521
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 1.0942223 1.9028744 0.5390105 1.5105592
+[1] 0.8343118 0.6627736 3.6645319 2.3732521
 
 $y
 [1] NA NA NA NA
@@ -742,14 +742,8 @@ plot of the same data (Fig.~\ref{fig:oyster}(right)).
 \begin{figure}
   \center
   \begin{tabular}{cc}
-%% <<fig=true,echo=false>>=
-%% <<a>>
-%% @ \\
-%% <<fig=true,echo=false>>=
-%% <<b>>
-%% @ \\
-\includegraphics[]{enaR-vignette-020}
-\includegraphics[]{enaR-vignette-021}
+\includegraphics{enaR-vignette-019}
+\includegraphics{enaR-vignette-020}
   \end{tabular}
   \caption{Simple (left) and fancy (right) plot of the Oyster network
     model (Dame and Patten 1981).} \label{fig:oyster}
@@ -765,11 +759,9 @@ The primary ENA algorithms included in this package are summarized in
 Table~\ref{tab:alg} and Figure~\ref{fig:depnet} illustrates the
 interdependecy of the functions in the package.
 
-\includegraphics[]{enaR-vignette-003}
-
 \begin{figure}
   \center
-  \includegraphics[]{enaR-vignette-003}
+  \includegraphics{images/enaR-vignette-003.pdf}
   \caption{A plot of the \textit{enaR} function relationships. Edges
     point \textit{from} a function that provides information \textit{to}
     the function that receives that information.} \label{fig:depnet}
@@ -1763,10 +1755,7 @@ Centralities.
 
 \begin{figure}
   \center
-%% <<fig=true,echo=false>>=
-%% <<b>>
-%% @
-\includegraphics[]{enaR-vignette-039}
+\includegraphics{enaR-vignette-040}
 \caption{Bar plot of the Oyster Reef model Average Environ
   Centralities.} \label{fig:aec}
 \end{figure}
@@ -2401,10 +2390,7 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 
 \begin{figure}
   \center
-%% <<fig=true,echo=false>>=
-%% <<b>>
-%% @
-\includegraphics[]{enaR-vignette-048}
+\includegraphics{enaR-vignette-050}
 \caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
   (left) and relationship between the Finn Cycling Index and the ratio
   of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:aec}
@@ -2492,10 +2478,29 @@ well. For example, it will create a target diagram of centralities.
 
 \begin{figure}[!htbp]
   \center
-%% <<fig=true,echo=false,eval=true>>=
-%% <<d>>
-%% @
-\includegraphics[]{enaR-vignette-051}
+\begin{Schunk}
+\begin{Soutput}
+ [1] "Phytoplankton"                 "Bacteria in Suspended POC"    
+ [3] "Bacteria in Sediment POC"      "Benthic Diatoms"              
+ [5] "Free Bacteria"                 "Heterotrophic Microflagelates"
+ [7] "Ciliates"                      "Zooplankton"                  
+ [9] "Ctenophores"                   "Sea Nettle"                   
+[11] "Other Suspension Feeders"      "Mya arenaria"                 
+[13] "Oysters"                       "Other Polychaetes"            
+[15] "Nereis"                        "Macoma spp."                  
+[17] "Meiofauna"                     "Crustacean Deposit Feeder"    
+[19] "Blue Crab"                     "Fish Larvae"                  
+[21] "Alewife & Blue Herring"        "Bay Anchovy"                  
+[23] "Menhaden"                      "Shad"                         
+[25] "Croaker"                       "Hogchoker"                    
+[27] "Spot"                          "White Perch"                  
+[29] "Catfish"                       "Bluefish"                     
+[31] "Weakfish"                      "Summer Flounder"              
+[33] "Striped Bass"                  "Dissolved Organic Carbon"     
+[35] "Suspended Particulate Carbon"  "Sediment Partculate Carbon"   
+\end{Soutput}
+\end{Schunk}
+\includegraphics{enaR-vignette-053}
 \caption{Target plot of node betweenness centrality for the Chesapeake
   Bay model (mesohaline, carbon, annual).} \label{fig:target}
 \end{figure}
@@ -2533,13 +2538,12 @@ data.  Here are a few examples of using the package.  Note that some
 functions in \textit{iGraph} conflict with other functions already defined, so
 care is required when using \textit{iGraph}.
 
-%<<e,eval=true>>=
 \begin{Schunk}
 \begin{Sinput}
 > library(igraph)
 > ### The adjacency matrix
 > A <- St$A
-> ### creating an iGraph graph
+> ### Creating an iGraph graph
 > g <- graph.adjacency(A)
 > plot(g)  # uses iGraph plot tools
 \end{Sinput}
@@ -2550,10 +2554,7 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 
 \begin{figure}
 \center
-%% <<fig=TRUE,echo=false>>=
-%% <<e>>
-%% @
-\includegraphics[]{enaR-vignette-054}
+\includegraphics{enaR-vignette-056}
 \caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
 \end{figure}
 
@@ -2664,6 +2665,6 @@ their data with other \R\ packages for graph and network analysis like
 package useful for your ENA needs.
 
 
-\bibliography{jss_abb, jss}
+\bibliography{jss,jss_abb}
 
 \end{document}

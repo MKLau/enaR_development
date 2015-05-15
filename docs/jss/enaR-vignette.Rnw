@@ -96,6 +96,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{sidecap}
 
+\newcommand{\R}{\textbf{R}}
+
 %% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -109,17 +111,15 @@ Network models have been used to xx, yy, zz (insert examples of
 use/discipline).  While the network models and analyses have deep
 roots (cite old papers), their use has been expanding rapidly in a
 variety of disciplines \cite{social science, borrett14_rise, ings09,
-<<<<<<< HEAD
   others??}.  This due in part to the flexibility of the core
 representation, its utility in answering relational questions, and its
 applicability to ``Big Data'' problems.  <<SUMMARY SENTENCE - Methods/Stats>>
 
-=======
   others??}.  This is due in part to the flexibility of the core
 representation, its utility in answering relational questions, and its
 applicability to ``Big Data'' problems.  <<SOME SUMMARY SENTENCE -
 Methods/Stats>>
->>>>>>> 51fc935f23be41fca16723c6daf032efd040a7f3
+
 %The methodology for network representation and subsequent
 %analysis has a
 
@@ -299,15 +299,6 @@ built in functionality with the functions \texttt{get.orient} and
 to return output in the Patten School row-to-column orientation
 (see Section~\ref{sec:orient} for details).
 
-% % Assumptions
-% To validly apply flow analysis, the network model must meet two
-% analytical assumptions.  First, the model must trace a single,
-% thermodynamically conserved currency such as energy, carbon, or
-% nitrogen.  Second, the model must be at steady-state for many of the
-% analyses.  This means that the sum of the energy--matter flowing into
-% a node equals that exiting the node such that its storage or biomass
-% is not changing.  \citet{fath07_netconstruction} offer further
-% suggestions for better ecosystem network model construction.
 
 % Network Data Object
 \subsection{Network Data Class}
@@ -591,14 +582,12 @@ rm(opar)             # remove changes to the plotting parameters
 \begin{figure}
   \center
   \begin{tabular}{cc}
-%% <<fig=true,echo=false>>=
-%% <<a>>
-%% @ \\
-%% <<fig=true,echo=false>>=
-%% <<b>>
-%% @ \\
-\includegraphics[]{enaR-vignette-020}
-\includegraphics[]{enaR-vignette-021}
+<<fig=true,echo=false>>=
+<<a>>
+@ \\
+<<fig=true,echo=false>>=
+<<b>>
+@ \\
   \end{tabular}
   \caption{Simple (left) and fancy (right) plot of the Oyster network
     model (Dame and Patten 1981).} \label{fig:oyster}
@@ -614,11 +603,9 @@ The primary ENA algorithms included in this package are summarized in
 Table~\ref{tab:alg} and Figure~\ref{fig:depnet} illustrates the
 interdependecy of the functions in the package.
 
-\includegraphics[]{enaR-vignette-003}
-
 \begin{figure}
   \center
-  \includegraphics[]{enaR-vignette-003}
+  \includegraphics{images/enaR-vignette-003.pdf}
   \caption{A plot of the \textit{enaR} function relationships. Edges
     point \textit{from} a function that provides information \textit{to}
     the function that receives that information.} \label{fig:depnet}
@@ -716,6 +703,8 @@ for both the Ulanowicz and Patten Schools \citep{fath99_review,
 flows][]{borrett11_ree,borrett11_equ}. Results returned by
 \texttt{enaFlow} are summarized in Table~\ref{tab:flow}.
 
+
+
 % --- FLOW ----------------------
 \begin{table*}[h]
   \caption{Matrices and network statistics returned by the
@@ -789,7 +778,19 @@ in R.  Thus, the \textit{enaR} package includes a function
 mExp(F$G,2)
 @
 
+To validly apply flow analysis, the network model must meet two
+analytical assumptions.  First, the model must trace a single,
+thermodynamically conserved currency, such as energy, carbon, or
+nitrogen.  Second, the model must be at steady-state for many of the
+analyses.  This means that the sum of the currency flowing into a node
+equals that exiting the node such that its storage or biomass is not
+changing.  Models can be "balanced" to meet this second assumption;
+and we detail methods for balancing in the flow analysis example
+below.
+
+
 \subsection{Ascendency}
+
 A key contribution of the Ulanowicz School to ENA is Ascendency
 concept and the development of several information based indices
 \citep{ulanowicz86, ulanowicz97}.  This analysis is based on all of
@@ -1227,10 +1228,9 @@ rm(opar)  # remove the plotting parameters
 
 \begin{figure}
   \center
-%% <<fig=true,echo=false>>=
-%% <<b>>
-%% @
-\includegraphics[]{enaR-vignette-039}
+<<fig=true,echo=false>>=
+<<b>>
+@
 \caption{Bar plot of the Oyster Reef model Average Environ
   Centralities.} \label{fig:aec}
 \end{figure}
@@ -1584,10 +1584,9 @@ rm(opar)  # remove the plotting parameters
 
 \begin{figure}
   \center
-%% <<fig=true,echo=false>>=
-%% <<b>>
-%% @
-\includegraphics[]{enaR-vignette-048}
+<<fig=true,echo=false>>=
+<<b>>
+@
 \caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
   (left) and relationship between the Finn Cycling Index and the ratio
   of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:aec}
@@ -1643,10 +1642,9 @@ rm(opar)
 
 \begin{figure}[!htbp]
   \center
-%% <<fig=true,echo=false,eval=true>>=
-%% <<d>>
-%% @
-\includegraphics[]{enaR-vignette-051}
+<<fig=true,echo=false,eval=true>>=
+<<d>>
+@
 \caption{Target plot of node betweenness centrality for the Chesapeake
   Bay model (mesohaline, carbon, annual).} \label{fig:target}
 \end{figure}
@@ -1671,13 +1669,12 @@ data.  Here are a few examples of using the package.  Note that some
 functions in \textit{iGraph} conflict with other functions already defined, so
 care is required when using \textit{iGraph}.
 
-%<<e,eval=true>>=
-<<eval=true>>=
+<<e,eval=true>>=
 library(igraph)
 ### The adjacency matrix
 A <- St$A
 
-### creating an iGraph graph
+### Creating an iGraph graph
 g <- graph.adjacency(A)
 plot(g)  # uses iGraph plot tools
 @
@@ -1687,10 +1684,9 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 
 \begin{figure}
 \center
-%% <<fig=TRUE,echo=false>>=
-%% <<e>>
-%% @
-\includegraphics[]{enaR-vignette-054}
+<<fig=TRUE,echo=false>>=
+<<e>>
+@
 \caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
 \end{figure}
 
@@ -1739,6 +1735,6 @@ their data with other \R\ packages for graph and network analysis like
 package useful for your ENA needs.
 
 
-\bibliography{jss_abb, jss}
+\bibliography{jss,jss_abb}
 
 \end{document}

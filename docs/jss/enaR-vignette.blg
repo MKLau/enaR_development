@@ -4,148 +4,243 @@ The top-level auxiliary file: enaR-vignette.aux
 The style file: jss.bst
 White space in argument---line 20 of file enaR-vignette.aux
  : \citation{social
- :                  science,borrett14_rise,ings09,<<<<<<< HEAD others??}
+ :                  science,borrett14_rise,ings09,others??}
 I'm skipping whatever remains of this command
-White space in argument---line 235 of file enaR-vignette.aux
- : \bibdata{jss_abb,
- :                   jss}
-I'm skipping whatever remains of this command
-Database file #1: jss_abb.bib
-Warning--I didn't find a database entry for "borrett12_netecol"
-Warning--I didn't find a database entry for "ulanowicz86"
-Warning--I didn't find a database entry for "fath99_review"
-Warning--I didn't find a database entry for "ulanowicz91"
-Warning--I didn't find a database entry for "allesina04_wand"
-Warning--I didn't find a database entry for "christensen04"
-Warning--I didn't find a database entry for "fath06"
-Warning--I didn't find a database entry for "butts08_network"
-Warning--I didn't find a database entry for "butts08_social"
-Warning--I didn't find a database entry for "handcock2008statnet"
-Warning--I didn't find a database entry for "patten83"
-Warning--I didn't find a database entry for "higashi89"
-Warning--I didn't find a database entry for "salas11_did"
-Warning--I didn't find a database entry for "ulanowicz90"
-Warning--I didn't find a database entry for "patten91"
-Warning--I didn't find a database entry for "fath98"
-Warning--I didn't find a database entry for "bondavalli99"
-Warning--I didn't find a database entry for "higashi91"
-Warning--I didn't find a database entry for "belgrano05"
-Warning--I didn't find a database entry for "jorgensen07_newecology"
-Warning--I didn't find a database entry for "baird04_sylt"
-Warning--I didn't find a database entry for "baird08_sylt"
-Warning--I didn't find a database entry for "christian03"
-Warning--I didn't find a database entry for "hines12"
-Warning--I didn't find a database entry for "zhang10"
-Warning--I didn't find a database entry for "chen12"
-Warning--I didn't find a database entry for "leontief1936"
-Warning--I didn't find a database entry for "leontief66"
-Warning--I didn't find a database entry for "hannon73"
-Warning--I didn't find a database entry for "ulanowicz97"
-Warning--I didn't find a database entry for "ulanowicz04"
-Warning--I didn't find a database entry for "patten76"
-Warning--I didn't find a database entry for "patten78"
-Warning--I didn't find a database entry for "brandes05"
-Warning--I didn't find a database entry for "scharler09comparing"
-Warning--I didn't find a database entry for "allesina03"
-Warning--I didn't find a database entry for "dame81"
-Warning--I didn't find a database entry for "scharler2012ecosystem"
-Warning--I didn't find a database entry for "borrett03"
-Warning--I didn't find a database entry for "borrett07_jtb"
-Warning--I didn't find a database entry for "caswell01"
-Warning--I didn't find a database entry for "farkas2001spectra"
-Warning--I didn't find a database entry for "schramski11"
-Warning--I didn't find a database entry for "borrett11_ree"
-Warning--I didn't find a database entry for "borrett11_equ"
-Warning--I didn't find a database entry for "finn76"
-Warning--I didn't find a database entry for "finn80"
-Warning--I didn't find a database entry for "borrett06_neuse"
-Warning--I didn't find a database entry for "schramski06"
-Warning--I didn't find a database entry for "schramski07"
-Warning--I didn't find a database entry for "patten81"
-Warning--I didn't find a database entry for "ulanowicz83"
-Warning--I didn't find a database entry for "lindeman42"
-Warning--I didn't find a database entry for "ulanowicz1979trophic"
-Warning--I didn't find a database entry for "fann12_ec"
-Warning--I didn't find a database entry for "christian96"
-Warning--I didn't find a database entry for "borrett10_idd"
-Warning--I didn't find a database entry for "borrett10_hmg"
-Warning--I didn't find a database entry for "borrett13"
-Warning--I didn't find a database entry for "haven66"
-Warning--I didn't find a database entry for "richey78"
-Warning--I didn't find a database entry for "tilly68"
-Warning--I didn't find a database entry for "odum57"
-Warning--I didn't find a database entry for "brylinsky72"
-Warning--I didn't find a database entry for "rybarczyk03"
-Warning--I didn't find a database entry for "sandberg00"
-Warning--I didn't find a database entry for "baird81"
-Warning--I didn't find a database entry for "ray08"
-Warning--I didn't find a database entry for "baird91"
-Warning--I didn't find a database entry for "almunia99"
-Warning--I didn't find a database entry for "heymans00"
-Warning--I didn't find a database entry for "scharler05"
-Warning--I didn't find a database entry for "whipple93"
-Warning--I didn't find a database entry for "baird04"
-Warning--I didn't find a database entry for "link08"
-Warning--I didn't find a database entry for "monaco97"
-Warning--I didn't find a database entry for "baird89"
-Warning--I didn't find a database entry for "patricio2006mass"
-Warning--I didn't find a database entry for "baird98"
-Warning--I didn't find a database entry for "ulanowicz00_graminoids"
-Warning--I didn't find a database entry for "ulanowicz97_cypress"
-Warning--I didn't find a database entry for "miehls09_oneida"
-Warning--I didn't find a database entry for "miehls09_quinte"
-Warning--I didn't find a database entry for "ulanowicz99_mangrove"
-Warning--I didn't find a database entry for "ulanowicz98_fb"
-Warning--I didn't find a database entry for "waide74"
-Warning--I didn't find a database entry for "jordan72"
-Warning--I didn't find a database entry for "edmisten70"
+Database file #1: jss.bib
+Warning--string name "ecomod" is undefined
+--line 567 of file jss.bib
+Warning--string name "envmodel" is undefined
+--line 583 of file jss.bib
+Warning--string name "ecss" is undefined
+--line 681 of file jss.bib
+Warning--string name "ecolapp" is undefined
+--line 785 of file jss.bib
+Warning--string name "meps" is undefined
+--line 793 of file jss.bib
+Warning--string name "ecss" is undefined
+--line 803 of file jss.bib
+Warning--string name "ecss" is undefined
+--line 841 of file jss.bib
+Warning--string name "ecomono" is undefined
+--line 851 of file jss.bib
+Warning--string name "philtransb" is undefined
+--line 859 of file jss.bib
+Warning--string name "ecss" is undefined
+--line 867 of file jss.bib
+Warning--string name "ecss" is undefined
+--line 876 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 1406 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 1420 of file jss.bib
+Warning--string name "jtb" is undefined
+--line 1436 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 1444 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 1453 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 1471 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 1483 of file jss.bib
+Warning--string name "ecoind" is undefined
+--line 1511 of file jss.bib
+Warning--string name "joss" is undefined
+--line 1783 of file jss.bib
+Warning--string name "joss" is undefined
+--line 1790 of file jss.bib
+Warning--string name "est" is undefined
+--line 1872 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 1921 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 1939 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 2014 of file jss.bib
+Warning--string name "meps" is undefined
+--line 2283 of file jss.bib
+Warning--string name "jtb" is undefined
+--line 2655 of file jss.bib
+Warning--string name "envmodel" is undefined
+--line 2715 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 2780 of file jss.bib
+Warning--string name "jtb" is undefined
+--line 2822 of file jss.bib
+Warning--string name "joss" is undefined
+--line 3229 of file jss.bib
+Warning--string name "jtb" is undefined
+--line 3239 of file jss.bib
+Warning--string name "lo" is undefined
+--line 3279 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 3300 of file jss.bib
+Warning--string name "amnat" is undefined
+--line 3336 of file jss.bib
+Warning--string name "ecss" is undefined
+--line 3380 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 3418 of file jss.bib
+Warning--string name "amnat" is undefined
+--line 3623 of file jss.bib
+Warning--string name "jmarsci" is undefined
+--line 4205 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 4614 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 4623 of file jss.bib
+Warning--string name "meps" is undefined
+--line 4694 of file jss.bib
+Warning--string name "ecomono" is undefined
+--line 5026 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 5283 of file jss.bib
+Warning--string name "ohiojsci" is undefined
+--line 5404 of file jss.bib
+Warning--string name "amnat" is undefined
+--line 5423 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 5898 of file jss.bib
+Warning--string name "ecss" is undefined
+--line 6081 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 6135 of file jss.bib
+Warning--string name "jmarsci" is undefined
+--line 6159 of file jss.bib
+Warning--string name "jmarsci" is undefined
+--line 6192 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 6200 of file jss.bib
+Warning--string name "ecss" is undefined
+--line 6210 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 6271 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 6279 of file jss.bib
+Warning--string name "envmodel" is undefined
+--line 6288 of file jss.bib
+Warning--string name "ecomono" is undefined
+--line 6581 of file jss.bib
+Warning--string name "compbiochem" is undefined
+--line 6644 of file jss.bib
+Warning--string name "amnat" is undefined
+--line 6675 of file jss.bib
+Warning--string name "mathbio" is undefined
+--line 6736 of file jss.bib
+Warning--string name "jmarsci" is undefined
+--line 6810 of file jss.bib
+Warning--string name "ecomod" is undefined
+--line 7107 of file jss.bib
+Warning--string name "jtb" is undefined
+--line 7141 of file jss.bib
+Warning--string name "ste" is undefined
+--line 7510 of file jss.bib
+Database file #2: jss_abb.bib
 Warning--I didn't find a database entry for "hines2015"
-Warning--I didn't find a database entry for "borrett07_lanier"
-Warning--I didn't find a database entry for "hinrichsen98_baltic"
-Warning--I didn't find a database entry for "baird95"
-Warning--I didn't find a database entry for "ulanowicz99"
-Warning--I didn't find a database entry for "whipple07"
-Warning--I didn't find a database entry for "christensen95"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 0 entries,
+Warning--empty journal in allesina03
+Warning--empty journal in allesina04_wand
+Warning--empty journal in almunia99
+Warning--empty journal in baird04_sylt
+Warning--empty journal in baird08_sylt
+Warning--empty journal in baird04
+Warning--empty journal in baird98
+Warning--empty journal in baird91
+Warning--empty journal in baird81
+Warning--empty journal in baird89
+Warning--empty journal in baird95
+Warning--empty journal in borrett13
+Warning--empty journal in borrett07_jtb
+Warning--empty journal in borrett11_ree
+Warning--empty journal in borrett11_equ
+Warning--empty journal in borrett07_lanier
+Warning--empty journal in borrett03
+Warning--empty journal in borrett10_hmg
+Warning--empty journal in borrett06_neuse
+Warning--empty journal in butts08_network
+Warning--empty journal in butts08_social
+Warning--empty journal in chen12
+Warning--empty journal in christensen95
+Warning--empty journal in christensen04
+Warning--empty journal in christian96
+Warning--empty journal in dame81
+Warning--empty journal in fann12_ec
+Warning--empty journal in fath06
+Warning--empty journal in fath98
+Warning--empty journal in finn76
+Warning--empty journal in handcock2008statnet
+Warning--empty journal in hannon73
+Warning--empty journal in haven66
+Warning--empty journal in heymans00
+Warning--empty journal in higashi89
+Warning--empty journal in hines12
+Warning--empty journal in hinrichsen98_baltic
+Warning--empty journal in jordan72
+Warning--empty journal in link08
+Warning--empty journal in miehls09_oneida
+Warning--empty journal in miehls09_quinte
+Warning--empty journal in monaco97
+Warning--empty journal in odum57
+Warning--empty journal in patricio2006mass
+Warning--empty journal in patten78
+Warning--empty journal in patten81
+Warning--empty journal in ray08
+Warning--empty journal in rybarczyk03
+Warning--empty journal in salas11_did
+Warning--empty journal in sandberg00
+Warning--empty journal in scharler2012ecosystem
+Warning--empty journal in scharler09comparing
+Warning--empty journal in scharler05
+Warning--empty journal in schramski06
+Warning--empty journal in schramski07
+Warning--empty journal in schramski11
+Warning--empty journal in tilly68
+Warning--empty journal in ulanowicz83
+Warning--empty journal in ulanowicz04
+Warning--empty journal in ulanowicz99
+Warning--empty journal in ulanowicz1979trophic
+Warning--empty journal in whipple07
+Warning--empty journal in whipple93
+Warning--empty journal in zhang10
+You've used 94 entries,
             3140 wiz_defined-function locations,
-            868 strings with 7751 characters,
-and the built_in function-call counts, 37 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 8
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
-int.to.chr$ -- 1
+            1282 strings with 21681 characters,
+and the built_in function-call counts, 86952 in all, are:
+= -- 7212
+> -- 2370
+< -- 70
++ -- 913
+- -- 788
+* -- 7318
+:= -- 11674
+add.period$ -- 385
+call.type$ -- 94
+change.case$ -- 649
+chr.to.int$ -- 91
+cite$ -- 158
+duplicate$ -- 7810
+empty$ -- 8005
+format.name$ -- 1094
+if$ -- 17696
+int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 0
-newline$ -- 11
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 1192
+newline$ -- 491
+num.names$ -- 389
+pop$ -- 2684
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 635
 quote$ -- 0
-skip$ -- 1
+skip$ -- 1711
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 8142
+swap$ -- 2564
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
+type$ -- 822
+warning$ -- 64
+while$ -- 723
 width$ -- 0
-write$ -- 10
-(There were 2 error messages)
+write$ -- 1190
+(There was 1 error message)
