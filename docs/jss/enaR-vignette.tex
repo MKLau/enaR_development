@@ -285,15 +285,6 @@ built in functionality with the functions \texttt{get.orient} and
 to return output in the Patten School row-to-column orientation
 (see Section~\ref{sec:orient} for details).
 
-% % Assumptions
-% To validly apply flow analysis, the network model must meet two
-% analytical assumptions.  First, the model must trace a single,
-% thermodynamically conserved currency such as energy, carbon, or
-% nitrogen.  Second, the model must be at steady-state for many of the
-% analyses.  This means that the sum of the energy--matter flowing into
-% a node equals that exiting the node such that its storage or biomass
-% is not changing.  \citet{fath07_netconstruction} offer further
-% suggestions for better ecosystem network model construction.
 
 % Network Data Object
 \subsection{Network Data Class}
@@ -873,6 +864,8 @@ for both the Ulanowicz and Patten Schools \citep{fath99_review,
 flows][]{borrett11_ree,borrett11_equ}. Results returned by
 \texttt{enaFlow} are summarized in Table~\ref{tab:flow}.
 
+
+
 % --- FLOW ----------------------
 \begin{table*}[h]
   \caption{Matrices and network statistics returned by the
@@ -1018,7 +1011,19 @@ Deposited Detritus 0.001980437        0.185314635
 \end{Soutput}
 \end{Schunk}
 
+To validly apply flow analysis, the network model must meet two
+analytical assumptions.  First, the model must trace a single,
+thermodynamically conserved currency, such as energy, carbon, or
+nitrogen.  Second, the model must be at steady-state for many of the
+analyses.  This means that the sum of the currency flowing into a node
+equals that exiting the node such that its storage or biomass is not
+changing.  Models can be "balanced" to meet this second assumption;
+and we detail methods for balancing in the flow analysis example
+below.
+
+
 \subsection{Ascendency}
+
 A key contribution of the Ulanowicz School to ENA is Ascendency
 concept and the development of several information based indices
 \citep{ulanowicz86, ulanowicz97}.  This analysis is based on all of
