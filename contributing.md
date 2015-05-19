@@ -7,4 +7,4 @@ If you have found a **bug**, please submit a new issue with a descriptive title 
 
 https://github.com/TheSeeLab/enaR/issues/new
 
-If you are interested in contributing a published function or model that you've implemented in enaR, please email enar.maintaineer@gmail.com
+If you are interested in contributing a published function or model that you've implemented in enaR, please email enar.maintainer@gmail.com.
