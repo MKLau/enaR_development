@@ -1,0 +1,16 @@
+#Mixed-Model of C and N for pitcher plant
+
+Pitcher -> Ants          c=.5
+Ants -> BacteriaN        c=.5
+Ants -> BacteriaC        c=.5
+BacteriaC -> MosquitoC   c=.1
+BacteriaN -> MosquitoN   c=.1
+BacteriaN -> Pitcher     c=.7
+* -> Pitcher             c=.5 # inputs
+MosquitoC -> *           c=.5 # outputs
+MosquitoN -> *           c=.75
+
+
+Pitcher=10, Ants=10, BacteriaC=5, MosquitoC=1, BacteriaN=5,
+MosquitoN=1 #initial stock values
+

@@ -2,245 +2,50 @@ This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: enaR-vignette.aux
 The style file: jss.bst
-White space in argument---line 20 of file enaR-vignette.aux
- : \citation{social
- :                  science,borrett14_rise,ings09,others??}
-I'm skipping whatever remains of this command
-Database file #1: jss.bib
-Warning--string name "ecomod" is undefined
---line 567 of file jss.bib
-Warning--string name "envmodel" is undefined
---line 583 of file jss.bib
-Warning--string name "ecss" is undefined
---line 681 of file jss.bib
-Warning--string name "ecolapp" is undefined
---line 785 of file jss.bib
-Warning--string name "meps" is undefined
---line 793 of file jss.bib
-Warning--string name "ecss" is undefined
---line 803 of file jss.bib
-Warning--string name "ecss" is undefined
---line 841 of file jss.bib
-Warning--string name "ecomono" is undefined
---line 851 of file jss.bib
-Warning--string name "philtransb" is undefined
---line 859 of file jss.bib
-Warning--string name "ecss" is undefined
---line 867 of file jss.bib
-Warning--string name "ecss" is undefined
---line 876 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 1406 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 1420 of file jss.bib
-Warning--string name "jtb" is undefined
---line 1436 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 1444 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 1453 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 1471 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 1483 of file jss.bib
-Warning--string name "ecoind" is undefined
---line 1511 of file jss.bib
-Warning--string name "joss" is undefined
---line 1783 of file jss.bib
-Warning--string name "joss" is undefined
---line 1790 of file jss.bib
-Warning--string name "est" is undefined
---line 1872 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 1921 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 1939 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 2014 of file jss.bib
-Warning--string name "meps" is undefined
---line 2283 of file jss.bib
-Warning--string name "jtb" is undefined
---line 2655 of file jss.bib
-Warning--string name "envmodel" is undefined
---line 2715 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 2780 of file jss.bib
-Warning--string name "jtb" is undefined
---line 2822 of file jss.bib
-Warning--string name "joss" is undefined
---line 3229 of file jss.bib
-Warning--string name "jtb" is undefined
---line 3239 of file jss.bib
-Warning--string name "lo" is undefined
---line 3279 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 3300 of file jss.bib
-Warning--string name "amnat" is undefined
---line 3336 of file jss.bib
-Warning--string name "ecss" is undefined
---line 3380 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 3418 of file jss.bib
-Warning--string name "amnat" is undefined
---line 3623 of file jss.bib
-Warning--string name "jmarsci" is undefined
---line 4205 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 4614 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 4623 of file jss.bib
-Warning--string name "meps" is undefined
---line 4694 of file jss.bib
-Warning--string name "ecomono" is undefined
---line 5026 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 5283 of file jss.bib
-Warning--string name "ohiojsci" is undefined
---line 5404 of file jss.bib
-Warning--string name "amnat" is undefined
---line 5423 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 5898 of file jss.bib
-Warning--string name "ecss" is undefined
---line 6081 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 6135 of file jss.bib
-Warning--string name "jmarsci" is undefined
---line 6159 of file jss.bib
-Warning--string name "jmarsci" is undefined
---line 6192 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 6200 of file jss.bib
-Warning--string name "ecss" is undefined
---line 6210 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 6271 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 6279 of file jss.bib
-Warning--string name "envmodel" is undefined
---line 6288 of file jss.bib
-Warning--string name "ecomono" is undefined
---line 6581 of file jss.bib
-Warning--string name "compbiochem" is undefined
---line 6644 of file jss.bib
-Warning--string name "amnat" is undefined
---line 6675 of file jss.bib
-Warning--string name "mathbio" is undefined
---line 6736 of file jss.bib
-Warning--string name "jmarsci" is undefined
---line 6810 of file jss.bib
-Warning--string name "ecomod" is undefined
---line 7107 of file jss.bib
-Warning--string name "jtb" is undefined
---line 7141 of file jss.bib
-Warning--string name "ste" is undefined
---line 7510 of file jss.bib
-Database file #2: jss_abb.bib
+Database file #1: jss_abb.bib
+Database file #2: jss.bib
+Warning--I didn't find a database entry for "ings09"
 Warning--I didn't find a database entry for "hines2015"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Warning--empty journal in allesina03
-Warning--empty journal in allesina04_wand
-Warning--empty journal in almunia99
-Warning--empty journal in baird04_sylt
-Warning--empty journal in baird08_sylt
-Warning--empty journal in baird04
-Warning--empty journal in baird98
-Warning--empty journal in baird91
-Warning--empty journal in baird81
-Warning--empty journal in baird89
-Warning--empty journal in baird95
-Warning--empty journal in borrett13
-Warning--empty journal in borrett07_jtb
-Warning--empty journal in borrett11_ree
-Warning--empty journal in borrett11_equ
-Warning--empty journal in borrett07_lanier
-Warning--empty journal in borrett03
-Warning--empty journal in borrett10_hmg
-Warning--empty journal in borrett06_neuse
-Warning--empty journal in butts08_network
-Warning--empty journal in butts08_social
-Warning--empty journal in chen12
-Warning--empty journal in christensen95
-Warning--empty journal in christensen04
-Warning--empty journal in christian96
-Warning--empty journal in dame81
-Warning--empty journal in fann12_ec
-Warning--empty journal in fath06
-Warning--empty journal in fath98
-Warning--empty journal in finn76
-Warning--empty journal in handcock2008statnet
-Warning--empty journal in hannon73
-Warning--empty journal in haven66
-Warning--empty journal in heymans00
-Warning--empty journal in higashi89
-Warning--empty journal in hines12
-Warning--empty journal in hinrichsen98_baltic
-Warning--empty journal in jordan72
-Warning--empty journal in link08
-Warning--empty journal in miehls09_oneida
-Warning--empty journal in miehls09_quinte
-Warning--empty journal in monaco97
-Warning--empty journal in odum57
-Warning--empty journal in patricio2006mass
-Warning--empty journal in patten78
-Warning--empty journal in patten81
-Warning--empty journal in ray08
-Warning--empty journal in rybarczyk03
-Warning--empty journal in salas11_did
-Warning--empty journal in sandberg00
-Warning--empty journal in scharler2012ecosystem
-Warning--empty journal in scharler09comparing
-Warning--empty journal in scharler05
-Warning--empty journal in schramski06
-Warning--empty journal in schramski07
-Warning--empty journal in schramski11
-Warning--empty journal in tilly68
-Warning--empty journal in ulanowicz83
-Warning--empty journal in ulanowicz04
-Warning--empty journal in ulanowicz99
-Warning--empty journal in ulanowicz1979trophic
-Warning--empty journal in whipple07
-Warning--empty journal in whipple93
-Warning--empty journal in zhang10
-You've used 94 entries,
+You've used 95 entries,
             3140 wiz_defined-function locations,
-            1282 strings with 21681 characters,
-and the built_in function-call counts, 86952 in all, are:
-= -- 7212
-> -- 2370
+            1291 strings with 21908 characters,
+and the built_in function-call counts, 87971 in all, are:
+= -- 7355
+> -- 2397
 < -- 70
-+ -- 913
-- -- 788
-* -- 7318
-:= -- 11674
-add.period$ -- 385
-call.type$ -- 94
-change.case$ -- 649
-chr.to.int$ -- 91
-cite$ -- 158
-duplicate$ -- 7810
-empty$ -- 8005
-format.name$ -- 1094
-if$ -- 17696
++ -- 925
+- -- 797
+* -- 7402
+:= -- 11867
+add.period$ -- 390
+call.type$ -- 95
+change.case$ -- 656
+chr.to.int$ -- 92
+cite$ -- 95
+duplicate$ -- 7895
+empty$ -- 8092
+format.name$ -- 1106
+if$ -- 17955
 int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 1192
-newline$ -- 491
-num.names$ -- 389
-pop$ -- 2684
+missing$ -- 1205
+newline$ -- 497
+num.names$ -- 393
+pop$ -- 2582
 preamble$ -- 1
-purify$ -- 635
+purify$ -- 642
 quote$ -- 0
-skip$ -- 1711
+skip$ -- 1727
 stack$ -- 0
-substring$ -- 8142
-swap$ -- 2564
+substring$ -- 8230
+swap$ -- 2658
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 822
-warning$ -- 64
-while$ -- 723
+type$ -- 831
+warning$ -- 0
+while$ -- 730
 width$ -- 0
-write$ -- 1190
-(There was 1 error message)
+write$ -- 1269
+(There were 2 warnings)
