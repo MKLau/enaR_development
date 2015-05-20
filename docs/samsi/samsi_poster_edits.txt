@@ -1,8 +1,0 @@
-- Matt Lau -> Matthew K. Lau
-- In "What is an ecosystem network?" combine bullets 1 and 2
-- Change "Case Study 2: Gerality" to "Case Study 2: Generality"
-- Delete "Advantages" under R package
-- Change "Future Works" to "Future Work"
-- Reduce the line spacing between functions in Table 1.
-- Make the reference font larger
-
