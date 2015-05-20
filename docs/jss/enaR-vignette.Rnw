@@ -1,26 +1,8 @@
 \documentclass[article]{jss}
 
-%%%%Re-organization based on SRB notes
-%%%%
-%%Intro
-%%Ecosystem Networks purpose and structure of models
-%%1.network ecology
-%%2.ENA
-%%3.previous software and enaR
-%%ENA network models
-%%1. describe models
-%%2. model construction
-%%3. mathematical description
-%%ENA analyses
-%%1. provided models
-%%2. visualization
-%%3. model input
-%%4+. analyses
-%%n. batch processing
-%%Conclusion
-%%1.Connecting to other packages
-%%2.Future directions
-%%3.Contributing
+%%% Add Pawan as co-author
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% declarations for jss.cls %%
@@ -95,6 +77,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{sidecap}
+\usepackage{color}
 
 \newcommand{\R}{\textbf{R}}
 
@@ -103,7 +86,15 @@
 
 \begin{document}
 
-% reworked intro - srb - 5/7/2015
+
+%%%%Re-organization based on SRB notes
+
+%%%%
+%%Intro
+%%Ecosystem Networks purpose and structure of models
+%%1.network ecology
+%%2.ENA
+%%3.previous software and enaR
 
 \section[Introduction]{Introduction}
 % p1:  intro paragraph (5/7/2015)
@@ -161,7 +152,8 @@ large set of powerful analytical tools, the fragmented distribution of
 these algorithms has inhibited the development of theory and the
 further implementation of important algorithms.
 
-% MKL: Stuart, I'm not sure what Latham's software is?
+{\color{red} MKL: Stuart, I'm not sure what Latham's software is?}
+
 
 % p4: Objectives (Software & Paper).
 The \textit{enaR} package brings together ENA algorithms into one
@@ -193,7 +185,6 @@ citation('enaR')
 @
 
 
-
 %%% \subsection{enaR workflow}
 % 1. Get a model
 % 2. Input/Import model 
@@ -210,34 +201,14 @@ citation('enaR')
 %    i. sna,. ii. igraph, iii. econet
 %    any package that uses network representations
 
-\section{Data Input: General}
 
-In this section we describe the data necessary for the Ecological
-Network Analysis and show how to build the central network data object
-in \R\ that contains the model data for subsequent analysis.  To
-start, we assume you have installed the enaR package, and then loaded
-the library as follows:
+%%ENA network models
+%%1. describe models
+%%2. model construction
+%%3. mathematical description
 
-%%%%% Getting Set Up %%%%%%%%%%%
-\setkeys{Gin}{width=0.55\linewidth}
-\SweaveOpts{strip.white=true}
+\section{Model Data}
 
-<<eval=true,echo=false,results=hide>>=
-  rm(list=ls())
-par(mfrow=c(1,1))
-options(width=72)
-figset <- function() par(mar=c(4,4,1,1)+.1)
-options(SweaveHooks = list(fig = figset))
-options("prompt" = "> ", "continue" = "+  ")
-@
-
-% Show loading the library and listing the functions in the package
-<<eval=true>>=
-library(enaR)
-@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Model Data} \label{sec:data}
 ENA is applied to a network model of energy--matter exchanges among
 system components.  The system is modeled as a set of $n$ compartments
 or nodes that represent species, species-complexes (i.e., trophic
@@ -309,6 +280,32 @@ built in functionality with the functions \texttt{get.orient} and
 to return output in the Patten School row-to-column orientation
 (see Section~\ref{sec:orient} for details).
 
+In this section we describe the data necessary for the Ecological
+Network Analysis and show how to build the central network data object
+in \R\ that contains the model data for subsequent analysis.  To
+start, we assume you have installed the enaR package, and then loaded
+the library as follows:
+
+% Show loading the library and listing the functions in the package
+<<eval=true>>=
+library(enaR)
+@
+
+
+%%%%% Getting Set Up %%%%%%%%%%%
+\setkeys{Gin}{width=0.55\linewidth}
+\SweaveOpts{strip.white=true}
+
+<<eval=true,echo=false,results=hide>>=
+  rm(list=ls())
+par(mfrow=c(1,1))
+options(width=72)
+figset <- function() par(mar=c(4,4,1,1)+.1)
+options(SweaveHooks = list(fig = figset))
+options("prompt" = "> ", "continue" = "+  ")
+@
+
+
 
 % Network Data Object
 \subsection{Network Data Class}
@@ -330,10 +327,10 @@ components are:
 \end{itemize}
 
 \subsection{Building a Network Object}
-Users can assemble the necessary data elements described in
-Section~\ref{sec:data} and then use the \texttt{pack} function to create the
-network data object.  Here is an example of doing this with
-hypothetical data.
+
+Users can assemble the necessary data elements and then use the
+\texttt{pack} function to create the network data object.  Here is an
+example of doing this with hypothetical data.
 
 %% PACK A MODEL
 <<eval=true>>=
@@ -399,34 +396,217 @@ designed to help users navigate missing data issues be sure to check
 that you are providing the appropriate input for a given function. For
 more information, see the help file for the function in question.
 
-%%%%%%%%%%%%%%%%%%%%%
-\subsection{Balancing for Steady-State}
 
-Many of the ENA functions assume that the network model is at
-steady-state (node inputs equal node outputs).  Thus, this package has
-functions for (1) checking to see if the assumption is met and (2)
-automatically balancing the model so that input equal outputs.
+%%ENA analyses
+%%1. provided models
+\subsection{Model Library}
 
-To determine if the model is balanced and then balance it if necessary:
+The \textit{enaR} package includes a library of 100 empirically based
+ecosystem models. There are two general classes of ecosystem models.
+First, there are 58 of the models are trophically-based models with
+food webs at their core (Tables~\ref{tab:TRO}).  Second, there are 42
+models are focused on biogeochemical cycling in ecosystems
+(Table~\ref{tab:BGC}).  \citet{christian96}, \citet{baird08_sylt}, and
+\citet{borrett10_idd} have previously suggested this model class
+distinction.  In summary, these models were originally published for a
+number of different types of ecosystems, though predominantly aquatic,
+by a number of author teams.  Models in the library range in size from
+4 nodes to 125 nodes with connectance values ranging from 7\% to 45\%.
+
+This collection of models overlaps with other data sets.  For example,
+twenty-seven of the models (47\%) are included in the set of models
+compiled and distributed by Dr. Ulanowicz
+(\href{http://www.cbl.umces.edu/~ulan/ntwk/network.html}{http://www.cbl.umces.edu/~ulan/ntwk/network.html}).
+All 50 of the models analyzed by \citet{borrett10_hmg} and
+\citet{salas11_did} and the 45 models analyzed in \citet{borrett13}
+are included in this model library.
+
+The trophic models are grouped as the \texttt{troModels} object and
+the biogeochemically-based models are available as the
+\texttt{bgcModels} object.  Both data objects return a list of the
+model network objects.  To use these models simply use the R
+\textit{base} \texttt{data} function. This will load the models into
+the working memory as a named list of network objects:
+
 <<eval=true>>=
-## --- Check to see if the model is balanced ---#
-ssCheck(fake.model)
-
-## --- To BALANCE a model if needed --- #
-fake.model <- balance(fake.model,method="AVG2")
-
-## --- To FORCE BALANCE a model if needed --- #
-fake.model <- force.balance(fake.model)
+### Import the model sets
+data(bgcModels)
+data(troModels)
+### Check the first few model names
+head(names(bgcModels))
+head(names(troModels))
+### Isolate a single model
+x <- troModels[[1]]
+x <- troModels$"Marine Coprophagy (oyster)"
+### Check out the model
+summary(x)
 @
 
-The automated balancing routines are based on those presented in
-\citet{allesina03}.  These authors compare alternative balancing
-algorithms and further discuss the implications of using automated
-procedures.  Caution is warranted when using these techniques, as they
-indiscriminately alter the model flow rates.
+%% ------- MODEL TABLES ------------ %%
 
+% Thu May  2 13:54:17 2013
+\begin{table}[ht]
+\begin{center}
+  \caption{Trophic ecosystem networks (58) included in the
+    \textit{enaR} model library.} \label{tab:TRO}
+  \begin{tiny}
+    \begin{tabular}{llrrrrrr}
+      \hline
+      Models & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\
+      \hline
+      Marine Coprophagy (oyster) & kcal m$^{-2}$ yr$^{-1}$  &   4 & 0.25 & 379 & 549 & 0.12 & \citet{haven66} \\
+      Lake Findley  & gC m$^{-2}$ yr$^{-1}$  &   4 & 0.38 &  21 &  50 & 0.30 &  \citet{richey78} \\
+      Mirror Lake & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.36 &  72 & 217 & 0.32 &   \citet{richey78} \\
+      Lake Wingra & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.40 & 478 & 1517 & 0.40 &  \citet{richey78} \\
+      Marion Lake & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.36 &  87 & 242 & 0.31 &  \citet{richey78} \\
+      Cone Springs & kcal m$^{-2}$ yr$^{-1}$  &   5 & 0.32 & 11819 & 30626 & 0.09 &  \citet{tilly68} \\
+      Silver Springs & kcal m$^{-2}$ yr$^{-1}$  &   5 & 0.28 & 21296 & 29175 & 0.00 &  \citet{odum57} \\
+      English Channel & kcal m$^{-2}$ yr$^{-1}$  &   6 & 0.25 & 1096 & 2280 & 0.00 &  \citet{brylinsky72} \\
+      Oyster Reef  & kcal m$^{-2}$ yr$^{-1}$  &   6 & 0.33 &  41 &  83 & 0.11 &  \citet{dame81} \\
+      Baie de Somme & mgC m$^{-2}$ d$^{-1}$  &   9 & 0.30 & 876 & 2034 & 0.14 &  \citet{rybarczyk03} \\
+      Bothnian Bay & gC m$^{-2}$ yr$^{-1}$  &  12 & 0.22 &  44 & 183 & 0.23 &   \citet{sandberg00} \\
+      Bothnian Sea & gC m$^{-2}$ yr$^{-1}$  &  12 & 0.24 & 117 & 562 & 0.31 &   \citet{sandberg00} \\
+      Ythan Estuary & gC m$^{-2}$ yr$^{-1}$  &  13 & 0.23 & 1258 & 4181 & 0.24 &  \citet{baird81} \\
+      Sundarban Mangrove (virgin) & kcal m$^{-2}$ yr$^{-1}$  &  14 & 0.22 & 111317 & 440931 & 0.19 & \citet{ray08} \\
+      Sundarban Mangrove (reclaimed) & kcal m$^{-2}$ yr$^{-1}$  &  14 & 0.22 & 38484 & 103056 & 0.05 & \citet{ray08} \\
+      Baltic Sea & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.17 & 603 & 1973 & 0.13 &   \citet{baird91} \\
+      Ems Estuary & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.19 & 282 & 1067 & 0.32 &  \citet{baird91} \\
+      Swartkops Estuary  15 & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.17 & 3544 & 13996 & 0.47 &   \citet{baird91} \\
+      Southern Benguela Upwelling & mg C m$^{-2}$ d$^{-1}$  &  16 & 0.23 & 714 & 2545 & 0.31 & \citet{baird91} \\
+      Peruvian Upwelling & mg C m$^{-2}$ d$^{-1}$  &  16 & 0.22 & 14927 & 33491 & 0.04 &  \citet{baird91} \\
+      Crystal River (control) & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.19 & 7357 & 15062 & 0.07 &  \citet{ulanowicz86} \\
+      Crystal River (thermal) & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.14 & 6018 & 12032 & 0.09 &  \citet{ulanowicz86} \\
+      Charca de Maspalomas Lagoon & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.12 & 1486230 & 6010331 & 0.18 &  \citet{almunia99} \\
+      Northern Benguela Upwelling & mg C m$^{-2}$ d$^{-1}$  &  24 & 0.21 & 2282 & 6611 & 0.05 &  \citet{heymans00} \\
+      Swartkops Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.17 & 2859 & 8949 & 0.27 & \citet{scharler05} \\
+      Sunday Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.16 & 4440 & 11937 & 0.22 & \citet{scharler05} \\
+      Kromme Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.16 & 2571 & 11087 & 0.38 & \citet{scharler05} \\
+      Okefenokee Swamp & g dw m$^{-2}$ y$^{-1}$  &  26 & 0.20 & 2533 & 12855 & 0.48 & \citet{whipple93} \\
+      Neuse Estuary (early summer 1997) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.09 & 4385 & 13827 & 0.12 &  \citet{baird04} \\
+      Neuse Estuary (late summer 1997)  & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.11 & 4639 & 13035 & 0.13 &  \citet{baird04} \\
+      Neuse Estuary (early summer 1998) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.09 & 4568 & 14025 & 0.12 &  \citet{baird04} \\
+      Neuse Estuary (late summer 1998) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.10 & 5641 & 15031 & 0.11 &  \citet{baird04} \\
+      Gulf of Maine & g ww m$^{-2}$ yr$^{-1}$  &  31 & 0.35 & 5053 & 18381 & 0.15 &   \citet{link08} \\
+      Georges Bank & g ww m$^{-2}$ yr$^{-1}$  &  31 & 0.35 & 4380 & 16889 & 0.18 &  \citet{link08} \\
+      Middle Atlantic Bight & g ww m$^{-2}$ yr$^{-1}$  &  32 & 0.37 & 4869 & 17916 & 0.18 &  \citet{link08} \\
+      Narragansett Bay & mgC m$^{-2}$ yr$^{-1}$  &  32 & 0.15 & 693845 & 3917246 & 0.51 &  \citet{monaco97} \\
+      Southern New England Bight & g ww m$^{-2}$ yr$^{-1}$  &  33 & 0.35 & 4717 & 17597 & 0.16 &  \citet{link08} \\
+      Chesapeake Bay  & mg C m$^{-2}$ yr$^{-1}$  &  36 & 0.09 & 888791 & 3227453 & 0.19 &  \citet{baird89} \\
+      Mondego Estuary (\textit{Zostera} sp. Meadows) & g AFDW m$^{−2}$ yr$^{−1}$ &  43 & 0.19 & 4030 & 6822 & 0.03 & \citet{patricio2006mass} \\
+      St. Marks Seagrass, site 1 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 514 & 1315 & 0.13 &  \citet{baird98} \\
+      St. Marks Seagrass, site 1 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 601 & 1590 & 0.11 &  \citet{baird98} \\
+      St. Marks Seagrass, site 2 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.07 & 602 & 1383 & 0.09 &  \citet{baird98} \\
+      St. Marks Seagrass, site 2 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 800 & 1921 & 0.08 &  \citet{baird98} \\
+      St. Marks Seagrass, site 3 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.05 & 7809 & 12651 & 0.01 & \citet{baird98} \\
+      St. Marks Seagrass, site 4 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 1432 & 2865 & 0.04 &  \citet{baird98} \\
+      Sylt-R{\o}m{\o} Bight & mg C m$^{-2}$ d$^{-1}$  &  59 & 0.08 & 683448 & 1781028 & 0.09 &  \citet{baird04_sylt} \\
+      Graminoids (wet) & g C m$^{-2}$ yr$^{-1}$  &  66 & 0.18 & 6272 & 13676 & 0.02 &  \citet{ulanowicz00_graminoids} \\
+      Graminoids (dry) & g C m$^{-2}$ yr$^{-1}$  &  66 & 0.18 & 3472 & 7519 & 0.04 &   \citet{ulanowicz00_graminoids} \\
+      Cypress (wet) & g C m$^{-2}$ yr$^{-1}$  &  68 & 0.12 & 1418 & 2571 & 0.04 &  \citet{ulanowicz97_cypress} \\
+      Cypress (dry) & g C m$^{-2}$ yr$^{-1}$  &  68 & 0.12 & 1035 & 1919 & 0.04 &  \citet{ulanowicz97_cypress} \\
+      Lake Oneida (pre-ZM) & g C m$^{-2}$ yr$^{-1}$  &  74 & 0.22 & 1034 & 1697 & 0.00 &  \citet{miehls09_oneida} \\
+      Lake Oneida (post-ZM) & g C m$^{-2}$ yr$^{-1}$  &  76 & 0.22 & 810 & 1462 & 0.00 &  \citet{miehls09_oneida} \\
+      Bay of Quinte (pre-ZM) & g C m$^{-2}$ yr$^{-1}$  &  74 & 0.21 & 984 & 1509 & 0.00 &   \citet{miehls09_quinte} \\
+      Bay of Quinte (post-ZM) & g C m$^{-2}$ yr$^{-1}$  &  80 & 0.21 & 1129 & 2039 & 0.01 &   \citet{miehls09_quinte} \\
+      Mangroves (wet) & g C m$^{-2}$ yr$^{-1}$  &  94 & 0.15 & 1531 & 3265 & 0.10 &  \citet{ulanowicz99_mangrove} \\
+      Mangroves (dry) & g C m$^{-2}$ yr$^{-1}$  &  94 & 0.15 & 1531 & 3272 & 0.10 &  \citet{ulanowicz99_mangrove} \\
+      Florida Bay (wet) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.12 & 738 & 2720 & 0.14 &  \citet{ulanowicz98_fb} \\
+      Florida Bay (dry) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.13 & 547 & 1778 & 0.08 &  \citet{ulanowicz98_fb} \\
+      \hline
+\end{tabular}
+\end{tiny}
+\end{center}
+\begin{scriptsize}
+  $^\dagger$ $n$ is the number of nodes in the network model,
+  $C=L/n^2$ is the model connectance when $L$ is the number of direct
+  links or energy--matter transfers, $Input =sum{z_i}$ is the total
+  amount of energy--matter flowing into the system,
+  $TST=\sum\sum{f_{ij}}+\sum{z_i}$ is the total system throughflow,
+  and $FCI$ is the Finn Cycling Index \citep{finn80}. Flow based
+  network statistics ($Input$, $TST$, and $FCI$) were calculated after
+  models were balanced using the AVG2 algorithm.
+\end{scriptsize}
+\end{table}
+
+% -- BGC Table --- %
+\begin{table}[ht]
+\begin{center}
+  \caption{Biogeochemical ecosystem networks (42) included in the
+    \textit{enaR} model library.} \label{tab:BGC}
+  \begin{tiny}
+    \begin{tabular}{llrrrrrr}
+      \hline
+      Model & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\
+      \hline
+      Hubbard Brook (Waide) & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.25 &  11 & 168 & 0.76 & \citet{waide74} \\
+      Hardwood Forest, NH & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  11 & 200 & 0.80 & \citet{jordan72} \\
+      Douglas Fir Forest, WA  & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   4 &  54 & 0.74 & \citet{jordan72} \\
+      Douglas Fir Forest, WA  & kg K Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &  45 & 0.97 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  43 & 274 & 0.57 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg K Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  20 & 433 & 0.86 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Mg Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  10 &  70 & 0.58 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Cu Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   2 & 0.37 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Fe Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   7 & 0.95 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Mn Ha$^{-1}$  yr$^{-1}$ &   4 & 0.38 &   0 &   7 & 0.98 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Na Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  64 & 140 & 0.24 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Sr Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   1 & 0.71 & \citet{jordan72} \\
+      Tropical Rain Forest & g N m$^{-2}$ d$^{-1}$  &   5 & 0.24 &  10 &  71 & 0.48 & \citet{edmisten70} \\
+      Neuse River Estuary (AVG) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 795 & 41517 & 0.89 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 133 & 9120 & 0.91 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 119 & 20182 & 0.96 & \citet{christian03} \\
+      Neuse River Estuary Fall 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 181 & 8780 & 0.88 & \citet{christian03} \\
+      Neuse River Estuary Winter 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.43 & 187 & 6880 & 0.85 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 128 & 12915 & 0.94 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 165 & 11980 & 0.91 & \citet{christian03} \\
+      Neuse River Estuary (Fall 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 100 & 9863 & 0.94 & \citet{christian03} \\
+      Neuse River Estuary (Winter 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 691 & 7907 & 0.62 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 334 & 11533 & 0.84 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 &  90 & 15621 & 0.96 & \citet{christian03} \\
+      Neuse River Estuary (Fall 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 &  85 & 7325 & 0.93 & \citet{christian03} \\
+      Neuse River Estuary (Winter 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 171 & 8680 & 0.89 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 176 & 6898 & 0.85 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 132 & 16814 & 0.95 & \citet{christian03} \\
+      Neuse River Estuary (Fall 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 128 & 5732 & 0.87 & \citet{christian03} \\
+      Neuse River Estuary (Winter 1989) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 291 & 5739 & 0.75 & \citet{christian03} \\
+      Cape Fear River Estuary (Oligohaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3802 & 7088 & 0.20 & \citet{hines12} \\
+      Cape Fear River Estuary (Polyhaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3068 & 5322 & 0.17 & \citet{hines2015} \\
+      Lake Lanier (AVG) & mg P m$^{-2}$ day$^{-1}$ &  11 & 0.21 &  95 & 749 & 0.40 & \citet{borrett07_lanier} \\
+      Baltic Sea & mg N m$^{-3}$ day$^{-1}$  &  16 & 0.15 & 2348 & 44510 & 0.67 & \citet{hinrichsen98_baltic} \\
+      Chesapeake Bay & mg N m$^{-2}$ yr$^{-1}$  &  36 & 0.12 & 73430 & 484325 & 0.33 & \citet{baird95} \\
+      Chesapeake Bay & mg P m$^{-2}$ yr$^{-1}$ &  36 & 0.12 & 9402 & 101091 & 0.51 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Winter) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.08 & 1009 & 11926 & 0.53 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Spring) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.10 & 1932 & 27325 & 0.57 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Summer) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.12 & 4184 & 42935 & 0.46 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Fall) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.10 & 2276 & 18904 & 0.40 & \citet{ulanowicz99} \\
+      Sylt-R{\o}m{\o} Bight & mg N m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 99613 & 363693 & 0.23 & \citet{baird08_sylt} \\
+      Sylt-R{\o}m{\o} Bight & mg P m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 2508 & 57739 & 0.66 & \citet{baird08_sylt} \\
+      \hline
+    \end{tabular}
+  \end{tiny}
+\end{center}
+\begin{scriptsize}
+  $^\dagger$ $n$ is the number of nodes in the network model,
+  $C=L/n^2$ is the model connectance when $L$ is the number of direct
+  links or energy--matter transfers, $Input =sum{z_i}$ is the total
+  amount of energy--matter flowing into the system,
+  $TST=\sum\sum{f_{ij}}+\sum{z_i}$ is the total system throughflow,
+  and $FCI$ is the Finn Cycling Index \citep{finn80}. Flow based
+  network statistics ($Input$, $TST$, and $FCI$) were calculated after
+  models were balanced using the AVG2 algorithm.
+\end{scriptsize}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%2. visualization
+
+
+%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%
-\section{Data Input: Reading Common Data File Formats}
+%%3. model input
+
+\subsection{Data Input: Reading Common Data File Formats}
 Several software packages exist in the literature for running ENA.  For
 convenience, we have written functions to read in a few of the more
 common data formats used by these software.
@@ -537,75 +717,10 @@ m <- read.nea("oyster.csv")
 # of the information in the "oyster" data object.
 @
 
-\section{Network Visualization}
-
-The \textit{enaR} package uses the \textit{network} package plot tools. Here is
-one example of how to plot a network model. The figure scaling may
-need to be adjusted depending on computer and devices. Also note that
-the graph only shows internal system flows.
-
-Figure~\ref{fig:oyster} (left) is a very simple example of to plot a
-graph of the oyster reef model accomplished with default settings.
-
-\SweaveOpts{width=3,height=3}
-<<a,eval=true>>=
-data(oyster)  # load data
-m <- oyster
-set.seed(2)    # set random seed to control plot
-plot(m)       # plot network data object (uses plot.network)
-@
-
-We can use the excellent graphics capabilities of \R\ to make fancier
-plot of the same data (Fig.~\ref{fig:oyster}(right)).
-
-\SweaveOpts{width=3,height=3}
-<<b,eval=true>>=
-# set colors to use
-my.col=c("red","yellow",
-  rgb(204,204,153,maxColorValue=255),
-  "grey22")
-F=as.matrix(m,attrname="flow")                   # extract flow information for later use.
-f=which(F!=0, arr.ind=T)       # get indices of positive flows
-opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
-set.seed(2)                    # each time the plot is called, the
-                               # layout orientation changes.  setting
-                               # the seed ensures a consistent
-                               # orientation each time the plot
-                               # function is called.
-plot(m,
-     vertex.cex=log(m%v%'storage'), # scale nodes with storage
-     label= m%v%'vertex.names',     # add node labels
-     boxed.labels=FALSE,
-     label.cex=0.65,
-     vertex.sides=45,   # to make rounded
-     edge.lwd=log10(abs(F[f])),     # scale arrows to flow magnitude
-     edge.col=my.col[3],
-     vertex.col=my.col[1],
-     label.col="white",
-     vertex.border = my.col[3],
-     vertex.lty = 1,
-     xlim=c(-4,1),ylim=c(-2,-2))
-rm(opar)             # remove changes to the plotting parameters
-@
-
-
-\begin{figure}
-  \center
-  \begin{tabular}{cc}
-<<fig=true,echo=false>>=
-<<a>>
-@ \\
-<<fig=true,echo=false>>=
-<<b>>
-@ \\
-  \end{tabular}
-  \caption{Simple (left) and fancy (right) plot of the Oyster network
-    model (Dame and Patten 1981).} \label{fig:oyster}
-\end{figure}
-
 
 
 %%%%%%%%
+%%4+. analyses
 
 \section{Analyzing Ecosystem Models}
 
@@ -652,6 +767,32 @@ Again, in this package results are reported in the row-to-column
 orientation by default -- including the algorithms from the Patten
 school.  Please see Section~\ref{sec:orient} for how to change this
 default if needed.
+
+\subsection{Balancing for Steady-State}
+
+Many of the ENA functions assume that the network model is at
+steady-state (node inputs equal node outputs).  Thus, this package has
+functions for (1) checking to see if the assumption is met and (2)
+automatically balancing the model so that input equal outputs.
+
+To determine if the model is balanced and then balance it if necessary:
+<<eval=true>>=
+## --- Check to see if the model is balanced ---#
+ssCheck(fake.model)
+
+## --- To BALANCE a model if needed --- #
+fake.model <- balance(fake.model,method="AVG2")
+
+## --- To FORCE BALANCE a model if needed --- #
+fake.model <- force.balance(fake.model)
+@
+
+The automated balancing routines are based on those presented in
+\citet{allesina03}.  These authors compare alternative balancing
+algorithms and further discuss the implications of using automated
+procedures.  Caution is warranted when using these techniques, as they
+indiscriminately alter the model flow rates.
+
 
 \subsection{Structural Network Analysis}
 Structural network analysis is common to many types of network
@@ -1061,8 +1202,6 @@ mti$M  # shows the total impact matrix
 
 
 
-%%%For Pawan to insert enaCycle and enaTroAgg %%%%%%%%%%%%%%%%%%%%%%
-
 \subsection{Cycle Analysis}
 The Cycle Analysis provides the detailed account of the cycling
 present in the network. It follows the algorithm by the DOS-based
@@ -1116,7 +1255,6 @@ names(cyc$Table.nexus)
 \end{small}
 \end{table*}
 
-%%%%%%%%%%enaTroAgg %%%%%%%%%%%%%%%%%%%%%%%%%%%%%~Pawan
 
 \subsection{Trophic Aggregations}
 The Trophic Aggregation algorithm identifies the trophic structure
@@ -1138,6 +1276,10 @@ this analysis and referred to as the detrital pool.
 
 Table~\ref{tab:trophic} summarizes the function output except the outputs
 for the feeding cycles which are similar to the enaCycle outputs.
+
+<<eval=true,echo=false,results=hide>>=
+m <- oyster
+@ 
 
 <<eval=true>>=
 trop <- enaTroAgg(m)
@@ -1245,6 +1387,7 @@ rm(opar)  # remove the plotting parameters
   Centralities.} \label{fig:aec}
 \end{figure}
 
+
 \subsection{Output Orientation}  \label{sec:orient}
 
 To facilitate package use by the existing ENA community, some of which
@@ -1279,206 +1422,8 @@ set.orient('rc')
 
 @
 
+%%n. batch processing
 
-\section{Model Library}
-
-The \textit{enaR} package includes a library of 100 empirically based
-ecosystem models. There are two general classes of ecosystem models.
-First, there are 58 of the models are trophically-based models with
-food webs at their core (Tables~\ref{tab:TRO}).  Second, there are 42
-models are focused on biogeochemical cycling in ecosystems
-(Table~\ref{tab:BGC}).  \citet{christian96}, \citet{baird08_sylt}, and
-\citet{borrett10_idd} have previously suggested this model class
-distinction.  In summary, these models were originally published for a
-number of different types of ecosystems, though predominantly aquatic,
-by a number of author teams.  Models in the library range in size from
-4 nodes to 125 nodes with connectance values ranging from 7\% to 45\%.
-
-This collection of models overlaps with other data sets.  For example,
-twenty-seven of the models (47\%) are included in the set of models
-compiled and distributed by Dr. Ulanowicz
-(\href{http://www.cbl.umces.edu/~ulan/ntwk/network.html}{http://www.cbl.umces.edu/~ulan/ntwk/network.html}).
-All 50 of the models analyzed by \citet{borrett10_hmg} and
-\citet{salas11_did} and the 45 models analyzed in \citet{borrett13}
-are included in this model library.
-
-The trophic models are grouped as the \texttt{troModels} object and
-the biogeochemically-based models are available as the
-\texttt{bgcModels} object.  Both data objects return a list of the
-model network objects.  To use these models simply use the R
-\textit{base} \texttt{data} function. This will load the models into
-the working memory as a named list of network objects:
-
-<<eval=true>>=
-### Import the model sets
-data(bgcModels)
-data(troModels)
-### Check the first few model names
-head(names(bgcModels))
-head(names(troModels))
-### Isolate a single model
-x <- troModels[[1]]
-x <- troModels$"Marine Coprophagy (oyster)"
-### Check out the model
-summary(x)
-@
-
-%% ------- MODEL TABLES ------------ %%
-
-% Thu May  2 13:54:17 2013
-\begin{table}[ht]
-\begin{center}
-  \caption{Trophic ecosystem networks (58) included in the
-    \textit{enaR} model library.} \label{tab:TRO}
-  \begin{tiny}
-    \begin{tabular}{llrrrrrr}
-      \hline
-      Models & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\
-      \hline
-      Marine Coprophagy (oyster) & kcal m$^{-2}$ yr$^{-1}$  &   4 & 0.25 & 379 & 549 & 0.12 & \citet{haven66} \\
-      Lake Findley  & gC m$^{-2}$ yr$^{-1}$  &   4 & 0.38 &  21 &  50 & 0.30 &  \citet{richey78} \\
-      Mirror Lake & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.36 &  72 & 217 & 0.32 &   \citet{richey78} \\
-      Lake Wingra & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.40 & 478 & 1517 & 0.40 &  \citet{richey78} \\
-      Marion Lake & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.36 &  87 & 242 & 0.31 &  \citet{richey78} \\
-      Cone Springs & kcal m$^{-2}$ yr$^{-1}$  &   5 & 0.32 & 11819 & 30626 & 0.09 &  \citet{tilly68} \\
-      Silver Springs & kcal m$^{-2}$ yr$^{-1}$  &   5 & 0.28 & 21296 & 29175 & 0.00 &  \citet{odum57} \\
-      English Channel & kcal m$^{-2}$ yr$^{-1}$  &   6 & 0.25 & 1096 & 2280 & 0.00 &  \citet{brylinsky72} \\
-      Oyster Reef  & kcal m$^{-2}$ yr$^{-1}$  &   6 & 0.33 &  41 &  83 & 0.11 &  \citet{dame81} \\
-      Baie de Somme & mgC m$^{-2}$ d$^{-1}$  &   9 & 0.30 & 876 & 2034 & 0.14 &  \citet{rybarczyk03} \\
-      Bothnian Bay & gC m$^{-2}$ yr$^{-1}$  &  12 & 0.22 &  44 & 183 & 0.23 &   \citet{sandberg00} \\
-      Bothnian Sea & gC m$^{-2}$ yr$^{-1}$  &  12 & 0.24 & 117 & 562 & 0.31 &   \citet{sandberg00} \\
-      Ythan Estuary & gC m$^{-2}$ yr$^{-1}$  &  13 & 0.23 & 1258 & 4181 & 0.24 &  \citet{baird81} \\
-      Sundarban Mangrove (virgin) & kcal m$^{-2}$ yr$^{-1}$  &  14 & 0.22 & 111317 & 440931 & 0.19 & \citet{ray08} \\
-      Sundarban Mangrove (reclaimed) & kcal m$^{-2}$ yr$^{-1}$  &  14 & 0.22 & 38484 & 103056 & 0.05 & \citet{ray08} \\
-      Baltic Sea & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.17 & 603 & 1973 & 0.13 &   \citet{baird91} \\
-      Ems Estuary & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.19 & 282 & 1067 & 0.32 &  \citet{baird91} \\
-      Swartkops Estuary  15 & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.17 & 3544 & 13996 & 0.47 &   \citet{baird91} \\
-      Southern Benguela Upwelling & mg C m$^{-2}$ d$^{-1}$  &  16 & 0.23 & 714 & 2545 & 0.31 & \citet{baird91} \\
-      Peruvian Upwelling & mg C m$^{-2}$ d$^{-1}$  &  16 & 0.22 & 14927 & 33491 & 0.04 &  \citet{baird91} \\
-      Crystal River (control) & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.19 & 7357 & 15062 & 0.07 &  \citet{ulanowicz86} \\
-      Crystal River (thermal) & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.14 & 6018 & 12032 & 0.09 &  \citet{ulanowicz86} \\
-      Charca de Maspalomas Lagoon & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.12 & 1486230 & 6010331 & 0.18 &  \citet{almunia99} \\
-      Northern Benguela Upwelling & mg C m$^{-2}$ d$^{-1}$  &  24 & 0.21 & 2282 & 6611 & 0.05 &  \citet{heymans00} \\
-      Swartkops Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.17 & 2859 & 8949 & 0.27 & \citet{scharler05} \\
-      Sunday Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.16 & 4440 & 11937 & 0.22 & \citet{scharler05} \\
-      Kromme Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.16 & 2571 & 11087 & 0.38 & \citet{scharler05} \\
-      Okefenokee Swamp & g dw m$^{-2}$ y$^{-1}$  &  26 & 0.20 & 2533 & 12855 & 0.48 & \citet{whipple93} \\
-      Neuse Estuary (early summer 1997) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.09 & 4385 & 13827 & 0.12 &  \citet{baird04} \\
-      Neuse Estuary (late summer 1997)  & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.11 & 4639 & 13035 & 0.13 &  \citet{baird04} \\
-      Neuse Estuary (early summer 1998) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.09 & 4568 & 14025 & 0.12 &  \citet{baird04} \\
-      Neuse Estuary (late summer 1998) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.10 & 5641 & 15031 & 0.11 &  \citet{baird04} \\
-      Gulf of Maine & g ww m$^{-2}$ yr$^{-1}$  &  31 & 0.35 & 5053 & 18381 & 0.15 &   \citet{link08} \\
-      Georges Bank & g ww m$^{-2}$ yr$^{-1}$  &  31 & 0.35 & 4380 & 16889 & 0.18 &  \citet{link08} \\
-      Middle Atlantic Bight & g ww m$^{-2}$ yr$^{-1}$  &  32 & 0.37 & 4869 & 17916 & 0.18 &  \citet{link08} \\
-      Narragansett Bay & mgC m$^{-2}$ yr$^{-1}$  &  32 & 0.15 & 693845 & 3917246 & 0.51 &  \citet{monaco97} \\
-      Southern New England Bight & g ww m$^{-2}$ yr$^{-1}$  &  33 & 0.35 & 4717 & 17597 & 0.16 &  \citet{link08} \\
-      Chesapeake Bay  & mg C m$^{-2}$ yr$^{-1}$  &  36 & 0.09 & 888791 & 3227453 & 0.19 &  \citet{baird89} \\
-      Mondego Estuary (\textit{Zostera} sp. Meadows) & g AFDW m$^{−2}$ yr$^{−1}$ &  43 & 0.19 & 4030 & 6822 & 0.03 & \citet{patricio2006mass} \\
-      St. Marks Seagrass, site 1 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 514 & 1315 & 0.13 &  \citet{baird98} \\
-      St. Marks Seagrass, site 1 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 601 & 1590 & 0.11 &  \citet{baird98} \\
-      St. Marks Seagrass, site 2 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.07 & 602 & 1383 & 0.09 &  \citet{baird98} \\
-      St. Marks Seagrass, site 2 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 800 & 1921 & 0.08 &  \citet{baird98} \\
-      St. Marks Seagrass, site 3 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.05 & 7809 & 12651 & 0.01 & \citet{baird98} \\
-      St. Marks Seagrass, site 4 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 1432 & 2865 & 0.04 &  \citet{baird98} \\
-      Sylt-R{\o}m{\o} Bight & mg C m$^{-2}$ d$^{-1}$  &  59 & 0.08 & 683448 & 1781028 & 0.09 &  \citet{baird04_sylt} \\
-      Graminoids (wet) & g C m$^{-2}$ yr$^{-1}$  &  66 & 0.18 & 6272 & 13676 & 0.02 &  \citet{ulanowicz00_graminoids} \\
-      Graminoids (dry) & g C m$^{-2}$ yr$^{-1}$  &  66 & 0.18 & 3472 & 7519 & 0.04 &   \citet{ulanowicz00_graminoids} \\
-      Cypress (wet) & g C m$^{-2}$ yr$^{-1}$  &  68 & 0.12 & 1418 & 2571 & 0.04 &  \citet{ulanowicz97_cypress} \\
-      Cypress (dry) & g C m$^{-2}$ yr$^{-1}$  &  68 & 0.12 & 1035 & 1919 & 0.04 &  \citet{ulanowicz97_cypress} \\
-      Lake Oneida (pre-ZM) & g C m$^{-2}$ yr$^{-1}$  &  74 & 0.22 & 1034 & 1697 & 0.00 &  \citet{miehls09_oneida} \\
-      Lake Oneida (post-ZM) & g C m$^{-2}$ yr$^{-1}$  &  76 & 0.22 & 810 & 1462 & 0.00 &  \citet{miehls09_oneida} \\
-      Bay of Quinte (pre-ZM) & g C m$^{-2}$ yr$^{-1}$  &  74 & 0.21 & 984 & 1509 & 0.00 &   \citet{miehls09_quinte} \\
-      Bay of Quinte (post-ZM) & g C m$^{-2}$ yr$^{-1}$  &  80 & 0.21 & 1129 & 2039 & 0.01 &   \citet{miehls09_quinte} \\
-      Mangroves (wet) & g C m$^{-2}$ yr$^{-1}$  &  94 & 0.15 & 1531 & 3265 & 0.10 &  \citet{ulanowicz99_mangrove} \\
-      Mangroves (dry) & g C m$^{-2}$ yr$^{-1}$  &  94 & 0.15 & 1531 & 3272 & 0.10 &  \citet{ulanowicz99_mangrove} \\
-      Florida Bay (wet) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.12 & 738 & 2720 & 0.14 &  \citet{ulanowicz98_fb} \\
-      Florida Bay (dry) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.13 & 547 & 1778 & 0.08 &  \citet{ulanowicz98_fb} \\
-      \hline
-\end{tabular}
-\end{tiny}
-\end{center}
-\begin{scriptsize}
-  $^\dagger$ $n$ is the number of nodes in the network model,
-  $C=L/n^2$ is the model connectance when $L$ is the number of direct
-  links or energy--matter transfers, $Input =sum{z_i}$ is the total
-  amount of energy--matter flowing into the system,
-  $TST=\sum\sum{f_{ij}}+\sum{z_i}$ is the total system throughflow,
-  and $FCI$ is the Finn Cycling Index \citep{finn80}. Flow based
-  network statistics ($Input$, $TST$, and $FCI$) were calculated after
-  models were balanced using the AVG2 algorithm.
-\end{scriptsize}
-\end{table}
-
-% -- BGC Table --- %
-\begin{table}[ht]
-\begin{center}
-  \caption{Biogeochemical ecosystem networks (42) included in the
-    \textit{enaR} model library.} \label{tab:BGC}
-  \begin{tiny}
-    \begin{tabular}{llrrrrrr}
-      \hline
-      Model & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\
-      \hline
-      Hubbard Brook (Waide) & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.25 &  11 & 168 & 0.76 & \citet{waide74} \\
-      Hardwood Forest, NH & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  11 & 200 & 0.80 & \citet{jordan72} \\
-      Douglas Fir Forest, WA  & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   4 &  54 & 0.74 & \citet{jordan72} \\
-      Douglas Fir Forest, WA  & kg K Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &  45 & 0.97 & \citet{jordan72} \\
-      Puerto Rican Rain Forest & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  43 & 274 & 0.57 & \citet{jordan72} \\
-      Puerto Rican Rain Forest & kg K Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  20 & 433 & 0.86 & \citet{jordan72} \\
-      Puerto Rican Rain Forest & kg Mg Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  10 &  70 & 0.58 & \citet{jordan72} \\
-      Puerto Rican Rain Forest & kg Cu Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   2 & 0.37 & \citet{jordan72} \\
-      Puerto Rican Rain Forest & kg Fe Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   7 & 0.95 & \citet{jordan72} \\
-      Puerto Rican Rain Forest & kg Mn Ha$^{-1}$  yr$^{-1}$ &   4 & 0.38 &   0 &   7 & 0.98 & \citet{jordan72} \\
-      Puerto Rican Rain Forest & kg Na Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  64 & 140 & 0.24 & \citet{jordan72} \\
-      Puerto Rican Rain Forest & kg Sr Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   1 & 0.71 & \citet{jordan72} \\
-      Tropical Rain Forest & g N m$^{-2}$ d$^{-1}$  &   5 & 0.24 &  10 &  71 & 0.48 & \citet{edmisten70} \\
-      Neuse River Estuary (AVG) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 795 & 41517 & 0.89 & \citet{christian03} \\
-      Neuse River Estuary (Spring 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 133 & 9120 & 0.91 & \citet{christian03} \\
-      Neuse River Estuary (Summer 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 119 & 20182 & 0.96 & \citet{christian03} \\
-      Neuse River Estuary Fall 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 181 & 8780 & 0.88 & \citet{christian03} \\
-      Neuse River Estuary Winter 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.43 & 187 & 6880 & 0.85 & \citet{christian03} \\
-      Neuse River Estuary (Spring 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 128 & 12915 & 0.94 & \citet{christian03} \\
-      Neuse River Estuary (Summer 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 165 & 11980 & 0.91 & \citet{christian03} \\
-      Neuse River Estuary (Fall 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 100 & 9863 & 0.94 & \citet{christian03} \\
-      Neuse River Estuary (Winter 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 691 & 7907 & 0.62 & \citet{christian03} \\
-      Neuse River Estuary (Spring 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 334 & 11533 & 0.84 & \citet{christian03} \\
-      Neuse River Estuary (Summer 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 &  90 & 15621 & 0.96 & \citet{christian03} \\
-      Neuse River Estuary (Fall 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 &  85 & 7325 & 0.93 & \citet{christian03} \\
-      Neuse River Estuary (Winter 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 171 & 8680 & 0.89 & \citet{christian03} \\
-      Neuse River Estuary (Spring 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 176 & 6898 & 0.85 & \citet{christian03} \\
-      Neuse River Estuary (Summer 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 132 & 16814 & 0.95 & \citet{christian03} \\
-      Neuse River Estuary (Fall 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 128 & 5732 & 0.87 & \citet{christian03} \\
-      Neuse River Estuary (Winter 1989) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 291 & 5739 & 0.75 & \citet{christian03} \\
-      Cape Fear River Estuary (Oligohaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3802 & 7088 & 0.20 & \citet{hines12} \\
-      Cape Fear River Estuary (Polyhaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3068 & 5322 & 0.17 & \citet{hines2015} \\
-      Lake Lanier (AVG) & mg P m$^{-2}$ day$^{-1}$ &  11 & 0.21 &  95 & 749 & 0.40 & \citet{borrett07_lanier} \\
-      Baltic Sea & mg N m$^{-3}$ day$^{-1}$  &  16 & 0.15 & 2348 & 44510 & 0.67 & \citet{hinrichsen98_baltic} \\
-      Chesapeake Bay & mg N m$^{-2}$ yr$^{-1}$  &  36 & 0.12 & 73430 & 484325 & 0.33 & \citet{baird95} \\
-      Chesapeake Bay & mg P m$^{-2}$ yr$^{-1}$ &  36 & 0.12 & 9402 & 101091 & 0.51 & \citet{ulanowicz99} \\
-      Chesapeake Bay (Winter) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.08 & 1009 & 11926 & 0.53 & \citet{ulanowicz99} \\
-      Chesapeake Bay (Spring) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.10 & 1932 & 27325 & 0.57 & \citet{ulanowicz99} \\
-      Chesapeake Bay (Summer) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.12 & 4184 & 42935 & 0.46 & \citet{ulanowicz99} \\
-      Chesapeake Bay (Fall) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.10 & 2276 & 18904 & 0.40 & \citet{ulanowicz99} \\
-      Sylt-R{\o}m{\o} Bight & mg N m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 99613 & 363693 & 0.23 & \citet{baird08_sylt} \\
-      Sylt-R{\o}m{\o} Bight & mg P m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 2508 & 57739 & 0.66 & \citet{baird08_sylt} \\
-      \hline
-    \end{tabular}
-  \end{tiny}
-\end{center}
-\begin{scriptsize}
-  $^\dagger$ $n$ is the number of nodes in the network model,
-  $C=L/n^2$ is the model connectance when $L$ is the number of direct
-  links or energy--matter transfers, $Input =sum{z_i}$ is the total
-  amount of energy--matter flowing into the system,
-  $TST=\sum\sum{f_{ij}}+\sum{z_i}$ is the total system throughflow,
-  and $FCI$ is the Finn Cycling Index \citep{finn80}. Flow based
-  network statistics ($Input$, $TST$, and $FCI$) were calculated after
-  models were balanced using the AVG2 algorithm.
-\end{scriptsize}
-\end{table}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Multi-Model Analyses (Batch Processing)}
 
 While many investigators analyze single models, much of ENA is used to
@@ -1603,6 +1548,11 @@ rm(opar)  # remove the plotting parameters
 \end{figure}
 
 
+%%Conclusion
+%%1.Connecting to other packages
+%%2.Future directions
+%%3.Contributing
+
 \section{Connecting to Other Useful Packages}
 Another advantage of building the \textit{enaR} package in \R\ is that
 it lets ecologists take advantage of other types of network analysis
@@ -1723,26 +1673,36 @@ edge.connectivity(g)
 detach(package:igraph)  # detach igraph package
 @
 
-
-
 There are other \R\ packages that have graph and network analysis tools,
 like Bioconductor, that might also be useful for ecologists
 
+\subsection{EcoNet}
 
-\section{Summary and Future}
+{\Color{red} MKL: still need to add details}
+\begin{enumerate}
+\item Package description
+\item Basic model structure
+\item Using the write.EcoNet function
+\end{enumerate}
+
+
+\section{Conclusion}
+
+{\Color{red} MKL: Needs revision}
+
 This vignette shows how to use several of the key features of the
 \textit{enaR} package that enables scientists to perform Ecological
 Network Analysis in \R.  The vision for this package is that it will
 provide access to ENA algorithms from both the Ulanowicz and Patten
 Schools.  In its current form it replicates, updates, and extends the
-functionality of the NEA.m function \citep{fath06}.  It also includes
-both ascendency calculations and mixed trophic impacts from the
-Ulanowicz school of ENA, but there remains many possibilities for
-future development.  We hope to do this in collaboration with
-users. This vignette also illustrates how users can further analyze
-their data with other \R\ packages for graph and network analysis like
-\textit{sna} and \textit{iGraph}.  In summary, we hope you find this
-package useful for your ENA needs.
+functionality of the NEA.m function \citep{fath06}.  This vignette
+also illustrates how users can further analyze their data with other
+\R\ packages for graph and network analysis like \textit{sna} and
+\textit{iGraph}.  It also includes both ascendency calculations and
+mixed trophic impacts from the Ulanowicz school of ENA, but there
+remains many possibilities for future development.  We hope to do this
+in collaboration with users. In summary, we hope you find this package
+useful for your ENA needs.
 
 
 \bibliography{jss_abb,jss}
