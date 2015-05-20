@@ -352,9 +352,9 @@ example of doing this with hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   balanced = FALSE 
-  total edges= 8 
+  total edges= 10 
     missing edges= 0 
-    non-missing edges= 8 
+    non-missing edges= 10 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -398,7 +398,7 @@ example, we can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 0.8343118 0.6627736 3.6645319 2.3732521
+[1] 0.6903998 1.6615003 1.0432882 3.6066942
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -418,11 +418,11 @@ object as
 > as.matrix(fake.model,attrname="flow")
 \end{Sinput}
 \begin{Soutput}
-         node1    node2    node3    node4
-node1 2.654103 5.558082 0.000000 0.000000
-node2 4.519536 6.878857 5.464219 4.866092
-node3 0.000000 2.430791 0.000000 0.000000
-node4 0.000000 0.000000 5.931812 0.000000
+          node1 node2     node3    node4
+node1 3.5391833     0 7.5208512 6.055529
+node2 0.7291512     0 0.0000000 3.591885
+node3 3.7602849     0 0.5061422 1.120817
+node4 5.0139658     0 4.7199834 0.000000
 \end{Soutput}
 \end{Schunk}
 
@@ -437,20 +437,20 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-         node1    node2    node3    node4
-node1 2.654103 5.558082 0.000000 0.000000
-node2 4.519536 6.878857 5.464219 4.866092
-node3 0.000000 2.430791 0.000000 0.000000
-node4 0.000000 0.000000 5.931812 0.000000
+          node1 node2     node3    node4
+node1 3.5391833     0 7.5208512 6.055529
+node2 0.7291512     0 0.0000000 3.591885
+node3 3.7602849     0 0.5061422 1.120817
+node4 5.0139658     0 4.7199834 0.000000
 
 $z
-[1] 0.8343118 0.6627736 3.6645319 2.3732521
+[1] 0.6903998 1.6615003 1.0432882 3.6066942
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 0.8343118 0.6627736 3.6645319 2.3732521
+[1] 0.6903998 1.6615003 1.0432882 3.6066942
 
 $y
 [1] NA NA NA NA
@@ -769,10 +769,62 @@ BENTHIC FECES & BACTERIA                        0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%2. visualization
+\subsection{Network Visualization}
+
+The \textit{enaR} package uses the \textit{network} package plot
+ tools. Here is
+one example of how to plot a network model. The figure scaling may
+need to be adjusted depending on computer and devices. Also note that
+the graph only shows internal system flows.
+
+Figure~\ref{fig:oyster} (left) is a very simple example of to plot a
+graph of the oyster reef model accomplished with default settings.
 
 
-%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%
+\begin{Schunk}
+\begin{Sinput}
+> data(oyster)  # load data
+> m <- oyster
+> set.seed(2)    # set random seed to control plot
+> plot(m)       # plot network data object (uses plot.network)
+\end{Sinput}
+\end{Schunk}
+
+We can use the excellent graphics capabilities of \R\ to make fancier
+plot of the same data (Fig.~\ref{fig:oyster}(right)).
+
+
+
+\begin{Schunk}
+\begin{Sinput}
+> # set colors to use
+> my.col <- c('red','yellow',rgb(204,204,153,maxColorValue=255),'grey22')
+> F <- as.matrix(m,attrname='flow')                   # extract flow information for later use.
+> f <- which(F!=0, arr.ind=T)       # get indices of positive flows
+> opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
+> set.seed(2)                    # each time the plot is called, the
+>                                # layout orientation changes.  setting
+>                                # the seed ensures a consistent
+>                                # orientation each time the plot
+>                                # function is called.
+> plot(m,
++       vertex.cex=log(m%v%'storage'), # scale nodes with storage
++       label= m%v%'vertex.names',     # add node labels
++       boxed.labels=FALSE,
++       label.cex=0.65,
++       vertex.sides=45,   # to make rounded
++       edge.lwd=log10(abs(F[f])),     # scale arrows to flow magnitude
++       edge.col=my.col[3],
++       vertex.col=my.col[1],
++       label.col='white',
++       vertex.border = my.col[3],
++       vertex.lty = 1,
++       xlim=c(-4,1),ylim=c(-2,-2))
+> rm(opar)             # remove changes to the plotting parameters
+\end{Sinput}
+\end{Schunk}
+
+
 %%3. model input
 
 \subsection{Data Input: Reading Common Data File Formats}
@@ -1970,7 +2022,7 @@ Centralities.
 
 \begin{figure}
   \center
-\includegraphics{enaR-vignette-038}
+\includegraphics{enaR-vignette-040}
 \caption{Bar plot of the Oyster Reef model Average Environ
   Centralities.} \label{fig:aec}
 \end{figure}
@@ -2312,7 +2364,7 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 
 \begin{figure}
   \center
-\includegraphics{enaR-vignette-047}
+\includegraphics{enaR-vignette-049}
 \caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
   (left) and relationship between the Finn Cycling Index and the ratio
   of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:aec}
@@ -2427,7 +2479,7 @@ well. For example, it will create a target diagram of centralities.
 [35] "Suspended Particulate Carbon"  "Sediment Partculate Carbon"   
 \end{Soutput}
 \end{Schunk}
-\includegraphics{enaR-vignette-050}
+\includegraphics{enaR-vignette-052}
 \caption{Target plot of node betweenness centrality for the Chesapeake
   Bay model (mesohaline, carbon, annual).} \label{fig:target}
 \end{figure}
@@ -2481,7 +2533,7 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 
 \begin{figure}
 \center
-\includegraphics{enaR-vignette-053}
+\includegraphics{enaR-vignette-055}
 \caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
 \end{figure}
 

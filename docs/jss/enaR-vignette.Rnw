@@ -600,10 +600,58 @@ summary(x)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%2. visualization
+\subsection{Network Visualization}
+
+The \textit{enaR} package uses the \textit{network} package plot
+ tools. Here is
+one example of how to plot a network model. The figure scaling may
+need to be adjusted depending on computer and devices. Also note that
+the graph only shows internal system flows.
+
+Figure~\ref{fig:oyster} (left) is a very simple example of to plot a
+graph of the oyster reef model accomplished with default settings.
+
+\SweaveOpts{width=3,height=3}
+<<a,eval=true>>=
+data(oyster)  # load data
+m <- oyster
+set.seed(2)    # set random seed to control plot
+plot(m)       # plot network data object (uses plot.network)
+@
+
+We can use the excellent graphics capabilities of \R\ to make fancier
+plot of the same data (Fig.~\ref{fig:oyster}(right)).
+
+\SweaveOpts{width=3,height=3}
+
+<<b,eval=true>>=
+# set colors to use
+my.col <- c('red','yellow',rgb(204,204,153,maxColorValue=255),'grey22')
+F <- as.matrix(m,attrname='flow')                   # extract flow information for later use.
+f <- which(F!=0, arr.ind=T)       # get indices of positive flows
+opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
+set.seed(2)                    # each time the plot is called, the
+                               # layout orientation changes.  setting
+                               # the seed ensures a consistent
+                               # orientation each time the plot
+                               # function is called.
+plot(m,
+     vertex.cex=log(m%v%'storage'), # scale nodes with storage
+     label= m%v%'vertex.names',     # add node labels
+     boxed.labels=FALSE,
+     label.cex=0.65,
+     vertex.sides=45,   # to make rounded
+     edge.lwd=log10(abs(F[f])),     # scale arrows to flow magnitude
+     edge.col=my.col[3],
+     vertex.col=my.col[1],
+     label.col='white',
+     vertex.border = my.col[3],
+     vertex.lty = 1,
+     xlim=c(-4,1),ylim=c(-2,-2))
+rm(opar)             # remove changes to the plotting parameters
+@
 
 
-%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%
 %%3. model input
 
 \subsection{Data Input: Reading Common Data File Formats}
