@@ -3,7 +3,6 @@
 %%% Add Pawan as co-author
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% declarations for jss.cls %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,7 +100,7 @@
 Network models have provided an in-road to complex systems, and
 although the network approach has deep roots (get old cite from
 Mutualistic Networks Book), its use has been expanding rapidly in a
-variety of disciplines \citep{borrett14_rise, ings09}.  This is due in
+variety of disciplines \citep{borrett14_rise, ings2009}.  This is due in
 part to the flexibility of the core representation, its utility in
 answering relational questions, and its applicability to ``Big Data''
 problems.
@@ -117,22 +116,42 @@ approach the models, typically ecosystem models, are comprised of
 transfers of thermodynamically conserved energy or matter exchanges
 between species, groups of species, or non-living components (e.g.,
 dead organic matter) of the ecosystem, and the weighted, directed
-edges are the quantified transfers of energy or matter. The main
-theory the comprises the ENA algorithms have been developed along two
-lineages or ``schools'' that have originated from managerial network
-sciences (Patten cite) and the physics based dynamical systems theory
-(Ulanowicz cite). The analysis has been used in a variety of ways,
-including to show the relative importance of indirect effects in
-ecosystems \citep{patten83, higashi89, salas11_did} and their capacity
-to effectively transform the relations among organisms
-\citep{ulanowicz90, patten91, fath98, bondavalli99}.  From these
-applications a new theoretical understanding of ecosystems has emerged
-\citep{higashi91, belgrano05, jorgensen07_newecology}.  Recently,
-scientists have been applying these methods to understand trophic
-dynamics in the Sylt-R{\o}m{\o} Bight
-\citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in estuaries
-\cite{christian03, hines12}, and urban sustainability \citep{zhang10,
-chen12}.
+edges are the quantified transfers of energy or matter.  The analysis
+has been used in a variety of ways, including to show the relative
+importance of indirect effects in ecosystems \citep{patten83,
+  higashi89, salas11_did} and their capacity to effectively transform
+the relations among organisms \citep{ulanowicz90, patten91, fath98,
+  bondavalli99}.  From these applications a new theoretical
+understanding of ecosystems has emerged \citep{higashi91, belgrano05,
+  jorgensen07_newecology}.  Recently, scientists have been applying
+these methods to understand trophic dynamics in the Sylt-R{\o}m{\o}
+Bight \citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in
+estuaries \cite{christian03, hines12}, and urban sustainability
+\citep{zhang10, chen12}.
+
+% Orientation
+The ENA methodology is an application and extension of economic
+Input--Output Analysis \citep{leontief1936,leontief66} that was first
+introduced into ecology by \citet{hannon73}.  Two major schools have
+developed in ENA.  The first is based on Dr.\ Robert E.\ Ulanowicz's
+work with a strong focus on trophic dynamics and a use of information
+theory \citep{ulanowicz86, ulanowicz97, ulanowicz04}.  The second
+school has an environment focus and is built on the environ concept
+introduced by Dr.\ Bernard C.\ Patten \citep{patten76, patten78,
+  fath99_review}.  Patten's approach has been collectively referred to
+separately as \emph{Network Environ Analysis}. At the core the two
+approaches are very similar; however, they make some different
+starting assumptions and follow independent yet braided development
+tracks. One example difference that has historically inhibited
+collaboration and applications is that the two schools orient their
+analytical matrices in different ways.  The Ulanowicz school orients
+their matrices as flows from rows-to-columns, which is the most common
+orientation in the broader field of network science
+\citep[e.g.,][]{brandes05}.  In contrast, the Patten School has
+historically oriented their matricies from column-to-row.  Recent
+research has started to bring the work of the two schools back
+together \citep[e.g.,][]{scharler09comparing}; we hope this software
+contributes to this.
 
 
 % p3: Extant Software & The Current Problem
@@ -229,29 +248,6 @@ summarized as $\mathcal{M} =
 \{\mathbf{F}, \mathbf{z}, \mathbf{e}, \mathbf{r}, \mathbf{X}, \mathbf{Living}\}$.
 
 
-% Orientation
-The ENA methodology is an application and extension of economic
-Input--Output Analysis \citep{leontief1936,leontief66} that was first
-introduced into ecology by \citet{hannon73}.  Two major schools have
-developed in ENA.  The first is based on Dr.\ Robert E.\ Ulanowicz's
-work with a strong focus on trophic dynamics and a use of information
-theory \citep{ulanowicz86, ulanowicz97, ulanowicz04}.  The second
-school has an environment focus and is built on the environ concept
-introduced by Dr.\ Bernard C.\ Patten \citep{patten76, patten78,
-  fath99_review}.  Patten's approach has been collectively referred to
-separately as \emph{Network Environ Analysis}. At the core the two
-approaches are very similar; however, they make some different
-starting assumptions and follow independent yet braided development
-tracks. One example difference that has historically inhibited
-collaboration and applications is that the two schools orient their
-analytical matrices in different ways.  The Ulanowicz school orients
-their matrices as flows from rows-to-columns, which is the most common
-orientation in the broader field of network science
-\citep[e.g.,][]{brandes05}.  In contrast, the Patten School has
-historically oriented their matricies from column-to-row.  Recent
-research has started to bring the work of the two schools back
-together \citep[e.g.,][]{scharler09comparing}; we hope this software
-contributes to this.
 
 Notice the row-to-column orientation of $\mathbf{F}$.  This is
 consistent with the Ulanowicz School of network analysis, as well as
@@ -267,24 +263,40 @@ use row-to-column orientation for our primary data structure, as it is
 the dominant form across network analytics as evidenced by it use in
 the \textit{statnet} packages. The package algorithms also return the
 results in the row-to-column orientation by default; however, we have
-built in functionality with the functions \texttt{get.orient} and
-\texttt{set.orient}  that allows users
-to return output in the Patten School row-to-column orientation
-(see Section~\ref{sec:orient} for details).
+built in functionality with \texttt{get.orient} and
+\texttt{set.orient} that allows users to return output in the Patten
+School row-to-column orientation (see Section~\ref{sec:orient} for
+details).
+
+\section{Getting Started}
 
 In this section we describe the data necessary for the Ecological
 Network Analysis and show how to build the central network data object
 in \R\ that contains the model data for subsequent analysis.  To
-start, we assume you have installed the enaR package, and then loaded
-the library as follows:
+start, the current stable version can be installed from CRAN:
 
-% Show loading the library and listing the functions in the package
+\begin{Schunk}
+\begin{Sinput}
+> install.packages('enaR')
+\end{Sinput}
+\end{Schunk}
+
+The beta version can be installed from GitHub:
+
+\begin{Schunk}
+\begin{Sinput}
+> library(devtools)
+> install_github('SEELab/enaR',ref='beta')
+\end{Sinput}
+\end{Schunk}
+
+You can now load the package:
+
 \begin{Schunk}
 \begin{Sinput}
 > library(enaR)
 \end{Sinput}
 \end{Schunk}
-
 
 %%%%% Getting Set Up %%%%%%%%%%%
 \setkeys{Gin}{width=0.55\linewidth}
@@ -321,16 +333,16 @@ example of doing this with hypothetical data.
 %% PACK A MODEL
 \begin{Schunk}
 \begin{Sinput}
-> # generate the flow matrix
+> ## Generate the flow matrix
 > flow.mat <- array(abs(rnorm(100,4,2))*sample(c(0,1),100,replace=TRUE),
 +                    dim=c(4,4))
-> # name the nodes
+> ## Name the nodes
 > rownames(flow.mat) <- colnames(flow.mat) <- paste('node',(1:nrow(flow.mat)),sep='')
-> # generate the inputs
+> ## Generate the inputs
 > inputs <- runif(nrow(flow.mat),0,4)
-> # generate the exports
+> ## Generate the exports
 > exports <- inputs
-> # pack
+> ## "Pack" the model into a network object
 > fake.model <- pack(flow=flow.mat,
 +                     input=inputs,
 +                     export=exports,
@@ -340,7 +352,7 @@ example of doing this with hypothetical data.
 [1] "respiration" "storage"    
 \end{Soutput}
 \begin{Sinput}
-> # model
+> ## The model network object contents
 > fake.model
 \end{Sinput}
 \begin{Soutput}
@@ -352,9 +364,9 @@ example of doing this with hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   balanced = FALSE 
-  total edges= 10 
+  total edges= 6 
     missing edges= 0 
-    non-missing edges= 10 
+    non-missing edges= 6 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -364,28 +376,9 @@ example of doing this with hypothetical data.
 \end{Soutput}
 \end{Schunk}
 
-Unfortunately, the attributes() function does not clearly identify the
-network data objects we are using.
-
-\begin{Schunk}
-\begin{Sinput}
-> attributes(fake.model)
-\end{Sinput}
-\begin{Soutput}
-$names
-[1] "mel" "gal" "val" "iel" "oel"
-
-$class
-[1] "network"
-\end{Soutput}
-\begin{Sinput}
-> 
-\end{Sinput}
-\end{Schunk}
-
-However, individual components can be extracted from the data object
-using the form specified in the \textit{network} package.  For
-example, we can pull out node of vertex attributes as follows:
+The individual components can be extracted from the data object using
+the form specified in the \textit{network} package.  For example, we
+can pull out node of vertex attributes as follows:
 
 \begin{Schunk}
 \begin{Sinput}
@@ -398,7 +391,7 @@ example, we can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 0.6903998 1.6615003 1.0432882 3.6066942
+[1] 1.0202394 0.9524394 2.1054074 2.2448518
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -411,18 +404,18 @@ example, we can pull out node of vertex attributes as follows:
 The network flows are stored as edge weights in the network object,
 which lets users fully manipulate the network object with the
 \texttt{network} functions.  The flow matrix can be extracted from the
-object as
+object with:
 
 \begin{Schunk}
 \begin{Sinput}
 > as.matrix(fake.model,attrname="flow")
 \end{Sinput}
 \begin{Soutput}
-          node1 node2     node3    node4
-node1 3.5391833     0 7.5208512 6.055529
-node2 0.7291512     0 0.0000000 3.591885
-node3 3.7602849     0 0.5061422 1.120817
-node4 5.0139658     0 4.7199834 0.000000
+      node1    node2    node3    node4
+node1     0 0.000000 2.314245 2.147586
+node2     0 0.000000 5.514986 0.000000
+node3     0 5.964830 5.720861 0.000000
+node4     0 3.291922 0.000000 0.000000
 \end{Soutput}
 \end{Schunk}
 
@@ -437,20 +430,20 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-          node1 node2     node3    node4
-node1 3.5391833     0 7.5208512 6.055529
-node2 0.7291512     0 0.0000000 3.591885
-node3 3.7602849     0 0.5061422 1.120817
-node4 5.0139658     0 4.7199834 0.000000
+      node1    node2    node3    node4
+node1     0 0.000000 2.314245 2.147586
+node2     0 0.000000 5.514986 0.000000
+node3     0 5.964830 5.720861 0.000000
+node4     0 3.291922 0.000000 0.000000
 
 $z
-[1] 0.6903998 1.6615003 1.0432882 3.6066942
+[1] 1.0202394 0.9524394 2.1054074 2.2448518
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 0.6903998 1.6615003 1.0432882 3.6066942
+[1] 1.0202394 0.9524394 2.1054074 2.2448518
 
 $y
 [1] NA NA NA NA
@@ -475,16 +468,17 @@ more information, see the help file for the function in question.
 \subsection{Model Library}
 
 The \textit{enaR} package includes a library of 100 empirically based
-ecosystem models. There are two general classes of ecosystem models.
-First, there are 58 of the models are trophically-based models with
-food webs at their core (Tables~\ref{tab:TRO}).  Second, there are 42
-models are focused on biogeochemical cycling in ecosystems
-(Table~\ref{tab:BGC}).  \citet{christian96}, \citet{baird08_sylt}, and
-\citet{borrett10_idd} have previously suggested this model class
-distinction.  In summary, these models were originally published for a
-number of different types of ecosystems, though predominantly aquatic,
-by a number of author teams.  Models in the library range in size from
-4 nodes to 125 nodes with connectance values ranging from 7\% to 45\%.
+ecosystem models that can be categorized into two general classes of
+ecosystem models.  First, 58 of the models are trophically-based
+models with food webs at their core (Tables~\ref{tab:TRO}).  Second,
+there are 42 models are focused on biogeochemical cycling in
+ecosystems (Table~\ref{tab:BGC}).  \citet{christian96},
+\citet{baird08_sylt}, and \citet{borrett10_idd} have previously
+suggested this model class distinction.  In summary, these models were
+originally published for a number of different types of ecosystems,
+though predominantly aquatic, by a number of author teams.  Models in
+the library range in size from 4 nodes to 125 nodes with connectance
+values ranging from 7\% to 45\%.
 
 This collection of models overlaps with other data sets.  For example,
 twenty-seven of the models (47\%) are included in the set of models
@@ -503,10 +497,10 @@ the working memory as a named list of network objects:
 
 \begin{Schunk}
 \begin{Sinput}
-> ### Import the model sets
+> ## Import the model sets
 > data(bgcModels)
 > data(troModels)
-> ### Check the first few model names
+> ## Check the first few model names
 > head(names(bgcModels))
 \end{Sinput}
 \begin{Soutput}
@@ -523,10 +517,10 @@ the working memory as a named list of network objects:
 [5] "Marion Lake"                "Cone Springs"              
 \end{Soutput}
 \begin{Sinput}
-> ### Isolate a single model
+> ## Isolate a single model
 > x <- troModels[[1]]
 > x <- troModels$"Marine Coprophagy (oyster)"
-> ### Check out the model
+> ## Check out the model
 > summary(x)
 \end{Sinput}
 \begin{Soutput}
@@ -738,7 +732,7 @@ BENTHIC FECES & BACTERIA                        0
       Neuse River Estuary (Fall 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 128 & 5732 & 0.87 & \citet{christian03} \\
       Neuse River Estuary (Winter 1989) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 291 & 5739 & 0.75 & \citet{christian03} \\
       Cape Fear River Estuary (Oligohaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3802 & 7088 & 0.20 & \citet{hines12} \\
-      Cape Fear River Estuary (Polyhaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3068 & 5322 & 0.17 & \citet{hines2015} \\
+      Cape Fear River Estuary (Polyhaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3068 & 5322 & 0.17 & \citet{hines15} \\
       Lake Lanier (AVG) & mg P m$^{-2}$ day$^{-1}$ &  11 & 0.21 &  95 & 749 & 0.40 & \citet{borrett07_lanier} \\
       Baltic Sea & mg N m$^{-3}$ day$^{-1}$  &  16 & 0.15 & 2348 & 44510 & 0.67 & \citet{hinrichsen98_baltic} \\
       Chesapeake Bay & mg N m$^{-2}$ yr$^{-1}$  &  36 & 0.12 & 73430 & 484325 & 0.33 & \citet{baird95} \\
@@ -777,16 +771,15 @@ one example of how to plot a network model. The figure scaling may
 need to be adjusted depending on computer and devices. Also note that
 the graph only shows internal system flows.
 
-Figure~\ref{fig:oyster} (left) is a very simple example of to plot a
-graph of the oyster reef model accomplished with default settings.
-
-
 \begin{Schunk}
 \begin{Sinput}
-> data(oyster)  # load data
+> ## Load data
+> data(oyster)  
 > m <- oyster
-> set.seed(2)    # set random seed to control plot
-> plot(m)       # plot network data object (uses plot.network)
+> ## Set the random seed to control plot output
+> set.seed(2)    
+> ## Plot network data object (uses plot.network)
+> plot(m)       
 \end{Sinput}
 \end{Schunk}
 
@@ -794,35 +787,49 @@ We can use the excellent graphics capabilities of \R\ to make fancier
 plot of the same data (Fig.~\ref{fig:oyster}(right)).
 
 
-
 \begin{Schunk}
 \begin{Sinput}
-> # set colors to use
+> ## Set colors to use
 > my.col <- c('red','yellow',rgb(204,204,153,maxColorValue=255),'grey22')
-> F <- as.matrix(m,attrname='flow')                   # extract flow information for later use.
-> f <- which(F!=0, arr.ind=T)       # get indices of positive flows
+> ## Extract flow information for later use.
+> F <- as.matrix(m,attrname='flow')                   
+> ## Get indices of positive flows
+> f <- which(F!=0, arr.ind=T)       
 > opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
-> set.seed(2)                    # each time the plot is called, the
->                                # layout orientation changes.  setting
->                                # the seed ensures a consistent
->                                # orientation each time the plot
->                                # function is called.
+> ## Set the random seed to control plot output
+> set.seed(2)                    
 > plot(m,
-+       vertex.cex=log(m%v%'storage'), # scale nodes with storage
-+       label= m%v%'vertex.names',     # add node labels
++  ## Scale nodes with storage
++       vertex.cex=log(m%v%'storage'), 
++  ## Add node labels
++       label= m%v%'vertex.names',     
 +       boxed.labels=FALSE,
 +       label.cex=0.65,
-+       vertex.sides=45,   # to make rounded
-+       edge.lwd=log10(abs(F[f])),     # scale arrows to flow magnitude
++  ## Make rounded nodes
++       vertex.sides=45,   
++  ## Scale arrows to flow magnitude
++       edge.lwd=log10(abs(F[f])),     
 +       edge.col=my.col[3],
 +       vertex.col=my.col[1],
 +       label.col='white',
 +       vertex.border = my.col[3],
 +       vertex.lty = 1,
 +       xlim=c(-4,1),ylim=c(-2,-2))
-> rm(opar)             # remove changes to the plotting parameters
+> ## Lastly, remove changes to the plotting parameters
+> rm(opar)
 \end{Sinput}
 \end{Schunk}
+
+
+\begin{figure}
+\includegraphics{enaR-vignette-014}
+\includegraphics{enaR-vignette-015}
+\caption{Two networks for the Oyster Reef model
+  \citep{dame81} showing a simple (left) and more elaborate (right)
+  implementation of the network plotting function.} \label{fig:oyster}
+\end{figure}
+
+
 
 
 %%3. model input
@@ -975,7 +982,7 @@ Here is an example of using these functions:
 \begin{Schunk}
 \begin{Sinput}
 > data(oyster)
-> # write oyster reef model to a csv file
+> ## Write oyster reef model to a csv file
 > write.nea(oyster, file.name="oyster.csv")
 \end{Sinput}
 \begin{Soutput}
@@ -989,7 +996,7 @@ Here is an example of using these functions:
 [7,] 25.1650 5.760 3.5794 0.4303 0.3594 6.1759  0.00    0.0000
 \end{Soutput}
 \begin{Sinput}
-> # read in oyster reef model data from NEA.m formatted CSV file
+> ## Read in oyster reef model data from NEA.m formatted CSV file
 > m <- read.nea("oyster.csv")
 \end{Sinput}
 \begin{Soutput}
@@ -997,8 +1004,8 @@ Here is an example of using these functions:
 \end{Soutput}
 \begin{Sinput}
 > 
-> # Again, this model object does NOT contain all
-> # of the information in the "oyster" data object.
+> ## Again, this model object does NOT contain all
+> ## of the information in the "oyster" data object.
 \end{Sinput}
 \end{Schunk}
 
@@ -1063,21 +1070,21 @@ automatically balancing the model so that input equal outputs.
 To determine if the model is balanced and then balance it if necessary:
 \begin{Schunk}
 \begin{Sinput}
-> ## --- Check to see if the model is balanced ---#
+> ## Check to see if the model is balanced
 > ssCheck(fake.model)
 \end{Sinput}
 \begin{Soutput}
 [1] FALSE
 \end{Soutput}
 \begin{Sinput}
-> ## --- To BALANCE a model if needed --- #
+> ## To BALANCE a model if needed
 > fake.model <- balance(fake.model,method="AVG2")
 \end{Sinput}
 \begin{Soutput}
 [1] AVG2
 \end{Soutput}
 \begin{Sinput}
-> ## --- To FORCE BALANCE a model if needed --- #
+> ## To FORCE BALANCE a model if needed 
 > fake.model <- force.balance(fake.model)
 \end{Sinput}
 \end{Schunk}
@@ -1232,9 +1239,11 @@ $names
 [1,]   41.47 32.90504 9.208256 32.90504   41.47
 \end{Soutput}
 \begin{Sinput}
-> G <- F$G # output-oriented direct flow matrix
+> ## Output-oriented direct flow matrix
+> G <- F$G 
 > rm(G)
-> F$NP     # input-oriented integral flow matrix
+> ## Input-oriented integral flow matrix
+> F$NP     
 \end{Sinput}
 \begin{Soutput}
   1         2         3         4         5         6
@@ -1579,7 +1588,6 @@ network.  Table~\ref{tab:control} summarizes the function output.
 
 \begin{Schunk}
 \begin{Sinput}
->                                             #conduct control analysis
 > C <- enaControl(m)
 > attributes(C)
 \end{Sinput}
@@ -1588,6 +1596,7 @@ $names
 [1] "CN" "CQ" "CR" "CD" "sc"
 \end{Soutput}
 \end{Schunk}
+
 %%% The Outputs listed contain the Schramski Control results. ~Pawan
 % enaControl - Control Analysis ~Pawan
 \begin{table*}[t]
@@ -1621,7 +1630,6 @@ function output.
 
 \begin{Schunk}
 \begin{Sinput}
->                                         #conduct mixed trophic impacts
 > mti <- enaMTI(oyster)
 > attributes(mti)
 \end{Sinput}
@@ -1630,7 +1638,6 @@ $names
 [1] "G"  "FP" "Q"  "M" 
 \end{Soutput}
 \begin{Sinput}
->                                         #shows the total impact matrix
 > mti$M
 \end{Sinput}
 \begin{Soutput}
@@ -1646,7 +1653,7 @@ despite the mathematical problem.
 
 \begin{Schunk}
 \begin{Sinput}
->   mti <- enaMTI(oyster,eigen.check=FALSE)
+> mti <- enaMTI(oyster,eigen.check=FALSE)
 > attributes(mti)
 \end{Sinput}
 \begin{Soutput}
@@ -1654,7 +1661,7 @@ $names
 [1] "G"  "FP" "Q"  "M" 
 \end{Soutput}
 \begin{Sinput}
-> mti$M  # shows the total impact matrix
+> mti$M 
 \end{Sinput}
 \begin{Soutput}
                    Filter Feeders  Microbiota    Meiofauna
@@ -1722,22 +1729,19 @@ $names
 [7] "ns"              
 \end{Soutput}
 \begin{Sinput}
->                                         # Display information of individual cycles
+> ## The individual cycles
 > names(cyc$Table.cycle)
 \end{Sinput}
 \begin{Soutput}
 [1] "CYCLE" "NEXUS" "NODES"
 \end{Soutput}
 \begin{Sinput}
->                                         # Display information of the disjoint nexuses
+> ## The disjoint nexuses
 > names(cyc$Table.nexus)
 \end{Sinput}
 \begin{Soutput}
 [1] "NEXUS"      "CYCLES"     "W.arc.From" "W.arc.To"   "W.arc.Flow"
 \end{Soutput}
-\begin{Sinput}
-> 
-\end{Sinput}
 \end{Schunk}
 
  %enaCycle - Full Cycle Analysis
@@ -1801,7 +1805,7 @@ $names
  [9] "TE"             "ns"            
 \end{Soutput}
 \begin{Sinput}
->                                         # Cycle analysis output for Feeding Cycles
+> ## Cycle analysis output for Feeding Cycles
 > trop$Feeding_Cycles
 \end{Sinput}
 \begin{Soutput}
@@ -1866,7 +1870,8 @@ Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
 \begin{Schunk}
 \begin{Sinput}
 > ns <- get.ns(m)
-> str(ns)    # examine the structure of ns
+> ## Examine the structure of ns
+> str(ns)    
 \end{Sinput}
 \begin{Soutput}
 'data.frame':	1 obs. of  65 variables:
@@ -2005,24 +2010,27 @@ Centralities.
 
 \begin{Schunk}
 \begin{Sinput}
-> # set plotting parameters
+> ## Set plotting parameters
 > opar <- par(las=1,mar=c(7,5,1,1),xpd=TRUE,bg="white")
-> # find centrality order
+> ## Find centrality order
 > o <- order(ec$AEC,decreasing=TRUE)
-> bp <- barplot(ec$AEC[o],     # create barplot
+> ## Creating a barplot
+> bp <- barplot(ec$AEC[o],     
 +                names.arg=NA,
 +                ylab="Average Environ Centrality",
 +                col="black",border=NA)
-> text(bp,-0.008,                # add labels
+> ## Adding labels
+> text(bp,-0.008,                
 +       labels=names(ec$AEC)[o],
 +       srt=35,adj=1,cex=1)
-> rm(opar)  # remove the plotting parameters
+> ## Remove the plotting parameters
+> rm(opar)  
 \end{Sinput}
 \end{Schunk}
 
 \begin{figure}
   \center
-\includegraphics{enaR-vignette-040}
+\includegraphics{enaR-vignette-043}
 \caption{Bar plot of the Oyster Reef model Average Environ
   Centralities.} \label{fig:aec}
 \end{figure}
@@ -2045,27 +2053,27 @@ re-orient the output from \texttt{enaFlow}:
 
 \begin{Schunk}
 \begin{Sinput}
-> ###Check the current orientation
+> ## Check the current orientation
 > get.orient()
 \end{Sinput}
 \begin{Soutput}
 [1] "rc"
 \end{Soutput}
 \begin{Sinput}
-> ###enaFlow output in row-column
+> ## enaFlow output in row-column
 > flow.rc <- enaFlow(oyster)$G
-> ###Set the global orientation to school
+> ## Set the global orientation to school
 > set.orient('school')
-> ###Check that it worked
+> ## Check that it worked
 > get.orient()
 \end{Sinput}
 \begin{Soutput}
 [1] "school"
 \end{Soutput}
 \begin{Sinput}
-> ###enaFlow output in column-row
+> ## enaFlow output in column-row
 > flow.cr <- enaFlow(oyster)$G
-> ###Check. Outputs should be transposed from each other.
+> ## Check. Outputs should be transposed from each other.
 > all(flow.rc == flow.cr)
 \end{Sinput}
 \begin{Soutput}
@@ -2078,9 +2086,8 @@ re-orient the output from \texttt{enaFlow}:
 [1] TRUE
 \end{Soutput}
 \begin{Sinput}
-> ###Now change back to the default orientation ('rc')
+> ## Now change back to the default orientation ('rc')
 > set.orient('rc')
-> 
 \end{Sinput}
 \end{Schunk}
 
@@ -2149,22 +2156,22 @@ Marine Coprophagy (oyster)              Lake Findley
                       TRUE                       TRUE 
 \end{Soutput}
 \begin{Sinput}
-> # if balancing fails, you can use force.balance
-> # to repeatedly apply the balancing procedure
-> # although this is not the case with our model set
+> ## If balancing fails, you can use force.balance
+> ## to repeatedly apply the balancing procedure
+> ## although this is not the case with our model set
 > 
 > m.list <- lapply(m.list,force.balance)
-> ##Check that all the models are balanced
+> ## Check that all the models are balanced
 > all(unlist(lapply(m.list,ssCheck)))
 \end{Sinput}
 \begin{Soutput}
 [1] TRUE
 \end{Soutput}
 \begin{Sinput}
-> # Example Flow Analysis
+> ## Example Flow Analysis
 > F.list <- lapply(m.list, enaFlow)
-> # the full results of the flow analysis is now stored in the elements
-> # of the F.list.  To get the results for just the first model...
+> ## The full results of the flow analysis is now stored in the elements
+> ## of the F.list.  To get the results for just the first model:
 > F.list[[1]]
 \end{Sinput}
 \begin{Soutput}
@@ -2250,9 +2257,6 @@ $ns
      AMP.O mode0.F  mode1.F  mode2.F  mode3.F mode4.F
 [1,]     0   379.6 103.7915 65.90846 103.7915   379.6
 \end{Soutput}
-\begin{Sinput}
-> 
-\end{Sinput}
 \end{Schunk}
 
 We can use the same technique to extract specific information, like
@@ -2261,9 +2265,9 @@ just the ratio of Indirect-to-Direct flow for each model.
 
 \begin{Schunk}
 \begin{Sinput}
-> # Example of extracting just specific information - Indirect Effects Ratio
+> ## Example of extracting just specific information - Indirect Effects Ratio
 > IDs <- unlist(lapply(m.list, function(x) enaFlow(x)$ns[8]))
-> #Look at the first few ID's
+> ## Look at the first few ID's
 > head(IDs)
 \end{Sinput}
 \begin{Soutput}
@@ -2279,7 +2283,8 @@ Marine Coprophagy (oyster)              Lake Findley
 We can also collect the set of output-oriented integral flow matrices.
 \begin{Schunk}
 \begin{Sinput}
-> # Here is a list containing only the output-oriented integral flow matrices
+> ## Here is a list containing only the 
+> ## output-oriented integral flow matrices
 > N.list <- lapply(m.list,function(x) enaFlow(x)$N)
 \end{Sinput}
 \end{Schunk}
@@ -2290,10 +2295,10 @@ function to reshape the network statistics into a single data frame.
 
 \begin{Schunk}
 \begin{Sinput}
-> # Collecting and combining all network statistics
+> ## Collecting and combining all network statistics
 > ns.list <- lapply(m.list,get.ns) # returns as list
 > ns <- do.call(rbind,ns.list)  # ns as a data.frame
-> # Let's take a quick look at some of the output
+> ## Let's take a quick look at some of the output
 > colnames(ns)    # return network statistic names.
 \end{Sinput}
 \begin{Soutput}
@@ -2342,11 +2347,13 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 \begin{Schunk}
 \begin{Sinput}
 > opar <- par(las=1,mar=c(9,7,2,1),xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
-> x=dim(ns)[1] # number of models
+> ## Number of models
+> x=dim(ns)[1] 
 > m.select <- 40:45
 > bp=barplot(ns$ID.F[m.select],ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
 +          col="darkgreen",border=NA,ylim=c(0,2))
-> text(bp,-0.05,                # add labels
+> ## Add labels
+> text(bp,-0.05,                
 +       labels=rownames(ns)[m.select],
 +         srt=45,adj=1,cex=0.85)
 > opar <- par(xpd=FALSE)
@@ -2356,15 +2363,15 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 +       ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
 +       xlab="Finn Cycling Index (FCI)",
 +       xlim=c(0,0.8),ylim=c(0,8))
-> #
-> rm(opar)  # remove the plotting parameters
+> ## Remove the plotting parameters
+> rm(opar)  
 \end{Sinput}
 \end{Schunk}
 
 
 \begin{figure}
   \center
-\includegraphics{enaR-vignette-049}
+\includegraphics{enaR-vignette-052}
 \caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
   (left) and relationship between the Finn Cycling Index and the ratio
   of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:aec}
@@ -2418,8 +2425,10 @@ well. For example, it will create a target diagram of centralities.
 \begin{Schunk}
 \begin{Sinput}
 > m <- troModels[[38]]
-> b <- betweenness(m)         # calculate betweenness centrality
-> nms <- m%v%'vertex.names'   # get vertex names
+> ## Calculate betweenness centrality
+> b <- betweenness(m)         
+> ## Get vertex names
+> nms <- m%v%'vertex.names'   
 > show(nms)
 \end{Sinput}
 \begin{Soutput}
@@ -2443,14 +2452,16 @@ well. For example, it will create a target diagram of centralities.
 [35] "Suspended Particulate Carbon"  "Sediment Partculate Carbon"   
 \end{Soutput}
 \begin{Sinput}
-> nms[b<=(0.1*max(b))] <- NA  # exclude less central nodes
+> ## Exclude less central nodes
+> nms[b<=(0.1*max(b))] <- NA  
 > set.seed(3)
 > opar <- par(xpd=TRUE,mfrow=c(1,1))
-> # create target plot
-> gplot.target(m,b,#circ.lab=FALSE,
+> ## Create target plot showing only 
+> ## labels of most central nodes
+> gplot.target(m,b,circ.lab=FALSE,
 +               edge.col="grey",
-+               label=nms) # show only labels of most central nodes
->              #xlim=c(-1,4))
++               label=nms) 
+> ## Remove plot settings
 > rm(opar)
 \end{Sinput}
 \end{Schunk}
@@ -2479,7 +2490,7 @@ well. For example, it will create a target diagram of centralities.
 [35] "Suspended Particulate Carbon"  "Sediment Partculate Carbon"   
 \end{Soutput}
 \end{Schunk}
-\includegraphics{enaR-vignette-052}
+\includegraphics{enaR-vignette-055}
 \caption{Target plot of node betweenness centrality for the Chesapeake
   Bay model (mesohaline, carbon, annual).} \label{fig:target}
 \end{figure}
@@ -2520,11 +2531,11 @@ care is required when using \textit{iGraph}.
 \begin{Schunk}
 \begin{Sinput}
 > library(igraph)
-> ### The adjacency matrix
+> ## The adjacency matrix
 > A <- St$A
-> ### Creating an iGraph graph
+> ## Creating an iGraph graph
 > g <- graph.adjacency(A)
-> plot(g)  # uses iGraph plot tools
+> plot(g)  
 \end{Sinput}
 \end{Schunk}
 
@@ -2533,13 +2544,13 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 
 \begin{figure}
 \center
-\includegraphics{enaR-vignette-055}
+\includegraphics{enaR-vignette-058}
 \caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
 \end{figure}
 
 \begin{Schunk}
 \begin{Sinput}
-> # betweenness centrality (calculated by iGraph and sna)
+> ## Betweenness centrality (calculated by iGraph and sna)
 > betweenness(g)
 \end{Sinput}
 \begin{Soutput}
@@ -2547,7 +2558,7 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 0.0 0.0 0.5 3.5 0.0 9.0 
 \end{Soutput}
 \begin{Sinput}
-> # shortest path between any two nodes
+> ## Shortest path between any two nodes
 > shortest.paths(g)
 \end{Sinput}
 \begin{Soutput}
@@ -2560,19 +2571,21 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 6 1 1 1 1 1 0
 \end{Soutput}
 \begin{Sinput}
-> # average path length in the network (graph theory sense)
+> ## Average path length in the network (graph theory sense)
 > average.path.length(g,directed=TRUE)
 \end{Sinput}
 \begin{Soutput}
 [1] 1.52
 \end{Soutput}
 \begin{Sinput}
-> diameter(g)  # diameter of the graph
+> ## Diameter of the graph
+> diameter(g)  
 \end{Sinput}
 \begin{Soutput}
 [1] 2
 \end{Soutput}
 \begin{Sinput}
+> ## Connectivity of the group and sub-components
 > vertex.connectivity(g)  # connectivity of a graph (group cohesion)
 \end{Sinput}
 \begin{Soutput}
@@ -2609,40 +2622,50 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 [1] 0
 \end{Soutput}
 \begin{Sinput}
-> detach(package:igraph)  # detach igraph package
+> ## Detach igraph package
+> detach(package:igraph)  
 \end{Sinput}
 \end{Schunk}
 
-There are other \R\ packages that have graph and network analysis tools,
-like Bioconductor, that might also be useful for ecologists
-
 \subsection{EcoNet}
 
-{\Color{red} MKL: still need to add details}
-\begin{enumerate}
-\item Package description
-\item Basic model structure
-\item Using the write.EcoNet function
-\end{enumerate}
+The \textit{EcoNet} package is an online, web-interface that provides
+a tool box for dynamic modeling and ENA analytics (Kazanci 2007). We
+have provided a write function that enables \textit{enaR} users to
+output models for easy input into the \textit{EcoNet} interface. The
+\textit{EcoNet} package and details on the model input syntax can be
+found at \href{http://eco.engr.uga.edu}. Here is an example of how to
+use the \texttt{write.EcoNet} function in \textit{enaR} in your
+current working directory:
+
+\begin{Schunk}
+\begin{Sinput}
+> data(oyster)
+> write.EcoNet(oyster,file='oyster.txt',mn='oyster_model')
+\end{Sinput}
+\end{Schunk}
 
 
 \section{Conclusion}
 
-{\Color{red} MKL: Needs revision}
-
-This vignette shows how to use several of the key features of the
-\textit{enaR} package that enables scientists to perform Ecological
-Network Analysis in \R.  The vision for this package is that it will
-provide access to ENA algorithms from both the Ulanowicz and Patten
-Schools.  In its current form it replicates, updates, and extends the
-functionality of the NEA.m function \citep{fath06}.  This vignette
-also illustrates how users can further analyze their data with other
-\R\ packages for graph and network analysis like \textit{sna} and
-\textit{iGraph}.  It also includes both ascendency calculations and
-mixed trophic impacts from the Ulanowicz school of ENA, but there
-remains many possibilities for future development.  We hope to do this
-in collaboration with users. In summary, we hope you find this package
-useful for your ENA needs.
+These examples how to use the key features of the \textit{enaR}
+package that enables scientists to perform Ecological Network Analysis
+in \R.  The vision for this package is that it will provide access to
+ENA algorithms from both the Ulanowicz and Patten Schools and
+faciliate theoretical synthesis.  In its current form it replicates,
+updates, and extends the functionality of the NEA.m function
+\citep{fath06}.  Through the connections that \textit{enaR} provides
+to other \R\ packages users can connect to other network analyses
+provided by packages, such as \textit{sna} and \textit{iGraph}. There
+are other \R\ packages that have graph and network analysis tools,
+like \textit{Bioconductor}, \textit{WGCNA}, \textit{tnet} and
+\textit{rmangal}, that might also be useful for ecologists.  Our aim
+is for \textit{enaR} to serve as a nexus for the introduction of
+analyses from the broader field of network theory into ecology. In
+addition, we would like to invite users to connect, collaborate and
+contribute to development of ENA theory and \textit{enaR}. Programmers
+that are interested in contributing can connect online via
+\href{github.com/SEELab/enaR_development}.
 
 
 \bibliography{jss_abb,jss}

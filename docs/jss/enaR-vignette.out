@@ -1,27 +1,28 @@
 \BOOKMARK [1][-]{Section.0.Introduction.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{Section.1.Model Data.1}{Model Data}{}% 2
-\BOOKMARK [2][-]{Subsection.2.0.Network Data Class.2}{Network Data Class}{Section.1.Model Data.1}% 3
-\BOOKMARK [2][-]{Subsection.2.1.Building a Network Object.2}{Building a Network Object}{Section.1.Model Data.1}% 4
-\BOOKMARK [2][-]{Subsection.2.2.Model Library.2}{Model Library}{Section.1.Model Data.1}% 5
-\BOOKMARK [2][-]{Subsection.2.3.Network Visualization.2}{Network Visualization}{Section.1.Model Data.1}% 6
-\BOOKMARK [2][-]{Subsection.2.4.Data Input: Reading Common Data File Formats.2}{Data Input: Reading Common Data File Formats}{Section.1.Model Data.1}% 7
-\BOOKMARK [1][-]{Section.2.Analyzing Ecosystem Models.1}{Analyzing Ecosystem Models}{}% 8
-\BOOKMARK [2][-]{Subsection.3.0.Balancing for Steady-State.2}{Balancing for Steady-State}{Section.2.Analyzing Ecosystem Models.1}% 9
-\BOOKMARK [2][-]{Subsection.3.1.Structural Network Analysis.2}{Structural Network Analysis}{Section.2.Analyzing Ecosystem Models.1}% 10
-\BOOKMARK [2][-]{Subsection.3.2.Flow Analysis.2}{Flow Analysis}{Section.2.Analyzing Ecosystem Models.1}% 11
-\BOOKMARK [2][-]{Subsection.3.3.Ascendency.2}{Ascendency}{Section.2.Analyzing Ecosystem Models.1}% 12
-\BOOKMARK [2][-]{Subsection.3.4.Storage Analysis.2}{Storage Analysis}{Section.2.Analyzing Ecosystem Models.1}% 13
-\BOOKMARK [2][-]{Subsection.3.5.Utility Analysis.2}{Utility Analysis}{Section.2.Analyzing Ecosystem Models.1}% 14
-\BOOKMARK [2][-]{Subsection.3.6.Environ Analysis.2}{Environ Analysis}{Section.2.Analyzing Ecosystem Models.1}% 15
-\BOOKMARK [2][-]{Subsection.3.7.Control Analysis.2}{Control Analysis}{Section.2.Analyzing Ecosystem Models.1}% 16
-\BOOKMARK [2][-]{Subsection.3.8.Mixed Trophic Impacts.2}{Mixed Trophic Impacts}{Section.2.Analyzing Ecosystem Models.1}% 17
-\BOOKMARK [2][-]{Subsection.3.9.Cycle Analysis.2}{Cycle Analysis}{Section.2.Analyzing Ecosystem Models.1}% 18
-\BOOKMARK [2][-]{Subsection.3.10.Trophic Aggregations.2}{Trophic Aggregations}{Section.2.Analyzing Ecosystem Models.1}% 19
-\BOOKMARK [2][-]{Subsection.3.11.Other Analyses.2}{Other Analyses}{Section.2.Analyzing Ecosystem Models.1}% 20
-\BOOKMARK [2][-]{Subsection.3.12.Output Orientation.2}{Output Orientation}{Section.2.Analyzing Ecosystem Models.1}% 21
-\BOOKMARK [1][-]{Section.3.Multi-Model Analyses (Batch Processing).1}{Multi-Model Analyses \(Batch Processing\)}{}% 22
-\BOOKMARK [1][-]{Section.4.Connecting to Other Useful Packages.1}{Connecting to Other Useful Packages}{}% 23
-\BOOKMARK [2][-]{Subsection.5.0.sna: Social Network Analysis.2}{sna: Social Network Analysis}{Section.4.Connecting to Other Useful Packages.1}% 24
-\BOOKMARK [2][-]{Subsection.5.1.iGraph.2}{iGraph}{Section.4.Connecting to Other Useful Packages.1}% 25
-\BOOKMARK [2][-]{Subsection.5.2.EcoNet.2}{EcoNet}{Section.4.Connecting to Other Useful Packages.1}% 26
-\BOOKMARK [1][-]{Section.5.Conclusion.1}{Conclusion}{}% 27
+\BOOKMARK [1][-]{Section.2.Getting Started.1}{Getting Started}{}% 3
+\BOOKMARK [2][-]{Subsection.3.0.Network Data Class.2}{Network Data Class}{Section.2.Getting Started.1}% 4
+\BOOKMARK [2][-]{Subsection.3.1.Building a Network Object.2}{Building a Network Object}{Section.2.Getting Started.1}% 5
+\BOOKMARK [2][-]{Subsection.3.2.Model Library.2}{Model Library}{Section.2.Getting Started.1}% 6
+\BOOKMARK [2][-]{Subsection.3.3.Network Visualization.2}{Network Visualization}{Section.2.Getting Started.1}% 7
+\BOOKMARK [2][-]{Subsection.3.4.Data Input: Reading Common Data File Formats.2}{Data Input: Reading Common Data File Formats}{Section.2.Getting Started.1}% 8
+\BOOKMARK [1][-]{Section.3.Analyzing Ecosystem Models.1}{Analyzing Ecosystem Models}{}% 9
+\BOOKMARK [2][-]{Subsection.4.0.Balancing for Steady-State.2}{Balancing for Steady-State}{Section.3.Analyzing Ecosystem Models.1}% 10
+\BOOKMARK [2][-]{Subsection.4.1.Structural Network Analysis.2}{Structural Network Analysis}{Section.3.Analyzing Ecosystem Models.1}% 11
+\BOOKMARK [2][-]{Subsection.4.2.Flow Analysis.2}{Flow Analysis}{Section.3.Analyzing Ecosystem Models.1}% 12
+\BOOKMARK [2][-]{Subsection.4.3.Ascendency.2}{Ascendency}{Section.3.Analyzing Ecosystem Models.1}% 13
+\BOOKMARK [2][-]{Subsection.4.4.Storage Analysis.2}{Storage Analysis}{Section.3.Analyzing Ecosystem Models.1}% 14
+\BOOKMARK [2][-]{Subsection.4.5.Utility Analysis.2}{Utility Analysis}{Section.3.Analyzing Ecosystem Models.1}% 15
+\BOOKMARK [2][-]{Subsection.4.6.Environ Analysis.2}{Environ Analysis}{Section.3.Analyzing Ecosystem Models.1}% 16
+\BOOKMARK [2][-]{Subsection.4.7.Control Analysis.2}{Control Analysis}{Section.3.Analyzing Ecosystem Models.1}% 17
+\BOOKMARK [2][-]{Subsection.4.8.Mixed Trophic Impacts.2}{Mixed Trophic Impacts}{Section.3.Analyzing Ecosystem Models.1}% 18
+\BOOKMARK [2][-]{Subsection.4.9.Cycle Analysis.2}{Cycle Analysis}{Section.3.Analyzing Ecosystem Models.1}% 19
+\BOOKMARK [2][-]{Subsection.4.10.Trophic Aggregations.2}{Trophic Aggregations}{Section.3.Analyzing Ecosystem Models.1}% 20
+\BOOKMARK [2][-]{Subsection.4.11.Other Analyses.2}{Other Analyses}{Section.3.Analyzing Ecosystem Models.1}% 21
+\BOOKMARK [2][-]{Subsection.4.12.Output Orientation.2}{Output Orientation}{Section.3.Analyzing Ecosystem Models.1}% 22
+\BOOKMARK [1][-]{Section.4.Multi-Model Analyses (Batch Processing).1}{Multi-Model Analyses \(Batch Processing\)}{}% 23
+\BOOKMARK [1][-]{Section.5.Connecting to Other Useful Packages.1}{Connecting to Other Useful Packages}{}% 24
+\BOOKMARK [2][-]{Subsection.6.0.sna: Social Network Analysis.2}{sna: Social Network Analysis}{Section.5.Connecting to Other Useful Packages.1}% 25
+\BOOKMARK [2][-]{Subsection.6.1.iGraph.2}{iGraph}{Section.5.Connecting to Other Useful Packages.1}% 26
+\BOOKMARK [2][-]{Subsection.6.2.EcoNet.2}{EcoNet}{Section.5.Connecting to Other Useful Packages.1}% 27
+\BOOKMARK [1][-]{Section.6.Conclusion.1}{Conclusion}{}% 28

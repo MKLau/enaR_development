@@ -4,48 +4,45 @@ The top-level auxiliary file: enaR-vignette.aux
 The style file: jss.bst
 Database file #1: jss_abb.bib
 Database file #2: jss.bib
-Warning--I didn't find a database entry for "ings09"
-Warning--I didn't find a database entry for "hines2015"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 95 entries,
+You've used 97 entries,
             3140 wiz_defined-function locations,
-            1291 strings with 21908 characters,
-and the built_in function-call counts, 87971 in all, are:
-= -- 7355
-> -- 2397
+            1302 strings with 22487 characters,
+and the built_in function-call counts, 92149 in all, are:
+= -- 7700
+> -- 2579
 < -- 70
-+ -- 925
-- -- 797
-* -- 7402
-:= -- 11867
-add.period$ -- 390
-call.type$ -- 95
-change.case$ -- 656
-chr.to.int$ -- 92
-cite$ -- 95
-duplicate$ -- 7895
-empty$ -- 8092
-format.name$ -- 1106
-if$ -- 17955
++ -- 993
+- -- 863
+* -- 7818
+:= -- 12436
+add.period$ -- 401
+call.type$ -- 97
+change.case$ -- 686
+chr.to.int$ -- 94
+cite$ -- 97
+duplicate$ -- 8247
+empty$ -- 8447
+format.name$ -- 1178
+if$ -- 18803
 int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 1205
-newline$ -- 497
-num.names$ -- 393
-pop$ -- 2582
+missing$ -- 1247
+newline$ -- 510
+num.names$ -- 401
+pop$ -- 2664
 preamble$ -- 1
-purify$ -- 642
+purify$ -- 672
 quote$ -- 0
-skip$ -- 1727
+skip$ -- 1759
 stack$ -- 0
-substring$ -- 8230
-swap$ -- 2658
+substring$ -- 8703
+swap$ -- 2754
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 831
+type$ -- 849
 warning$ -- 0
-while$ -- 730
+while$ -- 762
 width$ -- 0
-write$ -- 1269
-(There were 2 warnings)
+write$ -- 1301

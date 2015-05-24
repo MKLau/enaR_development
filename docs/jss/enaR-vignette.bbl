@@ -1,4 +1,4 @@
-\begin{thebibliography}{95}
+\begin{thebibliography}{97}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -317,12 +317,31 @@ Hines DE, Lisa JA, Song B, Tobias CR, Borrett SR (2012).
 \newblock \emph{Estuar. Coast. Shelf Sci.}, \textbf{106}, 45--57.
 \newblock \doi{10.1016/j.ecss.2012.04.018}.
 
+\bibitem[{Hines \emph{et~al.}(2015)Hines, Lisa, Song, Tobias, and
+  Borrett}]{hines15}
+Hines DE, Lisa JA, Song B, Tobias CR, Borrett SR (2015).
+\newblock \enquote{Estimating the effects of seawater intrusion on an estuarine
+  nitrogen cycle by comparative network analysis.}
+\newblock \emph{Mar. Ecol. Prog. Ser.}, \textbf{524}, 137--154.
+
 \bibitem[{Hinrichsen and Wulff(1998)}]{hinrichsen98_baltic}
 Hinrichsen U, Wulff F (1998).
 \newblock \enquote{Biogeochemical and physical controls of nitrogen fluxes in a
   highly dynamic marine ecosystem---model and network flow analysis of the
   {Baltic Sea}.}
 \newblock \emph{Ecol. Model.}, \textbf{109}, 165--191.
+
+\bibitem[{Ings \emph{et~al.}(2009)Ings, Montoya, Bascompte, Bl\"{u}thgen,
+  Brown, Dormann, Edwards, Figueroa, Jacob, Jones, Lauridsen, Ledger, Lewis,
+  Olesen, van Veen, Warren, and Woodward}]{ings2009}
+Ings TC, Montoya JM, Bascompte J, Bl\"{u}thgen N, Brown L, Dormann CF, Edwards
+  F, Figueroa D, Jacob U, Jones JI, Lauridsen RB, Ledger ME, Lewis HM, Olesen
+  JM, van Veen FJF, Warren PH, Woodward G (2009).
+\newblock \enquote{{Ecological networks--beyond food webs.}}
+\newblock \emph{The Journal of animal ecology}, \textbf{78}(1), 253--69.
+\newblock ISSN 1365-2656.
+\newblock \doi{10.1111/j.1365-2656.2008.01460.x}.
+\newblock \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/19120606}.
 
 \bibitem[{Jordan \emph{et~al.}(1972)Jordan, Kline, and Sasscer}]{jordan72}
 Jordan CF, Kline JR, Sasscer DS (1972).
