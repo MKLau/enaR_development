@@ -80,6 +80,7 @@
 
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 
 
 %%%%Re-organization based on SRB notes
@@ -93,26 +94,21 @@
 
 \section[Introduction]{Introduction}
 % p1:  intro paragraph (5/7/2015)
-Network models have provided an in-road to complex systems, and
+Network models have provided an in-road to a variety of complex systems \cite{watts1998collective, newman01scientific01, barabasi12, newman06structure, wasserman1994}, and
 although the network approach has deep roots (get old cite from
 Mutualistic Networks Book), its use has been expanding rapidly in a
-variety of disciplines \citep{borrett14_rise, ings2009}.  This is due in
+variety of disciplines including ecology \citep{borrett14_rise, ings2009}.  This is due in
 part to the flexibility of the core representation, its utility in
 answering relational questions, and its applicability to ``Big Data''
-problems.
+problems.  Some scientists are working to build a science of networks \citep{nrc06network, brandes13}.
 
 % p2: Ecosystem Network Analysis
 % what, why, bit of history -- two schools
 
-In the field of ecology, network theory has been a core component of
-Ecosystem Network Analysis (ENA), which is a family of algorithms for
-investigating the structure and function of ecological systems
-\citep{borrett12_netecol,ulanowicz86,fath99_review}.  Using this
-approach the models, typically ecosystem models, are comprised of
-transfers of thermodynamically conserved energy or matter exchanges
-between species, groups of species, or non-living components (e.g.,
-dead organic matter) of the ecosystem, and the weighted, directed
-edges are the quantified transfers of energy or matter.  The analysis
+Ecosystem ecologists have developed and used network modeling and analysis for several decades \citep{borrett12_netecol,ulanowicz86,fath99_review}.  From this work, a family of algorithms used to investigate the structure and function of ecological systems has been termed Ecosystem Network Analysis (ENA).  For this approach the network models are comprised of
+transfers of thermodynamically conserved energy or matter (represented by weighted, directed graph edges)
+between nodes that represent species, groups of species, or non-living components (e.g.,
+dead organic matter) of the ecosystem.  The analysis
 has been used in a variety of ways, including to show the relative
 importance of indirect effects in ecosystems \citep{patten83,
   higashi89, salas11_did} and their capacity to effectively transform
@@ -122,14 +118,14 @@ understanding of ecosystems has emerged \citep{higashi91, belgrano05,
   jorgensen07_newecology}.  Recently, scientists have been applying
 these methods to understand trophic dynamics in the Sylt-R{\o}m{\o}
 Bight \citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in
-estuaries \cite{christian03, hines12}, and urban sustainability
+estuaries \citep{christian03, hines12}, and urban sustainability
 \citep{zhang10, chen12}.
 
 % Orientation
 The ENA methodology is an application and extension of economic
 Input--Output Analysis \citep{leontief1936,leontief66} that was first
-introduced into ecology by \citet{hannon73}.  Two major schools have
-developed in ENA.  The first is based on Dr.\ Robert E.\ Ulanowicz's
+introduced into ecology by \citet{hannon73}.  Since this introduction, two major schools have
+developed in ENA \citep{scharler09comparing}.  The first is based on Dr.\ Robert E.\ Ulanowicz's
 work with a strong focus on trophic dynamics and a use of information
 theory \citep{ulanowicz86, ulanowicz97, ulanowicz04}.  The second
 school has an environment focus and is built on the environ concept
@@ -158,16 +154,14 @@ based NETWRK4 \cite{ulanowicz91}, which is still available from
 algorithms were re-implemented in an Microsoft Excel based toolbox,
 WAND \cite{allesina04_wand}. The popular Ecopath with Ecosim software
 that assists with model construction \citep{christensen04} also
-provides multiple ENA algorithms. \citet{fath06} published NEA.m that
-collects many ENA algorithms together in a single MATLAB\copyright
+provides multiple ENA algorithms.  The algorithms for flow analysis -- one component of ENA -- were collected into a stand-alone software tool \citep{latham2006}.  \citet{fath06} published NEA.m that
+collects most of the Patten School ENA algorithms together in a single MATLAB\copyright
 function. Similarly, the online package by EcoNet (Kazanci 2007) has
 also made many of the core ENA algorithms available in an easy access
 framework.  Although these packages collectively provide access to a
 large set of powerful analytical tools, the fragmented distribution of
 these algorithms has inhibited the development of theory and the
 further implementation of important algorithms.
-
-{\color{red} MKL: Stuart, I'm not sure what Latham's software is?}
 
 
 % p4: Objectives (Software & Paper).
@@ -222,58 +216,9 @@ citation('enaR')
 %%2. model construction
 %%3. mathematical description
 
-\section{Model Data}
-
-ENA is applied to a network model of energy--matter exchanges among
-system components.  The system is modeled as a set of $n$ compartments
-or nodes that represent species, species-complexes (i.e., trophic
-guilds or functional groups), or non-living components of the system
-in which energy--matter is stored.  Nodes are connected by $L$
-observed fluxes, termed directed edges or links.  This analysis
-requires an estimate of the energy--matter flowing from node $i$ to
-$j$ over a given period, $\mathbf{F}_{n\times n}=[f_{ij}]$,
-$i,j=1,2,\ldots,n$.  These fluxes can be generated by any process such
-as feeding (like a food web), excretion, and death.  As ecosystems are
-thermodynamically open, there must also be energy--matter inputs into
-the system $\mathbf{z}_{1 \times n}=[z_i]$, and output losses from the
-system $\mathbf{y}_{1 \times n}=[y_i]$.  While the Patten School treats
-all outputs the same, the Ulanowicz School typically partitions
-outputs into respiration $\mathbf{r}_{1\times n}=[r_i]$ and export
-$\mathbf{e}_{1\times n}=[e_i]$ to account for differences in energetic
-quality. Note that $y_i = r_i + e_i, \forall i$.  Some analyses
-also require the amount of energy--matter stored in each node (e.g.,
-biomass), $\mathbf{X}_{1\times n}=[x_i]$.  The final required
-information is a categorization of each node as living or not, which
-is essential for algorithms from the Ulanowicz School.  For
-our implementation, we have created a logical vector $\mathbf{Living}_{1 \times
-  n}$ that indicates whether the $i^{th}$ node is living (TRUE)
-or not (FALSE).  Together, the model data $\mathcal{M}$ can be
-summarized as $\mathcal{M} =
-\{\mathbf{F}, \mathbf{z}, \mathbf{e}, \mathbf{r}, \mathbf{X}, \mathbf{Living}\}$.
-
-
-
-Notice the row-to-column orientation of $\mathbf{F}$.  This is
-consistent with the Ulanowicz School of network analysis, as well as
-the orientation commonly used in Social Network Analysis and used in
-the \textit{statnet} packages.  However, this is the opposite
-orientation typically used in the Patten School of analysis that
-conceptually builds from a system of differential equations and thus
-uses the column-to-row orientation common in this area of
-mathematics. Even though the difference is only a matrix transpose,
-this single difference may be the source of much confusion in the
-literature and frustration on the part of users.  We have selected to
-use row-to-column orientation for our primary data structure, as it is
-the dominant form across network analytics as evidenced by it use in
-the \textit{statnet} packages. The package algorithms also return the
-results in the row-to-column orientation by default; however, we have
-built in functionality with \texttt{get.orient} and
-\texttt{set.orient} that allows users to return output in the Patten
-School row-to-column orientation (see Section~\ref{sec:orient} for
-details).
-
 \section{Getting Started}
 
+\subsection{Installing \textit{enaR}}
 In this section we describe the data necessary for the Ecological
 Network Analysis and show how to build the central network data object
 in \R\ that contains the model data for subsequent analysis.  To
@@ -310,25 +255,75 @@ options("prompt" = "> ", "continue" = "+  ")
 @
 
 
+\subsection{Ecosystem Network Model}
+
+ENA is applied to a network model of energy--matter exchanges among
+system components.  The system is modeled as a set of $n$ compartments
+or nodes that represent species, species-complexes (i.e., trophic
+guilds or functional groups), or non-living components of the system
+in which energy--matter is stored.  Nodes are connected by $L$
+observed fluxes, termed directed edges or links.  This analysis
+requires an estimate of the energy--matter flowing from node $i$ to
+$j$ over a given period, $\mathbf{F}_{n\times n}=[f_{ij}]$,
+$i,j=1,2,\ldots,n$.  These fluxes can be generated by any process such
+as feeding (like a food web), excretion, and death.  As ecosystems are
+thermodynamically open, there must also be energy or matter inputs into
+the system $\mathbf{z}_{1 \times n}=[z_i]$, and output losses from the
+system $\mathbf{y}_{1 \times n}=[y_i]$.  While the Patten School treats
+all outputs the same, the Ulanowicz School typically partitions
+outputs into respiration $\mathbf{r}_{1\times n}=[r_i]$ and export
+$\mathbf{e}_{1\times n}=[e_i]$ to account for differences in energetic
+quality. Note that $y_i = r_i + e_i, \forall i$.  Some analyses
+also require the amount of energy--matter stored in each node (e.g.,
+biomass), $\mathbf{X}_{1\times n}=[x_i]$.  The final required
+information is a categorization of each node as living or not, which
+is essential for algorithms from the Ulanowicz School.  For
+our implementation, we have created a logical vector $\mathbf{Living}_{1 \times
+  n}$ that indicates whether the $i^{th}$ node is living (TRUE)
+or not (FALSE).  Together, the model data $\mathcal{M}$ can be
+summarized as $\mathcal{M} =
+\{\mathbf{F}, \mathbf{z}, \mathbf{e}, \mathbf{r}, \mathbf{X}, \mathbf{Living}\}$.
+
+
+Notice the row-to-column orientation of $\mathbf{F}$.  This is
+consistent with the Ulanowicz School of network analysis, as well as
+the orientation commonly used in Social Network Analysis and used in
+the \textit{statnet} packages.  However, this is the opposite
+orientation typically used in the Patten School of analysis that
+conceptually builds from a system of differential equations and thus
+uses the column-to-row orientation common in this area of
+mathematics. Even though the difference is only a matrix transpose,
+this single difference may be the source of much confusion in the
+literature and frustration on the part of users.  We have selected to
+use row-to-column orientation for our primary data structure, as it is
+the dominant form across network analytics as evidenced by it use in
+the \textit{statnet} packages. The package algorithms also return the
+results in the row-to-column orientation by default; however, we have
+built in functionality with \texttt{get.orient} and
+\texttt{set.orient} that allows users to return output in the Patten
+School row-to-column orientation (see Section~\ref{sec:orient} for
+details).
+
+% Model Construction
+There are multiple methods for constructing ecosystem network models and tools for assisting with this process \citep{fath07_netconstruction}.  One approach is to construct a dynamic, processes-based, mathematical model of the system typically using ordinary differential equations.  For example, the EcoPath with EcoSim \citep{christensen92, christensen95} software assists scientists with constructing food-web focused ecosystem models using an underlying bioenergetic approach.   Alternatively, \citet{ulanowicz86} has called for a more phenomenologial approach to the model construction.  This modeling process starts with a conceptual network model of the system and then the node and edge weights are estimated directly from observations.  Its phenomenologial in the sense that it focuses on what the flows are, rather than the forms of the mechanistic processes that generate the flows.   As this approach is essentially an inverse problem, some have developed inverse linear modeling methods to assist with infering the network weights from data \citep{vezina1988, vanoevelen2010}.  The \textit{limSolve} \R pacakge can assist with this modeling approach \citep{soetaert09}.  \citet{ulanowicz2008least} also introduced two least-inference algorithms to assist with this kind of model constuction.  These methods focus on constructing models to represent specific empirical systems.  Algorithms also exist for constructing simulated ecosystems, including \citeapos{fath04} Cyber Models that use a community assembly type approach. Today, the \textit{enaR} software focuses on the network analysis and assumes that the user has a network model to be analyzed.     
 
 % Network Data Object
 \subsection{Network Data Class}
 
 The \textit{enaR} package stores the model data in the \textbf{network}
 class defined in the \textit{network} package \citep[see][for
-details]{butts08_network}. Again, the primary network object
-components are:
+details]{butts08_network}. In this software, a complete ecosystem network model description includes:
 
-\begin{itemize}
-\item F = flow matrix oriented row-to-column
-\item z = inputs
-\item r = respiration
-\item e = exports
-\item y = respiration+exports
-\item X = biomass or storage values
-\item Living = logical vector indicating if the node is living
+\begin{description}
+\item[F] is the flow matrix, oriented row-to-column
+\item[z] a vector of inputs
+\item[r] a vector of respirations
+\item[e] a vector of exports
+\item[y] a vector of outputs, which are respirations plus exports
+\item[X] a vector ofbiomass or storage values
+\item[Living] = logical vector indicating if the node is living
   (TRUE) or non-living (FALSE)
-\end{itemize}
+\end{description}
 
 \subsection{Building a Network Object}
 
@@ -395,14 +390,11 @@ more information, see the help file for the function in question.
 %%1. provided models
 \subsection{Model Library}
 
-The \textit{enaR} package includes a library of 100 empirically based
-ecosystem models that can be categorized into two general classes of
-ecosystem models.  First, 58 of the models are trophically-based
+\textit{enaR} includes a library of 100 empirically-based
+previously published ecosystem models that can be categorized into two general classes: trophic and biogeochemical cycling \citep{christian96, baird08_sylt, borrett10_idd, borrett15_bgc}.  First, 58 of the models are trophically-based
 models with food webs at their core (Tables~\ref{tab:TRO}).  Second,
 there are 42 models are focused on biogeochemical cycling in
-ecosystems (Table~\ref{tab:BGC}).  \citet{christian96},
-\citet{baird08_sylt}, and \citet{borrett10_idd} have previously
-suggested this model class distinction.  In summary, these models were
+ecosystems (Table~\ref{tab:BGC}).  In summary, these models were
 originally published for a number of different types of ecosystems,
 though predominantly aquatic, by a number of author teams.  Models in
 the library range in size from 4 nodes to 125 nodes with connectance
@@ -411,7 +403,7 @@ values ranging from 7\% to 45\%.
 This collection of models overlaps with other data sets.  For example,
 twenty-seven of the models (47\%) are included in the set of models
 compiled and distributed by Dr. Ulanowicz
-(\href{http://www.cbl.umces.edu/~ulan/ntwk/network.html}{http://www.cbl.umces.edu/~ulan/ntwk/network.html}).
+(\url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}).
 All 50 of the models analyzed by \citet{borrett10_hmg} and
 \citet{salas11_did} and the 45 models analyzed in \citet{borrett13}
 are included in this model library.
@@ -714,33 +706,6 @@ This code creates a network data object for \textit{enaR} from the WAND
 formatted Mdloti ecosystem model data
 \citep{scharler2012ecosystem}. This data is courtesy of U.M. Scharler.
 
-\subsection*{ENAM}
-
-Another commonly used data format stores the necessary model data in a
-csv or Excel formatted file.  We include an example Excel file of the
-Mdloti estuary stored in this form (``MDMAR02.xlsx'', courtesy
-of U. M. Scharler).  This format has not been described technically in
-the literature nor has it been named.  We refer to it as ENAM as it is
-the ENA model data stored primarily as a square matrix with several
-preliminary rows that include meta-data, the number of nodes, and
-number of living nodes (similar to SCOR).  The data format is
-generally similar in concept, if not exact form, to the data system
-matrix used as the input to the NEA.m function \citep{fath06}.
-However, the ENAM format includes information on whether nodes are
-living and partitions output into respiration and exports.
-
-Using an example data file,
-\url{http://people.uncw.edu/borretts/data/MDMAR02.xlsx}, this data
-format can be read into the \textit{enaR} package as:
-
-<<eval=true>>=
-  m <- read.enam('data/MDMAR02.xlsx')
-@
-
-The current read.enam function assumes the data are stored on the
-first worksheet of an Excel file. In the future, we expect to expand
-this function's capabilities to read the data from a CSV file.
-
 \subsection*{NEA}
 
 For their Matlab function to perform network environ analysis (Patten School),
@@ -777,16 +742,42 @@ m <- read.nea("oyster.csv")
 ## of the information in the "oyster" data object.
 @
 
+\subsection*{ENAM}
 
+Another commonly used data format stores the necessary model data in a
+csv or Excel formatted file.  We include an example Excel file of the
+Mdloti estuary stored in this form (``MDMAR02.xlsx'', courtesy
+of U. M. Scharler).  This format has not been described technically in
+the literature nor has it been named.  We refer to it as ENAM as it is
+the ENA model data stored primarily as a square matrix with several
+preliminary rows that include meta-data, the number of nodes, and
+number of living nodes (similar to SCOR).  The data format is
+generally similar in concept, if not exact form, to the data system
+matrix used as the input to the NEA.m function \citep{fath06}.
+However, the ENAM format includes information on whether nodes are
+living and partitions output into respiration and exports.
+
+Using an example data file,
+\url{http://people.uncw.edu/borretts/data/MDMAR02.xlsx}, this data
+format can be read into the \textit{enaR} package as:
+
+<<eval=true>>=
+  m <- read.enam('data/MDMAR02.xlsx')
+@
+
+The current read.enam function assumes the data are stored on the
+first worksheet of an Excel file. In the future, we expect to expand
+this function's capabilities to read the data from a CSV file.
 
 %%%%%%%%
 %%4+. analyses
 
 \section{Analyzing Ecosystem Models}
 
-The primary ENA algorithms included in this package are summarized in
-Table~\ref{tab:alg} and Figure~\ref{fig:depnet} illustrates the
-interdependecy of the functions in the package.
+ENA is often applied to investigate the structure and function of a single ecosystem model.  Here, we walk through an
+example of applying multiple ENA algorithms to the South Carolina oyster reef model
+\citep{dame81}.  Table~\ref{tab:alg} summarizes the main ENA algorithms encoded in \textit{enaR}, and  Figure~\ref{fig:depnet} illustrates the
+interdependecy of all of the the functions in the package.
 
 \begin{figure}
   \center
@@ -812,16 +803,12 @@ Utility & \texttt{enaUtility} & Patten \\
 Mixed Trophic Impacts & \texttt{enaMTI} & Ulanowicz \\
 Control & \texttt{enaControl} & Patten \\
 Environ & \texttt{enaEnviron} & Patten \\
+Cycle Basis & \texttt{enaCycle} & Ulanowicz \\
+Canonical Trophic Aggregation & \texttt{enaTroAgg} & Ulanowicz \\ \hline
 \end{tabular}
 %\end{scriptsize}
 \tableline
 \end{table*}
-
-
-In practice, ENA is applied to a single model.  Here, we walk through an
-example of applying multiple ENA algorithms to the oyster reef model
-\citep{dame81}.  The main ENA algorithms encoded in \textit{enaR} are
-summarized in Table~\ref{tab:alg}.
 
 Again, in this package results are reported in the row-to-column
 orientation by default -- including the algorithms from the Patten
@@ -848,13 +835,12 @@ fake.model <- force.balance(fake.model)
 @
 
 The automated balancing routines are based on those presented in
-\citet{allesina03}.  These authors compare alternative balancing
-algorithms and further discuss the implications of using automated
+\citet{allesina03} and include Input, Output, AVG, and AVG2.  These authors compare these alternative balancing algorithms and further discuss the implications of using automated
 procedures.  Caution is warranted when using these techniques, as they
-indiscriminately alter the model flow rates.
-
+indiscriminately alter the model flow rates.  A more neuanced appraoch may be desired when the uncertainty in estimates of model fluxes are known.
 
 \subsection{Structural Network Analysis}
+
 Structural network analysis is common to many types of network
 analysis.  The structural analyses applied here are based on those
 presented in NEA.m \citep{fath06} following the Patten School.  Output
@@ -901,20 +887,19 @@ St$ns
 @
 
 The structural network statistics show that the oyster reef model has
-6 nodes, a pathway proliferation rate of 2.14, and that the model is
-comprised of two strongly connected components but that only one has
-more than one node.
+6 nodes, a pathway proliferation rate of 2.14 (ppr), and that the model is
+comprised of two strongly connected components (no.scc) but that only one has
+more than one node (no.scc.big).
 
 \subsection{Flow Analysis}
-Flow analysis or throughflow analysis is one of the core ENA analyses
+
+Flow analysis is one of the core ENA analyses
 for both the Ulanowicz and Patten Schools \citep{fath99_review,
-  fath06, schramski11}.  The \textit{enaR} implementation
+  latham06, fath06, schramski11}.  The \textit{enaR} implementation
 \texttt{enaFlow} mostly follows the NEA.m function, with small updates
 \cite[e.g. calculating the ratio of indirect-to-direct
 flows][]{borrett11_ree,borrett11_equ}. Results returned by
-\texttt{enaFlow} are summarized in Table~\ref{tab:flow}.
-
-
+\texttt{enaFlow} are summarized in Table~\ref{tab:flow}
 
 % --- FLOW ----------------------
 \begin{table*}[h]
@@ -973,9 +958,9 @@ rm(G)
 F$NP     
 @
 
-Note: you can use the attach function to have access to the objects
+Note that you can use the \texttt{attach} function to have access to the objects
 nested within an object. Since some objects may conflict in name, it's
-best to detach an object once it's not in use.
+best to \texttt{detach} an object once it's not in use.
 
 <<eval=true>>=
 attach(F)
@@ -984,7 +969,7 @@ detach(F)
 @
 
 Matrix powers -- raising a matrix to a power is not a native operation
-in R.  Thus, the \textit{enaR} package includes a function
+in \R\ .  Thus, the \textit{enaR} package includes a function
 \texttt{mExp} to facilitate this matrix operation commonly used in ENA.
 
 <<eval=true>>=
@@ -997,15 +982,12 @@ thermodynamically conserved currency, such as energy, carbon, or
 nitrogen.  Second, the model must be at steady-state for many of the
 analyses.  This means that the sum of the currency flowing into a node
 equals that exiting the node such that its storage or biomass is not
-changing.  Models can be "balanced" to meet this second assumption;
-and we detail methods for balancing in the flow analysis example
-below.
-
+changing.  
 
 \subsection{Ascendency}
 
-A key contribution of the Ulanowicz School to ENA is Ascendency
-concept and the development of several information based indices
+A key contribution of the Ulanowicz School to ENA is the Ascendency
+concept and the development of several information based network-level statistics
 \citep{ulanowicz86, ulanowicz97}.  This analysis is based on all of
 the flows in the system and does not assume the modeled system is at
 steady-state.  The \texttt{enaAscendency} function returns several of
@@ -1031,17 +1013,21 @@ as follows:
       CAP& capacity \\
       ASC.CAP& ascendency-to-capacity ratio (dimensionless)\\
       OH.CAP& overhead-to-capacity ratio (dimensionless)\\
+      robustness & \\
+      ELD & \\
+      TD & \\
       \hline
     \end{tabular}
   \end{small}
 \end{table*}
 
 \subsection{Storage Analysis}
+
 Storage ENA was developed in the Patten School.  It is similar to flow
 ENA, but divides the flows by storage (e.g., biomass) instead of
 throughflow.  See \citet{fath99_review} and \citet{schramski11} for an
 overview of this method.  Output of this function is summarized in
-Table~\ref{tab:storage}, and this is an example of its implementation.
+Table~\ref{tab:storage}. What follows is an example of applying the storage analysis to the oyster reef model.
 
 <<eval=true>>=
 S <- enaStorage(m)
@@ -1162,7 +1148,7 @@ E$output[1]
 The \texttt{TET} function returns vectors of the unit and realized
 input and output total environ throughflow.  The realized total
 environ throughflow is an environ based partition of the total system
-throughflow (TST).
+throughflow \citep{whipple07}.
 
 <<eval=true>>=
 tet <- TET(m)
@@ -1192,7 +1178,10 @@ network.  Table~\ref{tab:control} summarizes the function output.
 <<eval=true>>=
 C <- enaControl(m)
 attributes(C)
+C$sc
 @
+
+The elements of the sc vector indicate the relative control exherted by each node on the system functioning.  
 
 %%% The Outputs listed contain the Schramski Control results. ~Pawan
 % enaControl - Control Analysis ~Pawan
