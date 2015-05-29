@@ -7,7 +7,8 @@
 \author{Matthew K. Lau\\Harvard Forest\\Harvard University\\ \And
         Stuart R. Borrett\\Department of Biology and Marine Biology\\
         University of North Carolina Wilmington\\and\\Duke Network
-        Analysis Center\\Social Science Research Institute\\Duke University}
+        Analysis Center\\Social Science Research Institute\\Duke
+        University\\ \And Pawandeep Singh}
 \title{enaR: Ecosystem Network Analysis with R}
 
 %% for pretty printing and a nice hypersummary also set:
@@ -196,7 +197,7 @@ citation('enaR')
 
 %%% \subsection{enaR workflow}
 % 1. Get a model
-% 2. Input/Import model 
+% 2. Input/Import model
 % 3. Balance
 % 4. Plot
 % 5. Analyze structure = static properties
@@ -226,14 +227,14 @@ start, the current stable version can be installed from CRAN:
 
 <<eval=false>>=
 install.packages('enaR')
-@ 
+@
 
 The beta version can be installed from GitHub:
 
 <<eval=false>>=
 library(devtools)
 install_github('SEELab/enaR',ref='beta')
-@ 
+@
 
 You can now load the package:
 
@@ -305,14 +306,40 @@ School row-to-column orientation (see Section~\ref{sec:orient} for
 details).
 
 % Model Construction
-There are multiple methods for constructing ecosystem network models and tools for assisting with this process \citep{fath07_netconstruction}.  One approach is to construct a dynamic, processes-based, mathematical model of the system typically using ordinary differential equations.  For example, the EcoPath with EcoSim \citep{christensen92, christensen95} software assists scientists with constructing food-web focused ecosystem models using an underlying bioenergetic approach.   Alternatively, \citet{ulanowicz86} has called for a more phenomenologial approach to the model construction.  This modeling process starts with a conceptual network model of the system and then the node and edge weights are estimated directly from observations.  Its phenomenologial in the sense that it focuses on what the flows are, rather than the forms of the mechanistic processes that generate the flows.   As this approach is essentially an inverse problem, some have developed inverse linear modeling methods to assist with infering the network weights from data \citep{vezina1988, vanoevelen2010}.  The \textit{limSolve} \R pacakge can assist with this modeling approach \citep{soetaert09}.  \citet{ulanowicz2008least} also introduced two least-inference algorithms to assist with this kind of model constuction.  These methods focus on constructing models to represent specific empirical systems.  Algorithms also exist for constructing simulated ecosystems, including \citeapos{fath04} Cyber Models that use a community assembly type approach. Today, the \textit{enaR} software focuses on the network analysis and assumes that the user has a network model to be analyzed.     
+There are multiple methods for constructing ecosystem network models
+and tools for assisting with this process
+\citep{fath07_netconstruction}.  One approach is to construct a
+dynamic, processes-based, mathematical model of the system typically
+using ordinary differential equations.  For example, the EcoPath with
+EcoSim \citep{christensen92, christensen95} software assists
+scientists with constructing food-web focused ecosystem models using
+an underlying bioenergetic approach.  Alternatively,
+\citet{ulanowicz86} has called for a more phenomenologial approach to
+the model construction.  This modeling process starts with a
+conceptual network model of the system and then the node and edge
+weights are estimated directly from observations.  Its phenomenologial
+in the sense that it focuses on what the flows are, rather than the
+forms of the mechanistic processes that generate the flows.  As this
+approach is essentially an inverse problem, some have developed
+inverse linear modeling methods to assist with infering the network
+weights from data \citep{vezina1988, vanoevelen2010}.  The
+\textit{limSolve} \R pacakge can assist with this modeling approach
+\citep{soetaert09}.  \citet{ulanowicz2008least} also introduced two
+least-inference algorithms to assist with this kind of model
+constuction.  These methods focus on constructing models to represent
+specific empirical systems.  Algorithms also exist for constructing
+simulated ecosystems, including \citeapos{fath04} Cyber Models that
+use a community assembly type approach. Today, the \textit{enaR}
+software focuses on the network analysis and assumes that the user has
+a network model to be analyzed.
 
 % Network Data Object
 \subsection{Network Data Class}
 
-The \textit{enaR} package stores the model data in the \textbf{network}
-class defined in the \textit{network} package \citep[see][for
-details]{butts08_network}. In this software, a complete ecosystem network model description includes:
+The \textit{enaR} package stores the model data in the
+\textbf{network} class defined in the \textit{network} package
+\citep[see][for details]{butts08_network}. In this software, a
+complete ecosystem network model description includes:
 
 \begin{description}
 \item[F] is the flow matrix, oriented row-to-column
@@ -390,28 +417,30 @@ more information, see the help file for the function in question.
 %%1. provided models
 \subsection{Model Library}
 
-\textit{enaR} includes a library of 100 empirically-based
-previously published ecosystem models that can be categorized into two general classes: trophic and biogeochemical cycling \citep{christian96, baird08_sylt, borrett10_idd, borrett15_bgc}.  First, 58 of the models are trophically-based
-models with food webs at their core (Tables~\ref{tab:TRO}).  Second,
-there are 42 models are focused on biogeochemical cycling in
-ecosystems (Table~\ref{tab:BGC}).  In summary, these models were
-originally published for a number of different types of ecosystems,
-though predominantly aquatic, by a number of author teams.  Models in
-the library range in size from 4 nodes to 125 nodes with connectance
-values ranging from 7\% to 45\%.
+\textit{enaR} includes a library of 100 empirically-based previously
+published ecosystem models that can be categorized into two general
+classes: trophic and biogeochemical cycling \citep{christian96,
+  baird08_sylt, borrett10_idd, borrett15_bgc}.  First, 58 of the
+models are trophically-based models with food webs at their core
+(Tables~\ref{tab:TRO}).  Second, there are 42 models are focused on
+biogeochemical cycling in ecosystems (Table~\ref{tab:BGC}).  In
+summary, these models were originally published for a number of
+different types of ecosystems, though predominantly aquatic, by a
+number of author teams.  Models in the library range in size from 4
+nodes to 125 nodes with connectance values ranging from 7\% to 45\%.
 
-This collection of models overlaps with other data sets.  For example,
-twenty-seven of the models (47\%) are included in the set of models
-compiled and distributed by Dr. Ulanowicz
-(\url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}).
-All 50 of the models analyzed by \citet{borrett10_hmg} and
-\citet{salas11_did} and the 45 models analyzed in \citet{borrett13}
-are included in this model library.
+This collection of models overlaps with other extant data sets.  For
+example, twenty-seven of the models (47\%) are included in the set of
+models compiled and distributed by Dr. Ulanowicz
+(\url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}).  All 50 of
+the models analyzed by \citet{borrett10_hmg} and \citet{salas11_did}
+and the 45 models analyzed in \citet{borrett13} are included in this
+model library.
 
 The trophic models are grouped as the \texttt{troModels} object and
 the biogeochemically-based models are available as the
 \texttt{bgcModels} object.  Both data objects return a list of the
-model network objects.  To use these models simply use the R
+model network objects.  To use these models simply use the \R\
 \textit{base} \texttt{data} function. This will load the models into
 the working memory as a named list of network objects:
 
@@ -597,12 +626,12 @@ the graph only shows internal system flows.
 
 <<oyster1,eval=true,fig=false>>=
 ## Load data
-data(oyster)  
+data(oyster)
 m <- oyster
 ## Set the random seed to control plot output
-set.seed(2)    
+set.seed(2)
 ## Plot network data object (uses plot.network)
-plot(m)       
+plot(m)
 @
 
 We can use the excellent graphics capabilities of \R\ to make fancier
@@ -613,23 +642,23 @@ plot of the same data (Fig.~\ref{fig:oyster}(right)).
 ## Set colors to use
 my.col <- c('red','yellow',rgb(204,204,153,maxColorValue=255),'grey22')
 ## Extract flow information for later use.
-F <- as.matrix(m,attrname='flow')                   
+F <- as.matrix(m,attrname='flow')
 ## Get indices of positive flows
-f <- which(F!=0, arr.ind=T)       
+f <- which(F!=0, arr.ind=T)
 opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
 ## Set the random seed to control plot output
-set.seed(2)                    
+set.seed(2)
 plot(m,
 ## Scale nodes with storage
-     vertex.cex=log(m%v%'storage'), 
+     vertex.cex=log(m%v%'storage'),
 ## Add node labels
-     label= m%v%'vertex.names',     
+     label= m%v%'vertex.names',
      boxed.labels=FALSE,
      label.cex=0.65,
 ## Make rounded nodes
-     vertex.sides=45,   
+     vertex.sides=45,
 ## Scale arrows to flow magnitude
-     edge.lwd=log10(abs(F[f])),     
+     edge.lwd=log10(abs(F[f])),
      edge.col=my.col[3],
      vertex.col=my.col[1],
      label.col='white',
@@ -774,10 +803,13 @@ this function's capabilities to read the data from a CSV file.
 
 \section{Analyzing Ecosystem Models}
 
-ENA is often applied to investigate the structure and function of a single ecosystem model.  Here, we walk through an
-example of applying multiple ENA algorithms to the South Carolina oyster reef model
-\citep{dame81}.  Table~\ref{tab:alg} summarizes the main ENA algorithms encoded in \textit{enaR}, and  Figure~\ref{fig:depnet} illustrates the
-interdependecy of all of the the functions in the package.
+ENA is often applied to investigate the structure and function of a
+single ecosystem model.  Here, we walk through an example of applying
+multiple ENA algorithms to the South Carolina oyster reef model
+\citep{dame81}.  Table~\ref{tab:alg} summarizes the main ENA
+algorithms encoded in \textit{enaR}, and Figure~\ref{fig:depnet}
+illustrates the interdependecy of all of the the functions in the
+package.
 
 \begin{figure}
   \center
@@ -830,7 +862,7 @@ ssCheck(fake.model)
 ## To BALANCE a model if needed
 fake.model <- balance(fake.model,method="AVG2")
 
-## To FORCE BALANCE a model if needed 
+## To FORCE BALANCE a model if needed
 fake.model <- force.balance(fake.model)
 @
 
@@ -886,10 +918,23 @@ attributes(St)
 St$ns
 @
 
-The structural network statistics show that the oyster reef model has
-6 nodes, a pathway proliferation rate of 2.14 (ppr), and that the model is
-comprised of two strongly connected components (no.scc) but that only one has
-more than one node (no.scc.big).
+
+The number of nodes, number of links, link density, and connectance
+(density) are common statistics used to describe networks like food
+webs \citep{martinez1992constant, dunne02food, eklof2006, estrada2007,
+  brandes05}.  The pathway proliferation rate quantifies if and how
+fast the number of pathways increases with path length in the network
+\citep{borrett03, borrett07_jtb}.  This rate is equivalent to the
+dominant eigenvalue of the adjacency matrix ($\lambda_1(A)$) if the
+network is comprised of a single strongly connected component
+\citep{borrett07_jtb}.
+
+The structural network statistics for the oyster reef model shows that
+it has 6 nodes, a pathway proliferation rate of 2.14 (ppr), and that
+the model is comprised of two strongly connected components (no.scc)
+but that only one has more than one node (no.scc.big).  Thus, 83\% of
+the nodes are participating in a strongly connected component (pscc).
+
 
 \subsection{Flow Analysis}
 
@@ -952,10 +997,10 @@ F <- enaFlow(m)
 attributes(F)
 F$ns
 ## Output-oriented direct flow matrix
-G <- F$G 
+G <- F$G
 rm(G)
 ## Input-oriented integral flow matrix
-F$NP     
+F$NP
 @
 
 Note that you can use the \texttt{attach} function to have access to the objects
@@ -980,19 +1025,21 @@ To validly apply flow analysis, the network model must meet two
 analytical assumptions.  First, the model must trace a single,
 thermodynamically conserved currency, such as energy, carbon, or
 nitrogen.  Second, the model must be at steady-state for many of the
-analyses.  This means that the sum of the currency flowing into a node
-equals that exiting the node such that its storage or biomass is not
-changing.  
+analyses.
+
+% insert examples of use? Finn 1976, Finn 1980, Whipple 2007, Gattie
+% 2007, Small et al 2014.  Could we includes something from
+% vanoevelen2006carbon?  vanoevelen2009cold.
 
 \subsection{Ascendency}
 
 A key contribution of the Ulanowicz School to ENA is the Ascendency
-concept and the development of several information based network-level statistics
-\citep{ulanowicz86, ulanowicz97}.  This analysis is based on all of
-the flows in the system and does not assume the modeled system is at
-steady-state.  The \texttt{enaAscendency} function returns several of
-these information based measures (Table~\ref{tab:asc}).  This is run
-as follows:
+concept and the development of several information based network-level
+statistics \citep{ulanowicz86, ulanowicz97}.  This analysis is based
+on all of the flows in the system and does not assume the modeled
+system is at steady-state.  The \texttt{enaAscendency} function
+returns several of these information based measures
+(Table~\ref{tab:asc}).  This is run as follows:
 
 <<eval=true>>=
   enaAscendency(oyster)
@@ -1013,9 +1060,9 @@ as follows:
       CAP& capacity \\
       ASC.CAP& ascendency-to-capacity ratio (dimensionless)\\
       OH.CAP& overhead-to-capacity ratio (dimensionless)\\
-      robustness & \\
-      ELD & \\
-      TD & \\
+      robustness & robustness of the network as in \citet{fath2014quantifying} \\
+      ELD & effective link density of the network \citet{ulanowicz2014}\\
+      TD & trophic depth of the network as in \citet{ulanowicz2014} \\
       \hline
     \end{tabular}
   \end{small}
@@ -1023,11 +1070,13 @@ as follows:
 
 \subsection{Storage Analysis}
 
-Storage ENA was developed in the Patten School.  It is similar to flow
-ENA, but divides the flows by storage (e.g., biomass) instead of
-throughflow.  See \citet{fath99_review} and \citet{schramski11} for an
-overview of this method.  Output of this function is summarized in
-Table~\ref{tab:storage}. What follows is an example of applying the storage analysis to the oyster reef model.
+Storage ENA was developed in the Patten School
+\citep{barber1978retrospective, barber1979markovian}.  It is similar
+to flow ENA, but divides the flows by storage (e.g., biomass) instead
+of throughflow.  See \citet{fath99_review} and \citet{schramski11} for
+an overview of this method.  Output of this function is summarized in
+Table~\ref{tab:storage}. What follows is an example of applying the
+storage analysis to the oyster reef model.
 
 <<eval=true>>=
 S <- enaStorage(m)
@@ -1075,6 +1124,20 @@ S$ns
     \end{tabular}
 \end{small}
 \end{table*}
+
+This storage analysis of the oyster reef model indicates that the
+total energy stored in the system on an average day is 3112 kcal
+m$-2$, and that 99.3\% of this storage is generated by energy flowing
+over indirect pathways (ISI).
+
+\citet{whipple2014} provides a detailed example of applying storage
+analysis to characterize the dynamic organization of an ecosystem.
+They investigated how the storage analysis properties
+changed across sixteen consecutive seasonal N cycling models of the
+Neuse River Estuary.  They found that from this storage perspective
+NOx was the dominant compartment, and thus a primary controller of the
+system dynamics.  Note that this work provides an example of applying
+this analysis at multiple levels of analysis \citep[e.g.,][]{hines14}.
 
 % ---
 \subsection{Utility Analysis}
@@ -1181,7 +1244,7 @@ attributes(C)
 C$sc
 @
 
-The elements of the sc vector indicate the relative control exherted by each node on the system functioning.  
+The elements of the sc vector indicate the relative control exherted by each node on the system functioning.
 
 %%% The Outputs listed contain the Schramski Control results. ~Pawan
 % enaControl - Control Analysis ~Pawan
@@ -1229,7 +1292,7 @@ despite the mathematical problem.
 <<eval=true>>=
 mti <- enaMTI(oyster,eigen.check=FALSE)
 attributes(mti)
-mti$M 
+mti$M
 @
 
 % enaMTI - Mixed Trophic Impacts
@@ -1327,7 +1390,7 @@ for the feeding cycles which are similar to the enaCycle outputs.
 
 <<eval=true,echo=false,results=hide>>=
 m <- oyster
-@ 
+@
 
 <<eval=true>>=
 trop <- enaTroAgg(m)
@@ -1381,7 +1444,7 @@ Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
 <<eval=true>>=
 ns <- get.ns(m)
 ## Examine the structure of ns
-str(ns)    
+str(ns)
 @
 
 It is also possible to instantly return all of the main ENA output
@@ -1418,16 +1481,16 @@ opar <- par(las=1,mar=c(7,5,1,1),xpd=TRUE,bg="white")
 ## Find centrality order
 o <- order(ec$AEC,decreasing=TRUE)
 ## Creating a barplot
-bp <- barplot(ec$AEC[o],     
+bp <- barplot(ec$AEC[o],
               names.arg=NA,
               ylab="Average Environ Centrality",
               col="black",border=NA)
 ## Adding labels
-text(bp,-0.008,                
+text(bp,-0.008,
      labels=names(ec$AEC)[o],
      srt=35,adj=1,cex=1)
 ## Remove the plotting parameters
-rm(opar)  
+rm(opar)
 @
 
 \begin{figure}
@@ -1543,7 +1606,7 @@ head(IDs)
 
 We can also collect the set of output-oriented integral flow matrices.
 <<eval=true>>=
-## Here is a list containing only the 
+## Here is a list containing only the
 ## output-oriented integral flow matrices
 N.list <- lapply(m.list,function(x) enaFlow(x)$N)
 @
@@ -1570,12 +1633,12 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 <<b,eval=true>>=
 opar <- par(las=1,mar=c(9,7,2,1),xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
 ## Number of models
-x=dim(ns)[1] 
+x=dim(ns)[1]
 m.select <- 40:45
 bp=barplot(ns$ID.F[m.select],ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
         col="darkgreen",border=NA,ylim=c(0,2))
 ## Add labels
-text(bp,-0.05,                
+text(bp,-0.05,
      labels=rownames(ns)[m.select],
        srt=45,adj=1,cex=0.85)
 opar <- par(xpd=FALSE)
@@ -1586,7 +1649,7 @@ plot(ns$FCI,ns$ID.F,pch=20,col="blue",cex=2,
      xlab="Finn Cycling Index (FCI)",
      xlim=c(0,0.8),ylim=c(0,8))
 ## Remove the plotting parameters
-rm(opar)  
+rm(opar)
 @
 
 
@@ -1639,20 +1702,20 @@ well. For example, it will create a target diagram of centralities.
 <<d,eval=true>>=
 m <- troModels[[38]]
 ## Calculate betweenness centrality
-b <- betweenness(m)         
+b <- betweenness(m)
 ## Get vertex names
-nms <- m%v%'vertex.names'   
+nms <- m%v%'vertex.names'
 show(nms)
 ## Exclude less central nodes
-nms[b<=(0.1*max(b))] <- NA  
+nms[b<=(0.1*max(b))] <- NA
 
 set.seed(3)
 opar <- par(xpd=TRUE,mfrow=c(1,1))
-## Create target plot showing only 
+## Create target plot showing only
 ## labels of most central nodes
 gplot.target(m,b,circ.lab=FALSE,
              edge.col="grey",
-             label=nms) 
+             label=nms)
 ## Remove plot settings
 rm(opar)
 @
@@ -1693,7 +1756,7 @@ A <- St$A
 
 ## Creating an iGraph graph
 g <- graph.adjacency(A)
-plot(g)  
+plot(g)
 @
 
 \textit{iGraph} has a different set of visualization tools and
@@ -1718,7 +1781,7 @@ shortest.paths(g)
 average.path.length(g,directed=TRUE)
 
 ## Diameter of the graph
-diameter(g)  
+diameter(g)
 
 ## Connectivity of the group and sub-components
 vertex.connectivity(g)  # connectivity of a graph (group cohesion)
@@ -1730,7 +1793,7 @@ subcomponent(g,2,'out') # subcomponent reachable from 2 along output
 edge.connectivity(g)
 
 ## Detach igraph package
-detach(package:igraph)  
+detach(package:igraph)
 @
 
 \subsection{EcoNet}
@@ -1747,7 +1810,7 @@ current working directory:
 <<eval=false>>=
 data(oyster)
 write.EcoNet(oyster,file='oyster.txt',mn='oyster_model')
-@ 
+@
 
 
 \section{Conclusion}
