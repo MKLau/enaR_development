@@ -390,9 +390,9 @@ example of doing this with hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   balanced = FALSE 
-  total edges= 7 
+  total edges= 10 
     missing edges= 0 
-    non-missing edges= 7 
+    non-missing edges= 10 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -417,7 +417,7 @@ can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 0.4507223 3.0122950 2.3485984 2.8759267
+[1] 2.7592382 2.3305544 2.9891389 0.9426303
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -437,11 +437,11 @@ object with:
 > as.matrix(fake.model,attrname="flow")
 \end{Sinput}
 \begin{Soutput}
-          node1    node2    node3    node4
-node1 2.7187880 0.000000 0.000000 4.859106
-node2 0.0000000 0.000000 0.000000 3.471014
-node3 0.7863419 7.419382 5.953546 0.000000
-node4 0.0000000 0.000000 3.157019 0.000000
+         node1     node2    node3    node4
+node1 0.000000 0.7931699 7.625852 2.110706
+node2 3.904895 0.0000000 3.615596 0.000000
+node3 0.000000 0.0000000 2.986486 5.524071
+node4 0.000000 0.4605632 4.313260 5.586071
 \end{Soutput}
 \end{Schunk}
 
@@ -456,20 +456,20 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-          node1    node2    node3    node4
-node1 2.7187880 0.000000 0.000000 4.859106
-node2 0.0000000 0.000000 0.000000 3.471014
-node3 0.7863419 7.419382 5.953546 0.000000
-node4 0.0000000 0.000000 3.157019 0.000000
+         node1     node2    node3    node4
+node1 0.000000 0.7931699 7.625852 2.110706
+node2 3.904895 0.0000000 3.615596 0.000000
+node3 0.000000 0.0000000 2.986486 5.524071
+node4 0.000000 0.4605632 4.313260 5.586071
 
 $z
-[1] 0.4507223 3.0122950 2.3485984 2.8759267
+[1] 2.7592382 2.3305544 2.9891389 0.9426303
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 0.4507223 3.0122950 2.3485984 2.8759267
+[1] 2.7592382 2.3305544 2.9891389 0.9426303
 
 $y
 [1] NA NA NA NA
