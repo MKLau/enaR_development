@@ -89,7 +89,7 @@
 
 
 \begin{document}
-%% \SweaveOpts{concordance=TRUE}
+\SweaveOpts{concordance=TRUE}
 
 
 %%%%Re-organization based on SRB notes
@@ -1903,9 +1903,9 @@ ecologists.  Our aim is for \textit{enaR} to serve as a nexus for the
 introduction of analyses from the broader field of network theory into
 ecology. In addition, we would like to invite users to connect,
 collaborate and contribute to development of ENA theory and
-\textit{enaR}. Programmers that are interested in contributing can
-connect online via \url{github.com/SEELab/enaR_development}.
-
+\textit{enaR}. Programmers that are interested can visit
+\url{https://github.com/SEELab/enaR_development} for more information
+on how to contribute to development of the \textit{enaR} package.
 
 \bibliography{jss_abb,jss}
 
