@@ -219,7 +219,6 @@ detailed description of how to conduct these analyses using
 
 \section{Getting Started}
 
-\subsection{Installing \textit{enaR}}
 In this section we describe the data necessary for the Ecological
 Network Analysis and show how to build the central network data object
 in \R\ that contains the model data for subsequent analysis.  To
@@ -390,9 +389,9 @@ example of doing this with hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   balanced = FALSE 
-  total edges= 10 
+  total edges= 13 
     missing edges= 0 
-    non-missing edges= 10 
+    non-missing edges= 13 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -417,7 +416,7 @@ can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 2.7592382 2.3305544 2.9891389 0.9426303
+[1] 0.9832709 1.7276378 3.9508456 3.3475543
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -438,10 +437,10 @@ object with:
 \end{Sinput}
 \begin{Soutput}
          node1     node2    node3    node4
-node1 0.000000 0.7931699 7.625852 2.110706
-node2 3.904895 0.0000000 3.615596 0.000000
-node3 0.000000 0.0000000 2.986486 5.524071
-node4 0.000000 0.4605632 4.313260 5.586071
+node1 0.000000 0.1295493 3.707570 4.172578
+node2 5.615136 6.8026144 0.000000 4.672064
+node3 4.915889 1.9412592 2.261347 4.619334
+node4 0.000000 8.8831899 2.652546 2.424396
 \end{Soutput}
 \end{Schunk}
 
@@ -457,19 +456,19 @@ output is as follows:
 \begin{Soutput}
 $F
          node1     node2    node3    node4
-node1 0.000000 0.7931699 7.625852 2.110706
-node2 3.904895 0.0000000 3.615596 0.000000
-node3 0.000000 0.0000000 2.986486 5.524071
-node4 0.000000 0.4605632 4.313260 5.586071
+node1 0.000000 0.1295493 3.707570 4.172578
+node2 5.615136 6.8026144 0.000000 4.672064
+node3 4.915889 1.9412592 2.261347 4.619334
+node4 0.000000 8.8831899 2.652546 2.424396
 
 $z
-[1] 2.7592382 2.3305544 2.9891389 0.9426303
+[1] 0.9832709 1.7276378 3.9508456 3.3475543
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 2.7592382 2.3305544 2.9891389 0.9426303
+[1] 0.9832709 1.7276378 3.9508456 3.3475543
 
 $y
 [1] NA NA NA NA
@@ -2487,7 +2486,7 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 \includegraphics{enaR-vignette-052}
 \caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
   (left) and relationship between the Finn Cycling Index and the ratio
-  of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:aec}
+  of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:idf}
 \end{figure}
 
 A strength of this software is the ease with which users can apply ENA

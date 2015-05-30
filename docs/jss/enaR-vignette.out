@@ -1,12 +1,11 @@
 \BOOKMARK [1][-]{Section.0.Introduction.1}{Introduction}{}
 \BOOKMARK [1][-]{Section.1.Getting Started.1}{Getting Started}{}
-\BOOKMARK [2][-]{Subsection.2.0.Installing \textit  {enaR}.2}{Installing enaR}{Section.1.Getting Started.1}
-\BOOKMARK [2][-]{Subsection.2.1.Ecosystem Network Model.2}{Ecosystem Network Model}{Section.1.Getting Started.1}
-\BOOKMARK [2][-]{Subsection.2.2.Network Data Class.2}{Network Data Class}{Section.1.Getting Started.1}
-\BOOKMARK [2][-]{Subsection.2.3.Building a Network Object.2}{Building a Network Object}{Section.1.Getting Started.1}
-\BOOKMARK [2][-]{Subsection.2.4.Model Library.2}{Model Library}{Section.1.Getting Started.1}
-\BOOKMARK [2][-]{Subsection.2.5.Network Visualization.2}{Network Visualization}{Section.1.Getting Started.1}
-\BOOKMARK [2][-]{Subsection.2.6.Data Input: Reading Common Data File Formats.2}{Data Input: Reading Common Data File Formats}{Section.1.Getting Started.1}
+\BOOKMARK [2][-]{Subsection.2.0.Ecosystem Network Model.2}{Ecosystem Network Model}{Section.1.Getting Started.1}
+\BOOKMARK [2][-]{Subsection.2.1.Network Data Class.2}{Network Data Class}{Section.1.Getting Started.1}
+\BOOKMARK [2][-]{Subsection.2.2.Building a Network Object.2}{Building a Network Object}{Section.1.Getting Started.1}
+\BOOKMARK [2][-]{Subsection.2.3.Model Library.2}{Model Library}{Section.1.Getting Started.1}
+\BOOKMARK [2][-]{Subsection.2.4.Network Visualization.2}{Network Visualization}{Section.1.Getting Started.1}
+\BOOKMARK [2][-]{Subsection.2.5.Data Input: Reading Common Data File Formats.2}{Data Input: Reading Common Data File Formats}{Section.1.Getting Started.1}
 \BOOKMARK [1][-]{Section.2.Analyzing Ecosystem Models.1}{Analyzing Ecosystem Models}{}
 \BOOKMARK [2][-]{Subsection.3.0.Balancing for Steady-State.2}{Balancing for Steady-State}{Section.2.Analyzing Ecosystem Models.1}
 \BOOKMARK [2][-]{Subsection.3.1.Structural Network Analysis.2}{Structural Network Analysis}{Section.2.Analyzing Ecosystem Models.1}

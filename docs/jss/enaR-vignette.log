@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.3.6)  30 MAY 2015 14:44
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.3.6)  30 MAY 2015 14:56
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode\input enaR-vignette.tex
@@ -287,11 +287,7 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 \SC@tempdimb=\dimen111
 \c@SC@C=\count100
 \SC@BOX=\box27
-) (./enaR-vignette.aux
-
-LaTeX Warning: Label `fig:aec' multiply defined.
-
-)
+) (./enaR-vignette.aux)
 \openout1 = `enaR-vignette.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
@@ -308,7 +304,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 91.
- (/usr/share/texmf/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texmf/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 91.
@@ -327,123 +324,16 @@ Package: refcount 2006/02/20 v3.0 Data extraction from references (HO)
 LaTeX Info: Redefining \ref on input line 91.
 LaTeX Info: Redefining \pageref on input line 91.
  (./enaR-vignette.out)
-(./enaR-vignette.out
-! Argument of \@@BOOKMARK has an extra }.
-<inserted text> 
-                \par 
-l.3 ...stalling enaR}{Section.1.Getting Started.1}
-                                                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-2]{enaR}\ifx \reserved@a \@empty \let \check@icl \@empty \let \check@icr \ETC.
-! Paragraph ended before \@@BOOKMARK was complete.
-<to be read again> 
-                   \par 
-l.3 ...stalling enaR}{Section.1.Getting Started.1}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \protect 
-l.3 ...stalling enaR}{Section.1.Getting Started.1}
-                                                  
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \unhbox 
-l.3 ...stalling enaR}{Section.1.Getting Started.1}
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing { inserted.
-<to be read again> 
-                   \unhbox 
-l.3 ...stalling enaR}{Section.1.Getting Started.1}
-                                                  
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                    #4  \errhelp \@err@     ...
-l.26 ...lti-Model Analyses \(Batch Processing\)}{}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \let \@err@               ...
-l.26 ...lti-Model Analyses \(Batch Processing\)}{}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                  \@empty \def \MessageBreak...
-l.26 ...lti-Model Analyses \(Batch Processing\)}{}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\GenericError  ...                                
-                                                     \endgroup 
-l.26 ...lti-Model Analyses \(Batch Processing\)}{}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-)
-Runaway text?
-\unhbox \voidb@x \bgroup \def \def Installing enaR{Ecosystem Network \ETC.
-! File ended while scanning text of \unhbox.
-<inserted text> 
-                }
-l.91 \begin{document}
-                     
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
-
+(./enaR-vignette.out)
 \@outlinefile=\write4
 \openout4 = `enaR-vignette.out'.
 
-<jsslogo.jpg, id=19, 540.0175pt x 393.47pt>
+ <jsslogo.jpg, id=131, 540.0175pt x 393.47pt>
 File: jsslogo.jpg Graphic file (type jpg)
- <use jsslogo.jpg>
-LaTeX Font Info:    Try loading font information for T1+pzc on input line 91.
 
-(/usr/share/texmf/tex/latex/psnfss/t1pzc.fd
+<use jsslogo.jpg>
+LaTeX Font Info:    Try loading font information for T1+pzc on input line 91.
+ (/usr/share/texmf/tex/latex/psnfss/t1pzc.fd
 File: t1pzc.fd 2001/06/04 font definitions for T1/pzc.
 )
 LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <28> not available
@@ -484,330 +374,45 @@ LaTeX Info: Redefining \selectfont on input line 125.
 \RaggedRightParindent=\skip64
 \JustifyingParindent=\skip65
 )
-
-Package natbib Warning: Citation `watts1998collective' on page 1 undefined on i
-nput line 106.
-
-
-Package natbib Warning: Citation `newman01scientific1' on page 1 undefined on i
-nput line 106.
-
-
-Package natbib Warning: Citation `barabasi12' on page 1 undefined on input line
- 106.
-
-
-Package natbib Warning: Citation `newman06structure' on page 1 undefined on inp
-ut line 106.
-
-
-Package natbib Warning: Citation `wasserman1994' on page 1 undefined on input l
-ine 106.
-
-
-Package natbib Warning: Citation `borrett14_rise' on page 1 undefined on input 
-line 109.
-
-
-Package natbib Warning: Citation `ings2009' on page 1 undefined on input line 1
-09.
-
-
-Package natbib Warning: Citation `nrc06network' on page 1 undefined on input li
-ne 112.
-
-
-Package natbib Warning: Citation `brandes13' on page 1 undefined on input line 
-112.
-
-
-Package natbib Warning: Citation `borrett12_netecol' on page 1 undefined on inp
-ut line 117.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 1 undefined on input lin
-e 117.
-
-
-Package natbib Warning: Citation `fath99_review' on page 1 undefined on input l
-ine 117.
-
-
-Package natbib Warning: Citation `patten83' on page 1 undefined on input line 1
-23.
-
-
-Package natbib Warning: Citation `higashi89' on page 1 undefined on input line 
-123.
-
-
-Package natbib Warning: Citation `salas11_did' on page 1 undefined on input lin
-e 123.
-
-
-Package natbib Warning: Citation `ulanowicz90' on page 1 undefined on input lin
-e 125.
-
-
-Package natbib Warning: Citation `patten91' on page 1 undefined on input line 1
-25.
-
-
-Package natbib Warning: Citation `fath98' on page 1 undefined on input line 125
-.
-
-
-Package natbib Warning: Citation `bondavalli99' on page 1 undefined on input li
-ne 125.
-
-
-Package natbib Warning: Citation `higashi91' on page 1 undefined on input line 
-127.
-
-
-Package natbib Warning: Citation `belgrano05' on page 1 undefined on input line
- 127.
-
-
-Package natbib Warning: Citation `jorgensen07_newecology' on page 1 undefined o
-n input line 127.
-
-
-Package natbib Warning: Citation `baird04_sylt' on page 1 undefined on input li
-ne 129.
-
-
-Package natbib Warning: Citation `baird08_sylt' on page 1 undefined on input li
-ne 129.
-
-
-Package natbib Warning: Citation `christian03' on page 1 undefined on input lin
-e 130.
-
-
-Package natbib Warning: Citation `hines12' on page 1 undefined on input line 13
-0.
-
-
-Package natbib Warning: Citation `zhang10' on page 1 undefined on input line 13
-1.
-
-
-Package natbib Warning: Citation `chen12' on page 1 undefined on input line 131
-.
-
-
-Underfull \vbox (badness 1762) has occurred while \output is active []
+Underfull \vbox (badness 7433) has occurred while \output is active []
 
  [1
 
 {/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map} <./jsslogo.jpg>]
-
-Package natbib Warning: Citation `leontief1936' on page 2 undefined on input li
-ne 135.
-
-
-Package natbib Warning: Citation `leontief66' on page 2 undefined on input line
- 135.
-
-
-Package natbib Warning: Citation `hannon73' on page 2 undefined on input line 1
-36.
-
-
-Package natbib Warning: Citation `scharler09comparing' on page 2 undefined on i
-nput line 137.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 2 undefined on input lin
-e 139.
-
-
-Package natbib Warning: Citation `ulanowicz97' on page 2 undefined on input lin
-e 139.
-
-
-Package natbib Warning: Citation `ulanowicz04' on page 2 undefined on input lin
-e 139.
-
-
-Package natbib Warning: Citation `patten76' on page 2 undefined on input line 1
-42.
-
-
-Package natbib Warning: Citation `patten78' on page 2 undefined on input line 1
-42.
-
-
-Package natbib Warning: Citation `fath99_review' on page 2 undefined on input l
-ine 142.
-
-
-Package natbib Warning: Citation `brandes05' on page 2 undefined on input line 
-151.
-
-
-Package natbib Warning: Citation `scharler09comparing' on page 2 undefined on i
-nput line 154.
-
-
-Package natbib Warning: Citation `ulanowicz91' on page 2 undefined on input lin
-e 161.
-
 LaTeX Font Info:    Try loading font information for T1+aett on input line 162.
+
 
 (/usr/share/texmf/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-
-Package natbib Warning: Citation `allesina04_wand' on page 2 undefined on input
- line 164.
-
-
-Package natbib Warning: Citation `christensen04' on page 2 undefined on input l
-ine 165.
-
-
-Package natbib Warning: Citation `latham2006' on page 2 undefined on input line
- 166.
-
-
-Package natbib Warning: Citation `fath06' on page 2 undefined on input line 166
-.
-
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 167.
 
 LaTeX Font Info:    No file TS1aer.fd. on input line 167.
+
 
 LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
 (Font)              for symbol `textcopyright' on input line 167.
 
 
-Package natbib Warning: Citation `butts08_network' on page 2 undefined on input
- line 184.
-
-
-Package natbib Warning: Citation `butts08_social' on page 2 undefined on input 
-line 186.
-
-
-Package natbib Warning: Citation `handcock2008statnet' on page 2 undefined on i
-nput line 187.
-
-! Use of \\pdfbookmark doesn't match its definition.
-\text@command #1->\def \reserved@a {
-                                    #1}\ifx \reserved@a \@empty \let \check@...
-l.222 \subsection{Installing \textit{enaR}}
-                                           
-If you say, e.g., `\def\a1{...}', then you must always
-put `1' after `\a', since control sequence names are
-made up of letters only. The macro here has not been
-followed by the required stuff, so I'm ignoring it.
-
-! Extra }, or forgotten \endgroup.
-<recently read> \egroup 
-                        
-l.222 \subsection{Installing \textit{enaR}}
-                                           
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Extra }, or forgotten \endgroup.
-\@@writetorep ...e Parent\Hy@level \endcsname {#3}
-                                                  \advance \@tempcnta by -1 ...
-l.222 \subsection{Installing \textit{enaR}}
-                                           
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Undefined control sequence.
-\reserved@a ->\@nil 
-                    
-l.222 \subsection{Installing \textit{enaR}}
-                                           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\reserved@a ->\@nil 
-                    
-l.222 \subsection{Installing \textit{enaR}}
-                                           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\reserved@a ->\@nil 
-                    
-l.222 \subsection{Installing \textit{enaR}}
-                                           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\reserved@a ->\@nil 
-                    
-l.222 \subsection{Installing \textit{enaR}}
-                                           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Use of \\pdfbookmark doesn't match its definition.
-\check@nocorr@ ...eserved@b {#1}\def \reserved@c {
-                                                  #3}\ifx \reserved@a \reser...
-l.222 \subsection{Installing \textit{enaR}}
-                                           
-If you say, e.g., `\def\a1{...}', then you must always
-put `1' after `\a', since control sequence names are
-made up of letters only. The macro here has not been
-followed by the required stuff, so I'm ignoring it.
-
-! Too many }'s.
-\Hy@pstringdef ...>\edef #1{\pdfescapestring {#2}}
-                                                  
-l.222 \subsection{Installing \textit{enaR}}
-                                           
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `T1/aer/b/sl' in size <10.95> not available
-(Font)              Font shape `T1/aer/bx/sl' tried instead on input line 227.
+(Font)              Font shape `T1/aer/bx/sl' tried instead on input line 177.
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 2 []
  []
 
 [2]
-LaTeX Font Info:    Try loading font information for TS1+aett on input line 230
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 229
 .
-LaTeX Font Info:    No file TS1aett.fd. on input line 230.
+LaTeX Font Info:    No file TS1aett.fd. on input line 229.
 
 
 LaTeX Font Warning: Font shape `TS1/aett/m/sl' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textquotesingle' on input line 230.
+(Font)              for symbol `textquotesingle' on input line 229.
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
@@ -815,50 +420,14 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
  []
 
 [3]
-
-Package natbib Warning: Citation `fath07_netconstruction' on page 4 undefined o
-n input line 309.
-
-
-Package natbib Warning: Citation `christensen92' on page 4 undefined on input l
-ine 312.
-
-
-Package natbib Warning: Citation `christensen95' on page 4 undefined on input l
-ine 312.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 4 undefined on input lin
-e 315.
-
-
-Package natbib Warning: Citation `vezina1988' on page 4 undefined on input line
- 323.
-
-
-Package natbib Warning: Citation `vanoevelen2010' on page 4 undefined on input 
-line 323.
-
-
-Package natbib Warning: Citation `soetaert09' on page 4 undefined on input line
- 325.
-
-
-Package natbib Warning: Citation `ulanowicz2008least' on page 4 undefined on in
-put line 325.
-
 ! Undefined control sequence.
-l.329 simulated ecosystems, including \citeapos
+l.328 simulated ecosystems, including \citeapos
                                                {fath04} Cyber Models that
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-
-Package natbib Warning: Citation `butts08_network' on page 4 undefined on input
- line 339.
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
@@ -876,35 +445,6 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
  []
 
 [6]
-
-Package natbib Warning: Citation `christian96' on page 7 undefined on input lin
-e 499.
-
-
-Package natbib Warning: Citation `baird08_sylt' on page 7 undefined on input li
-ne 499.
-
-
-Package natbib Warning: Citation `borrett10_idd' on page 7 undefined on input l
-ine 499.
-
-
-Package natbib Warning: Citation `borrett15_bgc' on page 7 undefined on input l
-ine 499.
-
-
-Package natbib Warning: Citation `borrett10_hmg' on page 7 undefined on input l
-ine 512.
-
-
-Package natbib Warning: Citation `salas11_did' on page 7 undefined on input lin
-e 512.
-
-
-Package natbib Warning: Citation `borrett13' on page 7 undefined on input line 
-513.
-
-
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 7
  []
@@ -913,7 +453,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 LaTeX Font Warning: Font shape `TS1/aett/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textquotesingle' on input line 570.
+(Font)              for symbol `textquotesingle' on input line 569.
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
@@ -922,481 +462,48 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 [8]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 641.
+(Font)              <5> on input line 640.
 
-
-Package natbib Warning: Citation `haven66' on page 9 undefined on input line 64
-5.
-
-
-Package natbib Warning: Citation `richey78' on page 9 undefined on input line 6
-46.
-
-
-Package natbib Warning: Citation `richey78' on page 9 undefined on input line 6
-47.
-
-
-Package natbib Warning: Citation `richey78' on page 9 undefined on input line 6
-48.
-
-
-Package natbib Warning: Citation `richey78' on page 9 undefined on input line 6
-49.
-
-
-Package natbib Warning: Citation `tilly68' on page 9 undefined on input line 65
-0.
-
-
-Package natbib Warning: Citation `odum57' on page 9 undefined on input line 651
-.
-
-
-Package natbib Warning: Citation `brylinsky72' on page 9 undefined on input lin
-e 652.
-
-
-Package natbib Warning: Citation `dame81' on page 9 undefined on input line 653
-.
-
-
-Package natbib Warning: Citation `rybarczyk03' on page 9 undefined on input lin
-e 654.
-
-
-Package natbib Warning: Citation `sandberg00' on page 9 undefined on input line
- 655.
-
-
-Package natbib Warning: Citation `sandberg00' on page 9 undefined on input line
- 656.
-
-
-Package natbib Warning: Citation `baird81' on page 9 undefined on input line 65
-7.
-
-
-Package natbib Warning: Citation `ray08' on page 9 undefined on input line 658.
-
-
-
-Package natbib Warning: Citation `ray08' on page 9 undefined on input line 659.
-
-
-
-Package natbib Warning: Citation `baird91' on page 9 undefined on input line 66
-0.
-
-
-Package natbib Warning: Citation `baird91' on page 9 undefined on input line 66
-1.
-
-
-Package natbib Warning: Citation `baird91' on page 9 undefined on input line 66
-2.
-
-
-Package natbib Warning: Citation `baird91' on page 9 undefined on input line 66
-3.
-
-
-Package natbib Warning: Citation `baird91' on page 9 undefined on input line 66
-4.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 9 undefined on input lin
-e 665.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 9 undefined on input lin
-e 666.
-
-
-Package natbib Warning: Citation `almunia99' on page 9 undefined on input line 
-667.
-
-
-Package natbib Warning: Citation `heymans00' on page 9 undefined on input line 
-668.
-
-
-Package natbib Warning: Citation `scharler05' on page 9 undefined on input line
- 669.
-
-
-Package natbib Warning: Citation `scharler05' on page 9 undefined on input line
- 670.
-
-
-Package natbib Warning: Citation `scharler05' on page 9 undefined on input line
- 671.
-
-
-Package natbib Warning: Citation `whipple93' on page 9 undefined on input line 
-672.
-
-
-Package natbib Warning: Citation `baird04' on page 9 undefined on input line 67
-3.
-
-
-Package natbib Warning: Citation `baird04' on page 9 undefined on input line 67
-4.
-
-
-Package natbib Warning: Citation `baird04' on page 9 undefined on input line 67
-5.
-
-
-Package natbib Warning: Citation `baird04' on page 9 undefined on input line 67
-6.
-
-
-Package natbib Warning: Citation `link08' on page 9 undefined on input line 677
-.
-
-
-Package natbib Warning: Citation `link08' on page 9 undefined on input line 678
-.
-
-
-Package natbib Warning: Citation `link08' on page 9 undefined on input line 679
-.
-
-
-Package natbib Warning: Citation `monaco97' on page 9 undefined on input line 6
-80.
-
-
-Package natbib Warning: Citation `link08' on page 9 undefined on input line 681
-.
-
-
-Package natbib Warning: Citation `baird89' on page 9 undefined on input line 68
-2.
-
-
-Package natbib Warning: Citation `patricio2006mass' on page 9 undefined on inpu
-t line 683.
-
-
-Package natbib Warning: Citation `baird98' on page 9 undefined on input line 68
-4.
-
-
-Package natbib Warning: Citation `baird98' on page 9 undefined on input line 68
-5.
-
-
-Package natbib Warning: Citation `baird98' on page 9 undefined on input line 68
-6.
-
-
-Package natbib Warning: Citation `baird98' on page 9 undefined on input line 68
-7.
-
-
-Package natbib Warning: Citation `baird98' on page 9 undefined on input line 68
-8.
-
-
-Package natbib Warning: Citation `baird98' on page 9 undefined on input line 68
-9.
-
-
-Package natbib Warning: Citation `baird04_sylt' on page 9 undefined on input li
-ne 690.
-
-
-Package natbib Warning: Citation `ulanowicz00_graminoids' on page 9 undefined o
-n input line 691.
-
-
-Package natbib Warning: Citation `ulanowicz00_graminoids' on page 9 undefined o
-n input line 692.
-
-
-Package natbib Warning: Citation `ulanowicz97_cypress' on page 9 undefined on i
-nput line 693.
-
-
-Package natbib Warning: Citation `ulanowicz97_cypress' on page 9 undefined on i
-nput line 694.
-
-
-Package natbib Warning: Citation `miehls09_oneida' on page 9 undefined on input
- line 695.
-
-
-Package natbib Warning: Citation `miehls09_oneida' on page 9 undefined on input
- line 696.
-
-
-Package natbib Warning: Citation `miehls09_quinte' on page 9 undefined on input
- line 697.
-
-
-Package natbib Warning: Citation `miehls09_quinte' on page 9 undefined on input
- line 698.
-
-
-Package natbib Warning: Citation `ulanowicz99_mangrove' on page 9 undefined on 
-input line 699.
-
-
-Package natbib Warning: Citation `ulanowicz99_mangrove' on page 9 undefined on 
-input line 700.
-
-
-Package natbib Warning: Citation `ulanowicz98_fb' on page 9 undefined on input 
-line 701.
-
-
-Package natbib Warning: Citation `ulanowicz98_fb' on page 9 undefined on input 
-line 702.
-
-
-Overfull \hbox (34.83813pt too wide) in paragraph at lines 641--706
+Overfull \hbox (466.31503pt too wide) in paragraph at lines 640--705
  [] 
  []
 
 
-Package natbib Warning: Citation `finn80' on page 9 undefined on input line 713
-.
+Overfull \hbox (86.46198pt too wide) in paragraph at lines 724--773
+ [] 
+ []
 
 
-Package natbib Warning: Citation `waide74' on page 9 undefined on input line 72
-9.
-
-
-Package natbib Warning: Citation `jordan72' on page 9 undefined on input line 7
-30.
-
-
-Package natbib Warning: Citation `jordan72' on page 9 undefined on input line 7
-31.
-
-
-Package natbib Warning: Citation `jordan72' on page 9 undefined on input line 7
-32.
-
-
-Package natbib Warning: Citation `jordan72' on page 9 undefined on input line 7
-33.
-
-
-Package natbib Warning: Citation `jordan72' on page 9 undefined on input line 7
-34.
-
-
-Package natbib Warning: Citation `jordan72' on page 9 undefined on input line 7
-35.
-
-
-Package natbib Warning: Citation `jordan72' on page 9 undefined on input line 7
-36.
-
-
-Package natbib Warning: Citation `jordan72' on page 9 undefined on input line 7
-37.
-
-
-Package natbib Warning: Citation `jordan72' on page 9 undefined on input line 7
-38.
-
-
-Package natbib Warning: Citation `jordan72' on page 9 undefined on input line 7
-39.
-
-
-Package natbib Warning: Citation `jordan72' on page 9 undefined on input line 7
-40.
-
-
-Package natbib Warning: Citation `edmisten70' on page 9 undefined on input line
- 741.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 742.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 743.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 744.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 745.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 746.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 747.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 748.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 749.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 750.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 751.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 752.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 753.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 754.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 755.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 756.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 757.
-
-
-Package natbib Warning: Citation `christian03' on page 9 undefined on input lin
-e 758.
-
-
-Package natbib Warning: Citation `hines12' on page 9 undefined on input line 75
-9.
-
-
-Package natbib Warning: Citation `hines15' on page 9 undefined on input line 76
-0.
-
-
-Package natbib Warning: Citation `borrett07_lanier' on page 9 undefined on inpu
-t line 761.
-
-
-Package natbib Warning: Citation `hinrichsen98_baltic' on page 9 undefined on i
-nput line 762.
-
-
-Package natbib Warning: Citation `baird95' on page 9 undefined on input line 76
-3.
-
-
-Package natbib Warning: Citation `ulanowicz99' on page 9 undefined on input lin
-e 764.
-
-
-Package natbib Warning: Citation `ulanowicz99' on page 9 undefined on input lin
-e 765.
-
-
-Package natbib Warning: Citation `ulanowicz99' on page 9 undefined on input lin
-e 766.
-
-
-Package natbib Warning: Citation `ulanowicz99' on page 9 undefined on input lin
-e 767.
-
-
-Package natbib Warning: Citation `ulanowicz99' on page 9 undefined on input lin
-e 768.
-
-
-Package natbib Warning: Citation `baird08_sylt' on page 9 undefined on input li
-ne 769.
-
-
-Package natbib Warning: Citation `baird08_sylt' on page 9 undefined on input li
-ne 770.
-
-
-Package natbib Warning: Citation `finn80' on page 9 undefined on input line 781
-.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 9
  []
 
-[9] <enaR-vignette-014.pdf, id=100, 433.62pt x 289.08pt>
+[9] <enaR-vignette-014.pdf, id=603, 433.62pt x 289.08pt>
 File: enaR-vignette-014.pdf Graphic file (type pdf)
 
 <use enaR-vignette-014.pdf>
-<enaR-vignette-015.pdf, id=101, 433.62pt x 289.08pt>
+<enaR-vignette-015.pdf, id=604, 433.62pt x 289.08pt>
 File: enaR-vignette-015.pdf Graphic file (type pdf)
 
 <use enaR-vignette-015.pdf>
-Overfull \hbox (46.69893pt too wide) in paragraph at lines 850--854
+Overfull \hbox (46.69893pt too wide) in paragraph at lines 849--853
 [][] [] 
  []
-
-
-Package natbib Warning: Citation `dame81' on page 10 undefined on input line 85
-4.
-
-
-Package natbib Warning: Citation `dame81' on page 10 undefined on input line 85
-4.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 10 []
  []
 
-[10 <./enaR-vignette-014.pdf> <./enaR-vignette-015.pdf>]
-
-Package natbib Warning: Citation `ulanowicz91' on page 11 undefined on input li
-ne 869.
-
-
-Package natbib Warning: Citation `dame81' on page 11 undefined on input line 88
-1.
-
-
+[10]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 11
  []
 
-[11]
-
-Package natbib Warning: Citation `allesina04_wand' on page 12 undefined on inpu
-t line 936.
-
-
-Package natbib Warning: Citation `scharler2012ecosystem' on page 12 undefined o
-n input line 952.
-
-
-Package natbib Warning: Citation `fath06' on page 12 undefined on input line 95
-7.
-
+[11 <./enaR-vignette-014.pdf> <./enaR-vignette-015.pdf>]
 
 ! LaTeX Error: Environment align undefined.
 
@@ -1404,7 +511,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.959 \begin{align}
+l.958 \begin{align}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1417,7 +524,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.960 \mathbf
+l.959 \mathbf
              {S} = \left[ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1425,7 +532,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.960 \mathbf{S} = \left
+l.959 \mathbf{S} = \left
                         [ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1437,7 +544,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.963 \end{align}
+l.962 \end{align}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1446,7 +553,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.963 \end{align}
+l.962 \end{align}
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1460,49 +567,31 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [12]
-
-Package natbib Warning: Citation `fath06' on page 13 undefined on input line 10
-20.
-
-
-Package natbib Warning: Citation `dame81' on page 13 undefined on input line 10
-46.
-
-<images/enaR-vignette-003.pdf, id=129, 505.89pt x 505.89pt>
-File: images/enaR-vignette-003.pdf Graphic file (type pdf)
-
-<use images/enaR-vignette-003.pdf>
-! Undefined control sequence.
-l.1063 \tableline
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.1079 \tableline
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 13
  []
 
-[13]
+[13] <images/enaR-vignette-003.pdf, id=660, 505.89pt x 505.89pt>
+File: images/enaR-vignette-003.pdf Graphic file (type pdf)
 
-Package natbib Warning: Citation `allesina03' on page 14 undefined on input lin
-e 1117.
+<use images/enaR-vignette-003.pdf>
+! Undefined control sequence.
+l.1062 \tableline
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-
-Package natbib Warning: Citation `fath06' on page 14 undefined on input line 11
-25.
+! Undefined control sequence.
+l.1078 \tableline
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -1511,115 +600,11 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 
 [14 <./images/enaR-vignette-003.pdf>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 1134.
+(Font)              <7> on input line 1133.
 
-
-Package natbib Warning: Citation `borrett03' on page 15 undefined on input line
- 1144.
-
-
-Package natbib Warning: Citation `borrett07_jtb' on page 15 undefined on input 
-line 1146.
-
-
-Package natbib Warning: Citation `caswell01' on page 15 undefined on input line
- 1150.
-
-
-Package natbib Warning: Citation `farkas2001spectra' on page 15 undefined on in
-put line 1151.
-
-
-Overfull \hbox (25.0103pt too wide) in paragraph at lines 1134--1160
+Overfull \hbox (76.6248pt too wide) in paragraph at lines 1133--1159
  [] 
  []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package natbib Warning: Citation `martinez1992constant' on page 15 undefined on
- input line 1186.
-
-
-Package natbib Warning: Citation `dunne02food' on page 15 undefined on input li
-ne 1186.
-
-
-Package natbib Warning: Citation `eklof2006' on page 15 undefined on input line
- 1186.
-
-
-Package natbib Warning: Citation `estrada2007' on page 15 undefined on input li
-ne 1186.
-
-
-Package natbib Warning: Citation `brandes05' on page 15 undefined on input line
- 1186.
-
-
-Package natbib Warning: Citation `borrett03' on page 15 undefined on input line
- 1188.
-
-
-Package natbib Warning: Citation `borrett07_jtb' on page 15 undefined on input 
-line 1188.
-
-
-Package natbib Warning: Citation `borrett07_jtb' on page 15 undefined on input 
-line 1191.
-
-
-Package natbib Warning: Citation `fath99_review' on page 15 undefined on input 
-line 1204.
-
-
-Package natbib Warning: Citation `latham2006' on page 15 undefined on input lin
-e 1204.
-
-
-Package natbib Warning: Citation `fath06' on page 15 undefined on input line 12
-04.
-
-
-Package natbib Warning: Citation `schramski11' on page 15 undefined on input li
-ne 1204.
-
-
-Package natbib Warning: Citation `borrett11_ree' on page 15 undefined on input 
-line 1207.
-
-
-Package natbib Warning: Citation `borrett11_equ' on page 15 undefined on input 
-line 1207.
-
-
-Package natbib Warning: Citation `finn76' on page 15 undefined on input line 12
-27.
-
-
-Package natbib Warning: Citation `finn80' on page 15 undefined on input line 12
-28.
-
-
-Package natbib Warning: Citation `borrett06_neuse' on page 15 undefined on inpu
-t line 1231.
-
-
-Package natbib Warning: Citation `borrett11_ree' on page 15 undefined on input 
-line 1232.
-
-
-Package natbib Warning: Citation `borrett11_equ' on page 15 undefined on input 
-line 1232.
-
-
-Package natbib Warning: Citation `fath06' on page 15 undefined on input line 12
-33.
-
-
-Package natbib Warning: Citation `fath06' on page 15 undefined on input line 12
-34.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1630,88 +615,24 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [15]
+Overfull \hbox (18.51161pt too wide) in paragraph at lines 1214--1245
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1214--1245
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 16 []
  []
 
 [16]
-
-Package natbib Warning: Citation `finn80' on page 17 undefined on input line 13
-46.
-
-
-Package natbib Warning: Citation `vanoevelen2009cold' on page 17 undefined on i
-nput line 1348.
-
-
-Package natbib Warning: Citation `gattie06' on page 17 undefined on input line 
-1350.
-
-
-Package natbib Warning: Citation `zhang10' on page 17 undefined on input line 1
-352.
-
-
-Package natbib Warning: Citation `borrett13' on page 17 undefined on input line
- 1354.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 17 undefined on input li
-ne 1364.
-
-
-Package natbib Warning: Citation `ulanowicz97' on page 17 undefined on input li
-ne 1364.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 17 undefined on input li
-ne 1386.
-
-
-Package natbib Warning: Citation `ulanowicz97' on page 17 undefined on input li
-ne 1386.
-
-
-Package natbib Warning: Citation `ulanowicz86' on page 17 undefined on input li
-ne 1386.
-
-
-Package natbib Warning: Citation `ulanowicz97' on page 17 undefined on input li
-ne 1386.
-
-
-Package natbib Warning: Citation `fath2014quantifying' on page 17 undefined on 
-input line 1397.
-
-
-Package natbib Warning: Citation `ulanowicz2014' on page 17 undefined on input 
-line 1398.
-
-
-Package natbib Warning: Citation `ulanowicz2014' on page 17 undefined on input 
-line 1399.
-
-
-Package natbib Warning: Citation `barber1978retrospective' on page 17 undefined
- on input line 1408.
-
-
-Package natbib Warning: Citation `barber1978markovian' on page 17 undefined on 
-input line 1408.
-
-
-Package natbib Warning: Citation `fath99_review' on page 17 undefined on input 
-line 1411.
-
-
-Package natbib Warning: Citation `gattie06' on page 17 undefined on input line 
-1411.
-
-
-Package natbib Warning: Citation `schramski11' on page 17 undefined on input li
-ne 1411.
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 17
  []
@@ -1719,55 +640,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [17]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1439.
-
-
-Package natbib Warning: Citation `fath06' on page 18 undefined on input line 14
-64.
-
-
-Package natbib Warning: Citation `fath06' on page 18 undefined on input line 14
-65.
-
-
-Package natbib Warning: Citation `whipple2014' on page 18 undefined on input li
-ne 1485.
-
-
-Package natbib Warning: Citation `hines2014' on page 18 undefined on input line
- 1492.
-
-
-Package natbib Warning: Citation `patten91' on page 18 undefined on input line 
-1499.
-
-
-Package natbib Warning: Citation `fath99_review' on page 18 undefined on input 
-line 1499.
-
-
-Package natbib Warning: Citation `ulanowicz90' on page 18 undefined on input li
-ne 1500.
-
-
-Package natbib Warning: Citation `patten78' on page 18 undefined on input line 
-1556.
-
-
-Package natbib Warning: Citation `fath99_review' on page 18 undefined on input 
-line 1556.
-
-
-Package natbib Warning: Citation `borrett11_ree' on page 18 undefined on input 
-line 1562.
-
-
-Package natbib Warning: Citation `whipple07' on page 18 undefined on input line
- 1562.
-
-
-Package natbib Warning: Citation `whipple2014' on page 18 undefined on input li
-ne 1562.
+               Default added (so using `tbp') on input line 1438.
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -1775,115 +648,26 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [18]
-
-Package natbib Warning: Citation `whipple07' on page 19 undefined on input line
- 1600.
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 19
  []
 
 [19]
-
-Package natbib Warning: Citation `schramski06' on page 20 undefined on input li
-ne 1659.
-
-
-Package natbib Warning: Citation `schramski07' on page 20 undefined on input li
-ne 1659.
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 20 []
  []
 
 [20]
-
-Package natbib Warning: Citation `dame81' on page 21 undefined on input line 16
-90.
-
-
-Package natbib Warning: Citation `patten81' on page 21 undefined on input line 
-1690.
-
-
-Package natbib Warning: Citation `schramski06' on page 21 undefined on input li
-ne 1690.
-
-
-Package natbib Warning: Citation `schramski07' on page 21 undefined on input li
-ne 1690.
-
-
-Package natbib Warning: Citation `ulanowicz90' on page 21 undefined on input li
-ne 1711.
-
-
-Package natbib Warning: Citation `ulanowicz90' on page 21 undefined on input li
-ne 1712.
-
-
-Package natbib Warning: Citation `ulanowicz90' on page 21 undefined on input li
-ne 1772.
-
-
-Package natbib Warning: Citation `bondavalli99' on page 21 undefined on input l
-ine 1791.
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 21
  []
 
 [21]
-
-Package natbib Warning: Citation `ulanowicz91' on page 22 undefined on input li
-ne 1798.
-
-
-Package natbib Warning: Citation `ulanowicz83' on page 22 undefined on input li
-ne 1798.
-
-
-Package natbib Warning: Citation `ulanowicz83' on page 22 undefined on input li
-ne 1847.
-
-
-Package natbib Warning: Citation `ulanowicz83' on page 22 undefined on input li
-ne 1847.
-
-
-Package natbib Warning: Citation `lindeman42' on page 22 undefined on input lin
-e 1874.
-
-
-Package natbib Warning: Citation `ulanowicz1979trophic' on page 22 undefined on
- input line 1875.
-
-
-Package natbib Warning: Citation `ulanowicz91' on page 22 undefined on input li
-ne 1876.
-
-
-Package natbib Warning: Citation `ulanowicz91' on page 22 undefined on input li
-ne 1888.
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 22 []
  []
 
 [22]
-
-Package natbib Warning: Citation `ulanowicz1979trophic' on page 23 undefined on
- input line 1930.
-
-
-Package natbib Warning: Citation `ulanowicz1979trophic' on page 23 undefined on
- input line 1930.
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 23
  []
@@ -1894,86 +678,24 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [24]
-
-Package natbib Warning: Citation `brandes05' on page 25 undefined on input line
- 2063.
-
-
-Package natbib Warning: Citation `wasserman1994' on page 25 undefined on input 
-line 2063.
-
-
-Package natbib Warning: Citation `freeman79' on page 25 undefined on input line
- 2067.
-
-
-Package natbib Warning: Citation `freeman1991centrality' on page 25 undefined o
-n input line 2067.
-
-
-Package natbib Warning: Citation `borgatti06' on page 25 undefined on input lin
-e 2067.
-
-
-Package natbib Warning: Citation `brandes05' on page 25 undefined on input line
- 2067.
-
-
-Package natbib Warning: Citation `fann12_ec' on page 25 undefined on input line
- 2068.
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 25
  []
 
-[25] <enaR-vignette-043.pdf, id=243, 433.62pt x 289.08pt>
-File: enaR-vignette-043.pdf Graphic file (type pdf)
-
-<use enaR-vignette-043.pdf>
+[25]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 26 []
  []
 
-[26]
+[26] <enaR-vignette-043.pdf, id=970, 433.62pt x 289.08pt>
+File: enaR-vignette-043.pdf Graphic file (type pdf)
+
+<use enaR-vignette-043.pdf>
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 27
  []
 
 [27 <./enaR-vignette-043.pdf>]
-
-Package natbib Warning: Citation `baird91' on page 28 undefined on input line 2
-212.
-
-
-Package natbib Warning: Citation `vanoevelen2006carbon' on page 28 undefined on
- input line 2212.
-
-
-Package natbib Warning: Citation `christian03' on page 28 undefined on input li
-ne 2212.
-
-
-Package natbib Warning: Citation `niquil2012physical' on page 28 undefined on i
-nput line 2212.
-
-
-Package natbib Warning: Citation `hines15' on page 28 undefined on input line 2
-212.
-
-
-Package natbib Warning: Citation `christensen95' on page 28 undefined on input 
-line 2215.
-
-
-Package natbib Warning: Citation `borrett10_hmg' on page 28 undefined on input 
-line 2215.
-
-
-Package natbib Warning: Citation `salas11_did' on page 28 undefined on input li
-ne 2215.
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 28 []
  []
@@ -1994,76 +716,52 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [31]
-
-Package natbib Warning: Citation `baird98' on page 32 undefined on input line 2
-457.
-
-<enaR-vignette-052.pdf, id=279, 505.89pt x 343.2825pt>
-File: enaR-vignette-052.pdf Graphic file (type pdf)
-
-<use enaR-vignette-052.pdf>
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 32 []
  []
 
-[32]
+[32] <enaR-vignette-052.pdf, id=1028, 505.89pt x 343.2825pt>
+File: enaR-vignette-052.pdf Graphic file (type pdf)
 
-Package natbib Warning: Citation `butts08_network' on page 33 undefined on inpu
-t line 2510.
-
-
-Package natbib Warning: Citation `batajel07' on page 33 undefined on input line
- 2515.
-
-
+<use enaR-vignette-052.pdf>
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 33
  []
 
-[33 <./enaR-vignette-052.pdf>]
-<enaR-vignette-055.pdf, id=300, 505.89pt x 343.2825pt>
-File: enaR-vignette-055.pdf Graphic file (type pdf)
-
-<use enaR-vignette-055.pdf>
+[33]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 34 []
  []
 
-[34]
+[34 <./enaR-vignette-052.pdf>]
+<enaR-vignette-055.pdf, id=1053, 505.89pt x 343.2825pt>
+File: enaR-vignette-055.pdf Graphic file (type pdf)
+
+<use enaR-vignette-055.pdf>
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 35
  []
 
-[35 <./enaR-vignette-055.pdf>]
-<enaR-vignette-058.pdf, id=316, 505.89pt x 343.2825pt>
-File: enaR-vignette-058.pdf Graphic file (type pdf)
-
-<use enaR-vignette-058.pdf>
+[35]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 36 []
  []
 
-[36 <./enaR-vignette-058.pdf>]
+[36 <./enaR-vignette-055.pdf>]
+<enaR-vignette-058.pdf, id=1069, 505.89pt x 343.2825pt>
+File: enaR-vignette-058.pdf Graphic file (type pdf)
 
-Package natbib Warning: Citation `kazanci07' on page 37 undefined on input line
- 2759.
-
-
+<use enaR-vignette-058.pdf>
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 37
  []
 
-[37]
-
-Package natbib Warning: Citation `fath06' on page 38 undefined on input line 27
-83.
-
-(./enaR-vignette.bbl
+[37 <./enaR-vignette-058.pdf>]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 38 []
  []
 
-[38]
+[38] (./enaR-vignette.bbl
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 39
  []
@@ -2103,24 +801,20 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 46 []
  []
 
-[46])
-
-Package natbib Warning: There were undefined citations.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2799--2799
-
- []
-
-LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <13> not available
-(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 2799.
-
-
+[46]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 47
  []
 
-[47]
+[47])
+Underfull \hbox (badness 10000) in paragraph at lines 2798--2798
+
+ []
+
+LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <13> not available
+(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 2798.
+
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 []\T1/aer/m/n/10.95 48 []
  []
@@ -2160,62 +854,51 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [][] \T1/aer/m/n/10.95 55
  []
 
-[55] (./enaR-vignette.aux
+[55]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 56 []
+ []
 
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+[56] (./enaR-vignette.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
- )
-(\end occurred when \ifx on line 222 was incomplete)
-(\end occurred when \ifmmode on line 222 was incomplete)
-(\end occurred when \ifx on line 3 was incomplete)
-(\end occurred when \ifmmode on line 3 was incomplete)
-(\end occurred when \iffalse on line 91 was incomplete) 
+ ) 
 Here is how much of TeX's memory you used:
- 5114 strings out of 256216
- 73690 string characters out of 1917073
- 189187 words of memory out of 1500000
- 7962 multiletter control sequences out of 10000+200000
- 67451 words of font info for 117 fonts, out of 1200000 for 2000
+ 5228 strings out of 256216
+ 74860 string characters out of 1917073
+ 227530 words of memory out of 1500000
+ 8090 multiletter control sequences out of 10000+200000
+ 59616 words of font info for 105 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 35i,12n,34p,420b,516s stack positions out of 5000i,500n,6000p,200000b,15000s
-pdfTeX warning (dest): n
-ame{Subsection.2.0.Installing\040\\protect\040\\unhbox\040\\voidb@x\040\\bgroup
-\040\\def\040\\par\040} has been referenced but does not exist, replaced by a f
-ixed one
+ 35i,12n,34p,421b,647s stack positions out of 5000i,500n,6000p,200000b,15000s
+ </N/u/mklau/Mason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm109
+5.600pk>{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/t
+ype1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb>
+</usr/share/texmf/fonts/type1/bluesky/cm/cmbxsl10.pfb></usr/share/texmf/fonts/t
+ype1/bluesky/cm/cmbxti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmex10.pf
+b></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf/fonts/t
+ype1/bluesky/cm/cmmi5.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi6.pfb></
+usr/share/texmf/fonts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf/fonts/type1/
+bluesky/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/s
+hare/texmf/fonts/type1/bluesky/cm/cmr5.pfb></usr/share/texmf/fonts/type1/bluesk
+y/cm/cmr6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/tex
+mf/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cms
+l10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsltt10.pfb></usr/share/texmf
+/fonts/type1/bluesky/cm/cmss10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cms
+y10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy5.pfb></usr/share/texmf/fo
+nts/type1/bluesky/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy7.p
+fb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf/fonts/t
+ype1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti12.pfb>
+</usr/share/texmf/fonts/type1/bluesky/cm/cmti7.pfb></usr/share/texmf/fonts/type
+1/bluesky/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
 
- </N/u/mklau/Mason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.
-600pk>{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/typ
-e1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></
-usr/share/texmf/fonts/type1/bluesky/cm/cmbx6.pfb></usr/share/texmf/fonts/type1/
-bluesky/cm/cmbx8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbxsl10.pfb></us
-r/share/texmf/fonts/type1/bluesky/cm/cmbxti10.pfb></usr/share/texmf/fonts/type1
-/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></us
-r/share/texmf/fonts/type1/bluesky/cm/cmmi5.pfb></usr/share/texmf/fonts/type1/bl
-uesky/cm/cmmi6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi7.pfb></usr/sha
-re/texmf/fonts/type1/bluesky/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/bluesky
-/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr5.pfb></usr/share/tex
-mf/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr
-7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/fonts
-/type1/bluesky/cm/cmsl10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsltt10.
-pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmss10.pfb></usr/share/texmf/fonts
-/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy5.pfb
-></usr/share/texmf/fonts/type1/bluesky/cm/cmsy6.pfb></usr/share/texmf/fonts/typ
-e1/bluesky/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy8.pfb></us
-r/share/texmf/fonts/type1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/b
-luesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti7.pfb></usr/s
-hare/texmf/fonts/type1/bluesky/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/urw/
-zapfchan/uzcmi8a.pfb>
-Output written on enaR-vignette.pdf (55 pages, 495345 bytes).
+Output written on enaR-vignette.pdf (56 pages, 602968 bytes).
 PDF statistics:
- 751 PDF objects out of 1000 (max. 8388607)
- 270 named destinations out of 1000 (max. 131072)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1408 PDF objects out of 1440 (max. 8388607)
+ 268 named destinations out of 1000 (max. 131072)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
