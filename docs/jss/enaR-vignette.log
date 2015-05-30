@@ -1,0 +1,1190 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.3.6)  30 MAY 2015 14:08
+entering extended mode
+ %&-line parsing enabled.
+**\nonstopmode\input enaR-vignette.tex
+(./enaR-vignette.tex (./jss.cls
+Document Class: jss 2013/04/06 2.2 jss class by Achim Zeileis
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo
+File: size11.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/share/texmf/tex/latex/ae/ae.sty
+Package: ae 2001/02/12 1.3 Almost European Computer Modern
+
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
+
+(/usr/share/texmf/tex/latex/ae/t1aer.fd
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))
+(/usr/share/texmf/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 1998/07/17
+
+Style option: `fancyvrb' v2.6, with DG/SPQR fixes <1998/07/17> (tvz)
+\FV@CodeLineNo=\count88
+\FV@InFile=\read1
+\FV@TabBox=\box26
+\c@FancyVerbLine=\count89
+\FV@StepNumber=\count90
+\FV@OutFile=\write3
+
+No file fancyvrb.cfg.
+) (/usr/share/texmf/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/share/texmf/tex/latex/upquote/upquote.sty
+Package: upquote 2003/08/11 v1.1 Covington's upright-quote modification to verb
+atim and verb
+
+(/usr/share/texmf/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/share/texmf/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+))
+(/usr/share/texmf/tex/latex/natbib/natbib.sty
+Package: natbib 2007/02/05 8.0 (PWD)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 602.
+\c@NAT@ctr=\count91
+)
+\footerskip=\skip45
+
+(/usr/share/texmf/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2007/02/07 v6.75r Hypertext links for LaTeX
+\@linkdim=\dimen105
+\Hy@linkcounter=\count92
+\Hy@pagecounter=\count93
+
+(/usr/share/texmf/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2007/02/07 v6.75r Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf/tex/latex/config/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+(/usr/share/texmf/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2006/08/22 v2.4 Connects package keyval with LaTeX options (
+HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 2288.
+Package hyperref Info: Link nesting OFF on input line 2293.
+Package hyperref Info: Hyper index ON on input line 2296.
+Package hyperref Info: Plain pages OFF on input line 2303.
+Package hyperref Info: Backreferencing OFF on input line 2308.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2444.
+(/usr/share/texmf/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 2599.
+\Fld@menulength=\count94
+\Field@Width=\dimen106
+\Fld@charsize=\dimen107
+\Choice@toks=\toks15
+\Field@toks=\toks16
+Package hyperref Info: Hyper figures OFF on input line 3102.
+Package hyperref Info: Link nesting OFF on input line 3107.
+Package hyperref Info: Hyper index ON on input line 3110.
+Package hyperref Info: backreferencing OFF on input line 3117.
+Package hyperref Info: Link coloring OFF on input line 3122.
+\Hy@abspage=\count95
+\c@Item=\count96
+\c@Hfootnote=\count97
+)
+*hyperref using default driver hpdftex*
+(/usr/share/texmf/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2007/02/07 v6.75r Hyperref driver for pdfTeX
+\Fld@listcount=\count98
+)
+\preXLskip=\skip46
+\preLskip=\skip47
+\preMskip=\skip48
+\preSskip=\skip49
+\postMskip=\skip50
+\postSskip=\skip51
+
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 444.
+
+Package hyperref Info: Option `colorlinks' set `true' on input line 444.
+Package hyperref Info: Option `linktocpage' set `true' on input line 444.
+Package hyperref Info: Option `plainpages' set `false' on input line 444.
+)
+
+! LaTeX Error: Option clash for package natbib.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.79   \bibpunct
+                {(}{)}{;}{a}{,}{,} % required for natbib
+The package natbib has already been loaded with options:
+  [authoryear,round,longnamesfirst]
+There has now been an attempt to load it with options
+  [super, sort]
+Adding the global options:
+  authoryear,round,longnamesfirst,super, sort
+to your \documentclass declaration may fix this.
+Try typing  <return>  to proceed.
+
+(/usr/share/texmf/tex/latex/ucs/ucs.sty
+Package: ucs 2004/10/17 UCS: Unicode input support
+
+(/usr/share/texmf/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2004/10/17 UCS: Unicode global data
+)
+\uc@secondtry=\count99
+\uc@combtoks=\toks17
+\uc@combtoksb=\toks18
+\uc@temptokena=\toks19
+)
+(/usr/share/texmf/tex/latex/base/inputenc.sty
+Package: inputenc 2006/05/05 v1.1b Input encoding file
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
+
+(/usr/share/texmf/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/share/texmf/tex/latex/sidecap/sidecap.sty
+Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
+
+(/usr/share/texmf/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\SC@BOXWD=\dimen108
+\SC@CAPWD=\dimen109
+\SC@tempdima=\dimen110
+\SC@tempdimb=\dimen111
+\c@SC@C=\count100
+\SC@BOX=\box27
+) (./enaR-vignette.aux
+
+LaTeX Warning: Label `fig:aec' multiply defined.
+
+)
+\openout1 = `enaR-vignette.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 91.
+ (/usr/share/texmf/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+Package hyperref Info: Link coloring ON on input line 91.
+
+(/usr/share/texmf/tex/latex/hyperref/nameref.sty
+Package: nameref 2006/12/27 v2.28 Cross-referencing by name of section
+
+(/usr/share/texmf/tex/latex/oberdiek/refcount.sty
+Package: refcount 2006/02/20 v3.0 Data extraction from references (HO)
+)
+\c@section@level=\count101
+)
+LaTeX Info: Redefining \ref on input line 91.
+LaTeX Info: Redefining \pageref on input line 91.
+ (./enaR-vignette.out)
+(./enaR-vignette.out
+! Argument of \@@BOOKMARK has an extra }.
+<inserted text> 
+                \par 
+l.3 ...stalling enaR}{Section.1.Getting Started.1}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+2]{enaR}\ifx \reserved@a \@empty \let \check@icl \@empty \let \check@icr \ETC.
+! Paragraph ended before \@@BOOKMARK was complete.
+<to be read again> 
+                   \par 
+l.3 ...stalling enaR}{Section.1.Getting Started.1}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \protect 
+l.3 ...stalling enaR}{Section.1.Getting Started.1}
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.3 ...stalling enaR}{Section.1.Getting Started.1}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing { inserted.
+<to be read again> 
+                   \unhbox 
+l.3 ...stalling enaR}{Section.1.Getting Started.1}
+                                                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.26 ...lti-Model Analyses \(Batch Processing\)}{}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.26 ...lti-Model Analyses \(Batch Processing\)}{}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.26 ...lti-Model Analyses \(Batch Processing\)}{}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.26 ...lti-Model Analyses \(Batch Processing\)}{}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+Runaway text?
+\unhbox \voidb@x \bgroup \def \def Installing enaR{Ecosystem Network \ETC.
+! File ended while scanning text of \unhbox.
+<inserted text> 
+                }
+l.91 \begin{document}
+                     
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+\@outlinefile=\write4
+\openout4 = `enaR-vignette.out'.
+
+<jsslogo.jpg, id=19, 540.0175pt x 393.47pt>
+File: jsslogo.jpg Graphic file (type jpg)
+ <use jsslogo.jpg>
+LaTeX Font Info:    Try loading font information for T1+pzc on input line 91.
+
+(/usr/share/texmf/tex/latex/psnfss/t1pzc.fd
+File: t1pzc.fd 2001/06/04 font definitions for T1/pzc.
+)
+LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <28> not available
+(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 91.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 91.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 91.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 91.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 91.
+
+(/usr/share/texmf/tex/latex/ae/t1aess.fd
+File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
+)
+(/usr/share/texmf/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
+)
+(/usr/share/texmf/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2003/03/25 v2.04 ragged2e Package (MS)
+
+(/usr/share/texmf/tex/latex/everysel/everysel.sty
+Package: everysel 1999/06/08 v1.03 EverySelectfont Package (MS)
+LaTeX Info: Redefining \selectfont on input line 125.
+)
+\CenteringLeftskip=\skip52
+\RaggedLeftLeftskip=\skip53
+\RaggedRightLeftskip=\skip54
+\CenteringRightskip=\skip55
+\RaggedLeftRightskip=\skip56
+\RaggedRightRightskip=\skip57
+\CenteringParfillskip=\skip58
+\RaggedLeftParfillskip=\skip59
+\RaggedRightParfillskip=\skip60
+\JustifyingParfillskip=\skip61
+\CenteringParindent=\skip62
+\RaggedLeftParindent=\skip63
+\RaggedRightParindent=\skip64
+\JustifyingParindent=\skip65
+)
+(./enaR-vignette-concordance.tex
+! Undefined control sequence.
+l.1 \Sconcordance
+                 {concordance:enaR-vignette.tex:/N/u/mklau/Mason/projects/en...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1 ...ignette.tex:/N/u/mklau/Mason/projects/enaR_
+                                                  development/docs/jss/enaR-...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.30 ...1 3 4 0 1 2 11 1 1 2 1 0 1 1 3 0 1 2 26 1}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+)
+! Missing $ inserted.
+<inserted text> 
+                $
+l.93 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (24.31941pt too wide) in paragraph at lines 1--93
+[]\T1/aer/m/n/10.95 concordance:enaR-vignette.tex:/N/u/mklau/Mason/projects/ena
+R$[]\OML/cmm/m/it/10.95 evelopment=docs=jss=enaR \OMS/cmsy/m/n/10.95 ^^@
+ []
+
+
+Overfull \hbox (692.1028pt too wide) in paragraph at lines 1--93
+\OML/cmm/m/it/10.95 vignette:Rnw \OT1/cmr/m/n/10.95 : 1193116143111240122112101
+1301221124012411910411430121012101210159012230124112601150116012511211012511230
+0123811320111280117012101112840121661132011121012401241132012101210111210117160
+124012211 \OMS/cmsy/m/n/10.95 ^^@
+ []
+
+
+Overfull \hbox (1859.8905pt too wide) in paragraph at lines 1--93
+\OT1/cmr/m/n/10.95 391351111911210113012511239012211210113012101124012291121013
+1301312015191124012611137013601340124611210116011901274112101160111001210111213
+0124112101111011301241121301234112100123411210116011110126911210217012451121011
+6011220125112101116012411210111901214112101160119012331121011601160126112101160
+1119012481121011801260127012501141210118012190124411210127201231121011701213112
+1012112101213012611320121015401430124012211 \OMS/cmsy/m/n/10.95 ^^@
+ []
+
+
+Overfull \hbox (452.81393pt too wide) in paragraph at lines 1--93
+\OT1/cmr/m/n/10.95 418221137012101210126012101260115012401219112401271131601315
+0164012601310148801231161320121201211146012411320111222011501111012511210121011
+12101430211540124012311 \OMS/cmsy/m/n/10.95 ^^@
+ []
+
+
+Overfull \hbox (160.20529pt too wide) in paragraph at lines 1--93
+\OT1/cmr/m/n/10.95 51941112601260126112101210121011220121012111540124012211 \OM
+S/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 162001121018711260125012601281121012101
+310113012511 \OMS/cmsy/m/n/10.95 ^^@
+ []
+
+
+Underfull \vbox (badness 1762) has occurred while \output is active []
+
+ [1
+
+{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map} <./jsslogo.jpg>]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 162.
+
+
+(/usr/share/texmf/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 167.
+
+LaTeX Font Info:    No file TS1aer.fd. on input line 167.
+
+
+LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textcopyright' on input line 167.
+
+
+Underfull \vbox (badness 1810) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `T1/aer/b/sl' in size <10.95> not available
+(Font)              Font shape `T1/aer/bx/sl' tried instead on input line 174.
+
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 2 []
+ []
+
+[2]
+! Use of \\pdfbookmark doesn't match its definition.
+\text@command #1->\def \reserved@a {
+                                    #1}\ifx \reserved@a \@empty \let \check@...
+l.222 \subsection{Installing \textit{enaR}}
+                                           
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Extra }, or forgotten \endgroup.
+<recently read> \egroup 
+                        
+l.222 \subsection{Installing \textit{enaR}}
+                                           
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@@writetorep ...e Parent\Hy@level \endcsname {#3}
+                                                  \advance \@tempcnta by -1 ...
+l.222 \subsection{Installing \textit{enaR}}
+                                           
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+\reserved@a ->\@nil 
+                    
+l.222 \subsection{Installing \textit{enaR}}
+                                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\reserved@a ->\@nil 
+                    
+l.222 \subsection{Installing \textit{enaR}}
+                                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\reserved@a ->\@nil 
+                    
+l.222 \subsection{Installing \textit{enaR}}
+                                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\reserved@a ->\@nil 
+                    
+l.222 \subsection{Installing \textit{enaR}}
+                                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Use of \\pdfbookmark doesn't match its definition.
+\check@nocorr@ ...eserved@b {#1}\def \reserved@c {
+                                                  #3}\ifx \reserved@a \reser...
+l.222 \subsection{Installing \textit{enaR}}
+                                           
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Doc-Start}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.222 \subsection{Installing \textit{enaR}}
+                                           
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 230
+.
+LaTeX Font Info:    No file TS1aett.fd. on input line 230.
+
+
+LaTeX Font Warning: Font shape `TS1/aett/m/sl' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textquotesingle' on input line 230.
+
+
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 3
+ []
+
+[3]
+! Undefined control sequence.
+l.329 simulated ecosystems, including \citeapos
+                                               {fath04} Cyber Models that
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 4 []
+ []
+
+[4]
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 5
+ []
+
+[5]
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 6 []
+ []
+
+[6]
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 7
+ []
+
+[7]
+
+LaTeX Font Warning: Font shape `TS1/aett/m/n' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textquotesingle' on input line 570.
+
+
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 8 []
+ []
+
+[8]
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 9
+ []
+
+[9]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 641.
+
+Overfull \hbox (466.31503pt too wide) in paragraph at lines 641--706
+ [] 
+ []
+
+
+Overfull \hbox (86.46198pt too wide) in paragraph at lines 725--774
+ [] 
+ []
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 10 []
+ []
+
+[10] <enaR-vignette-014.pdf, id=505, 433.62pt x 289.08pt>
+File: enaR-vignette-014.pdf Graphic file (type pdf)
+
+<use enaR-vignette-014.pdf>
+<enaR-vignette-015.pdf, id=506, 433.62pt x 289.08pt>
+File: enaR-vignette-015.pdf Graphic file (type pdf)
+
+<use enaR-vignette-015.pdf>
+Overfull \hbox (46.69893pt too wide) in paragraph at lines 850--854
+[][] [] 
+ []
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 11
+ []
+
+[11 <./enaR-vignette-014.pdf> <./enaR-vignette-015.pdf>]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 12 []
+ []
+
+[12]
+
+! LaTeX Error: Environment align undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.959 \begin{align}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.960 \mathbf
+             {S} = \left[ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.960 \mathbf{S} = \left
+                        [ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: \begin{document} ended by \end{align}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.963 \end{align}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.963 \end{align}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 13
+ []
+
+[13] <images/enaR-vignette-003.pdf, id=557, 505.89pt x 505.89pt>
+File: images/enaR-vignette-003.pdf Graphic file (type pdf)
+
+<use images/enaR-vignette-003.pdf>
+! Undefined control sequence.
+l.1063 \tableline
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1079 \tableline
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 14 []
+ []
+
+[14]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1134.
+
+Overfull \hbox (76.6248pt too wide) in paragraph at lines 1134--1160
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 15
+ []
+
+[15 <./images/enaR-vignette-003.pdf>]
+Overfull \hbox (18.51161pt too wide) in paragraph at lines 1215--1246
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1215--1246
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 16 []
+ []
+
+[16]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 17
+ []
+
+[17]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 1439.
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 18 []
+ []
+
+[18]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 19
+ []
+
+[19]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 20 []
+ []
+
+[20]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 21
+ []
+
+[21]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 22 []
+ []
+
+[22]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 23
+ []
+
+[23]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 24 []
+ []
+
+[24]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 25
+ []
+
+[25]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 26 []
+ []
+
+[26] <enaR-vignette-043.pdf, id=884, 433.62pt x 289.08pt>
+File: enaR-vignette-043.pdf Graphic file (type pdf)
+
+<use enaR-vignette-043.pdf>
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 27
+ []
+
+[27]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 28 []
+ []
+
+[28 <./enaR-vignette-043.pdf>]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 29
+ []
+
+[29]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 30 []
+ []
+
+[30]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 31
+ []
+
+[31]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 32 []
+ []
+
+[32] <enaR-vignette-052.pdf, id=944, 505.89pt x 343.2825pt>
+File: enaR-vignette-052.pdf Graphic file (type pdf)
+
+<use enaR-vignette-052.pdf>
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 33
+ []
+
+[33]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 34 []
+ []
+
+[34 <./enaR-vignette-052.pdf>]
+<enaR-vignette-055.pdf, id=971, 505.89pt x 343.2825pt>
+File: enaR-vignette-055.pdf Graphic file (type pdf)
+
+<use enaR-vignette-055.pdf>
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 35
+ []
+
+[35]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 36 []
+ []
+
+[36 <./enaR-vignette-055.pdf>]
+<enaR-vignette-058.pdf, id=987, 505.89pt x 343.2825pt>
+File: enaR-vignette-058.pdf Graphic file (type pdf)
+
+<use enaR-vignette-058.pdf>
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 37
+ []
+
+[37 <./enaR-vignette-058.pdf>]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 38 []
+ []
+
+[38] (./enaR-vignette.bbl
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 39
+ []
+
+[39]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 40 []
+ []
+
+[40]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 41
+ []
+
+[41]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 42 []
+ []
+
+[42]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 43
+ []
+
+[43]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 44 []
+ []
+
+[44]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 45
+ []
+
+[45]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 46 []
+ []
+
+[46]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 47
+ []
+
+[47])
+Underfull \hbox (badness 10000) in paragraph at lines 2799--2799
+
+ []
+
+LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <13> not available
+(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 2799.
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 48 []
+ []
+
+[48]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 49
+ []
+
+[49]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 50 []
+ []
+
+[50]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 51
+ []
+
+[51]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 52 []
+ []
+
+[52]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 53
+ []
+
+[53]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 54 []
+ []
+
+[54]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[][] \T1/aer/m/n/10.95 55
+ []
+
+[55]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[]\T1/aer/m/n/10.95 56 []
+ []
+
+[56] (./enaR-vignette.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(\end occurred when \ifx on line 222 was incomplete)
+(\end occurred when \ifmmode on line 222 was incomplete)
+(\end occurred when \ifx on line 3 was incomplete)
+(\end occurred when \ifmmode on line 3 was incomplete)
+(\end occurred when \iffalse on line 91 was incomplete) 
+Here is how much of TeX's memory you used:
+ 5236 strings out of 256216
+ 75105 string characters out of 1917073
+ 227534 words of memory out of 1500000
+ 8091 multiletter control sequences out of 10000+200000
+ 62129 words of font info for 108 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 35i,12n,34p,421b,647s stack positions out of 5000i,500n,6000p,200000b,15000s
+pdfTeX warning (dest): n
+ame{Subsection.2.0.Installing\040\\protect\040\\unhbox\040\\voidb@x\040\\bgroup
+\040\\def\040\\par\040} has been referenced but does not exist, replaced by a f
+ixed one
+
+ </N/u/mklau/Mason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.
+600pk>{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></
+usr/share/texmf/fonts/type1/bluesky/cm/cmbxsl10.pfb></usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmbxti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmex10.pfb>
+</usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmmi5.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi6.pfb></us
+r/share/texmf/fonts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf/fonts/type1/bl
+uesky/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/sha
+re/texmf/fonts/type1/bluesky/cm/cmr5.pfb></usr/share/texmf/fonts/type1/bluesky/
+cm/cmr6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf
+/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsl1
+0.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsltt10.pfb></usr/share/texmf/f
+onts/type1/bluesky/cm/cmss10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy1
+0.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy5.pfb></usr/share/texmf/font
+s/type1/bluesky/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy7.pfb
+></usr/share/texmf/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti12.pfb></
+usr/share/texmf/fonts/type1/bluesky/cm/cmti7.pfb></usr/share/texmf/fonts/type1/
+bluesky/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
+Output written on enaR-vignette.pdf (56 pages, 609036 bytes).
+PDF statistics:
+ 1328 PDF objects out of 1440 (max. 8388607)
+ 270 named destinations out of 1000 (max. 131072)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+

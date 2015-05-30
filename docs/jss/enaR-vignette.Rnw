@@ -57,6 +57,14 @@
   601 South College Road, Wilmington, NC 28403, USA\\
   E-mail: \email{borretts@uncw.edu}\\
   URL: \url{http://people.uncw.edu/borretts/}
+  \\
+  Pawandeep Singh \\
+  Department of Biology and Marine Biology\\
+  University of North Carolina Wilmington\\
+  601 South College Road, Wilmington, NC 28403, USA\\
+  E-mail: \email{@uncw.edu}\\
+  URL: \url{http://people.uncw.edu/borretts/}
+  
 }
 
 %% It is also possible to add a telephone and fax number
@@ -95,7 +103,7 @@
 
 \section[Introduction]{Introduction}
 % p1:  intro paragraph (5/7/2015)
-Network models have provided an in-road to a variety of complex systems \cite{watts1998collective, newman01scientific01, barabasi12, newman06structure, wasserman1994}, and
+Network models have provided an in-road to a variety of complex systems \cite{watts1998collective, newman01scientific1, barabasi12, newman06structure, wasserman1994}, and
 although the network approach has deep roots (get old cite from
 Mutualistic Networks Book), its use has been expanding rapidly in a
 variety of disciplines including ecology \citep{borrett14_rise, ings2009}.  This is due in
@@ -698,9 +706,10 @@ format specified by \citet{ulanowicz91} that is the input to the
 NETWRK4 programs.  This function can be run as follows.
 
 <<eval=true>>=
-scor.model <- readLines('http://people.uncw.edu/borretts/data/oyster.dat')
+scor.model <- readLines('../../data/oyster.dat')
 m <- read.scor(scor.model,from.file=FALSE)
 @
+
 
 This constructs the network data object from the SCOR file that stores
 the ecosystem model data for an oyster reef model \citep{dame81}.  The
@@ -728,7 +737,7 @@ network data object from a WAND model file. An example WAND file can
 be found at \url{http://people.uncw.edu/borretts/data/MDmar02_WAND.xls}.
 
 <<eval=true>>=
-m <- read.wand('data/MDmar02_WAND.xls')
+m <- read.wand('../../data/MDmar02_WAND.xls')
 @
 
 This code creates a network data object for \textit{enaR} from the WAND
@@ -762,8 +771,10 @@ living status. This missing information will prevent the use of some
 Here is an example of using these functions:
 <<eval=true>>=
 data(oyster)
+
 ## Write oyster reef model to a csv file
 write.nea(oyster, file.name="oyster.csv")
+
 ## Read in oyster reef model data from NEA.m formatted CSV file
 m <- read.nea("oyster.csv")
 
@@ -790,8 +801,8 @@ Using an example data file,
 \url{http://people.uncw.edu/borretts/data/MDMAR02.xlsx}, this data
 format can be read into the \textit{enaR} package as:
 
-<<eval=true>>=
-  m <- read.enam('data/MDMAR02.xlsx')
+<<eval=FALSE>>=
+  m <- read.enam('../../data/MDMAR02.xlsx')
 @
 
 The current read.enam function assumes the data are stored on the
@@ -940,7 +951,7 @@ the nodes are participating in a strongly connected component (pscc).
 
 Flow analysis is one of the core ENA analyses
 for both the Ulanowicz and Patten Schools \citep{fath99_review,
-  latham06, fath06, schramski11}.  The \textit{enaR} implementation
+  latham2006, fath06, schramski11}.  The \textit{enaR} implementation
 \texttt{enaFlow} mostly follows the NEA.m function, with small updates
 \cite[e.g. calculating the ratio of indirect-to-direct
 flows][]{borrett11_ree,borrett11_equ}. Results returned by
@@ -1031,9 +1042,9 @@ analyses.
 % 2007, Small et al 2014.  Could we includes something from
 % vanoevelen2006carbon?  vanoevelen2009cold.
 Flow analysis has been used in a variety of ways.  For example,
-\citet{finn1980} used ENA flow analysis to compare the cycling of
+\citet{finn80} used ENA flow analysis to compare the cycling of
 multiple nutrients through the Hubbard Brook Ecosystem, New Hampshire,
-USA, and \citet{vanoevelen} used the technique to show how different
+USA, and \citet{vanoevelen2009cold} used the technique to show how different
 marine canyon conditions change the flow of carbon through the food
 webs in Nazar\'{e} Canyon.  \cite{gattie06} applied the analysis to
 characterize N cycling in the Neuse River Estuary (North Carolina,
@@ -1085,7 +1096,7 @@ returns several of these information based measures
 \subsection{Storage Analysis}
 
 Storage ENA was developed in the Patten School
-\citep{barber1978retrospective, barber1979markovian}.  It is similar
+\citep{barber1978retrospective, barber1978markovian}.  It is similar
 to flow ENA, but divides the flows by storage (e.g., biomass) instead
 of throughflow.  Several papers provide an overview of this
 methodology \cite{fath99_review, gattie06, schramski11}.  Output of
@@ -1153,7 +1164,7 @@ changed across sixteen consecutive seasonal N cycling models of the
 Neuse River Estuary.  They found that from this storage perspective
 NOx was the dominant compartment, and thus a primary controller of the
 system dynamics.  Note that this work provides an example of applying
-this analysis at multiple levels of analysis \citep[e.g.,][]{hines14}.
+this analysis at multiple levels of analysis \citep[e.g.,][]{hines2014}.
 
 % ---
 \subsection{Utility Analysis}
@@ -1337,7 +1348,7 @@ discover interesting and sometimes unexpected ecological
 relationships.  For example, although alligators directly eat frogs in
 the Florida Everglades (USA), it appears that their net relationship
 when considering the whole food web is actually mutualistic
-\cite{bonavalli99}.  This is in part because the alligators also eat
+\cite{bondavalli99}.  This is in part because the alligators also eat
 other key predators of the frogs such as snakes.
 
 
@@ -1493,7 +1504,7 @@ names(oyster.ena)
 
 \subsubsection{Centrality}
 Centrality analysis is a large topic in network science
-\cite{brandes05, wasserman94}.  In general the goal is to describe the
+\cite{brandes05, wasserman1994}.  In general the goal is to describe the
 relative importance of parts of the networks (nodes, edges,
 environs). Many different types of centrality measures exist in
 network science \cite{freeman79, freeman1991centrality, borgatti06,
@@ -1733,7 +1744,7 @@ using this data object is that analysts can then use the tools for
 network construction and manipulation that are part of the
 \textit{network} package.  For example, \textit{network} can import
 network models form Pajek project files, which is another widely used
-network modeling and analysis software \cite{batagelj07}.  The package
+network modeling and analysis software \cite{batajel07}.  The package
 also includes functions to seamlessly add and delete nodes (edges).
 It also provides the capability to visualize the network shown previously.
 

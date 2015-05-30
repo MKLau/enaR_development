@@ -1,4 +1,4 @@
-\begin{thebibliography}{97}
+\begin{thebibliography}{131}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -75,6 +75,27 @@ Baird D, Ulanowicz RE, Boynton WR (1995).
   approach.}
 \newblock \emph{Estuar. Coast. Shelf Sci.}, \textbf{41}(2), 137--162.
 
+\bibitem[{Barab{\'a}si(2012)}]{barabasi12}
+Barab{\'a}si AL (2012).
+\newblock \enquote{The network takeover.}
+\newblock \emph{Nat. Phys.}, \textbf{8}(1), 14--16.
+
+\bibitem[{Barber(1978{\natexlab{a}})}]{barber1978markovian}
+Barber MC (1978{\natexlab{a}}).
+\newblock \enquote{A Markovian model for ecosystem flow analysis.}
+\newblock \emph{Ecol. Model.}, \textbf{5}(3), 193--206.
+
+\bibitem[{Barber(1978{\natexlab{b}})}]{barber1978retrospective}
+Barber MC (1978{\natexlab{b}}).
+\newblock \enquote{A retrospective Markovian model for ecosystem resource
+  flow.}
+\newblock \emph{Ecol. Model.}, \textbf{5}(2), 125--135.
+
+\bibitem[{Batagelj and Mrvar(2007)}]{batajel07}
+Batagelj V, Mrvar A (2007).
+\newblock \enquote{Pajek: Package for Large Network Analysis.}
+\newblock \urlprefix\url{http://mrvar.fdv.uni-lj.si/pajek/}.
+
 \bibitem[{Belgrano \emph{et~al.}(2005)Belgrano, Scharler, Dunne, and
   Ulanowicz}]{belgrano05}
 Belgrano A, Scharler UM, Dunne J, Ulanowicz RE (2005).
@@ -86,6 +107,11 @@ Bondavalli C, Ulanowicz RE (1999).
 \newblock \enquote{Unexpected effects of predators upon their prey: {T}he case
   of the {A}merican alligator.}
 \newblock \emph{Ecosystems}, \textbf{2}, 49--63.
+
+\bibitem[{Borgatti and Everett(2006)}]{borgatti06}
+Borgatti SP, Everett MG (2006).
+\newblock \enquote{A graph-theoretic perspective on centrality.}
+\newblock \emph{Soc. Networks}, \textbf{28}, 466--484.
 
 \bibitem[{Borrett(2013)}]{borrett13}
 Borrett SR (2013).
@@ -121,6 +147,13 @@ Borrett SR, Freeze MA, Salas A (2011).
   indirect effects metrics in ecological network analysis.}
 \newblock \emph{Ecol. Model.}, \textbf{222}, 2142--2148.
 \newblock \doi{10.1016/j.ecolmodel.2011.04.003}.
+
+\bibitem[{Borrett \emph{et~al.}(2015)Borrett, Hines, and
+  Carter}]{borrett15_bgc}
+Borrett SR, Hines DE, Carter M (2015).
+\newblock \enquote{Six general ecosystem properties are more intense in
+  biogeochemical cycling networks than food webs.}
+\newblock \emph{still seeking a home}.
 
 \bibitem[{Borrett \emph{et~al.}(2014)Borrett, Moody, and
   Edelmann}]{borrett14_rise}
@@ -169,6 +202,12 @@ Brandes U, Erlebach T (eds.) (2005).
 \newblock \emph{Network Analysis: Methodological Foundations}.
 \newblock Springer-Verlag, Berlin, Heidelberg.
 
+\bibitem[{Brandes \emph{et~al.}(2013)Brandes, Robins, McCranie, and
+  Wasserman}]{brandes13}
+Brandes U, Robins G, McCranie A, Wasserman S (2013).
+\newblock \enquote{What is network science?}
+\newblock \emph{Network Sci.}, \textbf{1}(01), 1--15.
+
 \bibitem[{Brylinsky(1972)}]{brylinsky72}
 Brylinsky M (1972).
 \newblock \enquote{Steady-state sensitivity analysis of energy flow in a marine
@@ -203,6 +242,12 @@ Christensen V (1995).
 \newblock \enquote{Ecosystem maturity---Towards quantification.}
 \newblock \emph{Ecol. Model.}, \textbf{77}, 3--32.
 
+\bibitem[{Christensen and Pauly(1992)}]{christensen92}
+Christensen V, Pauly D (1992).
+\newblock \enquote{Ecopath-II---A software for balancing steady-state ecosystem
+  models and calculating network characteristics.}
+\newblock \emph{Ecol. Model.}, \textbf{61}, 169--185.
+
 \bibitem[{Christensen and Walters(2004)}]{christensen04}
 Christensen V, Walters CJ (2004).
 \newblock \enquote{Ecopath with {E}cosim: {M}ethods, capabilities and
@@ -227,12 +272,31 @@ Dame RF, Patten BC (1981).
 \newblock \enquote{Analysis of energy flows in an intertidal oyster reef.}
 \newblock \emph{Mar. Ecol. Prog. Ser.}, \textbf{5}, 115--124.
 
+\bibitem[{Dunne \emph{et~al.}(2002)Dunne, Williams, and Martinez}]{dunne02food}
+Dunne JA, Williams RJ, Martinez ND (2002).
+\newblock \enquote{Food-web structure and network theory: The role of
+  connectance and size.}
+\newblock \emph{Proc. Nat. Acad. Sci. USA}, \textbf{99}, 12917--.
+
 \bibitem[{Edmisten(1970)}]{edmisten70}
 Edmisten J (1970).
 \newblock \enquote{Preliminary studies of the nitrogen budget of a tropical
   rain forest.}
 \newblock In HT~Odum, RF~Pigeon (eds.), \emph{A Tropical Rain Forest},
   TID-24270, pp. 211--215. USAEC Technical Information Center.
+
+\bibitem[{Ekl\"{o}f and Ebenman(2006)}]{eklof2006}
+Ekl\"{o}f A, Ebenman B (2006).
+\newblock \enquote{{Species loss and secondary extinctions in simple and
+  complex model communities}.}
+\newblock \emph{Journal of Animal Ecology}, \textbf{75}(1), 239--246.
+
+\bibitem[{Estrada(2007)}]{estrada2007}
+Estrada E (2007).
+\newblock \enquote{Food webs robustness to biodiversity loss: The roles of
+  connectance, expansibility and degree distribution.}
+\newblock \emph{J. Theor. Biol.}, \textbf{244}(2), 296 -- 307.
+\newblock \doi{10.1016/j.jtbi.2006.08.002}.
 
 \bibitem[{Fann and Borrett(2012)}]{fann12_ec}
 Fann SL, Borrett SR (2012).
@@ -246,6 +310,11 @@ Farkas I, Derenyi I, Barabasi A, Vicsek T (2001).
 \newblock \enquote{Spectra of ``real-world'' graphs: Beyond the semicircle
   law.}
 \newblock \emph{Physical Review E}, \textbf{64}(2), 026704.
+
+\bibitem[{Fath(2014)}]{fath2014quantifying}
+Fath BD (2014).
+\newblock \enquote{Quantifying economic and ecological sustainability.}
+\newblock \emph{Ocean \& Coastal Management}.
 
 \bibitem[{Fath and Borrett(2006)}]{fath06}
 Fath BD, Borrett SR (2006).
@@ -264,6 +333,12 @@ Fath BD, Patten BC (1999).
 \newblock \enquote{Review of the foundations of network environ analysis.}
 \newblock \emph{Ecosystems}, \textbf{2}, 167--179.
 
+\bibitem[{Fath \emph{et~al.}(2007)Fath, Scharler, Ulanowicz, and
+  Hannon}]{fath07_netconstruction}
+Fath BD, Scharler UM, Ulanowicz RE, Hannon B (2007).
+\newblock \enquote{Ecological network analysis: network construction.}
+\newblock \emph{Ecol. Model.}, \textbf{208}, 49--55.
+
 \bibitem[{Finn(1976)}]{finn76}
 Finn JT (1976).
 \newblock \enquote{Measures of ecosystem structure and function derived from
@@ -274,6 +349,26 @@ Finn JT (1976).
 Finn JT (1980).
 \newblock \enquote{Flow analysis of models of the {H}ubbard {B}rook ecosystem.}
 \newblock \emph{Ecology}, \textbf{61}, 562--571.
+
+\bibitem[{Freeman \emph{et~al.}(1991)Freeman, Borgatti, and
+  White}]{freeman1991centrality}
+Freeman L, Borgatti S, White D (1991).
+\newblock \enquote{Centrality in valued graphs: A measure of betweenness based
+  on network flow.}
+\newblock \emph{Social Networks}, \textbf{13}(2), 141--154.
+
+\bibitem[{Freeman(1979)}]{freeman79}
+Freeman LC (1979).
+\newblock \enquote{Centrality in networks. {I}. {C}onceptual clarificaiton.}
+\newblock \emph{Soc. Networks}, \textbf{1}, 215--239.
+
+\bibitem[{Gattie \emph{et~al.}(2006)Gattie, Schramski, Borrett, Patten, Bata,
+  and Whipple}]{gattie06}
+Gattie DK, Schramski JR, Borrett SR, Patten BC, Bata SA, Whipple SJ (2006).
+\newblock \enquote{Indirect effects and distributed control in ecosystems:
+  Network environ analysis of a seven-compartment model of nitrogen flow in the
+  {Neuse River Estuary, USA}---Steady-state analysis.}
+\newblock \emph{Ecol. Model.}, \textbf{194}, 162--177.
 
 \bibitem[{Handcock \emph{et~al.}(2008)Handcock, Hunter, Butts, Goodreau, and
   Morris}]{handcock2008statnet}
@@ -308,6 +403,12 @@ Higashi M, Burns TP (1991).
 Higashi M, Patten BC (1989).
 \newblock \enquote{Dominance of indirect causality in ecosystems.}
 \newblock \emph{Am. Nat.}, \textbf{133}, 288--302.
+
+\bibitem[{Hines and Borrett(2014)}]{hines2014}
+Hines DE, Borrett SR (2014).
+\newblock \enquote{A comparison of network, neighborhood, and node levels of
+  analyses in two models of nitrogen cycling in the {Cape Fear River Estuary}.}
+\newblock \emph{Ecological Modelling}, \textbf{293}, 210--220.
 
 \bibitem[{Hines \emph{et~al.}(2012)Hines, Lisa, Song, Tobias, and
   Borrett}]{hines12}
@@ -356,6 +457,17 @@ J{\o}rgensen SE, Fath BD, Bastianoni S, Marques JC, M\"{u}ller F, Nielsen S,
 \newblock \emph{A new ecology: Systems perspective}.
 \newblock Elsevier, Amsterdam.
 
+\bibitem[{Kazanci(2007)}]{kazanci07}
+Kazanci C (2007).
+\newblock \enquote{Eco{N}et: A new software for ecological modeling, simulation
+  and network analysis.}
+\newblock \emph{Ecol. Model.}, \textbf{208}, 3--8.
+
+\bibitem[{Latham~II(2006)}]{latham2006}
+Latham~II LG (2006).
+\newblock \enquote{Network flow analysis algorithms.}
+\newblock \emph{Ecol. Model.}, \textbf{192}(3), 586--600.
+
 \bibitem[{Leontief(1936)}]{leontief1936}
 Leontief W (1936).
 \newblock \enquote{Quantitative input and output relations in the economic
@@ -384,6 +496,11 @@ Link J, Overholtz W, O'Reilly J, Green J, Dow D, Palka D, Legault C, Vitaliano
   ecosystem metrics.}
 \newblock \emph{J. Mar. Syst.}, \textbf{74}, 453--474.
 
+\bibitem[{Martinez(1992)}]{martinez1992constant}
+Martinez ND (1992).
+\newblock \enquote{Constant connectance in community food webs.}
+\newblock \emph{Am. Nat.}, pp. 1208--1218.
+
 \bibitem[{Miehls \emph{et~al.}(2009{\natexlab{a}})Miehls, Mason, Frank, Krause,
   Peacor, and Taylor}]{miehls09_oneida}
 Miehls ALJ, Mason DM, Frank KA, Krause AE, Peacor SD, Taylor WW
@@ -407,6 +524,34 @@ Monaco ME, Ulanowicz RE (1997).
 \newblock \enquote{Comparative ecosystem trophic structure of three US
   mid-{A}tlantic estuaries.}
 \newblock \emph{Mar. Ecol. Prog. Ser.}, \textbf{161}, 239--254.
+
+\bibitem[{{National Research Council, Committee on Network Science for Army
+  Applications}(2006)}]{nrc06network}
+{National Research Council, Committee on Network Science for Army Applications}
+  (2006).
+\newblock \emph{Network Science}.
+\newblock The National Academies Press, Washington, DC.
+
+\bibitem[{Newman \emph{et~al.}(2006)Newman, Barab{\'a}si, and
+  Watts}]{newman06structure}
+Newman M, Barab{\'a}si AL, Watts DJ (2006).
+\newblock \emph{The structure and dynamics of networks}.
+\newblock Princeton University Press, Princeton, NJ.
+
+\bibitem[{Newman(2001)}]{newman01scientific1}
+Newman MEJ (2001).
+\newblock \enquote{Scientific collaboration networks. I. Network construction
+  and fundamental results.}
+\newblock \emph{Phys. Rev. E}, \textbf{64}(1), 016131.
+
+\bibitem[{Niquil \emph{et~al.}(2012)Niquil, Chaumillon, Johnson, Bertin, Grami,
+  David, Bacher, Asmus, Baird, and Asmus}]{niquil2012physical}
+Niquil N, Chaumillon E, Johnson G, Bertin X, Grami B, David V, Bacher C, Asmus
+  H, Baird D, Asmus R (2012).
+\newblock \enquote{The effect of physical drivers on ecosystem indices derived
+  from ecological network analysis: Comparison across estuarine ecosystems.}
+\newblock \emph{Estuar. Coast. Shelf Sci.}, \textbf{108}, 132--143.
+\newblock \doi{{10.1016/j.ecss.2011.12.031}}.
 
 \bibitem[{Odum(1957)}]{odum57}
 Odum HT (1957).
@@ -535,6 +680,12 @@ Schramski JR, Kazanci C, Tollner EW (2011).
 \newblock \emph{Environ. Model. Softw.}, \textbf{26}, 419--428.
 \newblock \doi{10.1016/j.envsoft.2010.10.003}.
 
+\bibitem[{Soetaert \emph{et~al.}(2009)Soetaert, Van~den Meersche, and van
+  Oevelen}]{soetaert09}
+Soetaert K, Van~den Meersche K, van Oevelen D (2009).
+\newblock \emph{{limSolve}: Solving Linear Inverse Models}.
+\newblock R package version 1.5.1.
+
 \bibitem[{Tilly(1968)}]{tilly68}
 Tilly LJ (1968).
 \newblock \enquote{The structure and dynamics of {Cone Spring}.}
@@ -604,6 +755,13 @@ Ulanowicz RE, Bondavalli C, Heymans JJ, Egnotovich MS (2000).
   Biological Resources Division Ref. No. [UMCES] CBL 00-0176}, Chesapeake
   Biological Laboratory, University of Maryland.
 
+\bibitem[{Ulanowicz \emph{et~al.}(2014)Ulanowicz, Holt, and
+  Barfield}]{ulanowicz2014}
+Ulanowicz RE, Holt RD, Barfield M (2014).
+\newblock \enquote{Limits on ecosystem trophic complexity: insights from
+  ecological network analysis.}
+\newblock \emph{Ecol. Lett.}, \textbf{17}(2), 127--136.
+
 \bibitem[{Ulanowicz and Kay(1991)}]{ulanowicz91}
 Ulanowicz RE, Kay J (1991).
 \newblock \enquote{A package for the analysis of ecosystem flow networks.}
@@ -619,12 +777,57 @@ Ulanowicz RE, Puccia CJ (1990).
 \newblock \enquote{Mixed trophic impacts in ecosystems.}
 \newblock \emph{Coenoses}, \textbf{5}, 7--16.
 
+\bibitem[{Ulanowicz and Scharler(2008)}]{ulanowicz2008least}
+Ulanowicz RE, Scharler UM (2008).
+\newblock \enquote{Least-inference methods for constructing networks of trophic
+  flows.}
+\newblock \emph{Ecol. Model.}, \textbf{210}(3), 278--286.
+
+\bibitem[{van Oevelen \emph{et~al.}(2009)van Oevelen, Duineveld, Lavaleye,
+  Mienis, Soetaert, and Heip}]{vanoevelen2009cold}
+van Oevelen D, Duineveld G, Lavaleye M, Mienis F, Soetaert K, Heip CHR (2009).
+\newblock \enquote{The cold-water coral community as a hot spot for carbon
+  cycling on continental margins: A food-web analysis from {Rockall Bank
+  (northeast Atlantic)}.}
+\newblock \emph{Limnology and Oceanography}, \textbf{54}(6), 1829.
+
+\bibitem[{van Oevelen \emph{et~al.}(2006)van Oevelen, Soetaert, Middelburg,
+  Herman, Moodley, Hamels, Moens, and Heip}]{vanoevelen2006carbon}
+van Oevelen D, Soetaert K, Middelburg JJ, Herman PMJ, Moodley L, Hamels I,
+  Moens T, Heip CHR (2006).
+\newblock \enquote{Carbon flows through a benthic food web: Integrating
+  biomass, isotope and tracer data.}
+\newblock \emph{Journal of Marine Research}, \textbf{64}(3), 453--482.
+
+\bibitem[{van Oevelen \emph{et~al.}(2010)van Oevelen, Van~den Meersche,
+  Meysman, Soetaert, Middelburg, and V{\'e}zina}]{vanoevelen2010}
+van Oevelen D, Van~den Meersche K, Meysman FJR, Soetaert K, Middelburg JJ,
+  V{\'e}zina AF (2010).
+\newblock \enquote{Quantifying food web flows using linear inverse models.}
+\newblock \emph{Ecosystems}, \textbf{13}(1), 32--45.
+
+\bibitem[{V{\'e}zina and Platt(1988)}]{vezina1988}
+V{\'e}zina AF, Platt T (1988).
+\newblock \enquote{Food web dynamics in the ocean. 1. Best-estimates of flow
+  networks using inverse methods.}
+\newblock \emph{Mar. Ecol. Prog. Ser.}, \textbf{42}(3), 269--287.
+
 \bibitem[{Waide \emph{et~al.}(1974)Waide, Krebs, Clarkson, and
   Setzler}]{waide74}
 Waide JB, Krebs JE, Clarkson SP, Setzler EM (1974).
 \newblock \enquote{A linear system analysis of the calcium cycle in a forested
   watershed ecosystem.}
 \newblock \emph{Prog. Theor. Biol.}, \textbf{3}, 261--345.
+
+\bibitem[{Wasserman and Faust(1994)}]{wasserman1994}
+Wasserman S, Faust K (1994).
+\newblock \emph{Social network analysis: {M}ethods and applications}.
+\newblock Cambridge University Press, Cambridge; New York.
+
+\bibitem[{Watts and Strogatz(1998)}]{watts1998collective}
+Watts D, Strogatz S (1998).
+\newblock \enquote{Collective dynamics of `small-world' networks.}
+\newblock \emph{Nature}, \textbf{393}(6684), 440--442.
 
 \bibitem[{Whipple \emph{et~al.}(2007)Whipple, Borrett, Patten, Gattie,
   Schramski, and Bata}]{whipple07}
@@ -639,6 +842,14 @@ Whipple SJ, Patten BC (1993).
 \newblock \enquote{The problem of nontrophic processes in trophic ecology:
   Toward a network unfolding solution.}
 \newblock \emph{J. Theor. Biol.}, \textbf{163}, 393--411.
+
+\bibitem[{Whipple \emph{et~al.}(2014)Whipple, Patten, and
+  Borrett}]{whipple2014}
+Whipple SJ, Patten BC, Borrett SR (2014).
+\newblock \enquote{Indirect effects and distributed control in ecosystems:
+  Comparative network environ analysis of a seven-compartment model of nitrogen
+  storage in the {Neuse River Estuary, USA}: Time series analysis.}
+\newblock \emph{Ecol. Model.}, \textbf{293}, 161--186.
 
 \bibitem[{Zhang \emph{et~al.}(2010)Zhang, Yang, and Fath}]{zhang10}
 Zhang Y, Yang Z, Fath B (2010).
