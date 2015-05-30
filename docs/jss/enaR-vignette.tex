@@ -89,7 +89,7 @@
 
 
 \begin{document}
-\input{enaR-vignette-concordance}
+
 
 
 %%%%Re-organization based on SRB notes
@@ -390,9 +390,9 @@ example of doing this with hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   balanced = FALSE 
-  total edges= 8 
+  total edges= 7 
     missing edges= 0 
-    non-missing edges= 8 
+    non-missing edges= 7 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -417,7 +417,7 @@ can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 0.8343118 0.6627736 3.6645319 2.3732521
+[1] 0.4507223 3.0122950 2.3485984 2.8759267
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -437,11 +437,11 @@ object with:
 > as.matrix(fake.model,attrname="flow")
 \end{Sinput}
 \begin{Soutput}
-         node1    node2    node3    node4
-node1 2.654103 5.558082 0.000000 0.000000
-node2 4.519536 6.878857 5.464219 4.866092
-node3 0.000000 2.430791 0.000000 0.000000
-node4 0.000000 0.000000 5.931812 0.000000
+          node1    node2    node3    node4
+node1 2.7187880 0.000000 0.000000 4.859106
+node2 0.0000000 0.000000 0.000000 3.471014
+node3 0.7863419 7.419382 5.953546 0.000000
+node4 0.0000000 0.000000 3.157019 0.000000
 \end{Soutput}
 \end{Schunk}
 
@@ -456,20 +456,20 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-         node1    node2    node3    node4
-node1 2.654103 5.558082 0.000000 0.000000
-node2 4.519536 6.878857 5.464219 4.866092
-node3 0.000000 2.430791 0.000000 0.000000
-node4 0.000000 0.000000 5.931812 0.000000
+          node1    node2    node3    node4
+node1 2.7187880 0.000000 0.000000 4.859106
+node2 0.0000000 0.000000 0.000000 3.471014
+node3 0.7863419 7.419382 5.953546 0.000000
+node4 0.0000000 0.000000 3.157019 0.000000
 
 $z
-[1] 0.8343118 0.6627736 3.6645319 2.3732521
+[1] 0.4507223 3.0122950 2.3485984 2.8759267
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 0.8343118 0.6627736 3.6645319 2.3732521
+[1] 0.4507223 3.0122950 2.3485984 2.8759267
 
 $y
 [1] NA NA NA NA
@@ -2793,7 +2793,6 @@ collaborate and contribute to development of ENA theory and
 \textit{enaR}. Programmers that are interested can visit
 \url{https://github.com/SEELab/enaR_development} for more information
 on how to contribute to development of the \textit{enaR} package.
-
 
 \bibliography{jss_abb,jss}
 
