@@ -89,7 +89,7 @@
 
 
 \begin{document}
-\input{enaR-vignette-concordance}
+%% \SweaveOpts{concordance=TRUE}
 
 
 %%%%Re-organization based on SRB notes
@@ -390,9 +390,9 @@ example of doing this with hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   balanced = FALSE 
-  total edges= 8 
+  total edges= 7 
     missing edges= 0 
-    non-missing edges= 8 
+    non-missing edges= 7 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -417,7 +417,7 @@ can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 0.8343118 0.6627736 3.6645319 2.3732521
+[1] 1.42536454 3.51459084 0.01701153 0.05773677
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -438,10 +438,10 @@ object with:
 \end{Sinput}
 \begin{Soutput}
          node1    node2    node3    node4
-node1 2.654103 5.558082 0.000000 0.000000
-node2 4.519536 6.878857 5.464219 4.866092
-node3 0.000000 2.430791 0.000000 0.000000
-node4 0.000000 0.000000 5.931812 0.000000
+node1 0.000000 4.287078 2.454951 0.000000
+node2 4.603989 0.000000 3.389783 0.000000
+node3 8.109245 0.000000 0.000000 0.000000
+node4 0.000000 0.000000 3.163472 5.146839
 \end{Soutput}
 \end{Schunk}
 
@@ -457,19 +457,19 @@ output is as follows:
 \begin{Soutput}
 $F
          node1    node2    node3    node4
-node1 2.654103 5.558082 0.000000 0.000000
-node2 4.519536 6.878857 5.464219 4.866092
-node3 0.000000 2.430791 0.000000 0.000000
-node4 0.000000 0.000000 5.931812 0.000000
+node1 0.000000 4.287078 2.454951 0.000000
+node2 4.603989 0.000000 3.389783 0.000000
+node3 8.109245 0.000000 0.000000 0.000000
+node4 0.000000 0.000000 3.163472 5.146839
 
 $z
-[1] 0.8343118 0.6627736 3.6645319 2.3732521
+[1] 1.42536454 3.51459084 0.01701153 0.05773677
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 0.8343118 0.6627736 3.6645319 2.3732521
+[1] 1.42536454 3.51459084 0.01701153 0.05773677
 
 $y
 [1] NA NA NA NA
