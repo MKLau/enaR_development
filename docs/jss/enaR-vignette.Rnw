@@ -8,7 +8,7 @@
         Stuart R. Borrett\\Department of Biology and Marine Biology\\
         University of North Carolina Wilmington\\and\\Duke Network
         Analysis Center\\Social Science Research Institute\\Duke
-        University\\ \And Pawandeep Singh}
+        University\\ \And Pawandeep Singh \\ Address needed (UNCW?)}
 \title{enaR: Ecosystem Network Analysis with R}
 
 %% for pretty printing and a nice hypersummary also set:
@@ -64,7 +64,7 @@
   601 South College Road, Wilmington, NC 28403, USA\\
   E-mail: \email{@uncw.edu}\\
   URL: \url{http://people.uncw.edu/borretts/}
-  
+
 }
 
 %% It is also possible to add a telephone and fax number
@@ -1657,7 +1657,7 @@ m.list <- enaModels[unlist(lapply(enaModels,function(x) x%n%'balanced'))]
 
 <<eval=true>>=
 ## Example of extracting just specific information - Indirect Effects Ratio
-IDs <- unlist(lapply(m.list, function(x) enaFlow(x)$ns[8]))
+IDs <- unlist(lapply(m.list, function(x) enaFlow(x)$ns[9]))
 ## Look at the first few ID's
 head(IDs)
 @
@@ -1692,7 +1692,7 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 opar <- par(las=1,mar=c(9,7,2,1),xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
 ## Number of models
 x=dim(ns)[1]
-m.select <- 40:45
+m.select <- 26:31
 bp=barplot(ns$ID.F[m.select],ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
         col="darkgreen",border=NA,ylim=c(0,2))
 ## Add labels
@@ -1718,7 +1718,7 @@ rm(opar)
 @
 \caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
   (left) and relationship between the Finn Cycling Index and the ratio
-  of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:idf}
+  of Indirect-to-Direct flow in the 74 ecosysetm models.} \label{fig:idf}
 \end{figure}
 
 A strength of this software is the ease with which users can apply ENA
@@ -1771,20 +1771,21 @@ well. For example, it will create a target diagram to visualize the centralities
 %%%FIX ME!!!
 
 <<d,eval=true>>=
-m <- troModels[[38]]
+m <- m.list[[17]]  # Okefenokee Food Web
 ## Calculate betweenness centrality
 b <- betweenness(m)
 ## Get vertex names
 nms <- m%v%'vertex.names'
 show(nms)
-## Exclude less central nodes
+## Exclude less central node names
 nms[b<=(0.1*max(b))] <- NA
 
-set.seed(3)
+set.seed(2)
 opar <- par(xpd=TRUE,mfrow=c(1,1))
 ## Create target plot showing only
 ## labels of most central nodes
-gplot.target(m,b,circ.lab=FALSE,
+gplot.target(m,b,
+             circ.lab=FALSE,
              edge.col="grey",
              label=nms)
 ## Remove plot settings
@@ -1796,8 +1797,8 @@ rm(opar)
 <<fig=true,echo=false,eval=true>>=
 <<d>>
 @
-\caption{Target plot of node betweenness centrality for the Chesapeake
-  Bay model (mesohaline, carbon, annual).} \label{fig:target}
+\caption{Target plot of node betweenness centrality for the Okefenokee
+  Swamp trophic model.} \label{fig:target}
 \end{figure}
 
 
