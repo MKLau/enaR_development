@@ -8,11 +8,12 @@
         Stuart R. Borrett\\Department of Biology and Marine Biology\\
         University of North Carolina Wilmington\\and\\Duke Network
         Analysis Center\\Social Science Research Institute\\Duke
-        University\\ \And Pawandeep Singh \\ISERC \\Visva-Bharati University}
+        University\\ \And Pawandeep Singh\\Department of Biology and Marine Biology\\
+        University of North Carolina Wilmington\\}
 \title{enaR: Ecosystem Network Analysis with R}
 
 %% for pretty printing and a nice hypersummary also set:
-\Plainauthor{Matthew K. Lau, Stuart R. Borrett} %% comma-separated
+\Plainauthor{Matthew K. Lau, Stuart R. Borrett, Pawandeep Singh} %% comma-separated
 \Plaintitle{enaR: Ecosystem Network Analyses with R} %% without formatting
 \Shorttitle{\pkg{enaR}: Ecosystem Network Analyses with R} %% a short title (if necessary)
 
@@ -59,11 +60,12 @@
   URL: \url{http://people.uncw.edu/borretts/}
   \\
   Pawandeep Singh \\
-  Integrated Science Education and Research Centre\\
-  Visva-Bharati University\\
-  Santiniketan, West Bengal - 731235, India\\
-  E-mail: \email{pawan.s@live.co.uk}\\
-  URL: \url{https://in.linkedin.com/in/pawan20021992}\\
+  Department of Biology and Marine Biology\\
+  University of North Carolina Wilmington\\
+  601 South College Road, Wilmington, NC 28403, USA\\
+  E-mail: \email{@uncw.edu}\\
+  URL: \url{http://people.uncw.edu/borretts/}
+
 }
 
 %% It is also possible to add a telephone and fax number
@@ -218,7 +220,7 @@ detailed description of how to conduct these analyses using
 
 \section{Getting Started}
 
-In this section we describe the data necessary for the Ecological
+In this section we describe the data necessary for the Ecosystem
 Network Analysis and show how to build the central network data object
 in \R\ that contains the model data for subsequent analysis.  To
 start, the current stable version can be installed from CRAN:
@@ -388,9 +390,9 @@ example of doing this with hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   balanced = FALSE 
-  total edges= 13 
+  total edges= 8 
     missing edges= 0 
-    non-missing edges= 13 
+    non-missing edges= 8 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -415,7 +417,7 @@ can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 0.9832709 1.7276378 3.9508456 3.3475543
+[1] 3.31224122 0.05082792 0.93603094 2.03415858
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -435,11 +437,11 @@ object with:
 > as.matrix(fake.model,attrname="flow")
 \end{Sinput}
 \begin{Soutput}
-         node1     node2    node3    node4
-node1 0.000000 0.1295493 3.707570 4.172578
-node2 5.615136 6.8026144 0.000000 4.672064
-node3 4.915889 1.9412592 2.261347 4.619334
-node4 0.000000 8.8831899 2.652546 2.424396
+        node1    node2    node3    node4
+node1 0.00000 0.000000 1.896386 4.077463
+node2 0.00000 0.000000 7.811643 2.444950
+node3 0.00000 0.000000 4.981009 0.000000
+node4 3.50226 4.555268 2.485130 0.000000
 \end{Soutput}
 \end{Schunk}
 
@@ -454,20 +456,20 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-         node1     node2    node3    node4
-node1 0.000000 0.1295493 3.707570 4.172578
-node2 5.615136 6.8026144 0.000000 4.672064
-node3 4.915889 1.9412592 2.261347 4.619334
-node4 0.000000 8.8831899 2.652546 2.424396
+        node1    node2    node3    node4
+node1 0.00000 0.000000 1.896386 4.077463
+node2 0.00000 0.000000 7.811643 2.444950
+node3 0.00000 0.000000 4.981009 0.000000
+node4 3.50226 4.555268 2.485130 0.000000
 
 $z
-[1] 0.9832709 1.7276378 3.9508456 3.3475543
+[1] 3.31224122 0.05082792 0.93603094 2.03415858
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 0.9832709 1.7276378 3.9508456 3.3475543
+[1] 3.31224122 0.05082792 0.93603094 2.03415858
 
 $y
 [1] NA NA NA NA
@@ -678,7 +680,7 @@ BENTHIC FECES & BACTERIA                        0
       Narragansett Bay & mgC m$^{-2}$ yr$^{-1}$  &  32 & 0.15 & 693845 & 3917246 & 0.51 &  \citet{monaco97} \\
       Southern New England Bight & g ww m$^{-2}$ yr$^{-1}$  &  33 & 0.35 & 4717 & 17597 & 0.16 &  \citet{link08} \\
       Chesapeake Bay  & mg C m$^{-2}$ yr$^{-1}$  &  36 & 0.09 & 888791 & 3227453 & 0.19 &  \citet{baird89} \\
-      Mondego Estuary (\textit{Zostera} sp. Meadows) & g AFDW m$^{<U+2212>2}$ yr$^{<U+2212>1}$ &  43 & 0.19 & 4030 & 6822 & 0.03 & \citet{patricio2006mass} \\
+      Mondego Estuary (\textit{Zostera} sp. Meadows) & g AFDW m$^{−2}$ yr$^{−1}$ &  43 & 0.19 & 4030 & 6822 & 0.03 & \citet{patricio2006mass} \\
       St. Marks Seagrass, site 1 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 514 & 1315 & 0.13 &  \citet{baird98} \\
       St. Marks Seagrass, site 1 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 601 & 1590 & 0.11 &  \citet{baird98} \\
       St. Marks Seagrass, site 2 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.07 & 602 & 1383 & 0.09 &  \citet{baird98} \\
@@ -1056,7 +1058,7 @@ package.
 
 \begin{table*}
 \center
-\caption{Primary Ecological Network Analysis algorithms in
+\caption{Primary Ecosystem Network Analysis algorithms in
   \textit{enaR}.} \label{tab:alg}
 \tableline
 %\begin{scriptsize}
@@ -1960,7 +1962,7 @@ Predators          0.0000
 There are a number of additional tools in the package.  Here selected
 a subset of these to highlight.
 
-\subsubsection{Quickly Applying Sets Analyses}
+\subsubsection{Quickly Return Multiple Analyses}
 There are two functions that aggregate multiple analyses and report
 selected results.  A quick way to get a list of the global network statistics reported in
 Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
@@ -2377,17 +2379,17 @@ just the ratio of Indirect-to-Direct flow for each model.
 \begin{Schunk}
 \begin{Sinput}
 > ## Example of extracting just specific information - Indirect Effects Ratio
-> IDs <- unlist(lapply(m.list, function(x) enaFlow(x)$ns[8]))
+> IDs <- unlist(lapply(m.list, function(x) enaFlow(x)$ns[9]))
 > ## Look at the first few ID's
 > head(IDs)
 \end{Sinput}
 \begin{Soutput}
 Marine Coprophagy (oyster)              Lake Findley  
-                 0.1546893                  0.3669420 
+                  1.002852                   1.723221 
                Mirror Lake                Lake Wingra 
-                 0.4334588                  0.4452123 
+                  1.861121                   1.861719 
                Marion Lake               Cone Springs 
-                 0.4391692                  0.3105362 
+                  2.175878                   1.023016 
 \end{Soutput}
 \end{Schunk}
 
@@ -2460,7 +2462,7 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 > opar <- par(las=1,mar=c(9,7,2,1),xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
 > ## Number of models
 > x=dim(ns)[1]
-> m.select <- 40:45
+> m.select <- 26:31
 > bp=barplot(ns$ID.F[m.select],ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
 +          col="darkgreen",border=NA,ylim=c(0,2))
 > ## Add labels
@@ -2485,7 +2487,7 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 \includegraphics{enaR-vignette-052}
 \caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
   (left) and relationship between the Finn Cycling Index and the ratio
-  of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:idf}
+  of Indirect-to-Direct flow in the 74 ecosysetm models.} \label{fig:idf}
 \end{figure}
 
 A strength of this software is the ease with which users can apply ENA
@@ -2548,7 +2550,7 @@ well. For example, it will create a target diagram to visualize the centralities
 
 \begin{Schunk}
 \begin{Sinput}
-> m <- troModels[[38]]
+> m <- m.list[[17]]  # Okefenokee Food Web
 > ## Calculate betweenness centrality
 > b <- betweenness(m)
 > ## Get vertex names
@@ -2556,33 +2558,42 @@ well. For example, it will create a target diagram to visualize the centralities
 > show(nms)
 \end{Sinput}
 \begin{Soutput}
- [1] "Phytoplankton"                 "Bacteria in Suspended POC"    
- [3] "Bacteria in Sediment POC"      "Benthic Diatoms"              
- [5] "Free Bacteria"                 "Heterotrophic Microflagelates"
- [7] "Ciliates"                      "Zooplankton"                  
- [9] "Ctenophores"                   "Sea Nettle"                   
-[11] "Other Suspension Feeders"      "Mya arenaria"                 
-[13] "Oysters"                       "Other Polychaetes"            
-[15] "Nereis"                        "Macoma spp."                  
-[17] "Meiofauna"                     "Crustacean Deposit Feeder"    
-[19] "Blue Crab"                     "Fish Larvae"                  
-[21] "Alewife & Blue Herring"        "Bay Anchovy"                  
-[23] "Menhaden"                      "Shad"                         
-[25] "Croaker"                       "Hogchoker"                    
-[27] "Spot"                          "White Perch"                  
-[29] "Catfish"                       "Bluefish"                     
-[31] "Weakfish"                      "Summer Flounder"              
-[33] "Striped Bass"                  "Dissolved Organic Carbon"     
-[35] "Suspended Particulate Carbon"  "Sediment Partculate Carbon"   
+ [1] "Peat decomposers"                           
+ [2] "Detritus decomposers"                       
+ [3] "Nitrogen fixing and nitrifying bacteria"    
+ [4] "Autotrophic macrophytes"                    
+ [5] "Carnivorous macrophytes"                    
+ [6] "Phytoplankton"                              
+ [7] "Periphyton"                                 
+ [8] "Filamentous algae"                          
+ [9] "Herbivorous microinvertebrates"             
+[10] "Predaceaous microinvertebrates"             
+[11] "Saprotrophic microinvertebrates"            
+[12] "Algae-eating macroinvertebrates"            
+[13] "Macrophyte-eating macroinvertebrates"       
+[14] "Microinvertebrate-eating macroinvertebrates"
+[15] "Macroinvertebrate-eating macroinvertebrates"
+[16] "Vertebrate-eating macroinvertebrates"       
+[17] "Saprotrophic macroinvertebrates"            
+[18] "Algae-eating vertebrates"                   
+[19] "Macrophyte-eating vertebrates"              
+[20] "Microinvertebrate-eating vertebrates"       
+[21] "Macroinvertebrate-eating vertebrates"       
+[22] "Vertebrate-eating vertebrates"              
+[23] "Saprotrophic vertebrates"                   
+[24] "Superficial peat"                           
+[25] "Non-peat detritus"                          
+[26] "Nutrients"                                  
 \end{Soutput}
 \begin{Sinput}
-> ## Exclude less central nodes
+> ## Exclude less central node names
 > nms[b<=(0.1*max(b))] <- NA
-> set.seed(3)
+> set.seed(2)
 > opar <- par(xpd=TRUE,mfrow=c(1,1))
 > ## Create target plot showing only
 > ## labels of most central nodes
-> gplot.target(m,b,circ.lab=FALSE,
+> gplot.target(m,b,
++               circ.lab=FALSE,
 +               edge.col="grey",
 +               label=nms)
 > ## Remove plot settings
@@ -2594,29 +2605,37 @@ well. For example, it will create a target diagram to visualize the centralities
   \center
 \begin{Schunk}
 \begin{Soutput}
- [1] "Phytoplankton"                 "Bacteria in Suspended POC"    
- [3] "Bacteria in Sediment POC"      "Benthic Diatoms"              
- [5] "Free Bacteria"                 "Heterotrophic Microflagelates"
- [7] "Ciliates"                      "Zooplankton"                  
- [9] "Ctenophores"                   "Sea Nettle"                   
-[11] "Other Suspension Feeders"      "Mya arenaria"                 
-[13] "Oysters"                       "Other Polychaetes"            
-[15] "Nereis"                        "Macoma spp."                  
-[17] "Meiofauna"                     "Crustacean Deposit Feeder"    
-[19] "Blue Crab"                     "Fish Larvae"                  
-[21] "Alewife & Blue Herring"        "Bay Anchovy"                  
-[23] "Menhaden"                      "Shad"                         
-[25] "Croaker"                       "Hogchoker"                    
-[27] "Spot"                          "White Perch"                  
-[29] "Catfish"                       "Bluefish"                     
-[31] "Weakfish"                      "Summer Flounder"              
-[33] "Striped Bass"                  "Dissolved Organic Carbon"     
-[35] "Suspended Particulate Carbon"  "Sediment Partculate Carbon"   
+ [1] "Peat decomposers"                           
+ [2] "Detritus decomposers"                       
+ [3] "Nitrogen fixing and nitrifying bacteria"    
+ [4] "Autotrophic macrophytes"                    
+ [5] "Carnivorous macrophytes"                    
+ [6] "Phytoplankton"                              
+ [7] "Periphyton"                                 
+ [8] "Filamentous algae"                          
+ [9] "Herbivorous microinvertebrates"             
+[10] "Predaceaous microinvertebrates"             
+[11] "Saprotrophic microinvertebrates"            
+[12] "Algae-eating macroinvertebrates"            
+[13] "Macrophyte-eating macroinvertebrates"       
+[14] "Microinvertebrate-eating macroinvertebrates"
+[15] "Macroinvertebrate-eating macroinvertebrates"
+[16] "Vertebrate-eating macroinvertebrates"       
+[17] "Saprotrophic macroinvertebrates"            
+[18] "Algae-eating vertebrates"                   
+[19] "Macrophyte-eating vertebrates"              
+[20] "Microinvertebrate-eating vertebrates"       
+[21] "Macroinvertebrate-eating vertebrates"       
+[22] "Vertebrate-eating vertebrates"              
+[23] "Saprotrophic vertebrates"                   
+[24] "Superficial peat"                           
+[25] "Non-peat detritus"                          
+[26] "Nutrients"                                  
 \end{Soutput}
 \end{Schunk}
 \includegraphics{enaR-vignette-055}
-\caption{Target plot of node betweenness centrality for the Chesapeake
-  Bay model (mesohaline, carbon, annual).} \label{fig:target}
+\caption{Target plot of node betweenness centrality for the Okefenokee
+  Swamp trophic model.} \label{fig:target}
 \end{figure}
 
 
@@ -2719,24 +2738,28 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 > subcomponent(g,1,'in')  # subcomponent reachable from 1 along inputs
 \end{Sinput}
 \begin{Soutput}
++ 1/6 vertex, named:
 [1] 1
 \end{Soutput}
 \begin{Sinput}
 > subcomponent(g,2,'in')  # subcomponent reachable from 2 along inputs
 \end{Sinput}
 \begin{Soutput}
++ 6/6 vertices, named:
 [1] 2 6 1 3 4 5
 \end{Soutput}
 \begin{Sinput}
 > subcomponent(g,1,'out') # subcomponent reachable from 1 along outputs
 \end{Sinput}
 \begin{Soutput}
++ 6/6 vertices, named:
 [1] 1 5 6 2 3 4
 \end{Soutput}
 \begin{Sinput}
 > subcomponent(g,2,'out') # subcomponent reachable from 2 along output
 \end{Sinput}
 \begin{Soutput}
++ 5/6 vertices, named:
 [1] 2 3 4 6 5
 \end{Soutput}
 \begin{Sinput}
@@ -2773,7 +2796,7 @@ current working directory:
 \section{Conclusion}
 
 These examples show how to use the key features of the \textit{enaR}
-package that enables scientists to perform Ecological Network Analysis
+package that enables scientists to perform Ecosystem Network Analysis
 in \R.  The vision for this package is that it provides access to ENA
 algorithms from both the Ulanowicz and Patten Schools to facilitate
 theoretical synthesis and broader application.  In its current form it

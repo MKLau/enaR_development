@@ -8,11 +8,12 @@
         Stuart R. Borrett\\Department of Biology and Marine Biology\\
         University of North Carolina Wilmington\\and\\Duke Network
         Analysis Center\\Social Science Research Institute\\Duke
-        University\\ \And Pawandeep Singh \\ Address needed (UNCW?)}
+        University\\ \And Pawandeep Singh\\Department of Biology and Marine Biology\\
+        University of North Carolina Wilmington\\}
 \title{enaR: Ecosystem Network Analysis with R}
 
 %% for pretty printing and a nice hypersummary also set:
-\Plainauthor{Matthew K. Lau, Stuart R. Borrett} %% comma-separated
+\Plainauthor{Matthew K. Lau, Stuart R. Borrett, Pawandeep Singh} %% comma-separated
 \Plaintitle{enaR: Ecosystem Network Analyses with R} %% without formatting
 \Shorttitle{\pkg{enaR}: Ecosystem Network Analyses with R} %% a short title (if necessary)
 
@@ -227,7 +228,7 @@ citation('enaR')
 
 \section{Getting Started}
 
-In this section we describe the data necessary for the Ecological
+In this section we describe the data necessary for the Ecosystem
 Network Analysis and show how to build the central network data object
 in \R\ that contains the model data for subsequent analysis.  To
 start, the current stable version can be installed from CRAN:
@@ -831,7 +832,7 @@ package.
 
 \begin{table*}
 \center
-\caption{Primary Ecological Network Analysis algorithms in
+\caption{Primary Ecosystem Network Analysis algorithms in
   \textit{enaR}.} \label{tab:alg}
 \tableline
 %\begin{scriptsize}
@@ -1481,7 +1482,7 @@ trop$Feeding_Cycles
 There are a number of additional tools in the package.  Here selected
 a subset of these to highlight.
 
-\subsubsection{Quickly Applying Sets Analyses}
+\subsubsection{Quickly Return Multiple Analyses}
 There are two functions that aggregate multiple analyses and report
 selected results.  A quick way to get a list of the global network statistics reported in
 Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
@@ -1888,7 +1889,7 @@ write.EcoNet(oyster,file='oyster.txt',mn='oyster_model')
 \section{Conclusion}
 
 These examples show how to use the key features of the \textit{enaR}
-package that enables scientists to perform Ecological Network Analysis
+package that enables scientists to perform Ecosystem Network Analysis
 in \R.  The vision for this package is that it provides access to ENA
 algorithms from both the Ulanowicz and Patten Schools to facilitate
 theoretical synthesis and broader application.  In its current form it
