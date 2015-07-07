@@ -104,56 +104,41 @@
 
 \section[Introduction]{Introduction}
 % p1:  intro paragraph (5/7/2015)
-Network models have provided an in-road to a variety of complex systems \cite{watts1998collective, newman01scientific1, barabasi12, newman06structure, wasserman1994}, and
-although the network approach has deep roots (get old cite from
-Mutualistic Networks Book), its use has been expanding rapidly in a
-variety of disciplines including ecology \citep{borrett14_rise, ings2009}.  This is due in
-part to the flexibility of the core representation, its utility in
-answering relational questions, and its applicability to ``Big Data''
-problems.  Some scientists are working to build a science of networks \citep{nrc06network, brandes13}.
+Network models have provided an in-road to a variety of complex
+systems \cite{watts1998collective, newman01scientific1, barabasi12,
+  newman06structure, wasserman1994}, and although the network approach
+has deep roots (get old cite from Mutualistic Networks Book), its use
+has been expanding rapidly in a variety of disciplines including
+ecology \citep{borrett14_rise, ings2009}.  This is due in part to the
+flexibility of the core representation, its utility in answering
+relational questions, and its applicability to ``Big Data'' problems.
+Some scientists are working to build a science of networks
+\citep{nrc06network, brandes13}.
 
 % p2: Ecosystem Network Analysis
 % what, why, bit of history -- two schools
 
-Ecosystem ecologists have developed and used network modeling and analysis for several decades \citep{borrett12_netecol,ulanowicz86,fath99_review}.  From this work, a family of algorithms used to investigate the structure and function of ecological systems has been termed Ecosystem Network Analysis (ENA).  For this approach the network models are comprised of
-transfers of thermodynamically conserved energy or matter (represented by weighted, directed graph edges)
-between nodes that represent species, groups of species, or non-living components (e.g.,
-dead organic matter) of the ecosystem.  The analysis
-has been used in a variety of ways, including to show the relative
-importance of indirect effects in ecosystems \citep{patten83,
-  higashi89, salas11_did} and their capacity to effectively transform
-the relations among organisms \citep{ulanowicz90, patten91, fath98,
-  bondavalli99}.  From these applications a new theoretical
-understanding of ecosystems has emerged \citep{higashi91, belgrano05,
-  jorgensen07_newecology}.  Recently, scientists have been applying
-these methods to understand trophic dynamics in the Sylt-R{\o}m{\o}
-Bight \citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in
-estuaries \citep{christian03, hines12}, and urban sustainability
-\citep{zhang10, chen12}.
-
-% Orientation
-The ENA methodology is an application and extension of economic
-Input--Output Analysis \citep{leontief1936,leontief66} that was first
-introduced into ecology by \citet{hannon73}.  Since this introduction, two major schools have
-developed in ENA \citep{scharler09comparing}.  The first is based on Dr.\ Robert E.\ Ulanowicz's
-work with a strong focus on trophic dynamics and a use of information
-theory \citep{ulanowicz86, ulanowicz97, ulanowicz04}.  The second
-school has an environment focus and is built on the environ concept
-introduced by Dr.\ Bernard C.\ Patten \citep{patten76, patten78,
-  fath99_review}.  Patten's approach has been collectively referred to
-separately as \emph{Network Environ Analysis}. At the core the two
-approaches are very similar; however, they make some different
-starting assumptions and follow independent yet braided development
-tracks. One example difference that has historically inhibited
-collaboration and applications is that the two schools orient their
-analytical matrices in different ways.  The Ulanowicz school orients
-their matrices as flows from rows-to-columns, which is the most common
-orientation in the broader field of network science
-\citep[e.g.,][]{brandes05}.  In contrast, the Patten School has
-historically oriented their matricies from column-to-row.  Recent
-research has started to bring the work of the two schools back
-together \citep[e.g.,][]{scharler09comparing}; we hope this software
-contributes to this.
+Ecosystem ecologists have developed and used network modeling and
+analysis for several decades
+\citep{borrett12_netecol,ulanowicz86,fath99_review}.  From this work,
+a family of algorithms used to investigate the structure and function
+of ecological systems has been termed Ecosystem Network Analysis
+(ENA).  For this approach the network models are comprised of
+transfers of thermodynamically conserved energy or matter (represented
+by weighted, directed graph edges) between nodes that represent
+species, groups of species, or non-living components (e.g., dead
+organic matter) of the ecosystem.  The analysis has been used in a
+variety of ways, including to show the relative importance of indirect
+effects in ecosystems \citep{patten83, higashi89, salas11_did} and
+their capacity to effectively transform the relations among organisms
+\citep{ulanowicz90, patten91, fath98, bondavalli99}.  From these
+applications a new theoretical understanding of ecosystems has emerged
+\citep{higashi91, belgrano05, jorgensen07_newecology}.  Recently,
+scientists have been applying these methods to understand trophic
+dynamics in the Sylt-R{\o}m{\o} Bight
+\citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in estuaries
+\citep{christian03, hines12}, and urban sustainability \citep{zhang10,
+  chen12}.
 
 
 % p3: Extant Software & The Current Problem
@@ -284,24 +269,24 @@ summarized as $\mathcal{M} =
 \{\mathbf{F}, \mathbf{z}, \mathbf{e}, \mathbf{r}, \mathbf{X}, \mathbf{Living}\}$.
 
 
-Notice the row-to-column orientation of $\mathbf{F}$.  This is
-consistent with the Ulanowicz School of network analysis, as well as
-the orientation commonly used in Social Network Analysis and used in
-the \textit{statnet} packages.  However, this is the opposite
-orientation typically used in the Patten School of analysis that
-conceptually builds from a system of differential equations and thus
-uses the column-to-row orientation common in this area of
-mathematics. Even though the difference is only a matrix transpose,
-this single difference may be the source of much confusion in the
-literature and frustration on the part of users.  We have selected to
-use row-to-column orientation for our primary data structure, as it is
-the dominant form across network analytics as evidenced by it use in
-the \textit{statnet} packages. The package algorithms also return the
-results in the row-to-column orientation by default; however, we have
-built in functionality with \texttt{get.orient} and
-\texttt{set.orient} that allows users to return output in the Patten
-School row-to-column orientation (see Section~\ref{sec:orient} for
-details).
+Notice the row-to-column orientation of the flow matrix:
+$\mathbf{F}$. This is consistent with the Ulanowicz School of network
+analysis, as well as the orientation commonly used in Social Network
+Analysis and used in the \textit{statnet} packages.  However, this is
+the opposite orientation typically used in the Patten School of
+analysis that conceptually builds from a system of differential
+equations and thus uses the column-to-row orientation common in this
+area of mathematics. Even though the difference is only a matrix
+transpose, this single difference may be the source of much confusion
+in the literature and frustration on the part of users.  We have
+selected to use row-to-column orientation for our primary data
+structure, as it is the dominant form across network analytics as
+evidenced by it use in the \textit{statnet} packages. The package
+algorithms also return the results in the row-to-column orientation by
+default; however, we have built in functionality with
+\texttt{get.orient} and \texttt{set.orient} that allows users to
+return output in the Patten School row-to-column orientation (see
+Section~\ref{sec:orient} for details).
 
 % Model Construction
 There are multiple methods for constructing ecosystem network models
@@ -321,7 +306,7 @@ forms of the mechanistic processes that generate the flows.  As this
 approach is essentially an inverse problem, some have developed
 inverse linear modeling methods to assist with infering the network
 weights from data \citep{vezina1988, vanoevelen2010}.  The
-\textit{limSolve} \R pacakge can assist with this modeling approach
+\textit{limSolve} \R\ pacakge can assist with this modeling approach
 \citep{soetaert09}.  \citet{ulanowicz2008least} also introduced two
 least-inference algorithms to assist with this kind of model
 constuction.  These methods focus on constructing models to represent
