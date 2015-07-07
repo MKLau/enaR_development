@@ -21,8 +21,8 @@
 
 %% for pretty printing and a nice hypersummary also set:
 \Plainauthor{Matthew K. Lau, Stuart R. Borrett, Pawandeep Singh} %% comma-separated
-\Plaintitle{enaR: Ecosystem Network Analyses with R} %% without formatting
-\Shorttitle{\pkg{enaR}: Ecosystem Network Analyses with R} %% a short title (if necessary)
+\Plaintitle{Ecosystem Network Analysis with R: A guide for using enaR} %% without formatting
+\Shorttitle{Ecosystem Network Analysis with R: A guide for using \pkg{enaR}} %% a short title (if necessary)
 
 %% an abstract and keywords
 \Abstract{Ecosystem Network Analysis (ENA) provides a framework for
@@ -34,10 +34,12 @@
   the primary functions for the analysis of single models as well as
   simultaneous, synthetic analysis of multiple ecosystem models.  }
 
-\Keywords{ecology, ENA, ecosystems,
+\Keywords{ecology, ENA, ecosystems, network ecology, food web, network
+  environ analysis,
   species interactions, networks, \proglang{R}}
 
-\Plainkeywords{ecology, ENA, ecosystems, species interactions,
+\Plainkeywords{ecology, ENA, ecosystems, species interactions, network
+  ecology, food web, network environ analysis,
   networks, R} %% without formatting
 %% at least one keyword must be supplied
 
@@ -132,8 +134,8 @@ analysis for several decades \citep{borrett12_netecol, ulanowicz86,
 thermodynamically conserved energy or matter (represented by weighted,
 directed graph edges) between nodes that represent species, groups of
 species, or non-living components (e.g., dead organic matter) of the
-ecosystem.  The analyses, collectively known as Ecosystem Network
-Analysis (ENA), has been used in a variety of ways.  This includes
+ecosystem.  These analyses, collectively known as Ecosystem Network
+Analysis (ENA), have been used in a variety of ways.  This includes
 revealing the relative importance of indirect effects in ecosystems
 \citep{patten83, higashi89, salas11_did} and their capacity to
 effectively transform the relations among organisms
