@@ -1,4 +1,4 @@
-\begin{thebibliography}{125}
+\begin{thebibliography}{131}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -155,6 +155,11 @@ Borrett SR, Hines DE, Carter M (2015).
   biogeochemical cycling networks than food webs.}
 \newblock \emph{still seeking a home}.
 
+\bibitem[{Borrett and Lau(2014)}]{borrett14_enar}
+Borrett SR, Lau MK (2014).
+\newblock \enquote{{enaR}: An {R} package for Ecological Network Analysis.}
+\newblock \emph{Methods. Ecol. Evol.}, \textbf{11}, 1206--1213.
+
 \bibitem[{Borrett \emph{et~al.}(2014)Borrett, Moody, and
   Edelmann}]{borrett14_rise}
 Borrett SR, Moody J, Edelmann A (2014).
@@ -310,6 +315,11 @@ Farkas I, Derenyi I, Barabasi A, Vicsek T (2001).
 \newblock \enquote{Spectra of ``real-world'' graphs: Beyond the semicircle
   law.}
 \newblock \emph{Physical Review E}, \textbf{64}(2), 026704.
+
+\bibitem[{Fath(2004)}]{fath04_cyber}
+Fath BD (2004).
+\newblock \enquote{Network analysis applied to large-scale cyber-ecosystems.}
+\newblock \emph{Ecol. Model.}, \textbf{171}, 329--337.
 
 \bibitem[{Fath(2014)}]{fath2014quantifying}
 Fath BD (2014).
@@ -575,6 +585,13 @@ Patten BC, Auble GT (1981).
 \newblock \enquote{System theory of the ecological niche.}
 \newblock \emph{Am. Nat.}, \textbf{117}, 893--922.
 
+\bibitem[{Patten \emph{et~al.}(1976)Patten, Bosserman, Finn, and
+  Cale}]{patten76}
+Patten BC, Bosserman RW, Finn JT, Cale WG (1976).
+\newblock \enquote{Propagation of cause in ecosystems.}
+\newblock In BC~Patten (ed.), \emph{Systems Analysis and Simulation in Ecology,
+  Vol. IV}, pp. 457--579. Academic Press, New York.
+
 \bibitem[{Ray(2008)}]{ray08}
 Ray S (2008).
 \newblock \enquote{Comparative study of virgin and reclaimed islands of
@@ -618,6 +635,12 @@ Scharler U (2012).
   Africa.}
 \newblock \emph{Estuar. Coast. Shelf Sci.}, \textbf{108}, 119--131.
 
+\bibitem[{Scharler and Fath(2009)}]{scharler09comparing}
+Scharler U, Fath B (2009).
+\newblock \enquote{Comparing network analysis methodologies for
+  consumer--resource relations at species and ecosystems scales.}
+\newblock \emph{Ecol. Model.}, \textbf{220}(22), 3210--3218.
+
 \bibitem[{Scharler and Baird(2005)}]{scharler05}
 Scharler UM, Baird D (2005).
 \newblock \enquote{A comparison of selected ecosystem attributes of three
@@ -650,6 +673,12 @@ Schramski JR, Kazanci C, Tollner EW (2011).
 \newblock \emph{Environ. Model. Softw.}, \textbf{26}, 419--428.
 \newblock \doi{10.1016/j.envsoft.2010.10.003}.
 
+\bibitem[{Small \emph{et~al.}(2014)Small, Sterner, and Finlay}]{small2014}
+Small GE, Sterner RW, Finlay JC (2014).
+\newblock \enquote{An Ecological Network Analysis of nitrogen cycling in the
+  {Laurentian Great Lakes}.}
+\newblock \emph{Ecol. Model.}, \textbf{293}, 150--160.
+
 \bibitem[{Soetaert \emph{et~al.}(2009)Soetaert, Van~den Meersche, and van
   Oevelen}]{soetaert09}
 Soetaert K, Van~den Meersche K, van Oevelen D (2009).
@@ -675,6 +704,12 @@ Ulanowicz RE (1986).
 Ulanowicz RE (1997).
 \newblock \emph{Ecology, the Ascendent Perspective}.
 \newblock Columbia University Press, New York.
+
+\bibitem[{Ulanowicz(2004)}]{ulanowicz04}
+Ulanowicz RE (2004).
+\newblock \enquote{Quantitative methods for ecological network analysis.}
+\newblock \emph{Comput. Biol. Chem.}, \textbf{28}, 321--339.
+\newblock \doi{http://dx.doi.org/10.1016/j.compbiolchem.2004.09.001}.
 
 \bibitem[{Ulanowicz and Baird(1999)}]{ulanowicz99}
 Ulanowicz RE, Baird D (1999).

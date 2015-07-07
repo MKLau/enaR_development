@@ -97,6 +97,7 @@
 \usepackage{tabularx}
 
 \newcommand{\R}{\proglang{R}}
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
 
 %% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -130,7 +131,7 @@ a science of networks \citep{nrc06network, brandes13}.
 
 Ecosystem ecologists have developed and used network modeling and
 analysis for several decades \citep{borrett12_netecol, ulanowicz86,
-  fath99_review}.  The network models are comprised of transfers of
+  fath99_review}.  The network models map transfers of
 thermodynamically conserved energy or matter (represented by weighted,
 directed graph edges) between nodes that represent species, groups of
 species, or non-living components (e.g., dead organic matter) of the
@@ -142,14 +143,14 @@ effectively transform the relations among organisms
 \citep{ulanowicz90, patten91, fath98, bondavalli99}.  From these
 applications a new theoretical understanding of ecosystems has emerged
 \citep{higashi91, belgrano05, jorgensen07_newecology}.  Recently,
-scientists have been applying these methods to understand trophic
+scientists have applied these methods to understand trophic
 dynamics in the Sylt-R{\o}m{\o} Bight
 \citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in lakes and
 estuaries \citep{christian03, small2014, hines15}, and urban
 sustainability \citep{zhang10, chen12}.
 
 % p3: Two schools
-Two major schools of ENA have developed \citep{schareler09comparing}.
+Two major schools of ENA have developed \citep{scharler09comparing}.
 The first is based on Dr.\ Robert E.\ Ulanowicz's work with a strong
 focus on trophic dynamics and a use of information theory
 \citep{ulanowicz86, ulanowicz97, ulanowicz04}.  The second school has
@@ -175,7 +176,7 @@ provides multiple ENA algorithms.  The algorithms for flow analysis --
 one component of ENA -- were collected into a stand-alone software
 tool \citep{latham2006}.  \citet{fath06} published NEA.m that collects
 most of the Patten School ENA algorithms together in a single
-MATLAB\copyright function. Similarly, the online package by EcoNet
+\proglang{MATLAB}\copyright\ function. Similarly, the online tool EcoNet
 \citep{kazanci07} has also made many of the ENA algorithms available
 in an easy access framework.  Although these packages collectively
 provide access to a large set of powerful analytical tools, the
@@ -195,10 +196,9 @@ analysis. For example, it uses the \textit{network} data structure
 developed by \citet{butts08_network} and the network analysis tools
 built into the \textit{network}, \textit{sna} (social network
 analysis) \citep{butts08_social}, and other packages collectively
-called \textit{statnet}
-\citep{handcock2008statnet}. While \citet{borrett14enar} introduced the
-\textit{enaR} package, here we provide a richer documentation of the
-software and illustrate its use.
+called \textit{statnet} \citep{handcock2008statnet}. While
+\citet{borrett14_enar} introduced the \textit{enaR} package, here we
+provide a richer documentation of the software and illustrate its use.
 
 \SweaveOpts{width=6,height=4}
 
@@ -338,14 +338,14 @@ weights are estimated directly from observations.  Its phenomenologial
 in the sense that it focuses on what the flows are, rather than the
 forms of the mechanistic processes that generate the flows.  As this
 approach is essentially an inverse problem, some have developed
-inverse linear modeling methods to assist with infering the network
+inverse linear modeling methods to assist with inferring the network
 weights from data \citep{vezina1988, vanoevelen2010}.  The
 \textit{limSolve} \R\ pacakge can assist with this modeling approach
 \citep{soetaert09}.  \citet{ulanowicz2008least} also introduced two
 least-inference algorithms to assist with this kind of model
 constuction.  These methods focus on constructing models to represent
 specific empirical systems.  Algorithms also exist for constructing
-simulated ecosystems, including \citeapos{fath04} Cyber Models that
+simulated ecosystems, including \citeapos{fath04_cyber} Cyber Models that
 use a community assembly type approach. Today, the \textit{enaR}
 software focuses on the network analysis and assumes that the user has
 a network model to be analyzed.
@@ -447,7 +447,7 @@ number of author teams.  Models in the library range in size from 4
 nodes to 125 nodes with connectance values ranging from 7\% to 45\%.
 
 This collection of models overlaps with other extant data sets.  For
-example, twenty-seven of the models (47\%) are included in the set of
+example, twenty-four of the models (50\%) are included in the set of
 models compiled and distributed by Dr. Ulanowicz
 (\url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}).  All 50 of
 the models analyzed by \citet{borrett10_hmg} and \citet{salas11_did}
@@ -651,7 +651,7 @@ set.seed(2)
 plot(m)
 @
 
-We can use the excellent graphics capabilities of \R\ to make fancier
+We can use the powerful graphics capabilities of \R\ to make fancier
 plot of the same data (Fig.~\ref{fig:oyster}(right)).
 
 
@@ -1155,7 +1155,7 @@ S$ns
 
 This storage analysis of the oyster reef model indicates that the
 total energy stored in the system on an average day is 3112 kcal
-m$-2$, and that 99.3\% of this storage is generated by energy flowing
+m$^-2$, and that 99.3\% of this storage is generated by energy flowing
 over indirect pathways (ISI).
 
 \citet{whipple2014} provides a detailed example of applying storage
@@ -1264,7 +1264,7 @@ the observed flow or storage, respectively.
 
 %%%Pawan updates%%%%%%%%%%%%%%%%%%%%%%%Added details for Control Analysis ~Pawan
 
-Control analysis was implemented as in the original NEA.m function,
+Control analysis was implemented as in the NEA.m function,
 but we also include recent updates to control analysis
 \citep[e.g.,][]{schramski06, schramski07}.  In general, these analyses
 determine the pairwise control relationships between the nodes in the
@@ -1349,7 +1349,7 @@ discover interesting and sometimes unexpected ecological
 relationships.  For example, although alligators directly eat frogs in
 the Florida Everglades (USA), it appears that their net relationship
 when considering the whole food web is actually mutualistic
-\cite{bondavalli99}.  This is in part because the alligators also eat
+\citep{bondavalli99}.  This is in part because the alligators also eat
 other key predators of the frogs such as snakes.
 
 
@@ -1357,7 +1357,7 @@ other key predators of the frogs such as snakes.
 The Cycle Analysis provides the detailed account of the cycling
 present in the network. It follows the algorithm by the DOS-based
 NETWRK 4.2b software by Ulanowicz \citep{ulanowicz91, ulanowicz83} and
-provides results similar to NETWRK's 'Full Cycle Analysis'.  Cycles in
+provides results similar to NETWRK's `Full Cycle Analysis'.  Cycles in
 a network are grouped together into disjoint nexuses and each nexus is
 characterized by a weak arc. This function gives details of the
 individual cycles along with the disjoint nexuses present in the
@@ -1416,17 +1416,17 @@ The Trophic Aggregation algorithm identifies the trophic structure
 of the given network based on the Lindeman's trophic concepts
 \citep{lindeman42}. The algorithm is implemented as in NETWRK 4.2b
 by Ulanowicz \citep{ulanowicz1979trophic} and provides similar
-results as NETWRK's 'Lindeman Trophic Aggregations' \citep{ulanowicz91}.
+results as NETWRK's `Lindeman Trophic Aggregations' \citep{ulanowicz91}.
 It apportions the nodes into integer trophic levels and estimates the
 corresponding inputs, exports, respirations and the grazing chain and
 trophic spine which represent the transfers between integer trophic
 levels.  This analysis assumes that the ecosystem network model being
 analyzed represents a food web.
 
-It is crucial for this algorithm that the cycles among the $nl$ living nodes of the
-network (Feeding Cycles) be removed beforehand to assign trophic levels
-to nodes. Hence the output for this function contains the Cycle Analysis
-output for the Feeding cycles in the network.
+It is crucial for this algorithm that the cycles among the $nl$ living
+nodes of the network (Feeding Cycles) be removed beforehand to assign
+trophic levels to nodes. Hence the output for this function contains
+the Cycle Analysis output for the Feeding cycles in the network.
 
 Following \citet{ulanowicz91}, the non-living nodes are grouped together for
 this analysis and referred to as the detrital pool.
@@ -1505,12 +1505,12 @@ names(oyster.ena)
 
 \subsubsection{Centrality}
 Centrality analysis is a large topic in network science
-\cite{brandes05, wasserman1994}.  In general the goal is to describe the
+\citep{brandes05, wasserman1994}.  In general the goal is to describe the
 relative importance of parts of the networks (nodes, edges,
 environs). Many different types of centrality measures exist in
-network science \cite{freeman79, freeman1991centrality, borgatti06,
+network science \citep{freeman79, freeman1991centrality, borgatti06,
   brandes05}.  Environ centrality is unique to ENA
-\cite{fann12_ec}, but like eigenvector centrality, it is a degree-based
+\citep{fann12_ec}, but like eigenvector centrality, it is a degree-based
 centrality measure that considers the equilibrium effect of all
 pathways of all lengths in the system and as such can be classified as
 a global centrality measure.   Both of these
@@ -1525,10 +1525,9 @@ show(ec)
 eigenCentrality(F$G)
 @
 
-These centrality values have been normalized to sum to one.
-
-Figure~\ref{fig:aec} shows one way to visualize the Average Environ
-Centralities.
+These centrality values have been normalized to sum to
+one. Figure~\ref{fig:aec} shows one way to visualize the Average
+Environ Centralities.
 
 \SweaveOpts{width=6,height=4}
 <<b,eval=true>>=
@@ -1612,7 +1611,7 @@ Here we illustrate how to batch analyze a selection of models.
 Our first step is to build an \R\ list data object with ecosystem
 network models to batch analyze as the elements of the list.  To
 illustrate batch processing, we will use a subset of the trophic models
-distributed with textit{enaR}, which are already stored as a list.
+distributed with \textit{enaR}, which are already stored as a list.
 
 <<eval=true>>=
 data(troModels)
