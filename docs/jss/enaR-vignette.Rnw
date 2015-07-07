@@ -5,16 +5,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \author{
-  \textbf{Matthew K. Lau}\\Harvard Forest\\Harvard University\\ 
+  \textbf{Matthew K. Lau}\\Harvard Forest\\Harvard University\\
   \\
   \textbf{Stuart R. Borrett}\\Department of Biology and Marine Biology\\
   University of North Carolina Wilmington\\and\\Duke Network
   Analysis Center\\Social Science Research Institute\\Duke
-  University\\ 
+  University\\
   \\
   \textbf{Pawandeep Singh}\\Department of Biology and Marine Biology\\
   University of North Carolina Wilmington\\}
-\title{enaR: Ecosystem Network Analysis with R}
+
+%\title{enaR: Ecosystem Network Analysis with R}
+%% Alternative Title:
+\title{Ecosystem Network Analysis with R: A guide for using enaR}
 
 %% for pretty printing and a nice hypersummary also set:
 \Plainauthor{Matthew K. Lau, Stuart R. Borrett, Pawandeep Singh} %% comma-separated
@@ -22,18 +25,20 @@
 \Shorttitle{\pkg{enaR}: Ecosystem Network Analyses with R} %% a short title (if necessary)
 
 %% an abstract and keywords
-\Abstract{
-  Ecosystem Network Analysis (ENA) provides a framework for
+\Abstract{Ecosystem Network Analysis (ENA) provides a framework for
   investigating the structure, function and dynamics of ecological
   systems, primarily ecosystem models with physically conserved
-  units. We present the \textit{enaR} package, which provides a
-  broad representation of many of the core tools developed by the ENA
-  community, detailing how to use the primary functions of the package
-  for the analysis of single models or simultaneous, synthetic
-  analysis of multiple ecosystem models.
-}
-\Keywords{ecology, ENA, ecosystems, species interactions, networks, \proglang{R}}
-\Plainkeywords{ecology, ENA, ecosystems, species interactions, networks, R} %% without formatting
+  units. This paper documents the \textit{enaR} \proglang{R} package that
+  collects the core ENA functions including those developed by the
+  Ulanowicz and Patten schools.  We detail how to use
+  the primary functions for the analysis of single models as well as
+  simultaneous, synthetic analysis of multiple ecosystem models.  }
+
+\Keywords{ecology, ENA, ecosystems,
+  species interactions, networks, \proglang{R}}
+
+\Plainkeywords{ecology, ENA, ecosystems, species interactions,
+  networks, R} %% without formatting
 %% at least one keyword must be supplied
 
 %% publication information
@@ -89,7 +94,7 @@
 \usepackage{color}
 \usepackage{tabularx}
 
-\newcommand{\R}{\textbf{R}}
+\newcommand{\R}{\proglang{R}}
 
 %% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -108,43 +113,55 @@
 \section[Introduction]{Introduction}
 % p1:  intro paragraph (5/7/2015)
 Network models have provided an in-road to a variety of complex
-systems \cite{watts1998collective, newman01scientific1, barabasi12,
+systems \citep{watts1998collective, newman01scientific1, barabasi12,
   newman06structure, wasserman1994}, and although the network approach
-has deep roots (get old cite from Mutualistic Networks Book), its use
-has been expanding rapidly in a variety of disciplines including
-ecology \citep{borrett14_rise, ings2009}.  This is due in part to the
-flexibility of the core representation, its utility in answering
-relational questions, and its applicability to ``Big Data'' problems.
-Some scientists are working to build a science of networks
-\citep{nrc06network, brandes13}.
+has deep roots \citep{newman06structure} {\color{red} (get old cite
+  from Mutualistic Networks Book)}, its use has been expanding rapidly
+in a variety of disciplines including ecology \citep{borrett14_rise,
+  ings2009}.  This is due in part to the flexibility of the core
+representation, its utility in answering relational questions, and its
+applicability to ``Big Data'' problems.  Investigators are building
+a science of networks \citep{nrc06network, brandes13}.
 
 % p2: Ecosystem Network Analysis
-% what, why, bit of history -- two schools
+% what, why, use
 
 Ecosystem ecologists have developed and used network modeling and
-analysis for several decades
-\citep{borrett12_netecol,ulanowicz86,fath99_review}.  From this work,
-a family of algorithms used to investigate the structure and function
-of ecological systems has been termed Ecosystem Network Analysis
-(ENA).  For this approach the network models are comprised of
-transfers of thermodynamically conserved energy or matter (represented
-by weighted, directed graph edges) between nodes that represent
-species, groups of species, or non-living components (e.g., dead
-organic matter) of the ecosystem.  The analysis has been used in a
-variety of ways, including to show the relative importance of indirect
-effects in ecosystems \citep{patten83, higashi89, salas11_did} and
-their capacity to effectively transform the relations among organisms
+analysis for several decades \citep{borrett12_netecol, ulanowicz86,
+  fath99_review}.  The network models are comprised of transfers of
+thermodynamically conserved energy or matter (represented by weighted,
+directed graph edges) between nodes that represent species, groups of
+species, or non-living components (e.g., dead organic matter) of the
+ecosystem.  The analyses, collectively known as Ecosystem Network
+Analysis (ENA), has been used in a variety of ways.  This includes
+revealing the relative importance of indirect effects in ecosystems
+\citep{patten83, higashi89, salas11_did} and their capacity to
+effectively transform the relations among organisms
 \citep{ulanowicz90, patten91, fath98, bondavalli99}.  From these
 applications a new theoretical understanding of ecosystems has emerged
 \citep{higashi91, belgrano05, jorgensen07_newecology}.  Recently,
 scientists have been applying these methods to understand trophic
 dynamics in the Sylt-R{\o}m{\o} Bight
-\citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in estuaries
-\citep{christian03, hines12}, and urban sustainability \citep{zhang10,
-  chen12}.
+\citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in lakes and
+estuaries \citep{christian03, small2014, hines15}, and urban
+sustainability \citep{zhang10, chen12}.
 
+% p3: Two schools
+Two major schools of ENA have developed \citep{schareler09comparing}.
+The first is based on Dr.\ Robert E.\ Ulanowicz's work with a strong
+focus on trophic dynamics and a use of information theory
+\citep{ulanowicz86, ulanowicz97, ulanowicz04}.  The second school has
+an environment focus and is built on the environ concept introduced by
+Dr.\ Bernard C.\ Patten \citep{patten76, patten78, fath99_review}.
+Patten's approach has been collectively referred to separately as
+\emph{Network Environ Analysis}. At the core the two approaches are
+very similar; however, they make some different starting assumptions
+and follow independent yet braided development tracks.
 
-% p3: Extant Software & The Current Problem
+% the "two schools" idea is essential to introduce here as the idea is
+% used throughout the paper!!!
+
+% p4: Extant Software & The Current Problem
 Disparate software packages have been created to support
 ENA. Initially algorithms were developed and distributed as the DOS
 based NETWRK4 \cite{ulanowicz91}, which is still available from
@@ -157,30 +174,29 @@ one component of ENA -- were collected into a stand-alone software
 tool \citep{latham2006}.  \citet{fath06} published NEA.m that collects
 most of the Patten School ENA algorithms together in a single
 MATLAB\copyright function. Similarly, the online package by EcoNet
-(Kazanci 2007) has also made many of the core ENA algorithms available
+\citep{kazanci07} has also made many of the ENA algorithms available
 in an easy access framework.  Although these packages collectively
 provide access to a large set of powerful analytical tools, the
-fragmented distribution of these algorithms has inhibited the
-development of theory and the further implementation of important
-algorithms.
+fragmented distribution of the key algorithms among the software tools
+has inhibited the development of theory and the further implementation
+of important algorithms.
 
 
-% p4: Objectives (Software & Paper).
-The \textit{enaR} package brings together ENA algorithms into one
+% p5: Objectives (Software & Paper).
+The \textit{enaR} package brings together the ENA algorithms into one
 common software framework that is readily available and extensible.
 The package is written in the \R\ language, which is free and
 open-source.  Due largely to this, \R\ is now one of the most widely
 used analytical programming languages in the biological
-sciences. \textit{enaR} builds on existing \R\ packages for
-network analysis. For example, it uses the \textit{network} data
-structure developed by \citet{butts08_network} and the network
-analysis tools built into the \textit{network}, \textit{sna} (social
-network analysis) \citep{butts08_social}, and other packages
-collectively called \textit{statnet} \citep{handcock2008statnet}. In
-this article we introduce the user to ENA concepts and algorithms,
-provide description of how to input ecosystem network models and give
-detailed description of how to conduct these analyses using
-\textit{enaR}.
+sciences. \textit{enaR} builds on existing \R\ packages for network
+analysis. For example, it uses the \textit{network} data structure
+developed by \citet{butts08_network} and the network analysis tools
+built into the \textit{network}, \textit{sna} (social network
+analysis) \citep{butts08_social}, and other packages collectively
+called \textit{statnet}
+\citep{handcock2008statnet}. While \citet{borrett14enar} introduced the
+\textit{enaR} package, here we provide a richer documentation of the
+software and illustrate its use.
 
 \SweaveOpts{width=6,height=4}
 
@@ -219,7 +235,7 @@ citation('enaR')
 
 \section{Getting Started}
 
-In this section we describe the data necessary for the Ecosystem
+In this section we describe the data necessary for Ecosystem
 Network Analysis and show how to build the central network data object
 in \R\ that contains the model data for subsequent analysis.  To
 start, the current stable version can be installed from CRAN:
