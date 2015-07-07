@@ -83,7 +83,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{sidecap}
 \usepackage{color}
-
+\usepackage{tabularx}
 
 \newcommand{\R}{\textbf{R}}
 
@@ -462,7 +462,7 @@ summary(x)
   \caption{Trophic ecosystem networks (58) included in the
     \textit{enaR} model library.} \label{tab:TRO}
   \begin{tiny}
-    \begin{tabular}{llrrrrrr}
+    \begin{tabularx}{\textwidth}{llllllll}
       \hline
       Models & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\
       \hline
@@ -525,7 +525,7 @@ summary(x)
       Florida Bay (wet) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.12 & 738 & 2720 & 0.14 &  \citet{ulanowicz98_fb} \\
       Florida Bay (dry) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.13 & 547 & 1778 & 0.08 &  \citet{ulanowicz98_fb} \\
       \hline
-\end{tabular}
+\end{tabularx}
 \end{tiny}
 \end{center}
 \begin{scriptsize}
@@ -546,7 +546,7 @@ summary(x)
   \caption{Biogeochemical ecosystem networks (42) included in the
     \textit{enaR} model library.} \label{tab:BGC}
   \begin{tiny}
-    \begin{tabular}{llrrrrrr}
+    \begin{tabularx}{\textwidth}{llllllll}
       \hline
       Model & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\
       \hline
@@ -593,7 +593,7 @@ summary(x)
       Sylt-R{\o}m{\o} Bight & mg N m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 99613 & 363693 & 0.23 & \citet{baird08_sylt} \\
       Sylt-R{\o}m{\o} Bight & mg P m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 2508 & 57739 & 0.66 & \citet{baird08_sylt} \\
       \hline
-    \end{tabular}
+    \end{tabularx}
   \end{tiny}
 \end{center}
 \begin{scriptsize}
@@ -815,7 +815,7 @@ algorithms encoded in \textit{enaR}.
   \textit{enaR}.} \label{tab:alg}
 \tableline
 %\begin{scriptsize}
-\begin{tabular}{l l l l l }
+\begin{tabularx}{\textwidth}{l l l l l }
 \textbf{Analysis} & \textbf{Function Name} & \textbf{School} \\ \hline \\ [-1ex]
 Structure & \texttt{enaStructure} & foundational, Patten \\
 Flow & \texttt{enaFlow} & foundational, Patten \\
@@ -827,7 +827,7 @@ Control & \texttt{enaControl} & Patten \\
 Environ & \texttt{enaEnviron} & Patten \\
 Cycle Basis & \texttt{enaCycle} & Ulanowicz \\
 Canonical Trophic Aggregation & \texttt{enaTroAgg} & Ulanowicz \\ \hline
-\end{tabular}
+\end{tabularx}
 %\end{scriptsize}
 \tableline
 \end{table*}
@@ -875,7 +875,7 @@ of the enaStructure function is summarized in Table~\ref{tab:structure}
     \texttt{enaStructure} function in \textit{enaR}.}\label{tab:structure}
 \center
 \begin{small}
-  \begin{tabular}{l l}
+  \begin{tabularx}{\textwidth}{l l}
     \textbf{Label} & \textbf{Description} \\ \hline \\[-2ex]
     \multicolumn{2}{l}{\textit{Matrices}} \\
     A & $n \times n$ adjacency matrix\\  [1ex]
@@ -899,7 +899,7 @@ of the enaStructure function is summarized in Table~\ref{tab:structure}
     no.scc.big & number of SCC with more than one node \\
     pscc & fraction of network nodes included in a big SCC\\
     \hline
-  \end{tabular}
+  \end{tabularx}
 \end{small}
 \end{table*}
 
@@ -942,7 +942,7 @@ flows][]{borrett11_ree,borrett11_equ}. Results returned by
   \caption{Matrices and network statistics returned by the
     \texttt{enaFlow} function in \textit{enaR}.}\label{tab:flow}
   \begin{small}
-  \begin{tabular}{l l}
+  \begin{tabularx}{\textwidth}{l l}
     \textbf{\textit{enaR} label} & \textbf{Description} \\ \hline\\[-1.5ex]
     \multicolumn{2}{l}{\textit{Matrices}} \\
     T & $n \times 1$ vector of node throughflows (M L$^{-2  \textrm{ or } -3}$ T$^{-1}$) \\
@@ -971,7 +971,7 @@ flows][]{borrett11_ree,borrett11_equ}. Results returned by
     mode2.F & Cycled Flow \\
     mode3.F & Dissipative Equivalent to mode1.F \\
     mode4.F & Dissipative Equivalent to mode0.F \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{small}
 \end{table*}
 % ------------------
@@ -1057,7 +1057,7 @@ returns several of these information based measures
     interpretations]{ulanowicz86, ulanowicz97}.}\label{tab:asc}
   \center
   \begin{small}
-    \begin{tabular}{l l}
+    \begin{tabularx}{\textwidth}{l l}
       \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
       AMI & average mutual information (bits) \\
       ASC & ascendency, AMI $\times$ TSTp \\
@@ -1069,7 +1069,7 @@ returns several of these information based measures
       ELD & effective link density of the network \citet{ulanowicz2014}\\
       TD & trophic depth of the network as in \citet{ulanowicz2014} \\
       \hline
-    \end{tabular}
+    \end{tabularx}
   \end{small}
 \end{table*}
 
@@ -1096,7 +1096,7 @@ S$ns
     \texttt{enaStorage} function.}\label{tab:storage}
   \center
   \begin{small}
-    \begin{tabular}{l l}
+    \begin{tabularx}{\textwidth}{l l}
       \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
       \multicolumn{2}{l}{\textit{Matrices}} \\
       X & $n \times 1$ vector of storage values [M L$^{-2}$] \\
@@ -1127,7 +1127,7 @@ S$ns
       mode2.S & Storage from Cycled Flow \\
       mode3.S & Dissipative Equivalent to mode1.S \\
       mode4.S & Dissipative Equivalent to mode0.S \\ \hline
-    \end{tabular}
+    \end{tabularx}
 \end{small}
 \end{table*}
 
@@ -1180,7 +1180,7 @@ mathematics is uncertain.
     \texttt{enaUtility} function.}\label{tab:utility}                  %% Utility -> enaUtility function   ~Pawan
 \center
 \begin{small}
-  \begin{tabular}{l l}
+  \begin{tabularx}{\textwidth}{l l}
     \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
     \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
     D$_{n\times n}$ & throughflow-normalized direct utility intensity (dimensionless)\\
@@ -1196,7 +1196,7 @@ mathematics is uncertain.
     lam1DS & dominant eigenvalue of DS\\
     synergism.S & benefit-cost ratio or network synergism (storage) \\
     mutualism.S & positive to negative interaction ratio or network mutualism (storage)\\ \hline
-\end{tabular}
+\end{tabularx}
 \end{small}
 \end{table*}
 
@@ -1265,7 +1265,7 @@ The elements of the sc vector indicate the relative control exherted by each nod
     \citep{dame81, patten81, schramski06, schramski07}.} \label{tab:control}
   \center
   \begin{small}
-    \begin{tabular}{l p{10 cm}}
+    \begin{tabularx}{\textwidth}{l p{10 cm}}
       \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
       \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
       CN$_{n \times n}$ & Control matrix using flow values \\                       % these have descriptions in the literature~Pawan
@@ -1273,7 +1273,7 @@ The elements of the sc vector indicate the relative control exherted by each nod
       CR$_{n \times n}$ & Schramski's Control Ratio Matrix  \\            %% magnitude of control of $i$ over $j$ with a two component scale(dimensionless)
       CD$_{n \times n}$ & Schramski's Control Difference Matrix \\  %% magnitude of control of $i$ over $j$ with a system-wide scale
       sc$_{n \times 1}$ & Schramski's System Control vector \\ \hline %% control exhibited or received by $i$ with respect to the whole system
-\end{tabular}
+\end{tabularx}
 \end{small}
 \end{table*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Control Analysis Completed. ~Pawan.
@@ -1312,14 +1312,14 @@ mti$M
     \texttt{enaMTI} function, which are based on \citep{ulanowicz90}.}\label{tab:mti}
   \center
   \begin{small}
-    \begin{tabular}{l l}
+    \begin{tabularx}{\textwidth}{l l}
       \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
       \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
       G$_{n \times n}$ & positive effect of prey on its predator \\  % these have names in the literature
       F$_{n \times n}$ & negative impact of the predator on its prey \\
       Q$_{n \times n}$ & direct net impact of one node on another\\
       M$_{n \times n}$ & total impact of $i$ on $j$ (direct and indirect) \\ \hline
-\end{tabular}
+\end{tabularx}
 \end{small}
 \end{table*}
 
@@ -1369,7 +1369,7 @@ names(cyc$Table.nexus)
     \texttt{enaCycle} function, which is based on \citep{ulanowicz83}.}\label{tab:cycle}
   \center
   \begin{small}
-    \begin{tabular}{l p{10 cm}}
+    \begin{tabularx}{\textwidth}{l p{10 cm}}
       \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
       \multicolumn{2}{l}{\textit{Data frames}} \\[1ex]
       Table.cycle & Data frame of cycles in the network. Up to 50
@@ -1385,7 +1385,7 @@ names(cyc$Table.nexus)
       NCYCS & Number of cycles detected in the network\\
       NNEX & Number of disjoint nexuses detected in the network\\
       CI & Cycling index of the network based on flow matrix\\ \hline
-\end{tabular}
+\end{tabularx}
 \end{small}
 \end{table*}
 
@@ -1430,7 +1430,7 @@ trop$Feeding_Cycles
     \texttt{enaTroAgg} function, which are based on \citet{ulanowicz1979trophic}.}\label{tab:trophic}
   \center
   \begin{small}
-    \begin{tabular}{l p{10 cm}}
+    \begin{tabularx}{\textwidth}{l p{10 cm}}
       \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
       \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
       A$_{nl \times nl}$ & Lindeman transformation matrix that apportions nodes to integer trophic levels \\  % define nl as no. of living nodes ~Pawan %%BUG%
@@ -1450,7 +1450,7 @@ trop$Feeding_Cycles
       NCYCS & number of feeding cycles removed from the network \\
       NNEX & number of disjoint nexuses detected for the feeding cycles \\
       CI & cycling index of the living component of the network based on flow matrix\\ \hline
-\end{tabular}
+\end{tabularx}
 \end{small}
 \end{table*}
 
