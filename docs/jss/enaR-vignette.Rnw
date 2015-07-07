@@ -4,12 +4,16 @@
 %%% declarations for jss.cls %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\author{Matthew K. Lau\\Harvard Forest\\Harvard University\\ \And
-        Stuart R. Borrett\\Department of Biology and Marine Biology\\
-        University of North Carolina Wilmington\\and\\Duke Network
-        Analysis Center\\Social Science Research Institute\\Duke
-        University\\ \And Pawandeep Singh\\Department of Biology and Marine Biology\\
-        University of North Carolina Wilmington\\}
+\author{
+  \textbf{Matthew K. Lau}\\Harvard Forest\\Harvard University\\ 
+  \\
+  \textbf{Stuart R. Borrett}\\Department of Biology and Marine Biology\\
+  University of North Carolina Wilmington\\and\\Duke Network
+  Analysis Center\\Social Science Research Institute\\Duke
+  University\\ 
+  \\
+  \textbf{Pawandeep Singh}\\Department of Biology and Marine Biology\\
+  University of North Carolina Wilmington\\}
 \title{enaR: Ecosystem Network Analysis with R}
 
 %% for pretty printing and a nice hypersummary also set:
@@ -91,7 +95,6 @@
 
 \begin{document}
 \SweaveOpts{concordance=FALSE}
-
 
 %%%%Re-organization based on SRB notes
 
