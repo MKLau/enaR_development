@@ -57,7 +57,7 @@
   University of North Carolina Wilmington\\
   601 South College Road, Wilmington, NC 28403, USA\\
   E-mail: \email{borretts@uncw.edu}\\
-  URL: \url{http://people.uncw.edu/borretts/}
+  URL: \url{http://people.uncw.edu/borretts/}\\
   \\
   Pawandeep Singh \\
   Department of Biology and Marine Biology\\
@@ -87,7 +87,6 @@
 \newcommand{\R}{\textbf{R}}
 
 %% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \begin{document}
 
@@ -149,14 +148,17 @@ based NETWRK4 \cite{ulanowicz91}, which is still available from
 algorithms were re-implemented in an Microsoft Excel based toolbox,
 WAND \cite{allesina04_wand}. The popular Ecopath with Ecosim software
 that assists with model construction \citep{christensen04} also
-provides multiple ENA algorithms.  The algorithms for flow analysis -- one component of ENA -- were collected into a stand-alone software tool \citep{latham2006}.  \citet{fath06} published NEA.m that
-collects most of the Patten School ENA algorithms together in a single MATLAB\copyright
-function. Similarly, the online package by EcoNet (Kazanci 2007) has
-also made many of the core ENA algorithms available in an easy access
-framework.  Although these packages collectively provide access to a
-large set of powerful analytical tools, the fragmented distribution of
-these algorithms has inhibited the development of theory and the
-further implementation of important algorithms.
+provides multiple ENA algorithms.  The algorithms for flow analysis --
+one component of ENA -- were collected into a stand-alone software
+tool \citep{latham2006}.  \citet{fath06} published NEA.m that collects
+most of the Patten School ENA algorithms together in a single
+MATLAB\copyright function. Similarly, the online package by EcoNet
+(Kazanci 2007) has also made many of the core ENA algorithms available
+in an easy access framework.  Although these packages collectively
+provide access to a large set of powerful analytical tools, the
+fragmented distribution of these algorithms has inhibited the
+development of theory and the further implementation of important
+algorithms.
 
 
 % p4: Objectives (Software & Paper).
@@ -1029,17 +1031,8 @@ ENA is often applied to investigate the structure and function of a
 single ecosystem model.  Here, we walk through an example of applying
 multiple ENA algorithms to the South Carolina oyster reef model
 \citep{dame81}.  Table~\ref{tab:alg} summarizes the main ENA
-algorithms encoded in \textit{enaR}, and Figure~\ref{fig:depnet}
-illustrates the interdependecy of all of the the functions in the
-package.
+algorithms encoded in \textit{enaR}.
 
-\begin{figure}
-  \center
-  \includegraphics{images/enaR-vignette-003.pdf}
-  \caption{A plot of the \textit{enaR} function relationships. Edges
-    point \textit{from} a function that provides information \textit{to}
-    the function that receives that information.} \label{fig:depnet}
-\end{figure}
 
 \begin{table*}
 \center
@@ -1077,6 +1070,7 @@ functions for (1) checking to see if the assumption is met and (2)
 automatically balancing the model so that input equal outputs.
 
 To determine if the model is balanced and then balance it if necessary:
+
 \begin{Schunk}
 \begin{Sinput}
 > ## Check to see if the model is balanced

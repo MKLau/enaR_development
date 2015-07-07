@@ -1,4 +1,4 @@
-\begin{thebibliography}{131}
+\begin{thebibliography}{125}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -377,11 +377,6 @@ Handcock M, Hunter D, Butts C, Goodreau S, Morris M (2008).
   visualization, analysis and simulation of network data.}
 \newblock \emph{J. Stat. Softw.}, \textbf{24}(1), 1548.
 
-\bibitem[{Hannon(1973)}]{hannon73}
-Hannon B (1973).
-\newblock \enquote{The structure of ecosystems.}
-\newblock \emph{J. Theor. Biol.}, \textbf{41}, 535--546.
-
 \bibitem[{Haven and Morales-Alamo(1966)}]{haven66}
 Haven DS, Morales-Alamo R (1966).
 \newblock \enquote{Aspects of biodeposition by oysters and other invertebrate
@@ -467,18 +462,6 @@ Kazanci C (2007).
 Latham~II LG (2006).
 \newblock \enquote{Network flow analysis algorithms.}
 \newblock \emph{Ecol. Model.}, \textbf{192}(3), 586--600.
-
-\bibitem[{Leontief(1936)}]{leontief1936}
-Leontief W (1936).
-\newblock \enquote{Quantitative input and output relations in the economic
-  systems of the United States.}
-\newblock \emph{The Review of Economics and Statistics}, \textbf{18}(3),
-  105--125.
-
-\bibitem[{Leontief(1966)}]{leontief66}
-Leontief WW (1966).
-\newblock \emph{Input--Output Economics}.
-\newblock Oxford University Press, New York.
 
 \bibitem[{Lindeman(1942)}]{lindeman42}
 Lindeman RL (1942).
@@ -592,13 +575,6 @@ Patten BC, Auble GT (1981).
 \newblock \enquote{System theory of the ecological niche.}
 \newblock \emph{Am. Nat.}, \textbf{117}, 893--922.
 
-\bibitem[{Patten \emph{et~al.}(1976)Patten, Bosserman, Finn, and
-  Cale}]{patten76}
-Patten BC, Bosserman RW, Finn JT, Cale WG (1976).
-\newblock \enquote{Propagation of cause in ecosystems.}
-\newblock In BC~Patten (ed.), \emph{Systems Analysis and Simulation in Ecology,
-  Vol. IV}, pp. 457--579. Academic Press, New York.
-
 \bibitem[{Ray(2008)}]{ray08}
 Ray S (2008).
 \newblock \enquote{Comparative study of virgin and reclaimed islands of
@@ -641,12 +617,6 @@ Scharler U (2012).
   temporarily open/closed estuaries on the subtropical east coast of South
   Africa.}
 \newblock \emph{Estuar. Coast. Shelf Sci.}, \textbf{108}, 119--131.
-
-\bibitem[{Scharler and Fath(2009)}]{scharler09comparing}
-Scharler U, Fath B (2009).
-\newblock \enquote{Comparing network analysis methodologies for
-  consumer--resource relations at species and ecosystems scales.}
-\newblock \emph{Ecol. Model.}, \textbf{220}(22), 3210--3218.
 
 \bibitem[{Scharler and Baird(2005)}]{scharler05}
 Scharler UM, Baird D (2005).
@@ -705,12 +675,6 @@ Ulanowicz RE (1986).
 Ulanowicz RE (1997).
 \newblock \emph{Ecology, the Ascendent Perspective}.
 \newblock Columbia University Press, New York.
-
-\bibitem[{Ulanowicz(2004)}]{ulanowicz04}
-Ulanowicz RE (2004).
-\newblock \enquote{Quantitative methods for ecological network analysis.}
-\newblock \emph{Comput. Biol. Chem.}, \textbf{28}, 321--339.
-\newblock \doi{http://dx.doi.org/10.1016/j.compbiolchem.2004.09.001}.
 
 \bibitem[{Ulanowicz and Baird(1999)}]{ulanowicz99}
 Ulanowicz RE, Baird D (1999).

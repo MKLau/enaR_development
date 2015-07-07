@@ -1,47 +1,48 @@
-This is BibTeX, Version 0.99c (Web2C 7.5.6)
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: enaR-vignette.aux
 The style file: jss.bst
 Database file #1: jss_abb.bib
 Database file #2: jss.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 131 entries,
+You've used 125 entries,
             3140 wiz_defined-function locations,
-            1470 strings with 27833 characters,
-and the built_in function-call counts, 123559 in all, are:
-= -- 10319
-> -- 3422
-< -- 91
-+ -- 1326
-- -- 1145
-* -- 10479
-:= -- 16668
-add.period$ -- 535
-call.type$ -- 131
-change.case$ -- 917
-chr.to.int$ -- 127
-cite$ -- 131
-duplicate$ -- 11110
-empty$ -- 11361
-format.name$ -- 1558
-if$ -- 25200
+            1442 strings with 27113 characters,
+and the built_in function-call counts, 118865 in all, are:
+= -- 9929
+> -- 3324
+< -- 85
++ -- 1287
+- -- 1114
+* -- 10125
+:= -- 16033
+add.period$ -- 510
+call.type$ -- 125
+change.case$ -- 881
+chr.to.int$ -- 121
+cite$ -- 125
+duplicate$ -- 10681
+empty$ -- 10907
+format.name$ -- 1515
+if$ -- 24231
 int.to.chr$ -- 5
 int.to.str$ -- 1
-missing$ -- 1665
-newline$ -- 682
-num.names$ -- 537
-pop$ -- 3564
+missing$ -- 1595
+newline$ -- 651
+num.names$ -- 511
+pop$ -- 3417
 preamble$ -- 1
-purify$ -- 902
+purify$ -- 868
 quote$ -- 0
-skip$ -- 2365
+skip$ -- 2247
 stack$ -- 0
-substring$ -- 11715
-swap$ -- 3693
-text.length$ -- 13
+substring$ -- 11307
+swap$ -- 3533
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1146
+type$ -- 1095
 warning$ -- 0
-while$ -- 1010
+while$ -- 969
 width$ -- 0
-write$ -- 1740
+write$ -- 1660
