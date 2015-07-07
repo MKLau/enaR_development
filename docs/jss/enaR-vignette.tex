@@ -2512,7 +2512,7 @@ using this data object is that analysts can then use the tools for
 network construction and manipulation that are part of the
 \textit{network} package.  For example, \textit{network} can import
 network models form Pajek project files, which is another widely used
-network modeling and analysis software \cite{batajel07}.  The package
+network modeling and analysis software \citep{batajel07}.  The package
 also includes functions to seamlessly add and delete nodes (edges).
 It also provides the capability to visualize the network shown previously.
 
@@ -2543,10 +2543,9 @@ models.  This includes betweenness and closeness centrality as follows:
 \end{Schunk}
 
 The \textit{sna} package introduced new graphical capabilities as
-well. For example, it will create a target diagram to visualize the centralities.
+well. For example, it will create a target diagram to visualize the
+centralities (Figure~\ref{fig:target}).
 %%\afterpage{\clearpage}
-
-%%%FIX ME!!!
 
 \begin{Schunk}
 \begin{Sinput}
@@ -2777,7 +2776,7 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 \subsection{EcoNet}
 
 The \textit{EcoNet} software is an online, web-interface that provides
-a tool box for dynamic modeling and ENA analytics \cite{kazanci07}. We
+a tool box for dynamic modeling and ENA analytics \citep{kazanci07}. We
 have provided a write function that enables \textit{enaR} users to
 output models for easy input into the \textit{EcoNet} interface. The
 \textit{EcoNet} package and details on the model input syntax can be
@@ -2801,7 +2800,8 @@ in \R.  The vision for this package is that it provides access to ENA
 algorithms from both the Ulanowicz and Patten Schools to facilitate
 theoretical synthesis and broader application.  In its current form it
 replicates, updates, and extends the functionality of the NEA.m
-function \citep{fath06}.  Through the connections that \textit{enaR}
+function \citep{fath06} and replicates much of the main analyses in NETWRK
+\citep{ulanowicz91}.  Through the connections that \textit{enaR}
 provides to other \R\ packages users can connect to other network
 analyses provided by packages, such as \textit{sna} and
 \textit{iGraph}. There are other \R\ packages that have graph and
