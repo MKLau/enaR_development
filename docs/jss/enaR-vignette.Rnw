@@ -805,13 +805,6 @@ multiple ENA algorithms to the South Carolina oyster reef model
 \citep{dame81}.  Table~\ref{tab:alg} summarizes the main ENA
 algorithms encoded in \textit{enaR}.
 
-%% \begin{figure}
-%%   \center
-%%   \includegraphics{images/enaR-vignette-003.pdf}
-%%   \caption{A plot of the \textit{enaR} function relationships. Edges
-%%     point \textit{from} a function that provides information \textit{to}
-%%     the function that receives that information.} \label{fig:depnet}
-%% \end{figure}
 
 \begin{table*}
 \center
