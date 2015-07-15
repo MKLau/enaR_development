@@ -161,9 +161,6 @@ Patten's approach has been collectively referred to separately as
 very similar; however, they make some different starting assumptions
 and follow independent yet braided development tracks.
 
-% the "two schools" idea is essential to introduce here as the idea is
-% used throughout the paper!!!
-
 % p4: Extant Software & The Current Problem
 Disparate software packages have been created to support
 ENA. Initially algorithms were developed and distributed as the DOS
@@ -401,9 +398,9 @@ example of doing this with hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   balanced = FALSE 
-  total edges= 8 
+  total edges= 4 
     missing edges= 0 
-    non-missing edges= 8 
+    non-missing edges= 4 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -422,13 +419,13 @@ can pull out node of vertex attributes as follows:
 > fake.model%v%'output'
 \end{Sinput}
 \begin{Soutput}
-[1] 3.31224122 0.05082792 0.93603094 2.03415858
+[1] 3.79394837 2.51181183 1.81365211 0.03594698
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 3.31224122 0.05082792 0.93603094 2.03415858
+[1] 3.79394837 2.51181183 1.81365211 0.03594698
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -448,11 +445,11 @@ object with:
 > as.matrix(fake.model,attrname="flow")
 \end{Sinput}
 \begin{Soutput}
-        node1    node2    node3    node4
-node1 0.00000 0.000000 1.896386 4.077463
-node2 0.00000 0.000000 7.811643 2.444950
-node3 0.00000 0.000000 4.981009 0.000000
-node4 3.50226 4.555268 2.485130 0.000000
+        node1    node2 node3    node4
+node1 3.23097 0.000000     0 0.000000
+node2 0.00000 0.000000     0 4.959549
+node3 0.00000 0.000000     0 0.000000
+node4 0.00000 3.149676     0 2.378290
 \end{Soutput}
 \end{Schunk}
 
@@ -467,23 +464,23 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-        node1    node2    node3    node4
-node1 0.00000 0.000000 1.896386 4.077463
-node2 0.00000 0.000000 7.811643 2.444950
-node3 0.00000 0.000000 4.981009 0.000000
-node4 3.50226 4.555268 2.485130 0.000000
+        node1    node2 node3    node4
+node1 3.23097 0.000000     0 0.000000
+node2 0.00000 0.000000     0 4.959549
+node3 0.00000 0.000000     0 0.000000
+node4 0.00000 3.149676     0 2.378290
 
 $z
-[1] 3.31224122 0.05082792 0.93603094 2.03415858
+[1] 3.79394837 2.51181183 1.81365211 0.03594698
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 3.31224122 0.05082792 0.93603094 2.03415858
+[1] 3.79394837 2.51181183 1.81365211 0.03594698
 
 $y
-[1] 3.31224122 0.05082792 0.93603094 2.03415858
+[1] 3.79394837 2.51181183 1.81365211 0.03594698
 
 $X
 [1] NA NA NA NA
@@ -691,7 +688,7 @@ BENTHIC FECES & BACTERIA                        0
       Narragansett Bay & mgC m$^{-2}$ yr$^{-1}$  &  32 & 0.15 & 693845 & 3917246 & 0.51 &  \citet{monaco97} \\
       Southern New England Bight & g ww m$^{-2}$ yr$^{-1}$  &  33 & 0.35 & 4717 & 17597 & 0.16 &  \citet{link08} \\
       Chesapeake Bay  & mg C m$^{-2}$ yr$^{-1}$  &  36 & 0.09 & 888791 & 3227453 & 0.19 &  \citet{baird89} \\
-      Mondego Estuary (\textit{Zostera} sp. Meadows) & g AFDW m$^{<U+2212>2}$ yr$^{<U+2212>1}$ &  43 & 0.19 & 4030 & 6822 & 0.03 & \citet{patricio2006mass} \\
+      Mondego Estuary (\textit{Zostera} sp. Meadows) & g AFDW m$^{−2}$ yr$^{−1}$ &  43 & 0.19 & 4030 & 6822 & 0.03 & \citet{patricio2006mass} \\
       St. Marks Seagrass, site 1 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 514 & 1315 & 0.13 &  \citet{baird98} \\
       St. Marks Seagrass, site 1 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 601 & 1590 & 0.11 &  \citet{baird98} \\
       St. Marks Seagrass, site 2 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.07 & 602 & 1383 & 0.09 &  \citet{baird98} \\

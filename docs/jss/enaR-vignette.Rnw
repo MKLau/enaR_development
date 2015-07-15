@@ -118,13 +118,13 @@
 Network models have provided an in-road to a variety of complex
 systems \citep{watts1998collective, newman01scientific1, barabasi12,
   newman06structure, wasserman1994}, and although the network approach
-has deep roots \citep{newman06structure} {\color{red} (get old cite
-  from Mutualistic Networks Book)}, its use has been expanding rapidly
-in a variety of disciplines including ecology \citep{borrett14_rise,
-  ings2009}.  This is due in part to the flexibility of the core
-representation, its utility in answering relational questions, and its
-applicability to ``Big Data'' problems.  Investigators are building
-a science of networks \citep{nrc06network, brandes13}.
+has deep roots \citep{newman06structure}, its use has been expanding
+rapidly in a variety of disciplines including ecology
+\citep{borrett14_rise, ings2009}; and investigators are currently
+building a science of networks \citep{nrc06network, brandes13}. This
+is due in part to the flexibility of the core representation, its
+utility in answering relational questions, and its applicability to
+``Big Data'' problems.
 
 % p2: Ecosystem Network Analysis
 % what, why, use
@@ -161,16 +161,13 @@ Patten's approach has been collectively referred to separately as
 very similar; however, they make some different starting assumptions
 and follow independent yet braided development tracks.
 
-% the "two schools" idea is essential to introduce here as the idea is
-% used throughout the paper!!!
-
 % p4: Extant Software & The Current Problem
 Disparate software packages have been created to support
 ENA. Initially algorithms were developed and distributed as the DOS
-based NETWRK4 \cite{ulanowicz91}, which is still available from
+based NETWRK4 \citep{ulanowicz91}, which is still available from
 \url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}.  Some of these
-algorithms were re-implemented in an Microsoft Excel based toolbox,
-WAND \cite{allesina04_wand}. The popular Ecopath with Ecosim software
+algorithms were re-implemented in a Microsoft Excel based toolbox,
+WAND \citep{allesina04_wand}. The popular Ecopath with Ecosim software
 that assists with model construction \citep{christensen04} also
 provides multiple ENA algorithms.  The algorithms for flow analysis --
 one component of ENA -- were collected into a stand-alone software
@@ -195,8 +192,8 @@ sciences. \textit{enaR} builds on existing \R\ packages for network
 analysis. For example, it uses the \textit{network} data structure
 developed by \citet{butts08_network} and the network analysis tools
 built into the \textit{network}, \textit{sna} (social network
-analysis) \citep{butts08_social}, and other packages collectively
-called \textit{statnet} \citep{handcock2008statnet}. While
+analysis) \citep{butts08_social}, and \textit{statnet}
+\citep{handcock2008statnet} packages. While
 \citet{borrett14_enar} introduced the \textit{enaR} package, here we
 provide a richer documentation of the software and illustrate its use.
 
