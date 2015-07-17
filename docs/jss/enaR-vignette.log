@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  10 JUL 2015 10:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  17 JUL 2015 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,21 +616,21 @@ Overfull \hbox (34.95288pt too wide) in alignment at lines 780--780
 [][][][][][][][] 
  []
 
-<enaR-vignette-014.pdf, id=1092, 433.62pt x 289.08pt>
+<enaR-vignette-014.pdf, id=1089, 433.62pt x 289.08pt>
 File: enaR-vignette-014.pdf Graphic file (type pdf)
 
 <use enaR-vignette-014.pdf>
-Package pdftex.def Info: enaR-vignette-014.pdf used on input line 858.
+Package pdftex.def Info: enaR-vignette-014.pdf used on input line 859.
 (pdftex.def)             Requested size: 243.4609pt x 162.30714pt.
 
-<enaR-vignette-015.pdf, id=1093, 433.62pt x 289.08pt>
+<enaR-vignette-015.pdf, id=1090, 433.62pt x 289.08pt>
 File: enaR-vignette-015.pdf Graphic file (type pdf)
 
 <use enaR-vignette-015.pdf>
-Package pdftex.def Info: enaR-vignette-015.pdf used on input line 859.
+Package pdftex.def Info: enaR-vignette-015.pdf used on input line 860.
 (pdftex.def)             Requested size: 243.4609pt x 162.30714pt.
 
-Overfull \hbox (46.69893pt too wide) in paragraph at lines 858--862
+Overfull \hbox (46.69893pt too wide) in paragraph at lines 859--863
 [][] [] 
  []
 
@@ -652,7 +652,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.967 \begin{align}
+l.969 \begin{align}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -665,7 +665,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.968 \mathbf
+l.970 \mathbf
              {S} = \left[ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -673,7 +673,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.968 \mathbf{S} = \left
+l.970 \mathbf{S} = \left
                         [ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -685,7 +685,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.971 \end{align}
+l.973 \end{align}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -694,7 +694,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.971 \end{align}
+l.973 \end{align}
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -714,7 +714,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 
 [13]
 ! Undefined control sequence.
-l.1062 \tableline
+l.1063 \tableline
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -723,12 +723,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1076--1076
+Underfull \hbox (badness 10000) in alignment at lines 1077--1077
 [][][][][]
  []
 
 ! Undefined control sequence.
-l.1078 \tableline
+l.1079 \tableline
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -737,7 +737,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (73.66344pt too wide) in alignment at lines 1158--1158
+Overfull \hbox (73.66344pt too wide) in alignment at lines 1161--1161
 [][] 
  []
 
@@ -750,12 +750,12 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [14]
-Overfull \hbox (13.87pt too wide) in alignment at lines 1245--1245
+Overfull \hbox (13.87pt too wide) in alignment at lines 1273--1273
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1245--1247
+Underfull \hbox (badness 10000) in paragraph at lines 1273--1275
 
  []
 
@@ -773,21 +773,22 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [16]
+Underfull \hbox (badness 10000) in alignment at lines 1420--1420
+[][] 
+ []
+
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 17
  []
 
 [17]
-Underfull \hbox (badness 10000) in alignment at lines 1423--1423
-[][] 
- []
-
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1461.
+               Default added (so using `tbp') on input line 1458.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1497--1497
+Underfull \hbox (badness 10000) in alignment at lines 1494--1494
 [][] 
  []
 
@@ -797,7 +798,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [18]
-Underfull \hbox (badness 10000) in alignment at lines 1572--1572
+Underfull \hbox (badness 10000) in alignment at lines 1569--1569
 [][] 
  []
 
@@ -812,7 +813,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [20]
-Underfull \hbox (badness 10000) in alignment at lines 1737--1737
+Underfull \hbox (badness 10000) in alignment at lines 1734--1734
 [][] 
  []
 
@@ -822,7 +823,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [21]
-Underfull \hbox (badness 10000) in alignment at lines 1818--1818
+Underfull \hbox (badness 10000) in alignment at lines 1815--1815
 [][] 
  []
 
@@ -832,7 +833,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [22]
-Underfull \hbox (badness 10000) in alignment at lines 1902--1902
+Underfull \hbox (badness 10000) in alignment at lines 1899--1899
 [][] 
  []
 
@@ -842,7 +843,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [23]
-Underfull \hbox (badness 10000) in alignment at lines 1989--1989
+Underfull \hbox (badness 10000) in alignment at lines 1986--1986
 [][] 
  []
 
@@ -861,11 +862,11 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 26 []
  []
 
-[26] <enaR-vignette-043.pdf, id=1535, 469.755pt x 289.08pt>
-File: enaR-vignette-043.pdf Graphic file (type pdf)
+[26] <enaR-vignette-042.pdf, id=1531, 469.755pt x 289.08pt>
+File: enaR-vignette-042.pdf Graphic file (type pdf)
 
-<use enaR-vignette-043.pdf>
-Package pdftex.def Info: enaR-vignette-043.pdf used on input line 2191.
+<use enaR-vignette-042.pdf>
+Package pdftex.def Info: enaR-vignette-042.pdf used on input line 2188.
 (pdftex.def)             Requested size: 243.4609pt x 149.8196pt.
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -877,7 +878,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 28 []
  []
 
-[28 <./enaR-vignette-043.pdf>]
+[28 <./enaR-vignette-042.pdf>]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 29
  []
@@ -902,11 +903,11 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 33
  []
 
-[33] <enaR-vignette-052.pdf, id=1598, 505.89pt x 343.2825pt>
+[33] <enaR-vignette-052.pdf, id=1594, 505.89pt x 343.2825pt>
 File: enaR-vignette-052.pdf Graphic file (type pdf)
 
 <use enaR-vignette-052.pdf>
-Package pdftex.def Info: enaR-vignette-052.pdf used on input line 2533.
+Package pdftex.def Info: enaR-vignette-052.pdf used on input line 2555.
 (pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -918,18 +919,11 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 35
  []
 
-[35] <enaR-vignette-055.pdf, id=1624, 505.89pt x 343.2825pt>
+[35] <enaR-vignette-055.pdf, id=1620, 505.89pt x 343.2825pt>
 File: enaR-vignette-055.pdf Graphic file (type pdf)
 
 <use enaR-vignette-055.pdf>
-Package pdftex.def Info: enaR-vignette-055.pdf used on input line 2681.
-(pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
-
-<enaR-vignette-058.pdf, id=1626, 505.89pt x 343.2825pt>
-File: enaR-vignette-058.pdf Graphic file (type pdf)
-
-<use enaR-vignette-058.pdf>
-Package pdftex.def Info: enaR-vignette-058.pdf used on input line 2735.
+Package pdftex.def Info: enaR-vignette-055.pdf used on input line 2703.
 (pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -942,6 +936,13 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [37 <./enaR-vignette-055.pdf>]
+<enaR-vignette-058.pdf, id=1637, 505.89pt x 343.2825pt>
+File: enaR-vignette-058.pdf Graphic file (type pdf)
+
+<use enaR-vignette-058.pdf>
+Package pdftex.def Info: enaR-vignette-058.pdf used on input line 2757.
+(pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 38 []
  []
@@ -991,26 +992,26 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 47
  []
 
-[47])
-Underfull \hbox (badness 10000) in paragraph at lines 2878--2878
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2878--2878
-
- []
-
-LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <13> not available
-(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 2878.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2878.
-
+[47]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 48 []
  []
 
-[48]
+[48])
+Underfull \hbox (badness 10000) in paragraph at lines 2900--2900
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2900--2900
+
+ []
+
+LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <13> not available
+(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 2900.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2900.
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 49
  []
@@ -1056,19 +1057,19 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [57]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2878.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2900.
  (./enaR-vignette.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2878.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2878.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2900.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2900.
 
 Package rerunfilecheck Info: File `enaR-vignette.out' has not changed.
 (rerunfilecheck)             Checksum: E7AB549534B77AD80B7505D41A47CE64;3444.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2878.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2900.
  ) 
 Here is how much of TeX's memory you used:
  8927 strings out of 493117
  133390 string characters out of 6135433
- 328390 words of memory out of 5000000
+ 326493 words of memory out of 5000000
  11916 multiletter control sequences out of 15000+600000
  61877 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1105,10 +1106,10 @@ lic/cm-super/sfrm1095.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
 c/cm-super/sfst1095.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
 cm-super/sftt1095.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/zapfc
 han/uzcmi8a.pfb>
-Output written on enaR-vignette.pdf (57 pages, 600748 bytes).
+Output written on enaR-vignette.pdf (57 pages, 600052 bytes).
 PDF statistics:
- 1988 PDF objects out of 2073 (max. 8388607)
- 1295 compressed objects within 13 object streams
+ 1984 PDF objects out of 2073 (max. 8388607)
+ 1291 compressed objects within 13 object streams
  268 named destinations out of 1000 (max. 500000)
  284 words of extra memory for PDF output out of 10000 (max. 10000000)
 

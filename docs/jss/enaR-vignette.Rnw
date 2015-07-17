@@ -61,21 +61,21 @@
   Harvard University\\
   324 N Main St, Petersham, MA 01366, USA\\
   E-mail: \email{matthewklau@fas.harvard.edu}\\
-  URL: \url{https://github.com/MKLau}\\
+  URL: \url{http://people.fas.harvard.edu/~matthewklau}\\
   \\
   Stuart R. Borrett\\
   Department of Biology and Marine Biology\\
   University of North Carolina Wilmington\\
   601 South College Road, Wilmington, NC 28403, USA\\
   E-mail: \email{borretts@uncw.edu}\\
-  URL: \url{http://people.uncw.edu/borretts/}\\
+  URL: \url{http://people.uncw.edu/borretts}\\
   \\
   Pawandeep Singh \\
   Department of Biology and Marine Biology\\
   University of North Carolina Wilmington\\
   601 South College Road, Wilmington, NC 28403, USA\\
-  E-mail: \email{@uncw.edu}\\
-  URL: \url{http://people.uncw.edu/borretts/}
+  E-mail: \email{pawan.s@live.co.uk}\\
+  URL: \url{http://people.uncw.edu/borretts}
 
 }
 
@@ -344,10 +344,10 @@ weights from data \citep{vezina1988, vanoevelen2010}.  The
 least-inference algorithms to assist with this kind of model
 constuction.  These methods focus on constructing models to represent
 specific empirical systems.  Algorithms also exist for constructing
-simulated ecosystems, including \citeapos{fath04_cyber} Cyber Models that
-use a community assembly type approach. Today, the \textit{enaR}
-software focuses on the network analysis and assumes that the user has
-a network model to be analyzed.
+simulated ecosystems, including \citeapos{fath04_cyber} Cyber Models
+that use a community assembly type approach. Currently, the
+\textit{enaR} software focuses on the analysis of network models and
+assumes that the user has a network model to be analyzed.
 
 % Network Data Object
 \subsection{Network Data Class}
@@ -396,7 +396,7 @@ fake.model
 
 The individual components can be extracted from the data object using
 the form specified in the \textit{network} package.  For example, we
-can pull out node of vertex attributes as follows:
+can pull out "vertex" (i.e. node) attributes as follows:
 
 <<eval=true>>=
 fake.model%v%'output'
@@ -424,7 +424,7 @@ unpack(fake.model)
 
 Note that we did not specify the storage values. In these instances
 \texttt{pack} produces \texttt{NA} values. Although the package is
-designed to help users navigate missing data issues be sure to check
+designed to help users navigate missing data issues, be sure to check
 that you are providing the appropriate input for a given function. For
 more information, see the help file for the function in question.
 
@@ -433,12 +433,12 @@ more information, see the help file for the function in question.
 %%1. provided models
 \subsection{Model Library}
 
-\textit{enaR} includes a library of 100 empirically-based previously
+\textit{enaR} includes a library of 100 empirically-based, previously
 published ecosystem models that can be categorized into two general
 classes: trophic and biogeochemical cycling \citep{christian96,
   baird08_sylt, borrett10_idd, borrett15_bgc}.  First, 58 of the
 models are trophically-based models with food webs at their core
-(Tables~\ref{tab:TRO}).  Second, there are 42 models are focused on
+(Tables~\ref{tab:TRO}).  Second, there are 42 models focused on
 biogeochemical cycling in ecosystems (Table~\ref{tab:BGC}).  In
 summary, these models were originally published for a number of
 different types of ecosystems, though predominantly aquatic, by a
@@ -551,7 +551,7 @@ summary(x)
 \begin{scriptsize}
   $^\dagger$ $n$ is the number of nodes in the network model,
   $C=L/n^2$ is the model connectance when $L$ is the number of direct
-  links or energy--matter transfers, $Input =sum{z_i}$ is the total
+  links or energy--matter transfers, $Input =\sum{z_i}$ is the total
   amount of energy--matter flowing into the system,
   $TST=\sum\sum{f_{ij}}+\sum{z_i}$ is the total system throughflow,
   and $FCI$ is the Finn Cycling Index \citep{finn80}. Flow based
@@ -619,7 +619,7 @@ summary(x)
 \begin{scriptsize}
   $^\dagger$ $n$ is the number of nodes in the network model,
   $C=L/n^2$ is the model connectance when $L$ is the number of direct
-  links or energy--matter transfers, $Input =sum{z_i}$ is the total
+  links or energy--matter transfers, $Input =\sum{z_i}$ is the total
   amount of energy--matter flowing into the system,
   $TST=\sum\sum{f_{ij}}+\sum{z_i}$ is the total system throughflow,
   and $FCI$ is the Finn Cycling Index \citep{finn80}. Flow based
@@ -634,11 +634,11 @@ summary(x)
 %%2. visualization
 \subsection{Network Visualization}
 
-The \textit{enaR} package uses the \textit{network} package plot
- tools. Here is
-one example of how to plot a network model. The figure scaling may
-need to be adjusted depending on computer and devices. Also note that
-the graph only shows internal system flows.
+Network plots are a useful tool to visualize patterns in complex
+datasets. Here, we present one example of how to plot a network model
+using the plot tools in the \textit{network} package. The figure
+scaling may need to be adjusted depending on computer and the graphics
+devices. Also, note that the graph only shows internal system flows.
 
 <<oyster1,eval=true,fig=false>>=
 ## Load data
@@ -648,10 +648,11 @@ m <- oyster
 set.seed(2)
 ## Plot network data object (uses plot.network)
 plot(m)
+
 @
 
-We can use the powerful graphics capabilities of \R\ to make fancier
-plot of the same data (Fig.~\ref{fig:oyster}(right)).
+We can use the powerful graphics capabilities of \R\ to make a fancier
+plot of the same data (Fig.~\ref{fig:oyster}).
 
 
 <<oyster2,eval=true,fig=false>>=
@@ -703,10 +704,12 @@ rm(opar)
 
 %%3. model input
 
-\subsection{Data Input: Reading Common Data File Formats}
-Several software packages exist in the literature for running ENA.  For
-convenience, we have written functions to read in a few of the more
-common data formats used by these software.
+\subsection{Data Input: Reading Common Data File Formats} Several
+software packages exist in the literature for running ENA. We have
+written functions to read in a few of the more common data formats
+used by them to help \textit{enaR} users to import models formatted
+for these other packages. Example data files can be found in the data
+folder here: \url{https://github.com/SEELab/enaR_development}.
 
 \subsection*{SCOR}
 The \texttt{read.scor} function reads in data stored in the SCOR
@@ -739,10 +742,9 @@ In part to make ENA more accessible to biologists,
 \citet{allesina04_wand} recoded some of Ulanowicz's NETWRK4 algorithms
 into a Microsoft Excel based tool called WAND.  For this tool, the
 model data is stored as a separate Excel file with two worksheets.
-The first contains many of the node attributes and the second contains the
-flow matrix.  The \texttt{read.wand} function will create an \R\
-network data object from a WAND model file. An example WAND file can
-be found at \url{http://people.uncw.edu/borretts/data/MDmar02_WAND.xls}.
+The first contains many of the node attributes and the second contains
+the flow matrix.  The \texttt{read.wand} function will create an
+\R\ network data object from a WAND model file. 
 
 <<eval=true>>=
 m <- read.wand('../../data/MDmar02_WAND.xls')
@@ -772,7 +774,7 @@ this format.
 While convenient, this data format does not enable inclusion of the
 full range of model information included in the \textit{enaR} network
 data object.  This format does not partition outputs into exports and
-respiration values, nor does it identify the node labels are their
+respiration values, nor does it identify the node labels or their
 living status. This missing information will prevent the use of some
 \textit{enaR} functions.
 
@@ -780,7 +782,7 @@ Here is an example of using these functions:
 <<eval=true>>=
 data(oyster)
 
-## Write oyster reef model to a csv file
+## Write oyster reef model to a CSV file
 write.nea(oyster, file.name="oyster.csv")
 
 ## Read in oyster reef model data from NEA.m formatted CSV file
@@ -793,7 +795,7 @@ m <- read.nea("oyster.csv")
 \subsection*{ENAM}
 
 Another commonly used data format stores the necessary model data in a
-csv or Excel formatted file.  We include an example Excel file of the
+CSV or Excel formatted file.  We include an example Excel file of the
 Mdloti estuary stored in this form (``MDMAR02.xlsx'', courtesy
 of U. M. Scharler).  This format has not been described technically in
 the literature nor has it been named.  We refer to it as ENAM as it is
@@ -805,9 +807,8 @@ matrix used as the input to the NEA.m function \citep{fath06}.
 However, the ENAM format includes information on whether nodes are
 living and partitions output into respiration and exports.
 
-Using an example data file,
-\url{http://people.uncw.edu/borretts/data/MDMAR02.xlsx}, this data
-format can be read into the \textit{enaR} package as:
+Using an example data file, MDMAR02.xlsx, this data format can be read
+into the \textit{enaR} package as:
 
 <<eval=FALSE>>=
   m <- read.enam('../../data/MDMAR02.xlsx')
@@ -857,6 +858,7 @@ orientation by default -- including the algorithms from the Patten
 school.  Please see Section~\ref{sec:orient} for how to change this
 default if needed.
 
+
 \subsection{Balancing for Steady-State}
 
 Many of the ENA functions assume that the network model is at
@@ -887,7 +889,8 @@ indiscriminately alter the model flow rates.  A more neuanced appraoch may be de
 Structural network analysis is common to many types of network
 analysis.  The structural analyses applied here are based on those
 presented in NEA.m \citep{fath06} following the Patten School.  Output
-of the enaStructure function is summarized in Table~\ref{tab:structure}
+of the enaStructure function is summarized in
+Table~\ref{tab:structure}.
 
 % STRUCTURE
 \begin{table*}[h]
@@ -958,6 +961,31 @@ for both the Ulanowicz and Patten Schools \citep{fath99_review,
 flows][]{borrett11_ree,borrett11_equ}. Results returned by
 \texttt{enaFlow} are summarized in Table~\ref{tab:flow}
 
+To validly apply flow analysis, the network model must meet two
+analytical assumptions.  First, the model must trace a single,
+thermodynamically conserved currency, such as energy, carbon, or
+nitrogen.  Second, the model must be at steady-state for many of the
+analyses.
+
+% insert examples of use? Finn 1976, Finn 1980, Whipple 2007, Gattie
+% 2007, Small et al 2014.  Could we includes something from
+% vanoevelen2006carbon?  vanoevelen2009cold.
+
+Flow analysis has been used in a variety of ways.  For example,
+\citet{finn80} used ENA flow analysis to compare the cycling of
+multiple nutrients through the Hubbard Brook Ecosystem, New Hampshire,
+USA, and \citet{vanoevelen2009cold} used the technique to show how
+different marine canyon conditions change the flow of carbon through
+the food webs in Nazar\'{e} Canyon.  \cite{gattie06} applied the
+analysis to characterize N cycling in the Neuse River Estuary (North
+Carolina, USA), and \cite{zhang10} used flow analysis to help assess
+the sustainability of the urban water metabolism of Beijing, China.
+\citet{borrett13} showed that the throughflow vector $T$ can be
+considered as a type of centrality measure that indicates the relative
+importance of each node to the generation of the total system
+throughflow or activity.
+
+
 % --- FLOW ----------------------
 \begin{table*}[h]
   \caption{Matrices and network statistics returned by the
@@ -998,9 +1026,9 @@ flows][]{borrett11_ree,borrett11_equ}. Results returned by
 % ------------------
 
 Here, we extract the flow statistics and then isolate and remove the
-output-oriented direct flow intensity matrix $\mathbf{G}$ matrix.
-Recall that ENA is partially derived from Input--Output analysis; the
-input and output orientations provide different information about the
+output-oriented direct flow intensity ($\mathbf{G}$) matrix.  Recall
+that ENA is partially derived from Input--Output analysis; the input
+and output orientations provide different information about the
 system.  We also show the input-oriented integral flow matrix
 $\mathbf{N'}$.
 
@@ -1009,8 +1037,7 @@ F <- enaFlow(oyster)
 attributes(F)
 F$ns
 ## Output-oriented direct flow matrix
-G <- F$G
-rm(G)
+F$G
 ## Input-oriented integral flow matrix
 F$NP
 @
@@ -1025,36 +1052,6 @@ G
 detach(F)
 @
 
-Matrix powers -- raising a matrix to a power is not a native operation
-in \R\ .  Thus, the \textit{enaR} package includes a function
-\texttt{mExp} to facilitate this matrix operation commonly used in ENA.
-
-<<eval=true>>=
-mExp(F$G,2)
-@
-
-To validly apply flow analysis, the network model must meet two
-analytical assumptions.  First, the model must trace a single,
-thermodynamically conserved currency, such as energy, carbon, or
-nitrogen.  Second, the model must be at steady-state for many of the
-analyses.
-
-% insert examples of use? Finn 1976, Finn 1980, Whipple 2007, Gattie
-% 2007, Small et al 2014.  Could we includes something from
-% vanoevelen2006carbon?  vanoevelen2009cold.
-Flow analysis has been used in a variety of ways.  For example,
-\citet{finn80} used ENA flow analysis to compare the cycling of
-multiple nutrients through the Hubbard Brook Ecosystem, New Hampshire,
-USA, and \citet{vanoevelen2009cold} used the technique to show how different
-marine canyon conditions change the flow of carbon through the food
-webs in Nazar\'{e} Canyon.  \cite{gattie06} applied the analysis to
-characterize N cycling in the Neuse River Estuary (North Carolina,
-USA), and \cite{zhang10} used flow analysis to help assess the
-sustainability of the urban water metabolism of Beijing, China.
-\citet{borrett13} showed that the throughflow vector $T$ can be
-considered as a type of centrality measure that indicates the relative
-importance of each node to the generation of the total system
-throughflow or activity.
 
 
 \subsection{Ascendency}
@@ -1175,7 +1172,7 @@ interactions.  It developed in the Patten School \citep{patten91,
   fath99_review} and is similar to yet distinct from the Ulanowicz
 School mixed trophic impacts analysis \citep{ulanowicz90}.  Utility
 analysis can be conducted from both the flow and storage perspectives,
-so the ``type'' argument needs to be set to suit the users needs.
+so the ``type'' argument needs to be set to suit the user's needs.
 This is again implemented as in NEA.m.  Table~\ref{tab:utility}
 summarizes the function output for the flow and storage
 versions. These analyses are executed as:
@@ -1222,7 +1219,7 @@ mathematics is uncertain.
 \end{table*}
 
 \subsection{Environ Analysis}
-Environ Analysis finds the $n$ \emph{unit} input and output environs
+Environ Analysis finds the $n$ unit input and output environs
 for the model \citep{patten78,fath99_review}.  These unit environs are
 returned by the \textit{environ} function as in NEA.m.  They indicate the flow
 activity in each subnetwork generated by pulling a unit out of a node
@@ -1423,10 +1420,10 @@ trophic spine which represent the transfers between integer trophic
 levels.  This analysis assumes that the ecosystem network model being
 analyzed represents a food web.
 
-It is crucial for this algorithm that the cycles among the $nl$ living
+It is crucial for this algorithm that the cycles among the living
 nodes of the network (Feeding Cycles) be removed beforehand to assign
-trophic levels to nodes. Hence the output for this function contains
-the Cycle Analysis output for the Feeding cycles in the network.
+trophic levels to nodes. Thus, the output for this function contains
+the Cycle Analysis for the Feeding Cycles in the network.
 
 Following \citet{ulanowicz91}, the non-living nodes are grouped together for
 this analysis and referred to as the detrital pool.
@@ -1608,16 +1605,22 @@ all(flow.rc == t(flow.cr))
 set.orient('rc')
 @
 
-%%n. batch processing
+Matrix powers -- raising a matrix to a power is not a native operation
+in \R\ .  Thus, the \textit{enaR} package includes a function
+\texttt{mExp} to facilitate this matrix operation commonly used in ENA.
+
+<<eval=true>>=
+mExp(F$G,2)
+@
 
 \section{Multi-Model Analyses (Batch Processing)}
 
 While many investigators analyze single models, much of ENA is used to
 compare ecosystem models \cite[e.g.,][]{baird91, vanoevelen2006carbon,
-  christian03, niquil2012physical, hines15}.  Investigators have also
-analyzed large set of models to determine the generality of
+christian03, niquil2012physical, hines15}.  Investigators have also
+analyzed large sets of models to determine the generality of
 hypothesized ecosystem properties \citep[e.g.,][]{christensen95,
-  borrett10_hmg, salas11_did}.  For both of these applications,
+borrett10_hmg, salas11_did}.  For both of these applications,
 investigators need to analyze multiple models.  One advantage of the
 \textit{enaR} \R\ package is that it simplifies this batch processing.
 Here we illustrate how to batch analyze a selection of models.
@@ -1631,10 +1634,11 @@ distributed with \textit{enaR}, which are already stored as a list.
 data(troModels)
 @
 
-Now that we have the models loaded, we can start to manipulate
-them.  The first step is to balance the models.  Then we can run the
-flow analysis.  We are using the \texttt{lapply} function to apply the
-analysis across the list of models stored in model.list.
+Now that we have the models loaded, we can start to manipulate them.
+Once we have balanced the models, we can run the flow analysis on
+them.  We are using the \texttt{lapply} function to iterate the
+analysis across the list of models stored in model.list. This approach
+is more compact and computationally efficient than a using for-loop.
 
 %%%Working on pairing down the balancing example run time
 
@@ -1737,7 +1741,7 @@ rm(opar)
 \end{figure}
 
 A strength of this software is the ease with which users can apply ENA
-to multiple models.  We expect that this will simplify users
+to multiple models.  We expect that this will simplify users'
 analytic workflows and reduce the time required to conduct the work.
 
 %%Conclusion
@@ -1757,7 +1761,7 @@ examples here.
 using this data object is that analysts can then use the tools for
 network construction and manipulation that are part of the
 \textit{network} package.  For example, \textit{network} can import
-network models form Pajek project files, which is another widely used
+network models from Pajek project files, which is another widely used
 network modeling and analysis software \citep{batajel07}.  The package
 also includes functions to seamlessly add and delete nodes (edges).
 It also provides the capability to visualize the network shown previously.
