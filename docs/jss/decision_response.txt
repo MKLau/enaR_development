@@ -1,0 +1,38 @@
+Dear JSS Editor,
+
+Thank you very much for reviewing our first submission to JSS of our
+paper "Ecosystem Network Analysis with R: A guide for using enaR". We
+greatly appreciate your work in making this an excellent journal, and
+challenging us to improve our work. 
+
+Our hope was to publish the R software vignette for enaR in JSS.  Our
+first paper on the software published in "Methods in Ecology and
+Evolution" does introduce the software at a very high level, but it
+would be nearly impossible for a new user to use the paper to use the
+software.  The intent of the paper we submitted was to provide the
+detailed guide a new user woud need.  However, we understand your
+concern about overlapping content.
+
+We would like to revise our manuscript for re-submission to JSS, but
+we would appreciate some clarification to get a better idea of how to
+make our re-submission more successful.
+
+Would a If we were to re-focuse the manuscript on three new features that were not
+implemented at the time of publication of the MEE paper, including
+three new algorithms (cyberModels, trophic aggregation and cycle
+bases) and new tools that incorporate uncertainty and sensitivity
+analyses?
+
+Could new insights be showing that these algorithms provide new and
+useful perspectives?
+
+We would like to have the entire vignette published. Would we need to
+only have “new” content?
+
+We aren’t looking for a verification of acceptance given changes, but
+some feedback on whether or not these improvements are on the
+appropriate track.
+
+Thank you again for your courteous and thoughtful review of our
+manuscript.
+
