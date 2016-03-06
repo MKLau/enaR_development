@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: enaR-vignette.aux
+The style file: jss.bst
+Database file #1: jss_abb.bib
+Database file #2: jss.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 131 entries,
+            3140 wiz_defined-function locations,
+            1468 strings with 27911 characters,
+and the built_in function-call counts, 124090 in all, are:
+= -- 10371
+> -- 3448
+< -- 90
++ -- 1335
+- -- 1154
+* -- 10547
+:= -- 16732
+add.period$ -- 536
+call.type$ -- 131
+change.case$ -- 920
+chr.to.int$ -- 127
+cite$ -- 131
+duplicate$ -- 11147
+empty$ -- 11395
+format.name$ -- 1573
+if$ -- 25304
+int.to.chr$ -- 5
+int.to.str$ -- 1
+missing$ -- 1669
+newline$ -- 682
+num.names$ -- 537
+pop$ -- 3573
+preamble$ -- 1
+purify$ -- 905
+quote$ -- 0
+skip$ -- 2364
+stack$ -- 0
+substring$ -- 11788
+swap$ -- 3706
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1149
+warning$ -- 0
+while$ -- 1015
+width$ -- 0
+write$ -- 1741

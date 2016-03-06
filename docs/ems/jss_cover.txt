@@ -1,0 +1,38 @@
+To the editor of the Journal of Statistical Software,
+
+We are pleased to submit a manuscript for a JoSS Article that provides
+a detailed guide to using the enaR software package to perorm
+Ecosystem Network Analysis (ENA). ENA is a tool to investigate the
+structure, function, and behavior of complex ecological systems,
+drawing from economic input-output theory and the mathematics
+developed in the field network science. ENA has a long history in
+ecology and lies at the roots of multiple core topics including the
+determinants of biodiversity and the factors determining the cycling
+of essential nutrients. In addition to facillitating the applicaiton
+of ENA, the enaR package serves to collect a number of analytical
+algorithms that have previously developed on separate research
+trajectories.  Collecting them together in one software and common
+framework provides an opportunity for the synthesis of the
+underlying theory.
+
+We first introduced the enaR package to the ecologcial community
+through a short paper published in Methods in Ecology and Evolution
+(Borrett and Lau, 2014).  The paper we are submitting to JoSS expands
+on this initial introduction, is updated to match the current version
+(we have added several algorithms), and more fully explains how to use
+the software in a way that was not possible in the initial paper.
+
+In closing, we thank you for considering our manuscript for
+publication in JoSS. We look forward to receiving your response.
+
+Sincerely,
+
+
+Matt Lau, Stuart Borrett and Pawandeep Singh
+
+
+Reference
+
+Borrett, S.R. and Lau, M. K. 2014. enaR: An R package for Ecosystem
+Network Analysis.  Methods in Ecology and Evolution 5(11),
+1206--1213. 

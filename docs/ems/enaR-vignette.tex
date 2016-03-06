@@ -1,0 +1,2900 @@
+\documentclass[article]{jss}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% declarations for jss.cls %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{
+  \textbf{Matthew K. Lau}\\Harvard Forest\\Harvard University\\
+  \\
+  \textbf{Stuart R. Borrett}\\Department of Biology and Marine Biology\\
+  University of North Carolina Wilmington\\and\\Duke Network
+  Analysis Center\\Social Science Research Institute\\Duke
+  University\\
+  \\
+  \textbf{Pawandeep Singh}\\Department of Biology and Marine Biology\\
+  University of North Carolina Wilmington\\}
+
+%\title{enaR: Ecosystem Network Analysis with R}
+%% Alternative Title:
+\title{Ecosystem Network Analysis with R: A guide for using enaR}
+
+%% for pretty printing and a nice hypersummary also set:
+\Plainauthor{Matthew K. Lau, Stuart R. Borrett, Pawandeep Singh} %% comma-separated
+\Plaintitle{Ecosystem Network Analysis with R: A guide for using enaR} %% without formatting
+\Shorttitle{Ecosystem Network Analysis with R: A guide for using \pkg{enaR}} %% a short title (if necessary)
+
+%% an abstract and keywords
+\Abstract{Ecosystem Network Analysis (ENA) provides a framework for
+  investigating the structure, function and dynamics of ecological
+  systems, primarily ecosystem models with physically conserved
+  units. This paper documents the \textit{enaR} \proglang{R} package that
+  collects the core ENA functions including those developed by the
+  Ulanowicz and Patten schools.  We detail how to use
+  the primary functions for the analysis of single models as well as
+  simultaneous, synthetic analysis of multiple ecosystem models.  }
+
+\Keywords{ecology, ENA, ecosystems, network ecology, food web, network
+  environ analysis,
+  species interactions, networks, \proglang{R}}
+
+\Plainkeywords{ecology, ENA, ecosystems, species interactions, network
+  ecology, food web, network environ analysis,
+  networks, R} %% without formatting
+%% at least one keyword must be supplied
+
+%% publication information
+%% NOTE: Typically, this can be left commented and will be filled out by the technical editor
+%% \Volume{50}
+%% \Issue{9}
+%% \Month{June}
+%% \Year{2012}
+%% \Submitdate{2012-06-04}
+%% \Acceptdate{2012-06-04}
+
+%% The address of (at least) one author should be given
+%% in the following format:
+
+\Address{
+  Matthew K. Lau\\
+  Harvard Forest\\
+  Harvard University\\
+  324 N Main St, Petersham, MA 01366, USA\\
+  E-mail: \email{matthewklau@fas.harvard.edu}\\
+  URL: \url{http://people.fas.harvard.edu/~matthewklau}\\
+  \\
+  Stuart R. Borrett\\
+  Department of Biology and Marine Biology\\
+  University of North Carolina Wilmington\\
+  601 South College Road, Wilmington, NC 28403, USA\\
+  E-mail: \email{borretts@uncw.edu}\\
+  URL: \url{http://people.uncw.edu/borretts}\\
+  \\
+  Pawandeep Singh \\
+  Department of Biology and Marine Biology\\
+  University of North Carolina Wilmington\\
+  601 South College Road, Wilmington, NC 28403, USA\\
+  E-mail: \email{pawan.s@live.co.uk}\\
+  URL: \url{http://people.uncw.edu/borretts}
+
+}
+
+%% It is also possible to add a telephone and fax number
+%% before the e-mail in the following format:
+%% Telephone: +43/512/507-7103
+%% Fax: +43/512/507-2851
+
+%% for those who use Sweave please include the following line (with % symbols):
+%% need no \usepackage{Sweave.sty}
+
+\usepackage[super, sort]{natbib}
+  \bibpunct{(}{)}{;}{a}{,}{,} % required for natbib
+\usepackage{ucs} %needed for R output: signif stars etc, quotes
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{sidecap}
+\usepackage{color}
+\usepackage{tabularx}
+
+\newcommand{\R}{\proglang{R}}
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+
+%% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+%%%%Re-organization based on SRB notes
+
+%%%%
+%%Intro
+%%Ecosystem Networks purpose and structure of models
+%%1.network ecology
+%%2.ENA
+%%3.previous software and enaR
+
+\section[Introduction]{Introduction}
+% p1:  intro paragraph (5/7/2015)
+Network models have provided an in-road to a variety of complex
+systems \citep{watts1998collective, newman01scientific1, barabasi12,
+  newman06structure, wasserman1994}, and although the network approach
+has deep roots \citep{newman06structure}, its use has been expanding
+rapidly in a variety of disciplines including ecology
+\citep{borrett14_rise, ings2009}; and investigators are currently
+building a science of networks \citep{nrc06network, brandes13}. This
+is due in part to the flexibility of the core representation, its
+utility in answering relational questions, and its applicability to
+``Big Data'' problems.
+
+% p2: Ecosystem Network Analysis
+% what, why, use
+
+Ecosystem ecologists have developed and used network modeling and
+analysis for several decades \citep{borrett12_netecol, ulanowicz86,
+  fath99_review}.  The network models map transfers of
+thermodynamically conserved energy or matter (represented by weighted,
+directed graph edges) between nodes that represent species, groups of
+species, or non-living components (e.g., dead organic matter) of the
+ecosystem.  These analyses, collectively known as Ecosystem Network
+Analysis (ENA), have been used in a variety of ways including to
+reveal the relative importance of indirect effects in ecosystems
+\citep{patten83, higashi89, salas11_did} and their capacity to
+effectively transform the relations among organisms
+\citep{ulanowicz90, patten91, fath98, bondavalli99}.  From these
+applications a new theoretical understanding of ecosystems has emerged
+\citep{higashi91, belgrano05, jorgensen07_newecology}.  Recently,
+scientists have applied these methods to understand trophic
+dynamics in the Sylt-R{\o}m{\o} Bight
+\citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in lakes and
+estuaries \citep{christian03, small2014, hines15}, and urban
+sustainability \citep{zhang10, chen12}.
+
+% p3: Two schools
+Two major schools of ENA have developed \citep{scharler09comparing}.
+The first is based on Dr.\ Robert E.\ Ulanowicz's work with a strong
+focus on trophic dynamics and a use of information theory
+\citep{ulanowicz86, ulanowicz97, ulanowicz04}.  The second school has
+an environment focus and is built on the environ concept introduced by
+Dr.\ Bernard C.\ Patten \citep{patten76, patten78, fath99_review}.
+Patten's approach has been collectively referred to separately as
+\emph{Network Environ Analysis}. At the core the two approaches are
+very similar; however, they make some different starting assumptions
+and follow independent yet braided development tracks.
+
+% p4: Extant Software & The Current Problem
+Disparate software packages have been created to support
+ENA. Initially algorithms were developed and distributed as the DOS
+based NETWRK4 \citep{ulanowicz91}, which is still available from
+\url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}.  Some of these
+algorithms were re-implemented in a Microsoft Excel based toolbox,
+WAND \citep{allesina04_wand}. The popular Ecopath with Ecosim software
+that assists with model construction \citep{christensen04} also
+provides multiple ENA algorithms.  The algorithms for flow analysis --
+one component of ENA -- were collected into a stand-alone software
+tool \citep{latham2006}.  \citet{fath06} published NEA.m that collects
+most of the Patten School ENA algorithms together in a single
+\proglang{MATLAB}\copyright\ function. Similarly, the online tool EcoNet
+\citep{kazanci07} has made many of the ENA algorithms available
+in an easy access framework.  Although these packages collectively
+provide access to a large set of powerful analytical tools, the
+fragmented distribution of the key algorithms among the software tools
+has inhibited the development of theory and the further implementation
+of important algorithms.
+
+
+% p5: Objectives (Software & Paper).
+The \textit{enaR} package brings together the ENA algorithms into one
+common software framework that is readily available and extensible.
+The package is written in the \R\ language, which is free and
+open-source.  Due largely to this, \R\ is now one of the most widely
+used analytical programming languages in the biological
+sciences. \textit{enaR} builds on existing \R\ packages for network
+analysis. For example, it uses the \textit{network} data structure
+developed by \citet{butts08_network} and the network analysis tools
+built into the \textit{network}, \textit{sna} (social network
+analysis) \citep{butts08_social}, and \textit{statnet}
+\citep{handcock2008statnet} packages. While
+\citet{borrett14_enar} introduced the \textit{enaR} package, here we
+provide a richer documentation of the software and illustrate its use.
+
+
+
+
+
+
+%%% \subsection{enaR workflow}
+% 1. Get a model
+% 2. Input/Import model
+% 3. Balance
+% 4. Plot
+% 5. Analyze structure = static properties
+% 6. Analyze flow = dynamic properties
+% 7. Other more detailed analyses of structure and dynamics
+%    i. control, ii. utility, iii. ascendency, vi. trophic impacts,
+%    v. environ, vi. input vs output perspectives
+% 8. orientation
+% 9. Model library and batch processing
+% 10. Connections to other packages
+%    i. sna,. ii. igraph, iii. econet
+%    any package that uses network representations
+
+
+%%ENA network models
+%%1. describe models
+%%2. model construction
+%%3. mathematical description
+
+\section{Getting Started}
+
+In this section we describe the data necessary for Ecosystem
+Network Analysis and show how to build the central network data object
+in \R\ that contains the model data for subsequent analysis.  To
+start, the current stable version can be installed from CRAN:
+
+\begin{Schunk}
+\begin{Sinput}
+> install.packages('enaR')
+\end{Sinput}
+\end{Schunk}
+
+The beta version can be installed from GitHub:
+
+\begin{Schunk}
+\begin{Sinput}
+> library(devtools)
+> install_github('SEELab/enaR',ref='beta')
+\end{Sinput}
+\end{Schunk}
+
+You can now load the package:
+
+\begin{Schunk}
+\begin{Sinput}
+> library(enaR)
+\end{Sinput}
+\end{Schunk}
+
+%%%%% Getting Set Up %%%%%%%%%%%
+\setkeys{Gin}{width=0.55\linewidth}
+
+
+
+
+\subsection{Ecosystem Network Model}
+
+ENA is applied to a network model of energy--matter exchanges among
+system components.  The system is modeled as a set of $n$ compartments
+or nodes that represent species, species-complexes (i.e., trophic
+guilds or functional groups), or non-living components of the system
+in which energy--matter is stored.  Nodes are connected by $L$
+observed fluxes, termed directed edges or links.  This analysis
+requires an estimate of the energy--matter flowing from node $i$ to
+$j$ over a given period, $\mathbf{F}_{n\times n}=[f_{ij}]$,
+$i,j=1,2,\ldots,n$.  These fluxes can be generated by any process such
+as feeding (like a food web), excretion, and death.  As ecosystems are
+thermodynamically open, there must also be energy or matter inputs
+into the system $\mathbf{z}_{1 \times n}=[z_i]$, and output losses
+from the system $\mathbf{y}_{1 \times n}=[y_i]$.  While the Patten
+School treats all outputs the same, the Ulanowicz School typically
+partitions outputs into respiration $\mathbf{r}_{1\times n}=[r_i]$ and
+export $\mathbf{e}_{1\times n}=[e_i]$ to account for differences in
+energetic quality. Note that $y_i = r_i + e_i, \forall i$.  Some
+analyses also require the amount of energy--matter stored in each node
+(e.g., biomass), $\mathbf{X}_{1\times n}=[x_i]$.  The final required
+information is a categorization of each node as living or not, which
+is essential for algorithms from the Ulanowicz School.  For our
+implementation, we have created a logical vector
+$\mathbf{Living}_{1 \times n}$ that indicates whether the $i^{th}$
+node is living (TRUE) or not (FALSE).  This obviates the need to order
+the nodes in a specific way (i.e., living before non-living).
+Together, the model data $\mathcal{M}$ can be summarized as
+$\mathcal{M} = \{\mathbf{F}, \mathbf{z}, \mathbf{e}, \mathbf{r},
+\mathbf{X}, \mathbf{Living}\}$.
+
+
+Notice the row-to-column orientation of the flow matrix:
+$\mathbf{F}$. This is consistent with the Ulanowicz School of network
+analysis, as well as the orientation commonly used in Social Network
+Analysis and used in the \textit{statnet} packages.  However, this is
+the opposite orientation typically used in the Patten School of
+analysis that conceptually builds from a system of differential
+equations and thus uses the column-to-row orientation common in this
+area of mathematics. Even though the difference is only a matrix
+transpose, this single difference may be the source of much confusion
+in the literature and frustration on the part of users.  We have
+selected to use row-to-column orientation for our primary data
+structure, as it is the dominant form across network analytics as
+evidenced by it use in the \textit{statnet} packages. The package
+algorithms also return the results in the row-to-column orientation by
+default; however, we have built in functionality with
+\texttt{get.orient} and \texttt{set.orient} that allows users to
+return output in the Patten School row-to-column orientation (see
+Section~\ref{sec:orient} for details).
+
+% Model Construction
+There are multiple methods for constructing ecosystem network models
+and tools for assisting with this process
+\citep{fath07_netconstruction}.  One approach is to construct a
+dynamic, processes-based, mathematical model of the system typically
+using ordinary differential equations.  For example, the EcoPath with
+EcoSim \citep{christensen92, christensen95} software assists
+scientists with constructing food-web focused ecosystem models using
+an underlying bioenergetic approach.  Alternatively,
+\citet{ulanowicz86} has called for a more phenomenologial approach to
+the model construction.  This modeling process starts with a
+conceptual network model of the system and then the node and edge
+weights are estimated directly from observations.  Its phenomenologial
+in the sense that it focuses on what the flows are, rather than the
+forms of the mechanistic processes that generate the flows.  As this
+approach is essentially an inverse problem, some have developed
+inverse linear modeling methods to assist with inferring the network
+weights from data \citep{vezina1988, vanoevelen2010}.  The
+\textit{limSolve} \R\ pacakge can assist with this modeling approach
+\citep{soetaert09}.  \citet{ulanowicz2008least} also introduced two
+least-inference algorithms to assist with this kind of model
+constuction.  These methods focus on constructing models to represent
+specific empirical systems.  Algorithms also exist for constructing
+simulated ecosystems, including \citeapos{fath04_cyber} Cyber Models
+that use a community assembly type approach. Currently, the
+\textit{enaR} software focuses on the analysis of network models and
+assumes that the user has a network model to be analyzed.
+
+% Network Data Object
+\subsection{Network Data Class}
+
+The \textit{enaR} package stores the model data in the
+\textbf{network} class defined in the \textit{network} package
+\citep[see][for details]{butts08_network}. In this software, a
+complete ecosystem network model description includes:
+
+\begin{description}
+\item[F] is the flow matrix, oriented row-to-column
+\item[z] a vector of inputs
+\item[r] a vector of respirations
+\item[e] a vector of exports
+\item[y] a vector of outputs, which are respirations plus exports
+\item[X] a vector ofbiomass or storage values
+\item[Living] = logical vector indicating if the node is living
+  (TRUE) or non-living (FALSE)
+\end{description}
+
+\subsection{Building a Network Object}
+
+Users can assemble the necessary data elements and then use the
+\texttt{pack} function to create the network data object.  Here is an
+example of doing this with hypothetical data.
+
+%% PACK A MODEL
+\begin{Schunk}
+\begin{Sinput}
+> ## Generate the flow matrix
+> flow.mat <- array(abs(rnorm(100,4,2))*sample(c(0,1),100,replace=TRUE),
++                    dim=c(4,4))
+> ## Name the nodes
+> rownames(flow.mat) <- colnames(flow.mat) <- paste('node',(1:nrow(flow.mat)),sep='')
+> ## Generate the inputs
+> inputs <- runif(nrow(flow.mat),0,4)
+> ## Generate the exports
+> exports <- inputs
+> ## "Pack" the model into a network object
+> fake.model <- pack(flow=flow.mat,
++                     input=inputs,
++                     export=exports,
++                     living=TRUE)
+\end{Sinput}
+\begin{Soutput}
+[1] "respiration" "storage"    
+\end{Soutput}
+\begin{Sinput}
+> ## The model network object contents
+> fake.model
+\end{Sinput}
+\begin{Soutput}
+ Network attributes:
+  vertices = 4 
+  directed = TRUE 
+  hyper = FALSE 
+  loops = TRUE 
+  multiple = FALSE 
+  bipartite = FALSE 
+  balanced = FALSE 
+  total edges= 8 
+    missing edges= 0 
+    non-missing edges= 8 
+
+ Vertex attribute names: 
+    export input living output respiration storage vertex.names 
+
+ Edge attribute names: 
+    flow 
+\end{Soutput}
+\end{Schunk}
+
+The individual components can be extracted from the data object using
+the form specified in the \textit{network} package.  For example, we
+can pull out "vertex" (i.e. node) attributes as follows:
+
+\begin{Schunk}
+\begin{Sinput}
+> fake.model%v%'output'
+\end{Sinput}
+\begin{Soutput}
+[1] 3.5286878 2.7697018 0.5033342 3.6227444
+\end{Soutput}
+\begin{Sinput}
+> fake.model%v%'input'
+\end{Sinput}
+\begin{Soutput}
+[1] 3.5286878 2.7697018 0.5033342 3.6227444
+\end{Soutput}
+\begin{Sinput}
+> fake.model%v%'living'
+\end{Sinput}
+\begin{Soutput}
+[1] TRUE TRUE TRUE TRUE
+\end{Soutput}
+\end{Schunk}
+
+The network flows are stored as edge weights in the network object,
+which lets users fully manipulate the network object with the
+\texttt{network} functions.  The flow matrix can be extracted from the
+object with:
+
+\begin{Schunk}
+\begin{Sinput}
+> as.matrix(fake.model,attrname="flow")
+\end{Sinput}
+\begin{Soutput}
+         node1    node2    node3    node4
+node1 2.059944 0.000000 0.000000 5.620063
+node2 1.441443 3.163359 0.000000 0.000000
+node3 4.883283 7.452918 0.000000 0.000000
+node4 0.000000 0.000000 3.219153 3.115398
+\end{Soutput}
+\end{Schunk}
+
+There are times that it is useful to extract all of the ecosystem
+model data elements from the network data object.  This can be
+accomplished using the \texttt{unpack} function. The \texttt{unpack}
+output is as follows:
+
+\begin{Schunk}
+\begin{Sinput}
+> unpack(fake.model)
+\end{Sinput}
+\begin{Soutput}
+$F
+         node1    node2    node3    node4
+node1 2.059944 0.000000 0.000000 5.620063
+node2 1.441443 3.163359 0.000000 0.000000
+node3 4.883283 7.452918 0.000000 0.000000
+node4 0.000000 0.000000 3.219153 3.115398
+
+$z
+[1] 3.5286878 2.7697018 0.5033342 3.6227444
+
+$r
+[1] 0 0 0 0
+
+$e
+[1] 3.5286878 2.7697018 0.5033342 3.6227444
+
+$y
+[1] 3.5286878 2.7697018 0.5033342 3.6227444
+
+$X
+[1] NA NA NA NA
+
+$Living
+[1] TRUE TRUE TRUE TRUE
+\end{Soutput}
+\end{Schunk}
+
+Note that we did not specify the storage values. In these instances
+\texttt{pack} produces \texttt{NA} values. Although the package is
+designed to help users navigate missing data issues, be sure to check
+that you are providing the appropriate input for a given function. For
+more information, see the help file for the function in question.
+
+
+%%ENA analyses
+%%1. provided models
+\subsection{Model Library}
+
+\textit{enaR} includes a library of 100 empirically-based, previously
+published ecosystem models that can be categorized into two general
+classes: trophic and biogeochemical cycling \citep{christian96,
+  baird08_sylt, borrett10_idd, borrett15_bgc}.  First, 58 of the
+models are trophically-based models with food webs at their core
+(Tables~\ref{tab:TRO}).  Second, there are 42 models focused on
+biogeochemical cycling in ecosystems (Table~\ref{tab:BGC}).  In
+summary, these models were originally published for a number of
+different types of ecosystems, though predominantly aquatic, by a
+number of author teams.  Models in the library range in size from 4
+nodes to 125 nodes with connectance values ranging from 7\% to 45\%.
+
+This collection of models overlaps with other extant data sets.  For
+example, twenty-four of the models are included in the set of forty-eight
+models compiled and distributed by Dr. Ulanowicz
+(\url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}).  All 50 of
+the models analyzed by \citet{borrett10_hmg} and \citet{salas11_did}
+and the 45 models analyzed in \citet{borrett13} are included in this
+model library.
+
+The trophic models are grouped as the \texttt{troModels} object and
+the biogeochemically-based models are available as the
+\texttt{bgcModels} object.  Both data objects return a list of the
+model network objects.  To use these models simply use the \R\
+\textit{base} \texttt{data} function. This will load the models into
+the working memory as a named list of network objects:
+
+\begin{Schunk}
+\begin{Sinput}
+> ## Import the model sets
+> data(bgcModels)
+> data(troModels)
+> ## Check the first few model names
+> head(names(bgcModels))
+\end{Sinput}
+\begin{Soutput}
+[1] "Hubbard Brook (Ca)(Waide)"     "Hardwood Forest, NH (Ca)"     
+[3] "Duglas Fir Forest, WA (Ca)"    "Duglas Fir Forest, WA (K)"    
+[5] "Puerto Rican Rain Forest (Ca)" "Puerto Rican Rain Forest (K)" 
+\end{Soutput}
+\begin{Sinput}
+> head(names(troModels))
+\end{Sinput}
+\begin{Soutput}
+[1] "Marine Coprophagy (oyster)" "Lake Findley "             
+[3] "Mirror Lake"                "Lake Wingra"               
+[5] "Marion Lake"                "Cone Springs"              
+\end{Soutput}
+\begin{Sinput}
+> ## Isolate a single model
+> x <- troModels[[1]]
+> x <- troModels$"Marine Coprophagy (oyster)"
+> ## Check out the model
+> summary(x)
+\end{Sinput}
+\begin{Soutput}
+Network attributes:
+  vertices = 4
+  directed = TRUE
+  hyper = FALSE
+  loops = TRUE
+  multiple = FALSE
+  bipartite = FALSE
+  balanced = TRUE
+ total edges = 4 
+   missing edges = 0 
+   non-missing edges = 4 
+ density = 0.25 
+
+Vertex attributes:
+
+ export:
+   logical valued attribute
+   attribute summary:
+   Mode    NA's 
+logical       4 
+
+ input:
+   numeric valued attribute
+   attribute summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00    0.00   62.05   94.90  157.00  255.50 
+
+ living:
+   logical valued attribute
+   attribute summary:
+   Mode   FALSE    TRUE    NA's 
+logical       2       2       0 
+
+ output:
+   numeric valued attribute
+   attribute summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   6.60   21.67   64.45   94.90  137.70  244.10 
+
+ respiration:
+   numeric valued attribute
+   attribute summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   6.60   21.67   64.45   94.90  137.70  244.10 
+
+ storage:
+   numeric valued attribute
+   attribute summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      1       1       1       1       1       1 
+  vertex.names:
+   character valued attribute
+   4 valid vertex names
+
+Edge attributes:
+
+ flow:
+   numeric valued attribute
+   attribute summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  15.30   20.25   37.40   42.42   59.58   79.60 
+
+Network adjacency matrix:
+                         SHRIMP BENTHIC ORGANISMS
+SHRIMP                        0                 0
+BENTHIC ORGANISMS             0                 0
+SHRIMP FECES & BACTERIA       0                 1
+BENTHIC FECES & BACTERIA      0                 1
+                         SHRIMP FECES & BACTERIA
+SHRIMP                                         1
+BENTHIC ORGANISMS                              0
+SHRIMP FECES & BACTERIA                        0
+BENTHIC FECES & BACTERIA                       0
+                         BENTHIC FECES & BACTERIA
+SHRIMP                                          0
+BENTHIC ORGANISMS                               1
+SHRIMP FECES & BACTERIA                         0
+BENTHIC FECES & BACTERIA                        0
+\end{Soutput}
+\end{Schunk}
+
+%% ------- MODEL TABLES ------------ %%
+
+% Thu May  2 13:54:17 2013
+\begin{table}[ht]
+\begin{center}
+  \caption{Trophic ecosystem networks (58) included in the
+    \textit{enaR} model library.} \label{tab:TRO}
+  \begin{tiny}
+    \begin{tabularx}{\textwidth}{llllllll}
+      \hline
+      Models & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\
+      \hline
+      Marine Coprophagy (oyster) & kcal m$^{-2}$ yr$^{-1}$  &   4 & 0.25 & 379 & 549 & 0.12 & \citet{haven66} \\
+      Lake Findley  & gC m$^{-2}$ yr$^{-1}$  &   4 & 0.38 &  21 &  50 & 0.30 &  \citet{richey78} \\
+      Mirror Lake & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.36 &  72 & 217 & 0.32 &   \citet{richey78} \\
+      Lake Wingra & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.40 & 478 & 1517 & 0.40 &  \citet{richey78} \\
+      Marion Lake & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.36 &  87 & 242 & 0.31 &  \citet{richey78} \\
+      Cone Springs & kcal m$^{-2}$ yr$^{-1}$  &   5 & 0.32 & 11819 & 30626 & 0.09 &  \citet{tilly68} \\
+      Silver Springs & kcal m$^{-2}$ yr$^{-1}$  &   5 & 0.28 & 21296 & 29175 & 0.00 &  \citet{odum57} \\
+      English Channel & kcal m$^{-2}$ yr$^{-1}$  &   6 & 0.25 & 1096 & 2280 & 0.00 &  \citet{brylinsky72} \\
+      Oyster Reef  & kcal m$^{-2}$ yr$^{-1}$  &   6 & 0.33 &  41 &  83 & 0.11 &  \citet{dame81} \\
+      Baie de Somme & mgC m$^{-2}$ d$^{-1}$  &   9 & 0.30 & 876 & 2034 & 0.14 &  \citet{rybarczyk03} \\
+      Bothnian Bay & gC m$^{-2}$ yr$^{-1}$  &  12 & 0.22 &  44 & 183 & 0.23 &   \citet{sandberg00} \\
+      Bothnian Sea & gC m$^{-2}$ yr$^{-1}$  &  12 & 0.24 & 117 & 562 & 0.31 &   \citet{sandberg00} \\
+      Ythan Estuary & gC m$^{-2}$ yr$^{-1}$  &  13 & 0.23 & 1258 & 4181 & 0.24 &  \citet{baird81} \\
+      Sundarban Mangrove (virgin) & kcal m$^{-2}$ yr$^{-1}$  &  14 & 0.22 & 111317 & 440931 & 0.19 & \citet{ray08} \\
+      Sundarban Mangrove (reclaimed) & kcal m$^{-2}$ yr$^{-1}$  &  14 & 0.22 & 38484 & 103056 & 0.05 & \citet{ray08} \\
+      Baltic Sea & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.17 & 603 & 1973 & 0.13 &   \citet{baird91} \\
+      Ems Estuary & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.19 & 282 & 1067 & 0.32 &  \citet{baird91} \\
+      Swartkops Estuary  15 & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.17 & 3544 & 13996 & 0.47 &   \citet{baird91} \\
+      Southern Benguela Upwelling & mg C m$^{-2}$ d$^{-1}$  &  16 & 0.23 & 714 & 2545 & 0.31 & \citet{baird91} \\
+      Peruvian Upwelling & mg C m$^{-2}$ d$^{-1}$  &  16 & 0.22 & 14927 & 33491 & 0.04 &  \citet{baird91} \\
+      Crystal River (control) & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.19 & 7357 & 15062 & 0.07 &  \citet{ulanowicz86} \\
+      Crystal River (thermal) & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.14 & 6018 & 12032 & 0.09 &  \citet{ulanowicz86} \\
+      Charca de Maspalomas Lagoon & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.12 & 1486230 & 6010331 & 0.18 &  \citet{almunia99} \\
+      Northern Benguela Upwelling & mg C m$^{-2}$ d$^{-1}$  &  24 & 0.21 & 2282 & 6611 & 0.05 &  \citet{heymans00} \\
+      Swartkops Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.17 & 2859 & 8949 & 0.27 & \citet{scharler05} \\
+      Sunday Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.16 & 4440 & 11937 & 0.22 & \citet{scharler05} \\
+      Kromme Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.16 & 2571 & 11087 & 0.38 & \citet{scharler05} \\
+      Okefenokee Swamp & g dw m$^{-2}$ y$^{-1}$  &  26 & 0.20 & 2533 & 12855 & 0.48 & \citet{whipple93} \\
+      Neuse Estuary (early summer 1997) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.09 & 4385 & 13827 & 0.12 &  \citet{baird04} \\
+      Neuse Estuary (late summer 1997)  & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.11 & 4639 & 13035 & 0.13 &  \citet{baird04} \\
+      Neuse Estuary (early summer 1998) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.09 & 4568 & 14025 & 0.12 &  \citet{baird04} \\
+      Neuse Estuary (late summer 1998) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.10 & 5641 & 15031 & 0.11 &  \citet{baird04} \\
+      Gulf of Maine & g ww m$^{-2}$ yr$^{-1}$  &  31 & 0.35 & 5053 & 18381 & 0.15 &   \citet{link08} \\
+      Georges Bank & g ww m$^{-2}$ yr$^{-1}$  &  31 & 0.35 & 4380 & 16889 & 0.18 &  \citet{link08} \\
+      Middle Atlantic Bight & g ww m$^{-2}$ yr$^{-1}$  &  32 & 0.37 & 4869 & 17916 & 0.18 &  \citet{link08} \\
+      Narragansett Bay & mgC m$^{-2}$ yr$^{-1}$  &  32 & 0.15 & 693845 & 3917246 & 0.51 &  \citet{monaco97} \\
+      Southern New England Bight & g ww m$^{-2}$ yr$^{-1}$  &  33 & 0.35 & 4717 & 17597 & 0.16 &  \citet{link08} \\
+      Chesapeake Bay  & mg C m$^{-2}$ yr$^{-1}$  &  36 & 0.09 & 888791 & 3227453 & 0.19 &  \citet{baird89} \\
+      Mondego Estuary (\textit{Zostera} sp. Meadows) & g AFDW m$^{−2}$ yr$^{−1}$ &  43 & 0.19 & 4030 & 6822 & 0.03 & \citet{patricio2006mass} \\
+      St. Marks Seagrass, site 1 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 514 & 1315 & 0.13 &  \citet{baird98} \\
+      St. Marks Seagrass, site 1 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 601 & 1590 & 0.11 &  \citet{baird98} \\
+      St. Marks Seagrass, site 2 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.07 & 602 & 1383 & 0.09 &  \citet{baird98} \\
+      St. Marks Seagrass, site 2 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 800 & 1921 & 0.08 &  \citet{baird98} \\
+      St. Marks Seagrass, site 3 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.05 & 7809 & 12651 & 0.01 & \citet{baird98} \\
+      St. Marks Seagrass, site 4 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 1432 & 2865 & 0.04 &  \citet{baird98} \\
+      Sylt-R{\o}m{\o} Bight & mg C m$^{-2}$ d$^{-1}$  &  59 & 0.08 & 683448 & 1781028 & 0.09 &  \citet{baird04_sylt} \\
+      Graminoids (wet) & g C m$^{-2}$ yr$^{-1}$  &  66 & 0.18 & 6272 & 13676 & 0.02 &  \citet{ulanowicz00_graminoids} \\
+      Graminoids (dry) & g C m$^{-2}$ yr$^{-1}$  &  66 & 0.18 & 3472 & 7519 & 0.04 &   \citet{ulanowicz00_graminoids} \\
+      Cypress (wet) & g C m$^{-2}$ yr$^{-1}$  &  68 & 0.12 & 1418 & 2571 & 0.04 &  \citet{ulanowicz97_cypress} \\
+      Cypress (dry) & g C m$^{-2}$ yr$^{-1}$  &  68 & 0.12 & 1035 & 1919 & 0.04 &  \citet{ulanowicz97_cypress} \\
+      Lake Oneida (pre-ZM) & g C m$^{-2}$ yr$^{-1}$  &  74 & 0.22 & 1034 & 1697 & 0.00 &  \citet{miehls09_oneida} \\
+      Lake Oneida (post-ZM) & g C m$^{-2}$ yr$^{-1}$  &  76 & 0.22 & 810 & 1462 & 0.00 &  \citet{miehls09_oneida} \\
+      Bay of Quinte (pre-ZM) & g C m$^{-2}$ yr$^{-1}$  &  74 & 0.21 & 984 & 1509 & 0.00 &   \citet{miehls09_quinte} \\
+      Bay of Quinte (post-ZM) & g C m$^{-2}$ yr$^{-1}$  &  80 & 0.21 & 1129 & 2039 & 0.01 &   \citet{miehls09_quinte} \\
+      Mangroves (wet) & g C m$^{-2}$ yr$^{-1}$  &  94 & 0.15 & 1531 & 3265 & 0.10 &  \citet{ulanowicz99_mangrove} \\
+      Mangroves (dry) & g C m$^{-2}$ yr$^{-1}$  &  94 & 0.15 & 1531 & 3272 & 0.10 &  \citet{ulanowicz99_mangrove} \\
+      Florida Bay (wet) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.12 & 738 & 2720 & 0.14 &  \citet{ulanowicz98_fb} \\
+      Florida Bay (dry) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.13 & 547 & 1778 & 0.08 &  \citet{ulanowicz98_fb} \\
+      \hline
+\end{tabularx}
+\end{tiny}
+\end{center}
+\begin{scriptsize}
+  $^\dagger$ $n$ is the number of nodes in the network model,
+  $C=L/n^2$ is the model connectance when $L$ is the number of direct
+  links or energy--matter transfers, $Input =\sum{z_i}$ is the total
+  amount of energy--matter flowing into the system,
+  $TST=\sum\sum{f_{ij}}+\sum{z_i}$ is the total system throughflow,
+  and $FCI$ is the Finn Cycling Index \citep{finn80}. Flow based
+  network statistics ($Input$, $TST$, and $FCI$) were calculated after
+  models were balanced using the AVG2 algorithm.
+\end{scriptsize}
+\end{table}
+
+% -- BGC Table --- %
+\begin{table}[ht]
+\begin{center}
+  \caption{Biogeochemical ecosystem networks (42) included in the
+    \textit{enaR} model library.} \label{tab:BGC}
+  \begin{tiny}
+    \begin{tabularx}{\textwidth}{llllllll}
+      \hline
+      Model & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\
+      \hline
+      Hubbard Brook (Waide) & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.25 &  11 & 168 & 0.76 & \citet{waide74} \\
+      Hardwood Forest, NH & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  11 & 200 & 0.80 & \citet{jordan72} \\
+      Douglas Fir Forest, WA  & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   4 &  54 & 0.74 & \citet{jordan72} \\
+      Douglas Fir Forest, WA  & kg K Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &  45 & 0.97 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  43 & 274 & 0.57 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg K Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  20 & 433 & 0.86 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Mg Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  10 &  70 & 0.58 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Cu Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   2 & 0.37 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Fe Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   7 & 0.95 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Mn Ha$^{-1}$  yr$^{-1}$ &   4 & 0.38 &   0 &   7 & 0.98 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Na Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  64 & 140 & 0.24 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Sr Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   1 & 0.71 & \citet{jordan72} \\
+      Tropical Rain Forest & g N m$^{-2}$ d$^{-1}$  &   5 & 0.24 &  10 &  71 & 0.48 & \citet{edmisten70} \\
+      Neuse River Estuary (AVG) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 795 & 41517 & 0.89 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 133 & 9120 & 0.91 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 119 & 20182 & 0.96 & \citet{christian03} \\
+      Neuse River Estuary Fall 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 181 & 8780 & 0.88 & \citet{christian03} \\
+      Neuse River Estuary Winter 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.43 & 187 & 6880 & 0.85 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 128 & 12915 & 0.94 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 165 & 11980 & 0.91 & \citet{christian03} \\
+      Neuse River Estuary (Fall 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 100 & 9863 & 0.94 & \citet{christian03} \\
+      Neuse River Estuary (Winter 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 691 & 7907 & 0.62 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 334 & 11533 & 0.84 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 &  90 & 15621 & 0.96 & \citet{christian03} \\
+      Neuse River Estuary (Fall 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 &  85 & 7325 & 0.93 & \citet{christian03} \\
+      Neuse River Estuary (Winter 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 171 & 8680 & 0.89 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 176 & 6898 & 0.85 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 132 & 16814 & 0.95 & \citet{christian03} \\
+      Neuse River Estuary (Fall 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 128 & 5732 & 0.87 & \citet{christian03} \\
+      Neuse River Estuary (Winter 1989) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 291 & 5739 & 0.75 & \citet{christian03} \\
+      Cape Fear River Estuary (Oligohaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3802 & 7088 & 0.20 & \citet{hines12} \\
+      Cape Fear River Estuary (Polyhaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3068 & 5322 & 0.17 & \citet{hines15} \\
+      Lake Lanier (AVG) & mg P m$^{-2}$ day$^{-1}$ &  11 & 0.21 &  95 & 749 & 0.40 & \citet{borrett07_lanier} \\
+      Baltic Sea & mg N m$^{-3}$ day$^{-1}$  &  16 & 0.15 & 2348 & 44510 & 0.67 & \citet{hinrichsen98_baltic} \\
+      Chesapeake Bay & mg N m$^{-2}$ yr$^{-1}$  &  36 & 0.12 & 73430 & 484325 & 0.33 & \citet{baird95} \\
+      Chesapeake Bay & mg P m$^{-2}$ yr$^{-1}$ &  36 & 0.12 & 9402 & 101091 & 0.51 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Winter) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.08 & 1009 & 11926 & 0.53 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Spring) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.10 & 1932 & 27325 & 0.57 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Summer) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.12 & 4184 & 42935 & 0.46 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Fall) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.10 & 2276 & 18904 & 0.40 & \citet{ulanowicz99} \\
+      Sylt-R{\o}m{\o} Bight & mg N m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 99613 & 363693 & 0.23 & \citet{baird08_sylt} \\
+      Sylt-R{\o}m{\o} Bight & mg P m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 2508 & 57739 & 0.66 & \citet{baird08_sylt} \\
+      \hline
+    \end{tabularx}
+  \end{tiny}
+\end{center}
+\begin{scriptsize}
+  $^\dagger$ $n$ is the number of nodes in the network model,
+  $C=L/n^2$ is the model connectance when $L$ is the number of direct
+  links or energy--matter transfers, $Input =\sum{z_i}$ is the total
+  amount of energy--matter flowing into the system,
+  $TST=\sum\sum{f_{ij}}+\sum{z_i}$ is the total system throughflow,
+  and $FCI$ is the Finn Cycling Index \citep{finn80}. Flow based
+  network statistics ($Input$, $TST$, and $FCI$) were calculated after
+  models were balanced using the AVG2 algorithm.
+\end{scriptsize}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%2. visualization
+\subsection{Network Visualization}
+
+Network plots are a useful tool to visualize patterns in complex
+datasets. Here, we present one example of how to plot a network model
+using the plot tools in the \textit{network} package. The figure
+scaling may need to be adjusted depending on computer and the graphics
+devices. Also, note that the graph only shows internal system flows.
+
+\begin{Schunk}
+\begin{Sinput}
+> ## Load data
+> data(oyster)
+> m <- oyster
+> ## Set the random seed to control plot output
+> set.seed(2)
+> ## Plot network data object (uses plot.network)
+> plot(m)
+> 
+\end{Sinput}
+\end{Schunk}
+
+We can use the powerful graphics capabilities of \R\ to make a fancier
+plot of the same data (Fig.~\ref{fig:oyster}).
+
+
+\begin{Schunk}
+\begin{Sinput}
+> ## Set colors to use
+> my.col <- c('red','yellow',rgb(204,204,153,maxColorValue=255),'grey22')
+> ## Extract flow information for later use.
+> F <- as.matrix(m,attrname='flow')
+> ## Get indices of positive flows
+> f <- which(F!=0, arr.ind=T)
+> opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
+> ## Set the random seed to control plot output
+> set.seed(2)
+> plot(m,
++  ## Scale nodes with storage
++       vertex.cex=log(m%v%'storage'),
++  ## Add node labels
++       label= m%v%'vertex.names',
++       boxed.labels=FALSE,
++       label.cex=0.65,
++  ## Make rounded nodes
++       vertex.sides=45,
++  ## Scale arrows to flow magnitude
++       edge.lwd=log10(abs(F[f])),
++       edge.col=my.col[3],
++       vertex.col=my.col[1],
++       label.col='white',
++       vertex.border = my.col[3],
++       vertex.lty = 1,
++       xlim=c(-4,1),ylim=c(-2,-2))
+> ## Lastly, remove changes to the plotting parameters
+> rm(opar)
+\end{Sinput}
+\end{Schunk}
+
+
+\begin{figure}
+\includegraphics{enaR-vignette-014}
+\includegraphics{enaR-vignette-015}
+\caption{Two networks for the Oyster Reef model
+  \citep{dame81} showing a simple (left) and more elaborate (right)
+  implementation of the network plotting function.} \label{fig:oyster}
+\end{figure}
+
+
+
+
+%%3. model input
+
+\subsection{Data Input: Reading Common Data File Formats} Several
+software packages exist in the literature for running ENA. We have
+written functions to read in a few of the more common data formats
+used by them to help \textit{enaR} users to import models formatted
+for these other packages. Example data files can be found in the data
+folder here: \url{https://github.com/SEELab/enaR_development}.
+
+\subsection*{SCOR}
+The \texttt{read.scor} function reads in data stored in the SCOR
+format specified by \citet{ulanowicz91} that is the input to the
+NETWRK4 programs.  This function can be run as follows.
+
+\begin{Schunk}
+\begin{Sinput}
+> scor.model <- readLines('../../data/oyster.dat')
+> m <- read.scor(scor.model,from.file=FALSE)
+\end{Sinput}
+\end{Schunk}
+
+
+This constructs the network data object from the SCOR file that stores
+the ecosystem model data for an oyster reef model \citep{dame81}.  The
+individual model elements are
+
+\begin{Schunk}
+\begin{Sinput}
+> unpack(m)
+\end{Sinput}
+\begin{Soutput}
+$F
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0     0.0000    0.0000          0.0000
+Microbiota                      0     0.0000    1.2060          1.2060
+Meiofauna                       0     0.0000    0.0000          0.6609
+Deposit Feeders                 0     0.0000    0.0000          0.0000
+Predators                       0     0.0000    0.0000          0.0000
+Deposited Detritus              0     8.1721    7.2745          0.6431
+                   Predators Deposited Detritus
+Filter Feeders        0.5135            15.7910
+Microbiota            0.0000             0.0000
+Meiofauna             0.0000             4.2403
+Deposit Feeders       0.1721             1.9076
+Predators             0.0000             0.3262
+Deposited Detritus    0.0000             0.0000
+
+$z
+[1] 41.47  0.00  0.00  0.00  0.00  0.00
+
+$r
+[1] 25.1650  5.7600  3.5794  0.4303  0.3594  6.1759
+
+$e
+[1] 0 0 0 0 0 0
+
+$y
+[1] 25.1650  5.7600  3.5794  0.4303  0.3594  6.1759
+
+$X
+[1] 2000.0000    2.4121   24.1210   16.2740   69.2370 1000.0000
+
+$Living
+[1]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
+\end{Soutput}
+\end{Schunk}
+
+This same data is stored as a network data object that is distributed
+with this package, which can be accessed as:
+\begin{Schunk}
+\begin{Sinput}
+> data(oyster)
+> m <- oyster
+\end{Sinput}
+\end{Schunk}
+
+\subsection*{WAND}
+In part to make ENA more accessible to biologists,
+\citet{allesina04_wand} recoded some of Ulanowicz's NETWRK4 algorithms
+into a Microsoft Excel based tool called WAND.  For this tool, the
+model data is stored as a separate Excel file with two worksheets.
+The first contains many of the node attributes and the second contains
+the flow matrix.  The \texttt{read.wand} function will create an
+\R\ network data object from a WAND model file. 
+
+\begin{Schunk}
+\begin{Sinput}
+> m <- read.wand('../../data/MDmar02_WAND.xls')
+\end{Sinput}
+\end{Schunk}
+
+This code creates a network data object for \textit{enaR} from the WAND
+formatted Mdloti ecosystem model data
+\citep{scharler2012ecosystem}. This data is courtesy of U.M. Scharler.
+
+\subsection*{NEA}
+
+For their Matlab function to perform network environ analysis (Patten School),
+\citet{fath06} packaged the model flows, inputs, outputs, and storage
+values into what they called a system matrix
+\begin{align}
+\mathbf{S} = \left[ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
+     \vec{y}  &  0 & 0 \end{array}
+\right]_{(n+1) \times (n+2)}.
+\end{align}
+Flows in the system matrix are oriented from column to row.
+
+The \textit{enaR} function \texttt{read.nea} reads in data with this
+format stored as a comma separated value file (CSV).  The function
+\texttt{write.nea()} will write any network model to a CSV file with
+this format.
+
+While convenient, this data format does not enable inclusion of the
+full range of model information included in the \textit{enaR} network
+data object.  This format does not partition outputs into exports and
+respiration values, nor does it identify the node labels or their
+living status. This missing information will prevent the use of some
+\textit{enaR} functions.
+
+Here is an example of using these functions:
+\begin{Schunk}
+\begin{Sinput}
+> data(oyster)
+> ## Write oyster reef model to a CSV file
+> write.nea(oyster, file.name="oyster.csv")
+\end{Sinput}
+\begin{Soutput}
+        [,1]  [,2]   [,3]   [,4]   [,5]   [,6]  [,7]      [,8]
+[1,]  0.0000 0.000 0.0000 0.0000 0.0000 0.0000 41.47 2000.0000
+[2,]  0.0000 0.000 0.0000 0.0000 0.0000 8.1721  0.00    2.4121
+[3,]  0.0000 1.206 0.0000 0.0000 0.0000 7.2745  0.00   24.1210
+[4,]  0.0000 1.206 0.6609 0.0000 0.0000 0.6431  0.00   16.2740
+[5,]  0.5135 0.000 0.0000 0.1721 0.0000 0.0000  0.00   69.2370
+[6,] 15.7910 0.000 4.2403 1.9076 0.3262 0.0000  0.00 1000.0000
+[7,] 25.1650 5.760 3.5794 0.4303 0.3594 6.1759  0.00    0.0000
+\end{Soutput}
+\begin{Sinput}
+> ## Read in oyster reef model data from NEA.m formatted CSV file
+> m <- read.nea("oyster.csv")
+\end{Sinput}
+\begin{Soutput}
+[1] "export" "living"
+\end{Soutput}
+\begin{Sinput}
+> 
+> ## Again, this model object does NOT contain all
+> ## of the information in the "oyster" data object.
+\end{Sinput}
+\end{Schunk}
+
+\subsection*{ENAM}
+
+Another commonly used data format stores the necessary model data in a
+CSV or Excel formatted file.  We include an example Excel file of the
+Mdloti estuary stored in this form (``MDMAR02.xlsx'', courtesy
+of U. M. Scharler).  This format has not been described technically in
+the literature nor has it been named.  We refer to it as ENAM as it is
+the ENA model data stored primarily as a square matrix with several
+preliminary rows that include meta-data, the number of nodes, and
+number of living nodes (similar to SCOR).  The data format is
+generally similar in concept, if not exact form, to the data system
+matrix used as the input to the NEA.m function \citep{fath06}.
+However, the ENAM format includes information on whether nodes are
+living and partitions output into respiration and exports.
+
+Using an example data file, MDMAR02.xlsx, this data format can be read
+into the \textit{enaR} package as:
+
+\begin{Schunk}
+\begin{Sinput}
+>   m <- read.enam('../../data/MDMAR02.xlsx')
+\end{Sinput}
+\end{Schunk}
+
+The current read.enam function assumes the data are stored on the
+first worksheet of an Excel file. In the future, we expect to expand
+this function's capabilities to read the data from a CSV file.
+
+%%%%%%%%
+%%4+. analyses
+
+\section{Analyzing Ecosystem Models}
+
+ENA is often applied to investigate the structure and function of a
+single ecosystem model.  Here, we walk through an example of applying
+multiple ENA algorithms to the South Carolina oyster reef model
+\citep{dame81}.  Table~\ref{tab:alg} summarizes the main ENA
+algorithms encoded in \textit{enaR}.
+
+
+\begin{table*}
+\center
+\caption{Primary Ecosystem Network Analysis algorithms in
+  \textit{enaR}.} \label{tab:alg}
+\tableline
+%\begin{scriptsize}
+\begin{tabularx}{\textwidth}{l l l l l }
+\textbf{Analysis} & \textbf{Function Name} & \textbf{School} \\ \hline \\ [-1ex]
+Structure & \texttt{enaStructure} & foundational, Patten \\
+Flow & \texttt{enaFlow} & foundational, Patten \\
+Ascendency & \texttt{enaAscendency} & Ulanowicz \\
+Storage & \texttt{enaStorage} & Patten \\
+Utility & \texttt{enaUtility} & Patten \\
+Mixed Trophic Impacts & \texttt{enaMTI} & Ulanowicz \\
+Control & \texttt{enaControl} & Patten \\
+Environ & \texttt{enaEnviron} & Patten \\
+Cycle Basis & \texttt{enaCycle} & Ulanowicz \\
+Canonical Trophic Aggregation & \texttt{enaTroAgg} & Ulanowicz \\ \hline
+\end{tabularx}
+%\end{scriptsize}
+\tableline
+\end{table*}
+
+Again, in this package results are reported in the row-to-column
+orientation by default -- including the algorithms from the Patten
+school.  Please see Section~\ref{sec:orient} for how to change this
+default if needed.
+
+
+\subsection{Balancing for Steady-State}
+
+Many of the ENA functions assume that the network model is at
+steady-state (node inputs equal node outputs).  Thus, this package has
+functions for (1) checking to see if the assumption is met and (2)
+automatically balancing the model so that input equal outputs.
+
+To determine if the model is balanced and then balance it if necessary:
+
+\begin{Schunk}
+\begin{Sinput}
+> ## Check to see if the model is balanced
+> ssCheck(fake.model)
+\end{Sinput}
+\begin{Soutput}
+[1] FALSE
+\end{Soutput}
+\begin{Sinput}
+> ## To BALANCE a model if needed
+> fake.model <- balance(fake.model,method="AVG2")
+\end{Sinput}
+\begin{Soutput}
+[1] AVG2
+\end{Soutput}
+\begin{Sinput}
+> ## To FORCE BALANCE a model if needed
+> fake.model <- force.balance(fake.model)
+\end{Sinput}
+\end{Schunk}
+
+The automated balancing routines are based on those presented in
+\citet{allesina03} and include Input, Output, AVG, and AVG2.  These authors compare these alternative balancing algorithms and further discuss the implications of using automated
+procedures.  Caution is warranted when using these techniques, as they
+indiscriminately alter the model flow rates.  A more neuanced appraoch may be desired when the uncertainty in estimates of model fluxes are known.
+
+\subsection{Structural Network Analysis}
+
+Structural network analysis is common to many types of network
+analysis.  The structural analyses applied here are based on those
+presented in NEA.m \citep{fath06} following the Patten School.  Output
+of the enaStructure function is summarized in
+Table~\ref{tab:structure}.
+
+% STRUCTURE
+\begin{table*}[h]
+  \caption{Resultant matrices and network statistics returned by the
+    \texttt{enaStructure} function in \textit{enaR}.}\label{tab:structure}
+\center
+\begin{small}
+  \begin{tabularx}{\textwidth}{l l}
+    \textbf{Label} & \textbf{Description} \\ \hline \\[-2ex]
+    \multicolumn{2}{l}{\textit{Matrices}} \\
+    A & $n \times n$ adjacency matrix\\  [1ex]
+    \multicolumn{2}{l}{\textit{Network statistics}} \\
+    n & number of nodes \\
+    L & number of directed edges \\
+    C & connectance $(C = L/n^2)$; the proportion of possible directed
+    edges connected.\\
+    LD & Link Density (L/n) \\
+    ppr & estimated rate of pathway proliferation \citep{borrett03} \\
+    lam1A & dominant eigenvalue of A ($lambda_1(\mathbf{A})$), which is the \\
+    & asymptotic rate of pathway proliferation \citep{borrett07_jtb}\\
+    mlam1A & multiplicity of the dominant eigenvalue (number of
+    times repeated) \\
+    rho & damping ratio, an indicator of how quickly
+    $[a_{ij}]^{(m)}/[a_{ij}]^{(m-1)}$ goes to $lam_1(\mathbf{A})$ \citep[][, p. 95]{caswell01} \\
+    R & distance of $lam_1(\mathbf{A})$ from the bulk of the eigen spectrum \citep{farkas2001spectra}\\
+    d & difference between dominant eigenvalue and link density
+    (expected value for random graph) \\
+    no.scc & number of strongly connected components (SCC) \\
+    no.scc.big & number of SCC with more than one node \\
+    pscc & fraction of network nodes included in a big SCC\\
+    \hline
+  \end{tabularx}
+\end{small}
+\end{table*}
+
+\begin{Schunk}
+\begin{Sinput}
+> data(oyster)
+> St <- enaStructure(oyster)
+> attributes(St)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "A"  "ns"
+\end{Soutput}
+\begin{Sinput}
+> St$ns
+\end{Sinput}
+\begin{Soutput}
+     n  L         C LD      ppr    lam1A mlam1A      rho         R
+[1,] 6 12 0.3333333  2 2.147899 2.147899      1 2.147899 0.4655712
+            d no.scc no.scc.big      pscc
+[1,] 0.147899      2          1 0.8333333
+\end{Soutput}
+\end{Schunk}
+
+
+The number of nodes, number of links, link density, and connectance
+(density) are common statistics used to describe networks like food
+webs \citep{martinez1992constant, dunne02food, eklof2006, estrada2007,
+  brandes05}.  The pathway proliferation rate quantifies if and how
+fast the number of pathways increases with path length in the network
+\citep{borrett03, borrett07_jtb}.  This rate is equivalent to the
+dominant eigenvalue of the adjacency matrix ($\lambda_1(A)$) if the
+network is comprised of a single strongly connected component
+\citep{borrett07_jtb}.
+
+The structural network statistics for the oyster reef model shows that
+it has 6 nodes, a pathway proliferation rate of 2.14 (ppr), and that
+the model is comprised of two strongly connected components (no.scc)
+but that only one has more than one node (no.scc.big).  Thus, 83\% of
+the nodes are participating in a strongly connected component (pscc).
+
+
+\subsection{Flow Analysis}
+
+Flow analysis is one of the core ENA analyses
+for both the Ulanowicz and Patten Schools \citep{fath99_review,
+  latham2006, fath06, schramski11}.  The \textit{enaR} implementation
+\texttt{enaFlow} mostly follows the NEA.m function, with small updates
+\cite[e.g. calculating the ratio of indirect-to-direct
+flows][]{borrett11_ree,borrett11_equ}. Results returned by
+\texttt{enaFlow} are summarized in Table~\ref{tab:flow}
+
+To validly apply flow analysis, the network model must meet two
+analytical assumptions.  First, the model must trace a single,
+thermodynamically conserved currency, such as energy, carbon, or
+nitrogen.  Second, the model must be at steady-state for many of the
+analyses.
+
+% insert examples of use? Finn 1976, Finn 1980, Whipple 2007, Gattie
+% 2007, Small et al 2014.  Could we includes something from
+% vanoevelen2006carbon?  vanoevelen2009cold.
+
+Flow analysis has been used in a variety of ways.  For example,
+\citet{finn80} used ENA flow analysis to compare the cycling of
+multiple nutrients through the Hubbard Brook Ecosystem, New Hampshire,
+USA, and \citet{vanoevelen2009cold} used the technique to show how
+different marine canyon conditions change the flow of carbon through
+the food webs in Nazar\'{e} Canyon.  \cite{gattie06} applied the
+analysis to characterize N cycling in the Neuse River Estuary (North
+Carolina, USA), and \cite{zhang10} used flow analysis to help assess
+the sustainability of the urban water metabolism of Beijing, China.
+\citet{borrett13} showed that the throughflow vector $T$ can be
+considered as a type of centrality measure that indicates the relative
+importance of each node to the generation of the total system
+throughflow or activity.
+
+
+% --- FLOW ----------------------
+\begin{table*}[h]
+  \caption{Matrices and network statistics returned by the
+    \texttt{enaFlow} function in \textit{enaR}.}\label{tab:flow}
+  \begin{small}
+  \begin{tabularx}{\textwidth}{l l}
+    \textbf{\textit{enaR} label} & \textbf{Description} \\ \hline\\[-1.5ex]
+    \multicolumn{2}{l}{\textit{Matrices}} \\
+    T & $n \times 1$ vector of node throughflows (M L$^{-2  \textrm{ or } -3}$ T$^{-1}$) \\
+    G & output-oriented direct throughflow intensity matrix\\
+    GP & input-oriented direct throughflow intensity matrix\\
+    N & output-oriented integral throughflow intensity matrix\\
+    NP & input-oriented integral throughflow intensity matrix\\ [1ex]
+    \multicolumn{2}{l}{\textit{Network statistics}} \\
+    Input & Total input boundary flow  \\
+    TST & Total System ThroughFLOW \\
+    TSTp & Total System ThroughPUT \\
+    APL & Average Path Length \citep{finn76} \\
+    FCI & Finn Cycling Index \citep{finn80} \\
+    BFI & Boundary Flow Intensity, $Boundary/TST$ \\
+    DFI & Direct Flow Intensity, $Direct/TST$ \\
+    IFI & Indirect Flow Intensity, $Indirect/TST$ \citep{borrett06_neuse}\\
+    ID.F & Ratio of Indirect to Direct Flow \citet{borrett11_ree, borrett11_equ}\\
+    ID.F.I & input oriented ratio of indirect to direct flow intensity \citep[as in][]{fath06} \\
+    IF.F.O & output oriented ratio of indirect to direct flow intensity \citep[as in][]{fath06}\\
+    HMG.F.I & input oriented network homogenization to direct flow intensity\\
+    HMG.F.O & output oriented network homogenization to direct flow intensity \\
+    AMP.F.I & input oriented network amplification \\
+    AMP.F.O  & output oriented network amplification \\
+    mode0.F & Boundary Flow \\
+    mode1.F & Internal First Passage Flow \\
+    mode2.F & Cycled Flow \\
+    mode3.F & Dissipative Equivalent to mode1.F \\
+    mode4.F & Dissipative Equivalent to mode0.F \\ \hline
+\end{tabularx}
+\end{small}
+\end{table*}
+% ------------------
+
+Here, we extract the flow statistics and then isolate and remove the
+output-oriented direct flow intensity ($\mathbf{G}$) matrix.  Recall
+that ENA is partially derived from Input--Output analysis; the input
+and output orientations provide different information about the
+system.  We also show the input-oriented integral flow matrix
+$\mathbf{N'}$.
+
+\begin{Schunk}
+\begin{Sinput}
+> F <- enaFlow(oyster)
+> attributes(F)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "T"  "G"  "GP" "N"  "NP" "ns"
+\end{Soutput}
+\begin{Sinput}
+> F$ns
+\end{Sinput}
+\begin{Soutput}
+     Boundary     TST     TSTp      APL       FCI       BFI       DFI
+[1,]    41.47 83.5833 125.0533 2.015512 0.1101686 0.4961517 0.1950689
+           IFI     ID.F   ID.F.I   ID.F.O    HMG.I    HMG.O AMP.I AMP.O
+[1,] 0.3087794 1.582925 1.716607 1.534181 2.051826 1.891638     3     1
+     mode0.F  mode1.F  mode2.F  mode3.F mode4.F
+[1,]   41.47 32.90504 9.208256 32.90504   41.47
+\end{Soutput}
+\begin{Sinput}
+> ## Output-oriented direct flow matrix
+> F$G
+\end{Sinput}
+\begin{Soutput}
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0  0.0000000 0.0000000      0.00000000
+Microbiota                      0  0.0000000 0.1475753      0.14757529
+Meiofauna                       0  0.0000000 0.0000000      0.07793173
+Deposit Feeders                 0  0.0000000 0.0000000      0.00000000
+Predators                       0  0.0000000 0.0000000      0.00000000
+Deposited Detritus              0  0.3670363 0.3267221      0.02888377
+                    Predators Deposited Detritus
+Filter Feeders     0.01238245          0.3807813
+Microbiota         0.00000000          0.0000000
+Meiofauna          0.00000000          0.5000059
+Deposit Feeders    0.06856574          0.7600000
+Predators          0.00000000          0.4757876
+Deposited Detritus 0.00000000          0.0000000
+\end{Soutput}
+\begin{Sinput}
+> ## Input-oriented integral flow matrix
+> F$NP
+\end{Sinput}
+\begin{Soutput}
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  1  1.0000000 1.0000000       1.0000000
+Microbiota                      0  1.1018630 0.2440716       0.6197856
+Meiofauna                       0  0.2971032 1.2971032       0.5604100
+Deposit Feeders                 0  0.1240688 0.1240688       1.1240688
+Predators                       0  0.0203426 0.0203426       0.0203426
+Deposited Detritus              0  1.3885039 1.3885039       1.3885039
+                   Predators Deposited Detritus
+Filter Feeders     1.0000000          1.0000000
+Microbiota         0.1555792          0.1018630
+Meiofauna          0.1406747          0.2971032
+Deposit Feeders    0.2821649          0.1240688
+Predators          1.0051064          0.0203426
+Deposited Detritus 0.3485436          1.3885039
+\end{Soutput}
+\end{Schunk}
+
+Note that you can use the \texttt{attach} function to have access to the objects
+nested within an object. Since some objects may conflict in name, it's
+best to \texttt{detach} an object once it's not in use.
+
+\begin{Schunk}
+\begin{Sinput}
+> attach(F)
+> G
+\end{Sinput}
+\begin{Soutput}
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0  0.0000000 0.0000000      0.00000000
+Microbiota                      0  0.0000000 0.1475753      0.14757529
+Meiofauna                       0  0.0000000 0.0000000      0.07793173
+Deposit Feeders                 0  0.0000000 0.0000000      0.00000000
+Predators                       0  0.0000000 0.0000000      0.00000000
+Deposited Detritus              0  0.3670363 0.3267221      0.02888377
+                    Predators Deposited Detritus
+Filter Feeders     0.01238245          0.3807813
+Microbiota         0.00000000          0.0000000
+Meiofauna          0.00000000          0.5000059
+Deposit Feeders    0.06856574          0.7600000
+Predators          0.00000000          0.4757876
+Deposited Detritus 0.00000000          0.0000000
+\end{Soutput}
+\begin{Sinput}
+> detach(F)
+\end{Sinput}
+\end{Schunk}
+
+
+
+\subsection{Ascendency}
+
+A key contribution of the Ulanowicz School to ENA is the Ascendency
+concept and the development of several information based network-level
+statistics \citep{ulanowicz86, ulanowicz97}.  This analysis is based
+on all of the flows in the system and does not assume the modeled
+system is at steady-state.  The \texttt{enaAscendency} function
+returns several of these information based measures
+(Table~\ref{tab:asc}).  This is run as follows:
+
+\begin{Schunk}
+\begin{Sinput}
+>   enaAscendency(oyster)
+\end{Sinput}
+\begin{Soutput}
+          AMI      ASC       OH      CAP   ASC.CAP    OH.CAP robustness
+[1,] 1.330211 166.3473 211.0979 377.4452 0.4407191 0.5592809  0.3611021
+         ELD       TD
+[1,] 1.79506 2.514395
+\end{Soutput}
+\end{Schunk}
+
+% ASCENDENCY ----------------------
+\begin{table*}[t]
+  \caption{Graph-level network statistics returned by the \textit{enaR}
+    \texttt{enaAscendency} function \citep[see][for
+    interpretations]{ulanowicz86, ulanowicz97}.}\label{tab:asc}
+  \center
+  \begin{small}
+    \begin{tabularx}{\textwidth}{l l}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      AMI & average mutual information (bits) \\
+      ASC & ascendency, AMI $\times$ TSTp \\
+      OH & overhead \\
+      CAP& capacity \\
+      ASC.CAP& ascendency-to-capacity ratio (dimensionless)\\
+      OH.CAP& overhead-to-capacity ratio (dimensionless)\\
+      robustness & robustness of the network as in \citet{fath2014quantifying} \\
+      ELD & effective link density of the network \citet{ulanowicz2014}\\
+      TD & trophic depth of the network as in \citet{ulanowicz2014} \\
+      \hline
+    \end{tabularx}
+  \end{small}
+\end{table*}
+
+\subsection{Storage Analysis}
+
+Storage ENA was developed in the Patten School
+\citep{barber1978retrospective, barber1978markovian}.  It is similar
+to flow ENA, but divides the flows by storage (e.g., biomass) instead
+of throughflow.  Several papers provide an overview of this
+methodology \cite{fath99_review, gattie06, schramski11}.  Output of
+this function is summarized in Table~\ref{tab:storage}. What follows
+is an example of applying the storage analysis to the oyster reef
+model.
+
+\begin{Schunk}
+\begin{Sinput}
+> S <- enaStorage(oyster)
+> attributes(S)
+\end{Sinput}
+\begin{Soutput}
+$names
+ [1] "X"  "C"  "P"  "S"  "Q"  "CP" "PP" "SP" "QP" "dt" "ns"
+\end{Soutput}
+\begin{Sinput}
+> S$ns
+\end{Sinput}
+\begin{Soutput}
+          TSS       CIS         BSI         DSI       ISI     ID.S
+[1,] 3112.044 0.9940252 0.003331412 0.003320932 0.9933477 299.1171
+      ID.S.I   ID.S.O  HMG.S.O  HMG.S.I NAS NASP mode0.S  mode1.S
+[1,] 454.227 294.1527 1.115985 1.464503  20   21 10.3675 8.226261
+     mode2.S  mode3.S mode4.S
+[1,] 3093.45 8.226261 10.3675
+\end{Soutput}
+\end{Schunk}
+
+% STORAGE
+\begin{table*}[]
+  \caption{Matrices and graph-level network statistics returned by the \textit{enaR}
+    \texttt{enaStorage} function.}\label{tab:storage}
+  \center
+  \begin{small}
+    \begin{tabularx}{\textwidth}{l l}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      \multicolumn{2}{l}{\textit{Matrices}} \\
+      X & $n \times 1$ vector of storage values [M L$^{-2}$] \\
+      C & $n \times n$ donor-storage normalized output-oriented direct flow intensity matrix (T$^{-1}$)\\
+      P & $n \times n$ storage-normalized output-oriented direct flow matrix (dimensionless)\\
+      S & $n \times n$ donor-storage normalized output-oriented integral flow intensity matrix (T$^{-1}$)\\
+      Q & $n \times n$ output-oriented integral flow intensity matrix (dimensionless)\\
+      CP & $n \times n$ recipient-storage normalized input-oriented direct flow intensity matrix (T$^{-1}$)\\
+      PP & $n \times n$ storage-normalized input-oriented direct flow matrix (dimensionless)\\
+      SP & $n \times n$ donor-storage normalized input-oriented integral flow intensity matrix (T$^{-1}$)\\
+      QP & $n \times n$ input-oriented integral flow intensity matrix (dimensionless)\\
+      dt & discrete time step \\ [1ex]
+      \multicolumn{2}{l}{\textit{Network statistics}} \\
+      TSS & Total System Storage \\
+      CIS & Storage Cycling Index \\
+      BSI & Boundary Storage Intensity\\
+      DSI & Direct Storage Intensity \\
+      ISI & Indirect Storage Intensity \\
+      ID.S & Ratio of Indirect-to-Direct storage (realized) \\
+      ID.S.I & storage-based input-oriented indirect-to-direct ratio \citep[as in][]{fath06}\\
+      ID.S.O & storage-based input-oriented indirect-to-direct ratio \citep[as in][]{fath06}\\
+      HMG.S.I & input-oriented storage network homogenization \\
+      HMG.S.O & output-oriented storage network homogenization\\
+      AMP.S.I &  input-oriented storage network amplification \\
+      AMP.S.O & output-oriented storage network amplification \\
+      mode0.S & Storage from Boundary Flow \\
+      mode1.S & Storage from Internal First Passage Flow \\
+      mode2.S & Storage from Cycled Flow \\
+      mode3.S & Dissipative Equivalent to mode1.S \\
+      mode4.S & Dissipative Equivalent to mode0.S \\ \hline
+    \end{tabularx}
+\end{small}
+\end{table*}
+
+
+This storage analysis of the oyster reef model indicates that the
+total energy stored in the system on an average day is 3112 kcal
+m$^-2$, and that 99.3\% of this storage is generated by energy flowing
+over indirect pathways (ISI).
+
+\citet{whipple2014} provides a detailed example of applying storage
+analysis to characterize the dynamic organization of an ecosystem.
+They investigated how the storage analysis properties
+changed across sixteen consecutive seasonal N cycling models of the
+Neuse River Estuary.  They found that from this storage perspective
+NOx was the dominant compartment, and thus a primary controller of the
+system dynamics.  Note that this work provides an example of applying
+this analysis at multiple levels of analysis \citep[e.g.,][]{hines2014}.
+
+% ---
+\subsection{Utility Analysis}
+Utility analysis describes the relationship between node pairs in the
+ecosystem model when considering both direct and indirect
+interactions.  It developed in the Patten School \citep{patten91,
+  fath99_review} and is similar to yet distinct from the Ulanowicz
+School mixed trophic impacts analysis \citep{ulanowicz90}.  Utility
+analysis can be conducted from both the flow and storage perspectives,
+so the ``type'' argument needs to be set to suit the user's needs.
+This is again implemented as in NEA.m.  Table~\ref{tab:utility}
+summarizes the function output for the flow and storage
+versions. These analyses are executed as:
+
+\begin{Schunk}
+\begin{Sinput}
+> UF <- enaUtility(oyster, eigen.check=TRUE,type="flow")
+> US <- enaUtility(oyster, eigen.check=TRUE,type="storage")
+> attributes(UF)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "D"  "U"  "Y"  "ns"
+\end{Soutput}
+\end{Schunk}
+
+Please note the function argument ``eigen.check=TRUE''.  For this
+analysis to work, the power series of the direct utility matrices must
+converge, which is only true if the dominant eigenvalue of the direct
+utility matrix is less than 1. The function default prevents the
+analysis from being performed if this condition is not met. Users that
+wish to perform the analysis anyway can set ``eigen.check=FALSE''.  Care
+should be used when doing this, as the meaning of the underlying
+mathematics is uncertain.
+
+% Utility ---------------------------------
+\begin{table*}[t]
+  \caption{Matrices and graph-level network statistics returned by the \textit{enaR}
+    \texttt{enaUtility} function.}\label{tab:utility}                  %% Utility -> enaUtility function   ~Pawan
+\center
+\begin{small}
+  \begin{tabularx}{\textwidth}{l l}
+    \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+    \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
+    D$_{n\times n}$ & throughflow-normalized direct utility intensity (dimensionless)\\
+    U$_{n\times n}$ & integral flow utility (dimensionless) \\
+    Y$_{n\times n}$ & integral flow utility scaled by original throughflow (M L$^{-2 \textrm{ or } -3}$ T$^{-1}$)\\
+    DS$_{n\times n}$ & storage-normalized direct utility intensity (dimensionless)\\
+    US$_{n\times n}$ & integral storage utility (dimensionless) \\
+    YS$_{n\times n}$ & integral storage utility scaled by original throughflow (M L$^{-2  \textrm{ or }  -3}$ T$^{-1}$)\\ [1ex]
+    \multicolumn{2}{l}{\textit{Network Statistics}} \\[1ex]
+    lam1D & dominant eigenvalue of D\\
+    synergism.F & benefit-cost ratio or network synergism (flow)\\
+    mutualism.F & positive to negative interaction ratio or network mutualism (flow)\\
+    lam1DS & dominant eigenvalue of DS\\
+    synergism.S & benefit-cost ratio or network synergism (storage) \\
+    mutualism.S & positive to negative interaction ratio or network mutualism (storage)\\ \hline
+\end{tabularx}
+\end{small}
+\end{table*}
+
+\subsection{Environ Analysis}
+Environ Analysis finds the $n$ unit input and output environs
+for the model \citep{patten78,fath99_review}.  These unit environs are
+returned by the \textit{environ} function as in NEA.m.  They indicate the flow
+activity in each subnetwork generated by pulling a unit out of a node
+(input environs) or pushing a unit into a node (output environ). These
+unit environs can be converted into ``realized'' environs by
+multiplying each by the relevant observed input or output
+\citep{borrett11_ree, whipple07, whipple2014}.
+
+\begin{Schunk}
+\begin{Sinput}
+> E <- enaEnviron(oyster)
+> attributes(E)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "input"  "output"
+\end{Soutput}
+\begin{Sinput}
+> E$output[1]
+\end{Sinput}
+\begin{Soutput}
+$`Filter Feeders`
+                   Filter Feeders Microbiota   Meiofauna
+Filter Feeders                 -1  0.0000000  0.00000000
+Microbiota                      0 -0.1970605  0.02908126
+Meiofauna                       0  0.0000000 -0.20449723
+Deposit Feeders                 0  0.0000000  0.00000000
+Predators                       0  0.0000000  0.00000000
+Deposited Detritus              0  0.1970605  0.17541596
+z                               1  0.0000000  0.00000000
+                   Deposit Feeders    Predators Deposited Detritus
+Filter Feeders          0.00000000  0.012382445        0.380781288
+Microbiota              0.02908126  0.000000000        0.000000000
+Meiofauna               0.01593682  0.000000000        0.102249819
+Deposit Feeders        -0.06052568  0.004149988        0.045999518
+Predators               0.00000000 -0.016532433        0.007865927
+Deposited Detritus      0.01550760  0.000000000       -0.536896552
+z                       0.00000000  0.000000000        0.000000000
+                             y
+Filter Feeders     0.606836267
+Microbiota         0.138897999
+Meiofauna          0.086310586
+Deposit Feeders    0.010376176
+Predators          0.008666506
+Deposited Detritus 0.148912467
+z                  0.000000000
+\end{Soutput}
+\end{Schunk}
+
+The \texttt{TET} function returns vectors of the unit and realized
+input and output total environ throughflow.  The realized total
+environ throughflow is an environ based partition of the total system
+throughflow \citep{whipple07}.
+
+\begin{Schunk}
+\begin{Sinput}
+> tet <- TET(oyster)
+> show(tet)
+\end{Sinput}
+\begin{Soutput}
+$realized.input
+[1] 25.165000 22.647638 14.582798  2.028052  1.053786 18.107007
+
+$realized.output
+[1] 83.5833  0.0000  0.0000  0.0000  0.0000  0.0000
+
+$unit.input
+[1] 1.000000 3.931882 4.074090 4.713111 2.932069 2.931882
+
+$unit.output
+[1] 2.015512 1.836089 2.540670 3.124836 2.234317 2.594261
+\end{Soutput}
+\end{Schunk}
+
+The \texttt{TES} functions returns the both the realized and unit
+total environ storage for the input and output environs.  Again, the
+realized TES is a partition of the total system storage (TSS).
+
+\begin{Schunk}
+\begin{Sinput}
+> tes <- TES(oyster)
+> show(tes)
+\end{Sinput}
+\begin{Soutput}
+$realized.input
+    Filter Feeders         Microbiota          Meiofauna 
+        2000.00000            2.41209           24.12171 
+   Deposit Feeders          Predators Deposited Detritus 
+          16.27440           69.23803         1000.03118 
+
+$realized.output
+[1] 3112.044    0.000    0.000    0.000    0.000    0.000
+
+$unit.input
+    Filter Feeders         Microbiota          Meiofauna 
+       289.3658066          0.6561948          7.3735209 
+   Deposit Feeders          Predators Deposited Detritus 
+        11.5308112        109.7205293        265.1036470 
+
+$unit.output
+    Filter Feeders         Microbiota          Meiofauna 
+          75.04326           16.06273           41.03146 
+   Deposit Feeders          Predators Deposited Detritus 
+          65.81279          132.44451           66.11575 
+\end{Soutput}
+\end{Schunk}
+
+Realized TET and TES might be considered network centrality measures that
+indicate the relative importance of the environs in generating
+the observed flow or storage, respectively.
+
+\subsection{Control Analysis}
+
+%%%Pawan updates%%%%%%%%%%%%%%%%%%%%%%%Added details for Control Analysis ~Pawan
+
+Control analysis was implemented as in the NEA.m function,
+but we also include recent updates to control analysis
+\citep[e.g.,][]{schramski06, schramski07}.  In general, these analyses
+determine the pairwise control relationships between the nodes in the
+network.  Table~\ref{tab:control} summarizes the function output.
+
+\begin{Schunk}
+\begin{Sinput}
+> C <- enaControl(oyster)
+> attributes(C)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "CN" "CQ" "CR" "CD" "sc"
+\end{Soutput}
+\begin{Sinput}
+> C$sc
+\end{Sinput}
+\begin{Soutput}
+    Filter Feeders         Microbiota          Meiofauna 
+       0.120569086       -0.063395416       -0.042707703 
+   Deposit Feeders          Predators Deposited Detritus 
+       0.002631762       -0.069124796        0.052027067 
+\end{Soutput}
+\end{Schunk}
+
+The elements of the sc vector indicate the relative control exherted by each node on the system functioning.
+
+%%% The Outputs listed contain the Schramski Control results. ~Pawan
+% enaControl - Control Analysis ~Pawan
+\begin{table*}[t]
+  \caption{Matrices returned by the \textit{enaR}
+    \texttt{enaControl} function, which are based on
+    \citep{dame81, patten81, schramski06, schramski07}.} \label{tab:control}
+  \center
+  \begin{small}
+    \begin{tabularx}{\textwidth}{l p{10 cm}}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
+      CN$_{n \times n}$ & Control matrix using flow values \\                       % these have descriptions in the literature~Pawan
+      CQ$_{n \times n}$ & Control matrix using storage values \\
+      CR$_{n \times n}$ & Schramski's Control Ratio Matrix  \\            %% magnitude of control of $i$ over $j$ with a two component scale(dimensionless)
+      CD$_{n \times n}$ & Schramski's Control Difference Matrix \\  %% magnitude of control of $i$ over $j$ with a system-wide scale
+      sc$_{n \times 1}$ & Schramski's System Control vector \\ \hline %% control exhibited or received by $i$ with respect to the whole system
+\end{tabularx}
+\end{small}
+\end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Control Analysis Completed. ~Pawan.
+
+%% The flow control $\mathbf{CN}$ and storage control $\mathbf{CQ}$
+%% matrices are oriented column-to-row.
+
+\subsection{Mixed Trophic Impacts}
+Mixed Trophic Impacts is a popular analysis from the Ulanowicz School
+of ENA \citep{ulanowicz90}.  The \texttt{enaMTI} function generates
+comparable results to the calculations in \citet{ulanowicz90}.  These
+are implemented as follows; Table~\ref{tab:mti} summarizes the
+function output.
+
+\begin{Schunk}
+\begin{Sinput}
+> mti <- enaMTI(oyster)
+> attributes(mti)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "G"  "FP" "Q"  "M" 
+\end{Soutput}
+\begin{Sinput}
+> mti$M
+\end{Sinput}
+\begin{Soutput}
+[1] NA
+\end{Soutput}
+\end{Schunk}
+
+In this case, the power series of the direct trophic impacts matrix
+does not converge (dominant eigenvalue is greater than one).  Thus,
+the function returns the mti\$M = NA.  Like with Utility analysis,
+however, we can use the eigen.check argument to do the calculation
+despite the mathematical problem.
+
+\begin{Schunk}
+\begin{Sinput}
+> mti <- enaMTI(oyster,eigen.check=FALSE)
+> attributes(mti)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "G"  "FP" "Q"  "M" 
+\end{Soutput}
+\begin{Sinput}
+> mti$M
+\end{Sinput}
+\begin{Soutput}
+                   Filter Feeders  Microbiota    Meiofauna
+Filter Feeders      -0.0250635283  0.16956382  0.431493557
+Microbiota          -0.0015848556 -0.30675078 -0.182458391
+Meiofauna           -0.0001241781 -0.47413204 -0.070959618
+Deposit Feeders     -0.0069255188 -0.26769125 -0.007062628
+Predators           -0.0301817448  0.02000515 -0.004028911
+Deposited Detritus  -0.0034657973  0.21795628  0.612654910
+                   Deposit Feeders    Predators Deposited Detritus
+Filter Feeders          0.26144106  0.795834137        0.516016759
+Microbiota              0.20520368  0.050323410       -0.295378609
+Meiofauna               0.01607831  0.003942987       -0.001592286
+Deposit Feeders        -0.10329881  0.219903765        0.177109591
+Predators              -0.07586335 -0.041648786       -0.019939324
+Deposited Detritus      0.44874394  0.110048344       -0.251366300
+\end{Soutput}
+\end{Schunk}
+
+% enaMTI - Mixed Trophic Impacts
+\begin{table*}[t]
+  \caption{Matrices returned by the \textit{enaR}    %% Typo : Matricies -> Matrices ~Pawan
+    \texttt{enaMTI} function, which are based on \citep{ulanowicz90}.}\label{tab:mti}
+  \center
+  \begin{small}
+    \begin{tabularx}{\textwidth}{l l}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
+      G$_{n \times n}$ & positive effect of prey on its predator \\  % these have names in the literature
+      F$_{n \times n}$ & negative impact of the predator on its prey \\
+      Q$_{n \times n}$ & direct net impact of one node on another\\
+      M$_{n \times n}$ & total impact of $i$ on $j$ (direct and indirect) \\ \hline
+\end{tabularx}
+\end{small}
+\end{table*}
+
+The mixed trophic impacts analysis has been usefully applied to
+discover interesting and sometimes unexpected ecological
+relationships.  For example, although alligators directly eat frogs in
+the Florida Everglades (USA), it appears that their net relationship
+when considering the whole food web is actually mutualistic
+\citep{bondavalli99}.  This is in part because the alligators also eat
+other key predators of the frogs such as snakes.
+
+
+\subsection{Cycle Analysis}
+The Cycle Analysis provides the detailed account of the cycling
+present in the network. It follows the algorithm by the DOS-based
+NETWRK 4.2b software by Ulanowicz \citep{ulanowicz91, ulanowicz83} and
+provides results similar to NETWRK's `Full Cycle Analysis'.  Cycles in
+a network are grouped together into disjoint nexuses and each nexus is
+characterized by a weak arc. This function gives details of the
+individual cycles along with the disjoint nexuses present in the
+network.  Table~\ref{tab:cycle} summarizes the function output.
+
+%% SRB 5/29/2015 --> I wish we had a bit of text that motivates this
+%% analysis.  Why would someone do it?  Is there a clear example or
+%% two in the literature we could cite?
+
+
+%It returns the individual cycles present in the model distributed amongst
+%different nexuses based on a depth-first search to identify cycle arcs.
+%It also gives the distribution of flow into cycles of different lengths and                  %% Determine whether necessary ~Pawan
+ %separates the flows of the network into cyclic and acyclic components and
+ %calculates the cycling index based on the flow matrix.
+
+
+\begin{Schunk}
+\begin{Sinput}
+>   cyc <- enaCycle(oyster)
+> attributes(cyc)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "Table.cycle"      "Table.nexus"      "CycleDist"       
+[4] "NormDist"         "ResidualFlows"    "AggregatedCycles"
+[7] "ns"              
+\end{Soutput}
+\begin{Sinput}
+> ## The individual cycles
+> names(cyc$Table.cycle)
+\end{Sinput}
+\begin{Soutput}
+[1] "CYCLE" "NEXUS" "NODES"
+\end{Soutput}
+\begin{Sinput}
+> ## The disjoint nexuses
+> names(cyc$Table.nexus)
+\end{Sinput}
+\begin{Soutput}
+[1] "NEXUS"      "CYCLES"     "W.arc.From" "W.arc.To"   "W.arc.Flow"
+\end{Soutput}
+\end{Schunk}
+
+ %enaCycle - Full Cycle Analysis
+ \begin{table*}[t]
+  \caption{Data frames, matrices and graph-level network statistics returned by the \textit{enaR}    %%Data frames may be called tables ~Pawan
+    \texttt{enaCycle} function, which is based on \citep{ulanowicz83}.}\label{tab:cycle}
+  \center
+  \begin{small}
+    \begin{tabularx}{\textwidth}{l p{10 cm}}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      \multicolumn{2}{l}{\textit{Data frames}} \\[1ex]
+      Table.cycle & Data frame of cycles in the network. Up to 50
+      cycles are returned per nexus.  \\
+      Table.nexus & Data frame with details of the disjoint nexuses present in the network\\[1ex]
+      \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
+      CycleDist$_{n \times 1}$ & Vector of flows cycling in loops of
+      increasing length (i.e., 1, 2, ...). \\  % these have names in the literature
+      NormDist$_{n \times 1}$ & Vector of Cycle Distributions normalized by the total system throughput \\
+      ResidualFlows$_{n \times n}$ & Matrix of straight-through flows or the underlying acyclic graph\\
+      AggregatedCycles$_{n \times n}$ & Matrix of all the cycled flows or the underlying cyclic graph\\[1ex]
+      \multicolumn{2}{l}{\textit{Network Statistics}} \\[1ex]
+      NCYCS & Number of cycles detected in the network\\
+      NNEX & Number of disjoint nexuses detected in the network\\
+      CI & Cycling index of the network based on flow matrix\\ \hline
+\end{tabularx}
+\end{small}
+\end{table*}
+
+
+\subsection{Trophic Aggregations}
+The Trophic Aggregation algorithm identifies the trophic structure
+of the given network based on the Lindeman's trophic concepts
+\citep{lindeman42}. The algorithm is implemented as in NETWRK 4.2b
+by Ulanowicz \citep{ulanowicz1979trophic} and provides similar
+results as NETWRK's `Lindeman Trophic Aggregations' \citep{ulanowicz91}.
+It apportions the nodes into integer trophic levels and estimates the
+corresponding inputs, exports, respirations and the grazing chain and
+trophic spine which represent the transfers between integer trophic
+levels.  This analysis assumes that the ecosystem network model being
+analyzed represents a food web.
+
+It is crucial for this algorithm that the cycles among the living
+nodes of the network (Feeding Cycles) be removed beforehand to assign
+trophic levels to nodes. Thus, the output for this function contains
+the Cycle Analysis for the Feeding Cycles in the network.
+
+Following \citet{ulanowicz91}, the non-living nodes are grouped together for
+this analysis and referred to as the detrital pool.
+
+Table~\ref{tab:trophic} summarizes the function output except the outputs
+for the feeding cycles which are similar to the enaCycle outputs.
+
+
+\begin{Schunk}
+\begin{Sinput}
+> trop <- enaTroAgg(oyster)
+> attributes(trop)
+\end{Sinput}
+\begin{Soutput}
+$names
+ [1] "Feeding_Cycles" "A"              "ETL"            "CE"            
+ [5] "CR"             "GC"             "RDP"            "LS"            
+ [9] "TE"             "ns"            
+\end{Soutput}
+\begin{Sinput}
+> ## Cycle analysis output for Feeding Cycles
+> trop$Feeding_Cycles
+\end{Sinput}
+\begin{Soutput}
+$ResidualFlows
+                Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders               0          0     0.000          0.0000
+Microbiota                   0          0     1.206          1.2060
+Meiofauna                    0          0     0.000          0.6609
+Deposit Feeders              0          0     0.000          0.0000
+Predators                    0          0     0.000          0.0000
+                Predators
+Filter Feeders     0.5135
+Microbiota         0.0000
+Meiofauna          0.0000
+Deposit Feeders    0.1721
+Predators          0.0000
+\end{Soutput}
+\end{Schunk}
+
+ %enaTroAgg - Trohpic Aggregations
+ \begin{table*}[t]
+  \caption{Matrices and graph-level network statistics returned by the \textit{enaR}
+    \texttt{enaTroAgg} function, which are based on \citet{ulanowicz1979trophic}.}\label{tab:trophic}
+  \center
+  \begin{small}
+    \begin{tabularx}{\textwidth}{l p{10 cm}}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
+      A$_{nl \times nl}$ & Lindeman transformation matrix that apportions nodes to integer trophic levels \\  % define nl as no. of living nodes ~Pawan %%BUG%
+      ETL$_{n \times 1}$ & Vector of the effective trophic levels of different nodes \\
+      M.Flow$_{nl \times 1}$ & Migratory flows in living nodes (if present) \\
+      CI$_{n \times 1}$ & Vector of canonical inputs to integer trophic levels (if migratory flows present) \\
+      CE$_{n \times 1}$ & Canonical Exports. Vector of exports from Integer trophic levels \\
+      CR$_{n \times 1}$ & Canonical Respirations. Vector of respiration from Integer trophic levels \\
+      GC$_{nl \times 1}$ & Grazing Chain. Vector of inputs to Integer trophic levels from preceding level \\
+      RDP$_{nl \times 1}$ & Vector of returns from each level to the detrital pool \\
+      LS$_{nl \times 1}$ & Vector representing the Lindeman Spine \\
+      TE$_{nl \times 1}$ & Vector of the trophic efficiencies for integer trophic levels\\[1ex]
+      \multicolumn{2}{l}{\textit{Network Statistics}} \\[1ex]
+      Detritivory & Flow from the detrital pool (non-living nodes) to the second trophic level \\
+      DetritalInput & Exogenous inputs to the detrital pool \\
+      DetritalCirc & internal circulation within the detrital pool \\
+      NCYCS & number of feeding cycles removed from the network \\
+      NNEX & number of disjoint nexuses detected for the feeding cycles \\
+      CI & cycling index of the living component of the network based on flow matrix\\ \hline
+\end{tabularx}
+\end{small}
+\end{table*}
+
+
+% Added Control Analysis Updates, enaCycle and enaTroAgg details ~Pawan.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Other Analyses}
+There are a number of additional tools in the package.  Here selected
+a subset of these to highlight.
+
+\subsubsection{Quickly Return Multiple Analyses}
+There are two functions that aggregate multiple analyses and report
+selected results.  A quick way to get a list of the global network statistics reported in
+Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
+\texttt{get.ns} function.
+
+\begin{Schunk}
+\begin{Sinput}
+> ns <- get.ns(oyster)
+> ## Examine the structure of ns
+> str(ns)
+\end{Sinput}
+\begin{Soutput}
+'data.frame':	1 obs. of  65 variables:
+ $ n          : num 6
+ $ L          : num 12
+ $ C          : num 0.333
+ $ LD         : num 2
+ $ ppr        : num 2.15
+ $ lam1A      : num 2.15
+ $ mlam1A     : num 1
+ $ rho        : num 2.15
+ $ R          : num 0.466
+ $ d          : num 0.148
+ $ no.scc     : num 2
+ $ no.scc.big : num 1
+ $ pscc       : num 0.833
+ $ Boundary   : num 41.5
+ $ TST        : num 83.6
+ $ TSTp       : num 125
+ $ APL        : num 2.02
+ $ FCI        : num 0.11
+ $ BFI        : num 0.496
+ $ DFI        : num 0.195
+ $ IFI        : num 0.309
+ $ ID.F       : num 1.58
+ $ ID.F.I     : num 1.72
+ $ ID.F.O     : num 1.53
+ $ HMG.I      : num 2.05
+ $ HMG.O      : num 1.89
+ $ AMP.I      : num 3
+ $ AMP.O      : num 1
+ $ mode0.F    : num 41.5
+ $ mode1.F    : num 32.9
+ $ mode2.F    : num 9.21
+ $ mode3.F    : num 32.9
+ $ mode4.F    : num 41.5
+ $ AMI        : num 1.33
+ $ ASC        : num 166
+ $ OH         : num 211
+ $ CAP        : num 377
+ $ ASC.CAP    : num 0.441
+ $ OH.CAP     : num 0.559
+ $ robustness : num 0.361
+ $ ELD        : num 1.8
+ $ TD         : num 2.51
+ $ TSS        : num 3112
+ $ CIS        : num 0.994
+ $ BSI        : num 0.00333
+ $ DSI        : num 0.00332
+ $ ISI        : num 0.993
+ $ ID.S       : num 299
+ $ ID.S.I     : num 454
+ $ ID.S.O     : num 294
+ $ HMG.S.O    : num 1.12
+ $ HMG.S.I    : num 1.46
+ $ NAS        : num 20
+ $ NASP       : num 21
+ $ mode0.S    : num 10.4
+ $ mode1.S    : num 8.23
+ $ mode2.S    : num 3093
+ $ mode3.S    : num 8.23
+ $ mode4.S    : num 10.4
+ $ lam1D      : num 0.899
+ $ synergism.F: num 4.92
+ $ mutualism.F: num 2.27
+ $ lam1DS     : num 0.302
+ $ synergism.S: num 13.1
+ $ mutualism.S: num 2.6
+\end{Soutput}
+\end{Schunk}
+
+It is also possible to instantly return all of the main ENA output
+with \texttt{enaAll}:
+
+\begin{Schunk}
+\begin{Sinput}
+> oyster.ena <- enaAll(oyster)
+> names(oyster.ena)
+\end{Sinput}
+\begin{Soutput}
+[1] "ascendency" "control"    "environ"    "flow"       "mti"       
+[6] "storage"    "structure"  "utility"   
+\end{Soutput}
+\end{Schunk}
+
+\subsubsection{Centrality}
+Centrality analysis is a large topic in network science
+\citep{brandes05, wasserman1994}.  In general the goal is to describe the
+relative importance of parts of the networks (nodes, edges,
+environs). Many different types of centrality measures exist in
+network science \citep{freeman79, freeman1991centrality, borgatti06,
+  brandes05}.  Environ centrality is unique to ENA
+\citep{fann12_ec}, but like eigenvector centrality, it is a degree-based
+centrality measure that considers the equilibrium effect of all
+pathways of all lengths in the system and as such can be classified as
+a global centrality measure.   Both of these
+centralities can be calculated in \textit{enaR} as follows:
+
+\begin{Schunk}
+\begin{Sinput}
+> F <- enaFlow(oyster)
+> ec <- environCentrality(F$N)
+> show(ec)
+\end{Sinput}
+\begin{Soutput}
+$ECin
+    Filter Feeders         Microbiota          Meiofauna 
+         0.1404961          0.1279889          0.1771034 
+   Deposit Feeders          Predators Deposited Detritus 
+         0.2178241          0.1557484          0.1808391 
+
+$ECout
+    Filter Feeders         Microbiota          Meiofauna 
+        0.06970737         0.19108709         0.20595483 
+   Deposit Feeders          Predators Deposited Detritus 
+        0.12350944         0.07903903         0.33070223 
+
+$AEC
+    Filter Feeders         Microbiota          Meiofauna 
+         0.1051017          0.1595380          0.1915291 
+   Deposit Feeders          Predators Deposited Detritus 
+         0.1706668          0.1173937          0.2557707 
+\end{Soutput}
+\begin{Sinput}
+> eigenCentrality(F$G)
+\end{Sinput}
+\begin{Soutput}
+$EVCin
+[1] 0.1207568 0.1093625 0.1876329 0.2518905 0.1470501 0.1833072
+
+$EVCout
+[1] 0.00000000 0.23325048 0.26566843 0.11130122 0.01286707 0.37691280
+
+$AEVC
+[1] 0.06037842 0.17130647 0.22665067 0.18159586 0.07995858 0.28011000
+\end{Soutput}
+\end{Schunk}
+
+These centrality values have been normalized to sum to
+one.  In addition, the throughflow vector from flow analysis
+\citep{borrett13}, the total environ throughflow,
+and total environ storage vectors might also be
+considered centrality metrics \citep{whipple07, whipple2014}.
+ Figure~\ref{fig:aec} shows one way to visualize the Average
+Environ and Throughflow Centralities.
+
+
+\begin{Schunk}
+\begin{Sinput}
+> ## Set plotting parameters
+> opar <- par(las=1,mfrow=c(1,2),mar=c(7,5,1,1),xpd=TRUE,bg="white")
+> ## Find centrality order
+> o <- order(ec$AEC,decreasing=TRUE)
+> ## Creating a barplot
+> bp <- barplot(ec$AEC[o],
++                names.arg=NA,
++                ylab="Average Environ Centrality",
++                col="black",border=NA)
+> ## Adding labels
+> text(bp,-0.008,
++       labels=names(ec$AEC)[o],
++       srt=35,adj=1,cex=1)
+> # throughflow centrality
+> T <- enaFlow(oyster)$T
+> o <- order(T,decreasing=TRUE)
+> bp2 <- barplot(T[o],
++                 names.arg=NA,
++                 ylab=expression(paste("Throughflow (kcal m"^-2, " y"^-1,")")),
++                 col="black", border=NA)
+> text(bp2,-1,
++       labels=names(T)[o],
++       srt=35,adj=1,cex=1)
+> ## Remove the plotting parameters
+>  rm(opar)
+\end{Sinput}
+\end{Schunk}
+
+\begin{figure}
+  \center
+\includegraphics{enaR-vignette-042}
+\caption{Bar plots of the Oyster Reef model Average Environ
+  Centralities (left) and Throughflow Centralities (right).} \label{fig:aec}
+\end{figure}
+
+
+\subsection{Output Orientation}  \label{sec:orient}
+
+To facilitate package use by the existing ENA community, some of which
+use the column-to-row orientation (e.g. the Patten School), we have
+created orientation functions that enable the user to set the expected
+output orientation for functions written in a particular ``school'' of
+analysis. Thus, functions from either school will receive network
+models with the standard row-to-column, but will return output with
+flow matrices oriented in the column-to-row orientation when
+appropriate (i.e. Patten school functions) and return them in that
+same orientation.
+
+Here is an example of how to use the model orientation functions to
+re-orient the output from \texttt{enaFlow}:
+
+\begin{Schunk}
+\begin{Sinput}
+> ## Check the current orientation
+> get.orient()
+\end{Sinput}
+\begin{Soutput}
+[1] "rc"
+\end{Soutput}
+\begin{Sinput}
+> ## enaFlow output in row-column
+> flow.rc <- enaFlow(oyster)$G
+> ## Set the global orientation to school
+> set.orient('school')
+> ## Check that it worked
+> get.orient()
+\end{Sinput}
+\begin{Soutput}
+[1] "school"
+\end{Soutput}
+\begin{Sinput}
+> ## enaFlow output in column-row
+> flow.cr <- enaFlow(oyster)$G
+> ## Check. Outputs should be transposed from each other.
+> all(flow.rc == flow.cr)
+\end{Sinput}
+\begin{Soutput}
+[1] FALSE
+\end{Soutput}
+\begin{Sinput}
+> all(flow.rc == t(flow.cr))
+\end{Sinput}
+\begin{Soutput}
+[1] TRUE
+\end{Soutput}
+\begin{Sinput}
+> ## Now change back to the default orientation ('rc')
+> set.orient('rc')
+\end{Sinput}
+\end{Schunk}
+
+Matrix powers -- raising a matrix to a power is not a native operation
+in \R\ .  Thus, the \textit{enaR} package includes a function
+\texttt{mExp} to facilitate this matrix operation commonly used in ENA.
+
+\begin{Schunk}
+\begin{Sinput}
+> mExp(F$G,2)
+\end{Sinput}
+\begin{Soutput}
+                   Filter Feeders Microbiota  Meiofauna Deposit Feeders
+Filter Feeders                  0  0.1397606 0.12440966      0.01099840
+Microbiota                      0  0.0000000 0.00000000      0.01150080
+Meiofauna                       0  0.1835203 0.16336297      0.01444205
+Deposit Feeders                 0  0.2789476 0.24830879      0.02195166
+Predators                       0  0.1746313 0.15545033      0.01374254
+Deposited Detritus              0  0.0000000 0.05416549      0.07962750
+                     Predators Deposited Detritus
+Filter Feeders     0.000000000        0.005891414
+Microbiota         0.010118608        0.185945731
+Meiofauna          0.005343446        0.059228112
+Deposit Feeders    0.000000000        0.032622730
+Predators          0.000000000        0.000000000
+Deposited Detritus 0.001980437        0.185314635
+\end{Soutput}
+\end{Schunk}
+
+\section{Multi-Model Analyses (Batch Processing)}
+
+While many investigators analyze single models, much of ENA is used to
+compare ecosystem models \cite[e.g.,][]{baird91, vanoevelen2006carbon,
+christian03, niquil2012physical, hines15}.  Investigators have also
+analyzed large sets of models to determine the generality of
+hypothesized ecosystem properties \citep[e.g.,][]{christensen95,
+borrett10_hmg, salas11_did}.  For both of these applications,
+investigators need to analyze multiple models.  One advantage of the
+\textit{enaR} \R\ package is that it simplifies this batch processing.
+Here we illustrate how to batch analyze a selection of models.
+
+Our first step is to build an \R\ list data object with ecosystem
+network models to batch analyze as the elements of the list.  To
+illustrate batch processing, we will use a subset of the trophic models
+distributed with \textit{enaR}, which are already stored as a list.
+
+\begin{Schunk}
+\begin{Sinput}
+> data(troModels)
+\end{Sinput}
+\end{Schunk}
+
+Now that we have the models loaded, we can start to manipulate them.
+Once we have balanced the models, we can run the flow analysis on
+them.  We are using the \texttt{lapply} function to iterate the
+analysis across the list of models stored in model.list. This approach
+is more compact and computationally efficient than a using for-loop.
+
+%%%Working on pairing down the balancing example run time
+
+\begin{Schunk}
+\begin{Sinput}
+> # balance models as necessary
+> m.list <- lapply(troModels[1:10],balance)
+\end{Sinput}
+\begin{Soutput}
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+[1] BALANCED
+\end{Soutput}
+\begin{Sinput}
+> # check that models are balanced
+> unlist(lapply(m.list,ssCheck))
+\end{Sinput}
+\begin{Soutput}
+Marine Coprophagy (oyster)              Lake Findley  
+                      TRUE                       TRUE 
+               Mirror Lake                Lake Wingra 
+                      TRUE                       TRUE 
+               Marion Lake               Cone Springs 
+                      TRUE                       TRUE 
+            Silver Springs            English Channel 
+                      TRUE                       TRUE 
+              Oyster Reef               Baie de Somme 
+                      TRUE                       TRUE 
+\end{Soutput}
+\begin{Sinput}
+> ## If balancing fails, you can use force.balance
+> ## to repeatedly apply the balancing procedure
+> ## although this is not the case with our model set
+> 
+> m.list <- lapply(m.list,force.balance)
+> ## Check that all the models are balanced
+> all(unlist(lapply(m.list,ssCheck)))
+\end{Sinput}
+\begin{Soutput}
+[1] TRUE
+\end{Soutput}
+\begin{Sinput}
+> ## Example Flow Analysis
+> F.list <- lapply(m.list, enaFlow)
+> ## The full results of the flow analysis is now stored in the elements
+> ## of the F.list.  To get the results for just the first model:
+> F.list[[1]]
+\end{Sinput}
+\begin{Soutput}
+$T
+                  SHRIMP        BENTHIC ORGANISMS 
+                   124.1                    323.7 
+ SHRIMP FECES & BACTERIA BENTHIC FECES & BACTERIA 
+                    21.9                     79.6 
+
+$G
+                         SHRIMP BENTHIC ORGANISMS
+SHRIMP                        0         0.0000000
+BENTHIC ORGANISMS             0         0.0000000
+SHRIMP FECES & BACTERIA       0         0.6986301
+BENTHIC FECES & BACTERIA      0         0.6645729
+                         SHRIMP FECES & BACTERIA
+SHRIMP                                 0.1764706
+BENTHIC ORGANISMS                      0.0000000
+SHRIMP FECES & BACTERIA                0.0000000
+BENTHIC FECES & BACTERIA               0.0000000
+                         BENTHIC FECES & BACTERIA
+SHRIMP                                  0.0000000
+BENTHIC ORGANISMS                       0.2459067
+SHRIMP FECES & BACTERIA                 0.0000000
+BENTHIC FECES & BACTERIA                0.0000000
+
+$GP
+                         SHRIMP BENTHIC ORGANISMS
+SHRIMP                        0        0.00000000
+BENTHIC ORGANISMS             0        0.00000000
+SHRIMP FECES & BACTERIA       0        0.04726599
+BENTHIC FECES & BACTERIA      0        0.16342292
+                         SHRIMP FECES & BACTERIA
+SHRIMP                                         1
+BENTHIC ORGANISMS                              0
+SHRIMP FECES & BACTERIA                        0
+BENTHIC FECES & BACTERIA                       0
+                         BENTHIC FECES & BACTERIA
+SHRIMP                                          0
+BENTHIC ORGANISMS                               1
+SHRIMP FECES & BACTERIA                         0
+BENTHIC FECES & BACTERIA                        0
+
+$N
+                         SHRIMP BENTHIC ORGANISMS
+SHRIMP                        1         0.1473716
+BENTHIC ORGANISMS             0         1.1953471
+SHRIMP FECES & BACTERIA       0         0.8351055
+BENTHIC FECES & BACTERIA      0         0.7943953
+                         SHRIMP FECES & BACTERIA
+SHRIMP                                 0.1764706
+BENTHIC ORGANISMS                      0.0000000
+SHRIMP FECES & BACTERIA                1.0000000
+BENTHIC FECES & BACTERIA               0.0000000
+                         BENTHIC FECES & BACTERIA
+SHRIMP                                 0.03623966
+BENTHIC ORGANISMS                      0.29394387
+SHRIMP FECES & BACTERIA                0.20535805
+BENTHIC FECES & BACTERIA               1.19534712
+
+$NP
+                         SHRIMP BENTHIC ORGANISMS
+SHRIMP                        1        0.05649926
+BENTHIC ORGANISMS             0        1.19534712
+SHRIMP FECES & BACTERIA       0        0.05649926
+BENTHIC FECES & BACTERIA      0        0.19534712
+                         SHRIMP FECES & BACTERIA
+SHRIMP                                         1
+BENTHIC ORGANISMS                              0
+SHRIMP FECES & BACTERIA                        1
+BENTHIC FECES & BACTERIA                       0
+                         BENTHIC FECES & BACTERIA
+SHRIMP                                 0.05649926
+BENTHIC ORGANISMS                      1.19534712
+SHRIMP FECES & BACTERIA                0.05649926
+BENTHIC FECES & BACTERIA               1.19534712
+
+$ns
+     Boundary   TST  TSTp     APL       FCI       BFI       DFI
+[1,]    379.6 549.3 928.9 1.44705 0.1199863 0.6910614 0.1542493
+           IFI     ID.F    ID.F.I    ID.F.O    HMG.I    HMG.O AMP.I
+[1,] 0.1546893 1.002852 0.3603839 0.6126851 2.014161 1.891504     1
+     AMP.O mode0.F  mode1.F  mode2.F  mode3.F mode4.F
+[1,]     0   379.6 103.7915 65.90846 103.7915   379.6
+\end{Soutput}
+\end{Schunk}
+
+We can use the same technique to extract specific information, like
+just the ratio of Indirect-to-Direct flow for each model.
+
+
+\begin{Schunk}
+\begin{Sinput}
+> ## Example of extracting just specific information - Indirect Effects Ratio
+> IDs <- unlist(lapply(m.list, function(x) enaFlow(x)$ns[9]))
+> ## Look at the first few ID's
+> head(IDs)
+\end{Sinput}
+\begin{Soutput}
+Marine Coprophagy (oyster)              Lake Findley  
+                  1.002852                   1.723221 
+               Mirror Lake                Lake Wingra 
+                  1.861121                   1.861719 
+               Marion Lake               Cone Springs 
+                  2.175878                   1.023016 
+\end{Soutput}
+\end{Schunk}
+
+We can also collect the set of output-oriented integral flow matrices.
+\begin{Schunk}
+\begin{Sinput}
+> ## Here is a list containing only the
+> ## output-oriented integral flow matrices
+> N.list <- lapply(m.list,function(x) enaFlow(x)$N)
+\end{Sinput}
+\end{Schunk}
+
+We can also apply the \texttt{get.ns} function to extract all of the
+network statistics for each model.  We then use the \texttt{do.call}
+function to reshape the network statistics into a single data frame.
+
+\begin{Schunk}
+\begin{Sinput}
+> ## Collecting and combining all network statistics
+> ns.list <- lapply(m.list,get.ns) # returns as list
+> ns <- do.call(rbind,ns.list)  # ns as a data.frame
+> ## Let's take a quick look at some of the output
+> colnames(ns)    # return network statistic names.
+\end{Sinput}
+\begin{Soutput}
+ [1] "n"           "L"           "C"           "LD"         
+ [5] "ppr"         "lam1A"       "mlam1A"      "rho"        
+ [9] "R"           "d"           "no.scc"      "no.scc.big" 
+[13] "pscc"        "Boundary"    "TST"         "TSTp"       
+[17] "APL"         "FCI"         "BFI"         "DFI"        
+[21] "IFI"         "ID.F"        "ID.F.I"      "ID.F.O"     
+[25] "HMG.I"       "HMG.O"       "AMP.I"       "AMP.O"      
+[29] "mode0.F"     "mode1.F"     "mode2.F"     "mode3.F"    
+[33] "mode4.F"     "AMI"         "ASC"         "OH"         
+[37] "CAP"         "ASC.CAP"     "OH.CAP"      "robustness" 
+[41] "ELD"         "TD"          "TSS"         "CIS"        
+[45] "BSI"         "DSI"         "ISI"         "ID.S"       
+[49] "ID.S.I"      "ID.S.O"      "HMG.S.O"     "HMG.S.I"    
+[53] "NAS"         "NASP"        "mode0.S"     "mode1.S"    
+[57] "mode2.S"     "mode3.S"     "mode4.S"     "lam1D"      
+[61] "synergism.F" "mutualism.F" "lam1DS"      "synergism.S"
+[65] "mutualism.S"
+\end{Soutput}
+\begin{Sinput}
+> dim(ns)         # show dimensions of ns matrix
+\end{Sinput}
+\begin{Soutput}
+[1] 74 65
+\end{Soutput}
+\begin{Sinput}
+> ns[1:5,1:5]     # show selected results
+\end{Sinput}
+\begin{Soutput}
+                           n  L     C  LD      ppr
+Marine Coprophagy (oyster) 4  4 0.250 1.0 1.000000
+Lake Findley               4  6 0.375 1.5 1.004975
+Mirror Lake                5  9 0.360 1.8 1.324718
+Lake Wingra                5 10 0.400 2.0 2.000000
+Marion Lake                5  9 0.360 1.8 1.324718
+\end{Soutput}
+\end{Schunk}
+
+Given this data frame of network statistics, we can construct
+interesting plots for further analysis. Here we focus on results of
+the St.\ Marks Seagrass ecosystem \citep{baird98}.
+
+
+\begin{Schunk}
+\begin{Sinput}
+> opar <- par(las=1,mar=c(9,7,2,1),xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
+> ## Number of models
+> x=dim(ns)[1]
+> m.select <- 26:31
+> bp=barplot(ns$ID.F[m.select],ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
++          col="darkgreen",border=NA,ylim=c(0,2))
+> ## Add labels
+> text(bp,-0.05,
++       labels=rownames(ns)[m.select],
++         srt=45,adj=1,cex=0.85)
+> opar <- par(xpd=FALSE)
+> abline(h=1,col="orange",lwd=2)
+> #
+> plot(ns$FCI,ns$ID.F,pch=20,col="blue",cex=2,
++       ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
++       xlab="Finn Cycling Index (FCI)",
++       xlim=c(0,0.8),ylim=c(0,8))
+> ## Remove the plotting parameters
+> rm(opar)
+\end{Sinput}
+\end{Schunk}
+
+
+\begin{figure}
+  \center
+\includegraphics{enaR-vignette-052}
+\caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
+  (left) and relationship between the Finn Cycling Index and the ratio
+  of Indirect-to-Direct flow in the 74 ecosysetm models.} \label{fig:idf}
+\end{figure}
+
+A strength of this software is the ease with which users can apply ENA
+to multiple models.  We expect that this will simplify users'
+analytic workflows and reduce the time required to conduct the work.
+
+%%Conclusion
+%%1.Connecting to other packages
+%%2.Future directions
+%%3.Contributing
+
+\section{Connecting to Other Useful Packages}
+Another advantage of building the \textit{enaR} package in \R\ is that
+it lets ecologists take advantage of other types of network analysis
+and statistical tools that already exist in \R.  We highlight three
+examples here.
+
+\subsection{network}
+\textit{enaR} uses the network data object introduced in the
+\textit{network} package \citep{butts08_network}.  One advantage of
+using this data object is that analysts can then use the tools for
+network construction and manipulation that are part of the
+\textit{network} package.  For example, \textit{network} can import
+network models from Pajek project files, which is another widely used
+network modeling and analysis software \citep{batajel07}.  The package
+also includes functions to seamlessly add and delete nodes (edges).
+It also provides the capability to visualize the network shown previously.
+
+\subsection{sna: Social Network Analysis}
+The \textit{sna} package for Social Network Analysis is bundled in the
+\textit{statnet} package and uses the same network data object defined
+in \textit{network}.  Thus, the design decision to use the network
+data object gives users direct access to \textit{sna} tools.
+
+As an example, the \textit{sna} package provides a way of calculating
+several common centrality measures.  Thus, ecologists can now use the
+\textit{sna} algorithms to determine different types of centrality for their
+models.  This includes betweenness and closeness centrality as follows:
+
+\begin{Schunk}
+\begin{Sinput}
+> betweenness(oyster)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.0 0.0 0.5 3.5 0.0 9.0
+\end{Soutput}
+\begin{Sinput}
+> closeness(oyster)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.625 0.000 0.000 0.000 0.000 0.000
+\end{Soutput}
+\end{Schunk}
+
+The \textit{sna} package introduced new graphical capabilities as
+well. For example, it will create a target diagram to visualize the
+centralities (Figure~\ref{fig:target}).
+%%\afterpage{\clearpage}
+
+\begin{Schunk}
+\begin{Sinput}
+> m <- m.list[[17]]  # Okefenokee Food Web
+> ## Calculate betweenness centrality
+> b <- betweenness(m)
+> ## Get vertex names
+> nms <- m%v%'vertex.names'
+> show(nms)
+\end{Sinput}
+\begin{Soutput}
+ [1] "Peat decomposers"                           
+ [2] "Detritus decomposers"                       
+ [3] "Nitrogen fixing and nitrifying bacteria"    
+ [4] "Autotrophic macrophytes"                    
+ [5] "Carnivorous macrophytes"                    
+ [6] "Phytoplankton"                              
+ [7] "Periphyton"                                 
+ [8] "Filamentous algae"                          
+ [9] "Herbivorous microinvertebrates"             
+[10] "Predaceaous microinvertebrates"             
+[11] "Saprotrophic microinvertebrates"            
+[12] "Algae-eating macroinvertebrates"            
+[13] "Macrophyte-eating macroinvertebrates"       
+[14] "Microinvertebrate-eating macroinvertebrates"
+[15] "Macroinvertebrate-eating macroinvertebrates"
+[16] "Vertebrate-eating macroinvertebrates"       
+[17] "Saprotrophic macroinvertebrates"            
+[18] "Algae-eating vertebrates"                   
+[19] "Macrophyte-eating vertebrates"              
+[20] "Microinvertebrate-eating vertebrates"       
+[21] "Macroinvertebrate-eating vertebrates"       
+[22] "Vertebrate-eating vertebrates"              
+[23] "Saprotrophic vertebrates"                   
+[24] "Superficial peat"                           
+[25] "Non-peat detritus"                          
+[26] "Nutrients"                                  
+\end{Soutput}
+\begin{Sinput}
+> ## Exclude less central node names
+> nms[b<=(0.1*max(b))] <- NA
+> set.seed(2)
+> opar <- par(xpd=TRUE,mfrow=c(1,1))
+> ## Create target plot showing only
+> ## labels of most central nodes
+> gplot.target(m,b,
++               circ.lab=FALSE,
++               edge.col="grey",
++               label=nms)
+> ## Remove plot settings
+> rm(opar)
+\end{Sinput}
+\end{Schunk}
+
+\begin{figure}[!htbp]
+  \center
+\begin{Schunk}
+\begin{Soutput}
+ [1] "Peat decomposers"                           
+ [2] "Detritus decomposers"                       
+ [3] "Nitrogen fixing and nitrifying bacteria"    
+ [4] "Autotrophic macrophytes"                    
+ [5] "Carnivorous macrophytes"                    
+ [6] "Phytoplankton"                              
+ [7] "Periphyton"                                 
+ [8] "Filamentous algae"                          
+ [9] "Herbivorous microinvertebrates"             
+[10] "Predaceaous microinvertebrates"             
+[11] "Saprotrophic microinvertebrates"            
+[12] "Algae-eating macroinvertebrates"            
+[13] "Macrophyte-eating macroinvertebrates"       
+[14] "Microinvertebrate-eating macroinvertebrates"
+[15] "Macroinvertebrate-eating macroinvertebrates"
+[16] "Vertebrate-eating macroinvertebrates"       
+[17] "Saprotrophic macroinvertebrates"            
+[18] "Algae-eating vertebrates"                   
+[19] "Macrophyte-eating vertebrates"              
+[20] "Microinvertebrate-eating vertebrates"       
+[21] "Macroinvertebrate-eating vertebrates"       
+[22] "Vertebrate-eating vertebrates"              
+[23] "Saprotrophic vertebrates"                   
+[24] "Superficial peat"                           
+[25] "Non-peat detritus"                          
+[26] "Nutrients"                                  
+\end{Soutput}
+\end{Schunk}
+\includegraphics{enaR-vignette-055}
+\caption{Target plot of node betweenness centrality for the Okefenokee
+  Swamp trophic model.} \label{fig:target}
+\end{figure}
+
+
+In addition to the node-level measures, \textit{sna} includes graph-level
+indices.
+
+\begin{Schunk}
+\begin{Sinput}
+> centralization(oyster, degree)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.45
+\end{Soutput}
+\begin{Sinput}
+> centralization(oyster,closeness)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.75
+\end{Soutput}
+\begin{Sinput}
+> centralization(oyster,betweenness)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.41
+\end{Soutput}
+\end{Schunk}
+
+%%\afterpage{\clearpage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{iGraph}
+The \textit{iGraph} package can also be useful for analyzing network
+data.  Here are a few examples of using the package.  Note that some
+functions in \textit{iGraph} conflict with other functions already defined, so
+care is required when using \textit{iGraph}.
+
+\begin{Schunk}
+\begin{Sinput}
+> library(igraph)
+> ## The adjacency matrix
+> A <- St$A
+> ## Creating an iGraph graph
+> g <- graph.adjacency(A)
+> plot(g)
+\end{Sinput}
+\end{Schunk}
+
+\textit{iGraph} has a different set of visualization tools and
+generates a different looking graph (Fig.~\ref{fig:igraph}).
+
+\begin{figure}
+\center
+\includegraphics{enaR-vignette-058}
+\caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
+\end{figure}
+
+\begin{Schunk}
+\begin{Sinput}
+> ## Betweenness centrality (calculated by iGraph and sna)
+> betweenness(g)
+\end{Sinput}
+\begin{Soutput}
+    Filter Feeders         Microbiota          Meiofauna 
+               0.0                0.0                0.5 
+   Deposit Feeders          Predators Deposited Detritus 
+               3.5                0.0                9.0 
+\end{Soutput}
+\begin{Sinput}
+> ## Shortest path between any two nodes
+> shortest.paths(g)
+\end{Sinput}
+\begin{Soutput}
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0          2         2               2
+Microbiota                      2          0         1               1
+Meiofauna                       2          1         0               1
+Deposit Feeders                 2          1         1               0
+Predators                       1          2         2               1
+Deposited Detritus              1          1         1               1
+                   Predators Deposited Detritus
+Filter Feeders             1                  1
+Microbiota                 2                  1
+Meiofauna                  2                  1
+Deposit Feeders            1                  1
+Predators                  0                  1
+Deposited Detritus         1                  0
+\end{Soutput}
+\begin{Sinput}
+> ## Average path length in the network (graph theory sense)
+> average.path.length(g,directed=TRUE)
+\end{Sinput}
+\begin{Soutput}
+[1] 1.52
+\end{Soutput}
+\begin{Sinput}
+> ## Diameter of the graph
+> diameter(g)
+\end{Sinput}
+\begin{Soutput}
+[1] 2
+\end{Soutput}
+\begin{Sinput}
+> ## Connectivity of the group and sub-components
+> vertex.connectivity(g)  # connectivity of a graph (group cohesion)
+\end{Sinput}
+\begin{Soutput}
+[1] 0
+\end{Soutput}
+\begin{Sinput}
+> subcomponent(g,1,'in')  # subcomponent reachable from 1 along inputs
+\end{Sinput}
+\begin{Soutput}
++ 1/6 vertex, named:
+[1] Filter Feeders
+\end{Soutput}
+\begin{Sinput}
+> subcomponent(g,2,'in')  # subcomponent reachable from 2 along inputs
+\end{Sinput}
+\begin{Soutput}
++ 6/6 vertices, named:
+[1] Microbiota         Deposited Detritus Filter Feeders    
+[4] Meiofauna          Deposit Feeders    Predators         
+\end{Soutput}
+\begin{Sinput}
+> subcomponent(g,1,'out') # subcomponent reachable from 1 along outputs
+\end{Sinput}
+\begin{Soutput}
++ 6/6 vertices, named:
+[1] Filter Feeders     Predators          Deposited Detritus
+[4] Microbiota         Meiofauna          Deposit Feeders   
+\end{Soutput}
+\begin{Sinput}
+> subcomponent(g,2,'out') # subcomponent reachable from 2 along output
+\end{Sinput}
+\begin{Soutput}
++ 5/6 vertices, named:
+[1] Microbiota         Meiofauna          Deposit Feeders   
+[4] Deposited Detritus Predators         
+\end{Soutput}
+\begin{Sinput}
+> edge.connectivity(g)
+\end{Sinput}
+\begin{Soutput}
+[1] 0
+\end{Soutput}
+\begin{Sinput}
+> ## Detach igraph package
+> detach(package:igraph)
+\end{Sinput}
+\end{Schunk}
+
+\subsection{EcoNet}
+
+The \textit{EcoNet} software is an online, web-interface that provides
+a tool box for dynamic modeling and ENA analytics \citep{kazanci07}. We
+have provided a write function that enables \textit{enaR} users to
+output models for easy input into the \textit{EcoNet} interface. The
+\textit{EcoNet} package and details on the model input syntax can be
+found at \url{http://eco.engr.uga.edu}. Here is an example of how to
+use the \texttt{write.EcoNet} function in \textit{enaR} in your
+current working directory:
+
+\begin{Schunk}
+\begin{Sinput}
+> data(oyster)
+> write.EcoNet(oyster,file='oyster.txt',mn='oyster_model')
+\end{Sinput}
+\end{Schunk}
+
+
+\section{Conclusion}
+
+These examples show how to use the key features of the \textit{enaR}
+package that enables scientists to perform Ecosystem Network Analysis
+in \R.  The vision for this package is that it provides access to ENA
+algorithms from both the Ulanowicz and Patten Schools to facilitate
+theoretical synthesis and broader application.  In its current form it
+replicates, updates, and extends the functionality of the NEA.m
+function \citep{fath06} and replicates much of the main analyses in NETWRK
+\citep{ulanowicz91}.  Through the connections that \textit{enaR}
+provides to other \R\ packages users can connect to other network
+analyses provided by packages, such as \textit{sna} and
+\textit{iGraph}. There are other \R\ packages that have graph and
+network analysis tools, like \textit{Bioconductor}, \textit{WGCNA},
+\textit{tnet} and \textit{rmangal}, that might also be useful for
+ecologists.  Our aim is for \textit{enaR} to serve as a nexus for the
+introduction of analyses from the broader field of network theory into
+ecology. In addition, we would like to invite users to connect,
+collaborate and contribute to development of ENA theory and
+\textit{enaR}. Programmers that are interested can visit
+\url{https://github.com/SEELab/enaR_development} for more information
+on how to contribute to development of the \textit{enaR} package.
+
+\bibliography{jss_abb,jss}
+
+\end{document}
