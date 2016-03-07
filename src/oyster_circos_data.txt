@@ -1,7 +1,0 @@
-"" "FilterFeeders" "Microbiota" "Meiofauna" "DepositFeeders" "Predators" "DepositedDetritus"
-"FilterFeeders" 0 0 0 0 0.5135 15.791
-"Microbiota" 0 0 1.206 1.206 0 0
-"Meiofauna" 0 0 0 0.6609 0 4.2403
-"DepositFeeders" 0 0 0 0 0.1721 1.9076
-"Predators" 0 0 0 0 0 0.3262
-"DepositedDetritus" 0 8.1721 7.2745 0.6431 0 0
