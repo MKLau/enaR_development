@@ -1,0 +1,93 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fnil\fcharset0 Monaco;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red2\green0\blue138;\red160\green0\blue0;\red0\green29\blue131;
+}
+\margl1440\margr1440\vieww14280\viewh17460\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\tx7280\tx7840\tx8400\tx8960\tx9520\tx10080\tx10640\tx11200\tx11760\tx12320\tx12880\tx13440\tx14000\tx14560\tx15120\tx15680\tx16240\tx16800\tx17360\tx17920\tx18480\tx19040\tx19600\tx20160\tx20720\tx21280\tx21840\tx22400\tx22960\tx23520\tx24080\tx24640\tx25200\tx25760\tx26320\tx26880\tx27440\tx28000\tx28560\tx29120\tx29680\tx30240\tx30800\tx31360\tx31920\tx32480\tx33040\tx33600\tx34160\tx34720\tx35280\tx35840\li80\fi-80\pardirnatural
+
+\f0\fs22 \cf2 require(\cf0 LIM\cf2 )\
+\cf0 web.lim\cf2  <- Setup(\cf3 "GreatLakesN3.lim.R"\cf2 )\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f1\fs24 \cf0 \
+pars<-Ldei(web.lim)\
+webranges<-Xranges(web.lim, ispos=TRUE, tol = 1e-3)\
+data.frame(webranges,parsimonious=pars$X)\
+\
+parsimonious=pars$X\
+A=matrix(parsimonious)\
+\
+\
+\
+!Z=matrix(c(A[1,],A[2,],A[3,],0,A[4],A[5],A[6],0,A[7,],A[8,],A[9,],0), nrow=1,byrow=TRUE)\
+\
+Z=c(A[1,],A[2,],A[3,],0,A[4],A[5],A[6],0,A[7,],A[8,],A[9,],0)\
+\
+!Y= matrix(c(0,0,0,A[18,],0,0,0,A[29,],A[41,],A[42,],A[43,],A[44,]), byrow=TRUE)\
+\
+Y= c(0,0,0,A[18,],0,0,0,A[29,],A[41,],A[42,],A[43,],A[44,])\
+\
+flow.mat=matrix(c(0,A[10,],A[11,],0,A[19,],0,0,0,0,0,0,0,0,0,A[12,],0,0,A[20,],0,0,0,0,0,0,A[13,],0,0,A[14],0,0,A[21],0,0,0,0,0,A[15,], A[16,],A[17,],0,0,0,0,0,0,0,0,0,0,0,0,0,0,A[22,],A[23,],0,A[30,],0,0,0,0,0,0,0,0,0,A[24,],A[25,],0,A[31,],0,0,0,0,0,0,A[26,],0,0,A[27,],0,0,A[32,],0,0,0,0,0,A[28,],0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,A[33,],A[34,],0,0,0,0,0,0,0,0,0,0,0,A[35,],A[36,],0,0,0,0,0,0,0,0,A[37,],0,0,A[38,],0,0,0,0,0,0,0,0,A[39,],0,A[40,],0),nrow=12,ncol=12,byrow=TRUE)\
+\
+! rownames(flow.mat)<-colnames(flow.mat)<-paste('node',(1:nrow(flow.mat)),sep='')\
+\
+rownames(flow.mat)<-colnames(flow.mat)<-paste(c('Sup_NH4', 'Sup_NO3', 'Sup_orgN', 'Sup_sedN', 'Hur_NH4', 'Hur_NO3', 'Hur_orgN', 'Hur_sedN', 'Erie_NH4', 'Erie_NO3', 'Erie_orgN', 'Erie_sedN'))\
+\
+X=c(6.78e4, 4.58e6, 6.10e5, 4.65e6, 3.69e4, 1.05e6, 3.93e5, 7.14e6, 8.07e3, 1.19e5, 7.53e4, 2.32e6)\
+\
+respiration=c(0,0,0,0,0,0,0,0,0,0,0,0)\
+\
+library(enaR)\
+\
+model<-pack(flow=flow.mat, input=Z, export=Y, respiration=respiration, storage=X, living=FALSE)\
+\
+\
+! to plot network:\
+\
+my.col=c("red","yellow",  rgb(204,204,153,maxColorValue=255), "grey22")\
+\
+ F=model%n%'flow' \
+\
+f=which(F!=0, arr.ind=T)\
+opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))\
+set.seed(2)\
+\
+\
+plot(model,vertex.cex=(log(model%v%'storage'))*.3, label= model%v%'vertex.names',boxed.labels=FALSE,label.cex=0.865, vertex.sides=45,edge.lwd=log10(abs(F[f])), edge.col=my.col[3],vertex.col=my.col[1],  label.col="white", vertex.border = my.col[3],vertex.lty = 1)\
+\
+\
+! Denitrification efficiency (LS, from 10 row matrix)\
+num<-200\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf0 xs\cf4 <-\cf0 Xsample\cf4 (\cf0 web.lim, iter=num, x0=pars\cf4 )\
+M=matrix(xs, nrow=num)
+\f1\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+LS<-NULL\
+for(i in seq(1,num)) \{\
+LS[i]<-(M[i,18]/(M[i,18]+M[i,19]+M[i,20]+M[i,21]))\}\
+hist(LS,labels = FALSE, col="gray", freq=TRUE,nclass=100, xlim=c(0,1))\
+\
+library(Hmisc)\
+describe(LS)\
+\
+LH<-NULL\
+for(i in seq(1,num)) \{\
+LH[i]<-(M[i,29]/(M[i,29]+M[i,30]+M[i,31]+M[i,32]))\}\
+hist(LH,labels = FALSE, col="light blue")\
+\
+LE<-NULL\
+for(i in seq(1,num)) \{\
+LE[i]<-(M[i,44]/(M[i,44]+M[i,41]+M[i,42]+M[i,43]))\}\
+hist(LE,labels = FALSE, col="light blue")\
+\
+LEdeN<-NULL\
+for(i in seq(1,num)) \{\
+LEdeN[i]<-(M[i,44])\}\
+hist(LEdeN,labels = FALSE, col="light blue")\
+library(Hmisc)\
+describe(LEdeN)\
+\
+}
