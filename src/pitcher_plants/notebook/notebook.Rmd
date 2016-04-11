@@ -1,0 +1,66 @@
+---
+output=html_document
+---
+
+# Ascendency of the Pitcher Plant Food Web
+
+
+```{r }
+library(enaR)
+source('../src/mouquet_model.R')
+data(enaModels)
+
+asc.all <- list()
+for (i in 1:length(enaModels)){
+   print(paste(i,i/length(enaModels)))
+   if (all(unpack(enaModels[[i]])$e == 0)  | all(unpack(enaModels[[i]])$r == 0)){
+     asc.all[[i]] <- NA
+   }else{
+     asc.all[[i]] <- enaAscendency(enaModels[[i]])
+   }
+}
+
+names(asc.all) <- names(enaModels)
+asc.all <- asc.all[!(unlist(lapply(asc.all,function(x) any(is.na(x)))))]
+asc.m <- do.call(rbind,asc.all)
+asc.m <- rbind(asc.m,enaAscendency(moq.mod))
+rownames(asc.m) <- c(names(asc.all),'Pitcher Plant (C)')
+
+asc.df <- data.frame(asc.m)
+asc.df <- asc.df[asc.df$CAP < 1E04,]
+
+```
+
+
+```{r }
+
+par(mfrow=c(2,3))
+plot(OH~CAP,data=asc.df,pch='')
+text(asc.df$CAP,asc.df$OH,labels=substr(rownames(asc.df),1,3),cex=0.75)
+plot(ASC~CAP,data=asc.df,pch='')
+text(asc.df$CAP,asc.df$ASC,labels=substr(rownames(asc.df),1,3),cex=0.75)
+hist(asc.df$AMI)
+abline(v=asc.df$AMI[rownames(asc.df) == "Pitcher Plant (C)"])
+hist(asc.df$ASC.CAP)
+abline(v=asc.df$ASC.CAP[rownames(asc.df) == "Pitcher Plant (C)"])
+hist(asc.df$OH.CAP)
+abline(v=asc.df$OH.CAP[rownames(asc.df) == "Pitcher Plant (C)"])
+
+
+```
+
+
+
+```{r plots, eval=FALSE}
+
+pNet <- pack(f=flow)
+g1 <- asIgraph(pNet)
+V(g1)$name <- rownames(unpack(pNet)$F)
+g1 <- as_graphnel(g1)
+gl1 <- layoutGraph(g1)
+nodeRenderInfo(gl1) <- list(lty=c(ant=1,detritus=2,bacteria=1,rotifers=1,protozoa=1,mosquitos=1,sediment=2,respiration=2,export=2))
+
+renderGraph(gl1)
+
+```
+
