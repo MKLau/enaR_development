@@ -1,1 +1,78 @@
-
+Commits on Aug 25, 2015
+ @MKLau	MKLau	fixing unpack living vector			eedb8c8
+ @MKLau	MKLau	upgrade beta to v2.9.2			91ec4bc
+Commits on Dec 04, 2015
+ @MKLau	MKLau	added enaUncertainty.R and .Rd			250d5f8
+ @MKLau	MKLau	added warning for xsample percent error			e65f350
+Commits on Dec 05, 2015
+ @deh9951	deh9951	Update enaUncertainty.Rd			cf48717
+Commits on Dec 06, 2015
+ @MKLau	MKLau	edited enaUncertainty.Rd			42af00a
+Commits on Dec 09, 2015
+ @MKLau	MKLau	debugged error in enaUncertainty man file			cba1e63
+ @MKLau	MKLau	added limSolve and xsample to DESCRIPTION and NAMESPACE			5d180e7
+ @MKLau	MKLau	updated version and enaR-package.Rd author info			deae710
+ @MKLau	MKLau	removed emails from Rd files			4266531
+ @MKLau	MKLau	fixing issue with usage in enaUncertainty.Rd			1db5149
+Commits on Feb 02, 2016
+ @borretts	borretts	enaUncertainty fix			46d0702
+Commits on Feb 25, 2016
+ @borretts	borretts	changes to enaUtility			1e90760
+ @borretts	borretts	changes to signs			5f39570
+ @borretts	borretts	changes relationalChange			8e1a46a
+Commits on Feb 26, 2016
+ @borretts	borretts	update relationalChange			761ab8a
+ @borretts	borretts	change enaUtility check for storage			1469ec1
+Commits on Feb 28, 2016
+ @borretts	borretts	changed relations			d39d960
+ @borretts	borretts	changed relations			8fea2c6
+ @borretts	borretts	changed relations			122978f
+ @borretts	borretts	changed relations			3e61429
+ @borretts	borretts	add relationships to MTI			ee47133
+ @borretts	borretts	add relationships to MTI			08a9381
+Commits on Mar 01, 2016
+ @MKLau	MKLau	added read.EcoNet.R and example			d1e26e1
+Commits on Mar 07, 2016
+ @borretts	borretts	mti update			c3631e7
+ @borretts	borretts	mti update			51ee658
+Commits on Mar 09, 2016
+ @borretts	borretts	add tetra-partite partition of ascendency			bb2e4a4
+Commits on Mar 11, 2016
+ @borretts	borretts	revised enaControl			db56e77
+Commits on Mar 31, 2016
+ @MKLau	MKLau	finished read.EcoNet.R			e0d076d
+ @MKLau	MKLau	Merge branch 'beta' into read.econet			0dae2e6
+ @MKLau	MKLau	finished R and Rd files for EcoNet			20935a4
+ @MKLau	MKLau	removed development files for EcoNet			3681332
+ @MKLau	MKLau	accidently removed EcoNet.R, so I added it back			2920719
+Commits on Apr 04, 2016
+ @borretts	borretts	modifications to enaControl			65d0ccb
+ @borretts	borretts	Merge branch 'beta' of https://github.com/SEELab/enaR into beta			da6a9f5
+ @borretts	borretts	modifications to enaControl			767b20d
+ @borretts	borretts	update control help file			6c42e26
+Commits on Apr 06, 2016
+ @borretts	borretts	added control allocation and dependency			2ef6436
+ @borretts	borretts	addeded control allocation and dependency			bf6a2b4
+ @borretts	borretts	addeded control allocation and dependency			89352d4
+Commits on Apr 11, 2016
+ @MKLau	MKLau	write.EcoNet: added functionality to remove zero flows			e5aeec6
+ @MKLau	MKLau	Merge branch 'beta' of https://github.com/SEELab/enaR into beta			34de6fc
+Commits on Apr 28, 2016
+ @borretts	borretts	add help files for relationalChange and signs			84caedf
+Commits on Apr 29, 2016
+ @MKLau	MKLau	checking new manual files			a9e717a
+ @MKLau	MKLau	checking new manual files			b0906a8
+ @MKLau	MKLau	fixed bug in relationalChanges.Rd			0c265c7
+ @MKLau	MKLau	updated DESCRIPTION			831be46
+ @MKLau	MKLau	fixing relationalChange.Rd bugs			19271a8
+ @MKLau	MKLau	fixing relationalChange.Rd bugs			8df5618
+ @MKLau	MKLau	fixing 00rcheck bugs			591e396
+ @MKLau	MKLau	debugging build and check for 3.0.0			0e40a17
+ @MKLau	MKLau	finished debugging build and check			40b4daf
+Commits on May 03, 2016
+ @borretts	borretts	fix bug in read.enam			208faad
+Commits on May 04, 2016
+ @MKLau	MKLau	Updated namespace and SRB Fixed #159			7e63fc7
+ @MKLau	MKLau	adjusting DESCRIPTION			cd6ba79
+Commits on May 20, 2016
+ @borretts	borretts	additons to enaAscendnecy, changes to enaFlow and git.ns
