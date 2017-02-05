@@ -1,0 +1,95 @@
+Status: 1 ERROR, 2 WARNINGs, 4 NOTEs
+
+Depends:
+    R (>= 2.10),
+    MASS,
+    stringr,
+    sna,
+    network,
+    gdata,
+    stats,
+    utils,
+    graphics,
+    limSolve
+Suggests:
+    codetools,
+    igraph,
+    R.rsp
+VignetteBuilder: R.rsp
+License: GPL-3
+URL: https://github.com/SEELab/enaR
+RoxygenNote: 5.0.1
+
+
+Make sure to build with --resave-data=best
+
+#issue# Excessive importing
+#issue# Dependencies not imported in NAMESPACE
+
+Depends: includes the non-default packages:
+  ‘MASS’ ‘stringr’ ‘sna’ ‘network’ ‘gdata’ ‘limSolve’
+Adding so many packages to the search path is excessive and importing
+selectively is preferable.
+Packages in Depends field not imported from:
+  ‘MASS’ ‘gdata’ ‘limSolve’ ‘network’ ‘sna’ ‘stringr’
+  These packages need to be imported from (in the NAMESPACE file)
+  for when this namespace is loaded but not attached.
+
+#issue# No visible global function definitions for network package
+Add to your NAMESPACE file:
+  importFrom("graphics", "axis", "box", "par", "plot", "points")
+  importFrom("stats", "sd")
+  importFrom("utils", "read.table", "write.table")
+
+#issue# Add author information to get.orient
+
+* checking Rd files ... NOTE
+prepare_Rd: get.orient.Rd:32-34: Dropping empty section \author
+
+#issue# Fix statnet package reference in enaR-package.Rd
+
+* checking Rd cross-references ... WARNING
+Unknown package ‘<pkg>’ in Rd xrefs
+Missing link or links in documentation object 'enaR-package.Rd':
+  ‘[network:statnet-package]{statnet}’
+See section 'Cross-references' in the 'Writing R Extensions' manual.
+
+#issue# Fix example in enaR-Ex.R and/or enaAscendency.R
+
+* checking for unstated dependencies in examples ... WARNING
+Warning: parse error in file 'enaR-Ex.R':
+230:11: unexpected symbol
+229: ## calculate H & CAPACITY  #######################################
+230: H = Total Flow
+               ^
+* checking examples ... ERROR
+Running examples in ‘enaR-Ex.R’ failed
+The error most likely occurred in:
+
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: enaAscendency
+> ### Title: enaAscendency - calculates the ascendency statistics of
+> ###   Ulanowicz INPUT = network object OUTPUT = matrix of ascendency
+> ###   statistics
+> ### Aliases: enaAscendency
+> 
+> ### ** Examples
+> 
+> 
+> 
+> 
+> data(troModels)
+> enaAscendency(troModels[[6]])
+           H      AMI       Hr      CAP      ASC       OH   ASC.CAP    OH.CAP
+[1,] 3.20096 1.336447 1.864513 135864.7 56725.49 79139.25 0.4175144 0.5824856
+     robustness      ELD       TD  A.input A.internal A.export A.respiration
+[1,]  0.3646722 1.908258 2.525286 19147.85   29331.98 1051.765      7193.894
+     OH.input OH.internal OH.export OH.respiration CAP.input CAP.internal
+[1,] 6221.751    29832.46  7810.812       35274.22   25369.6     59164.44
+     CAP.export CAP.respiration
+[1,]   8862.578        42468.11
+> ####### set initial conditions for calculations #########
+> ## calculate H & CAPACITY  #######################################
+> H = Total Flow Diversity
+Error: unexpected symbol in "H = Total Flow"
+Execution halted

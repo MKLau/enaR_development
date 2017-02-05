@@ -1,0 +1,322 @@
+e8630c3 - mklau, 4 days ago : merging into beta
+5ca1173 - mklau, 4 days ago : removes enaUncertainty
+e928133 - mklau, 4 days ago : fixes export of mExp
+28a36bc - mklau, 5 days ago : updates NAMESPACE
+68da74a - mklau, 5 days ago : adjusts exports in NAMESPACE
+074e2a3 - mklau, 5 days ago : Merge branch 'develop' into namespace
+73f2b31 - mklau, 5 days ago : fixes export issues for multiple functions
+90b0a29 - MKLau, 6 days ago : removes import
+ac9d82a - MKLau, 6 days ago : changes import in namespace
+61e9c1b - mklau, 6 days ago : adds namespace and roxygen generated Rd
+6364a9b - mklau, 6 days ago : rms enaPlot.R
+2d4e35f - mklau, 6 days ago : converts to roxygen format
+f352dd9 - borretts, 6 days ago : directory cleanup
+bf555db - borretts, 6 days ago : small Namespace edit
+67b434a - borretts, 6 days ago : Merge branch 'develop' of https://github.com/SEELab/enaR into develop
+6523860 - borretts, 6 days ago : Merge branch 'master' of https://github.com/SEELab/enaR into develop
+3fffda8 - borretts, 6 days ago : small edits to man files
+360880c - mklau, 10 days ago : removes linde data
+5682cfd - mklau, 10 days ago : removed lindeplot
+f613e4d - mklau, 10 days ago : updating DESCRIPTION
+84a229e - mklau, 11 days ago : adds lindeman plot function from Ulrike
+9e5506b - borretts, 12 days ago : storage modificaitons
+9cc9133 - borretts, 10 weeks ago : add ShannonDiversity
+5e91b52 - borretts, 6 months ago : fix get.ns
+9860424 - borretts, 6 months ago : fix get.ns
+fc6082a - borretts, 7 months ago : fix bug in get.ns
+dfcb203 - mklau, 8 months ago : Merge branch 'beta' into enaPlot
+a36e0ac - borretts, 9 months ago : additons to enaAscendnecy, changes to enaFlow and git.ns
+cd6ba79 - mklau, 9 months ago : adjusting DESCRIPTION
+7e63fc7 - mklau, 9 months ago : Updated namespace and SRB Fixed #159
+208faad - borretts, 9 months ago : fix bug in read.enam
+40b4daf - mklau, 9 months ago : finished debugging build and check
+0e40a17 - mklau, 9 months ago : debugging build and check for 3.0.0
+591e396 - mklau, 9 months ago : fixing 00rcheck bugs
+8df5618 - mklau, 9 months ago : fixing relationalChange.Rd bugs
+19271a8 - mklau, 9 months ago : fixing relationalChange.Rd bugs
+831be46 - mklau, 9 months ago : updated DESCRIPTION
+0c265c7 - mklau, 9 months ago : fixed bug in relationalChanges.Rd
+b0906a8 - mklau, 9 months ago : checking new manual files
+a9e717a - mklau, 9 months ago : checking new manual files
+84caedf - borretts, 9 months ago : add help files for relationalChange and signs
+34de6fc - mklau, 10 months ago : Merge branch 'beta' of https://github.com/SEELab/enaR into beta
+e5aeec6 - mklau, 10 months ago : write.EcoNet: added functionality to remove zero flows
+89352d4 - borretts, 10 months ago : addeded control allocation and dependency
+bf6a2b4 - borretts, 10 months ago : addeded control allocation and dependency
+2ef6436 - borretts, 10 months ago : added control allocation and dependency
+6c42e26 - borretts, 10 months ago : update control help file
+767b20d - borretts, 10 months ago : modifications to enaControl
+da6a9f5 - borretts, 10 months ago : Merge branch 'beta' of https://github.com/SEELab/enaR into beta
+65d0ccb - borretts, 10 months ago : modifications to enaControl
+2920719 - mklau, 10 months ago : accidently removed EcoNet.R, so I added it back
+3681332 - mklau, 10 months ago : removed development files for EcoNet
+20935a4 - mklau, 10 months ago : finished R and Rd files for EcoNet
+0dae2e6 - mklau, 10 months ago : Merge branch 'beta' into read.econet
+e0d076d - mklau, 10 months ago : finished read.EcoNet.R
+db56e77 - borretts, 11 months ago : revised enaControl
+bb2e4a4 - borretts, 11 months ago : add tetra-partite partition of ascendency
+51ee658 - borretts, 11 months ago : mti update
+c3631e7 - borretts, 11 months ago : mti update
+d1e26e1 - mklau, 11 months ago : added read.EcoNet.R and example
+08a9381 - borretts, 11 months ago : add relationships to MTI
+ee47133 - borretts, 11 months ago : add relationships to MTI
+3e61429 - borretts, 11 months ago : changed relations
+122978f - borretts, 11 months ago : changed relations
+8fea2c6 - borretts, 11 months ago : changed relations
+d39d960 - borretts, 11 months ago : changed relations
+1469ec1 - borretts, 12 months ago : change enaUtility check for storage
+761ab8a - borretts, 12 months ago : update relationalChange
+8e1a46a - borretts, 12 months ago : changes relationalChange
+5f39570 - borretts, 12 months ago : changes to signs
+1e90760 - borretts, 12 months ago : changes to enaUtility
+ae1a9bd - mklau, 1 year ago : update
+dc7344c - mklau, 1 year ago : Rgraphviz
+46d0702 - borretts, 1 year ago : enaUncertainty fix
+dfce57d - mklau, 1 year ago : checking out graphviz
+114645d - mklau, 1 year ago : trying to use ggplot2
+e8fcbe1 - mklau, 1 year, 1 month ago : added first pass at enaPlot
+1db5149 - mklau, 1 year, 2 months ago : fixing issue with usage in enaUncertainty.Rd
+4266531 - mklau, 1 year, 2 months ago : removed emails from Rd files
+deae710 - mklau, 1 year, 2 months ago : updated version and enaR-package.Rd author info
+5d180e7 - mklau, 1 year, 2 months ago : added limSolve and xsample to DESCRIPTION and NAMESPACE
+cba1e63 - mklau, 1 year, 2 months ago : debugged error in enaUncertainty man file
+82129e0 - borretts, 1 year, 2 months ago : change gitignore
+42af00a - MKLau, 1 year, 2 months ago : edited enaUncertainty.Rd
+cf48717 - Dave Hines, 1 year, 2 months ago : Update enaUncertainty.Rd
+e65f350 - mklau, 1 year, 2 months ago : added warning for xsample percent error
+250d5f8 - mklau, 1 year, 2 months ago : added enaUncertainty.R and .Rd
+91ec4bc - mklau, 1 year, 5 months ago : upgrade beta to v2.9.2
+eedb8c8 - mklau, 1 year, 5 months ago : fixing unpack living vector
+7eb19d1 - mklau, 1 year, 6 months ago : updated enaR-package.Rd
+
+cc41757 - mklau, 1 year, 6 months ago : 2.9.1
+
+2105131 - mklau, 1 year, 6 months ago : removed as.bipartite.R
+0036f81 - mklau, 1 year, 6 months ago : added updated vignette
+2389f87 - mklau, 1 year, 6 months ago : merged as.bipartite
+50a05d5 - mklau, 1 year, 6 months ago : added as.bipartite
+115b5ea - mklau, 1 year, 7 months ago : fixing namespace
+a124553 - mklau, 1 year, 7 months ago : update
+1e93c2c - mklau, 1 year, 7 months ago : fixed pack output based on exp and res
+2a3031f - mklau, 1 year, 9 months ago : updated version and fixed write.Econet.Rd
+37fdb9f - mklau, 1 year, 9 months ago : write.EcoNet.Rd
+1761c4d - mklau, 1 year, 9 months ago : added write.EcoNet
+a205d0d - mklau, 1 year, 9 months ago : Merge branch 'beta' into econet
+eb27606 - mklau, 1 year, 9 months ago : added write.ecopath.R
+550e7bc - mklau, 1 year, 9 months ago : fixed set.attribute error
+082cf82 - mklau, 1 year, 9 months ago : deleted vignette
+886ce93 - mklau, 1 year, 9 months ago : update
+196af3d - mkl, 2 years, 1 month ago : fixing description
+cd99dbe - mkl, 2 years, 1 month ago : editing description
+4aa979d - mkl, 2 years, 1 month ago : x.y.z versioning
+e92c1ad - mkl, 2 years, 1 month ago : merging with master
+c7ba71b - mkl, 2 years, 1 month ago : removed #
+2490e79 - borretts, 2 years, 1 month ago : fixed bug in read.scor
+fe1c20c - borretts, 2 years, 1 month ago : fixed bug in read.scor
+73becc8 - mkl, 2 years, 2 months ago : update
+b918933 - mkl, 2 years, 2 months ago : fixed titles
+3e79ab7 - mkl, 2 years, 2 months ago : fixed titles
+ff19248 - mkl, 2 years, 2 months ago : update
+4bc8348 - mkl, 2 years, 2 months ago : update
+92377f9 - mkl, 2 years, 2 months ago : description: changed Sing to Singh
+d638281 - mkl, 2 years, 3 months ago : fixed accidental add to master
+d4bcf89 - mkl, 2 years, 3 months ago : added function and man file
+aa29ce5 - mkl, 2 years, 3 months ago : title case
+c06a8f7 - mkl, 2 years, 3 months ago : title case
+422121b - mkl, 2 years, 3 months ago : Merge branch 'beta'
+db6660f - mkl, 2 years, 3 months ago : final namespace fix, sna importFrom
+e664306 - mkl, 2 years, 3 months ago : fixed DESCRIPTION
+0ecc214 - mkl, 2 years, 3 months ago : going forward
+ed7d9dd - mkl, 2 years, 3 months ago : namespace fix....
+6d73c0c - mkl, 2 years, 3 months ago : namespace
+880bbfb - mkl, 2 years, 3 months ago : removed statnet and sna as dependencies
+362a9a1 - mkl, 2 years, 3 months ago : statnet
+9aac387 - mkl, 2 years, 3 months ago : fixing the namespace, still.......
+e8f5fed - mkl, 2 years, 3 months ago : namespace fixes
+78fcaf3 - mkl, 2 years, 3 months ago : namespace fix
+3fbd962 - mkl, 2 years, 3 months ago : namespace fix
+e995d5a - mkl, 2 years, 3 months ago : update
+85ea52c - mkl, 2 years, 3 months ago : update
+87dfd71 - mkl, 2 years, 3 months ago : mergine jss with beta
+0abc97c - mkl, 2 years, 3 months ago : update
+3e54c33 - mkl, 2 years, 3 months ago : backup
+99540dc - mkl, 2 years, 3 months ago : edited flow analysis
+fd6007c - mkl, 2 years, 3 months ago : Removed dependency network figure chunk
+22fef11 - mkl, 2 years, 3 months ago : edited abstract and introduction
+b6a7958 - mkl, 2 years, 4 months ago : update
+ee9ba09 - mkl, 2 years, 4 months ago : eval = false and re-organized table 1 and fig 1
+0ce74f2 - mkl, 2 years, 4 months ago : re-wrote introduction
+0610785 - borretts, 2 years, 4 months ago : srb small edits to enaR-vignettes.tex
+666e743 - mkl, 2 years, 4 months ago : final add enaModelInfo
+21aa62b - mkl, 2 years, 4 months ago : Merge branch 'beta'
+df00eee - mkl, 2 years, 4 months ago : removed enaModelInfo.Rdata
+4f6458d - mkl, 2 years, 4 months ago : added new data object for enaModelInfo.rda
+a4350a1 - mkl, 2 years, 4 months ago : Added more model info to enaModelInfo.rda
+3b743c7 - mkl, 2 years, 4 months ago : update
+0978e04 - mkl, 2 years, 4 months ago : Merge branch 'beta'
+9b055f1 - mkl, 2 years, 4 months ago : MEE = vignette
+37ac797 - mkl, 2 years, 4 months ago : fixed code issues in enaRcontrol and read.scor manual files
+80e43dd - mkl, 2 years, 4 months ago : removed cyber manuals
+cbb7d31 - mkl, 2 years, 4 months ago : working on the vingette
+3e45aa0 - mkl, 2 years, 5 months ago : merge jss
+1c653e5 - mkl, 2 years, 5 months ago : remove cyber?
+db552fd - mkl, 2 years, 5 months ago : as.extended check
+0d9c484 - mkl, 2 years, 5 months ago : hotfix: namespace import method
+3f6978e - mkl, 2 years, 5 months ago : updates
+ff00e8a - pawan1992, 2 years, 5 months ago : Rectified Output for Table.cycle. Pawan
+795e020 - pawan1992, 2 years, 5 months ago : Renamed cyberMod to cyberNet. Pawan.
+079ed94 - mkl, 2 years, 6 months ago : Merge branch 'beta' into jss
+63d6b07 - mkl, 2 years, 6 months ago : update
+2824fb4 - MKLau, 2 years, 6 months ago : Fixed tolerance argument
+0acf283 - mkl, 2 years, 6 months ago : pack network size fix
+563f52a - borretts, 2 years, 6 months ago : removed vignettes
+903b0ae - borretts, 2 years, 6 months ago : fixed repack removal
+7e33bd9 - borretts, 2 years, 6 months ago : remove repack
+a3e7d33 - borretts, 2 years, 6 months ago : revised network data objects
+96d32f7 - borretts, 2 years, 6 months ago : revised network data objects
+3e4c0ac - borretts, 2 years, 6 months ago : changed vignette
+d296adb - borretts, 2 years, 6 months ago : changed flow matrix
+5ead0c0 - borretts, 2 years, 6 months ago : update read.scor
+5ce6c0e - borretts, 2 years, 6 months ago : update read.scor.R
+9f3d7cd - borretts, 2 years, 6 months ago : fix read.scor
+0aeff95 - borretts, 2 years, 6 months ago : update pack
+2a89d26 - borretts, 2 years, 6 months ago : fix pack.R
+b2659f5 - borretts, 2 years, 6 months ago : update read.scor
+7a92067 - mkl, 2 years, 6 months ago : foo
+2af9e8b - pawan1992, 2 years, 6 months ago : Edited help file(usage sec) for cyberMod. Pawan
+5deb64b - MKLau, 2 years, 6 months ago : Update
+6914f9a - MKLau, 2 years, 6 months ago : Update
+96e78a8 - mkl, 2 years, 6 months ago : editing jss/vignette
+1720c80 - mkl, 2 years, 6 months ago : editing jss/vignette
+ee4b035 - Pawandeep Singh, 2 years, 6 months ago : enaAscendency upgraded to include Ulanowicz 2014 trophic depth and eff. link density. Pawan
+74b71e4 - Pawandeep Singh, 2 years, 6 months ago : Updated help file for enaControl and added cyberMod function. Pawan
+0839553 - borretts, 2 years, 6 months ago : srb review of Trophic additions to vignette
+df34af2 - Pawandeep Singh, 2 years, 6 months ago : vignette updated to include the trophic and cycle and control algorithms. Pawan
+1051e78 - mkl, 2 years, 6 months ago : joss edits
+d25d0d9 - mkl, 2 years, 6 months ago : replaced vignette with jss from enaR_development
+d740c02 - mkl, 2 years, 6 months ago : fixing pack
+05e7914 - mkl, 2 years, 6 months ago : successful build and check on beta
+e353591 - mkl, 2 years, 6 months ago : trophic branch merger
+1d34d71 - Pawandeep Singh, 2 years, 6 months ago : pack and read.scor altered for the edge attributes
+db7863b - borretts, 2 years, 6 months ago : changed pack to add flows to edge attribtues
+c156bb5 - Pawandeep Singh, 2 years, 6 months ago : help files updated. Pawan
+81061e8 - Pawan, 2 years, 6 months ago : made necessary changes in the help files
+ba51812 - Pawan, 2 years, 6 months ago : netOrder code simplified. Annotations need to be removed
+68afca8 - Pawan, 2 years, 6 months ago : added ns as a vector and included Feeding cycle details in enaTroAgg-ns
+37f01e6 - Pawan, 2 years, 6 months ago : added warning message and vertex.name reorder
+bfe33ac - Pawandeep Singh, 2 years, 7 months ago : Removed enaUncertainty functions from trophic
+2e7fd62 - Pawandeep Singh, 2 years, 7 months ago : included case for trophic efficiency calculation when nl=N(all nodes living). Pawan
+42d2fd7 - Pawandeep Singh, 2 years, 7 months ago : Functions for trophic branch. enaTroAgg(), cycliv(), enaCycle(), netOrder(). Pawan. 072314
+412c6c5 - Pawandeep Singh, 2 years, 7 months ago : merging beta in local drive
+a41e84f - borretts, 2 years, 7 months ago : added robustness to enaAscendency
+a2103d0 - borretts, 2 years, 7 months ago : Merge branch 'beta' of https://github.com/SEELab/enaR into beta
+6ac1550 - mkl, 2 years, 7 months ago : eT fix
+f80b8e2 - mkl, 2 years, 7 months ago : fixed bugs found by rev1
+edb9db6 - Pawandeep Singh, 2 years, 7 months ago : local changes from beta
+c2d46b6 - Pawandeep Singh, 2 years, 7 months ago : Pulling from beta. Pawan
+764d825 - mkl, 2 years, 7 months ago : fixed enaStorage calculation of CVPP
+8d514fb - mkl, 2 years, 7 months ago : vignette, added hyperreffs
+f600f47 - mkl, 2 years, 7 months ago : debugging vignette after reducing balancing and figure builds
+43ce676 - mkl, 2 years, 7 months ago : debugging vignette
+a81051c - mkl, 2 years, 7 months ago : debugging vignette
+9a91469 - mkl, 2 years, 7 months ago : debugging vignette
+1003569 - mkl, 2 years, 7 months ago : debugging vignette
+ae973a8 - mkl, 2 years, 7 months ago : debugging vignette
+47fefe1 - mkl, 2 years, 7 months ago : debug vignette installation
+57bb588 - mkl, 2 years, 7 months ago : debug vignette installation
+4363b67 - mkl, 2 years, 7 months ago : adding troModelsBalanced
+bec396f - mkl, 2 years, 7 months ago : reducing run time, balancing
+a63cfc9 - mkl, 2 years, 7 months ago : turned off evaluation for all figures
+a8a5e10 - Pawandeep Singh, 2 years, 8 months ago : pulling the newer version on my system
+8b9d5da - mkl, 2 years, 8 months ago : Fixed Cone Springs Detritus storage in tro and ena models, issue#102
+5972c9a - David Hines, 2 years, 8 months ago : enaUncertainty run scripts DEH June 2014
+49e7977 - David Hines, 2 years, 8 months ago : enaUncertainty function DEH June 2014
+440abb9 - MKLau, 2 years, 8 months ago : Merge pull request #96 from SEELab/control
+88c141f - Pawandeep Singh, 2 years, 8 months ago : enaControl Schramski Updated without annotations.
+2f597c9 - Pawandeep Singh, 2 years, 8 months ago : Updated Control function with Schramski's Algorithm. Pawan, June 2014
+cd23e68 - Pawandeep Singh, 2 years, 8 months ago : Updated Control function with Schramski's Algorithm incorporated. Pawan, June 2014
+054a2ea - Pawandeep Singh, 2 years, 8 months ago : Updateded enaControl. Pawan. June 2014.Schramski's Analysis Included
+f5cc1fd - mkl, 2 years, 8 months ago : Merge branch 'master' into control
+6fff8ad - mkl, 2 years, 8 months ago : added vignette fixes
+b7bd183 - Pawandeep Singh, 2 years, 8 months ago : enaControl function upgraded with Schramsky's Algorithm
+7b4940e - Pawandeep Singh, 2 years, 8 months ago : Trial for including enaControl - Not the actual function -
+b26a0d4 - mkl, 2 years, 8 months ago : fixing vignette
+82b7c2d - mkl, 2 years, 8 months ago : fixed vignette
+daaba10 - mkl, 2 years, 8 months ago : Merge branch 'beta' of https://github.com/SEELab/enaR into beta
+3807aa6 - mkl, 2 years, 8 months ago : re-sweaved vignette
+fbb225c - mkl, 2 years, 8 months ago : moved vignette sweave folder to vignette
+1f94afe - mkl, 2 years, 8 months ago : added github links to DESCRIPTION
+ef7aef4 - MKLau, 2 years, 8 months ago : Update DESCRIPTION
+0c24b4f - mkl, 2 years, 8 months ago : updated to v2.7
+5ab2c84 - mkl, 2 years, 8 months ago : updating vignette
+a0cf8e6 - Pawandeep Singh, 2 years, 8 months ago : fixed bcratio.R
+66e3351 - borretts, 2 years, 8 months ago : test2
+aeb1f45 - borretts, 2 years, 8 months ago : this is a test
+ffd6868 - mkl, 2 years, 9 months ago : built check pushed to CRAN
+27e3829 - mkl, 2 years, 9 months ago : fixed vignette citation
+58c458c - mkl, 2 years, 9 months ago : debugged examples error
+e8123d5 - mkl, 2 years, 9 months ago : vignette debug
+cd8ae38 - mkl, 2 years, 9 months ago : namespace add and vignette debug
+a5f24a1 - mkl, 2 years, 9 months ago : removed ~ and rcheck from vignette folder
+d66e63f - mkl, 2 years, 9 months ago : packaging 2.6
+e8f285c - mkl, 2 years, 11 months ago : checked vignette for set.orient explanation
+dd882ff - mkl, 2 years, 11 months ago : added enaModelInfo.rda
+f820bb4 - mkl, 2 years, 11 months ago : adding enaModels
+293173a - mkl, 2 years, 11 months ago : merging...
+719af51 - mkl, 2 years, 11 months ago : added .gitignore
+648fd16 - mkl, 2 years, 11 months ago : fixed pack and read.scor: added outputs back in both .R and .Rd
+1b89c43 - mkl, 2 years, 11 months ago : updates
+f50a626 - mkl, 2 years, 11 months ago : fix: added output into pack
+e6940e4 - mkl, 2 years, 11 months ago : added gdata as dependency (note: rjava and xlsx are already removed)
+cb48acf - mkl, 2 years, 11 months ago : removed *~
+172b5c7 - mkl, 2 years, 11 months ago : debug read.wand and read.enam
+7b6ecb1 - mkl, 2 years, 11 months ago : removed ~
+44ba3c9 - mkl, 2 years, 11 months ago : Edited DESCRIPTION
+0fae5b2 - mkl, 2 years, 11 months ago : removing rjava dependency - read.enam
+657f21b - mkl, 2 years, 11 months ago : removing rjava dependency - read.wand
+c2e0663 - mkl, 3 years, 1 month ago : updates
+f47b433 - mkl, 3 years, 3 months ago : Updates
+834c830 - mkl, 3 years, 3 months ago : Removed output from pack and made read.nea put outputs into respiration
+45e316d - mkl, 3 years, 3 months ago : enaR_2.5w.zip
+ff98920 - mkl, 3 years, 3 months ago : finished manuscript edits
+e3322f1 - mkl, 3 years, 3 months ago : added manuscript
+4f9c387 - MKLau, 3 years, 3 months ago : Update
+e26548c - MKLau, 3 years, 3 months ago : Updated pack
+b58a183 - MKLau, 3 years, 3 months ago : unpack bug fixed
+722ee74 - MKLau, 3 years, 3 months ago : added mee manuscript
+9b5d021 - mkl, 3 years, 3 months ago : Updated ssCheck
+6e09bad - mkl, 3 years, 3 months ago : Fixed bugs in enaControl, bal, balance, ssCheck
+2a9847d - mkl, 3 years, 3 months ago : fixed bug in ssCheck
+a7710a0 - mkl, 3 years, 3 months ago : added na zeroing to enaControl for G and GP matrices
+22415c3 - mkl, 3 years, 3 months ago : added windows zip
+e92bb1b - mkl, 3 years, 3 months ago : re-built and checked v2.5 with balance function update
+62664a0 - mkl, 3 years, 3 months ago : Built and checked v2.5
+778b33a - mkl, 3 years, 4 months ago : Started to add enaMTI check to check_enaR
+194a916 - mkl, 3 years, 4 months ago : RE-built and checked v2.5
+a033a81 - mkl, 3 years, 4 months ago : Built as version 2.5
+799cc5b - mkl, 3 years, 4 months ago : Finished enaR_checks.R
+249533c - mkl, 3 years, 4 months ago : Updated with enaR_checks additions
+fff5a42 - mkl, 3 years, 4 months ago : Updated to v2.3
+ab114dd - mkl, 3 years, 4 months ago : Added model, flow and environ checks to enaR_checks.R and added notes to checks/README
+e484ebf - mkl, 3 years, 4 months ago : Fixed enaEnviron
+3c9333f - mkl, 3 years, 4 months ago : Re-organized file structure
+0409910 - mkl, 3 years, 4 months ago : Removed MEE_edits
+d273a79 - mkl, 3 years, 4 months ago : Updates
+df25877 - mkl, 3 years, 4 months ago : Updates, added MEE_edits
+2e060ee - mkl, 3 years, 4 months ago : Restored enaEnviron.R to version 2.0 on CRAN
+52b42f6 - mkl, 3 years, 4 months ago : Debug enaEnviron, removed initial transpose
+3a63b12 - MKLau, 3 years, 4 months ago : Update README.md
+edd7786 - mkl, 3 years, 4 months ago : Updated version number
+cbc7b3c - mkl, 3 years, 4 months ago : Bug fixed: balance now returns FALSE for ssCheck failed models
+e910c42 - mkl, 3 years, 5 months ago : Organization
+a928227 - mkl, 3 years, 5 months ago : Added enaR full project.
+694370f - mkl, 3 years, 5 months ago : Updated README and removed git_enaR
+2c6f78c - The SEE Lab at UNCW, 3 years, 5 months ago : Update README.md
+c7e79a3 - mkl, 3 years, 5 months ago : Added SSH switch
+b778e5f - mkl, 3 years, 5 months ago : Built pdf
+286dd9a - mkl, 3 years, 5 months ago : Finished git with enaR section
+7a39b9e - mkl, 3 years, 5 months ago : Finished git with enaR section
+d693e56 - mkl, 3 years, 5 months ago : Adding how to use enaR with git.
+fbf7a19 - mkl, 3 years, 5 months ago : Created git_enaR. Detailing how to use git for enaR version control.
+696e08f - MKLau, 3 years, 5 months ago : Update README.md
+efe248e - MKLau, 3 years, 5 months ago : Initial commit
