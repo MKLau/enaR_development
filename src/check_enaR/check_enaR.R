@@ -1,77 +1,65 @@
-###enaR function output checking algorithm
-###Compares the output of for the Cone Springs Model
-###Init: MKLau 23Jul2014
+### enaR function output checking algorithm
 
 rm(list=ls())
-library(devtools)
-
-##Are the new models the same as the old models?
-install_github(username='MKLau',repo='enaR',ref='beta')
-library(enaR)
-data(enaModels)
-beta.mod <- enaModels
-detach(package:enaR)
-install_github(username='MKLau',repo='enaR',ref='edgeflow')
-library(enaR)
-data(enaModels)
-edge.mod <- enaModels
-                                        #check
-chk <- list()
-for (i in 1:length(edge.mod)){
-  upm.b <- unpack(beta.mod[[i]])
-  upm.b$F <- beta.mod[[i]]%n%'flow'
-  upm.e <- unpack(edge.mod[[i]])
-  out <- list()
-  for (j in 1:length(upm.b)){
-    out[[j]] <- all(round(upm.b[[j]],10)==round(upm.e[[j]],10))
-  }
-  chk[[i]] <- all(unlist(out))
+reset.base <- FALSE
+if (!tail(strsplit(getwd(),split='/')[[1]],1) == 'enaR_development'){
+    print('Working directory incorrect. Change to enaR_developemt')
+}else{
+    library(devtools)
+    install_github('SEELab/enaR',ref='develop')
+    library(enaR)
+    data(oyster)
+    test <- capture.output(
+        Sys.time(),
+        Sys.info(),
+        sessionInfo(),
+        as.extended(oyster),
+        enaAll(oyster),
+        enaMTI(oyster),
+        environCentrality(as.matrix(oyster)),
+        netOrder(oyster,6:1),
+        read.wand('data/MDmar02_WAND.xls'),
+        ssCheck(oyster),
+        EcoNetWeb("Intertidal Oyster Reef Ecosystem Model"),
+        enaAscendency(oyster),
+        findPathLength(oyster),
+        pack(unpack(oyster)$'F',unpack(oyster)$'z',unpack(oyster)$'r',unpack(oyster)$'e',unpack(oyster)$'y',unpack(oyster)$'X',unpack(oyster)$'living'),
+        ShannonDiversity(unpack(oyster)$'X'),
+        balance(oyster),
+        enaControl(oyster),
+        enaStorage(oyster),
+        force.balance(oyster),
+        read.EcoNet('data/pitcherCN.eco'),
+        scc(oyster),
+        unpack(oyster),
+        TES(oyster),
+        enaCycle(oyster),
+        enaStructure(oyster),
+        get.ns(oyster),
+        read.enam('data/MDMAR02.xlsx'),
+        write.EcoNet(oyster,'data/econet_test.txt'),
+        TET(oyster),
+        enaEnviron(oyster),
+        enaTroAgg(oyster),
+        get.orient(),
+        read.nea('data/nea_test.txt'),
+        set.orient('rc'),
+        write.nea(oyster,'data/nea_test.txt'),
+        as.bipartite(oyster,c(1,1,1,2,2,2)),
+        eigenCentrality(as.matrix(oyster)),
+        enaFlow(oyster),
+        enaUtility(oyster),
+        mExp(as.matrix(oyster)),
+        read.scor('data/cone_spring.dat'),
+        signs(as.matrix(oyster))
+        )
+    if (reset.base){
+        fileout <- "data/test_base.txt"
+    }else{
+        fileout <- "data/test_new.txt"
+    }
+    fileConn <- file(fileout)
+    writeLines(test, fileConn)
+    close(fileConn)
+    system(paste0('diff data/test_base.txt',' ','data/test_new.txt','> data/diff_base_new.txt'))
 }
-all(unlist(chk))
-
-##Does output from enaFuncs match (beta - edgeflow ~ 0)?
-ssck <- unlist(lapply(edge.mod,ssCheck))
-test <- edge.mod[[(1:length(ssck))[ssck!=TRUE][1]]]
-test1 <- balance(test)
-test2 <- balance(test)
-test1%e%'flow'-test2%e%'flow'
-test%e%'flow'-test1%e%'flow'
-##
-ssck. <- unlist(lapply(beta.mod,ssCheck))
-test. <- beta.mod[[(1:length(ssck))[ssck!=TRUE][1]]]
-test1. <- force.balance(test.)
-ssCheck(test1.)
-test2. <- force.balance(test.)
-ssCheck(test2.)
-test1.%e%'flow'-test2.%e%'flow'
-test.%e%'flow'-test1.%e%'flow'
-
-###Compare to old stats
-## install_github(username='MKLau',repo='enaR',ref='beta')
-## library(enaR)
-## data(enaModels)
-## beta.mod <- lapply(enaModels[seq(1,length(enaModels),length=10)],balance)
-## beta.ns <- lapply(beta.mod,enaAll)
-## dput(beta.ns,file='../../data/betans.rda')
-## q(save='no')
-## library(devtools)
-## install_github(username='MKLau',repo='enaR',ref='edgeflow')
-## library(enaR)
-## data(enaModels)
-## edge.mod <- lapply(enaModels[seq(1,length(enaModels),length=10)],balance)
-## edge.ns <- lapply(edge.mod,enaAll)
-## dput(edge.ns,file='../../data/edgens.rda')
-
-library(enaR)
-options(keep.source=FALSE)
-beta.ns <- dget(file='../../data/betans.rda')
-edge.ns <- dget(file='../../data/edgens.rda')
-
-###check all
-bns <- unlist(beta.ns)
-ens <- unlist(edge.ns)
-all(names(bns[is.na(bns)])==names(ens[is.na(ens)]))
-bVe <- bns - ens
-all(is.na(bVe[bVe!=0]))
-
-###check functions for edge attributes

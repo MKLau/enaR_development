@@ -2,8 +2,28 @@
 ### Remove packages and check which functions break
 ########################################################################################################################
 
+
+## Depends:
+##     R (>= 2.10),
+##     MASS,
+##     stringr,
+##     sna,
+##     network,
+##     gdata,
+##     stats,
+##     utils,
+##     graphics,
+##     limSolve
+## Suggests:
+##     codetools,
+##     igraph,
+##     R.rsp
+## VignetteBuilder: R.rsp
+
+library(enaR)
 data(enaModels)
 
+ls('package:enaR', all.names=TRUE)
 sessionInfo()
 
 ShannonDiversity(runif(10))

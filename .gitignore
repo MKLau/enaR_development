@@ -20,3 +20,6 @@ tramp
 
 .log
 .DS_Store
+
+*data/econet_test.*
+
