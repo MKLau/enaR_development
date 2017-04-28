@@ -61,5 +61,14 @@ if (!tail(strsplit(getwd(),split='/')[[1]],1) == 'enaR_development'){
     fileConn <- file(fileout)
     writeLines(test, fileConn)
     close(fileConn)
-    system(paste0('diff data/test_base.txt',' ','data/test_new.txt','> data/diff_base_new.txt'))
+    time.stamp <- Sys.time()
+    time.stamp <- gsub(' ','',time.stamp)
+    time.stamp <- gsub('\\:','',time.stamp)
+    time.stamp <- gsub('-','',time.stamp)
+    system(paste0('diff data/test_base.txt',' ',
+                  'data/test_new.txt',
+                  '> data/diff_base_new.txt'))
+    system(paste0('cp ','data/diff_base_new.txt ',
+                  'data/diff_base_',time.stamp,'.txt'))
+    print(paste0('Output saved as data/diff_base_',time.stamp,'.txt'))
 }
